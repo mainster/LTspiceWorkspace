@@ -1,0 +1,20 @@
+* Z:\home\koblitz\Simulationsbeispiele_SS15\elektronik_vor\q1-basis.asc
+Q1 c 0 e 0 NPNx
+RC N001 c 10k
+RL out 0 33k
+C2 c out 10n
+RE e N003 22k
+V1 1 0 AC 1
+R1 1 N002 100
+XU1 N001 vdc_single V=10V
+XU2 N003 vdc_single V=-10V
+C1 N002 e 1µ
+.model NPN NPN
+.model PNP PNP
+.lib Z:\home\koblitz\LT-Spice\lib\cmp\standard.bjt
+.model npnx  npn (is=1p BF=200 VA=50)
+;op
+.ac oct 5 1 100k
+.lib EIT_sub\vdc_single.sub
+.backanno
+.end

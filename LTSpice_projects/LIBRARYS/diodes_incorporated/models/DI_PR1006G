@@ -1,0 +1,4 @@
+*SRC=PR1006G;DI_PR1006G;Diodes;Si;  800V  1.00A  500ns   Diodes Inc. Fast
+Rectifier
+.MODEL DI_PR1006G D  ( IS=5.00n RS=29.8m BV=800 IBV=5.00u
++ CJO=19.9p  M=0.333 N=1.72 TT=720n )

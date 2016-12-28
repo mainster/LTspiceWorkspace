@@ -1,0 +1,182 @@
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\steffi\ALDO_LED_Driver_opa2350_thd.asc
+
+Direct Newton iteration for .op point skipped.
+Starting Gmin stepping
+Gmin = 10
+Gmin = 1.07374
+Gmin = 0.115292
+Gmin = 0.0123794
+Gmin = 0.00132923
+vernier = 0.5
+vernier = 0.25
+vernier = 0.125
+vernier = 0.0625
+Gmin = 0.00100083
+vernier = 0.03125
+vernier = 0.015625
+vernier = 0.0078125
+vernier = 0.00390625
+vernier = 0.00195313
+Gmin = 0.00100083
+vernier = 0.000976563
+vernier = 0.000488281
+Gmin = 0
+Gmin stepping failed
+
+Starting source stepping with srcstepmethod=0
+Source Step = 3.0303%
+Source Step = 33.3333%
+Source Step = 40.1515%
+Source Step = 47.7273%
+Source Step = 53.9773%
+Source Step = 54.1844%
+Source Step = 54.214%
+Source Step = 54.2436%
+Source Step = 54.2732%
+Source Step = 54.3028%
+vernier = 0.00146484
+Source Step = 54.3368%
+Source Step = 54.3812%
+Source Step = 54.4256%
+Source Step = 54.47%
+Source Step = 54.5144%
+vernier = 0.00219727
+Source Step = 54.5632%
+Source Step = 54.6298%
+Source Step = 54.6964%
+Source Step = 54.763%
+Source Step = 54.8295%
+vernier = 0.0032959
+Source Step = 54.8995%
+Source Step = 54.9993%
+Source Step = 55.0992%
+Source Step = 55.1991%
+Source Step = 55.299%
+Source Step = 55.3988%
+vernier = 0.00494385
+Source Step = 55.5487%
+Source Step = 55.6985%
+Source Step = 55.8483%
+Source Step = 55.9981%
+Source Step = 56.1479%
+vernier = 0.00741577
+Source Step = 56.3651%
+Source Step = 56.5899%
+Source Step = 56.8146%
+Source Step = 57.0393%
+Source Step = 57.264%
+vernier = 0.0111237
+Source Step = 57.5786%
+Source Step = 57.9157%
+Source Step = 58.2528%
+Source Step = 58.5899%
+Source Step = 58.9269%
+vernier = 0.0166855
+Source Step = 59.382%
+Source Step = 59.8876%
+Source Step = 60.3932%
+Source Step = 60.8989%
+Source Step = 61.4045%
+vernier = 0.0250282
+Source Step = 62.0618%
+Source Step = 62.8202%
+Source Step = 63.5787%
+Source Step = 64.3371%
+Source Step = 65.0955%
+vernier = 0.0375423
+Source Step = 66.0436%
+Source Step = 67.1812%
+Source Step = 68.3189%
+Source Step = 69.4565%
+Source Step = 70.5941%
+vernier = 0.0563135
+Source Step = 71.9593%
+Source Step = 73.6658%
+Source Step = 75.3723%
+Source Step = 77.0787%
+Source Step = 78.7852%
+vernier = 0.0844703
+Source Step = 80.7476%
+Source Step = 83.3073%
+Source Step = 85.8671%
+Source Step = 88.4268%
+Source Step = 90.5385%
+vernier = 0.00527939
+Source Step = 90.5105%
+Source Step = 90.5505%
+Source Step = 90.5905%
+Source Step = 90.6305%
+Source Step = 90.6705%
+Source Step = 90.7105%
+Source Step = 90.7505%
+Source Step = 90.7905%
+Source Step = 90.8305%
+Source Step = 90.8705%
+Source Step = 90.9105%
+Source Step = 90.9505%
+vernier = 0.00197977
+Source Step = 90.9985%
+Source Step = 91.0585%
+Source Step = 91.1184%
+Source Step = 91.1784%
+Source Step = 91.2384%
+Source Step = 91.2984%
+vernier = 0.00296966
+Source Step = 91.3794%
+Source Step = 91.4694%
+Source Step = 91.5594%
+Source Step = 91.6494%
+Source Step = 91.7394%
+vernier = 0.00445449
+Source Step = 91.8564%
+Source Step = 91.9913%
+Source Step = 92.1263%
+Source Step = 92.2613%
+Source Step = 92.3963%
+vernier = 0.00668173
+Source Step = 92.565%
+Source Step = 92.7675%
+Source Step = 92.97%
+Source Step = 93.1725%
+Source Step = 93.3749%
+vernier = 0.0100226
+Source Step = 93.6179%
+Source Step = 93.9216%
+Source Step = 94.2253%
+Source Step = 94.5291%
+Source Step = 94.8328%
+vernier = 0.0150339
+Source Step = 95.182%
+Source Step = 95.6376%
+Source Step = 96.0932%
+Source Step = 96.5488%
+Source Step = 97.0043%
+vernier = 0.0225508
+Source Step = 97.5055%
+Source Step = 98.1888%
+Source Step = 98.8722%
+Source Step = 99.5555%
+Source stepping succeeded in finding the operating point.
+
+Note: .fourier statements are only valid with a .tran command.
+      No Fourier analysis performed.
+
+
+Date: Sat Jan 24 20:17:47 2015
+Total elapsed time: 5.754 seconds.
+
+tnom = 27
+temp = 27
+method = trap
+totiter = 12737
+traniter = 0
+tranpoints = 0
+accept = 0
+rejected = 0
+matrix size = 263
+fillins = 569
+solver = Normal
+Matrix Compiler1:    3100 opcodes
+Matrix Compiler2: 32,3 KB object code size  10.6/8.9/[3.7]
+
+

@@ -1,0 +1,96 @@
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\galvoscanner\aktuell\bauteile_bestimmt\sysCompl_endstufe_FET_v13_transducer_v13a_NoPwr.asc
+
+u4:d18: both pins shorted together -- ignoring.
+u19:d18: both pins shorted together -- ignoring.
+WARNING: Less than two connections to node -VPWR.  This node is used by V3.
+WARNING: Less than two connections to node +VPWR.  This node is used by V5.
+WARNING: Less than two connections to node N022.  This node is used by V10.
+WARNING: Less than two connections to node POSX_ADCF.  This node is used by R50.
+WARNING: Less than two connections to node G1.  This node is used by E2.
+WARNING: Less than two connections to node POSX_ADCF3.  This node is used by R51.
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+Gmin = 1.07374
+Gmin = 0.115292
+Gmin = 0.0123794
+Gmin = 0.00132923
+Gmin = 0.000142725
+Gmin = 1.5325e-005
+Gmin = 1.6455e-006
+Gmin = 1.76685e-007
+vernier = 0.5
+vernier = 0.25
+vernier = 0.125
+vernier = 0.0625
+vernier = 0.03125
+vernier = 0.015625
+vernier = 0.0078125
+Gmin = 2.19567e-007
+vernier = 0.0104167
+vernier = 0.0138889
+Gmin = 2.13838e-007
+vernier = 0.0185185
+Gmin = 2.05129e-007
+vernier = 0.0246913
+vernier = 0.0329218
+Gmin = 1.91316e-007
+vernier = 0.0438957
+vernier = 0.0585276
+Gmin = 1.71228e-007
+vernier = 0.0780367
+Gmin = 1.43878e-007
+vernier = 0.104049
+vernier = 0.138732
+Gmin = 1.07609e-007
+vernier = 0.184976
+vernier = 0.246634
+Gmin = 6.79937e-008
+vernier = 0.328846
+Gmin = 3.33163e-008
+vernier = 0.438461
+vernier = 0.584614
+Gmin = 1.03431e-008
+vernier = 0.779486
+vernier = 0.389743
+Gmin = 3.49192e-009
+vernier = 0.519657
+vernier = 0.259828
+vernier = 0.346438
+Gmin = 1.94792e-009
+vernier = 0.173219
+vernier = 0.230959
+Gmin = 1.36796e-009
+vernier = 0.307945
+vernier = 0.410593
+Gmin = 6.4444e-010
+vernier = 0.547457
+Gmin = 2.01922e-010
+vernier = 0.729942
+vernier = 0.973256
+Gmin = 3.0909e-011
+vernier = 1
+Gmin = 3.35461e-012
+Gmin = 3.60199e-013
+Gmin = 0
+Gmin stepping succeeded in finding the operating point.
+
+
+Date: Fri May 22 03:07:58 2015
+Total elapsed time: 0.883 seconds.
+
+tnom = 27
+temp = 27
+method = trap
+totiter = 1970
+traniter = 0
+tranpoints = 0
+accept = 0
+rejected = 0
+matrix size = 137
+fillins = 160
+solver = Normal
+Matrix Compiler1:     832 opcodes
+Matrix Compiler2: 15.0 KB object code size  4.3/4.5/[1.8]
+
+

@@ -1,0 +1,95 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\galvoscanner\powerstage_PushPull_FET_lochraster_KOB.asc
+Q§T1 Vplus b1 Gn1 0 BC547B
+Q§T2 Vmin b2 Gp1 0 BC327-40
+R1 Gn1 Sn1 {bias}
+R2 Sp1 Gp1 {bias}
+R3 b1 d1 1k
+R4 r4 b2 1k
+D1 d1 stim 1N4148
+D2 stim r4 1N4148
+Rload1 N010 shunt 1.5
+M1 Vplus Gn1 Sn1 Sn1 IRFP240
+M2 Vmin Gp1 Sp1 Sp1 IRFP9240
+L1 out_A N010 170µ
+XU3 N016 Vmin N018 TL431
+R10 Vplus N016 4.7k
+Q1 N012 N016 N018 0 BC547B
+R11 N018 Vmin 315
+V1 Vplus 0 {vsup}
+V2 Vmin 0 {-vsup}
+V3 stim 0 PULSE(1 -1 0.6m 1u 1u 5m 10m) AC 1
+R12 b2 N015 1m
+R13 N004 b1 1m
+XU1 0 in opOut opamp_param_3 Vp={0.95*Vsup} Vm={-0.95*Vsup} Ilim=20m FT={FT} SR=10 Vos=0 A0=100k phir=45 en=0 enk=0 in=0 ink=0 Rin=500Meg
+M3 N009 N011 0 0 IRFP240
+V5 N009 0 10
+V6 N011 0 10
+M4 0 N017 N013 N013 IRFP9240
+V4 N013 0 10
+V7 N017 N013 10
+I1 0 N004 {IK1}
+I2 N015 0 {Ik1}
+R5 N014 0 0.1
+R6 in stim 10k
+R8 Sn1 out_A {Rs}
+R9 out_A Sp1 {Rs}
+XU2 0 N006 N005 LM334
+R14 N005 N006 25
+XU4 0 N002 N001 LM334
+R20 N001 N002 166
+R21 N001 N003 {6.8*166}
+Q3 N002 N002 N003 0 BC547B
+R17 N003 0 100
+R16 0 N012 100
+R18 0 N004 100t
+R15 N006 0 100
+V8 Vcs 0 30
+S1 0 NC_01 b1 0 Osw
+R19 N014 in 20k
+XU6 0 0 delay Td=25p
+Rload3 N008 N007 {RL}
+L3 stim N008 {LL}
+C3 cl 0 {CL}
+R22 N007 cl 10
+V9 gnd1 0 1µ
+.model D D
+.lib C:\Program Files (x86)\LTC\LTspiceIV\lib\cmp\standard.dio
+.model NPN NPN
+.model PNP PNP
+.lib C:\Program Files (x86)\LTC\LTspiceIV\lib\cmp\standard.bjt
+.model NMOS NMOS
+.model PMOS PMOS
+.lib C:\Program Files (x86)\LTC\LTspiceIV\lib\cmp\standard.mos
+* .step param bias list 200 1k 2.4k
+.model npnx npn (Bf=200 Is={10m/exp(0.7/26m)}
+.model pnpx pnp (Bf=200 Is={10m/exp(0.7/26m)}
+.model Dx D (Is={(20*50u)/exp(0.7/26m)}
+.model Osw SW(Ron=10u Roff=10meg Vt=12 Vh=-.2)
+* .ac oct 100 1k 100meg
+* .step param Ik1 1m 1.05m 5u
+* PULSE(-.5 .5 0 1m 1m 10m 23m)
+* Vp=25 Vm=-25 Ilim=20m
+.param Ik1 = 3m
+.param bias = 1.5k
+.param Rs = 1u
+.param vsup = 12
+.param poti = 10k
+.param set = 0.5
+.param Rll = 5k
+.param FT = 10meg
+* .temp 27 90
+* .step param Rset 10 30 0.1
+* .step param Rll 10 10k 200
+* .step param FT 10meg 50meg 10meg
+.ac oct 100 1 10meg
+* .step param set 0.1 1 0.2
+.param LL=2.89m
+.param RL=1.535
+.param CL=470n
+* {poti*(1-set)}
+.lib delay.sub
+.lib EIT_sub\opamp_parametrierbar.sub
+.lib LM334.sub
+.lib tl431.sub
+.backanno
+.end

@@ -1,0 +1,46 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\BuckBoostInv_swconverter\buck_labor_ft2.asc
+L1 sw_buck out_buck {L1}
+D1 0 sw_buck Dx
+CA ca 0 {CA}
+Rs1 out_buck ca {Rs}
+Rpar1 sw_buck 0 20k
+Cpar1 sw_buck 0 400p
+RL out_buck N002 {RL}
+S1 E sw_buck p 0 sw
+V1 E 0 20 Rser=1m
+V2 p 0 PULSE(0 1 0 {trf} {trf} {p/(fsw)} {1/(fsw)})
+I1 out_buck 0 {IL}
+S2 N002 0 sw_load 0 sw
+V3 sw_load 0 PULSE(0 1 3m {trf} {trf} 3m)
+E1 N001 0 out_buck 0 1
+R1 out_buck_fil N001 330
+C2 out_buck_fil 0 100n
+E2 As 0 sw_load 0 Laplace=(1+s*Rs*CA)/(1+s*(Rs*Ca+L1/RL)+s**2*L1*CA*(1+Rs/RL))
+L2 S_lin out_Lin {L1}
+CA1 ca_Lin 0 {CA}
+Rs2 out_Lin ca_Lin {Rs}
+RL1 out_Lin N003 {RL}
+V4 S_lin 0 4.7
+I3 out_Lin 0 {IL}
+S3 N003 0 sw_load 0 sw
+.model D D
+.lib C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\lib\cmp\standard.dio
+.model sw  vswitch {Roff=1T Ron=1m Von=0.7 Voff=0.3 vh=-0.5}
+.param fsw={1/33.3u}
+.param RL=10
+.param trf=100n
+.param Rs=200m
+.param L1=100u
+.param CA=100u
+.param p=0.25
+.param IL=1
+.param N=4
+;.tran 0 20m {20m-N*33.3u}
+.tran 0 10m
+;ac oct 100 1 1meg
+* .step param Rs list 100m 1m 500u
+.model Dx D {Ron=1m Roff=1T Vfwd=0.4}
+* .step param Rs list 1p 200m
+.step param RL list 1T 10 5 2
+.backanno
+.end

@@ -1,0 +1,57 @@
+Circuit: * Z:\home\koblitz\Simulationsbeispiele_WS14\Elektronik_Lab\dienstag\Q2.asc
+
+.step i1=0 i1=0
+.step i1=1e-005 i1=0
+.step i1=2e-005 i1=0
+.step i1=3e-005 i1=0
+.step i1=4e-005 i1=0
+.step i1=5e-005 i1=0
+.step i1=0 i1=1e-005
+.step i1=1e-005 i1=1e-005
+.step i1=2e-005 i1=1e-005
+.step i1=3e-005 i1=1e-005
+.step i1=4e-005 i1=1e-005
+.step i1=5e-005 i1=1e-005
+.step i1=0 i1=2e-005
+.step i1=1e-005 i1=2e-005
+.step i1=2e-005 i1=2e-005
+.step i1=3e-005 i1=2e-005
+.step i1=4e-005 i1=2e-005
+.step i1=5e-005 i1=2e-005
+.step i1=0 i1=3e-005
+.step i1=1e-005 i1=3e-005
+.step i1=2e-005 i1=3e-005
+.step i1=3e-005 i1=3e-005
+.step i1=4e-005 i1=3e-005
+.step i1=5e-005 i1=3e-005
+.step i1=0 i1=4e-005
+.step i1=1e-005 i1=4e-005
+.step i1=2e-005 i1=4e-005
+.step i1=3e-005 i1=4e-005
+.step i1=4e-005 i1=4e-005
+.step i1=5e-005 i1=4e-005
+.step i1=0 i1=5e-005
+.step i1=1e-005 i1=5e-005
+.step i1=2e-005 i1=5e-005
+.step i1=3e-005 i1=5e-005
+.step i1=4e-005 i1=5e-005
+.step i1=5e-005 i1=5e-005
+
+Date: Tue Oct 14 15:47:46 2014
+Total elapsed time: 1.825 seconds.
+
+tnom = 27
+temp = 27
+method = trap
+totiter = 24070
+traniter = 0
+tranpoints = 0
+accept = 0
+rejected = 0
+matrix size = 6
+fillins = 0
+solver = Normal
+Matrix Compiler1: 360 Bytes object code size  1.8/1.4/[1.4]
+Matrix Compiler2: off  [1.4]/1.5/1.6
+
+

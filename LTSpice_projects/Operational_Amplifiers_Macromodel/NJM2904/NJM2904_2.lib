@@ -1,0 +1,45 @@
+*$
+* PART NUMBER:NJM2904
+* MANUFACTURER: NEW JAPAN RADIO
+* All Rights Reserved Copyright (c) Bee Technologies Inc. 2007
+.Subckt NJM2904 OUT1 -IN1 +IN1 V- +IN2 -IN2 OUT2 V+
+X_U1     +IN1 -IN1 V+ V- OUT1 NJM2904_SUB
+X_U2     +IN2 -IN2 V+ V- OUT2 NJM2904_SUB
+.ends  NJM2904
+.subckt NJM2904_SUB  1 2 3 4 5
+  c1   11 12 13.6603E-12
+  c2    6  7 29.000E-12
+  dc    5 53 dy
+  de   54  5 dy
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 100.84E6 -1E3 1E3 100E6 -100E6
+  ga    6  0 11 12 47.124E-6
+  gcm   0  6 10 99 2.5472E-9
+  iee   3 10 dc 15.050E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx1
+  q2   12  1 14 qx2
+  r2    6  9 100.00E3
+  rc1   4 11 21.221E3
+  rc2   4 12 21.221E3
+  re1  13 10 17.714E3
+  re2  14 10 17.714E3
+  ree  10 99 13.289E6
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 503.0
+  vb    9  0 dc 0
+  vc    3 53 dc 2.2879
+  ve   54  4 dc .79791
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.00E-18)
+.model dy D(Is=800.00E-18 Rs=1m Cjo=10p)
+.model qx1 PNP(Is=800.00E-18 Bf=333.70)
+.model qx2 PNP(Is=870.6645E-18 Bf=276.50)
+.ends
+*$

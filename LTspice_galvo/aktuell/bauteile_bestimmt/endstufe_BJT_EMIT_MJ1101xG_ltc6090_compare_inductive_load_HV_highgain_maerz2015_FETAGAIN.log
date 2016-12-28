@@ -1,0 +1,402 @@
+Stray ".ends" card: .ends
+
+   --- Expanded Deck Component Count ---
+A's 17
+B's 11
+C's 48
+D's 45
+E's 1
+G's 14
+H's 2
+I's 5
+L's 4
+M's 6
+Q's 16
+R's 59
+S's 6
+V's 25
+tot: 259
+
+
+    --- Expanded Netlist ---
+* Z:\home\mainster\CODES_local\LTSpice_projects\galvoscanner\aktuell\bauteile_bestimmt\endstufe_BJT_EMIT_MJ1101xG_ltc6090_compare_inductive_load_HV_highgain_maerz2015_FETAGAIN.asc
+r14 n013 shunt 3.5
+l1 out_a n013 0.00017 
+v:u1:1 v2+ 0 dc=12 
+v:u2:1 v2- 0 dc=-12 
+r6 stimac 0 10k
+a:u5:1 0 0 0 0 0 0 0 0 ota g=0 in=1f
+b:u5:1 0 u5:n004 i=10u*dnlim(uplim(v(0),v(v+)-2,.1), v(v-)+2, .1)+1n*v(0)
+b:u5:2 u5:n004 0 i=10u*dnlim(uplim(v(0),v(v+)-1.99,.1), v(v-)+1.99, .1)+1n*v(0)
+c:u5:10 u5:n004 0 .5f rpar=100k noiseless
+m:u5:1 opv u5:n016 v- v- u5:ni temp=27
+c:u5:2 v+ opv 1p rpar=1meg noiseless
+d:u5:5 u5:n016 v- u5:dlimn1 
+m:u5:2 opv u5:n011 v+ v+ u5:pi temp=27
+d:u5:8 v+ u5:n011 u5:dlimp1 
+c:u5:3 v+ u5:n011 100f rser=50meg noiseless
+a:u5:3 u5:n012 u5:n013 v- v- v- v- u5:n011 v- ota g=20n ref=-.45 linear vlow=-1e308 vhigh=1e308
+c:u5:11 opv v- 1p rpar=1meg noiseless
+c:u5:12 u5:n016 v- 100f rser=50meg noiseless
+a:u5:4 0 u5:n004 0 0 0 0 u5:n006 0 ota g=100u linear rout=100k en=10.6n enk=739 vlow=-1e308 vhigh=1e308
+c:u5:16 u5:n013 opv 2p 
+a:u5:5 u5:n007 0 u5:n012 u5:n012 u5:n012 u5:n012 u5:n013 u5:n012 ota g=12u iout=75u ref=272.3u vhigh=1e308 vlow=-1e308
+g:u5:1 v- u5:n016 u5:n013 u5:n012 20n
+c:u5:7 v+ 0 4.5p rser=200 noiseless
+c:u5:13 v+ v- 1000p 
+s:u5:1 u5:n013 u5:n012 0 u5:n009 u5:shut2 
+c:u5:1 u5:n006 0 15p 
+d:u5:1 0 0 u5:din1 
+s:u5:4 u5:n011 v+ 0 u5:n009 u5:shut1 
+s:u5:2 v- u5:n016 0 u5:n009 u5:shut1 
+c:u5:8 0 0 .5p rser=100 noiseless
+g:u5:3 0 u5:n007 u5:n006 0 1m
+l:u5:1 u5:n007 0 219µ cpar=440f rser=1.1k rpar=11k noiseless
+d:u5:7 u5:n013 u5:n012 u5:dlim2 
+r:u5:3 v+ 0 2meg 
+r:u5:5 u5:n015 0 10k 
+r:u5:6 v+ nc_02 2meg 
+a:u5:6 u5:n021 u5:n015 0 0 0 0 u5:n022 0 schmitt vt=1.2 vh=25m trise=.5u
+r:u5:7 u5:n021 nc_02 10k 
+c:u5:4 v+ 0 4.5p rser=200 noiseless
+c:u5:5 0 v- 4.5p rser=200 noiseless
+c:u5:6 0 v- 4.5p rser=200 noiseless
+d:u5:2 0 0 u5:din2 
+d:u5:4 u5:n006 u5:n017 u5:dsl1 
+a:u5:2 0 u5:n018 0 0 0 0 u5:n017 0 ota g=2m linear rout=1k cout=10p vlow=600m vhigh=10
+d:u5:6 u5:n005 u5:n018 u5:dd1 
+c:u5:9 u5:n018 0 10p 
+d:u5:9 u5:n005 u5:n018 u5:dd2 
+d:u5:11 u5:n010 u5:n005 u5:dd1 
+c:u5:15 u5:n010 0 10p 
+d:u5:12 u5:n010 u5:n005 u5:dd2 
+a:u5:7 0 u5:n010 0 0 0 0 u5:n008 0 ota g=2m linear rout=1k cout=10p vlow=-10 vhigh=-600m
+d:u5:14 u5:n008 u5:n006 u5:dsl1 
+g:u5:5 0 u5:n005 u5:n004 0 10m
+c:u5:17 u5:n005 0 10p rpar=100 
+g:u5:6 0 u5:n012 v- 0 .5m
+g:u5:7 0 u5:n012 v+ 0 .5m
+c:u5:19 u5:n012 0 200p rpar=1k noiseless
+d:u5:10 0 v- u5:dbias 
+d:u5:13 0 v- u5:dbias 
+d:u5:15 v+ v- u5:dpow 
+s:u5:3 v- v+ 0 u5:n009 u5:sofpow 
+i:u5:1 0 u5:vtemp 1m
+r:u5:10 u5:vtemp 0 500 tc=5e-3 
+r:u5:8 nc_01 u5:n025 10k 
+d:u5:16 0 u5:n025 u5:sd 
+d:u5:17 0 u5:n025 u5:rz 
+d:u5:18 u5:n015 u5:n021 u5:cz 
+a:u5:8 u5:n022 0 0 0 u5:n024 0 u5:n009 0 and trise=5u tfall=2u
+a:u5:9 u5:vtemp 0 0 0 0 u5:n024 0 0 schmitt vt=855m vh=18m
+a:u5:10 u5:vtemp 0 0 0 0 0 u5:n020 0 schmitt vt=782m vh=13m
+s:u5:5 u5:n025 v- u5:n020 0 u5:swtf 
+c:u5:18 v- u5:n025 500f 
+c:u5:20 0 v- 500f rpar=2meg noiseless
+c:u5:21 v- u5:n021 500f 
+c:u5:22 u5:n015 v- 500f 
+d:u5:3 0 0 u5:zin 
+d:u5:20 v- nc_02 u5:desd 
+d:u5:19 v- 0 u5:desd 
+d:u5:21 v- opv u5:desd 
+d:u5:22 v- nc_01 u5:desd 
+q§t3 v+ hs b_hi 0 fmmt624
+q§t4 v- ls b_lo 0 fmmt723
+r23 b_hi e_hi 150 
+r24 e_lo b_lo 150 
+r37 e_hi out_a .015
+r38 e_lo out_a .015
+c6 e_lo b_lo 10p
+c7 b_hi e_hi 10p
+q:u6:1 v- b_lo u6:4 u6:qmodel 
+q:u6:2 v- u6:4 e_lo u6:q1model 19.7144 
+d:u6:1 v- e_lo u6:dmodel 
+r:u6:1 b_lo u6:4 8000 
+r:u6:2 u6:4 e_lo 40 
+q:u7:1 v+ b_hi u7:4 u7:qmodel 
+q:u7:2 v+ u7:4 e_hi u7:q1model 29.3683 
+d:u7:1 e_hi v+ u7:dmodel 
+r:u7:1 b_hi u7:4 8000 
+r:u7:2 u7:4 e_hi 40 
+v4 stimoffs stimac pulse(5 0 0 100u)
+b2 calcsum 0 v=v(stimoffs)-v(isensa)
+v2 stimpwl 0 pwl(0 0 200u 1u 201u 1 900u 0.999999 901u 0 1.6m 1u 1.601m -1 2.3m -0.999999 2.301m 0)
+v3 n003 0 sine(20m 1 100 20m) ac 1
+v:u20:1 v+ 0 dc=20 
+v:u21:1 v- 0 dc=-20 
+r:u9:1 stimac 0 1000000000000 
+r:u9:2 stimac n003 1e-006 
+r:u9:3 n003 0 1000000000000 
+r20 n005 hs 750 
+d9 hs 0 1n4148
+r21 ls n015 750 
+r22 n019 v- 2000 
+r27 n018 v- 5k
+i5 v+ n012 0.0001 load
+q7 n006 n004 n001 0 fmmt723
+r28 v+ n001 5k
+i6 n006 v- 0.0001 load
+q8 n005 n004 n002 0 fmmt723
+q9 v- n006 n004 0 fmmt723
+q10 n015 n016 n019 0 fmmt624
+q11 n012 n016 n018 0 fmmt624
+q12 v+ n012 n016 0 fmmt624
+r29 v+ n002 2000 
+d11 0 ls 1n4148
+rshunt1 shunt 0 0.015
+b:u14:1 0 u14:n004 i=10u*dnlim(uplim(v(0),v(n022)-.9,.1), v(n025)-.4, .1)+1n*v(0)
+b:u14:2 u14:n004 0 i=10u*dnlim(uplim(v(n021),v(n022)-.89,.1), v(n025)-.41, .1)+1n*v(n021)
+c:u14:9 n022 n021 .85p rpar=1t noiseless
+c:u14:10 u14:n004 0 1f rpar=100k noiseless
+m:u14:1 n022 u14:n006 n020 n020 u14:n temp=27
+m:u14:2 n025 u14:n010 n020 n020 u14:p temp=27
+d:u14:5 u14:n006 n020 u14:y 
+d:u14:6 n020 u14:n010 u14:y 
+r:u14:2 n022 u14:n008 2g noiseless 
+r:u14:3 u14:n008 n025 2g noiseless 
+a:u14:3 n024 n022 0 0 0 0 u14:n005 0 schmitt vt=-1.5 vh=100m tau=50u
+a:u14:4 u14:n005 0 u14:n008 u14:n008 u14:n008 u14:n008 u14:n006 u14:n008 schmitt vt=.5 vh=10m vhigh=0 vlow=-15 rout=1k cout=.1p
+a:u14:5 u14:n005 0 u14:n008 u14:n008 u14:n008 u14:n010 u14:n008 u14:n008 schmitt vt=.5 vh=10m vhigh=15 vlow=0 rout=1k cout=.1p
+c:u14:14 0 u14:n007 15p rpar=6k noiseless
+a:u14:7 u14:n007 0 u14:n005 0 0 0 u14:n008 0 ota g=3.2m iout=1m vlow=-1e308 vhigh=1e308
+g:u14:1 u14:n008 0 u14:n008 n022 500m dir=1 vto=.3
+g:u14:2 0 u14:n008 n025 u14:n008 500m dir=1 vto=.45
+g:u14:3 0 u14:n007 0 u14:n009 167µ
+d:u14:1 n022 n024 u14:dsin 
+c:u14:2 n022 n020 1p rpar=1g noiseless
+c:u14:15 n020 n025 1p rpar=1g noiseless
+a:u14:2 0 u14:n004 0 0 0 0 u14:n009 0 ota g=3.2m linear en=79n rout=1k cout=40p vlow=-1e308 vhigh=1e308
+s:u14:2 n022 n025 u14:n005 0 u14:spow 
+c:u14:3 u14:n008 0 500p rser=100 noiseless
+c:u14:1 n021 n025 .85p rpar=1t noiseless
+c:u14:4 n022 0 .85p rpar=1t noiseless
+c:u14:6 0 n025 .85p rpar=1t noiseless
+r:u14:4 n022 n025 3.3meg noiseless 
+v:u15:1 n022 0 dc=5 
+v:u16:1 n025 0 dc=-5 
+r18 n020 n021 680
+r30 shunt n021 50
+v:u17:1 n024 0 dc=5 
+r32 isensa n020 1k
+c8 isensa 0 1.59154943091895e-009 
+r9 0 ucoil 3276595.74468085 
+a:u3:1 0 0 0 0 0 0 0 0 ota g=0 in=10f ink=7
+m:u3:1 v2+ u3:n005 n010 n010 u3:n temp=27
+m:u3:2 v2- u3:n005 n010 n010 u3:p temp=27
+c:u3:3 v2+ n010 .5p 
+c:u3:4 n010 v2- .5p 
+b:u3:1 0 u3:n004 i=10u*dnlim(uplim(v(0),v(v2+)-1.3,.1), v(v2-)+.5, .1)+1n*v(0)
+b:u3:2 u3:n004 0 i=10u*dnlim(uplim(v(0),v(v2+)-1.29,.1), v(v2-)+0.49, .1)+1n*v(0)
+c:u3:6 v2+ 0 2p rser=100 rpar=480meg noiseless
+c:u3:7 0 v2- 2p noiseless rser=100 rpar=480meg
+c:u3:8 0 v2- 2p rser=100 rpar=480meg noiseless
+c:u3:9 v2+ 0 2p rser=100 rpar=480meg noiseless
+c:u3:10 u3:n004 0 18.47f rpar=100k noiseless
+d:u3:1 u3:n005 n010 u3:y 
+d:u3:6 n010 u3:n005 u3:y 
+d:u3:7 v2+ v2- u3:dp 
+c:u3:11 0 0 1p rpar=150k noiseless
+a:u3:2 0 u3:n004 0 0 0 0 u3:n007 0 ota g=42.1u iout=1.7u cout=74.3f en=5n enk=40 vhigh=1e308 vlow=-1e308
+d:u3:2 u3:n007 v2+ u3:xu 
+d:u3:3 v2- u3:n007 u3:xd 
+g:u3:2 0 u3:n006 u3:n007 0 1m
+l:u3:2 u3:n006 0 28.64µ rpar=6.882352941176470585k rser=1.17k cpar=139.3f noiseless
+g:u3:1 0 u3:n005 u3:n006 0 1µ
+c:u3:1 u3:n005 0 106.1f rpar=1meg noiseless
+c:u3:2 n010 u3:n005 110f rser=10k noiseless
+d:u3:4 0 0 u3:di 
+v6 w 0 pulse(0 10 100u 10n 10n 100u 200u)
+r2 p001 n027 9000 
+r5 n027 error 1000 
+ci1 y p001 1 
+r7 error n026 1k
+r8 n026 w 1k
+r10 n028 x 1k
+r13 0 n028 1k
+v:u11:1 v+3 0 dc=15 
+v:u12:1 v-3 0 dc=-15 
+r16 n029 n030 3.5
+l2 y n029 0.0002 rpar=10meg cpar=10p
+c:u4:1 u4:11 u4:12 8.6603e-12 
+c:u4:2 u4:6 u4:7 30.000e-12 
+d:u4:c error u4:53 u4:dy 
+d:u4:e u4:54 error u4:dy 
+d:u4:lp u4:90 u4:91 u4:dx 
+d:u4:ln u4:92 u4:90 u4:dx 
+d:u4:p v-3 v+3 u4:dx 
+b:u4:§egnd u4:99 0 v=.5*v(v+3)+.5*v(v-3)
+b:u4:§fb u4:7 u4:99 i=4.4738e6*i(v:u4:b)+-1e3*i(v:u4:c)+1e3*i(v:u4:e)+4e6*i(v:u4:lp)+-4e6*i(v:u4:ln)
+g:u4:a u4:6 0 u4:11 u4:12 2.9274e-3
+g:u4:cm 0 u4:6 u4:10 u4:99 9.2572e-9
+i:u4:ee v+3 u4:10 dc 150.20e-6
+h:u4:lim u4:90 0 v:u4:lim 1k
+q:u4:1 u4:11 n026 u4:13 u4:qx1 
+q:u4:2 u4:12 n028 u4:14 u4:qx2 
+r:u4:2 u4:6 u4:9 100.00e3 
+r:u4:c1 v-3 u4:11 353.68 
+r:u4:c2 v-3 u4:12 353.68 
+r:u4:e1 u4:13 u4:10 8.8102 
+r:u4:e2 u4:14 u4:10 8.8102 
+r:u4:ee u4:10 u4:99 1.3316e6 
+r:u4:o1 u4:8 error 50 
+r:u4:o2 u4:7 u4:99 25 
+r:u4:p v+3 v-3 1.1314e3 
+v:u4:b u4:9 0 dc 0
+v:u4:c v+3 u4:53 dc 2.2979
+v:u4:e u4:54 v-3 dc 2.2979
+v:u4:lim u4:7 u4:8 dc 0
+v:u4:lp u4:91 0 dc 5.4000
+v:u4:ln 0 u4:92 dc 5.4000
+c:u8:1 u8:11 u8:12 8.6603e-12 
+c:u8:2 u8:6 u8:7 30.000e-12 
+d:u8:c y u8:53 u8:dy 
+d:u8:e u8:54 y u8:dy 
+d:u8:lp u8:90 u8:91 u8:dx 
+d:u8:ln u8:92 u8:90 u8:dx 
+d:u8:p v-3 v+3 u8:dx 
+b:u8:§egnd u8:99 0 v=.5*v(v+3)+.5*v(v-3)
+b:u8:§fb u8:7 u8:99 i=4.4738e6*i(v:u8:b)+-1e3*i(v:u8:c)+1e3*i(v:u8:e)+4e6*i(v:u8:lp)+-4e6*i(v:u8:ln)
+g:u8:a u8:6 0 u8:11 u8:12 2.9274e-3
+g:u8:cm 0 u8:6 u8:10 u8:99 9.2572e-9
+i:u8:ee v+3 u8:10 dc 150.20e-6
+h:u8:lim u8:90 0 v:u8:lim 1k
+q:u8:1 u8:11 n027 u8:13 u8:qx1 
+q:u8:2 u8:12 0 u8:14 u8:qx2 
+r:u8:2 u8:6 u8:9 100.00e3 
+r:u8:c1 v-3 u8:11 353.68 
+r:u8:c2 v-3 u8:12 353.68 
+r:u8:e1 u8:13 u8:10 8.8102 
+r:u8:e2 u8:14 u8:10 8.8102 
+r:u8:ee u8:10 u8:99 1.3316e6 
+r:u8:o1 u8:8 y 50 
+r:u8:o2 u8:7 u8:99 25 
+r:u8:p v+3 v-3 1.1314e3 
+v:u8:b u8:9 0 dc 0
+v:u8:c v+3 u8:53 dc 2.2979
+v:u8:e u8:54 v-3 dc 2.2979
+v:u8:lim u8:7 u8:8 dc 0
+v:u8:lp u8:91 0 dc 5.4000
+v:u8:ln 0 u8:92 dc 5.4000
+r§shunt n030 0 10m
+e1 x 0 n030 0 100
+.model fmmt723 pnp is=5.5e-13 bf=440 ikf=1 vaf=50.88 ise=1.554e-13 ne=1.477 nr=1.03 br=30 ikr=0.7 var=13.79 isc=1.3e-12 nc=1.198 rb=1.5 re=0.02 rc=0.14 cjc=45.74e-12 mjc=0.4889 vjc=0.711 cje=204.3e-12 mje=0.5105 vje=0.9711 tf=0.63e-9 tr=95e-9
+.model fmmt624 npn is=6.855e-13 nf=1.0037 bf=540 ikf=0.95 vaf=231 ise=2.23e-13 ne=1.4195 nr=1.0024 br=100 ikr=2 var=61 isc=3e-12 nc=1.2276 rb=0.036 re=0.065 rc=0.1 cjc=28e-12 mjc=0.4348 vjc=0.4934 cje=207e-12 tf=0.85e-9 tr=49e-9
+.model 1n4148 d(is=2.52n rs=.568 n=1.752 cjo=4p m=.4 tt=20n iave=200m vpk=75 mfg=onsemi type=silicon)
+.model u8:qx2 pnp(is=898.3900e-18 bf=821.92)
+.model u8:qx1 pnp(is=800.00e-18 bf=689.66)
+.model u8:dy d(is=800.00e-18 rs=1m cjo=10p)
+.model u8:dx d(is=800.00e-18)
+.model u4:qx2 pnp(is=898.3900e-18 bf=821.92)
+.model u4:qx1 pnp(is=800.00e-18 bf=689.66)
+.model u4:dy d(is=800.00e-18 rs=1m cjo=10p)
+.model u4:dx d(is=800.00e-18)
+.model u3:di d(ron=250 roff=1t vfwd=1 vrev=1 noiseless)
+.model u3:dp d(roff=1t ron=1k vfwd=0.5 ilimit=3.413m noiseless)
+.model u3:p vdmos(vto=50m kp=550m pchan)
+.model u3:n vdmos(vto=-50m kp=550m)
+.model u3:y d(ron=1k roff=1t vfwd=.28 epsilon=.1 noiseless)
+.model u3:xd d(ron=1k roff=100g vfwd=-1.3 epsilon=.1 noiseless)
+.model u3:xu d(ron=1k roff=100g vfwd=-1.3 epsilon=.1 noiseless)
+.model u14:spow sw(level=2 ron=500 roff=1g vt=.5 vh=-.1 ilimit=.5m noiseless)
+.model u14:dsin d(ron=100k roff=100meg vfwd=.1 epsilon=100m ilimit=.5u noiseless)
+.model u14:p vdmos(vto=100m kp=70m pchan)
+.model u14:n vdmos(vto=-100m kp=90m)
+.model u14:y d(ron=100 roff=1t vfwd=.6 epsilon=.1 noiseless)
+.model u7:q1model npn is=7.46007e-16 bf=232.735 nf=0.85 vaf=30 ikf=0.291159 ise=7.00919e-11 ne=1.84137 br=1.40703 nr=0.751634 var=10.0112 ikr=0.101463 isc=1e-13 nc=1.86352 rb=3.12784 irb=0.1 rbm=3.12784 re=0.351702 rc=1.75894 xtb=0.188551 xti=2.86314 eg=1.05008 cje=1.904e-08 vje=0.95 mje=0.23 tf=1e-09 xtf=1 vtf=10 itf=0.01 cjc=0 vjc=0.95 mjc=0.23 xcjc=0.9 fc=0.5 tr=1e-07 ptf=0 kf=0 af=1
+.model u7:qmodel npn is=7.46007e-16 bf=232.735 nf=0.85 vaf=30 ikf=0.291159 ise=7.00919e-11 ne=1.84137 br=1.40703 nr=0.751634 var=10.0112 ikr=0.101463 isc=1e-13 nc=1.86352 rb=3.12784 irb=0.1 rbm=3.12784 re=0.351702 rc=1.75894 xtb=0.188551 xti=2.86314 eg=1.05008 xtf=1 vtf=10 itf=0.01 cjc=3.24694e-10 vjc=0.95 mjc=0.23 xcjc=0.9 fc=0.5 tr=1e-07 ptf=0 kf=0 af=1
+.model u7:dmodel d is=1e-12 rs=0 n=0.863519 xti=2.86352 cjo=100e-12 vj=0.75 m=0.33 fc=0.5
+.model u6:q1model pnp is=6.3079e-13 bf=209.535 nf=0.85 vaf=179.833 ikf=0.221129 ise=4.68834e-12 ne=1.25754 br=0.969262 nr=0.75 var=138.099 ikr=0.0995603 isc=1e-13 nc=2.00339 rb=7.45687 irb=0.203385 rbm=7.45687 re=0.107979 rc=1.34582 xtb=0.486317 xti=3.00541 eg=1.19211 cje=1e-11 vje=0.75 mje=0.33 tf=1e-09 xtf=1 vtf=10 itf=0.01 cjc=0p vjc=0.75 mjc=0.33 xcjc=0.9 fc=0.5 tr=1e-07 ptf=0 kf=0 af=1
+.model u6:qmodel pnp is=6.3079e-13 bf=209.535 nf=0.85 vaf=179.833 ikf=0.221129 ise=4.68834e-12 ne=1.25754 br=0.969262 nr=0.75 var=138.099 ikr=0.0995603 isc=1e-13 nc=2.00339 rb=7.45687 irb=0.203385 rbm=7.45687 re=0.107979 rc=1.34582 xtb=0.486317 xti=3.00541 eg=1.19211 cje=10p vje=0.75 mje=0.033 tf=1e-12 xtf=1 vtf=10 itf=0.01 cjc=10p vjc=0.75 mjc=0.33 xcjc=0.7 fc=0.5 tr=1e-09 ptf=0 kf=0 af=1
+.model u6:dmodel d is=1e-12 rs=10.3385 n=1.00339 xti=3.00339 cjo=0 vj=0.65 m=0.33 fc=0.5
+.model u5:rz d(ron=10k roff=1g vfwd=.7 epsilon=100m vrev=6 revepsilon=100m noiseless)
+.model u5:zin d(ron=100 roff=1g vfwd=12 epsilon=100m vrev=12 revepsilon=100m noiseless)
+.model u5:cz d(ron=100 roff=1g vfwd=.7 epsilon=100m vrev=6 revepsilon=100m noiseless)
+.model u5:dsl1 d(ron=100 roff=1g vfwd=150m epsilon=50m noiseless)
+.model u5:dd2 d(ron=10k roff=1meg vfwd=1.4 epsilon=50m noiseless)
+.model u5:dd1 d(ron=1k roff=1g vfwd=150m epsilon=50m vrev=150m revepsilon=50m ilimit=3u revilimit=.1u noiseless)
+.model u5:dlimp1 d(ron=1k roff=100meg vfwd=700m vrev=-300m epsilon=100m revepsilon=10m noiseless)
+.model u5:dlimn1 d(ron=1k roff=100meg vfwd=630m vrev=-300m epsilon=100m revepsilon=10m noiseless)
+.model u5:dlim2 d(ron=1k roff=70meg vfwd=25 epsilon=.1 vrev=25 revepsilon=.1 noiseless)
+.model u5:pi vdmos(vto=-300m kp=200m rd=60 pchan)
+.model u5:ni vdmos(vto=300m kp=200m)
+.model u5:sd d(ron=500 roff=1g vfwd=500m epsilon=100m noiseless)
+.model u5:swtf sw(level=2 ron=30k roff=1g vt=.5 vh=-.2 ilimit=164u noiseless)
+.model u5:shut2 sw(ron=1k roff=100g vt=-.8 vh=-100m noiseless)
+.model u5:shut1 sw(ron=10k roff=100g vt=-.8 vh=-100m noiseless)
+.model u5:desd d(ron=100 roff=1g vfwd=700m epsilon=100m noiseless)
+.model u5:sofpow sw(ron=100 roff=1g vt=-.5 vh=-.1 ilimit=405u noiseless)
+.model u5:dpow d(ron=100 roff=1g vfwd=1 epsilon=100m ilimit=125u noiseless)
+.model u5:din2 d(ron=300 roff=1g vfwd=1 epsilon=800m vrev=1 revepsilon=800m ilimit=400u revilimit=400u noiseless)
+.model u5:din1 d(ron=1k roff=1g vfwd=1.5 epsilon=200m vrev=1.5 revepsilon=200m noiseless)
+.model u5:dbias d(ron=1meg roff=1t vfwd=.5 epsilon=1 vrev=6.7 revepsilon=100m ilimit=2.5p noiseless)
+.tran 0 .5m
+.options plotwinsize=0
+.end
+
+WARNING: Less than two connections to node CALCSUM.  This node is used by B2.
+WARNING: Less than two connections to node STIMPWL.  This node is used by V2.
+WARNING: Less than two connections to node UCOIL.  This node is used by R9.
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+vernier = 0.5
+Gmin = 1.86414
+vernier = 0.25
+vernier = 0.125
+vernier = 0.0625
+vernier = 0.03125
+vernier = 0.015625
+Gmin = 2.0809
+vernier = 0.0078125
+vernier = 0.00390625
+vernier = 0.00195313
+vernier = 0.000976563
+Gmin = 2.07583
+vernier = 0.000488281
+Gmin = 0
+Gmin stepping failed
+
+Starting source stepping with srcstepmethod=0
+Source Step = 3.0303%
+Source Step = 18.9394%
+Source Step = 26.5152%
+Source Step = 34.0909%
+Source Step = 41.6667%
+Source Step = 49.2424%
+vernier = 0.375
+Source Step = 58.3333%
+Source Step = 69.697%
+Source Step = 81.0606%
+Source Step = 92.4242%
+Source stepping succeeded in finding the operating point.
+
+
+
+Measurement "slewhi" FAIL'ed
+
+Measurement "slewlo" FAIL'ed
+
+Measurement "trise" FAIL'ed
+
+Measurement "tfall" FAIL'ed
+
+
+Date: Thu Apr 23 19:17:05 2015
+Total elapsed time: 1.392 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 9000
+traniter = 6809
+tranpoints = 2692
+accept = 2166
+rejected = 526
+matrix size = 189
+fillins = 365
+solver = Normal
+Thread vector: 57.2/35.6[4] 16.9/9.9[4] 10.7/10.4[1] 1.5/2.5[1]  2592/500
+Matrix Compiler1: 34.7 KB object code size  12.9/7.3/[3.8]
+Matrix Compiler2: 22.4 KB object code size  6.4/6.5/[2.7]
+
+

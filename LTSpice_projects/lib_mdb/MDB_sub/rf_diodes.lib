@@ -1,0 +1,1015 @@
+*********************************************************************
+* Infineon Technologies Discrete & RF Semiconductors                *
+* DIODE SPICE LIBRARY                                               *
+*                  produced by danalyse gmbh   07/1999              *
+*                                                                   *
+* Rev: 99.1                             DAnalyse GmbH Berlin        *
+*                                       Tel. 0049 30 93498230       *
+*                                       Fax. 0049 30 93498231       *
+*                                       email contact@danalyse.de   *
+*                                                                   *
+* Filename: sidi.lib                                                *
+* Version:  5.0                                                     *
+* Date:     July 1999                                               *
+*********************************************************************
+* *All diodes are designed as Makromodells in Subcircuits to        *
+*  increase the model-capability’s in SPICE2G6 and to include the   *
+*  AC-parameters of the packages:                                   *
+*  - For the PIN-diodes is a model applied, published from WALSTON. *
+*    Only the BAR63/65 are with a model, consisting of two diodes   *
+*    in parallel.                                                   *
+*  - All diodes have parallel-resistors for a better reverse        *
+*    behaviour. These resistors need a negative and non-linear      *
+*    temperature dependency. In this case the model show’s problems *
+*    at higher temperatures. Therefor is no temperature-coefficient *
+*    of the parallel-resistor in the model’s and the model’s have a *
+*    too low temperature-dependence of the reverse current.         *
+*  - Several diodes have a non-linear rising reverse current. This  *
+*    behaviour is with the parallel-resistor not model-able.        *
+* *The temperature-dependence of the reverse breakdown voltage and  *
+*  the ohmic series resistance (parameter RS) are in SPICE2G6 not   *
+*  adaptable.                                                       *
+* *Several SI-varactor-diodes have a C/U-behaviour, which is not    *
+*  exact model-able (BB439, BB831, BBY53, BBY57). In many other     *
+*  cases is a parameter Vj with a very high value applyed.          *
+* *Several Si-schottky-diodes and two PIN-diodes need a very low    *
+*  parameter Vj(BAR63/65 and BAT14,15,60A,60B,62,63,68). The value  *
+*  is limited to 0.224 for model-use at 85degC. This value can      *
+*  produce simulator-warnings at higher temperatures.               *
+*********************************************************************
+* This library contains the following Infineon Technologies Diodes: *
+*                                                                   *
+*Si-PIN-diodes:                                                     *
+*BA592 BA892                                                        *
+*BA595                                                              *
+*BA597                                                              *
+*BAR63-03w BAR63-02w                                                *
+*BAR64-03w BAR64-02w                                                *
+*BAR65-03w BAR65-02w                                                *
+*                                                                   *
+*Si-schottky-diodes:                                                *
+*BAS40-04w                                                          *
+*BAS70-04w                                                          *
+*BAT14-03w                                                          *
+*BAT15-03w                                                          *
+*BAT165                                                             *
+*BAT60A                                                             *
+*BAT60B                                                             *
+*BAT62-03w BAT62-02w                                                *
+*BAT63-03w BAT63-02w                                                *
+*BAT68-03w                                                          *
+*                                                                   *
+*Si-varactor-diodes:                                                *
+*BB439                                                              *
+*BB535  BB555                                                       *
+*BB545  BB565                                                       *
+*BB639  BB659                                                       *
+*BB639c BB659c                                                      *
+*BB644  BB664                                                       *
+*BB669  BB689                                                       *
+*BB804                                                              *
+*BB814                                                              *
+*BB831                                                              *
+*BB833                                                              *
+*BB835                                                              *
+*BB837  BB857                                                       *
+*BB914                                                              *
+*BBY51-03w BBY51-02w                                                *
+*BBY52-03w BBY52-02w                                                *
+*BBY53-03w BBY53-02w                                                *
+*BBY55-03w BBY55-02w                                                *
+*BBY56-03w BBY56-02w                                                *
+*BBY57-03w BBY57-02w                                                *
+*BBY58-03w BBY58-02w                                                *
+*                                                                   *
+*********************************************************************
+***Si-PIN-diodes:
+****************
+.SUBCKT BA592 100 200 
+*Package SOD323:
+L1       1   10  0.55nH 
+C2      10    2  110fF  
+L2      10  100  0.67nH 
+L3      2   200  0.55nH 
+*RF Resistances: R1,R2,and G1
+R1 1 3 101.1054m
+R2 3 4 1.7826k
+R4 1 2 700e9
+G1 3 4 POLY(2) 3 4 9 0 0 0 0 0 36.0461m
+*Constant reverse-bias capacitance
+C1 3 2 670.0f
+*Junction diode
+D1 4 2 DIO1 
+*Reverse-bias clamp
+G2 0 5 4 2 1.0
+D3 0 5 DIO3 
+V1 5 6 0.0
+D4 6 0 DIO3 
+*Calculation of fractional power current
+H1 7 0 V1 1.0
+V2 7 8 0.0
+D2 8 0 DIO2 
+*Fractional power current to voltage conversion
+F1 0 9 v2 10.0
+R3 9 0 1000.0
+.MODEL DIO1 D(IS=3.8637f N=1.0409 TT=140.0n
++ XTI=3.0 FC=0.5 EG=1.16 BV=69.5 IBV=1.0e-9)
+.MODEL DIO2 D(IS=0.63606f N=1.09748)
+.MODEL DIO3 D(IS=1E-20)
+.ENDS BA592
+*
+.SUBCKT BA892 100 200 
+*Package SCD80:
+LAIL1  1   10    0.45nH 
+CACC2 10    2    90fF   
+LAOL2 10  100    0.15nH 
+LCOL3 2   200    0.1nH  
+*RF Resistances: R1,R2,and G1
+R1 1 3 101.1054m
+R2 3 4 1.7826k
+R4 1 2 700e9
+G1 3 4 POLY(2) 3 4 9 0 0 0 0 0 36.0461m
+*Constant reverse-bias capacitance
+C1 3 2 670.0f
+*Junction diode
+D1 4 2 DIO1 
+*Reverse-bias clamp
+G2 0 5 4 2 1.0
+D3 0 5 DIO3 
+V1 5 6 0.0
+D4 6 0 DIO3 
+*Calculation of fractional power current
+H1 7 0 V1 1.0
+V2 7 8 0.0
+D2 8 0 DIO2 
+*Fractional power current to voltage conversion
+F1 0 9 v2 10.0
+R3 9 0 1000.0
+.MODEL DIO1 D(IS=3.8637f N=1.0409 TT=140.0n
++ XTI=3.0 FC=0.5 EG=1.16 BV=69.5 IBV=1.0e-9)
+.MODEL DIO2 D(IS=0.63606f N=1.09748)
+.MODEL DIO3 D(IS=1E-20)
+.ENDS BA892
+*
+.SUBCKT BA595 100 200 
+*Package SOD323:
+L1       1   10  0.55nH 
+C2      10    2  110fF  
+L2      10  100  0.67nH 
+L3      2   200  0.55nH 
+*RF Resistances: R1,R2,and G1
+R1 1 3 124.8206m
+R2 3 4 35.6857k
+R4 1 2 200e9
+G1 3 4 POLY(2) 3 4 9 0 0 0 0 0 73.7937m
+*Constant reverse-bias capacitance
+C1 3 2 34.0f
+*Junction diode
+D1 4 2 DIO1 
+*Reverse-bias clamp
+G2 0 5 4 2 1.0
+D3 0 5 DIO3 
+V1 5 6 0.0
+D4 6 0 DIO3 
+*Calculation of fractional power current
+H1 7 0 V1 1.0
+V2 7 8 0.0
+D2 8 0 DIO2 
+*Fractional power current to voltage conversion
+F1 0 9 v2 10.0
+R3 9 0 1000.0
+.MODEL DIO1 D(IS=33.7179p N=1.2196 TT=2.1u
++ XTI=3.0 FC=0.5 EG=1.16 BV=69.5 IBV=1.0e-9)
+.MODEL DIO2 D(IS=1.7137p N=1.37029)
+.MODEL DIO3 D(IS=1E-20)
+.ENDS BA595
+*
+.SUBCKT BA597 100 200
+*Package SOD323:
+L1       1   10  0.55nH 
+C2      10    2  110fF  
+L2      10  100  0.67nH 
+L3      2   200  0.55nH 
+*RF Resistances: R1,R2,and G1
+R1 1 3 181.0956m
+R2 3 4 10.0666k
+R4 1 2 400e9
+G1 3 4 POLY(2) 3 4 9 0 0 0 0 0 232.2403m
+*Constant reverse-bias capacitance
+C1 3 2 100.2f
+*Junction diode
+D1 4 2 DIO1 
+*Reverse-bias clamp
+G2 0 5 4 2 1.0
+D3 0 5 DIO3 
+V1 5 6 0.0
+D4 6 0 DIO3 
+*Calculation of fractional power current
+H1 7 0 V1 1.0
+V2 7 8 0.0
+D2 8 0 DIO2 
+*Fractional power current to voltage conversion
+F1 0 9 v2 10.0
+R3 9 0 1000.0
+.MODEL DIO1 D(IS=16.1921p N=1.0208 TT=2.5u
++ XTI=2.5 FC=0.5 EG=1.16 BV=59.0 IBV=0.2e-6)
+.MODEL DIO2 D(IS=0.40557p N=1.17228)
+.MODEL DIO3 D(IS=1E-20)
+.ENDS BA597
+*
+.SUBCKT BAR63-03w 100 200 
+*Package SOD323:
+L1       1   10  0.55nH 
+C2      10    2  110fF  
+L2      10  100  0.67nH 
+L3      2   200  0.55nH 
+*interne Dioden:
+D1 1 2 D1 
+D2 1 2 D2 
+R1 1 2 100e9
+.MODEL D1 D(IS=2.406e-16 N=1.0886 RS=610.2m XTI=4.0 EG=1.16
++ CJO=224.89f M=0.134846 VJ=0.224 FC=0.5 TT=95.0n)
+.MODEL D2 D(IS=323.2287f N=1.5188 RS=100m XTI=4.0 EG=0.68
++ BV=84.0 IBV=10.0e-9 TT=170.0n)
+.ENDS BAR63-03w
+*
+.SUBCKT BAR63-02w 100 200 
+*Package SCD80:
+LAIL1  1   10    0.45nH 
+CACC2 10    2    90fF   
+LAOL2 10  100    0.15nH 
+LCOL3 2   200    0.1nH  
+*interne Dioden:
+D1 1 2 D1 
+D2 1 2 D2 
+R1 1 2 100e9
+.MODEL D1 D(IS=2.406e-16 N=1.0886 RS=610.2m XTI=4.0 EG=1.16
++ CJO=224.89f M=0.134846 VJ=0.224 FC=0.5 TT=95.0n)
+.MODEL D2 D(IS=323.2287f N=1.5188 RS=100m XTI=4.0 EG=0.68
++ BV=84.0 IBV=10.0e-9 TT=170.0n)
+.ENDS BAR63-02w
+*
+.SUBCKT BAR64-03w 100 200
+*Package SOD323:
+L1       1   10  0.55nH 
+C2      10    2  110fF  
+L2      10  100  0.67nH 
+L3      2   200  0.55nH 
+*RF Resistances: R1,R2,and G1
+R1 1 3 100.0m
+R2 3 4 38.7897k
+R4 1 2 200e9
+G1 3 4 POLY(2) 3 4 9 0 0 0 0 0 198.3118m
+*Constant reverse-bias capacitance
+C1 3 2 138.0f
+*Junction diode
+D1 4 2 DIO1 
+*Reverse-bias clamp
+G2 0 5 4 2 1.0
+D3 0 5 DIO3 
+V1 5 6 0.0
+D4 6 0 DIO3 
+*Calculation of fractional power current
+H1 7 0 V1 1.0
+V2 7 8 0.0
+D2 8 0 DIO2 
+*Fractional power current to voltage conversion
+F1 0 9 v2 10.0
+R3 9 0 1000.0
+.MODEL DIO1 D(IS=3.7137p N=1.0371 TT=1.6u
++ XTI=2.5 FC=0.5 EG=1.16 BV=200.0 IBV=2.0e-6)
+.MODEL DIO2 D(IS=0.10434p N=1.17786)
+.MODEL DIO3 D(IS=1E-20)
+.ENDS BAR64-03w
+*
+.SUBCKT BAR64-02w 100 200 
+*Package SCD80:
+ LAIL1  1   10    0.45nH 
+ CACC2 10    2    90fF   
+ LAOL2 10  100    0.15nH 
+ LCOL3 2   200    0.1nH  
+*RF Resistances: R1,R2,and G1
+R1 1 3 10.0m
+R2 3 4 24.7641k
+R4 1 2 8e9
+G1 3 4 POLY(2) 3 4 9 0 0 0 0 0 116.9433m
+*Constant reverse-bias capacitance
+C1 3 2 105.0f
+*Junction diode
+D1 4 2 DIO1 
+*Reverse-bias clamp
+G2 0 5 4 2 1.0
+D3 0 5 DIO3 
+V1 5 6 0.0
+D4 6 0 DIO3 
+*Calculation of fractional power current
+H1 7 0 V1 1.0
+V2 7 8 0.0
+D2 8 0 DIO2 
+*Fractional power current to voltage conversion
+F1 0 9 v2 10.0
+R3 9 0 1000.0
+.MODEL DIO1 D(IS=64.7476p N=1.3625 TT=1.6u
++ XTI=3.0 FC=0.5 EG=1.16 BV=200.0 IBV=30.0e-9)
+.MODEL DIO2 D(IS=3.04922p N=1.539959)
+.MODEL DIO3 D(IS=1E-20)
+.ENDS BAR64-02w
+*
+.SUBCKT BAR65-03w 100 200
+*Package SOD323:
+L1       1   10  0.55nH 
+C2      10    2  110fF  
+L2      10  100  0.67nH 
+L3      2   200  0.55nH 
+*interne Dioden:
+D1 1 2 D1 
+D2 1 2 D2 
+R1 1 2 600e9
+.MODEL D1 D(IS=4.490e-16 N=1.0856 RS=180.0m XTI=2.5 EG=1.16
++ CJO=451.35f M=0.103494 VJ=0.224 FC=0.5 TT=45.0n)
+.MODEL D2 D(IS=57.3327f N=1.5375 RS=100m XTI=3.0 EG=1.05
++ BV=74.0 IBV=0.2e-9 TT=2.4u)
+.ENDS BAR65-03w
+*
+.SUBCKT BAR65-02w 100 200
+*Package SCD80:
+LAIL1  1   10    0.45nH 
+CACC2 10    2    90fF   
+LAOL2 10  100    0.15nH 
+LCOL3 2   200    0.1nH  
+*interne Dioden:
+D1 1 2 D1 
+D2 1 2 D2 
+R1 1 2 600e9
+.MODEL D1 D(IS=4.490e-16 N=1.0856 RS=180.0m XTI=2.5 EG=1.16
++ CJO=451.35f M=0.103494 VJ=0.224 FC=0.5 TT=45.0n)
+.MODEL D2 D(IS=57.3327f N=1.5375 RS=100m XTI=3.0 EG=1.05
++ BV=74.0 IBV=0.2e-9 TT=2.4u)
+.ENDS BAR65-02w
+*
+***Si-schottky-diodes:
+****************
+.SUBCKT BAS40-04w 100 200 300
+*anode1:         100
+*cathode2:       200
+*common cathode1 and anode2: 300
+*Package SOT323_2:
+LIND1    1   10    0.50nH
+LIND2    2   20    0.50nH
+CAP1    10   20    61fF  
+CAP2     3   10    140fF 
+CAP3     3   20    140fF 
+LIND3   10  100    0.45nH
+LIND4   20  200    0.45nH
+LIND5    3  300    0.41nH
+*internal diodes:
+D1 1 3 D1
+D2 3 2 D1
+R1 1 3 100e9
+R2 3 2 100e9
+.MODEL D1 D(IS=5.1307n N=1.0692 RS=6.6597 XTI=2.5 EG=0.69 
++CJO=2.74237p M=0.47 VJ=0.465 FC=0.5 TT=25.0p BV=59.0 IBV=10.0u)
+.ENDS BAS40-04w
+*
+.SUBCKT BAS70-04w 100 200 300
+*anode1:         100
+*cathode2:       200
+*common cathode1 and anode2: 300
+*Package SOT323_2:
+LIND1    1   10    0.50nH
+LIND2    2   20    0.50nH
+CAP1    10   20    61fF  
+CAP2     3   10    140fF 
+CAP3     3   20    140fF 
+LIND3   10  100    0.45nH
+LIND4   20  200    0.45nH
+LIND5    3  300    0.41nH
+*internal diodes:
+D1 1 3 D1
+D2 3 2 D1
+R1 1 3 100e9
+R2 3 2 100e9
+.MODEL D1 D(IS=1.8321n N=1.0681 RS=30.067 XTI=2.5 EG=0.69 
++CJO=1.388p M=0.327 VJ=0.342 FC=0.5 TT=25.0p BV=85.0 IBV=100.0n)
+.param
+.ENDS BAS70-04w
+*
+.SUBCKT BAT14-03w 100 200
+*Package SOD323:
+L1       1   10  0.55nH 
+C2      10    2  110fF  
+L2      10  100  0.67nH 
+L3      2   200  0.55nH 
+*internal diode:
+D1 1 2 D1
+R1 1 2 20e9
+.MODEL D1 D(IS=45.2665p N=1.082 RS=4.9 XTI=2.5 EG=0.73
++ CJO=161.71f M=0.1397 VJ=0.224 FC=0.5 TT=3.0p BV=7.2 IBV=1.0u)
+.ENDS BAT14-03w
+*
+.SUBCKT BAT15-03w 100 200
+*Package SOD323:
+L1       1   10  0.55nH 
+C2      10    2  110fF  
+L2      10  100  0.67nH 
+L3      2   200  0.55nH 
+*internal diode:
+D1 1 2 D1
+R1 1 2 15e6
+.MODEL D1 D(IS=74.0n N=1.07 RS=5.0 XTI=1.5 EG=0.59
++ CJO=138.5f M=0.138 VJ=0.224 FC=0.5 TT=3.0p BV=7.35 IBV=80.0u)
+.ENDS BAT15-03w
+*
+.SUBCKT BAT165 100 200
+*Package SOD323:
+L1       1   10  0.55nH 
+C2      10    2  110fF  
+L2      10  100  0.67nH 
+L3      2   200  0.55nH 
+*internal diode:
+D1 1 2 D1
+R1 1 2 40e6
+.MODEL D1 D(IS=50.19n N=1.0283 RS=260.0m XTI=2.5 EG=0.71
++ CJO=38.27p M=0.494 VJ=0.471 FC=0.5 TT=10.0p BV=42.95 IBV=10.0u)
+.ENDS BAT165
+*
+.SUBCKT BAT60A 100 200
+*Package SOD323:
+L1       1   10  0.55nH 
+C2      10    2  110fF  
+L2      10  100  0.67nH 
+L3      2   200  0.55nH 
+*interne Diode:
+D1 1 2 D1
+R1 1 2 3e5
+*R1 1 2 1.5e6
+.MODEL D1 D(IS=109.371u N=1.0853 RS=37.64m XTI=1.5 EG=0.54
++ CJO=52.1p M=0.241 VJ=0.224 FC=0.5 TT=10.0p BV=13.0 IBV=1.0m)
+.param
+.ENDS BAT60A
+*
+.SUBCKT BAT60B 100 200
+*Package SOD323:
+L1       1   10  0.55nH 
+C2      10    2  110fF  
+L2      10  100  0.67nH 
+L3      2   200  0.55nH 
+*interne Diode:
+D1 1 2 D1
+R1 1 2 3e7
+.MODEL D1 D(IS=780.0n N=1.043 RS=91.3m XTI=1.1 EG=0.68
++ CJO=34.0p M=0.122 VJ=0.224 FC=0.5 TT=10.0p BV=19.1 IBV=1.0m)
+.ENDS BAT60B
+*
+.SUBCKT BAT62-03w 100 200
+*Package SOD323:
+L1       1   10  0.55nH 
+C2      10    2  110fF  
+L2      10  100  0.67nH 
+L3      2   200  0.55nH 
+*interne Dioden:
+D1 1 2 D1
+R1 1 2 40e6
+.MODEL D1 D(IS=250.0n N=1.04 RS=190.0 XTI=1.5 EG=0.53
++ CJO=284.2f M=0.17 VJ=0.224 FC=0.5 TT=25.0p BV=59.3 IBV=10.0u)
+.ENDS BAT62-03w
+*
+.SUBCKT BAT62-02w 100 200
+*Package SCD80:
+LAIL1  1   10    0.45nH 
+CACC2 10    2    90fF   
+LAOL2 10  100    0.15nH 
+LCOL3 2   200    0.1nH  
+*interne Dioden:
+D1 1 2 D1
+R1 1 2 40e6
+.MODEL D1 D(IS=250.0n N=1.04 RS=190.0 XTI=1.5 EG=0.53
++ CJO=284.2f M=0.17 VJ=0.224 FC=0.5 TT=25.0p BV=59.3 IBV=10.0u)
+.ENDS BAT62-02w
+*
+.SUBCKT BAT63-03w 100 200
+*Package SOD323:
+L1       1   10  0.55nH 
+C2      10    2  110fF  
+L2      10  100  0.67nH 
+L3      2   200  0.55nH 
+*interne Diode:
+D1 1 2 D1
+R1 1 2 20e6
+.MODEL D1 D(IS=761.0n N=1.06 RS=2.633 XTI=1.5 EG=0.59
++ CJO=628.0f M=0.185 VJ=0.224 FC=0.5 TT=25.0p BV=14.4 IBV=100.0u)
+.ENDS BAT63-03w
+*
+.SUBCKT BAT63-02w 100 200
+*Package SCD80:
+LAIL1  1   10    0.45nH 
+CACC2 10    2    90fF   
+LAOL2 10  100    0.15nH 
+LCOL3 2   200    0.1nH  
+*interne Diode:
+D1 1 2 D1
+R1 1 2 20e6
+.MODEL D1 D(IS=761.0n N=1.06 RS=2.633 XTI=1.5 EG=0.59
++ CJO=628.0f M=0.185 VJ=0.224 FC=0.5 TT=25.0p BV=14.4 IBV=100.0u)
+.ENDS BAT63-02w
+*
+.SUBCKT BAT68-03w 100 200
+*Package SOD323:
+L1       1   10  0.55nH 
+C2      10    2  110fF  
+L2      10  100  0.67nH 
+L3      2   200  0.55nH 
+*interne Diode:
+D1 1 2 D1
+R1 1 2 400e6
+.MODEL D1 D(IS=8.976n N=1.07 RS=1.49 XTI=1.5 EG=0.68 
++CJO=786.1f M=0.1096 VJ=0.224 FC=0.5 TT=3.0p BV=15.15 IBV=10.0u)
+.ENDS BAT68-03w
+*
+***Si-varactor-diodes:
+****************
+.SUBCKT BB439 100 200
+*Package SOD323:
+L1       1   10  0.55nH 
+C2      10    2  110fF  
+L2      10  100  0.67nH 
+L3      2   200  0.55nH 
+*internal diode:
+D1 1 2 D1
+R1 1 2 200e9
+.MODEL D1 D(IS=2.9f N=1.0462 RS=113.0m XTI=4.0 EG=1.16
++ CJO=56.0p M=1.267 VJ=3.826 FC=0.5 TT=120.0n BV=40.6 IBV=0.3n)
+.ENDS BB439
+*
+.SUBCKT BB535 100 200
+*Package SOD323:
+L1       1   10  0.55nH 
+C2      10    2  110fF  
+L2      10  100  0.67nH 
+L3      2   200  0.55nH 
+*internal diode:
+D1 1 2 D1
+R1 1 2 200e9
+.MODEL D1 D(IS=1.05f N=1.02 RS=0.8 XTI=4.0 EG=1.16
++ CJO=26.05p M=1.2 VJ=3.68 FC=0.5 TT=120.0n BV=37.6 IBV=0.3e-9)
+.ENDS BB535
+*
+.SUBCKT BB555 100 200
+*Package SCD80:
+LAIL1  1   10    0.45nH 
+CACC2 10    2    90fF   
+LAOL2 10  100    0.15nH 
+LCOL3 2   200    0.1nH  
+*interne Diode:
+D1 1 2 D1
+R1 1 2 200e9
+.MODEL D1 D(IS=1.05f N=1.02 RS=0.8 XTI=4.0 EG=1.16
++ CJO=26.05p M=1.2 VJ=3.68 FC=0.5 TT=120.0n BV=37.6 IBV=0.3e-9)
+.ENDS BB555
+*
+.SUBCKT BB545 100 200
+*Package SOD323:
+L1       1   10  0.55nH 
+C2      10    2  110fF  
+L2      10  100  0.67nH 
+L3      2   200  0.55nH 
+*internal diode:
+D1 1 2 D1
+R1 1 2 250e9
+.MODEL D1 D(IS=1.2f N=1.03 RS=300.0m XTI=3.5 EG=1.16
++ CJO=30.96p M=1.089 VJ=1.94 FC=0.5 TT=90.0n BV=33.6 IBV=0.2n)
+.ENDS BB545
+*
+.SUBCKT BB565 100 200
+*Package SCD80:
+LAIL1  1   10    0.45nH 
+CACC2 10    2    90fF   
+LAOL2 10  100    0.15nH 
+LCOL3 2   200    0.1nH  
+*internal diode:
+D1 1 2 D1
+R1 1 2 250e9
+.MODEL D1 D(IS=1.2f N=1.03 RS=300.0m XTI=3.5 EG=1.16
++ CJO=30.96p M=1.089 VJ=1.94 FC=0.5 TT=90.0n BV=33.6 IBV=0.2n)
+.ENDS BB565
+*
+.SUBCKT BB639 100 200
+*Package SOD323:
+L1       1   10  0.55nH 
+C2      10    2  110fF  
+L2      10  100  0.67nH 
+L3      2   200  0.55nH 
+*internal diode:
+D1 1 2 D1
+R1 1 2 150e9
+.MODEL D1 D(IS=2.5f N=1.0327 RS=120.9m XTI=4.0 EG=1.16
++ CJO=55.24p M=1.608 VJ=4.525 FC=0.5 TT=160.0n BV=36.0 IBV=0.5n)
+.ENDS BB639
+*
+.SUBCKT BB659 100 200
+*Package SCD80:
+LAIL1  1   10    0.45nH 
+CACC2 10    2    90fF   
+LAOL2 10  100    0.15nH 
+LCOL3 2   200    0.1nH  
+*internal diode:
+D1 1 2 D1
+R1 1 2 150e9
+.MODEL D1 D(IS=2.5f N=1.0327 RS=120.9m XTI=4.0 EG=1.16
++ CJO=55.24p M=1.608 VJ=4.525 FC=0.5 TT=160.0n BV=36.0 IBV=0.5n)
+.ENDS BB659
+*
+.SUBCKT BB639c 100 200
+*Package SOD323:
+L1       1   10  0.55nH 
+C2      10    2  110fF  
+L2      10  100  0.67nH 
+L3      2   200  0.55nH 
+*internal diode:
+D1 1 2 D1
+R1 1 2 50e9
+.MODEL D1 D(IS=2.4745f N=1.036 RS=108.58m XTI=3.0 EG=1.16
++ CJO=57.3p M=1.606 VJ=4.0473 FC=0.5 TT=140.0n BV=37.3 IBV=1.0n)
+.ENDS BB639c
+*
+.SUBCKT BB659c 100 200
+*Package SCD80:
+LAIL1  1   10    0.45nH 
+CACC2 10    2    90fF   
+LAOL2 10  100    0.15nH 
+LCOL3 2   200    0.1nH  
+*internal diode:
+D1 1 2 D1
+R1 1 2 50e9
+.MODEL D1 D(IS=2.4745f N=1.036 RS=108.58m XTI=3.0 EG=1.16
++ CJO=57.3p M=1.606 VJ=4.0473 FC=0.5 TT=140.0n BV=37.3 IBV=1.0n)
+.ENDS BB659c
+*
+.SUBCKT BB644 100 200
+*Package SOD323:
+L1       1   10  0.55nH 
+C2      10    2  110fF  
+L2      10  100  0.67nH 
+L3      2   200  0.55nH 
+*internal diode:
+D1 1 2 D1
+R1 1 2 70e9
+.MODEL D1 D(IS=3.2f N=1.04 RS=119.64m XTI=4.0 EG=1.16
++ CJO=61.21p M=1.83 VJ=4.64 FC=0.5 TT=80.0n BV=35.3 IBV=1.0n)
+.ENDS BB644
+*
+.SUBCKT BB664 100 200
+*Package SCD80:
+LAIL1  1   10    0.45nH 
+CACC2 10    2    90fF   
+LAOL2 10  100    0.15nH 
+LCOL3 2   200    0.1nH  
+*internal diode:
+D1 1 2 D1
+R1 1 2 70e9
+.MODEL D1 D(IS=3.2f N=1.04 RS=119.64m XTI=4.0 EG=1.16
++ CJO=61.21p M=1.83 VJ=4.64 FC=0.5 TT=80.0n BV=35.3 IBV=1.0n)
+.ENDS BB664
+*
+.SUBCKT BB669 100 200
+*Package SOD323:
+L1       1   10  0.55nH 
+C2      10    2  110fF  
+L2      10  100  0.67nH 
+L3      2   200  0.55nH 
+*internal diode:
+D1 1 2 D1
+R1 1 2 100e9
+.MODEL D1 D(IS=6.0f N=1.04 RS=1.5 XTI=3.5 EG=1.16
++ CJO=79.64p M=2.167 VJ=6.467 FC=0.5 TT=120.0n BV=37.6 IBV=1.0n)
+.ENDS BB669
+*
+.SUBCKT BB689 100 200
+*Package SCD80:
+LAIL1  1   10    0.45nH 
+CACC2 10    2    90fF   
+LAOL2 10  100    0.15nH 
+LCOL3 2   200    0.1nH  
+*internal diode:
+D1 1 2 D1
+R1 1 2 100e9
+.MODEL D1 D(IS=6.0f N=1.04 RS=1.5 XTI=3.5 EG=1.16
++ CJO=79.64p M=2.167 VJ=6.467 FC=0.5 TT=120.0n BV=37.6 IBV=1.0n)
+.ENDS BB689
+*
+.SUBCKT BB804 100 200 300
+*anode1:         100
+*anode2:         200
+*common cathode: 300
+*Package SOT23_2:
+LIND1     1   10   0.77nH
+LIND2     2   20   0.77nH
+CAP2     10   20   73fF  
+CAP3      3   10   120fF 
+CAP4      3   20   120fF 
+LIND10   10  100   0.56nH
+LIND20   20  200   0.56nH
+LIND30    3  300   0.49nH
+*internal diodes:
+D1 1 3 D1
+D2 2 3 D1
+R1 1 3 120e9
+R2 2 3 120e9
+.MODEL D1 D(IS=2.3251f N=1.01 RS=310.0m XTI=3.0 EG=1.16
++ CJO=78.5149p M=0.475854 VJ=0.872356 FC=0.5 TT=137.0n
++ BV=22.5 IBV=0.7e-9)
+.ENDS BB804
+*
+.SUBCKT BB814 100 200 300
+*anode1:         100
+*anode2:         200
+*common cathode: 300
+*Package SOT23_2:
+LIND1     1   10   0.77nH
+LIND2     2   20   0.77nH
+CAP2     10   20   73fF  
+CAP3      3   10   120fF 
+CAP4      3   20   120fF 
+LIND10   10  100   0.56nH
+LIND20   20  200   0.56nH
+LIND30    3  300   0.49nH
+*internal diodes:
+D1 1 3 D1
+D2 2 3 D1
+R1 1 3 90e9
+R2 2 3 90e9
+.MODEL D1 D(IS=4.1f N=1.0 RS=260.0m XTI=3.5 EG=1.16
++ CJO=83.9p M=0.775 VJ=1.6 FC=0.5 TT=137.0n BV=33.5 IBV=1.0e-9)
+.ENDS BB814
+*
+.SUBCKT BB831 100 200
+*Package SOD323:
+L1       1   10  0.55nH 
+C2      10    2  110fF  
+L2      10  100  0.67nH 
+L3      2   200  0.55nH 
+*internal diode:
+D1 1 2 D1
+R1 1 2 150e9
+.MODEL D1 D(IS=6.942e-16 N=1.0424 RS=150.0m XTI=3.5 EG=1.16
++ CJO=14.48p M=1.032 VJ=2.0093 FC=0.5 TT=80.0n BV=33.8 IBV=0.3n)
+.ENDS BB831
+*
+.SUBCKT BB833 100 200
+*Package SOD323:
+L1       1   10  0.55nH 
+C2      10    2  110fF  
+L2      10  100  0.67nH 
+L3      2   200  0.55nH 
+*internal diode:
+D1 1 2 D1
+R1 1 2 150e9
+.MODEL D1 D(IS=113.2f N=1.22 RS=120.0m XTI=3.0 EG=1.16
++ CJO=14.79p M=1.464 VJ=2.594 FC=0.5 TT=120.0n BV=43.9 IBV=1.0n)
+.ENDS BB833
+*
+.SUBCKT BB835 100 200
+*Package SOD323:
+L1       1   10  0.55nH 
+C2      10    2  110fF  
+L2      10  100  0.67nH 
+L3      2   200  0.55nH 
+*internal diode:
+D1 1 2 D1
+R1 1 2 50e9
+.MODEL D1 D(IS=2.58f N=1.046 RS=220.0m XTI=3.5 EG=1.16
++ CJO=13.314p M=2.1498 VJ=4.968 FC=0.5 TT=45.0n BV=39.6 IBV=1.0n)
+.ENDS BB835
+*
+.SUBCKT BB837 100 200
+*Package SOD323:
+L1       1   10  0.55nH 
+C2      10    2  110fF  
+L2      10  100  0.67nH 
+L3      2   200  0.55nH 
+*internal diode:
+D1 1 2 D1
+R1 1 2 50e9
+.MODEL D1 D(IS=0.7f N=1.0462 RS=200.0m XTI=3.5 EG=1.16
++ CJO=9.997p M=1.508 VJ=3.334 FC=0.5 TT=70.0n BV=39.6 IBV=1.0n)
+.param
+.ENDS BB837
+*
+.SUBCKT BB857 100 200
+*Package SCD80:
+LAIL1  1   10    0.45nH 
+CACC2 10    2    90fF   
+LAOL2 10  100    0.15nH 
+LCOL3 2   200    0.1nH  
+*internal diode:
+D1 1 2 D1
+R1 1 2 50e9
+.MODEL D1 D(IS=0.7f N=1.0462 RS=200.0m XTI=3.5 EG=1.16
++ CJO=9.997p M=1.508 VJ=3.334 FC=0.5 TT=70.0n BV=39.6 IBV=1.0n)
+.param
+.ENDS BB857
+*
+.SUBCKT BB914 100 200 300
+*anode1:         100
+*anode2:         200
+*common cathode: 300
+*Package SOT23_2:
+LIND1     1   10   0.77nH
+LIND2     2   20   0.77nH
+CAP2     10   20   73fF  
+CAP3      3   10   120fF 
+CAP4      3   20   120fF 
+LIND10   10  100   0.56nH
+LIND20   20  200   0.56nH
+LIND30    3  300   0.49nH
+*internal diodes:
+D1 1 3 D1
+D2 2 3 D1
+R1 1 3 150e9
+R2 2 3 150e9
+.MODEL D1 D(IS=4.8f N=1.01 RS=280.0m XTI=3.0 EG=1.16
++ CJO=84.7873p M=0.819203 VJ=1.57986 FC=0.5 TT=137n BV=35.5 IBV=0.3e-9)
+.ENDS BB914
+*
+.SUBCKT BBY51-03w 100 200
+*Package SOD323:
+L1       1   10  0.55nH 
+C2      10    2  110fF  
+L2      10  100  0.67nH 
+L3      2   200  0.55nH 
+*internal diode:
+D1 1 2 D1
+R1 1 2 70e9
+.MODEL D1 D(IS=0.6f N=1.06 RS=200.0m XTI=3.0 EG=1.16
++ CJO=7.318p M=0.9256 VJ=2.378 FC=0.5 TT=220.0n BV=10.6 IBV=10.0n)
+.ENDS BBY51-03w
+*
+.SUBCKT BBY51-02w 100 200
+*Package SCD80:
+LAIL1  1   10    0.45nH 
+CACC2 10    2    90fF   
+LAOL2 10  100    0.15nH 
+LCOL3 2   200    0.1nH  
+*internal diode:
+D1 1 2 D1
+R1 1 2 70e9
+.MODEL D1 D(IS=0.6f N=1.06 RS=200.0m XTI=3.0 EG=1.16
++ CJO=7.318p M=0.9256 VJ=2.378 FC=0.5 TT=220.0n BV=10.6 IBV=10.0n)
+.ENDS BBY51-02w
+*
+.SUBCKT BBY52-03w 100 200
+*Package SOD323:
+L1       1   10  0.55nH 
+C2      10    2  110fF  
+L2      10  100  0.67nH 
+L3      2   200  0.55nH 
+*internal diode:
+D1 1 2 D1
+R1 1 2 70e9
+.MODEL D1 D(IS=0.6f N=1.1 RS=430.0m XTI=3.0 EG=1.16
++ CJO=2.49p M=0.71 VJ=1.559 FC=0.5 TT=220.0n BV=9.6 IBV=50.0n)
+.ENDS BBY52-03w
+*
+.SUBCKT BBY52-02w 100 200
+*Package SCD80:
+LAIL1  1   10    0.45nH 
+CACC2 10    2    90fF   
+LAOL2 10  100    0.15nH 
+LCOL3 2   200    0.1nH  
+*internal diode:
+D1 1 2 D1
+R1 1 2 70e9
+.MODEL D1 D(IS=0.6f N=1.1 RS=430.0m XTI=3.0 EG=1.16
++ CJO=2.49p M=0.71 VJ=1.559 FC=0.5 TT=220.0n BV=9.6 IBV=50.0n)
+.ENDS BBY52-02w
+*
+.SUBCKT BBY53-03w 100 200
+*Package SOD323:
+L1       1   10  0.55nH 
+C2      10    2  110fF  
+L2      10  100  0.67nH 
+L3      2   200  0.55nH 
+*internal diode:
+D1 1 2 D1
+R1 1 2 100e9
+.MODEL D1 D(IS=0.6f N=1.065 RS=200.0m XTI=3.0 EG=1.16
++ CJO=8.65p M=0.838 VJ=1.025 FC=0.5 TT=290.0n BV=16.5 IBV=10.0n)
+.ENDS BBY53-03w
+*
+.SUBCKT BBY53-02w 100 200
+*Package SCD80:
+LAIL1  1   10    0.45nH 
+CACC2 10    2    90fF   
+LAOL2 10  100    0.15nH 
+LCOL3 2   200    0.1nH  
+*internal diode:
+D1 1 2 D1
+R1 1 2 100e9
+.MODEL D1 D(IS=0.6f N=1.065 RS=200.0m XTI=3.0 EG=1.16
++ CJO=8.65p M=0.838 VJ=1.025 FC=0.5 TT=290.0n BV=16.5 IBV=10.0n)
+.ENDS BBY53-02w
+*
+.SUBCKT BBY55-03w 100 200
+*Package SOD323:
+L1       1   10  0.55nH 
+C2      10    2  110fF  
+L2      10  100  0.67nH 
+L3      2   200  0.55nH 
+*internal diode:
+D1 1 2 D1
+R1 1 2 100e9
+.MODEL D1 D(IS=0.8f N=1.02 RS=120.0m XTI=3.5 EG=1.16
++ CJO=26.66p M=0.717 VJ=1.573 FC=0.5 TT=100.0n BV=25.8 IBV=0.5n)
+.ENDS BBY55-03w
+*
+.SUBCKT BBY55-02w 100 200
+*Package SCD80:
+LAIL1  1   10    0.45nH 
+CACC2 10    2    90fF   
+LAOL2 10  100    0.15nH 
+LCOL3 2   200    0.1nH  
+*internal diode:
+D1 1 2 D1
+R1 1 2 100e9
+.MODEL D1 D(IS=0.8f N=1.02 RS=120.0m XTI=3.5 EG=1.16
++ CJO=26.66p M=0.717 VJ=1.573 FC=0.5 TT=100.0n BV=25.8 IBV=0.5n)
+.ENDS BBY55-02w
+*
+.SUBCKT BBY56-03w 100 200
+*Package SOD323:
+L1       1   10  0.55nH 
+C2      10    2  110fF  
+L2      10  100  0.67nH 
+L3      2   200  0.55nH 
+*internal diode:
+D1 1 2 D1
+R1 1 2 80e9
+.MODEL D1 D(IS=2.7f N=1.008 RS=80.0m XTI=3.5 EG=1.16
++ CJO=79.2p M=0.87 VJ=0.746 FC=0.5 TT=45.0n BV=12.5 IBV=100.0n)
+.ENDS BBY56-03w
+*
+.SUBCKT BBY56-02w 100 200
+*Package SCD80:
+LAIL1  1   10    0.45nH 
+CACC2 10    2    90fF   
+LAOL2 10  100    0.15nH 
+LCOL3 2   200    0.1nH  
+*internal diode:
+D1 1 2 D1
+R1 1 2 80e9
+.MODEL D1 D(IS=2.7f N=1.008 RS=80.0m XTI=3.5 EG=1.16
++ CJO=79.2p M=0.87 VJ=0.746 FC=0.5 TT=45.0n BV=12.5 IBV=100.0n)
+.ENDS BBY56-02w
+*
+.SUBCKT BBY57-03w 100 200
+*Package SOD323:
+L1       1   10  0.55nH 
+C2      10    2  110fF  
+L2      10  100  0.67nH 
+L3      2   200  0.55nH 
+*internal diode:
+D1 1 2 D1
+R1 1 2 30e9
+.MODEL D1 D(IS=5.6f N=1.085 RS=95.86m XTI=3.5 EG=1.16
++ CJO=30.3p M=1.294 VJ=1.524 FC=0.5 TT=150.0n BV=20.0 IBV=100.0n)
+.ENDS BBY57-03w
+*
+.SUBCKT BBY57-02w 100 200
+*Package SCD80:
+LAIL1  1   10    0.45nH 
+CACC2 10    2    90fF   
+LAOL2 10  100    0.15nH 
+LCOL3 2   200    0.1nH  
+*internal diode:
+D1 1 2 D1
+R1 1 2 30e9
+.MODEL D1 D(IS=5.6f N=1.085 RS=95.86m XTI=3.5 EG=1.16
++ CJO=30.3p M=1.294 VJ=1.524 FC=0.5 TT=150.0n BV=20.0 IBV=100.0n)
+.ENDS BBY57-02w
+*
+.SUBCKT BBY58-03w 100 200
+*Package SOD323:
+L1       1   10  0.55nH 
+C2      10    2  110fF  
+L2      10  100  0.67nH 
+L3      2   200  0.55nH 
+*internal diode:
+D1 1 2 D1
+R1 1 2 15e9
+.MODEL D1 D(IS=5.0f N=1.05 RS=160.0m XTI=3.0 EG=1.11
++ CJO=29.424p M=1.0836 VJ=1.472 FC=0.5 TT=45.0n BV=23.1 IBV=100.0n)
+.ENDS BBY58-03w
+*
+.SUBCKT BBY58-02w 100 200
+*Package SCD80:
+LAIL1  1   10    0.45nH 
+CACC2 10    2    90fF   
+LAOL2 10  100    0.15nH 
+LCOL3 2   200    0.1nH  
+*internal diode:
+D1 1 2 D1
+R1 1 2 15e9
+.MODEL D1 D(IS=5.0f N=1.05 RS=160.0m XTI=3.0 EG=1.11
++ CJO=29.424p M=1.0836 VJ=1.472 FC=0.5 TT=45.0n BV=23.1 IBV=100.0n)
+.ENDS BBY58-02w
+*

@@ -1,0 +1,4 @@
+*SRC=ES2C;DI_ES2C;Diodes;Si;  150V  2.00A  25.0ns   Diodes Inc. Fast
+Rectifier
+.MODEL DI_ES2C D  ( IS=267n RS=21.0m BV=150 IBV=5.00u
++ CJO=83.5p  M=0.333 N=1.70 TT=36.0n )

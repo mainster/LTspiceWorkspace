@@ -1,0 +1,74 @@
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\galvoscanner\aktuell\bauteile_bestimmt\endstufe_BJT_EMIT_MJ1101xG_ltc6090_ada4700_compare_nur_ein_hv_FERTIG_hoch2_maerz2015_higain_desktopKaputt.asc
+
+WARNING: Specified period is not longer than the sum of Trise, Tfall, and Ton for v3.  Increasing period to 0.003
+Limiting fall time of source v3 to 6.07153e-019
+WARNING: Less than two connections to node N018.  This node is used by R11.
+WARNING: Less than two connections to node CALCSUM.  This node is used by B2.
+WARNING: Less than two connections to node STIMPWL.  This node is used by V2.
+WARNING: Less than two connections to node N011.  This node is used by E1.
+WARNING: Less than two connections to node HV_GAIN.  This node is used by E2.
+WARNING: Less than two connections to node NC_03.  This node is used by V:U4:1.
+WARNING: Less than two connections to node R_FEED.  This node is used by E3.
+Direct Newton iteration for .op point skipped.
+Starting Gmin stepping
+Gmin = 10
+Gmin = 1.07374
+Gmin = 0.115292
+Gmin = 0.0123794
+Gmin = 0.00132923
+Gmin = 0.000142725
+vernier = 0.5
+Gmin = 2.66058e-005
+vernier = 0.666667
+Gmin = 6.58697e-006
+vernier = 0.888888
+vernier = 1
+Gmin = 8.09366e-007
+vernier = 0.5
+vernier = 0.25
+vernier = 0.125
+vernier = 0.166667
+Gmin = 6.66188e-007
+vernier = 0.222222
+Gmin = 4.14522e-007
+vernier = 0.296296
+vernier = 0.395061
+Gmin = 1.92817e-007
+vernier = 0.526748
+vernier = 0.702331
+Gmin = 5.886e-008
+vernier = 0.936441
+Gmin = 9.15765e-009
+vernier = 1
+Gmin = 9.95956e-010
+Gmin = 1.0694e-010
+Gmin = 1.14826e-011
+Gmin = 1.23293e-012
+Gmin = 1.32385e-013
+Gmin = 0
+Gmin stepping succeeded in finding the operating point.
+
+Note: .fourier statements are only valid with a .tran command.
+      No Fourier analysis performed.
+
+
+
+
+Date: Fri Mar 27 03:56:45 2015
+Total elapsed time: 0.508 seconds.
+
+tnom = 27
+temp = 27
+method = trap
+totiter = 1035
+traniter = 0
+tranpoints = 0
+accept = 0
+rejected = 0
+matrix size = 163
+fillins = 169
+solver = Normal
+Matrix Compiler1:     987 opcodes
+Matrix Compiler2: off  [3.3]/4.7/4.6
+
+

@@ -1,0 +1,602 @@
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\RPES\analog_pwm_conv_no_errorampl.asc
+
+Laplace(E1): Window=1.47272s Nfft=1024
+WARNING: Less than two connections to node R6_IN_K.  This node is used by V5.
+WARNING: Less than two connections to node R5_IN_K.  This node is used by V7.
+WARNING: Less than two connections to node R7_IN_K.  This node is used by V8.
+WARNING: Less than two connections to node UP.  This node is used by B1.
+WARNING: Less than two connections to node LO.  This node is used by B2.
+WARNING: Less than two connections to node LAP.  This node is used by E1.
+WARNING: Less than two connections to node C3_IN_UF.  This node is used by V3.
+WARNING: Less than two connections to node L33.  This node is used by Q:U3:5.
+Instance "m:u16:47": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u16:51": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u16:50": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u16:45": Length shorter than recommended for a level 1 MOSFET.
+Per .tran options, skipping operating point for transient analysis.
+Ignoring empty pin current: Ix(u2:11)
+Changing Tseed to 1e-008
+Changing Tseed to 1e-010
+Changing Tseed to 1e-007
+Changing Tseed to 1e-011
+Changing Tseed to 1e-006
+Changing Tseed to 1e-012
+Changing Tseed to 1e-005
+Changing Tseed to 1e-013
+Changing Tseed to 0.0001
+Changing Tseed to 1e-014
+Changing Tseed to 0.001
+Changing Tseed to 1e-015
+Heightened Def Con from 0 Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
+Changing Tseed to 1e-007
+Changing Tseed to 1e-013
+Changing Tseed to 1e-006
+Changing Tseed to 1e-014
+Changing Tseed to 1e-005
+Changing Tseed to 1e-015
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
+Changing Tseed to 1e-007
+Changing Tseed to 1e-013
+Changing Tseed to 1e-006
+Changing Tseed to 1e-014
+Changing Tseed to 1e-005
+Changing Tseed to 1e-015
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
+Changing Tseed to 1e-007
+Changing Tseed to 1e-013
+Changing Tseed to 1e-006
+Changing Tseed to 1e-014
+Changing Tseed to 1e-005
+Changing Tseed to 1e-015
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
+Changing Tseed to 1e-007
+Changing Tseed to 1e-013
+Changing Tseed to 1e-006
+Changing Tseed to 1e-014
+Changing Tseed to 1e-005
+Changing Tseed to 1e-015
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
+Changing Tseed to 1e-007
+Changing Tseed to 1e-013
+Changing Tseed to 1e-006
+Changing Tseed to 1e-014
+Changing Tseed to 1e-005
+Changing Tseed to 1e-015
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
+Changing Tseed to 1e-007
+Changing Tseed to 1e-013
+Changing Tseed to 1e-006
+Changing Tseed to 1e-014
+Changing Tseed to 1e-005
+Changing Tseed to 1e-015
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
+Changing Tseed to 1e-007
+Changing Tseed to 1e-013
+Changing Tseed to 1e-006
+Changing Tseed to 1e-014
+Changing Tseed to 1e-005
+Changing Tseed to 1e-015
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
+Changing Tseed to 1e-007
+Changing Tseed to 1e-013
+Changing Tseed to 1e-006
+Changing Tseed to 1e-014
+Changing Tseed to 1e-005
+Changing Tseed to 1e-015
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
+Changing Tseed to 1e-007
+Changing Tseed to 1e-013
+Changing Tseed to 1e-006
+Changing Tseed to 1e-014
+Changing Tseed to 1e-005
+Changing Tseed to 1e-015
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
+Changing Tseed to 1e-007
+Changing Tseed to 1e-013
+Changing Tseed to 1e-006
+Changing Tseed to 1e-014
+Changing Tseed to 1e-005
+Changing Tseed to 1e-015
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
+Changing Tseed to 1e-007
+Changing Tseed to 1e-013
+Changing Tseed to 1e-006
+Changing Tseed to 1e-014
+Changing Tseed to 1e-005
+Changing Tseed to 1e-015
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
+Changing Tseed to 1e-007
+Changing Tseed to 1e-013
+Changing Tseed to 1e-006
+Changing Tseed to 1e-014
+Changing Tseed to 1e-005
+Changing Tseed to 1e-015
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
+Changing Tseed to 1e-007
+Changing Tseed to 1e-013
+Changing Tseed to 1e-006
+Changing Tseed to 1e-014
+Changing Tseed to 1e-005
+Changing Tseed to 1e-015
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
+Changing Tseed to 1e-007
+Changing Tseed to 1e-013
+Changing Tseed to 1e-006
+Changing Tseed to 1e-014
+Changing Tseed to 1e-005
+Changing Tseed to 1e-015
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
+Changing Tseed to 1e-007
+Changing Tseed to 1e-013
+Changing Tseed to 1e-006
+Changing Tseed to 1e-014
+Changing Tseed to 1e-005
+Changing Tseed to 1e-015
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
+Changing Tseed to 1e-007
+Changing Tseed to 1e-013
+Changing Tseed to 1e-006
+Changing Tseed to 1e-014
+Changing Tseed to 1e-005
+Changing Tseed to 1e-015
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
+Changing Tseed to 1e-007
+Changing Tseed to 1e-013
+Changing Tseed to 1e-006
+Changing Tseed to 1e-014
+Changing Tseed to 1e-005
+Changing Tseed to 1e-015
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
+Changing Tseed to 1e-007
+Changing Tseed to 1e-013
+Changing Tseed to 1e-006
+Changing Tseed to 1e-014
+Changing Tseed to 1e-005
+Changing Tseed to 1e-015
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
+Changing Tseed to 1e-007
+Changing Tseed to 1e-013
+Changing Tseed to 1e-006
+Changing Tseed to 1e-014
+Changing Tseed to 1e-005
+Changing Tseed to 1e-015
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
+Changing Tseed to 1e-007
+Changing Tseed to 1e-013
+Changing Tseed to 1e-006
+Changing Tseed to 1e-014
+Changing Tseed to 1e-005
+Changing Tseed to 1e-015
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
+Changing Tseed to 1e-007
+Changing Tseed to 1e-013
+Changing Tseed to 1e-006
+Changing Tseed to 1e-014
+Changing Tseed to 1e-005
+Changing Tseed to 1e-015
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
+Changing Tseed to 1e-007
+Changing Tseed to 1e-013
+Changing Tseed to 1e-006
+Changing Tseed to 1e-014
+Changing Tseed to 1e-005
+Changing Tseed to 1e-015
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
+Changing Tseed to 1e-007
+Changing Tseed to 1e-013
+Changing Tseed to 1e-006
+Changing Tseed to 1e-014
+Changing Tseed to 1e-005
+Changing Tseed to 1e-015
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
+Changing Tseed to 1e-007
+Changing Tseed to 1e-013
+Changing Tseed to 1e-006
+Changing Tseed to 1e-014
+Changing Tseed to 1e-005
+Changing Tseed to 1e-015
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
+Changing Tseed to 1e-007
+Changing Tseed to 1e-013
+Changing Tseed to 1e-006
+Changing Tseed to 1e-014
+Changing Tseed to 1e-005
+Changing Tseed to 1e-015
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
+Changing Tseed to 1e-007
+Changing Tseed to 1e-013
+Changing Tseed to 1e-006
+Changing Tseed to 1e-014
+Changing Tseed to 1e-005
+Changing Tseed to 1e-015
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
+Changing Tseed to 1e-007
+Changing Tseed to 1e-013
+Changing Tseed to 1e-006
+Changing Tseed to 1e-014
+Changing Tseed to 1e-005
+Changing Tseed to 1e-015
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+to 1.125e-008
+Heightened Def Con from 1.125e-008 +++++++++++++++++++to 1.12503e-008
+Heightened Def Con from 1.12568e-008 to 1.12568e-008
+Heightened Def Con from 1.12568e-008 to 1.12568e-008
+Heightened Def Con from 1.12568e-008 to 1.12568e-008
+Heightened Def Con from 1.12568e-008 to 1.12568e-008
+Heightened Def Con from 1.12568e-008 to 1.12568e-008
+Heightened Def Con from 1.12568e-008 to 1.12568e-008
+Heightened Def Con from 1.12568e-008 to 1.12568e-008
+Heightened Def Con from 1.12568e-008 to 1.12568e-008
+Heightened Def Con from 1.12568e-008 to 1.12568e-008
+Heightened Def Con from 1.12568e-008 to 1.12568e-008
+Heightened Def Con from 1.12568e-008 to 1.12568e-008
+Heightened Def Con from 1.12568e-008 +to 1.12568e-008
+Heightened Def Con from 1.12568e-008 +to 1.12568e-008
+Heightened Def Con from 1.12568e-008 to 1.12573e-008
+Heightened Def Con from 0.00049076 to 0.00049076
+Heightened Def Con from 0.00049076 to 0.00049076
+Heightened Def Con from 0.00049076 to 0.000490766
+Heightened Def Con from 0.00149096 to 0.00149096
+Heightened Def Con from 0.00149096 to 0.00149096
+Heightened Def Con from 0.00149096 to 0.00149096
+Heightened Def Con from 0.00347036 +++to 0.00347036
+Heightened Def Con from 0.00347036 ++to 0.00347036
+Heightened Def Con from 0.00544975 to 0.00544975
+Heightened Def Con from 0.00544975 to 0.00544975
+Heightened Def Con from 0.00544975 to 0.00544975
+Heightened Def Con from 0.00544975 +to 0.00544975
+Heightened Def Con from 0.00544975 ++to 0.00544975
+Heightened Def Con from 0.00642895 +to 0.00642895
+Heightened Def Con from 0.00642895 to 0.00642895
+Heightened Def Con from 0.00642895 to 0.00642895
+Heightened Def Con from 0.00742923 ++++++to 0.00742923
+Heightened Def Con from 0.00742923 +++to 0.00742923
+Heightened Def Con from 0.00940865 to 0.00940865
+Heightened Def Con from 0.00940865 to 0.00940865
+Heightened Def Con from 0.00940865 to 0.00940865
+Heightened Def Con from 0.00940865 to 0.00940865
+Heightened Def Con from 0.00940865 to 0.00940865
+Heightened Def Con from 0.011388 to 0.011388
+Heightened Def Con from 0.011388 to 0.011388
+Heightened Def Con from 0.0133675 to 0.0133675
+Heightened Def Con from 0.0133675 to 0.0133675
+Heightened Def Con from 0.0133675 +to 0.0133675
+Heightened Def Con from 0.0133675 to 0.0133675
+Heightened Def Con from 0.0133675 to 0.0133675
+Heightened Def Con from 0.0153469 to 0.0153469
+Heightened Def Con from 0.0153469 to 0.0153469
+Heightened Def Con from 0.0153469 to 0.0153469
+Heightened Def Con from 0.0153469 to 0.0153469
+Heightened Def Con from 0.0153469 to 0.0153469
+Heightened Def Con from 0.0163261 to 0.0163261
+Heightened Def Con from 0.0163261 to 0.0163261
+Heightened Def Con from 0.0163261 to 0.0163261
+Heightened Def Con from 0.0163261 to 0.0163261
+Heightened Def Con from 0.0163261 to 0.0163261
+Heightened Def Con from 0.0163261 +to 0.0163261
+Heightened Def Con from 0.0163261 to 0.0163261
+Heightened Def Con from 0.0173263 to 0.0173263
+Heightened Def Con from 0.0173263 ++++to 0.0173263
+Heightened Def Con from 0.0173263 ++to 0.0173263
+Heightened Def Con from 0.0193058 ++++++to 0.0193058
+Heightened Def Con from 0.0193058 ++to 0.0193058
+Heightened Def Con from 0.020285 to 0.020285
+Heightened Def Con from 0.020285 to 0.020285
+Heightened Def Con from 0.020285 to 0.020285
+Heightened Def Con from 0.020285 to 0.020285
+Heightened Def Con from 0.020285 to 0.020285
+Heightened Def Con from 0.020285 to 0.020285
+Heightened Def Con from 0.020285 to 0.020285
+Heightened Def Con from 0.0212852 +++++to 0.0212852
+Heightened Def Con from 0.0212852 ++to 0.0212852
+Heightened Def Con from 0.0212852 to 0.0212852
+Heightened Def Con from 0.0232647 to 0.0232647
+Heightened Def Con from 0.0242439 to 0.0242439
+Heightened Def Con from 0.0242439 +to 0.0242439
+Heightened Def Con from 0.0242439 +++++++++to 0.0242439
+Heightened Def Con from 0.0242439 ++++to 0.0242439
+Heightened Def Con from 0.0242439 +to 0.0242439
+Heightened Def Con from 0.0242439 to 0.0242439
+Heightened Def Con from 0.0252441 to 0.0252441
+Heightened Def Con from 0.0252441 to 0.0252441
+Heightened Def Con from 0.0252441 to 0.0252441
+Heightened Def Con from 0.0252441 to 0.0252441
+Heightened Def Con from 0.0262233 to 0.0262233
+Heightened Def Con from 0.0262233 to 0.0262233
+Heightened Def Con from 0.0262233 to 0.0262233
+Heightened Def Con from 0.0262233 to 0.0262233
+Heightened Def Con from 0.0262233 +to 0.0262233
+Heightened Def Con from 0.0262233 +to 0.0262233
+Heightened Def Con from 0.0262233 ++++++++to 0.0262233
+Heightened Def Con from 0.0262233 to 0.0262233
+Heightened Def Con from 0.0262233 +++++++to 0.0262233
+Heightened Def Con from 0.0262233 +++++++++++to 0.0262233
+Heightened Def Con from 0.0262233 to 0.0262233
+Heightened Def Con from 0.0272236 to 0.0272236
+Heightened Def Con from 0.0282028 to 0.0282028
+Heightened Def Con from 0.0282028 ++to 0.0282028
+Heightened Def Con from 0.0282028 to 0.0282028
+Heightened Def Con from 0.0282028 ++++++++to 0.0282028
+Heightened Def Con from 0.0282028 to 0.0282028
+Heightened Def Con from 0.0282028 ++++++to 0.0282028
+Heightened Def Con from 0.0282028 ++++++to 0.0282028
+Heightened Def Con from 0.0282028 ++++++++++to 0.0282028
+Heightened Def Con from 0.0282028 to 0.0282028
+Heightened Def Con from 0.0292031 to 0.0292031
+Heightened Def Con from 0.0301822 to 0.0301822
+Heightened Def Con from 0.0311825 ++to 0.0311825
+Heightened Def Con from 0.0311825 to 0.0311825
+Heightened Def Con from 0.0311825 to 0.0311825
+Heightened Def Con from 0.0311825 to 0.0311825
+Heightened Def Con from 0.0321617 to 0.0321617
+Heightened Def Con from 0.0321617 to 0.0321617
+Heightened Def Con from 0.0331619 to 0.0331619
+Heightened Def Con from 0.0351413 to 0.0351413
+Heightened Def Con from 0.0351413 to 0.0351413
+Heightened Def Con from 0.0351413 to 0.0351413
+Heightened Def Con from 0.0351413 to 0.0351413
+Heightened Def Con from 0.0351413 +to 0.0351413
+Heightened Def Con from 0.0351413 +to 0.0351413
+Heightened Def Con from 0.0351413 to 0.0351413
+Heightened Def Con from 0.0351413 to 0.0351413
+Heightened Def Con from 0.0371208 to 0.0371208
+Heightened Def Con from 0.0391003 ++++++to 0.0391003
+Heightened Def Con from 0.0391003 ++to 0.0391003
+Heightened Def Con from 0.0410797 to 0.0410797
+Heightened Def Con from 0.0420589 to 0.0420589
+Heightened Def Con from 0.0420589 to 0.0420589
+Heightened Def Con from 0.0420589 ++to 0.0420589
+Heightened Def Con from 0.0420589 to 0.0420589
+Heightened Def Con from 0.0420589 ++++++to 0.0420589
+Heightened Def Con from 0.0420589 to 0.0420589
+Heightened Def Con from 0.0430592 to 0.0430592
+Heightened Def Con from 0.0440384 to 0.0440384
+Heightened Def Con from 0.0440384 to 0.0440384
+Heightened Def Con from 0.0440384 to 0.0440384
+Heightened Def Con from 0.0440384 +to 0.0440384
+Heightened Def Con from 0.0440384 to 0.0440384
+Heightened Def Con from 0.0450386 to 0.0450386
+Heightened Def Con from 0.0450386 to 0.0450386
+Heightened Def Con from 0.0470181 to 0.0470181
+Heightened Def Con from 0.0470181 +to 0.0470181
+Heightened Def Con from 0.0470181 to 0.0470181
+Heightened Def Con from 0.0470181 to 0.0470181
+Heightened Def Con from 0.0470181 to 0.0470181
+Heightened Def Con from 0.0479973 to 0.0479973
+Heightened Def Con from 0.0479973 +to 0.0479973
+Heightened Def Con from 0.0479973 ++++++++++to 0.0479973
+Heightened Def Con from 0.0479973 to 0.0479973
+Heightened Def Con from 0.0489975 to 0.0489976
+Heightened Def Con from 0.0499767 to 0.0499767
+Heightened Def Con from 0.0499767 to 0.0499767
+Heightened Def Con from 0.0499767 to 0.0499767
+Heightened Def Con from 0.050977 +to 0.050977
+Heightened Def Con from 0.050977 +++++to 0.050977
+Heightened Def Con from 0.050977 ++to 0.050977
+Heightened Def Con from 0.0519562 to 0.0519562
+Heightened Def Con from 0.0529564 ++++++to 0.0529564
+Heightened Def Con from 0.0529564 ++to 0.0529564
+Heightened Def Con from 0.0539356 to 0.0539356
+Heightened Def Con from 0.0549359 ++to 0.0549359
+Heightened Def Con from 0.0549359 to 0.0549359
+Heightened Def Con from 0.0549359 to 0.0549359
+Heightened Def Con from 0.0559151 to 0.0559151
+Heightened Def Con from 0.0559151 to 0.0559151
+Heightened Def Con from 0.0559151 +++++to 0.0559151
+Heightened Def Con from 0.0559151 to 0.0559151
+Heightened Def Con from 0.0569154 to 0.0569154
+Heightened Def Con from 0.0569154 +to 0.0569154
+Heightened Def Con from 0.0569154 +to 0.0569154
+Heightened Def Con from 0.0569154 to 0.0569154
+Heightened Def Con from 0.0578946 to 0.0578946
+Heightened Def Con from 0.0588949 to 0.0588949
+Heightened Def Con from 0.0598741 to 0.0598741
+Heightened Def Con from 0.0598741 +++++++++to 0.0598741
+Heightened Def Con from 0.0598741 ++++++++to 0.0598741
+Heightened Def Con from 0.0598741 to 0.0598741
+Heightened Def Con from 0.0598741 +++to 0.0598741
+Heightened Def Con from 0.0598741 to 0.0598741
+Heightened Def Con from 0.0598741 ++++++++to 0.0598741
+Heightened Def Con from 0.0598741 to 0.0598741
+Heightened Def Con from 0.0598741 ++++++++to 0.0598741
+Heightened Def Con from 0.0598741 +++++++++to 0.0598741
+Heightened Def Con from 0.0598741 +++++++++to 0.0598741
+Heightened Def Con from 0.0598741 +++++++++to 0.0598741
+Heightened Def Con from 0.0598741 to 0.0598741
+Heightened Def Con from 0.0608744 to 0.0608744
+Heightened Def Con from 0.0628539 to 0.0628539
+Heightened Def Con from 0.063833 to 0.063833
+Heightened Def Con from 0.0648333 to 0.0648333
+Heightened Def Con from 0.0648333 to 0.0648333
+Heightened Def Con from 0.0658125 to 0.0658125
+Heightened Def Con from 0.0658125 to 0.0658125
+Heightened Def Con from 0.0658125 to 0.0658125
+Heightened Def Con from 0.0658125 to 0.0658125
+Heightened Def Con from 0.0658125 +++++++++to 0.0658125
+Heightened Def Con from 0.0658125 to 0.0658125
+Heightened Def Con from 0.0658125 +++++++++to 0.0658125
+Heightened Def Con from 0.0658125 to 0.0658125
+Heightened Def Con from 0.0668127 +++++to 0.0668127
+Heightened Def Con from 0.0668127 ++to 0.0668127
+Heightened Def Con from 0.0677919 to 0.0677919
+Heightened Def Con from 0.0677919 +to 0.0677919
+Heightened Def Con from 0.0677919 ++++++to 0.0677919
+Heightened Def Con from 0.0677919 to 0.0677919
+Heightened Def Con from 0.0687922 to 0.0687922
+Heightened Def Con from 0.0697713 to 0.0697713
+Heightened Def Con from 0.0697713 ++++++to 0.0697713
+Heightened Def Con from 0.0697713 +++++to 0.0697713
+Heightened Def Con from 0.0697713 +to 0.0697713
+Heightened Def Con from 0.0697713 +to 0.0697713
+Heightened Def Con from 0.0697713 to 0.0697714
+Heightened Def Con from 0.0707716 to 0.0707716
+Heightened Def Con from 0.0717508 to 0.0717508
+Heightened Def Con from 0.0717508 +++to 0.0717508
+Heightened Def Con from 0.0717508 +to 0.0717508
+Heightened Def Con from 0.0717508 to 0.0717508
+Heightened Def Con from 0.0727511 to 0.0727511
+Heightened Def Con from 0.0747305 to 0.0747305
+Heightened Def Con from 0.0757097 to 0.0757097
+Heightened Def Con from 0.0757097 to 0.0757097
+Heightened Def Con from 0.0757097 to 0.0757097
+Heightened Def Con from 0.0757097 to 0.0757097
+Heightened Def Con from 0.07671 to 0.07671
+Heightened Def Con from 0.0776892 +to 0.0776892
+Heightened Def Con from 0.0776892 +to 0.0776892
+
+Date: Mon Jan 12 13:18:11 2015
+Total elapsed time: 9.609 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 154961
+traniter = 154961
+tranpoints = 29476
+accept = 17962
+rejected = 11737
+matrix size = 169
+fillins = 161
+solver = Normal
+Thread vector: 38.6/26.2[3] 15.5/9.5[3] 9.7/6.9[3] 0.9/2.1[1]  2592/500
+Matrix Compiler1: 14.8 KB object code size  5.7/2.1/[1.4]
+Matrix Compiler2: 15.5 KB object code size  1.9/2.1/[1.4]
+
+

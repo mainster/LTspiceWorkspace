@@ -1,0 +1,86 @@
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\galvoscanner\aktuell\bauteile_bestimmt\sysCompl_endstufe_FET_v20aa_transducer_v20.asc
+
+u25:d18: both pins shorted together -- ignoring.
+C31: both pins shorted together -- ignoring.
+WARNING: Less than two connections to node CALCSUM.  This node is used by B1.
+WARNING: Less than two connections to node CRF.  This node is used by V:U31:1.
+WARNING: Less than two connections to node CRB.  This node is used by V:U32:1.
+WARNING: Less than two connections to node CRG.  This node is used by V:U33:1.
+WARNING: Less than two connections to node N029.  This node is used by V10.
+WARNING: Less than two connections to node NC_03.  This node is used by R38.
+WARNING: Less than two connections to node LA.  This node is used by E2.
+WARNING: Less than two connections to node NC_04.  This node is used by V14.
+WARNING: Less than two connections to node NC_05.  This node is used by V13.
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+Gmin = 1.07374
+Gmin = 0.115292
+Gmin = 0.0123794
+Gmin = 0.00132923
+Gmin = 0.000142725
+Gmin = 1.5325e-005
+Gmin = 1.6455e-006
+Gmin = 1.76685e-007
+vernier = 0.5
+vernier = 0.25
+vernier = 0.125
+vernier = 0.0625
+vernier = 0.03125
+vernier = 0.015625
+vernier = 0.0078125
+Gmin = 2.19567e-007
+vernier = 0.0104167
+vernier = 0.0138889
+Gmin = 2.13838e-007
+vernier = 0.0185185
+Gmin = 2.05129e-007
+vernier = 0.0246913
+vernier = 0.0329218
+Gmin = 1.91316e-007
+vernier = 0.0438957
+vernier = 0.0585276
+Gmin = 1.71228e-007
+vernier = 0.0780367
+Gmin = 1.43878e-007
+vernier = 0.104049
+vernier = 0.138732
+Gmin = 1.07609e-007
+vernier = 0.184976
+vernier = 0.246634
+Gmin = 6.79937e-008
+vernier = 0.328846
+Gmin = 3.33163e-008
+vernier = 0.438461
+vernier = 0.584614
+Gmin = 1.03431e-008
+vernier = 0.779486
+vernier = 1
+Gmin = 1.73148e-009
+Gmin = 1.85916e-010
+Gmin = 1.99626e-011
+Gmin = 2.14347e-012
+Gmin = 2.30153e-013
+Gmin = 0
+Gmin stepping succeeded in finding the operating point.
+
+
+Date: Tue May 26 06:09:26 2015
+Total elapsed time: 6.580 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 38711
+traniter = 37298
+tranpoints = 11824
+accept = 8569
+rejected = 3255
+matrix size = 225
+fillins = 145
+solver = Normal
+Thread vector: 102.0/52.0[7] 39.7/17.1[7] 15.5/8.8[5] 1.6/2.2[1]  2592/500
+Matrix Compiler1: 17.2 KB object code size  12.8/7.0/[2.9]
+Matrix Compiler2: 21.7 KB object code size  7.9/9.2/[3.0]
+
+

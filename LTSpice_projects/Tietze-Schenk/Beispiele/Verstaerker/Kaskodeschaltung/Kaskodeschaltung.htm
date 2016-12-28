@@ -1,0 +1,83 @@
+<HTML>
+  <HEAD>
+    <TITLE>Kaskodeschaltung.sch</TITLE>
+  </HEAD>
+  <BODY BGCOLOR="#F0F0F0">
+    <H1 ALIGN=center><B>Kaskodeschaltung.sch</B></H1>
+    <P>
+Frequenzg&auml;nge und Kennlinien einer Emitterschaltung mit und ohne Kaskode
+    </P>
+    <P>
+      Kennlinie, Betriebsverst&auml;rkung, Frequenzgang und Eingangsimpedanz
+      einer Kaskodeschaltung mit npn-Einzeltransistoren im Vergleich mit
+      einer Emitterschaltung.
+    </P>
+    <P>
+      Die Kennlinien und die Betriebsverst&auml;rkungen sind im aktiven Bereich
+      nahezu gleich (Anzeigen 1 und 2). Im Arbeitspunkt Ua=3V gilt AB=-22
+      (26,9dB).
+    </P>
+    <P>
+      Die -3dB-Grenzfrequenz betr&auml;gt bei der Emitterschaltung 173kHz und
+      bei der Kaskodeschaltung 687kHz (Anzeige 3). Die Grenzfrequenz der
+      Kaskodeschaltung ist demnach um den Faktor 4 gr&ouml;&szlig;er.
+    </P>
+    <P>
+      Aus der Kleinsignalanalyse (AC) erh&auml;lt man neben den Frequenzg&auml;ngen
+      auch die Eingangsimpedanzen: Ze1=V(Ue1)/IB(T1) und Ze2=V(Ue2)/IB(T2).
+      Bei niedrigen Frequenzen gilt Ze1=Ze2=re=4,1kOhm. Die Impedanzen sind
+      ohmsch-kapazitiv (Betrag nimmt ab, Phase < 0). Die Eingangskapazit&auml;t
+      Ce ist bei der Kaskodeschaltung geringer als bei Emitterschaltung
+      (Anzeige 5):
+    </P>
+    <P>
+        Ce1 = IMG(IB(T1)/V(Ue1)/(2*pi*f) = 315pF
+        Ce2 = IMG(IB/T1)/V(Ue2)/(2*pi*f) = 80pF
+    </P>
+    <P>
+      Aus der Kleinsignalanalyse folgt f&uuml;r den Betrag der Verst&auml;rkung der
+      Emitterschaltung: |A_Emitter|=75,8. Aus den Angaben der OUT-Datei
+      (Anzeige mit ANALYSIS/EXAMINE OUTPUT) erh&auml;lt man CBE(T1)=71,7pF,
+      CBC(T1)=3,18pF, CBE(T2)=70,9pF und CBC(T2)=4,15pF. Damit folgt aus
+      der Theorie:
+    </P>
+    <P>
+       Ce1 = CBE(T1)+(1+|A_Emitter|)*CBC(T1) = 316pF
+       Ce2 = CBE(T2)+2*CBC(T2) = 79pF
+    </P>
+    <P>
+      Bei der Emitterschaltung geht die Kollektor-Basis-Kapazit&auml;t CBC
+      aufgrund des Miller-Effekts mit dem Faktor 1+|A_Emitter| ein.
+    </P>
+    <P><TABLE BORDER=2 BGCOLOR="#F0F0F0">
+      <TR>
+        <TD><B>Analysen</B></TD>
+        <TD><B>Einstellungen</B></TD>
+        <TD><B>Ergebnisanzeigen</B></TD>
+      </TR>
+      <TR>
+        <TD>AC</TD>
+        <TD>f = 1e3 ... 1e8</TD>
+        <TD>Frequenzgaenge , Eingangsimpedanzen , re_Ce , A_Emitter</TD>
+      </TR>
+      <TR>
+        <TD>DC</TD>
+        <TD>Ug = 0V ... 2V</TD>
+        <TD>Kennlinien , Betriebsverstaerkung</TD>
+      </TR>
+    </TABLE></P>
+    <P><TABLE BORDER=0 BGCOLOR="#F0F0F0" WIDTH=100%>
+      <TR>
+        <TH WIDTH=20% ALIGN=left>
+          <A HREF="ueber.htm" TARGET="uebersicht"><B>zur&uuml;ck</B></A>
+        </TH>
+        <TH WIDTH=20% ALIGN=left>
+          <A HREF="../../ueber.htm" TARGET="uebersicht"><B>&Uuml;bersicht</B></A>
+        </TH>
+        <TH WIDTH=60% ALIGN=left>
+          <A HREF="Kaskodeschaltung.tse"><B>Simulation starten</B></A>
+        </TH>
+      </TR>
+    </TABLE></P>
+  </BODY>
+</HTML>

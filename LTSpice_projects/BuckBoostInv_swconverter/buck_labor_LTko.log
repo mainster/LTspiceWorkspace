@@ -1,0 +1,5 @@
+Questionable use of curly braces in ".model dx d {ron=1mroff=1tvfwd=0.4}"
+    Error: undefined symbol in: "[ron]=1mroff=1tvfwd=0.4"
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\BuckBoostInv_swconverter\buck_labor_LTko.asc
+
+Unknown model type "ctrl-v-s" -- ignored

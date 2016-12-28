@@ -1,0 +1,41 @@
+* PIN Diode Impedance-Frequency Model Subcircuit
+.subckt pinImpFreq 10 20 params: is=1e-10,
++ n=1, ikf=3, phi=.7, ie=6,
++ rmin=1.8m, rmax=800k, cj=0.1pf,
++ tau=.116u, w=10u
+.param to={w*w/.001935/4}
+.param va={w*w/tau/0.075}
+.param af={to/tau}
+cjunc 10 20 {cj}
+rmax 10 12 {rmax}
+rmin 10 11 {rmin}
+grmod 11 12 value={2*(v(11,12)*v(2,3)/va)}
+gpin 12 20 value={i(v2)}
+* the next resistance helps convergence
+rpin 10 20 1e12
+ej 30 0 value={v(12,20)}
+v1 30 31 0
+* two different junction diodes
+dpi 31 32 dj1
+din 32 0 dj2
+.model dj1 d (is={is},ikf={ikf}, n={n})
+.model dj2 d (is={is},ikf={ikf},n={n})
+* 10th order H(s) approximation
+e0 1 0 value={i(v1)}
+v2 1 2 0
+rp1 2 3 1
+cp1 2 3 {tau}
+rs1 3 0 {af/3}
+rp2 3 4 5
+cp2 3 4 {tau/5}
+rs3 4 0 {af/7}
+rp4 4 5 9
+cp4 4 5 {tau/9}
+rs5 5 0 {af/11}
+rp6 5 6 13
+cp6 5 6 {tau/13}
+rs6 6 0 {af/15}
+rp7 6 7 17
+cp7 6 7 {tau/17}
+rs7 7 0 {af/19}
+.ends

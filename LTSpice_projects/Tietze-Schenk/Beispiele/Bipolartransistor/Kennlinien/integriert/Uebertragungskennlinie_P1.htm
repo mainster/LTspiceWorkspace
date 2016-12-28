@@ -1,0 +1,55 @@
+<HTML>
+  <HEAD>
+    <TITLE>&Uuml;bertragungskennlinie P1</TITLE>
+  </HEAD>
+  <BODY BGCOLOR="#F0F0F0">
+    <H1 ALIGN=center><B>&Uuml;bertragungskennlinie P1</B></H1>
+    <P>
+&Uuml;bertragungskennlinie eines pnp-Transistors P1 im Normalbetrieb
+    </P>
+    <P>
+      &Uuml;bertragungskennlinie des pnp-Transistors P1 (Anzeige 1).
+    </P>
+    <P>
+      Mit den Ergebnissen dieser Simulation kann man zus&auml;tzlich das
+      Gummel-Diagramm (halblogarithmische Darstellung von IC und IB
+      &uuml;ber UBE, Anzeige 2) und den Verlauf der Gro&szlig;- und Kleinsignal-
+      Stromverst&auml;rkung &uuml;ber IC (Anzeige 3) darstellen.
+    </P>
+    <P>
+      Zur Anzeige der Stromverst&auml;rkung wird die Variable der X-Achse
+      mit dem Befehl PLOT/X AXIS SETTINGS/AXIS VARIABLE auf -IC(T1)
+      umgestellt. Die Gro&szlig;signalstromverst&auml;rkung wird entsprechend
+      ihrer Definition dargestellt: IC(T1)/IB(T1). Die Kleinsignal-
+      stromverst&auml;rkung dIC(T1)/dIB(T1) wird mit -1/dIB(T1) angezeigt.
+      Dabei bewirkt der Operator "d" eine Differentiation nach der
+      X-Variable: -dIB(T1) bedeutet dIB(T1)/dIC(T1) und -1/dIB(T1)
+      bedeutet dIC(T1)/dIB(T1). 
+    </P>
+    <P><TABLE BORDER=2 BGCOLOR="#F0F0F0">
+      <TR>
+        <TD><B>Analysen</B></TD>
+        <TD><B>Einstellungen</B></TD>
+        <TD><B>Ergebnisanzeigen</B></TD>
+      </TR>
+      <TR>
+        <TD>DC</TD>
+        <TD>UBE = -1V ... 0V</TD>
+        <TD>Uebertragungskennlinie , Gummel-Diagramm , Stromverstaerkung</TD>
+      </TR>
+    </TABLE></P>
+    <P><TABLE BORDER=0 BGCOLOR="#F0F0F0" WIDTH=100%>
+      <TR>
+        <TH WIDTH=20% ALIGN=left>
+          <A HREF="ueber.htm" TARGET="uebersicht"><B>zur&uuml;ck</B></A>
+        </TH>
+        <TH WIDTH=20% ALIGN=left>
+          <A HREF="../../../ueber.htm" TARGET="uebersicht"><B>&Uuml;bersicht</B></A>
+        </TH>
+        <TH WIDTH=60% ALIGN=left>
+          <A HREF="Uebertragungskennlinie_P1.tse"><B>Simulation starten</B></A>
+        </TH>
+      </TR>
+    </TABLE></P>
+  </BODY>
+</HTML>

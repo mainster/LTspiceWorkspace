@@ -1,0 +1,38 @@
+Version 4
+SymbolType CELL
+LINE Normal 8 48 -32 48
+LINE Normal -8 80 -32 80
+LINE Normal 32 16 -16 16
+LINE Normal -13 11 -16 16
+LINE Normal -10 16 -13 11
+LINE Normal 32 -16 -16 -16
+LINE Normal -13 -11 -16 -16
+LINE Normal -10 -16 -13 -11
+LINE Normal 32 0 -15 -11
+LINE Normal 20 69 -1 69
+LINE Normal -1 80 -8 80
+LINE Normal 20 48 8 48
+RECTANGLE Normal 20 93 -1 32
+ARC Normal 14 69 26 80 20 80 20 69
+ARC Normal 5 69 -7 59 -1 59 -1 69
+ARC Normal 14 48 26 59 20 59 20 48
+WINDOW 38 15 128 Center 0
+WINDOW 0 -32 -32 Left 0
+SYMATTR SpiceModel RLY_NAME
+SYMATTR Prefix X
+SYMATTR Description SPDT Relay
+PIN -32 48 NONE 8
+PINATTR PinName L+
+PINATTR SpiceOrder 1
+PIN -32 80 NONE 8
+PINATTR PinName L-
+PINATTR SpiceOrder 2
+PIN 32 0 NONE 8
+PINATTR PinName SIN
+PINATTR SpiceOrder 3
+PIN 32 16 NONE 8
+PINATTR PinName SON
+PINATTR SpiceOrder 4
+PIN 32 -16 NONE 8
+PINATTR PinName SOFF
+PINATTR SpiceOrder 5

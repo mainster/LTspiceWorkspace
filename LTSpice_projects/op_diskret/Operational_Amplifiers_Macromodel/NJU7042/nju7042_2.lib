@@ -1,0 +1,51 @@
+*$
+*PART NUMBER: NJU7042
+*MANUFACTURER: NEW JAPAN RADIO
+*CMOS OPAMP
+*All Rights Reserved Copyright (c) Bee Technologies Inc. 2007
+.SUBCKT nju7042  IN+ VSS IN- OUT VDD
+m1 3 IN- 6 VSS nix l=6u w=20u
+m2 4 7 6 VSS nix l=6u w=25u
+m3 8 IN- 5 5 pix l=6u w=25u   
+m4 9 7 5 5 pix l=6u w=27.05u	
+eos 7 IN+ poly(1) 25 98 5e-3 0.451   
+iin1 IN+ 0 -1.5p
+iin2 IN- 0 -.5p
+i1 VDD 5 50u   
+i2 6 VSS 50u
+r1 VDD 3 4.833k
+r2 VDD 4 4.833k
+r3 8 VSS 4.833k
+r4 9 VSS 4.833k
+d3 5 VDD dx
+d4 VSS 6 dx
+eref 98 0 poly(2) VDD 0 VSS 0 0 0.5 0.5
+g1 98 21 poly(2) 4 3 9 8 0 145u 145u
+rg 21 98 20.2e6   
+cc 21 OUT 1p  		
+d1 21 22 dx
+d2 23 21 dx
+v1 VDD 22 1.37
+v2 23 VSS 1.37
+ecm 24 98 poly(2) IN+ 98 IN- 98 0 0.5 0.5
+r5 24 25  1e6
+r6 25 98 0.73k           
+c1 24 25 0.75p
+isy VDD VSS 18.4u
+gsy VDD VSS poly(1) VDD VSS -3.334e-4 6.667e-5
+ep VDD 39 poly(1) 98 21 0.78925 1  
+en 38 VSS poly(1) 21 98 0.78925 1        
+m15 OUT 39 VDD VDD pox l=1.5u w=4u     
+m16 OUT 38 VSS VSS nox l=1.5u w=4.2u    
+c2 OUT 39 350p		
+c3 out 9 890p
+.model dx d(rs=1 cjo=1p)
+.model nix nmos(vto=.75 kp=205.5u rd=1 rs=1 rg=1 rb=1
++ cgso=4e-12 cgdo=4e-12 cbd=1.5e-12)	 
+.model nox nmos(vto=.75 kp=195u rd=.5 rs=.5 rg=1 rb=1
++ cgso=66.667e-12 cgdo=66.667e-12 cbd=2.34e-13)
+.model pix pmos(vto=-.75 kp=205.5u rd=1 rs=1 rg=1 rb=1
++ cgso=4e-12 cgdo=4e-12 cbd=1.534e-12)	
+.model pox pmos(vto=-.75 kp=195u rd=.5 rs=.5 rg=1 rb=1
++ cgso=66.667e-12 cgdo=66.667e-12 cbd=55.538e-10)
+.ends 

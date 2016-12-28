@@ -1,0 +1,53 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\diskret_op_eas_labor\eingangsdiff.asc
+Q1 C- IN- N003 0 CA3096_pnp
+Q2 C+ IN+ N004 0 CA3096_pnp
+RE1 N002 N003 1.8k
+RE2 N002 N004 1.8k
+Q3 N007 N008 N009 0 CA3046
+Q4 N005 N008 N011 0 CA3046
+Rpos1 N010 N009 {(1-offs)*Roffs}
+RE3 N009 N012 1k
+RE4 N011 N012 1k
+Rpos2 N011 N010 {offs*Roffs}
+XU1 N001 vdc_single V={Vcc}
+XU2 N012 vdc_single V={Vee}
+R3 IN+ 0 100meg
+XU3 N009 N012 jumperConfig close=1 R_open=100meg R_close=1u
+XU4 N010 N012 jumperConfig close=1 R_open=100meg R_close=1u
+XU5 N011 N012 jumperConfig close=1 R_open=100meg R_close=1u
+XU6 N002 N003 jumperConfig close={NoRe} R_open=100meg R_close=1u
+XU7 N002 N004 jumperConfig close={NoRe} R_open=100meg R_close=1u
+XU8 0 0 jumperConfig close={EnMirr} R_open=100meg R_close=1u
+V1 IN+ IN- SINE(0 50m {f0})
+R§idv N006 N005 100e-6
+V2 IN- 0 PULSE(0 {InOffs} 0 {10/f0} 10u {5/f0} {20/f0})
+I1 N001 N002 {I0}
+V3 N013 0 SINE(0 1 {10*f0})
+XU9 N007 N008 mir sw3_mdb_sing Vt=.5 Vh=-.25 Ron=1m Roff=100meg Lser=10n Vser=.0
+V4 mir 0 PULSE(0 1 0 10n 10n {20/f0} {40/f0})
+R§Ic1 C- N007 100e-6
+R§Ic2 C+ N005 100e-6
+.model NPN NPN
+.model PNP PNP
+.lib C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\lib\cmp\standard.bjt
+* PNP-\nDiff. stufe
+* Stromspiegel
+.model npnA npn (Is=9.7e-15 Bf=300)
+.model pnpB pnp (Is=9.7e-15 Bf=300)
+.param pnpdiff=1
++ I0 = 40u
++ Vcc = 10V
++ Vee = -10V
++ Roffs = 1k
++ offs = 0.5
++ f0 = 1k
++ InOffs = 3V
+.tran 0 {40/f0} {1/(10*f0)}
+.param val=0
++ NoRe = 1
++ EnMirr = 1
+.lib EIT_sub/vdc_single.sub
+.lib MDB_sub/jumper_setable.sub
+.lib MDB_sub/switches_mdb.sub
+.backanno
+.end

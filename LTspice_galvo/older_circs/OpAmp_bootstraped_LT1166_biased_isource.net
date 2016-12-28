@@ -1,0 +1,66 @@
+* C:\users\mainster\My Documents\CODES_local\LTSpice_projects\galvoscanner\OpAmp_bootstraped_LT1166_biased_isource.asc
+I1 Vp N003 {Ik}
+I2 N020 Vm {Ik}
+R1 N003 N007 1k
+R6 N015 N020 1k
+D1 outOp N015 1N4148
+D2 N007 outOp 1N4148
+R7 N002 N001 5k
+XU1 N011 N001 Op+ op- outOp level.2 Avol=1Meg GBW=10Meg Slew=10Meg ilimit=25m rail={rail} Vos=0 phimargin=45 en=0 enk=0 in=0 ink=0 Rin=500Meg
+R8 N011 in 1k
+Q3 Vp N006 Op+ 0 2N2222
+Q4 Vm N017 op- 0 2N2907
+R9 Vp N006 {R2}
+R10 N017 Vm {R2}
+R11 outOp N014 {R1}
+R12 N010 outOp {R1}
+D3 N014 N017 1N4148
+D4 N006 N010 1N4148
+C1 N006 N017 100n
+R13 N001 0 10k
+V1 Vm 0 {-Vsup}
+V2 Vp 0 {Vsup}
+V3 in 0 PULSE(-2 2 0 100m 100m 0) AC 1
+XU2 N004 Vin Vout+ N018 N013 N012 N009 N008 LT1166
+C2 N004 0 300p
+R14 N005 N004 1
+M3 Vp N005 N008 N008 IRFP240
+C3 N009 Vout+ 1µ
+C4 Vout+ N012 1µ
+C5 N018 0 300p
+R15 N019 N018 100
+M4 Vm N019 N013 N013 IRFP9240
+R16 N008 Vout+ 0.2
+R17 Vout+ N013 0.2
+R18 N016 N002 2
+R19 Vin outOp 1k
+R20 N008 N009 1k
+R21 N012 N013 1k
+R23 N002 0 0.1
+I3 Vp N004 {Is}
+I4 N018 Vm {Is}
+L1 Vout+ N016 180µ
+.model D D
+.lib C:\Program Files (x86)\LTC_orig\LTspiceIV_4.18\lib\cmp\standard.dio
+.model NPN NPN
+.model PNP PNP
+.lib C:\Program Files (x86)\LTC_orig\LTspiceIV_4.18\lib\cmp\standard.bjt
+.model NMOS NMOS
+.model PMOS PMOS
+.lib C:\Program Files (x86)\LTC_orig\LTspiceIV_4.18\lib\cmp\standard.mos
+.param Vsup=30
+.param Ik=3.9m
+.param R1=10k
+.param R2=20k
+.param rail=0
+.tran 100m startup
+* designfeature By Grayson King and Tim Watkins, Analog Devices Inc\n \nBootstrapping your op amp\nyields wide voltage swings
+* abs(V(Op+)-V(op-))
+* .step param R2 40k 10k 5k
+* .step param rail 0 -5 -1
+.param Is=10m
+* .step param Is 10m 30m 5m
+.lib LTC.lib
+.lib UniversalOpamps2.sub
+.backanno
+.end

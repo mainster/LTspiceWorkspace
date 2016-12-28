@@ -1,0 +1,27 @@
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\praxissem_woche_2014\wanze_107MHz.asc
+
+WARNING: Less than two connections to node NC_01.  This node is used by V2.
+WARNING: Less than two connections to node RB.  This node is used by V:U6:1.
+WARNING: Less than two connections to node RE.  This node is used by V:U7:1.
+WARNING: Less than two connections to node N007.  This node is used by V:U8:1.
+Direct Newton iteration for .op point succeeded.
+Heightened Def Con from 1.90472e-006 to 1.90472e-006
+
+Date: Tue Dec 02 05:31:18 2014
+Total elapsed time: 19.016 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 788836
+traniter = 788818
+tranpoints = 365579
+accept = 249693
+rejected = 115887
+matrix size = 39
+fillins = 26
+solver = Normal
+Matrix Compiler1: 3.76 KB object code size  1.5/1.0/[0.6]
+Matrix Compiler2: 3.30 KB object code size  1.1/1.1/[0.7]
+
+

@@ -1,0 +1,237 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\galvoscanner\aktuell\bauteile_bestimmt\sysCompl_endstufe_FET_v21_transducer_v20_netlist_neu_aufgebaut.asc
+XU1 +30V vdc_single V=30V
+XU2 -30V vdc_single V=-30V
+XU3 +12V vdc_single V=+12V
+XU4 -12V vdc_single V=-12V
+XU5 -5V vdc_single V=-5V
+XU6 Aref_2 vdc_single V={Vref/2}
+XU7 Aref vdc_single V={Vref}
+XU8 +5V vdc_single V=+5V
+V1 stim 0 SINE(0 2 250 0) AC 1
+R1 N027 shunt 3.54
+L1 load N027 {Lc}
+R2 N020 N026 100
+C1 N026 0 470n
+R3 0 N019 3k3
+R4 0 hv- 5k1
+Q1 +30V N008 N011 0 FMMT624
+Q2 -30V N032 N031 0 FMMT722
+R5 N014 load .2
+R6 N025 load .2
+Rsh shunt 0 .01
+R8 mon N034 680
+R9 N034 shunt 22
+R10 fmon N036 10
+R11 ym mon 470
+R13 hv- load {Rf}
+R14 N008 N013 {Rdi}
+R15 N030 N032 {Rdi}
+I1 N032 -30V {Iq}
+D1 N013 hvy 1N4148
+D2 hvy N030 1N4148
+R16 stim N023 3k3
+R17 N023 N022 3k3
+R18 N019 0 3k3
+XU9 ym N036 +5V -5V fmon +5V LTC2050
+XU10 N040 N034 +5V -5V mon +5V LTC2050
+C4 0 0 {1/(2*pi*470*fg_mon)}
+R19 N040 0 170
+XU11 0 hv- hv+ -30V NC_01 P001 +30V +30V LTC6090
+XU13 N044 vdc_single V=5V
+XU14 N043 vdc_single V=-5V
+R21 N047 N044 1k
+R22 v1v N047 1k
+R23 N046 v1v 1k
+R24 N045 N046 1k
+R25 N043 N045 1k
+R26 N011 N014 {Rbias}
+R27 N025 N031 {Rbias}
+V2 g2 0 SINE(0 1 100 0 0 0 4) AC 1
+R29 ue1 N003 {R1}
+R30 ue2 N009 {R3}
+R31 N009 0 {R4}
+R32 N003 pwrCmd {R2}
+R33 ue1 N006 22k
+R34 N006 0 22k
+V3 DacEx 0 {digOffs}
+R35 Aref N002 {R4b}
+R36 LTo N002 {R9}
+R37 N002 0 {R10}
+XU15 N042 N041 +5V +5V pump pump +5V N038 0 LTC6360
+C5 0 pump 1µ
+C6 pump 0 .2µ
+R38 N041 posADC 10
+C7 posADC 0 330p
+C8 0 +5V 0.1µ
+C9 0 +5V 10µ
+XU16 cRf_sar vdc_single V={Rf13}
+XU17 cRb vdc_single V={Rb}
+XU18 cRg vdc_single V={Rg}
+R39 N041 N042 {Rf13}
+R40 posDemod N042 {Rg}
+R41 refADC N038 {Rb}
+XU19 N002 N006 +12V -12V ue1 LT1057
+XU20 N009 N003 +12V -12V pwrCmd LT1057
+XU21 N012 N010 +12V -12V N010 LT1057
+C10 N003 pwrCmd 1p
+XU22 N033 0 refADC N039 LT6650
+R42 refADC N039 {Rf26}
+R43 N039 0 20k
+R44 +5V N033 1k
+C11 0 N033 1µ
+XU23 +12V -12V N012 pot R=100k T=.5
+R45 DacEx N004 1k
+C12 N004 0 1n
+XU24 N004 LTo +12V -12V LTo LT1057
+R46 posADC ADC_quant 100
+C13 ADC_quant 0 1p
+V4 g1 0 0
+C14 N042 N041 {Csar}
+R47 N028 y_rFil 1
+R52 ADC_quant 0 80k
+R53 ue2 y_rFil 1µ
+R54 y_rFil N015 5k36
+R55 N015 N017 9k09
+C19 N015 rFil1 1n5
+C20 N017 0 1n
+R56 rFil1 N016 2k67
+R57 N016 N018 1k33
+C21 N016 rFil2 6n8
+C22 N018 0 1n
+XU25 N017 rFil1 +12V -12V rFil1 LT1057
+XU26 N018 rFil2 +12V -12V rFil2 LT1057
+XU27 cRf_ref vdc_single V={Rf26}
+B1 N028 0 V=0
+R58 0 Aref_2 {Rb}
+XU32 vKp vdc_single V={Kp}
+C24 hv- P002 {Clag}
+R62 0 P002 120
+MßQ5 +30V N011 N014 N014 IRFP240
+MßQ6 -30V N031 N025 N025 IRFP9240
+C26 N023 P003 {Clead}
+R7 hvy P001 22
+R28 N032 -30V 100k
+C2 N008 hvy 2p2
+C3 hvy N032 2p2
+C15 shunt N035 47n
+R12 N035 N034 10
+C16 load hv- 5p
+R48 P003 N022 10m
+XU29 N019 N023 +12V -12V N022 LT1028
+I2 +30V N008 {Iq}
+R20 +30V N008 100k
+XU12 N022 N024 +12V -12V hv+ LT1028
+R49 hv+ N024 {Kp2*4k7}
+R50 N024 0 4k7
+.model D D
+.lib C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\lib\cmp\standard.dio
+.model NPN NPN
+.model PNP PNP
+.lib C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\lib\cmp\standard.bjt
+.model NMOS NMOS
+.model PMOS PMOS
+.lib C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\lib\cmp\standard.mos
+;.tran 0 100m 1m
+;.options plotwinsize=0
+;.tran 0 2.8m 1.9m 1e-7
+.ac oct 100 10 20meg
+* .option noopiter\n.options plotwinsize=0\n.four 1k 10 I(L1)
+* .dc V1 -1.5 1.5 {.2/1k}
+; ---------------------
+;   Power amp
+; ---------------------
+.param Iq = 2m
+.param bias_be1 = 100
+.param bias_b1 = 270
+;;.param Lcoil = 170u
+; ---------------------
+;   Compensator
+; ---------------------
+.param Kp = 5
+.param Rf=(kp-1)*5k1
+; ---------------------
+;   SOURCES
+; ---------------------
+.param Vsup = 50V
+;(Aref)
+.param Vref = 2.5V
+* Parameter\nPwr PCB
+* REF2050
+.include LM358.lib
+.include OPA404.LIB
+* Include
+.param fg_mon=250k
+* STM32f429i
+; ---------------------
+; Power Command
+; ---------------------
+; V(pwrCmd):  
+; -2.5V ... 2.5V
+.param R1=60k
+.param R2=120k
+.param R3=60k
+.param R4=120k
+; ---------------------
+; PosDemod
+; ---------------------
+.param dVpos = 20V
+.param dVan = 2.5V
+.param VaMin = 0V 
+.param Kpd = dVan / dVpos
+* SAR ADC driver\nAng. position
+* Lastwiderstand \nmuss >15k sein
+* Digital offset for DAC bias\nreconstruction filter
+* DAC levelshifter \nbias circuit
+* V=(Aref/R4b+V(DAC_offs)/R9) * 1/(1/R4b+1/R9+1/R10)
+.param refAdcSet = 1.3V
+.param x=refAdcSet
+.param Rf26 = {(x/0.4V-1)*20k}
+.param Rg = 5k
+.param Rf13 = Rg*Kpd
+.param Rb = {Rf13*Rg/(Rf13+Rg)}
+.param Csar = 10peltaVpos
+* "Solving SPICE Convergence Problems"\nhttp://www.intusoft.com/articles/converg.pdf\n  (1)  opamp OPA404 (aus OPA404.lib) entfernt\n  (2)  M1 Power NFET, keyword "off" added\n.... Ok war wieder mal kleinscheiﬂ, YS2 hat gefloated
+* LTC2050HV\n-------------\n- Vs=+-5.5V@0.8mA\n- R2R out, Zero- Drift\n- 3MHz - 2V/us\n- Av_max=130dB\n- +-500nV...+-3uV - 50nV/∞C\n- Electronic Scales\n- High Resol. Data Acquisition\n- DC Accurate RC Active Filters\n- Low Side Current Sense
+* {(VrefSet/0.4V-1)*20k}
+* DAC reconstruction filter (rFil)
+* ; ti filter bench\n; ******  Antialias posDemod ADC  ******\n; Lowpass, Sallen Key, Gaussian to 6 dB\n; fc = 20kHz   (Cut-off)\n; fs = 100kHz (Stopband)\n; Asb = -45dB (Verst‰rkung bei fs)
+* .param R1a=5.36k  R2a=9.09k  C1a=910p  C2a=1.5n\n.param R1b=2.67k R2b=1.33k  C1b=910p  C2b=6.8n
+; ---------------------
+;  Digital offset
+; ---------------------
+.param digOffs = 1.5V
+.param R9 = 27k
+.param R4b = 3910
+.param R10 = 1220
+* Parameter Signal PCB
+* .tran 10m
+* .net I(R38) V2
+* .option baudrate=10k
+.param Rbias = 100
+.param Rdi = 200
+* laplace=(1.19e8*s+9.0*s**2+2.0e13)/(1.1e7*s+9.0*s**2+2.0e12)
+.param Lc=170u
+.param Clag=10n
+.param Clead=1/(2*pi*3k3*1meg)
+* PULSE(0 {Vref/2} {4/100} .5u .5u .02 .04)
+* V=0.5*(sgn(TIME-50m)+1)
+* Lag
+* Lead
+* DoesYourOpAmpOscillate_LT\nhttp://cds.linear.com/docs/en/application-note/an148fa.pdf\n \nThe most common way to prevent load capacitance from\ncausing oscillation is to simply place a small-value resistor\nin series with it, after the feedback connection. Values of\n10O to 50O will limit the phase lag capacitive loads can\ninduce, as well as isolate the amplifier from low capacitive\nimpedances at very high speed
+* damping
+* Snubber
+* .step temp list 20 50 80
+* .step param ccc list 10p 100p 470p 1n 5n 10n 25n 47n
+* poti
+* poti
+* LTC1468
+* .step param Clead list 1f 1p 10p 100p
+.param Kp2 = 25
+.lib ..\sym\EXTRA\Misc\pot.lib
+.lib EIT_sub\vdc_single.sub
+.lib LTC.lib
+.lib LTC1.lib
+.lib LTC5.lib
+.lib LTC6360.sub
+.backanno
+.end

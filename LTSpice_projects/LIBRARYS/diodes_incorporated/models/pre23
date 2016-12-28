@@ -1,0 +1,3 @@
+*SRC=ES3B;DI_ES3B;Diodes;Si;  100V  3.00A  25.0ns   Diodes Inc. 
+.MODEL DI_ES3B D  ( IS=7.27p RS=22.4m BV=100 IBV=10.0u
++ CJO=83.2p  M=0.333 N=0.700 TT=36.0n )

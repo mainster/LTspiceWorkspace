@@ -1,0 +1,54 @@
+<HTML>
+  <HEAD>
+    <TITLE>Prinzip.sch</TITLE>
+  </HEAD>
+  <BODY BGCOLOR="#F0F0F0">
+    <H1 ALIGN=center><B>Prinzip.sch</B></H1>
+    <P>
+Prinzip und Verhalten eines komplement&auml;ren Impedanzwandlers
+    </P>
+    <P>
+      Prinzipielles Verhalten eines komplement&auml;ren Impedanzwandlers bei kapazitiver
+      Last im Vergleich zu einem einfachen Impedanzwandler.
+    </P>
+    <P>
+      Beim komplement&auml;ren Impedanzwandler (T1...T4) kann der Ausgangsstrom in beiden
+      Richtungen gro&szlig;e Werte annehmen; dadurch wird die Kapazit&auml;t C1 bei positiven
+      und negativen Flanken schnell umgeladen. Beim einfachen Impedanzwandler (T5)
+      ist der Ausgangsstrom bei negativen Flanken auf den Strom der Stromquelle (T8)
+      begrenzt; daraus folgt:
+    </P>
+    <P>
+       dUa/dt = -I(T8)/C2 = -100uA/10nF = -10V/ms
+    </P>
+    <P>
+      F&uuml;r die negative Flanke mit einer Amplitude von 4V ben&ouml;tigt der einfache
+      Imdedanzwandler demnach eine &Uuml;bergangszeit von 0,4ms.
+    </P>
+    <P><TABLE BORDER=2 BGCOLOR="#F0F0F0">
+      <TR>
+        <TD><B>Analysen</B></TD>
+        <TD><B>Einstellungen</B></TD>
+        <TD><B>Ergebnisanzeigen</B></TD>
+      </TR>
+      <TR>
+        <TD>TRAN</TD>
+        <TD>t = 0 ... 2.5ms</TD>
+        <TD>Sprungantwort</TD>
+      </TR>
+    </TABLE></P>
+    <P><TABLE BORDER=0 BGCOLOR="#F0F0F0" WIDTH=100%>
+      <TR>
+        <TH WIDTH=20% ALIGN=left>
+          <A HREF="ueber.htm" TARGET="uebersicht"><B>zur&uuml;ck</B></A>
+        </TH>
+        <TH WIDTH=20% ALIGN=left>
+          <A HREF="../../../ueber.htm" TARGET="uebersicht"><B>&Uuml;bersicht</B></A>
+        </TH>
+        <TH WIDTH=60% ALIGN=left>
+          <A HREF="Prinzip.tse"><B>Simulation starten</B></A>
+        </TH>
+      </TR>
+    </TABLE></P>
+  </BODY>
+</HTML>

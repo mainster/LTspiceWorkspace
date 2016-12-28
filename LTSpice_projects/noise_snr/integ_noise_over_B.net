@@ -1,0 +1,20 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\noise_snr\integ_noise_over_B.asc
+R1 e a1 1k
+R2 a1 0 1k
+C1 a1 0 {C}
+V1 e 0 SINE(0 1 {f0})
+R3 e a2 .5k
+C2 a2 0 {C}
+XU1 a1 a jumperConfig cl={sw} R_open=100meg R_close=1u
+XU2 a2 a jumperConfig cl={1-sw} R_open=100meg R_close=1u
+.noise V(a) V1 dec 100 1 100k
+.meas noise noiserms integ V(onoise) from 1 to {f0}
+.param Temp = 20
++ sw = 1
++ C =100n
++ f0 = 10k 
+.step param C 100n 200n 20n
+.step param sw list 1 0
+.lib MDB_sub/jumper_setable.sub
+.backanno
+.end

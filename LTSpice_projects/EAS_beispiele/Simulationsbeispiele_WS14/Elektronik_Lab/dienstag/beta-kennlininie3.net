@@ -1,0 +1,12 @@
+* Z:\home\koblitz\Simulationsbeispiele_WS14\Elektronik_Lab\dienstag\beta-kennlininie3.asc
+Q1 N002 N001 0 0 2N4124
+V1 N003 0 5
+IC 0 N002 1m
+G1 0 N001 N002 N003 1
+.model NPN NPN
+.model PNP PNP
+.lib Z:\home\koblitz\LT-Spice\lib\cmp\standard.bjt
+.dc dec Ic 100n 100m 20
+.step temp list 0 50 100
+.backanno
+.end

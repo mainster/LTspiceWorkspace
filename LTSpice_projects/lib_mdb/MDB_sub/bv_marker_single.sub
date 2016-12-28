@@ -1,0 +1,7 @@
+* einseitige bv spannungsquelle (andere Seite nach Masse)
+*
+
+.subckt bvmark 1
+B1 1 0 V={val}
+.param val=rand(time*1k)
+.ends

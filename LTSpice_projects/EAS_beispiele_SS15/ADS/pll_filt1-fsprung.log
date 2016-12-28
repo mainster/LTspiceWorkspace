@@ -1,0 +1,29 @@
+Circuit: * Z:\home\koblitz\Simulationsbeispiele_SS15\ADS\pll_filt1-fsprung.asc
+
+WARNING: Less than two connections to node NC_01.  This node is used by A:U2:1.
+Per .tran options, skipping operating point for transient analysis.
+Ignoring empty pin current: Ix(u1:1)
+Ignoring empty pin current: Ix(u1:2)
+Ignoring empty pin current: Ix(u4:in)
+Ignoring empty pin current: Ix(u5:in)
+Ignoring empty pin current: Ix(u6:inp)
+Ignoring empty pin current: Ix(u6:inm)
+
+Date: Tue Apr 21 11:23:50 2015
+Total elapsed time: 4.328 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 291319
+traniter = 291319
+tranpoints = 97902
+accept = 95738
+rejected = 2164
+matrix size = 34
+fillins = 3
+solver = Normal
+Matrix Compiler1: 916 Bytes object code size  3.3/2.9/[2.1]
+Matrix Compiler2: 1,78 KB object code size  3.0/3.6/[2.3]
+
+

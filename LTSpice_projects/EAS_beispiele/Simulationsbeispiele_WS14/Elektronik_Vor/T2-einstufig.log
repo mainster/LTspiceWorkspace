@@ -1,0 +1,53 @@
+Circuit: * Z:\home\koblitz\Simulationsbeispiele_WS14\Elektronik_Vor\T2-einstufig.asc
+
+Direct Newton iteration for .op point succeeded.
+.step amp=0.1
+.step amp=0.11
+.step amp=0.12
+.step amp=0.13
+.step amp=0.14
+.step amp=0.15
+.step amp=0.16
+.step amp=0.17
+.step amp=0.18
+.step amp=0.19
+.step amp=0.2
+.step amp=0.21
+.step amp=0.22
+.step amp=0.23
+.step amp=0.24
+.step amp=0.25
+.step amp=0.26
+.step amp=0.27
+.step amp=0.28
+.step amp=0.29
+.step amp=0.3
+.step amp=0.31
+.step amp=0.32
+.step amp=0.33
+.step amp=0.34
+.step amp=0.35
+.step amp=0.36
+.step amp=0.37
+.step amp=0.38
+.step amp=0.39
+.step amp=0.4
+
+Date: Mon Dec 15 12:13:38 2014
+Total elapsed time: 3.944 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 2143
+traniter = 2136
+tranpoints = 1046
+accept = 1045
+rejected = 1
+matrix size = 10
+fillins = 0
+solver = Normal
+Matrix Compiler1: 444 Bytes object code size  2.4/2.5/[2.1]
+Matrix Compiler2: off  [2.1]/2.6/2.4
+
+

@@ -1,0 +1,58 @@
+У меня установлен Win XP и нет таких проблем как у вас c Win 7.
+ У меня они получились из-за того,
+что Windows сильно увеличился в размерах и на диске C: осталось совсем мало места.
+ Теперь я опишу, что я сделал. 
+1. Я сделал копию моих файлов. 
+2. Я сделал деинсталляцию LTspice.
+3. Создал папку "Program File" в корне диска D:. Имя папки может быть другим!
+4. Установил LTspice в эту новую папку.
+5. Открыл папку "D:\Program File\LTC\". В ней находится только одна папка "LtspiceIV".
+6. Распаковал упакованную папку в LTC.
+
+  Теперь ответы на ваши вопросы и не только.
+ Я храню свои проекты в папке "D\Program File\LTC\LtspiceIV\",
+а также некоторых новых папках.
+ Например я храню схемы драйверов для лазеров в папке "D\Program File\LTC\LtspiceIV\Drajver\.
+ Для обмена файлами я сделал папку  "D:\musor\".
+При создании проекта я в этой папке создаю новую папку с названием проекта.
+Переношу свою схему в эту новую папку, а также все нестандартные символы и библиотеки.
+У меня в символах указаны имена библиотеки и их адрес. Поэтому не надо пользоваться директивой
+".lib" и ".inc".
+Необходимо открыть перенесённые символы и оставить в них только имя библиотеки (без адреса).
+Открыть схему и удалить из неё все нестандартные символы и заменить их на откорректированные.
+Ставлю в схему нестандартные модели транзисторов и диодов из файлов "Standard.xxx".
+Упаковать папку проекта. Полученный Zip файл можно посылать в друзьям.
+Если вы хотите передать схему 
+друзьям? имеющим такую же (мою) папку, то достаточно передать только схему без символов и библиотек.
+ Я регулярно вношу изменения по мере необходимости. Исправляю ошибки, добавляю модели и символы. 
+
+
+I have installed Win XP and no such problems as you have c Win 7.
+I have they turned out to be due to the fact
+Windows greatly increased in size and on the C drive: there is little space.
+Now I will describe what I did.
+1. I did copy my files.
+2. I did uninstall LTspice.
+3. Created a folder "Program File" in the root of drive D:. The name of the folder may be different!
+4. Installed LTspice in this new folder.
+5. Opened the folder "D:\Program File\LTC\". There is only one folder "LtspiceIV".
+6. Unzipped the packaged folder in LTC.
+
+Now the answers to your questions and not only.
+I keep their projects in a folder "D\Program File\LTC\LtspiceIV\"
+as well as some new folders.
+For example, I store the schema drivers for lasers in the folder "D\Program File\LTC\LtspiceIV\Drajver\.
+For file sharing, I made a folder "D:\musor\".
+When you create a project, I create a new folder in this folder with the name of the project.
+Elevate your schema in this new folder as well as all the non-standard symbols and libraries.
+I have the symbols library names and their address. Therefore it is not necessary to use the directive
+".lib" and ".inc".
+You must open the experienced symbols and leave the name of the library (no address).
+Open the diagram and remove from it all non-standard symbols and replace them with the revised.
+Put in scheme non-standard models of transistors and diodes of the files "Standard.xxx".
+Repack project folder. The resulting Zip file can be sent to friends.
+ If you want to transfer the schema
+friends have the same (my) folder, you only need to pass only a schema with no symbols and libraries.
+I regularly make changes as needed. Correct mistakes, add models and symbols.
+
+

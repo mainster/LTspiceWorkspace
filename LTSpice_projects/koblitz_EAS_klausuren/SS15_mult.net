@@ -1,0 +1,38 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\koblitz_EAS_klausuren\SS15_mult.asc
+R1 Vpl N002 {R2}
+R2 Vpl N003 {R3}
+R3 N004 V1 {R1}
+V1 V1 0 0
+R4 N007 0 1
+XU1 Vpl vdc_single V={Vplus}
+Q1 N004 N004 N002 0 PNPx
+Q2 N007 N004 N003 0 PNPx
+QA N001 N001 N005 0 NPNx
+QB N001 N001 N006 0 NPNx
+R5 N005 VA {Ra}
+R6 N006 0 {Rb}
+VA VA 0 0
+R7 0 NC_01 {R4}
+I2 Vpl N001 2m
+.model NPN NPN
+.model PNP PNP
+.lib C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\lib\cmp\standard.bjt
+.model NPNx NPN (Is = {Ic0/exp(Veb0/26m)} Bf={betaN})
+.model PNPx PNP (Is = {Ic0/exp(Veb0/26m)} Bf={betaP})
+.dc VA -2.5 2.5 .05
+.param mul=1
++ Ic0 = 1000uA
++ betaN = 200
++ betaP = 200
++ Veb0 = 0.65V
++ Vplus = 5V
++ R1 = 4k7
++ R2 = 300
++ R3 = {R2}
+.param VAm=1
++ Ra = 1k
++ Rb = 1k
++ R4 = 1.675k
+.lib EIT_sub/vdc_single.sub
+.backanno
+.end

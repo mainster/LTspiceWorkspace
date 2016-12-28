@@ -1,0 +1,97 @@
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\galvoscanner\aktuell\LM3886_v4.asc
+
+R18: both pins shorted together -- ignoring.
+WARNING: Less than two connections to node VLAP.  This node is used by E1.
+WARNING: Less than two connections to node NC_01.  This node is used by R29.
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+vernier = 0.5
+Gmin = 1.86414
+vernier = 0.25
+vernier = 0.125
+vernier = 0.0625
+vernier = 0.03125
+vernier = 0.015625
+Gmin = 2.0809
+vernier = 0.0078125
+vernier = 0.00390625
+vernier = 0.00195313
+vernier = 0.000976563
+Gmin = 2.07583
+vernier = 0.000488281
+Gmin = 0
+Gmin stepping failed
+
+Starting source stepping with srcstepmethod=0
+Source Step = 3.0303%
+Source Step = 12.1212%
+Source Step = 14.6307%
+Source Step = 15.1042%
+Source Step = 15.5777%
+Source Step = 16.0511%
+Source Step = 16.5246%
+vernier = 0.0234375
+Source Step = 17.0928%
+Source Step = 17.803%
+Source Step = 18.5133%
+Source Step = 19.2235%
+Source Step = 19.9337%
+vernier = 0.0351563
+Source Step = 20.7505%
+Source Step = 21.8158%
+Source Step = 22.8812%
+Source Step = 23.9465%
+Source Step = 25.0118%
+vernier = 0.0527344
+Source Step = 26.1837%
+Source Step = 27.7817%
+Source Step = 29.3797%
+Source Step = 30.9777%
+Source Step = 32.5758%
+vernier = 0.0791016
+Source Step = 34.2537%
+Source Step = 36.6507%
+Source Step = 39.0477%
+Source Step = 41.4447%
+Source Step = 43.8417%
+Source Step = 46.2388%
+vernier = 0.118652
+Source Step = 49.8343%
+Source Step = 53.4298%
+Source Step = 57.0253%
+Source Step = 60.6209%
+Source Step = 64.2164%
+vernier = 0.177979
+Source Step = 69.4299%
+Source Step = 74.8232%
+Source Step = 80.2165%
+Source Step = 85.6098%
+Source Step = 91.003%
+vernier = 0.266968
+Source Step = 98.5537%
+Source stepping succeeded in finding the operating point.
+
+.step cpeak=1e-025
+.step cpeak=1e-011
+.step cpeak=1e-010
+.step cpeak=5e-010
+
+Date: Sun Apr 26 04:19:24 2015
+Total elapsed time: 5.875 seconds.
+
+tnom = 27
+temp = 27
+method = trap
+totiter = 3476
+traniter = 0
+tranpoints = 0
+accept = 0
+rejected = 0
+matrix size = 214
+fillins = 481
+solver = Normal
+Matrix Compiler1:    2328 opcodes
+Matrix Compiler2: 28.0 KB object code size  7.0/5.8/[2.8]
+
+

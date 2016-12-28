@@ -1,0 +1,21 @@
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\steffi\26-10-2014\ALDO_LED_Driver_ac.asc
+
+Direct Newton iteration for .op point succeeded.
+
+Date: Thu Jan 22 08:00:05 2015
+Total elapsed time: 0.083 seconds.
+
+tnom = 27
+temp = 27
+method = trap
+totiter = 14
+traniter = 0
+tranpoints = 0
+accept = 0
+rejected = 0
+matrix size = 18
+fillins = 13
+solver = Normal
+Matrix Compiler1:      80 opcodes
+Matrix Compiler2: 1,76 KB object code size
+

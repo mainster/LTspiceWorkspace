@@ -1,0 +1,28 @@
+Circuit: * Z:\home\koblitz\Simulationsbeispiele_SS15\Elektronik_lab\dienstag\diff_a4-mult.asc
+
+Direct Newton iteration for .op point succeeded.
+.step i1=0.0001
+.step i1=0.0002
+.step i1=0.0004
+.step i1=0.0006
+.step i1=0.0008
+.step i1=0.001
+
+Date: Tue Apr 28 14:59:07 2015
+Total elapsed time: 0.412 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 2090
+traniter = 2082
+tranpoints = 1042
+accept = 1042
+rejected = 0
+matrix size = 13
+fillins = 0
+solver = Normal
+Matrix Compiler1: 674 Bytes object code size  2.1/1.8/[1.7]
+Matrix Compiler2:      80 opcodes  1.6/[1.7]/2.3
+
+

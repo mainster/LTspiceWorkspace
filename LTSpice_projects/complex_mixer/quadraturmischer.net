@@ -1,0 +1,32 @@
+* Z:\media\storage\CODES_ln\LTSpice_projects\complex_mixer\quadraturmischer.asc
+A1 N001 0 0 0 0 cos x 0 MODULATOR space={Fmin} mark={Fmax}
+V1 N001 0 PULSE(0 1 0 {tb})
+B1 X1 0 V=V(x)*V(cos)
+V2 sin 0 SINE(0 1 {2*pi*F0})
+E1 Xh 0 x 0 laplace=(1-s/{2*pi*f0h})/(1+s/{2*pi*f0h})
+V3 cos 0 SINE(0 1 {2*pi*F0} 0 0 270)
+B2 X2 0 V=V(x)*V(sin)
+B3 Xh2 0 V=V(Xh)*V(sin)
+B4 Xh1 0 V=V(Xh)*V(cos)
+B5 I 0 V=V(X1)+V(Xh2)
+B6 Q 0 V=V(Xh1)-V(X2)
+B7 fx 0 V=((fmax-fmin)/tb)*time+fmin
+.param Bw=5k
+.param fc=10k
+.param Fmin={fc-Bw/2}
+.param Fmax={fc+Bw/2}
+.param F0={500k/(2*pi)}
+.param tb = 5m
+.tran 0 {tb} 0
+.options plotwinsize=0
+;.param f0h = {fc*f0h_fact}
+.param f0h = 16.25k
+.param f0h_fact = 1
+.param w0h = {2*pi*f0h}
+.param eps=0.1
+* .step param FREQ list 1 2 3 4\n.param f0h=table (FREQ,1,Fmin,2,Fc,3,(Fc+0.25*Bw),4,Fmax)
+* .step param eps list 0.1 1 2 5
+* .step param f0h list 12.5k 13.75k 15k 16.25k
+* .step param f0h list 7.5k 10k 11.25k 12.5k\n.param Bw=5k\n.param fc=10k\n.param Fmin={fc-Bw/2}\n.param Fmax={fc+Bw/2}\n.param F0={500k/(2*pi)}\n.param tb = 25m
+.backanno
+.end

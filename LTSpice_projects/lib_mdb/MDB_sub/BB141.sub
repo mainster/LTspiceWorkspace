@@ -1,0 +1,23 @@
+************************
+* M. Del Basso
+* 03-12-2014
+************************
+* Varactor- Diode nxp
+* http://www.nxp.com/documents/spice_model/BB141.prm
+* Fit-Range: 0-3.5V
+*
+* nxp:		BB141
+* infineon:	BBY51
+************************
+* http://www.nxp.com/wcm_documents/products/related/philips_rf_manual_7th_edition.pdf
+************************
+.SUBCKT BB141 1 2
+D1 1 2  BB141_mod
+
+.model BB141_mod D ( 
++ RS=.4
++ CJO=6.79E-12
++ M=0.65
++ VJ=1.03)
+
+.end

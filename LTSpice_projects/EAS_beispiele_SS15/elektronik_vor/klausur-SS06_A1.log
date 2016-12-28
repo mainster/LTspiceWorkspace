@@ -1,0 +1,43 @@
+Stray ".ends" card: .ends
+Stray ".ends" card: .ends
+Stray ".ends" card: .ends
+Circuit: * Z:\home\koblitz\Simulationsbeispiele_SS15\elektronik_vor\klausur-SS06_A1.asc
+
+WARNING: Less than two connections to node OUT.  This node is used by E1.
+Direct Newton iteration for .op point succeeded.
+Fourier components of V(c2,c1)
+DC component:-0.00177151
+
+Harmonic	Frequency	 Fourier 	Normalized	 Phase  	Normalized
+ Number 	  [Hz]   	Component	 Component	[degree]	Phase [deg]
+    1   	1.000e+03	8.971e-01	1.000e+00	   -0.00°	    0.00°
+    2   	2.000e+03	2.824e-03	3.148e-03	   90.03°	   90.03°
+    3   	3.000e+03	2.076e-02	2.314e-02	    0.06°	    0.06°
+    4   	4.000e+03	1.651e-03	1.841e-03	  -89.79°	  -89.79°
+    5   	5.000e+03	3.621e-03	4.036e-03	  179.67°	  179.67°
+    6   	6.000e+03	5.967e-04	6.652e-04	   88.88°	   88.88°
+    7   	7.000e+03	1.263e-03	1.408e-03	   -0.83°	   -0.83°
+    8   	8.000e+03	2.677e-05	2.985e-05	 -105.50°	 -105.49°
+    9   	9.000e+03	1.083e-04	1.207e-04	 -167.26°	 -167.26°
+Total Harmonic Distortion: 2.382430%
+
+
+
+Date: Wed Jun 24 08:43:11 2015
+Total elapsed time: 0.192 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 2089
+traniter = 2082
+tranpoints = 1042
+accept = 1042
+rejected = 0
+matrix size = 16
+fillins = 0
+solver = Normal
+Matrix Compiler1: 868 Bytes object code size  2.8/2.5/[1.8]
+Matrix Compiler2: off  [2.3]/2.9/2.7
+
+

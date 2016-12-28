@@ -1,0 +1,21 @@
+* Z:\home\koblitz\Simulationsbeispiele_WS14\Elektronik_Vor\kollektorschaltung_skript.asc
+Q1 plus bas em 0 npn_e
+RE em 0 5.6k
+RB plus bas 470k
+XU1 plus vdc_single V=10V
+C1 N002 bas 0.1µ
+R1 N001 N002 100k
+V1 N001 0 SINE(0 1 1k) AC 1
+C2 em out 10µ
+RL out 0 10k
+RB1 bas 0 680k
+.model NPN NPN
+.model PNP PNP
+.lib Z:\home\koblitz\LT-Spice\lib\cmp\standard.bjt
+;op
+.ac oct 10 1 10meg
+.model npn_e npn (bf=200 VAF=80 IS=1.e-14)
+;tran 2m
+.lib EIT_sub\vdc_single.sub
+.backanno
+.end

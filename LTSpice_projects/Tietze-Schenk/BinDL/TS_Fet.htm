@@ -1,0 +1,176 @@
+<HTML>
+  <HEAD>
+    <TITLE>Tietze/Schenk - Bibliothek TS_Fet</TITLE>
+  </HEAD>
+  <BODY BGCOLOR="#FFFFFF">
+  
+  <H1>Bibliothek TS_Fet</H1>
+  <P>
+    <B>Wichtiger Hinweis:</B> Dieses Dokument beschreibt die Parameter der Elemente.
+    Die Parameter setzen sich aus prim&auml;ren Parametern und sekund&auml;ren
+    Parametern zusammen. Die prim&auml;ren Parameter werden im Schaltplan angezeigt
+    und können durch Doppelklick auf den Wert ge&auml;ndert werden. Die sekund&auml;ren
+    Parameter werden &uuml;ber den Men&uuml;punkt <B>Edit/Attributes</B> oder durch einen
+    Doppelklick auf das Schaltsymbol aufgerufen.
+  </P>
+  <TABLE BORDER="1"><A NAME="top"></A>
+    <TR><TH><B>Name</B></TH><TH><B>Beschreibung</B></TH></TR>
+    <TR><TD><A HREF="#nmosfet"><B>Nmosfet</B></A></TD><TD>Allgemeiner n-Kanal-MOSFET</TD></TR>
+    <TR><TD><A HREF="#pmosfet"><B>Pmosfet</B></A></TD><TD>Allgemeiner p-Kanal-MOSFET</TD></TR>
+    <TR><TD><A HREF="#bf245b"><B>BF245B</B></A></TD><TD>n-Kanal-Kleinsignal-JFET</TD></TR>
+    <TR><TD><A HREF="#bss101"><B>BSS101</B></A></TD><TD>Selbstsperrender n-Kanal-MOSFET</TD></TR>
+    <TR><TD><A HREF="#bss129"><B>BSS129</B></A></TD><TD>Selbstleitender n-Kanal-MOSFET</TD></TR>
+    <TR><TD><A HREF="#bss92"><B>BSS92</B></A></TD><TD>Selbstsperrender p-Kanal-MOSFET</TD></TR>
+    <TR><TD><A HREF="#bsd215"><B>BSD215</B></A></TD><TD>Selbstsperrender n-Kanal-D-MOSFET</TD></TR>
+    <TR><TD><A HREF="#irf142"><B>IRF142</B></A></TD><TD>Selbstsperrender n-Kanal-Leistungs-D-MOSFET</TD></TR>
+    <TR><TD><A HREF="#irf9142"><B>IRF9142</B></A></TD><TD>Selbstsperrender p-Kanal-Leistungs-D-MOSFET</TD></TR>
+    <TR><TD><A HREF="#nmesfet"><B>n-Mesfet</B></A></TD><TD>Skalierbarer n-Kanal-MESFET</TD></TR>
+  </TABLE>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="nmosfet"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>Nmosfet</B></TD><TD>Allgemeiner n-Kanal-MOSFET</TD></TR>
+      <TR><TD><IMG SRC="data/fet_nmosfet.png" ALT="Figure"></TD>
+      <TD>
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">K</TD><TD>=</TD>
+              <TD>Steilheitskoeffizient in Ampere/Volt<SUP>2</SUP>, vorbelegt mit 4 mA/V<SUP>2</SUP></TD></TR>
+          <TR><TD ALIGN="right">Uth</TD><TD>=</TD><TD>Schwellenspannung in Volt, vorbelegt mit 1 V</TD></TR>
+          <TR><TD ALIGN="right">UA</TD><TD>=</TD><TD>Early-Spannung in Volt, vorbelegt mit 50 V</TD></TR>
+          <TR><TD ALIGN="right">Uinv</TD><TD>=</TD><TD>Inversionsspannung in Volt, vorbelegt mit 0,6 V</TD></TR>
+          <TR><TD ALIGN="right">gamma</TD><TD>=</TD>
+              <TD>Substrat-Steuerfaktor in
+                  &radic;<SPAN STYLE="text-decoration: overline;">Volt</SPAN>, vorbelegt mit 0,5
+                  &radic;<SPAN STYLE="text-decoration: overline;">V</SPAN></TD></TR>
+          <TR><TD ALIGN="right">RG</TD><TD>=</TD><TD>Gate-Widerstand in Ohm, vorbelegt mit 25 &Omega;</TD></TR>
+          <TR><TD ALIGN="right">CGS</TD><TD>=</TD><TD>Gate-Source-Kapazit&auml;t in Farad, vorbelegt mit 4,4 pF</TD></TR>
+          <TR><TD ALIGN="right">CGD</TD><TD>=</TD><TD>Gate-Drain-Kapazit&auml;t in Farad, vorbelegt mit 2 pF</TD></TR>
+          <TR><TD ALIGN="right">CBS</TD><TD>=</TD><TD>Bulk-Source-Kapazit&auml;t in Farad, vorbelegt mit 3 pF</TD></TR>
+          <TR><TD ALIGN="right">CBD</TD><TD>=</TD><TD>Bulk-Drain-Kapazit&auml;t in Farad, vorbelegt mit 3 pF</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="pmosfet"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>Pmosfet</B></TD><TD>Allgemeiner p-Kanal-MOSFET</TD></TR>
+      <TR><TD><IMG SRC="data/fet_pmosfet.png" ALT="Figure"></TD>
+      <TD>
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">K</TD><TD>=</TD>
+              <TD>Steilheitskoeffizient in Ampere/Volt<SUP>2</SUP>, vorbelegt mit 4 mA/V<SUP>2</SUP></TD></TR>
+          <TR><TD ALIGN="right">Uth</TD><TD>=</TD><TD>Schwellenspannung in Volt, vorbelegt mit &minus;1 V</TD></TR>
+          <TR><TD ALIGN="right">UA</TD><TD>=</TD><TD>Early-Spannung in Volt, vorbelegt mit 50 V</TD></TR>
+          <TR><TD ALIGN="right">Uinv</TD><TD>=</TD><TD>Inversionsspannung in Volt, vorbelegt mit 0,6 V</TD></TR>
+          <TR><TD ALIGN="right">gamma</TD><TD>=</TD>
+              <TD>Substrat-Steuerfaktor in
+                  &radic;<SPAN STYLE="text-decoration: overline;">Volt</SPAN>, vorbelegt mit 0,5
+                  &radic;<SPAN STYLE="text-decoration: overline;">V</SPAN></TD></TR>
+          <TR><TD ALIGN="right">RG</TD><TD>=</TD><TD>Gate-Widerstand in Ohm, vorbelegt mit 25 &Omega;</TD></TR>
+          <TR><TD ALIGN="right">CGS</TD><TD>=</TD><TD>Gate-Source-Kapazit&auml;t in Farad, vorbelegt mit 4,4 pF</TD></TR>
+          <TR><TD ALIGN="right">CGD</TD><TD>=</TD><TD>Gate-Drain-Kapazit&auml;t in Farad, vorbelegt mit 2 pF</TD></TR>
+          <TR><TD ALIGN="right">CBS</TD><TD>=</TD><TD>Bulk-Source-Kapazit&auml;t in Farad, vorbelegt mit 3 pF</TD></TR>
+          <TR><TD ALIGN="right">CBD</TD><TD>=</TD><TD>Bulk-Drain-Kapazit&auml;t in Farad, vorbelegt mit 3 pF</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="bf245b"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>BF245B</B></TD><TD>n-Kanal-Kleinsignal-JFET</TD></TR>
+      <TR><TD><IMG SRC="data/fet_bf245b.png" ALT="Figure"></TD>
+      <TD>Keine Parameter. <BR> <A HREF="data/BF245.pdf">Datenblatt</A></TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="bss101"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>BSS101</B></TD><TD>Selbstsperrender n-Kanal-MOSFET</TD></TR>
+      <TR><TD><IMG SRC="data/fet_bss101.png" ALT="Figure"></TD>
+      <TD>Keine Parameter. <BR> <A HREF="data/BSS101.pdf">Datenblatt</A></TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="bss129"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>BSS129</B></TD><TD>Selbstleitender n-Kanal-MOSFET</TD></TR>
+      <TR><TD><IMG SRC="data/fet_bss129.png" ALT="Figure"></TD>
+      <TD>Keine Parameter. <BR> <A HREF="data/BSS129.pdf">Datenblatt</A></TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="bss92"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>BSS92</B></TD><TD>Selbstsperrender p-Kanal-MOSFET</TD></TR>
+      <TR><TD><IMG SRC="data/fet_bss92.png" ALT="Figure"></TD>
+      <TD>Keine Parameter. <BR> <A HREF="data/BSS92.pdf">Datenblatt</A></TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="bsd215"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>BSD215</B></TD><TD>Selbstsperrender n-Kanal-D-MOSFET</TD></TR>
+      <TR><TD><IMG SRC="data/fet_bsd215.png" ALT="Figure"></TD>
+      <TD>Keine Parameter. <BR> <A HREF="data/BSD215.pdf">Datenblatt</A></TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="irf142"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>IRF142</B></TD><TD>Selbstsperrender n-Kanal-Leistungs-D-MOSFET</TD></TR>
+      <TR><TD><IMG SRC="data/fet_irf142.png" ALT="Figure"></TD>
+      <TD>Keine Parameter. <BR> <A HREF="data/IRF142.pdf">Datenblatt</A></TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="irf9142"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>IRF9142</B></TD><TD>Selbstsperrender p-Kanal-Leistungs-D-MOSFET</TD></TR>
+      <TR><TD><IMG SRC="data/fet_irf9142.png" ALT="Figure"></TD>
+      <TD>Keine Parameter. <BR> <A HREF="data/IRF9142.pdf">Datenblatt</A></TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="nmesfet"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>n-Mesfet</B></TD><TD>Skalierbarer n-Kanal-MESFET</TD></TR>
+      <TR><TD><IMG SRC="data/fet_nmesfet.png" ALT="Figure"></TD>
+      <TD>
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">Uth</TD><TD>=</TD>
+              <TD>Schwellenspannung in Volt, vorbelegt mit &minus;2 V</TD></TR>
+          <TR><TD ALIGN="right">W</TD><TD>=</TD><TD>Kanalweite in Meter, vorbelegt mit 1 mm</TD></TR>
+          <TR><TD ALIGN="right">Kw</TD><TD>=</TD>
+              <TD>relativer Steilheitskoeffizient in Ampere/(Volt<SUP>2</SUP>&sdot;Meter),
+                  vorbelegt mit 67 A/(V<SUP>2</SUP>&sdot;m)</TD></TR>
+          <TR><TD ALIGN="right">CGw</TD><TD>=</TD>
+              <TD>relative Gate-Kapazit&auml;t in Farad/Meter, vorbelegt mit 2 nF/m</TD></TR>
+          <TR><TD ALIGN="right">RGw</TD><TD>=</TD>
+              <TD>relativer Gate-Widerstand in Ohm&sdot;Meter, vorbelegt mit 1,5 mOhm&sdot;m</TD></TR>
+          <TR><TD ALIGN="right">RGmin</TD><TD>=</TD>
+              <TD>minimaler Gate-Widerstand in Ohm, vorbelegt mit 0,2 Ohm</TD></TR>
+          <TR><TD ALIGN="right">RSw</TD><TD>=</TD>
+              <TD>relativer Source-Widerstand in Ohm&sdot;Meter, vorbelegt mit 0,5 mOhm&sdot;m</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  </BODY>
+</HTML>

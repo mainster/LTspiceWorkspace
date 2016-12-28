@@ -1,0 +1,15 @@
+* Z:\data\LTC\SwCADIII\schematics\BadenkeUndKlee\xformer_with_strays_test.asc
+V1 prim 0 SINE(0 1 50 0 0) AC 1
+XX1 prim 0 sec 0 xformer_with_strays params: N1=50 N2=200 m=10u Lstray1=1m Lstray2=5m
+R1 sec 0 10
+
+* block symbol definitions
+.subckt xformer_with_strays prim1 prim2 sec1 sec2
+L1 prim1 prim2 {N1*N1*m+Lstray1} Rser=1u
+L2 sec1 sec2 {N2*N2*m+Lstray2} Rser=1u
+K12 L1 L2 {1/((sqrt(1+Lstray1/(N1*N1*m)))*sqrt(1+Lstray2/(N2*N2*m)))}
+.ends xformer_with_strays
+
+.ac dec 40 1 10meg
+.backanno
+.end

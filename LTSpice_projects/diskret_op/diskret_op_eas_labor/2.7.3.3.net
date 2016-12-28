@@ -1,0 +1,85 @@
+* Z:\media\data\CODES\LTSpice_projects\diskret_op_eas_labor\2.7.3.3.asc
+Q9 c0 N004 N001 0 CA3096_pnp
+Q10 c1 N004 N002 0 CA3096_pnp
+Q11 N004 N004 N003 0 CA3096_pnp
+RE11 V+ N003 1.2k
+RE10 V+ N002 1.2k
+Re9a V+ N001 33k
+Re9b P001 N001 10k
+Rref N004 V- 39k
+Q2 C4 0 N006 0 CA3096_pnp
+Q1 C3 IN- N005 0 CA3096_pnp
+RE1 c0 N005 1.8k
+RE2 c0 N006 1.8k
+R克D1 c0 N005 {JD1}
+R克D2 c0 N006 {JD2}
+Q3 C3 N013 N015 0 CA3046
+Q4 C4 N013 N017 0 CA3046
+Rpos1 N016 N015 {(1-off)*Ros}
+R克2 N015 V- {J2}
+R克3 N017 V- {J3}
+RE3 N015 V- 1k
+RE4 N017 V- 1k
+R克1 N013 C3 {J1}
+Rpos2 N017 N016 {off*Ros}
+R克4 N016 V- {J4}
+V1 V+ 0 10
+V2 V- 0 -10
+V4 ein 0 SINE(0 {amp} {fin}) AC 1
+R克10 V+ P001 {J10}
+R1 IN- ein 5.6k
+R克5 C4 N011 {J5}
+Ccomp1 C6 P002 33p
+Q5 C6 N014 V- 0 CA3046
+Q6 C6 C4 N014 0 CA3046
+RE5 N014 V- 22k
+Rs1 P002 N011 1n
+Q8 V+ N007 N009 0 CA3046
+Q12 V+ c1 N007 0 CA3046
+Q13 V- C6 N012 0 CA3096_pnp
+RE6 N009 out 33
+RE7 out N012 33
+D1 c1 N008 1N4148
+R克6 c1 C6 {J7}
+D2 N008 N010 1N4148
+D3 N010 C6 1N4148
+R2 out 0 560
+R3 out IN- 10k
+Q7 V+ C3 N013 0 CA3046
+V3 fin 0 SINE(0 {10/5.6} {-fin})
+V5 fin_105 0 SINE(0 1 {fin*1.05})
+V6 fin_115 0 SINE(0 1 {fin*1.15})
+.model D D
+.lib C:\Program Files (x86)\LTC\LTspiceIV\lib\cmp\standard.dio
+.model NPN NPN
+.model PNP PNP
+.lib C:\Program Files (x86)\LTC\LTspiceIV\lib\cmp\standard.bjt
+* Stromquellen-\nBank
+* PNP-\nDiff. stufe
+* Stromspiegel
+* X *
+.param J10 = CLOSE
+.param JD1 = CLOSE
+.param JD2 = CLOSE
+.param J1 = OPEN
+.param J2 = OPEN
+.param J3 = OPEN
+.param J4 = OPEN
+.param J5 = CLOSE
+.param J7 = OPEN
+.tran 0 {100/fin} 0
+* .step param off 0.7 0.999 0.1
+* Darlington- Stufe
+* Endstufe
+.param open = 100meg
+.param close = 1u
+.param Ros = 1k
+.param off = 0.5
+* * Y *\n.param J10 = CLOSE\n.param JD1 = OPEN\n.param JD2 = OPEN\n.param J1 = CLOSE\n.param J2 = OPEN\n.param J3 = OPEN\n.param J4 = OPEN\n.param J5 = CLOSE\n.param J7 = CLOSE
+.param fin = 100k
+.param amp =1 
+*.step param fin list 100k 105k 115k 200k
+.step param amp list 1 2.5 0.2
+* .step param J10 list 1m 100meg
+.backanno
+.end

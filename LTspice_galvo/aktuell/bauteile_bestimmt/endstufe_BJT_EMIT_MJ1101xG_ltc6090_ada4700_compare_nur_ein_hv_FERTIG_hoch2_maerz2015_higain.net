@@ -1,0 +1,176 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\galvoscanner\aktuell\bauteile_bestimmt\endstufe_BJT_EMIT_MJ1101xG_ltc6090_ada4700_compare_nur_ein_hv_FERTIG_hoch2_maerz2015_higain.asc
+R14 N027 shunt 3.5
+L1 out_A N027 {Lcoil}
+R4 out_A N017 1t
+C2 N017 0 100n
+XU1 V2+ vdc_single V=12
+XU2 V2- vdc_single V=-12V
+R2 IsensA N023 10k
+R6 stimac N021 10k
+R7 N023 sumB 470
+R8 0 N021 470
+XU5 0 N030 0 V- NC_01 opV V+ NC_02 LTC6090
+R16 sumB N030 2k2
+Q§T3 V+ HS b_hi 0 FMMT624
+Q§T4 V- LS b_lo 0 FMMT723
+R23 b_hi e_hi {bias_be1}
+R24 e_lo b_lo {bias_be1}
+R37 e_hi out_A .015
+R38 e_lo out_A .015
+C6 0 0 10p
+C7 0 0 10p
+XU6 V- b_lo e_lo MJ11015G_D MJ11015G_D
+XU7 V+ b_hi e_hi MJ11016G_D MJ11016G_D
+R11 N026 N033 2
+S1 N033 0 N036 0 SWx
+V1 N036 0 PULSE(-1 1 {1.9m+350u} 100u 100u 5m 80m)
+V4 stimOffs stimac PULSE({Vstim_peak} 0 0 100u)
+C4 N030 out_A {Cf}
+B2 calcSum 0 V=V(stimoffs)-V(isensa)
+V2 stimpwl 0 PWL(0 0 200u 1u 201u {V1} 900u {V1-1u} 901u 0 1.6m 1u 1.601m {-V1} 2.3m {-V1+1u} 2.301m 0)
+V3 N003 0 SINE(20m 1 100 20m) AC 1
+XU20 V+ vdc_single V={Vsup}
+XU21 V- vdc_single V={-Vsup}
+XU9 stimac N003 jumperResistor Rjump=1u Rin=1t Rout=1t
+R1 N013 N015 {bias_b1}
+D3 N020 N022 1N4148
+D4 N015 N020 1N4148
+R3 N037 N041 {bias_b1}
+D5 N034 N037 1N4148
+D6 N022 N034 1N4148
+R12 N049 V- {Rref}
+R15 N048 V- 20k
+I1 V+ N040 {I0}
+Q1 N012 N009 N007 0 FMMT723
+Rmirr V+ N007 20k
+I2 N012 V- {I0}
+V5 N022 0 SINE(0 5 1k)
+Q2 N013 N009 N008 0 FMMT723
+Q3 V- N012 N009 0 FMMT723
+Q4 N041 N044 N049 0 FMMT624
+Q5 N040 N044 N048 0 FMMT624
+Q6 V+ N040 N044 0 FMMT624
+R19 V+ N008 {Rref}
+R20 N005 HS {bias_b1}
+D9 HS N010 1N4148
+R21 LS N031 {bias_b1}
+R22 N039 V- {Rref}
+R27 N038 V- 5k
+I5 V+ N025 {I0}
+Q7 N006 N004 N001 0 FMMT723
+R28 V+ N001 5k
+I6 N006 V- {I0}
+Q8 N005 N004 N002 0 FMMT723
+Q9 V- N006 N004 0 FMMT723
+Q10 N031 N032 N039 0 FMMT624
+Q11 N025 N032 N038 0 FMMT624
+Q12 V+ N025 N032 0 FMMT624
+R29 V+ N002 {Rref}
+D7 N010 opV 1N4148
+D11 opV N019 1N4148
+D12 N019 LS 1N4148
+Rshunt1 shunt 0 0.015
+XU14 0 N046 N050 N055 N045 N054 LTC2050
+XU15 N050 vdc_single V=5V
+XU16 N055 vdc_single V=-5V
+R18 N045 N046 270
+R30 N046 shunt 27
+C3 N045 N046 10p
+XU17 N054 vdc_single V=5V
+XU18 N051 N043 N047 N053 Isensa N052 LTC2050
+XU19 N047 vdc_single V=5V
+XU22 N053 vdc_single V=-5V
+R31 Isensa N043 180
+R32 N051 N045 1k
+XU23 N052 vdc_single V=5V
+R33 N043 0 20
+C8 N051 0 {1/(2*pi*1k*100k)}
+E1 N018 0 stimac 0 {2k2*Kpi*10k/470}
+R9 N030 out_A {2k2*Kpi*10k/470}
+XU3 N021 N023 V2+ V2- sumB LT1468
+C9 N030 0 {Ctp}
+E2 HV_gain 0 stimac 0 {Kpi*10k/470}
+XU4 NC_05 vdc_single V=1
+E3 R_feed 0 P001 0 {2k2*Kpi*10k/470}
+XU8 P001 vdc_single V=1
+.model D D
+.lib C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\lib\cmp\standard.dio
+.model NPN NPN
+.model PNP PNP
+.lib C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\lib\cmp\standard.bjt
+.model SWx SW(Ron=1u Roff=100Meg Vt=0 Vh=-.5 )
+.inc ADA4700.sub
+.inc LM358.sub
+;.tran 0 100m 1m
+;.options plotwinsize=0
+;.tran 0 2.8m 1.9m 1e-7
+.ac oct 100 10 1meg
+; ---------------------
+;   Power amp
+; ---------------------
+;.param Rset_bias = 100
+;.param Ik3 = 1m
+;.param UV1 = 0.75V
+.param bias_be1 = 150
+;.param bias_b1 = {UV1/Ik3}
+.param bias_b1 = 750
+.param Lcoil = 170u
+; ---------------------
+;   Compensator
+; ---------------------
+.param Rsu = 1k
+.param Kpi = 5
+;.param Ki = 15000
+; ---------------------
+;   SOURCES
+; ---------------------
+.param Vsup = 25V
+.param Vstim_peak = 5
+.MEAS TRAN slewHi DERIV I(Rshunt) WHEN I(Rshunt)='15'
+.MEAS TRAN slewLo DERIV I(Rshunt) WHEN I(Rshunt)='-15'
+.MEAS TRAN tRise TRIG I(Rshunt) VAL=-15 RISE=1
++ TARG I(Rshunt) VAL=15 TD 10ns RISE=1
+.MEAS TRAN tFall TRIG I(Rshunt) VAL=15 FALL=1
++ TARG I(Rshunt) VAL=-15 TD 10ns FALL=2
+* .step TEMP list 27 150
+.option noopiter
+.options plotwinsize=0
+.four 1k 10 I(L1)
+.param Cf = 3p3
+.param V1=1;
+* PULSE({-Vstim_peak} {Vstim_peak} 0 100n 100n 1m 2m)\nPULSE({-Vstim_peak} {Vstim_peak} 0 100m 100n 500u 100m)
+* .step param Kpi list 1 5 10
+.param Rshuntm=0.003
+;.step param Rshuntm list 10m 3m
+* 150R
+* 150R
+* .dc V3 -5 5 .01
+* Bias_b1 = 750R\nBias_be1 = 15R\n2x2 1N4148 \nI3=1mA \n-------------------------\n55mA Ruhestrom durch Rs
+.param Rref=2k
+.param I0=100u
+.param Iq=400u
+.param Rmirr={Iq/I0*Rref}
+* REF200 für Biasstrom- Erzeugung\n \nR_Ref = 2k\n;Querstrom durch die 4 Dioden\nIq = 1mA     ;\n--------------------------------\nR_mirr = Iq / I0 * Rref\nRmirr=
+* .op
+* .tran 0 100m 1m\n.options plotwinsize=0
+* .tran 0 50m\n.options plotwinsize=0
+* .step param I0 list 100u 10n
+* Vu1= -10/3
+* Vu2 = 20
+* gesamt Av=40dB
+* 750R
+* .param TEST=1\n;.step param TEST list 1 0\n;.step param Kpi list 2 5 25
+.step param Lcoil list 1f 170u
+* .step param Cf list 5p 10p 15p 20p
+* .step param Ctp list 1p 100p 200p 470p 1n
+.param Ctp = 10p
+* .step param Cf list 1p 20p 50p 100p
+* .step param gainSum list 1 2 5
+.lib EIT_sub\vdc_single.sub
+.lib LTC.lib
+.lib LTC5.lib
+.lib MDB_sub/jumperRes.sub
+.lib mj11015g_d.sub
+.lib mj11016g_d.sub
+.backanno
+.end

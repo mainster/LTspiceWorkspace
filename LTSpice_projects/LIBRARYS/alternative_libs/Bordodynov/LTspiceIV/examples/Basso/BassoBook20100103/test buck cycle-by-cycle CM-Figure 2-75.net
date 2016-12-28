@@ -1,0 +1,54 @@
+* source CHAPTER 2_1
+X_U13         RESET N851707 R OR2 
+V_Vclock         S 0  
++PULSE 0 10 0 10n 10n 100n 5u
+R_R29         LEB Q  1k  
+X_U14         ICOIL ERR N851707 COMPARHYS PARAMS:  VHIGH=5 VLOW=100M VHYS=50M
+V_Vref         N820160 0 2.5
+X_U10         N820160 N820022 ERR AMPSIMP PARAMS:  POLE=10Meg GAIN=30000
++  VHIGH=5 VLOW=10mV
+R_R5         N8527591 N8527931  20m  
+R_Rlower         0 N820022  10k  
+R_R2         N8528671 N820022  {R2}  
+V_Vin         N822282 0 8.24
+R_Resr         N820112 VOUT  70m  
+V_V8         N820788 0 {C1}
+R_R26         N820776 0  1k  
+V_VL         N821460 N8527591 DC 0Vdc AC 0 
+R_R22         N820788 0  1k  
+G_G1         0 ICOIL VALUE { { IF ( V(LEB)>3,I(V_VL),0 ) } }
+R_R25         N820782 0  1k  
+C_C2         ERR N820022  {C2}  
+L_L1         VOUT N8527931  35u  
+R_R27         0 N823845  1k  
+V_V7         N820776 0 {R2}
+V_Vreset         RESET 0  
++PULSE 0 10 4.8u 10n 10n 50n 5u
+V_V9         N820782 0 {C2}
+X_U11         S R Q N823845 FFLOP 
+R_Rupper         N820022 VOUT  {Rupper}  
+C_C3         0 LEB  100p  
+D_D2         LEB Q D1N4148 
+V_V13         N820374 0  
++PWL 0 0 6m 0 6.1m 5 8m 5 8.1m 0 
+R_R28         0 ICOIL  1  
+D_D3         0 N821460 D1N5822 
+C_C1         ERR N8528671  {C1}  
+X_S1    N820374 0 VOUT 0 test_buck_cycle-by-cycle_CM_S1 
+C_Cout         0 N820112  100u  
+X_S2    Q 0 N822282 N821460 test_buck_cycle-by-cycle_CM_S2 
+.PARAM  Gfc=-9.7 C2={1/(2*pi*Fc*G*K*Rupper)} R2={K/(2*pi*Fc*C1)} G=
++ {10**(-Gfc/20)} pfc=-75 K={tan((boost/2+45)*pi/180)} Cpole=
++ {1/(2*pi*Fpole*Ropto)} Czero={1/(2*pi*Fzero*Rupper)} Ropto=2.2k pi=3.14159
++  Fpole={Fc*K} Fc=5k Fzero={Fc/K} Rupper=10k pm=45 boost={pm-pfc-90} CTR=2 C1=
++ {C2*(K**2-1)}
+
+.subckt test_buck_cycle-by-cycle_CM_S1 1 2 3 4  
+S_S1         3 4 1 2 Sbreak3
+RS_S1         1 2 1G
+.ends test_buck_cycle-by-cycle_CM_S1
+
+.subckt test_buck_cycle-by-cycle_CM_S2 1 2 3 4  
+S_S2         3 4 1 2 Sbreak2
+RS_S2         1 2 1G
+.ends test_buck_cycle-by-cycle_CM_S2

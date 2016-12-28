@@ -1,0 +1,22 @@
+Circuit: * C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\examples\Educationalorig\TransmissionLineInverter.asc
+
+.OP point found by inspection.
+
+Date: Mon Jan 05 19:22:13 2015
+Total elapsed time: 0.022 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 1056
+traniter = 1056
+tranpoints = 529
+accept = 529
+rejected = 0
+matrix size = 10
+fillins = 6
+solver = Normal
+Matrix Compiler1: 606 bytes object code size  0.6/0.6/[0.4]
+Matrix Compiler2: 782 bytes object code size  0.4/0.6/[0.3]
+
+

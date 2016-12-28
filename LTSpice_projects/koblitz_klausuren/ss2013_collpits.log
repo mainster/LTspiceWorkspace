@@ -1,0 +1,32 @@
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\koblitz_klausuren\ss2013_collpits.asc
+
+Warning: Multiple definitions of model "bc846b" Type: BJT
+Warning: Multiple definitions of model "bc857a" Type: BJT
+Warning: Multiple definitions of model "bc847b" Type: BJT
+Warning: Multiple definitions of model "bcw68f" Type: BJT
+Warning: Multiple definitions of model "bcw60c" Type: BJT
+Warning: Multiple definitions of model "ztx1048a" Type: BJT
+Warning: Multiple definitions of model "ztx849" Type: BJT
+Unknown node in .ic card: "s" -- ignoring
+WARNING: Node R is floating.
+
+Direct Newton iteration for .op point succeeded.
+
+Date: Sat Dec 06 21:07:03 2014
+Total elapsed time: 2.936 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 208903
+traniter = 208876
+tranpoints = 60406
+accept = 43531
+rejected = 16875
+matrix size = 26
+fillins = 0
+solver = Normal
+Matrix Compiler1: 858 bytes object code size  0.7/0.4/[0.3]
+Matrix Compiler2: off  [0.5]/0.7/0.7
+
+

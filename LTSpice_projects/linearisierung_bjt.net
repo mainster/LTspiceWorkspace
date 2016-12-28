@@ -1,0 +1,22 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\linearisierung_bjt.asc
+XU2 N001 vdc_single V=5V
+R1 N001 c 1k
+Q1 c b 0 0 NPNx
+I1 0 b {Ib}
+B1 0 N002 I={ Is/Bf*exp(Vbe0/VT)*(1+( V(b) -Vbe0)/VT) }
+R2 N002 0 1
+.model NPN NPN
+.model PNP PNP
+.lib C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\lib\cmp\standard.bjt
+.model NPNx npn ( Is={Is} Bf={Bf} )
+.param Ib=10u
++ Ic0 = 3mA
++ Vbe0 = 0.6
++ VT = 26mV
++ Is = Ic0/exp(Vbe0/VT)
++ Bf = 200
+.step param Ib 0 100u .5u
+.op
+.lib EIT_sub/vdc_single.sub
+.backanno
+.end

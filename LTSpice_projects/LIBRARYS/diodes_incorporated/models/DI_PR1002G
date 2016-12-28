@@ -1,0 +1,4 @@
+*SRC=PR1002G;DI_PR1002G;Diodes;Si;  100V  1.00A  150ns   Diodes Inc. Fast
+Rectifier
+.MODEL DI_PR1002G D  ( IS=5.00n RS=29.8m BV=100 IBV=5.00u
++ CJO=27.8p  M=0.333 N=1.72 TT=216n )

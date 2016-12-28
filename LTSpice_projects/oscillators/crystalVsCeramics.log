@@ -1,0 +1,5 @@
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\oscillators\crystalVsCeramics.asc
+
+C2: both pins shorted together -- ignoring.
+C3: both pins shorted together -- ignoring.
+Fatal Error: Only inductor currents or node voltages may be specified on a .ic line

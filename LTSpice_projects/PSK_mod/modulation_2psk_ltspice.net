@@ -1,0 +1,18 @@
+* Z:\media\data\CODES\LTSpice_projects\PSK_mod\modulation_2psk_ltspice.asc
+B1 BitStreamTEMP 0 V=int(2*rand(time*symbolFreq))
+B5 In_phase 0 V=if((V(BitStream)==1),1,-1)
+B6 Quadrature_phase 0 V=if((V(BitStream)==1),0,0)
+B7 I 0 V=V(In_phase)*sin(2*pi*carrierFreq*time)
+B8 Q 0 V=V(Quadrature_phase)*cos(2*pi*carrierFreq*time)
+B9 2-PSK_modulation 0 V=V(I)+V(Q)
+B10 amplitude 0 V=sqrt(V(Quadrature_phase)**2+V(In_phase)**2)
+B11 phase_degres 0 V=atan2(V(Quadrature_phase),V(In_phase))*180/pi
+B2 BitStream2 0 V=int(2*random(time*symbolFreq))
+B3 DiBit 0 V=V(BitStream)+V(BitStream2)
+V1 BitStream 0 PULSE(0 1 0 1n 1n {1/(2*symbolFreq)+1n} {1/(symbolFreq)+1n})
+.tran 0 10m 0 100n
+.params symbolFreq = 2000
+.params carrierFreq = 14000
+* Für M-PSK: "Bitstream" wieder auf M Zustände mischen
+.backanno
+.end

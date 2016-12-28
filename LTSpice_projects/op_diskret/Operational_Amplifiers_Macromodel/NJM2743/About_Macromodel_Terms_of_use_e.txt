@@ -1,0 +1,46 @@
+About Macromodel - Terms of use -
+----------------------------------------------------------------------------
+1ÅDIntroduction
+New JRCÅfs Macromodel (for use with PSpice) is a simulation program and not
+for use in actual product operation. It is not an alternative to the actual 
+product. 
+Please use this Macromodel to assist in the actual product operation check.
+
+2ÅDSpecial instruction
+New JRC is not responsible for changes, omissions, inaccuracies, and designs
+caused by the product Macromodel. Moreover, New JRC does not take any 
+responsibility if customers use this information for other purposes. 
+New JRC requires customers to take full responsibility for their use of any
+information acquired through Macromodel. In addition, New JRC does not give
+consent agreement or patent rights with regards to circuits described in
+relevant documents.
+
+3ÅDUsage and operating requirements
+
+3-1ÅDOperating requirements
+
+New JRCÅfs Macromodel and related information have been created for use with
+OrCAD/Pspice, which is produced by Cadence Design Systems, Inc.
+in the United States.
+New JRC is not liable for performance of the Macromodel
+in all computer systems.
+
+3-2.Conditions of use
+
+The product Macromodel should be used under agreement of the conditions
+contained below.
+
+i. The product Macromodel is offered with product-specific, present quality. 
+NJR does not take responsibility for Macromodel operation once Macromodel is
+integrated into customersÅf circuits or systems.
+
+ii. The product Macromodel is subject to change without notice.
+Please refer to the latest version of data-sheet or delivery specifications
+for detailed information regarding each product.
+----------------------------------------------------------------------------
+New Japan Radio Co.,Ltd.
+
+(C) New Japan Radio Co.,Ltd. All rights reserved.
+
+
+

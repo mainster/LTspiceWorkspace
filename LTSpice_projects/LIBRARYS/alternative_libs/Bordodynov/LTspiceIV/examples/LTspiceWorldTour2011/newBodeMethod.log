@@ -1,0 +1,35 @@
+Circuit: * C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\examples\LTspiceWorldTour2011\newBodeMethod.asc
+
+C8: Increased Cpar to 5e-011
+C5: Increased Cpar to 2.2e-011
+Direct Newton iteration for .op point succeeded.
+
+aavg: AVG(v(a))=0.599804 FROM 0 TO 0.0005
+bavg: AVG(v(b))=0.599799 FROM 0 TO 0.0005
+are: AVG((v(a)-aavg)*cos(360*time*freq))=-0.000238253 FROM 0 TO 0.0005
+aim: AVG(-(v(a)-aavg)*sin(360*time*freq))=-0.000250131 FROM 0 TO 0.0005
+bre: AVG((v(b)-bavg)*cos(360*time*freq))=-0.000237986 FROM 0 TO 0.0005
+bim: AVG(-(v(b)-bavg)*sin(360*time*freq))=0.000248394 FROM 0 TO 0.0005
+gainmag: 20*log10(hypot(are,aim) / hypot(bre,bim))=0.0362809
+gainphi: mod(atan2(aim, are) - atan2(bim, bre)+180,360)-180=92.619
+
+
+Date: Mon Feb 09 12:03:22 2015
+Total elapsed time: 6.444 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 478504
+traniter = 478476
+tranpoints = 140468
+accept = 105463
+rejected = 35005
+matrix size = 40
+fillins = 1
+solver = Normal
+Thread vector: 10.4/7.6[3] 6.9/4.1[3] 1.5/1.6[1] 0.4/0.8[1]  2592/500
+Matrix Compiler1: 1.32 KB object code size  0.8/0.5/[0.4]
+Matrix Compiler2: 2.35 KB object code size  0.5/0.8/[0.4]
+
+

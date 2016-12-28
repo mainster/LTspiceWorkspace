@@ -1,0 +1,28 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\Buckconverter.asc
+L2 uout2 N004 8.9µ Rser=1.8m
+C2 uout2 0 2200µ
+V4 N001 0 13V
+S4 0 N005 N007 0 SW1
+R4 uout2 N005 3
+R5 uout2 N006 0.65
+S5 0 N006 N008 0 SW1
+V7 N007 0 PULSE(0 1 1m 10n 10n 200m 400m)
+V8 N008 0 PULSE(0 1 1m 10n 10n 200m 400m)
+R3 N003 N002 5
+M1 N004 N003 N001 N001 Si4427DY
+R6 N001 N003 22k
+V1 N002 0 PULSE(13 0 0 20n 20n 3.18u 5u)
+XU1 0 powcalc
+D1 0 N004 Dx
+.model D D
+.lib C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\lib\cmp\standard.dio
+.model NMOS NMOS
+.model PMOS PMOS
+.lib C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\lib\cmp\standard.mos
+.tran 0 45m 0 steady startup
+.model SW1 SW(Ron=1m Roff=1Meg Vt=.5 Vh=-.4
+.model Dx D (Is=1u bv=15 Ibv=1m Vpk=15 Iave=25A)
+.ic V(uout2)=8V
+.lib powcalc.sub
+.backanno
+.end

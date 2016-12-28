@@ -1,0 +1,31 @@
+Circuit: * Z:\home\koblitz\Simulationsbeispiele_WS14\Elektronik_Lab\dienstag\Spannungsteiler.asc
+
+.step rl=100
+Direct Newton iteration for .op point succeeded.
+.step rl=200
+.step rl=300
+.step rl=400
+.step rl=500
+.step rl=600
+.step rl=700
+.step rl=800
+.step rl=900
+.step rl=1000
+
+Date: Tue Oct 14 16:14:30 2014
+Total elapsed time: 26.163 seconds.
+
+tnom = 27
+temp = 27
+method = trap
+totiter = 3
+traniter = 0
+tranpoints = 0
+accept = 0
+rejected = 0
+matrix size = 3
+fillins = 0
+solver = Normal
+Matrix Compiler1: 86 Bytes object code size
+Matrix Compiler2: 163 Bytes object code size
+

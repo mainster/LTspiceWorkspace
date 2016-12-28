@@ -1,0 +1,9 @@
+* Z:\home\koblitz\Simulationsbeispiele_WS14\EAS\op_mit macromodell.asc
+XU1 0 a out opamp_param_4 Vp=10 Vm=-10 Ilim=20m FT=10Meg SR=10 Vos=0 A0=100k phir=45 en=0 enk=0 in=0 ink=0 Rin=500Meg
+R1 out a 1k
+R2 a N001 1k
+V1 N001 0 ac 1
+.ac oct 10 1 10meg
+.lib EIT_sub\opamp_parametrierbar.sub
+.backanno
+.end

@@ -1,0 +1,25 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\BuckBoostInv_swconverter\buck.asc
+S2 sw_buck N001 N002 0 SW
+V3 N001 0 12 Rser=1m
+L2 out_buck sw_buck 100u
+D2 0 sw_buck D
+C2 ca 0 20u
+V4 N002 0 PULSE(0 1 0 {trf} {trf} {1/(2*fsw)} {1/(fsw)})
+IL out_buck 0 PULSE(0.5 1 1m 1u)
+Rs out_buck ca {Rs}
+Rpar sw_buck 0 10k
+Cpar sw_buck 0 10p
+R1 out_buck 0 {RL}
+.model D D
+.lib C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\lib\cmp\standard.dio
+.model SW VSWITCH Roff=1e6 Ron=1u Voff=0.1 Von =0.9
+.param fsw=50k
+.param RL=10meg
+.param trf=10n
+.param Rs=200m
+.tran 3m
+* .step param Rs list 100m 1m 500u
+* .tran 0 5m {5m-3*1/fsw} 10n
+* .step param Rl list 10 1
+.backanno
+.end

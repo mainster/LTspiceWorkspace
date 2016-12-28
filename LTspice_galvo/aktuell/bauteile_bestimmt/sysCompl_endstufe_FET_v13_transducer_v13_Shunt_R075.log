@@ -1,0 +1,70 @@
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\galvoscanner\aktuell\bauteile_bestimmt\sysCompl_endstufe_FET_v13_transducer_v13_Shunt_R075.asc
+
+u25:d18: both pins shorted together -- ignoring.
+C25: both pins shorted together -- ignoring.
+C26: both pins shorted together -- ignoring.
+C31: both pins shorted together -- ignoring.
+WARNING: Less than two connections to node CALCSUM.  This node is used by B1.
+WARNING: Less than two connections to node INP_VCALC.  This node is used by B2.
+WARNING: Less than two connections to node CRF.  This node is used by V:U31:1.
+WARNING: Less than two connections to node CRB.  This node is used by V:U32:1.
+WARNING: Less than two connections to node CRG.  This node is used by V:U33:1.
+WARNING: Less than two connections to node N020.  This node is used by V1.
+WARNING: Less than two connections to node NC_05.  This node is used by R44.
+WARNING: Less than two connections to node N033.  This node is used by R57.
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+Gmin = 1.07374
+Gmin = 0.115292
+Gmin = 0.0123794
+Gmin = 0.00132923
+Gmin = 0.000142725
+Gmin = 1.5325e-005
+Gmin = 1.6455e-006
+Gmin = 1.76685e-007
+vernier = 0.5
+vernier = 0.25
+Gmin = 7.09828e-008
+vernier = 0.333333
+vernier = 0.444444
+Gmin = 3.01286e-008
+vernier = 0.592592
+vernier = 0.790123
+Gmin = 8.00632e-009
+vernier = 1
+Gmin = 1.06525e-009
+Gmin = 1.1438e-010
+Gmin = 1.22814e-011
+Gmin = 1.31871e-012
+Gmin = 1.41595e-013
+Gmin = 0
+Gmin stepping succeeded in finding the operating point.
+
+.step fg_mon=30000 tog=0
+.step fg_mon=60000 tog=0
+.step fg_mon=100000 tog=0
+.step fg_mon=220000 tog=0
+.step fg_mon=30000 tog=1
+.step fg_mon=60000 tog=1
+.step fg_mon=100000 tog=1
+.step fg_mon=220000 tog=1
+
+Date: Sun May 17 17:29:42 2015
+Total elapsed time: 7.961 seconds.
+
+tnom = 27
+temp = 27
+method = trap
+totiter = 1194
+traniter = 0
+tranpoints = 0
+accept = 0
+rejected = 0
+matrix size = 231
+fillins = 205
+solver = Normal
+Matrix Compiler1:    1183 opcodes
+Matrix Compiler2: 23,4 KB object code size  6.4/6.8/[2.8]
+
+

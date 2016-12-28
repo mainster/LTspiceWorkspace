@@ -1,0 +1,13 @@
+* Z:\home\koblitz\Simulationsbeispiele_SS15\Elektronik_lab\mittwoch\uk_17.asc
+Q1 col bas em 0 BC547B
+RB in bas 330k
+RC plus col 10k
+RE em 0 3k
+Vin in 0 1
+V1 plus 0 10
+.model NPN NPN
+.model PNP PNP
+.lib Z:\home\koblitz\LT-Spice\lib\cmp\standard.bjt
+.dc Vin -1 6 50m
+.backanno
+.end

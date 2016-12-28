@@ -1,0 +1,65 @@
+* Z:\media\storage\data_raid_back\mainster\DATAPOOL\TRANSFER\CODES\LTSpice_projects\galvoscanner\OpAmp_LT1028_biased_currentsource.asc
+R1 N016 in 1k
+V1 Vm 0 {-Vsup}
+V2 Vp 0 {Vsup}
+XU2 N016 N013 Vp Vm N014 LT1028
+XU1 in+2 N003 Vp Vm outOp2 level.2 Avol=1Meg GBW=50Meg Slew=11Meg ilimit=25m rail={rail} Vos=0 phimargin=45 en=0 enk=0 in=0 ink=0 Rin=500Meg
+R4 in+2 in 1k
+R5 outOp2 N003 19k
+R6 N003 0 1k
+R2 N005 N007 1k
+Q3 Vp N005 N006 0 BC547B
+M3 Vp N006 N008 N008 IRFP240
+R3 N008 N006 270
+R13 out5 N008 1m
+R14 N011 out5 1m
+M4 Vm N010 N011 N011 IRF9640
+Q4 Vm N015 N010 0 BC327-40
+R15 N010 N011 270
+R16 N009 N015 1k
+D3 outOp N009 1N4148
+D4 N007 outOp 1N4148
+RL2 N012 N004 {RL}
+R§Shunt2 N004 0 0.1
+R17 N004 in- 10k
+R18 in- in 10k
+R23 in- 0 100t
+V4 in 0 SINE(0 1 10k) AC 1
+I3 Vp N005 {Ik}
+I4 N015 Vm {Ik}
+XU3 0 in- Vp Vm outOp LT1028
+R7 N001 in 1k
+C1 0 N002 15µ
+L1 N002 N001 12m
+E1 lap1 0 in 0 laplace=(2.185*s-3.95e6)/(s+3.324e5)
+E2 lap2 0 in 0 laplace=(84266.0*s+0.08249*s**2-1.186e12)/(10800.0*s+s**2+1.181e11)
+R8 N013 0 1k
+R9 N014 N013 10k
+L2 out5 N012 160pH
+E3 lap3 0 in 0 laplace=(5.877e5*s**2-8.101e11*s-5.46e18)/(1.679e11*s+4.625e6*s**2+s**3+5.449e17)
+.model D D
+.lib Z:\home\mainster\.wine\drive_c\Program Files (x86)\LTC_orig\LTspiceIV_4.18\lib\cmp\standard.dio
+.model NPN NPN
+.model PNP PNP
+.lib Z:\home\mainster\.wine\drive_c\Program Files (x86)\LTC_orig\LTspiceIV_4.18\lib\cmp\standard.bjt
+.model NMOS NMOS
+.model PMOS PMOS
+.lib Z:\home\mainster\.wine\drive_c\Program Files (x86)\LTC_orig\LTspiceIV_4.18\lib\cmp\standard.mos
+.param Vsup=20
+.param Ik=3.9m
+.param R1=10k
+.param R2=20k
+.param rail=0
+;.param Rl=200
+.param tstop=5m
+.param vsw=2
+.param RL=2
+* abs(V(Op+)-V(op-))
+* .dc V4 {-vsw} {vsw} 0.001
+.ac oct 100 1k 100meg
+* Z:\\home\\mainster\\CODES_local\\matlab_workspace\\RT_projects\\GalvoProjekt\\spice_exports\\OpAmp_LT1028_biased_currentsource.txt
+* .step param RL list 1.5 2 2.5
+.lib LTC.lib
+.lib UniversalOpamps2.sub
+.backanno
+.end

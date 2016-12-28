@@ -1,0 +1,26 @@
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\EAS_beispiele\Simulationsbeispiele_WS14\EAS\SR_mit_PWM.asc
+
+WARNING: Less than two connections to node N001.  This node is used by V2.
+Per .tran options, skipping operating point for transient analysis.
+Ignoring empty pin current: Ix(u1:1)
+Ignoring empty pin current: Ix(u1:2)
+Changing Tseed to 1e-011
+
+Date: Thu Jul 09 13:27:52 2015
+Total elapsed time: 4.331 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 504934
+traniter = 504934
+tranpoints = 216341
+accept = 141237
+rejected = 75103
+matrix size = 16
+fillins = 0
+solver = Normal
+Matrix Compiler1: 394 bytes object code size  0.3/0.2/[0.2]
+Matrix Compiler2: 926 bytes object code size  0.2/0.4/[0.2]
+
+

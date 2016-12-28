@@ -1,0 +1,26 @@
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\praxissem_2014\MicAmp.asc
+
+WARNING: Node N007 is floating.
+
+WARNING: Less than two connections to node N007.  This node is used by C7.
+Direct Newton iteration for .op point succeeded.
+Heightened Def Con from 2.07824e-005 to 2.07824e-005
+
+Date: Wed Dec 03 04:00:59 2014
+Total elapsed time: 223.230 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 14288255
+traniter = 14288244
+tranpoints = 5044656
+accept = 3451546
+rejected = 1593111
+matrix size = 34
+fillins = 41
+solver = Normal
+Matrix Compiler1: 4.61 KB object code size  2.0/1.3/[0.6]
+Matrix Compiler2: 3.49 KB object code size  1.2/1.0/[0.6]
+
+

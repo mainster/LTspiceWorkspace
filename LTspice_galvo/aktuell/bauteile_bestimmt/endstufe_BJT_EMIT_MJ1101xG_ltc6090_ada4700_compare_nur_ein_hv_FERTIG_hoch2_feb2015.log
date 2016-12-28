@@ -1,0 +1,161 @@
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\galvoscanner\aktuell\bauteile_bestimmt\endstufe_BJT_EMIT_MJ1101xG_ltc6090_ada4700_compare_nur_ein_hv_FERTIG_hoch2_feb2015.asc
+
+WARNING: Less than two connections to node N015.  This node is used by R11.
+WARNING: Less than two connections to node CALCSUM.  This node is used by B2.
+WARNING: Less than two connections to node STIMPWL.  This node is used by V2.
+WARNING: Less than two connections to node LA1.  This node is used by E1.
+Direct Newton iteration for .op point skipped.
+Starting Gmin stepping
+Gmin = 10
+Gmin = 1.07374
+Gmin = 0.115292
+Gmin = 0.0123794
+Gmin = 0.00132923
+Gmin = 0.000142725
+vernier = 0.5
+vernier = 0.25
+vernier = 0.125
+vernier = 0.0625
+Gmin = 4.67681e-005
+vernier = 0.0833333
+Gmin = 3.90399e-005
+vernier = 0.111111
+vernier = 0.148148
+Gmin = 2.90921e-005
+vernier = 0.197531
+vernier = 0.263374
+Gmin = 1.83272e-005
+vernier = 0.351165
+Gmin = 8.74783e-006
+vernier = 0.175583
+vernier = 0.0877914
+vernier = 0.0438957
+vernier = 0.0219478
+Gmin = 8.20001e-006
+vernier = 0.0109739
+vernier = 0.00548696
+vernier = 0.00274348
+vernier = 0.00137174
+Gmin = 8.15241e-006
+vernier = 0.00068587
+vernier = 0.000514403
+Gmin = 0
+Gmin stepping failed
+
+Starting source stepping with srcstepmethod=0
+Source Step = 3.0303%
+Source Step = 18.1937%
+vernier = 0.000976563
+Source Step = 18.2114%
+Source Step = 18.241%
+Source Step = 18.2706%
+Source Step = 18.3002%
+Source Step = 18.3298%
+vernier = 0.00146484
+Source Step = 18.3697%
+Source Step = 18.4141%
+Source Step = 18.4585%
+Source Step = 18.5029%
+Source Step = 18.5473%
+vernier = 0.00219727
+Source Step = 18.605%
+Source Step = 18.6716%
+Source Step = 18.7382%
+Source Step = 18.8047%
+Source Step = 18.8713%
+vernier = 0.0032959
+Source Step = 18.9546%
+Source Step = 19.0544%
+Source Step = 19.1543%
+Source Step = 19.2542%
+Source Step = 19.3541%
+vernier = 0.00494385
+Source Step = 19.4739%
+Source Step = 19.6237%
+Source Step = 19.7735%
+Source Step = 19.9234%
+Source Step = 20.0732%
+vernier = 0.00741577
+Source Step = 20.2455%
+Source Step = 20.4702%
+Source Step = 20.6949%
+Source Step = 20.9196%
+Source Step = 21.1443%
+vernier = 0.0111237
+Source Step = 21.3915%
+Source Step = 21.7286%
+Source Step = 22.0657%
+Source Step = 22.4028%
+Source Step = 22.7398%
+vernier = 0.0166855
+Source Step = 23.0938%
+Source Step = 23.5994%
+Source Step = 24.105%
+Source Step = 24.6106%
+Source Step = 25.1163%
+Source Step = 25.6219%
+vernier = 0.0250282
+Source Step = 26.3803%
+Source Step = 27.1388%
+Source Step = 27.8972%
+Source Step = 28.6556%
+Source Step = 29.414%
+vernier = 0.0375423
+Source Step = 30.5138%
+Source Step = 31.6514%
+Source Step = 32.7891%
+Source Step = 33.9267%
+Source Step = 35.0644%
+vernier = 0.0563135
+Source Step = 36.6571%
+Source Step = 38.3635%
+Source Step = 40.07%
+Source Step = 41.7765%
+Source Step = 43.4829%
+vernier = 0.0844703
+Source Step = 45.7867%
+Source Step = 48.3464%
+Source Step = 50.9061%
+Source Step = 53.4658%
+Source Step = 56.0255%
+vernier = 0.126705
+Source Step = 59.3531%
+Source Step = 63.1927%
+Source Step = 67.0322%
+Source Step = 70.8718%
+Source Step = 74.7113%
+vernier = 0.190058
+Source Step = 79.5108%
+Source Step = 85.2701%
+Source Step = 91.0295%
+Source Step = 96.7888%
+Source Step = 100%
+Source stepping succeeded in finding the operating point.
+
+.step kpi=1
+Note: .fourier statements are only valid with a .tran command.
+      No Fourier analysis performed.
+
+.step kpi=5
+.step kpi=8
+
+
+
+Date: Thu Mar 12 21:54:45 2015
+Total elapsed time: 5.899 seconds.
+
+tnom = 27
+temp = 27
+method = trap
+totiter = 7776
+traniter = 0
+tranpoints = 0
+accept = 0
+rejected = 0
+matrix size = 137
+fillins = 376
+solver = Normal
+Matrix Compiler1:    1602 opcodes
+Matrix Compiler2: 17.9 KB object code size  4.5/4.9/[1.8]
+
+

@@ -1,0 +1,36 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\galvoscanner\aktuell\bauteile_bestimmt\LTC6090_hv_oscill_why.asc
+XU1 0 in- in+ V- NC_01 out V+ NC_02 LTC6090
+R1 sig in+ 10k
+C1 in- out {Cf}
+XU2 V- vdc_single V={-sup}
+XU3 V+ vdc_single V={sup}
+R2 in- out 453k
+XU4 N001 vdc_single V=2.5V
+R3 N001 in- 16k2
+R4 in- 0 16k9
+C2 in+ 0 470p
+V1 sig 0 SINE(1.25 1.25 {fsig} 1m) AC 1
+XU5 0 in2- in2+ V- NC_03 out2 V+ NC_04 LTC6090
+R5 sig in2- {453k/55}
+C3 in2- out2 {Cf}
+R6 in2- out2 453k
+XU6 P001 vdc_single V=2.5V
+R7 P001 in2+ 16k2
+R8 in2+ 0 16k2
+XU7 0 in3- 0 V- NC_05 out3 V+ NC_06 LTC6090
+C4 in3- out3 {Cf}
+R9 in3- out3 500k
+R10 sig in3- 10k
+C6 in2- 0 470p
+C5 in3- 0 470p
+.param Cf = 1p
+.param fsig = 1k
+.param sup = 70V
+.ac oct 100 1 10meg
+* 8k2713
+* PULSE(0 2.5 1m 1m 1n 1n 1m)
+.step param cf 10p 20p 2.5p
+.lib EIT_sub\vdc_single.sub
+.lib LTC5.lib
+.backanno
+.end

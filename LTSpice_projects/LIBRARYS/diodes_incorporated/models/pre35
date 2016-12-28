@@ -1,0 +1,3 @@
+*SRC=PDU420;DI_PDU420;Diodes;Si;  400V  4.00A  25.0ns   Diodes Inc. ultrafast rectifier
+.MODEL DI_PDU420 D  ( IS=189n RS=10.5m BV=400 IBV=5.00u
++ CJO=276p  M=0.333 N=1.73 TT=36.0n )

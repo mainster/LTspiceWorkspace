@@ -1,0 +1,173 @@
+Stray ".ends" card: .ends
+Stray ".ends" card: .ends
+Stray ".ends" card: .ends
+Circuit: * Z:\home\koblitz\Simulationsbeispiele_WS14\EAS\bg_diode_idealop.asc
+
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+Gmin = 1.07374
+Gmin = 0.115292
+vernier = 0.5
+vernier = 0.25
+vernier = 0.125
+vernier = 0.0625
+Gmin = 0.122309
+vernier = 0.03125
+vernier = 0.015625
+vernier = 0.0078125
+vernier = 0.00390625
+Gmin = 0.123375
+vernier = 0.00195313
+vernier = 0.000976563
+vernier = 0.000488281
+Gmin = 0
+Gmin stepping failed
+
+Starting source stepping with srcstepmethod=0
+Source Step = 3.0303%
+Source Step = 33.3333%
+Source Step = 63.6364%
+Source Step = 65.1693%
+Source Step = 65.1989%
+Source Step = 65.2285%
+Source Step = 65.258%
+Source Step = 65.2876%
+Source Step = 65.3172%
+vernier = 0.00146484
+Source Step = 65.3557%
+Source Step = 65.4001%
+Source Step = 65.4445%
+Source Step = 65.4889%
+Source Step = 65.5333%
+vernier = 0.00219727
+Source Step = 65.5887%
+Source Step = 65.6553%
+Source Step = 65.7219%
+Source Step = 65.7885%
+Source Step = 65.8551%
+vernier = 0.0032959
+Source Step = 65.935%
+Source Step = 66.0349%
+Source Step = 66.1347%
+Source Step = 66.2346%
+Source Step = 66.3345%
+vernier = 0.00494385
+Source Step = 66.4493%
+Source Step = 66.5992%
+Source Step = 66.749%
+Source Step = 66.8988%
+Source Step = 67.0486%
+vernier = 0.00741577
+Source Step = 67.2134%
+Source Step = 67.4381%
+Source Step = 67.6628%
+Source Step = 67.8876%
+Source Step = 68.1123%
+vernier = 0.0111237
+Source Step = 68.3482%
+Source Step = 68.6853%
+Source Step = 69.0224%
+Source Step = 69.3595%
+Source Step = 69.6966%
+Source Step = 70.0336%
+vernier = 0.0166855
+Source Step = 70.5393%
+Source Step = 71.0449%
+Source Step = 71.5505%
+Source Step = 72.0561%
+Source Step = 72.5617%
+vernier = 0.0250282
+Source Step = 73.2949%
+Source Step = 74.0533%
+Source Step = 74.8118%
+Source Step = 75.5702%
+Source Step = 76.3286%
+vernier = 0.0375423
+Source Step = 77.3904%
+Source Step = 78.5281%
+Source Step = 79.6657%
+Source Step = 80.8034%
+Source Step = 81.941%
+vernier = 0.0563135
+Source Step = 83.4768%
+Source Step = 85.1833%
+Source Step = 86.8898%
+Source Step = 88.5962%
+Source Step = 90.3027%
+Source Step = 90.3214%
+Source Step = 90.348%
+Source Step = 90.3747%
+Source Step = 90.4014%
+Source Step = 90.428%
+Source Step = 90.4547%
+Source Step = 90.4814%
+vernier = 0.00131985
+Source Step = 90.5107%
+Source Step = 90.5507%
+Source Step = 90.5907%
+Source Step = 90.6307%
+Source Step = 90.6707%
+vernier = 0.00197977
+Source Step = 90.7127%
+Source Step = 90.7727%
+Source Step = 90.8326%
+Source Step = 90.8926%
+Source Step = 90.9526%
+Source Step = 91.0126%
+vernier = 0.00296966
+Source Step = 91.1026%
+Source Step = 91.1926%
+Source Step = 91.2826%
+Source Step = 91.3726%
+Source Step = 91.4626%
+vernier = 0.00445449
+Source Step = 91.5931%
+Source Step = 91.728%
+Source Step = 91.863%
+Source Step = 91.998%
+Source Step = 92.133%
+vernier = 0.00668173
+Source Step = 92.322%
+Source Step = 92.5245%
+Source Step = 92.7269%
+Source Step = 92.9294%
+Source Step = 93.1319%
+vernier = 0.0100226
+Source Step = 93.4052%
+Source Step = 93.7089%
+Source Step = 94.0127%
+Source Step = 94.3164%
+Source Step = 94.6201%
+vernier = 0.0150339
+Source Step = 95.0149%
+Source Step = 95.4705%
+Source Step = 95.9261%
+Source Step = 96.3816%
+Source Step = 96.8372%
+vernier = 0.0225508
+Source Step = 97.4067%
+Source Step = 98.09%
+Source Step = 98.7734%
+Source Step = 99.4567%
+Source stepping succeeded in finding the operating point.
+
+
+Date: Mon Oct 13 12:47:11 2014
+Total elapsed time: 0.350 seconds.
+
+tnom = 27
+temp = 105
+method = trap
+totiter = 8354
+traniter = 0
+tranpoints = 0
+accept = 0
+rejected = 0
+matrix size = 8
+fillins = 8
+solver = Normal
+Matrix Compiler1:      33 opcodes
+Matrix Compiler2: 690 Bytes object code size  1.6/1.9/[1.6]
+
+

@@ -1,0 +1,90 @@
+* Copyright © Linear Technology Corp. 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006.  All rights reserved.
+*
+* 1= in+
+* 2= in-
+* 3= Vplus
+* 4= Vminus
+* 5= output
+*
+****************************************************++
+* Opamp mit 3 beinchen
+* Vplut und Vminus als Parameter zu übergeben
+*
+* 1= in+
+* 2= in-
+* 5= output
+*
+.subckt opamp_param_3 1 2 5
+*
+*interne Spannungsquellen:
+vpl 3 0 {Vp}
+vmi 4 0 {Vm}
+*
+S1 5 3 N003 5 Q
+S2 4 5 5 N003 Q
+*e1 5 0 n003 0 1
+A1 2 1 0 0 0 0 N002 0 OTA G={A0/Rout} ref={Vos} Iout={1.e+6*sr*Cout} Cout={Cout} en={en} enk={enk} in={in} ink={ink} incm={incm} incmk={incmk} Vhigh=1e308 Vlow=-1e308
+R7 0 N002 {Rout} noiseless
+C3 5 4 1p
+C4 3 5 1p
+Gp2 0 N004 N002 0 {1/Rout}
+Rp2 N004 0 {Rout} noiseless
+Gp3 0 N003 N004 0 {1/Rout}
+Rp3 N003 0 {Rout} noiseless
+* cp2=cout/A0 ergibt genau eine Eckfrequenz bei ft d.h. 45grad (omegat=A0/(Cout*Rout))
+*  zusätzliche Phasenverschiebung: Phir=45deg.
+*Cp2 N003 0 {1*Cout/A0}
+* jetzt beliebige Phasenreserve berücksichtigen: phi= -arctg(omegat*Rout*Cout)
+* phir = 90° - arctg(omegat*Rout*Cout)
+* folglich C = tan(90°-phir) /(Rout*omegat) = tan(180°-phir) /(cout/A0)
+*Cp2 N003 0 {cout*tan(pi*(0.5-phir/180))/A0}
+* CP2Abweichend von dem OP-Modell von Linear technologies
+*
+* statt einem Pol 2 Pole.
+* phir = 90° - 2*arctg(omegat*Rout*Cout)
+* folglich C = tan((90°-phir))/2) /(Rout*omegat) = tan(180°-phir) /(cout/A0)
+Cp2 N003 0 {cout*tan(pi*(0.25-phir/360))/A0}
+Cp3 N004 0 {cout*tan(pi*(0.25-phir/360))/A0}
+
+R3 3 2 {2*Rin} noiseless
+R4 3 1 {2*Rin} noiseless
+R5 1 4 {2*Rin} noiseless
+R6 2 4 {2*Rin} noiseless
+* Begrenzung der Ausgangsspannung des OTA wenn Ausgangsspannungsbegrenzung eintritt
+* damit die Spannung nicht ins unendliche steigt; realer OP damit nachgebildet.
+* realer OP begrenzt auch die Ausgangsspannung des internen Verstärkers 
+* mit der Kompensationskapazität
+G2  N002 0  N002 5 table (-500m {-2.e+6*sr*Cout} -100m 0 100m 0 500m {2.e+6*sr*Cout})
+.param Vp=10 Vm=10
+.param Rout=100Meg
+.param Cout={A0/FT/2/pi/Rout}
+.model Q SW(Ron=10 Roff=10Meg Vt=0 Vh=-.1 Vser={Rail} ilimit={ilim} noiseless level=2 epsilon={Rail/10})
+.param A0=1Meg FT=10Meg Sr=10 rail=0 Vos=0 ilim=25m
+.param en=0 enk=0 in=0 ink=0 incm=0 incmk=0 Rin=1G phir=45
+.ends opamp_param_5
+*
+*
+** Komparator open-Collector ähnlich LM229
+* 1= in+
+* 2= in-
+* 3= output
+* 4= ground
+*
+****************************************************++
+.subckt comp_oc 1 2 out masse
+*A13 1 2 0 0 0 0 N010 0 SCHMITT Vt=0 VH=0 vhigh=1 Vlow=-1 
+g0 n010 0 1 2 -1m 
+d0 n010 0 dx 
+c0 N010 0 {cfilt}
+G1 N011 masse N010 0 {Iout/1000}
+Q1 Out N011 masse qx
+D1  masse N011  dx
+c1 N011 0 {cfilt} 
+.model qx npn (BF=100)
+.model dx d (bv=10 ibv=1m)
+* Miller-Kondensator
+*c1 N011 out {cfilt}
+*s1 out masse  N010 0 swx  
+*.model swx SW(Ron=1 Roff=10Meg Vt=0.5 Vh=-.4 ilimit={Iout} level=2 epsilon=10m)
+.param Iout=15m cfilt=0.1p
+.ends comp_oc

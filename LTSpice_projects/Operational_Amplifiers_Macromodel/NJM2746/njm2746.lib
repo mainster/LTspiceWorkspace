@@ -1,0 +1,46 @@
+*$
+*PART NUMBER: NJM2746
+*MANUFACTURER: NEW JAPAN RADIO 
+*OPAMP
+*All Rights Reserved Copyright (c) Bee Technologies Inc. 2005
+.subckt njm2746 OUTA -INA +INA GND +INB -INB OUTB V+
+X_U1 +INA -INA V+ GND OUTA njm2746_s
+X_U2 +INB -INB V+ GND OUTB njm2746_s
+.ends njm2746
+.subckt njm2746_s  1 2 3 4 5
+  c1   11 12 7.9386E-12
+  c2    6  7 27.500E-12
+  dc    5 53 dy
+  de   54  5 dy
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 373.25E3 -1E3 1E3 370E3 -370E3
+  ga    6  0 11 12 1.9038E-3
+  gcm   0  6 10 99 321.43E-9
+  iee   3 10 dc 99.200E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx1
+  q2   12  1 14 qx2
+  r2    6  9 100.00E3
+  rc1   4 11 525.26
+  rc2   4 12 525.26
+  re1  13 10 2.7495
+  re2  14 10 2.7495
+  ree  10 99 2.0161E6
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 83.471
+  vb    9  0 dc 0
+  vc    3 53 dc .89791
+  ve   54  4 dc .8085
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.00E-18)
+.model dy D(Is=800.00E-18 Rs=1m Cjo=10p)
+.model qx1 PNP(Is=800.00E-18 Bf=494.75)
+.model qx2 PNP(Is=842.2140E-18 Bf=495.25)
+.ends njm2746_s
+*$

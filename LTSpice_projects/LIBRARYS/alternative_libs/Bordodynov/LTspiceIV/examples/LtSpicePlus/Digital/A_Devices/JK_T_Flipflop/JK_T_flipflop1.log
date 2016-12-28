@@ -1,0 +1,31 @@
+Circuit: * C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\examples\LtSpicePlus\Digital\A_Devices\JK_T_Flipflop\JK_T_flipflop1.asc
+
+WARNING: Node Q_X_JK is floating.
+
+WARNING: Less than two connections to node _Q_X_T.  This node is used by A:U3:DFF.
+WARNING: Less than two connections to node Q_A_D.  This node is used by A2.
+WARNING: Less than two connections to node CLR.  This node is used by V7.
+Direct Newton iteration for .op point succeeded.
+Ignoring empty pin current: Ix(u3:c)
+Ignoring empty pin current: Ix(u1:c)
+Ignoring empty pin current: Ix(u3:c)
+Ignoring empty pin current: Ix(u1:c)
+
+Date: Mon Feb 09 11:33:01 2015
+Total elapsed time: 0.027 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 1213
+traniter = 1208
+tranpoints = 600
+accept = 579
+rejected = 21
+matrix size = 31
+fillins = 1
+solver = Normal
+Matrix Compiler1: 1.02 KB object code size  0.5/0.4/[0.2]
+Matrix Compiler2: 1.82 KB object code size  0.4/0.5/[0.3]
+
+

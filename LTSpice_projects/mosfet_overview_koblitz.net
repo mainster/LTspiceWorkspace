@@ -1,0 +1,47 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\mosfet_overview_koblitz.asc
+M91 +5V G1 0 0 Nx
+V1 G1 0 PULSE(0 4 0 100m)
+J91 N004 N006 0 NJFx
+V2 N006 0 PULSE(-3 .3 0 100m)
+XU2 N004 vdc_single V=5V
+V3 G2 +5V PULSE(-4 0 0 100m)
+M92 0 G2 +5V +5V Px
+V4 co 0 PULSE(-4 4 0 100m)
+V5 N001 0 SINE(0 1 1k)
+J1 0 P001 N005 PJF
+XU4 N005 vdc_single V=5V
+V6 P001 N005 PULSE(-4 0 0 100m)
+B§ID1 N002 0 I=K*(V(G1,0)-Vp)**2*buf(V(G1)-Vp+.5)
+R1 N002 0 {r0}
+R§ID2 +5V N002 100e-6
+B§ID3 Vpl 0 I=K*(V(G2,Vpl)+Vp)**2*inv(V(G2,Vpl)+Vp+.5)
+R2 0 Vpl {r0}
+XU5 +5V vdc_single V=5V
+R§ID4 +5V Vpl 100e-6
+.model NJF NJF
+.model PJF PJF
+.lib C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\lib\cmp\standard.jft
+.model NMOS NMOS
+.model PMOS PMOS
+.lib C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\lib\cmp\standard.mos
+.model Nx NMOS(KP=2m VT0=2 )
+* .dc v2 -3 0.3 0.01
+.model njfx njf(beta=1m VT0=-2 )
+* KP = 2*K\nVT0 = VP
+* beta = K\nVT0 = VP
+* .dc v3 -4 0 .01
+.model Px PMOS(KP=2m VT0=-2)
+* KP= 2*K\nVT0 = VP
+* .dc v1 0 4 0.01
+.tran 100m
+.model pjfx pjf(beta=1m VT0=-2)
+* .dc v2 -0.5 4 10m
+* beta= K\nVT0 = ??VP\nVorsicht!\nVT0 negativ\nangeben
+.param r0=1meg
+.param VT0=2
+.param VP=VT0
+.param KP = 2m
+.param K = Kp/2
+.lib EIT_sub/vdc_single.sub
+.backanno
+.end

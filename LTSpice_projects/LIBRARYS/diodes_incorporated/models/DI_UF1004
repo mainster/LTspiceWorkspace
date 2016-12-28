@@ -1,0 +1,3 @@
+*SRC=UF1004;DI_UF1004;Diodes;Si;  400V  1.00A  50.0ns   Diodes Inc. 1.0A Ultra-Fast Rectifier
+.MODEL DI_UF1004 D  ( IS=38.7u RS=15.4m BV=400 IBV=5.00u
++ CJO=79.6p  M=0.333 N=4.17 TT=72.0n )

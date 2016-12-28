@@ -1,0 +1,48 @@
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\schaltregler\SS2015_A_inverter_switching_power.asc
+
+WARNING: Less than two connections to node LOAD.  This node is used by V1.
+WARNING: Less than two connections to node GND2.  This node is used by V:U1:1.
+WARNING: Less than two connections to node FET33.  This node is used by B3.
+WARNING: Less than two connections to node PW.  This node is used by V:U3:1.
+Direct Newton iteration for .op point succeeded.
+
+ilavg: AVG(i(l1))=0.225425 FROM 0 TO 2.4e-005
+ilrms: RMS(i(l1))=0.300606 FROM 0 TO 2.4e-005
+t0: time*1e6=5.00234 at 5.00234e-006
+t1: time*1e6=8.50066 at 8.50066e-006
+t2: time*1e6=13.0033 at 1.30033e-005
+trise: time=8.50066e-006 at 8.50066e-006
+tfall: time=5.00234e-006 at 5.00234e-006
+t: round(t2-t0)=8
+ton: round(t1-t0)=3
+area_ica: INTEG(i(ca))=6.7539e-007 FROM 2.00592e-006 TO 5.00234e-006
+vrip: area_ica/ca=0.0337695
+
+Measurement "vpp" FAIL'ed
+ilmax: MAX(i(l1))=0.600741 FROM 0 TO 2.4e-005
+ilmin: MIN(i(l1))=-0.0118817 FROM 0 TO 2.4e-005
+p1: v(a,ca)=-1.4782e-005 at 2.21283e-005
+p2: v(a,ca)=-1.50204e-005 at 1.80043e-005
+dva: abs(p2-p1)=2.38419e-007
+dil: abs(ilmax-ilmin)=0.612623
+rser: dva/dil=3.89177e-007
+
+
+Date: Sat Jan 30 22:05:02 2016
+Total elapsed time: 1.072 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 471972
+traniter = 471968
+tranpoints = 223978
+accept = 217482
+rejected = 6496
+matrix size = 21
+fillins = 4
+solver = Normal
+Matrix Compiler1: 660 bytes object code size  1.2/1.0/[0.9]
+Matrix Compiler2: 1,15 KB object code size  1.0/1.1/[0.9]
+
+

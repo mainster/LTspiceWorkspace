@@ -1,0 +1,32 @@
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\EAS_beispiele\Simulationsbeispiele_WS14\EAS\2q-mult-lin-simple.asc
+
+I2: both pins shorted together -- ignoring.
+Direct Newton iteration for .op point succeeded.
+.step ref=5
+.step ref=4.5
+.step ref=4
+.step ref=3.5
+.step ref=3
+.step ref=2.5
+.step ref=2
+.step ref=1.5
+.step ref=1
+
+Date: Thu Feb 19 10:06:38 2015
+Total elapsed time: 1.455 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 2097
+traniter = 2082
+tranpoints = 1042
+accept = 1042
+rejected = 0
+matrix size = 14
+fillins = 0
+solver = Normal
+Matrix Compiler1: 626 bytes object code size  0.4/0.2/[0.2]
+Matrix Compiler2: 1,01 KB object code size  0.3/0.3/[0.3]
+
+

@@ -1,0 +1,45 @@
+:Base PSCHED.HLP>main
+:Title MicroSim Schematics
+1 About MicroSim Schematics
+2 About MicroSim Schematics=IDH_ABOUT_About_MicroSim_Schematics
+2 About Creating and Editing Designs=IDH_ABOUT_Creating_and_Editing_Designs
+2 About Creating and Editing Symbols=IDH_ABOUT_Creating_and_Editing_Symbols
+2 About Creating and Editing Hierarchal Designs=IDH_ABOUT_Creating_and_Editing_Hierarchal_Designs
+2 About Preparing your Design for Simulation=IDH_ABOUT_Preparing_your_design_for_Simulation
+2 About Targeting your Design for Programmable Logic=IDH_ABOUT_Targeting_your_Design_for_Programmable_Logic
+2 About Preparing your Design for Board Layout=IDH_ABOUT_Preparing_your_Design_for_Board_layout
+1 Getting Around in MicroSim Schematics
+2 About Getting around in MicroSim Schematics=IDH_ABOUT_About_Getting_around_in_MicroSim_Schematics
+2 Starting MicroSim Schematics=IDH_ABOUT_Starting_MicroSim_Schematics
+2 Important Keys to Know in the Schematic Editor=IDH_ABOUT_Important_keys_to_know_in_the_schematic_editor
+2 Important Keys to Know in the Symbol Editor=IDH_ABOUT_Important_keys_to_know_in_the_Symbol_Editor
+2 Using the Toolbars in the Schematic Editor=IDH_ABOUT_Using_Toolbars_in_the_Schematic_Editor
+2 Opening, Saving, and Closing Files=IDH_ABOUT_Opening_saving_and_closing_files
+2 Creating New Files=IDH_ABOUT_Creating_new_files
+2 Using the Schematic Editor Window
+3 Using the Main Window=IDH_CONFIGUR_Main_Window
+3 Using the Message Viewer=IDH_CONFIGUR_Using_the_Message_Viewer
+3 Using the Status Bar=IDH_CONFIGUR_Status_Bar
+2 Toolbars
+3 Using the Toolbar in the Symbol Editor=IDH_ABOUT_Using_the_Toolbar_in_the_Symbol_Editor
+1 Changing the MicroSim Schematics Environment
+2 About Configuring MicroSim Schematics=IDH_CONFIGUR_About_Configuring_MicroSim_Schematics
+2 Configuring Symbol Libraries=IDH_CONFIGUR_Configuring_Symbol_Libraries
+2 Changing Display Preferences=IDH_CONFIGUR_Changing_Display_Preferences
+2 Changing Fonts=IDH_CONFIGUR_Changing_Fonts
+2 Configuring Colors=IDH_CONFIGUR_Configuring_Colors
+2 Changing Page Size=IDH_CONFIGUR_Changing_Page_Size
+2 Changing Page Settings=IDH_CONFIGUR_Changing_Page_Settings
+2 Changing the Grid and Gravity=IDH_CONFIGUR_To_change_Grid_and_Gravity
+2 Setting the Autosave Interval=IDH_CONFIGUR_Setting_the_Autosave_Interval
+2 Configuring a Text Editor=IDH_CONFIGUR_Configuring_a_Text_Editor
+2 Controlling the Display=IDH_CONFIGUR_Controlling_the_Display
+2 Zooming and Panning=IDH_CONFIGUR_Zooming_and_Panning_in_MicroSim_Schematics
+:Include Creatsch.cnt
+:Include Symbol.cnt
+:Include Simul.cnt
+:Include Digital.cnt
+:Include Laybord.cnt
+:Include Dsgnjrnl.cnt
+:Include Refer.cnt
+:Include Schglobl.cnt

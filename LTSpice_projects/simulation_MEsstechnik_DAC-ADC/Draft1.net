@@ -1,0 +1,7 @@
+* Z:\media\data\HS_Karlsruhe\N4B\Messtechnik\simulation_MEsstechnik_DAC-ADC\Draft1.asc
+R1 N002 N001 1k
+C1 N002 0 1µ
+V1 N001 0 1
+.tran 10m uic
+.backanno
+.end

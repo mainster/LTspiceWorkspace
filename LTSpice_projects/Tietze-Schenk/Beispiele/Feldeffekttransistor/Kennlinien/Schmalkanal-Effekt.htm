@@ -1,0 +1,57 @@
+<HTML>
+  <HEAD>
+    <TITLE>Schmalkanal-Effekt</TITLE>
+  </HEAD>
+  <BODY BGCOLOR="#F0F0F0">
+    <H1 ALIGN=center><B>Schmalkanal-Effekt</B></H1>
+    <P>
+Einflu&szlig; des Schmalkanal-Effekts auf die effektive Schwellenspannung
+    </P>
+    <P>
+      Schmalkanal-Effekt des Mosfets NMOS2 (Level-2-Modell).
+    </P>
+    <P>
+      Hier mu&szlig; ein Mosfet mit Level-2-Modell verwendet werden, da der
+      Schmalkanal-Effekt im Level-1-Modell nicht enthalten ist. Die Kanalweite
+      W wird im Bereich 1...10 Mikrometer variiert. Die Kanall&auml;nge L wird
+      ebenfalls variiert, damit das Verh&auml;ltnis W/L konstant bleibt; dabei mu&szlig;
+      L relativ gro&szlig; gew&auml;hlt werden, damit der Kurzkanal-Effekt vermieden
+      wird. Simuliert wird die Gate-Source-Spannung UGS=-US bei eingepr&auml;gtem
+      Drainstrom ID=Ib. Der Strom ist so klein, da&szlig; die Gate-Source-Spannung
+      praktisch der Schwellenspannung Uth entspricht. Durch den Schmalkanal-
+      Effekt nimmt die Schwellenspannung bei abnehmender Kanalweite W zu:
+      f&uuml;r W>3um ist Uth mit 780...800mV n&auml;herungsweise konstant, f&uuml;r L->1um
+      nimmt Uth auf etwa 910mV zu.
+    </P>
+    <P>
+      Bei dieser Simulation mu&szlig; der Bulk-Anschlu&szlig; des Mosfets mit der Source
+      verbunden werden, damit das Ergebnis nicht durch den Substrat-Effekt
+      verf&auml;lscht wird: BULK=US.
+    </P>
+    <P><TABLE BORDER=2 BGCOLOR="#F0F0F0">
+      <TR>
+        <TD><B>Analysen</B></TD>
+        <TD><B>Einstellungen</B></TD>
+        <TD><B>Ergebnisanzeigen</B></TD>
+      </TR>
+      <TR>
+        <TD>DC</TD>
+        <TD>W = 1 ... 10</TD>
+        <TD>Schwellenspannung</TD>
+      </TR>
+    </TABLE></P>
+    <P><TABLE BORDER=0 BGCOLOR="#F0F0F0" WIDTH=100%>
+      <TR>
+        <TH WIDTH=20% ALIGN=left>
+          <A HREF="ueber.htm" TARGET="uebersicht"><B>zur&uuml;ck</B></A>
+        </TH>
+        <TH WIDTH=20% ALIGN=left>
+          <A HREF="../../ueber.htm" TARGET="uebersicht"><B>&Uuml;bersicht</B></A>
+        </TH>
+        <TH WIDTH=60% ALIGN=left>
+          <A HREF="Schmalkanal-Effekt.tse"><B>Simulation starten</B></A>
+        </TH>
+      </TR>
+    </TABLE></P>
+  </BODY>
+</HTML>

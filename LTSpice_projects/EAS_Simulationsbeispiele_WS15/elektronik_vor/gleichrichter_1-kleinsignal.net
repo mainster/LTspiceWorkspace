@@ -1,0 +1,12 @@
+* Z:\home\koblitz\Simulationsbeispiele_WS15\elektronik_vor\gleichrichter_1-kleinsignal.asc
+V1 in 0 SINE(0 3 50)
+RL 1 0 1k
+D1 in 1 1N4148
+C1 1 0 100µ
+R1 1 d 1k
+D2 d 0 1n4148
+.model D D
+.lib Z:\home\koblitz\LT-Spice\lib\cmp\standard.dio
+.tran 100m
+.backanno
+.end

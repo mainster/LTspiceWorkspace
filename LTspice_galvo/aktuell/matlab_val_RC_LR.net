@@ -1,0 +1,20 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\galvoscanner\aktuell\matlab_val_RC_LR.asc
+L1 in2 N001 170µ
+Rsh1 out_LR 0 .01
+Rm1 N001 out_LR 1.5
+R1 in2 out_RC 1k
+C1 out_RC 0 220n
+E1 out_LRu_s 0 in2 0 laplace=(58.82)/(s+8882.0)
+E2 out_LRi_s 0 in2 0 laplace=(5882.0)/(s+8882.0)
+E3 out_RCu_s 0 in2 0 laplace=(4545.0)/(s+4545.0)
+E4 out_RCi_s 0 in2 0 laplace=(4.545)/(s+4545.0)
+A1 in2 P001 0 0 0 0 in2a 0 MODULATOR mark=100k, space=500
+XU1 P001 vdc_single V=5V
+V1 in2 0 PULSE(0 1 0 10m) AC 1
+B1 N002 0 V=log10(TIME/100m)
+* laplace=(s)/(s+4545.0)
+* laplace=(0.001*s)/(s+4545.0)
+.ac oct 100 1 100k
+.lib EIT_sub\vdc_single.sub
+.backanno
+.end

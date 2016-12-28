@@ -1,0 +1,73 @@
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\galvoscanner\levelconv_transducer_endstufe_lochraster.asc
+
+Early termination of direct N-R iteration.
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+vernier = 0.5
+vernier = 0.25
+vernier = 0.125
+Gmin = 4.81882
+vernier = 0.0625
+vernier = 0.03125
+vernier = 0.015625
+vernier = 0.0078125
+Gmin = 4.73544
+vernier = 0.00390625
+vernier = 0.00195313
+vernier = 0.000976563
+vernier = 0.000488281
+Gmin = 4.73428
+Gmin = 0
+Gmin stepping failed
+
+Starting source stepping with srcstepmethod=0
+Source Step = 3.0303%
+Source Step = 7.38636%
+Source Step = 9.2803%
+Source Step = 11.1742%
+Source Step = 13.0682%
+Source Step = 14.9621%
+vernier = 0.09375
+Source Step = 17.4242%
+Source Step = 20.2652%
+Source Step = 23.1061%
+Source Step = 25.947%
+Source Step = 28.7879%
+vernier = 0.140625
+Source Step = 32.339%
+Source Step = 36.6004%
+Source Step = 40.8617%
+Source Step = 45.1231%
+Source Step = 49.3845%
+vernier = 0.210938
+Source Step = 54.4981%
+Source Step = 60.8902%
+Source Step = 67.2822%
+Source Step = 73.6742%
+Source Step = 80.0663%
+vernier = 0.316406
+Source Step = 87.4171%
+Source Step = 97.0052%
+Source stepping succeeded in finding the operating point.
+
+
+Date: Thu Feb 26 04:16:38 2015
+Total elapsed time: 7.262 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 9537
+traniter = 6944
+tranpoints = 1881
+accept = 1661
+rejected = 220
+matrix size = 339
+fillins = 2183
+solver = Normal
+Thread vector: 131.4/61.0[6] 24.9/10.7[6] 33.9/11.4[6] 4.0/5.5[1]  2592/500
+Matrix Compiler1: 185 KB object code size  70.3/44.7/[24.4]
+Matrix Compiler2: 68.3 KB object code size  20.8/19.5/[8.0]
+
+

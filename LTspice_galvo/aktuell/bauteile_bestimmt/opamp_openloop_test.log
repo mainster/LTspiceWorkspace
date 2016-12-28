@@ -1,0 +1,55 @@
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\galvoscanner\aktuell\bauteile_bestimmt\opamp_openloop_test.asc
+
+WARNING: Less than two connections to node +30V.  This node is used by V:U2:1.
+WARNING: Less than two connections to node -30V.  This node is used by V:U3:1.
+WARNING: Less than two connections to node -5V.  This node is used by V:U6:1.
+WARNING: Less than two connections to node +5V.  This node is used by V:U7:1.
+Direct Newton iteration for .op point succeeded.
+Semiconductor Device Operating Points:
+                        --- Diodes ---
+Name:    d:u1:2      d:u1:7      d:u1:6      d:u1:1      d:u1:5
+Model:   u1:din       u1:dp       u1:y        u1:y        u1:x
+Id:     -5.73e-18    6.59e-03    1.31e-19   -1.31e-19    1.94e-07
+Vd:     -2.86e-06    2.40e+01    6.57e-08   -6.57e-08   -1.99e+00
+Req:     1.00e-12    1.00e-03    1.00e-12    1.00e-12    1.00e-03
+CAP:     0.00e+00    0.00e+00    0.00e+00    0.00e+00    0.00e+00
+
+Name:    d:u1:4
+Model:    u1:x
+Id:     -2.42e-10
+Vd:     -2.20e+01
+Req:     1.00e-11
+CAP:     0.00e+00
+
+                        --- VDMOSFET Transistors ---
+Name:        m:u1:2      m:u1:1
+Model:        u1:p        u1:n
+Id:         -8.00e-04    8.00e-04
+Vgs:        -6.57e-08   -6.57e-08
+Vds:        -1.99e+00    2.20e+01
+Vth:         2.00e-01   -2.00e-01
+Gm:          8.00e-03    8.00e-03
+Gds:         0.00e+00    0.00e+00
+Cgs:         0.00e+00    0.00e+00
+Cgd:         0.00e+00    0.00e+00
+Cbody:       0.00e+00    0.00e+00
+
+
+
+Date: Sat Aug 08 10:37:45 2015
+Total elapsed time: 0.159 seconds.
+
+tnom = 27
+temp = 27
+method = trap
+totiter = 25
+traniter = 0
+tranpoints = 0
+accept = 0
+rejected = 0
+matrix size = 50
+fillins = 23
+solver = Normal
+Matrix Compiler1:     141 opcodes
+Matrix Compiler2: 3.76 KB object code size
+

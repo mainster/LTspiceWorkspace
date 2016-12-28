@@ -1,0 +1,11 @@
+* Z:\home\koblitz\Simulationsbeispiele_WS14\get1\ersatz_2.asc
+R1a 1 4 500
+R2 1 2 1k
+R3 2 0 2k
+R4 2 3 1k
+I1 3 1 4m
+R1b 4 0 500
+V1 3 0 5
+.op
+.backanno
+.end

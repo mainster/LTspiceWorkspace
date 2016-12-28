@@ -1,0 +1,398 @@
+<HTML>
+  <HEAD>
+    <TITLE>Tietze/Schenk - Bilbliothek TS_Modelle</TITLE>
+  </HEAD>
+  <BODY BGCOLOR="#FFFFFF">
+  
+  <H1>Bilbliothek TS_Modelle</H1>
+  <P>
+    <B>Wichtiger Hinweis:</B> Dieses Dokument beschreibt die Parameter der Elemente.
+    Die Parameter setzen sich aus prim&auml;ren Parametern und sekund&auml;ren
+    Parametern zusammen. Die prim&auml;ren Parameter werden im Schaltplan angezeigt
+    und können durch Doppelklick auf den Wert ge&auml;ndert werden. Die sekund&auml;ren
+    Parameter werden &uuml;ber den Men&uuml;punkt <B>Edit/Attributes</B> oder durch einen
+    Doppelklick auf das Schaltsymbol aufgerufen.
+  </P>
+  <TABLE BORDER="1"><A NAME="top"></A>
+    <TR><TH><B>Name</B></TH><TH><B>Beschreibung</B></TH></TR>
+    <TR><TD><A HREF="#hs"><B>H_s</B></A></TD><TD>&Uuml;bertragungsfunktion</TD></TR>
+    <TR><TD><A HREF="#imod"><B>Ireal</B></A></TD><TD>Reale Stromquelle</TD></TR>
+    <TR><TD><A HREF="#vvideal"><B>VVideal</B></A></TD><TD>Idealer VV-Operationsverst&auml;rker</TD></TR>
+    <TR><TD><A HREF="#vvint"><B>VVint</B></A></TD><TD>VV-Operationsverst&auml;rker mit Frequenzgang</TD></TR>
+    <TR><TD><A HREF="#vvcomp"><B>VVkomp</B></A></TD><TD>Kleinsignalmodell f&uuml;r VV-Operationsverst&auml;rker</TD></TR>
+    <TR><TD><A HREF="#vv"><B>VV</B></A></TD><TD>VV-Operationsverst&auml;rker</TD></TR>
+    <TR><TD><A HREF="#vc"><B>VC</B></A></TD><TD>VC-Operationsverst&auml;rker</TD></TR>
+    <TR><TD><A HREF="#cv"><B>CV</B></A></TD><TD>CV-Operationsverst&auml;rker</TD></TR>
+    <TR><TD><A HREF="#cc"><B>CC</B></A></TD><TD>CC-Operationsverst&auml;rker</TD></TR>
+    <TR><TD><A HREF="#cctran"><B>CC-Transistor</B></A></TD><TD>CC-Operationsverst&auml;rker mit Transistor-Symbol</TD></TR>
+    <TR><TD><A HREF="#buffer"><B>Puffer</B></A></TD><TD>Idealer Impedanzwandler</TD></TR>
+    <TR><TD><A HREF="#limiter"><B>Begrenzer</B></A></TD><TD>Idealisierte Diode als Begrenzer</TD></TR>
+    <TR><TD><A HREF="#cmirrorn"><B>n-Stromspiegel</B></A></TD><TD>n-Stromspiegel</TD></TR>
+    <TR><TD><A HREF="#cmirrorp"><B>p-Stromspiegel</B></A></TD><TD>p-Stromspiegel</TD></TR>
+    <TR><TD><A HREF="#cmirror2n"><B>n-Strombank</B></A></TD><TD>n-Stromquellenbank</TD></TR>
+    <TR><TD><A HREF="#cmirror2p"><B>p-Strombank</B></A></TD><TD>p-Stromquellenbank</TD></TR>
+    <TR><TD><A HREF="#parameters"><B>Parameter</B></A></TD><TD>Definition von Parametern</TD></TR>
+    <TR><TD><A HREF="#imeter"><B>Strommesser</B></A></TD><TD>Strommesser</TD></TR>
+    <TR><TD><A HREF="#diffbias"><B>Diff-AP</B></A></TD><TD>Arbeitspunkt-Stabilisator f&uuml;r Differenzverst&auml;rker</TD></TR>
+    <TR><TD><A HREF="#diffsource"><B>Diff-Quelle</B></A></TD><TD>Differenzquelle f&uuml;r Differenzverst&auml;rker</TD></TR>
+  </TABLE>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="hs"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>H_s</B></TD><TD>&Uuml;bertragungsfunktion</TD></TR>
+      <TR><TD><IMG SRC="data/modelle_hs.png" ALT="Figure"></TD>
+      <TD>
+        Die Polynome m&uuml;ssen mit <B>s</B> als Frequenzvariable angegeben werden. Potenzen <BR>
+        von <B>s</B> kann man in den Formen <B>s*s*...*s</B> oder <B>s**&lt;power&gt;</B> angeben. <BR>
+        Beispiel: Das Nenner-Polynom ( 1 + 2 s + s<SUP>2</SUP> ) kann man mit <BR>
+        <B>D=1+2*s+s*s</B> oder <B>D=1+2*s+s**2</B> angeben.
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">N</TD><TD>=</TD><TD>Z&auml;hler-Polynom</TD></TR>
+          <TR><TD ALIGN="right">D</TD><TD>=</TD><TD>Nenner-Polynom</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="imod"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>Ireal</B></TD><TD>Reale Stromquelle</TD></TR>
+      <TR><TD><IMG SRC="data/modelle_ireal.png" ALT="Figure"></TD>
+      <TD>
+        Der parasit&auml;re Widerstand ist durch die Early-Spannung gegeben: R = UA / I0.
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">I0</TD><TD>=</TD><TD>Strom in Ampere</TD></TR>
+          <TR><TD ALIGN="right">Umin</TD><TD>=</TD><TD>S&auml;ttigungsspannung in Volt</TD></TR>
+          <TR><TD ALIGN="right">UA</TD><TD>=</TD><TD>Early-Spannung in Volt</TD></TR>
+          <TR><TD ALIGN="right">C</TD><TD>=</TD><TD>parasit&auml;re Kapazit&auml;t in Farad</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="vvideal"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>VVideal</B></TD><TD>Idealer VV-Operationsverst&auml;rker</TD></TR>
+      <TR><TD><IMG SRC="data/modelle_vvideal.png" ALT="Figure"></TD>
+      <TD>
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">AD</TD><TD>=</TD><TD>Differenzverst&auml;rkung</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="vvint"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>VVint</B></TD><TD>VV-Operationsverst&auml;rker mit Frequenzgang</TD></TR>
+      <TR><TD><IMG SRC="data/modelle_vvint.png" ALT="Figure"></TD>
+      <TD>
+        Modell erster Ordnung mit dem Frequenzgang eines verlustbehafteten Integrators. <BR>
+        Open-Loop-Verst&auml;rkung: A(f) = 1 / ( 1 / AD + j f / FT ) &asymp; &minus; j FT / f
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">AD</TD><TD>=</TD><TD>Differenzverst&auml;rkung f&uuml;r f = 0</TD></TR>
+          <TR><TD ALIGN="right">FT</TD><TD>=</TD><TD>Transitfrequenz in Hz</TD></TR>
+          <TR><TD ALIGN="right">Ra</TD><TD>=</TD><TD>Ausgangswiderstand in Ohm</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="vvcomp"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>VVcomp</B></TD><TD>Kleinsignalmodell f&uuml;r VV-Operationsverst&auml;rker</TD></TR>
+      <TR><TD><IMG SRC="data/modelle_vvkomp.png" ALT="Figure"></TD>
+      <TD>
+        Zweistufiges Modell mit Anschlüssen f&uuml;r eine externe Kompensationskapazit&auml;t. Mit <BR>
+        dieser Kapazit&auml;t werden die durch R1/C1 and R2/C2 gegebenen dominanten Pole <BR>
+        verschoben. Die zus&auml;tzliche Grenzfrequenz F3 fasst den Einfluss der weiteren Pole <BR>
+        zusammen. Damit gibt das Modell auch eine m&ouml;gliche Instabilit&auml;t richtig wieder. <BR>
+        Open-Loop-Verst&auml;rkung ohne Kompensationskapazit&auml;t: <BR>
+        A(f) = S1 S2 R1 R2 /
+               ( (1 +  j 2 &pi; f R1 C1)(1 + j 2 &pi; f R2 C2)(1 + j f / F3) )
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">S1</TD><TD>=</TD><TD>Steilheit der ersten Stufe in 1/Ohm</TD></TR>
+          <TR><TD ALIGN="right">R1</TD><TD>=</TD><TD>Ausgangswiderstand der ersten Stufe in Ohm</TD></TR>
+          <TR><TD ALIGN="right">C1</TD><TD>=</TD><TD>Ausgangskapazit&auml;t der ersten Stufe in Farad</TD></TR>
+          <TR><TD ALIGN="right">S2</TD><TD>=</TD><TD>Steilheit der zweiten Stufe in 1/Ohm</TD></TR>
+          <TR><TD ALIGN="right">R2</TD><TD>=</TD><TD>Ausgangswiderstand der zweiten Stufe in Ohm</TD></TR>
+          <TR><TD ALIGN="right">C2</TD><TD>=</TD><TD>Ausgangskapazit&auml;t der zweiten Stufe in Farad</TD></TR>
+          <TR><TD ALIGN="right">F3</TD><TD>=</TD><TD>Grenzfrequenz der weiteren Pole in Hz</TD></TR>
+          <TR><TD ALIGN="right">Ra</TD><TD>=</TD><TD>Ausgangswiderstand des Operationsverst&auml;rkers in Ohm</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="vv"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>VV</B></TD><TD>VV-Operationsverst&auml;rker</TD></TR>
+      <TR><TD><IMG SRC="data/modelle_vv.png" ALT="Figure"></TD>
+      <TD>
+        Open-Loop-Verst&auml;rkung: A(f) = AD / (1 + j f / FT)
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">AD</TD><TD>=</TD><TD>Differenzverst&auml;rkung f&uuml;r f = 0</TD></TR>
+          <TR><TD ALIGN="right">FT</TD><TD>=</TD><TD>Transitfrequenz in Hz</TD></TR>
+          <TR><TD ALIGN="right">SR</TD><TD>=</TD><TD>Slew-Rate in Volt / Microsekunde</TD></TR>
+          <TR><TD ALIGN="right">Ra</TD><TD>=</TD><TD>Ausgangswiderstand in Ohm</TD></TR>
+          <TR><TD ALIGN="right">Uamax</TD><TD>=</TD><TD>maximale Ausgangsspannung in Volt</TD></TR>
+          <TR><TD ALIGN="right">Uamin</TD><TD>=</TD><TD>minimale Ausgangsspannung in Volt</TD></TR>
+          <TR><TD ALIGN="right">Iamax</TD><TD>=</TD><TD>maximaler Betrag des Ausgangsstroms in Ampere</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="vc"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>VC</B></TD><TD>VC-Operationsverst&auml;rker</TD></TR>
+      <TR><TD><IMG SRC="data/modelle_vc.png" ALT="Figure"></TD>
+      <TD>
+        Open-Loop-Verst&auml;rkung: A(f) = S R / (1 + j 2 &pi; f R C)
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">S</TD><TD>=</TD><TD>Steilheit in 1/Ohm</TD></TR>
+          <TR><TD ALIGN="right">R</TD><TD>=</TD><TD>Ausgangswiderstand in Ohm</TD></TR>
+          <TR><TD ALIGN="right">C</TD><TD>=</TD><TD>Ausgangskapazit&auml;t in Farad</TD></TR>
+          <TR><TD ALIGN="right">Uamax</TD><TD>=</TD><TD>maximale Ausgangsspannung in Volt</TD></TR>
+          <TR><TD ALIGN="right">Uamin</TD><TD>=</TD><TD>minimale Ausgangsspannung in Volt</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="cv"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>CV</B></TD><TD>CV-Operationsverst&auml;rker</TD></TR>
+      <TR><TD><IMG SRC="data/modelle_cv.png" ALT="Figure"></TD>
+      <TD>
+        Open-Loop-Verst&auml;rkung: A(f) = R / ( Rs (1 + j 2 &pi; f R C) )
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">Rs</TD><TD>=</TD><TD>Steilheitswiderstand in Ohm</TD></TR>
+          <TR><TD ALIGN="right">R</TD><TD>=</TD><TD>Widerstand am Hochimpedanzknoten in Ohm</TD></TR>
+          <TR><TD ALIGN="right">C</TD><TD>=</TD><TD>Kapazit&auml;t am Hochimpedanzknoten in Farad</TD></TR>
+          <TR><TD ALIGN="right">Ra</TD><TD>=</TD><TD>Ausgangswiderstand in Ohm</TD></TR>
+          <TR><TD ALIGN="right">Uamax</TD><TD>=</TD><TD>maximale Ausgangsspannung in Volt</TD></TR>
+          <TR><TD ALIGN="right">Uamin</TD><TD>=</TD><TD>minimale Ausgangsspannung in Volt</TD></TR>
+          <TR><TD ALIGN="right">Iamax</TD><TD>=</TD><TD>maximaler Betrag des Ausgangsstroms in Ampere</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="cc"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>CC</B></TD><TD>CC-Operationsverst&auml;rker</TD></TR>
+      <TR><TD><IMG SRC="data/modelle_cc.png" ALT="Figure"></TD>
+      <TD>
+        Open-Loop-Verst&auml;rkung: A(f) = R / ( Rs (1 + j 2 &pi; f R C) )
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">Rs</TD><TD>=</TD><TD>Steilheitswiderstand in Ohm</TD></TR>
+          <TR><TD ALIGN="right">R</TD><TD>=</TD><TD>Ausgangswiderstand in Ohm</TD></TR>
+          <TR><TD ALIGN="right">C</TD><TD>=</TD><TD>Ausgangskapazit&auml;t in Farad</TD></TR>
+          <TR><TD ALIGN="right">Uamax</TD><TD>=</TD><TD>maximale Ausgangsspannung in Volt</TD></TR>
+          <TR><TD ALIGN="right">Uamin</TD><TD>=</TD><TD>minimale Ausgangsspannung in Volt</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="cctran"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>CC-Transistor</B></TD><TD>CC-Operationsverst&auml;rker mit Transistor-Symbol</TD></TR>
+      <TR><TD><IMG SRC="data/modelle_cctransistor.png" ALT="Figure"></TD>
+      <TD>
+        Open-Loop-Verst&auml;rkung: A(f) = R / ( Rs (1 + j 2 &pi; f R C) )
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">Rs</TD><TD>=</TD><TD>Steilheitswiderstand in Ohm</TD></TR>
+          <TR><TD ALIGN="right">R</TD><TD>=</TD><TD>Ausgangswiderstand in Ohm</TD></TR>
+          <TR><TD ALIGN="right">C</TD><TD>=</TD><TD>Ausgangskapazit&auml;t in Farad</TD></TR>
+          <TR><TD ALIGN="right">Uamax</TD><TD>=</TD><TD>maximale Ausgangsspannung in Volt</TD></TR>
+          <TR><TD ALIGN="right">Uamin</TD><TD>=</TD><TD>minimale Ausgangsspannung in Volt</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="buffer"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>Puffer</B></TD><TD>Idealer Impedanzwandler</TD></TR>
+      <TR><TD><IMG SRC="data/modelle_puffer.png" ALT="Figure"></TD>
+      <TD>
+        Verst&auml;rkung = 1. Keine Parameter.
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="limiter"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>Begrenzer</B></TD><TD>Idealisierte Diode als Begrenzer</TD></TR>
+      <TR><TD><IMG SRC="data/modelle_begrenzer.png" ALT="Figure"></TD>
+      <TD>
+        Diode mit reduzierter Temperaturspannung UT zur Erzielung eines <BR>
+        scharfen &Uuml;bergangs zwischen dem Durchlass- und dem Sperrbereich.
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">UT</TD><TD>=</TD><TD>Pseudo-Temperaturspannung in Volt, vorbelegt mit 5 mV</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="cmirrorn"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>n-Stromspiegel</B></TD><TD>n-Stromspiegel</TD></TR>
+      <TR><TD><IMG SRC="data/modelle_nstromspiegel.png" ALT="Figure"></TD>
+      <TD>
+        Die Parameter sind mit den typischen Werten eines npn-Stromspiegels vorbelegt.
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">Ue</TD><TD>=</TD><TD>Eingangsspannung in Volt, vorbelegt mit 0,7 V</TD></TR>
+          <TR><TD ALIGN="right">K</TD><TD>=</TD><TD>Stromverst&auml;rkung, vorbelegt mit 0,98</TD></TR>
+          <TR><TD ALIGN="right">Umin</TD><TD>=</TD>
+              <TD>minimale Ausgangsspannung (S&auml;ttigungsspannung) in Volt, vorbelegt mit 0,2 V</TD></TR>
+          <TR><TD ALIGN="right">UA</TD><TD>=</TD><TD>Early-Spannung, vorbelegt mit 100 V</TD></TR>
+          <TR><TD ALIGN="right">C</TD><TD>=</TD><TD>Ausgangskapazit&auml;t in Farad</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="cmirrorp"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>p-Stromspiegel</B></TD><TD>p-Stromspiegel</TD></TR>
+      <TR><TD><IMG SRC="data/modelle_pstromspiegel.png" ALT="Figure"></TD>
+      <TD>
+        Die Parameter sind mit den typischen Werten eines pnp-Stromspiegels vorbelegt.
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">Ue</TD><TD>=</TD><TD>Eingangsspannung in Volt, vorbelegt mit 0,7 V</TD></TR>
+          <TR><TD ALIGN="right">K</TD><TD>=</TD><TD>Stromverst&auml;rkung, vorbelegt mit 0,96</TD></TR>
+          <TR><TD ALIGN="right">Umin</TD><TD>=</TD>
+              <TD>minimale Ausgangsspannung (S&auml;ttigungsspannung) in Volt, vorbelegt mit 0,2 V</TD></TR>
+          <TR><TD ALIGN="right">UA</TD><TD>=</TD><TD>Early-Spannung, vorbelegt mit 50 V</TD></TR>
+          <TR><TD ALIGN="right">C</TD><TD>=</TD><TD>Ausgangskapazit&auml;t in Farad</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="cmirror2n"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>n-Strombank</B></TD><TD>n-Stromquellenbank</TD></TR>
+      <TR><TD><IMG SRC="data/modelle_nstrombank.png" ALT="Figure"></TD>
+      <TD>Wie n-Stromspiegel, aber mit zwei Ausg&auml;ngen.</TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="cmirror2p"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>p-Strombank</B></TD><TD>p-Stromquellenbank</TD></TR>
+      <TR><TD><IMG SRC="data/modelle_pstrombank.png" ALT="Figure"></TD>
+      <TD>Wie p-Stromspiegel, aber mit zwei Ausg&auml;ngen.</TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="parameters"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>Parameter</B></TD><TD>Definition von Parametern</TD></TR>
+      <TR><TD><IMG SRC="data/modelle_parameter.png" ALT="Figure"></TD>
+      <TD>
+        Mit einem Parameter-Element k&ouml;nnen bis zu 3 Parameter definiert werden.
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">NAME1</TD><TD>=</TD><TD>Name des Parameters 1</TD></TR>
+          <TR><TD ALIGN="right">WERT1</TD><TD>=</TD><TD>Wert des Parameters 1</TD></TR>
+          <TR><TD ALIGN="right">NAME2</TD><TD>=</TD><TD>Name des Parameters 2</TD></TR>
+          <TR><TD ALIGN="right">WERT2</TD><TD>=</TD><TD>Wert des Parameters 2</TD></TR>
+          <TR><TD ALIGN="right">NAME3</TD><TD>=</TD><TD>Name des Parameters 3</TD></TR>
+          <TR><TD ALIGN="right">WERT3</TD><TD>=</TD><TD>Wert des Parameters 3</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="imeter"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>Strommesser</B></TD><TD>Strommesser</TD></TR>
+      <TR><TD><IMG SRC="data/modelle_strommesser.png" ALT="Figure"></TD>
+      <TD>
+        Keine Parameter. Der Strom durch den Strommesser hat die Bezeichnung <BR>
+        <B>I(&lt;Name&gt;)</B>; dabei ist <B>&lt;Name&gt;</B> der Bauteil-Name des Strommessers.
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="diffbias"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>Diff-AP</B></TD><TD>Arbeitspunkt-Stabilisator f&uuml;r Differenzverst&auml;rker</TD></TR>
+      <TR><TD><IMG SRC="data/modelle_diffap.png" ALT="Figure"></TD>
+      <TD>
+        Mit diesem Element werden die Ausgangsgleichspannungen eines Differenzverst&auml;rkers <BR>
+        eingestellt, wenn Stromquellen als Last verwendet werden. In diesem Fall sind die <BR>
+        Ausgangswiderst&auml;nde sehr hoch und Ausg&auml;nge geraten aufgrund geringer Differenzen <BR>
+        in den Str&ouml;men in die S&auml;ttigung. Um dies zu verhindern, beinhaltet dieses Element zwei <BR>
+        DC Feeds, die mit einer Arbeitspunkt-Spannungsquelle mit der Spannung UaA <BR>
+        verbunden sind. Dadurch werden die Ausgangsgleichspannungen auf UaA gehalten. <BR>
+        Die DC-Feeds entsprechen dem Element <B>L_ACDC</B> in der Bibliothek <B>TS_Analog</B>.
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">UaA</TD><TD>=</TD><TD>Ausgangsgleichspannung in Volt</TD></TR>
+        </TABLE> 
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="diffsource"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>Diff-Quelle</B></TD><TD>Differenzquelle f&uuml;r Differenzverst&auml;rker</TD></TR>
+      <TR><TD><IMG SRC="data/modelle_diffquelle.png" ALT="Figure"></TD>
+      <TD>
+        Mit diesem Element werden die Eing&auml;nge eines Differenzverst&auml;rkers mit einer <BR>
+        Arbeitspunktspannung, einer Gleichtakt- und einer Differenz-Eingangsspannung <BR>
+        versorgt. Bei Ausg&auml;nge (oben) haben einen Innenwiderstand Rg. Der untere <BR>
+        Anschluss muss mit einem Bezugsknoten verbunden werden. In der Regel ist <BR>
+        das der Masseanschluss GND.
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">UD</TD><TD>=</TD><TD>Differenz-Eingangsspannung (Kleinsignal) in Volt</TD></TR>
+          <TR><TD ALIGN="right">UGl</TD><TD>=</TD><TD>Gleichtakt-Eingangsspannung (Kleinsignal) in Volt</TD></TR>
+          <TR><TD ALIGN="right">UGlA</TD><TD>=</TD><TD>Arbeitspunktspannung in Volt</TD></TR>
+          <TR><TD ALIGN="right">Rg</TD><TD>=</TD><TD>Innenwiderst&auml;nde in Ohm</TD></TR>
+        </TABLE> 
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  </BODY>
+</HTML>

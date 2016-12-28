@@ -1,0 +1,66 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\schaltwandler_uebersicht.asc
+L1 s1 a1 {L1}
+C1 a1 0 {Ca} Rser=.1
+R1 N001 0 {RL}
+D1 0 s1 Dx
+I1 a1 0 {Ia}
+S1 e s1 N003 0 SWx
+V1 N003 0 PULSE(0 2.5 1u 1p 1p {p*T} {T}) Rser={Ri}
+XU1 gnd2 vdc_single V=1u
+XU2 e vdc_single V={Ve}
+XU3 p vdc_single V={p}
+.model D D
+.lib Z:\home\mainster\.wineSpice\drive_c\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\lib\cmp\standard.dio
+.meas TRAN  ILmax MAX   I(L1)
+.meas TRAN  ILmin MIN   I(L1)
+.meas TRAN  dIL   PARAM ILmax-ILmin
+ 
+.meas TRAN  ICmax MAX   I(C1)
+.meas TRAN  ICmin MIN   I(C1)
+ 
+.meas TRAN  t1    time  when I(C1)=ICmax cross=last
+.meas TRAN  t01  time  when I(C1)=0 rise=last
+.meas TRAN  t02  time  when I(C1)=0 fall=last
+ 
+.meas TRAN  dtc1     PARAM t1-t01 
+.meas TRAN  dtc2     PARAM t02-t1 
+.meas TRAN  A1       PARAM 1/2*dtc1*ICmax 
+.meas TRAN  A2       PARAM 1/2*dtc2*ICmax
+.meas TRAN charge PARAM A1+A2 
+.meas TRAN Vr_calc PARAM {charge/Ca}
+ 
+.meas TRAN Vr PP V(a)
+* .param T=20u \n.param Ca=220u\n.param L = 50uH \n.param RL=7.13\n.param Vd0 = .8V\n.param p={(Va+Vd0)/(Ve+Vd0)}\n.param Va = 5V\n.param Ve = 15V
+;~~~ Model parameters ~~~
+.param Id0=10A
+.param VT=26mV
+.param n=1.2
+.param Isd2=Id0/exp( Vd0/( n*VT ) )
+ 
+.model swx SW (Ron=1m Roff=1T Vt=1.25 Vh=-0.5)
+.model Dx   D (Ron=1m Roff=1T Vfwd={Vd0})
+.model Dx2 D (Is={Isd2} N={n})
+.param 
++ Ve = 12V
++ Va = 5V
++ Vd0 = 0.5V
++ T = 20us
++ L1 = 100uH  
++ Ca = 20µF
++ Cpar = 200pF
++ t1 = p*T
++ Ia1 = 1A
++ p = 0.3 
+ 
++ ILmax1 = Ve/20uH*t1
+;+ L1= Ve*t1/(( ILmax1-IL_diff))
+ 
++ Ia = Ia1
++ Ri = 1u
++ RL = 10
+.tran 25m
+* .op
+.step param p .1 1 .1
+.lib EIT_sub/vdc_single.sub
+.backanno
+.end

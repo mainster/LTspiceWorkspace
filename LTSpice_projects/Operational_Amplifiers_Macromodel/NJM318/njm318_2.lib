@@ -1,0 +1,44 @@
+*$
+* PART NUMBER: NJM318
+* MANUFACTURER: NEW JAPAN RADIO
+* All Rights Reserved Copyright (c) Bee Technologies Inc. 2007
+.Subckt NJM318 BAL1 -IN +IN V- BAL2 OUT V+ COMP2
+X_U1   +IN -IN V+ V- OUT NJM318_ME
+.ends  NJM318
+.subckt NJM318_ME   1 2 3 4 5
+  c1   11 12 8.6603E-12
+  c2    6  7 30.000E-12
+  dc    5 53 dy
+  de   54  5 dy
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 2.4907E6 -1E3 1E3 2E6 -2E6
+  ga    6  0 11 12 3.2044E-3
+  gcm   0  6 10 99 32.044E-9
+  iee  10  4 dc 1.9803E-3
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx1
+  q2   12  1 14 qx2
+  r2    6  9 100.00E3
+  rc1   3 11 312.07
+  rc2   3 12 312.07
+  re1  13 10 285.90
+  re2  14 10 285.90
+  ree  10 99 100.99E3
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 2.0427E3
+  vb    9  0 dc 0
+  vc    3 53 dc 2.7979
+  ve   54  4 dc 2.7979
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.00E-18)
+.model dy D(Is=800.00E-18 Rs=1m Cjo=10p)
+.model qx1 NPN(Is=800.00E-18 Bf=5.8929E3)
+.model qx2 NPN(Is=933.8032E-18 Bf=7.2881E3)
+.ends
+*$

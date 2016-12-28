@@ -1,0 +1,68 @@
+*$
+*PART NUMBER: NJU7043
+*MANUFACTURER: NEW JAPAN RADIO
+*CMOS OPAMP
+*All Rights Reserved Copyright (c) Bee Technologies Inc. 2007
+.SUBCKT nju7043 OUT1 -IN1 +IN1 VSS +IN2 -IN2 OUT2 VDD
+X_U1 +IN1 VSS -IN1 OUT1 VDD nju7043_s
+X_U2 +IN2 VSS -IN2 OUT2 VDD nju7043_s
+.ENDS nju7043
+.SUBCKT nju7043_s  IN+ VSS IN- OUT VDD
+M1         2 IN- 3 VDD MbreakPD3   
+M2         2 IN+ 4 VDD MbreakPD2           
+M3         VDD 1 2 VDD MbreakPD4       
+M4         VDD 1 5 VDD MbreakPD          
+M5         VDD 1 6 VDD MbreakPD       
+M6         VDD 1 1 VDD MbreakPD          
+M7         5 5 VSS VSS MbreakND    
+M8         5 4 VSS VSS MbreakND            
+M9         3 3 IN1 VSS MbreakND4  
+M10        4 3 IN2 VSS MbreakND1         
+M11        1 6 11 11 MbreakND    
+M12        6 6 VSS VSS MbreakND3   
+M13        7 5 VSS VSS MbreakND5     
+M14        VDD 7 7 VDD MbreakPD           
+M15        VDD 7 OUT VDD MbreakPD1       
+M16        OUT 4 VSS VSS MbreakND2 
+C1         OUT 4 90p
+C2         OUT 6 7.2p
+R1         11 VSS  1.522k         
+R2         IN1 VSS 2.0k                  
+R3         IN2 VSS  2.423k  
+I1         0 IN-  0.505p  
+I2         0 IN+  1.5p  
+X_U1       VSS 3 DbreakZ 
+X_U2       VSS 4 DbreakZ
+.model MbreakND NMOS (LEVEL=3 L=6u W=3.2m VTO=0.2 RS=10E-3
++ RD=10E-3 RDS=1.00E6 TOX=2.00E-6 RG=5 RB=1.0000E-3 KP=1E-6)
+.model MbreakND1 NMOS (LEVEL=3 L=6u W=0.165 VTO=0.2 RS=10E-3
++ RD=10E-3 RDS=1.00E6 TOX=2.00E-6 RG=5 RB=1.0000E-3 KP=1E-6)
+.model MbreakND2 NMOS (LEVEL=3 L=6u W=27.4m VTO=0.2 RS=10E-3
++ RD=10E-3 RDS=1.00E6 TOX=2.00E-6 CGSO=1E-10 CGDO=300e-12
++ CBD=45.0E-12 RG=5 RB=1.0000E-3 KP=1E-6)
+.model MbreakND3 NMOS (LEVEL=3 W=3.2m L=6u VTO=0.1 RS=10E-3
++ RD=10E-3 RDS=1E6 TOX=2.00E-6 RG=5 RB=1.00E-3 KP=1E-6)
+.model MbreakND4 NMOS (LEVEL=3 L=6u W=0.165 VTO=0.2 RS=10E-3
++ RD=10E-3 RDS=1.00E6 TOX=2.00E-6 CGSO=1E-8 CBD=100.00E-12   
++ RG=5 RB=1.0000E-3 KP=1E-6)
+.model MbreakND5 NMOS (LEVEL=3 L=6u W=0.165 VTO=0.2 RS=10E-3
++ RD=10E-3 RDS=1.00E6 TOX=2.00E-6 RG=5 RB=1.0000E-3 KP=1E-6)
+.model MbreakPD PMOS (LEVEL=3 L=6u W=0.23 VTO=-0.1 RS=10.0E-3
++ RD=10E-3 RDS=1.00E6 TOX=2.00E-6 RG=5 RB=1.0000E-3 KP=1E-6)
+.model MbreakPD1 PMOS (LEVEL=3 L=6u W=0.4 VTO=-0.1 RS=10.0E-3
++ RD=10E-3 RDS=1E6 TOX=2E-6 CGDO=1.9E-8 RG=5 RB=1E-3 KP=1E-6)
+.MODEL MbreakPD2 PMOS (LEVEL=3 L=6u W=0.00175 VTO=-.34 RS=10E-3
++ RD=10E-3 RDS=2.1E6 TOX=2E-6 CBD=50E-12 RG=5 RB=1E-3 KP=1E-5)
+.MODEL MbreakPD3 PMOS (LEVEL=3 L=6u W=0.00177 VTO=-.34 RS=10E-3
++ RD=10E-3 RDS=1.0E6 TOX=2.0E-6 RG=5 RB=1.0000E-3 KP=1E-5)
+.model MbreakPD4 PMOS (LEVEL=3 W=.23 L=0.3u VTO=-0.1 RS=10E-3
++ RD=10E-3 RDS=1E6 TOX=2E-6 CGDO=1.2e-10 RG=5 RB=1E-3 KP=1E-6)
+.ENDS nju7043_s
+.SUBCKT DbreakZ  A K
+D1 A K DF
+DZ A2 A DR
+VZ K A2 1
+.MODEL DF D 
+.MODEL DR D 
+.ENDS DbreakZ
+*$

@@ -1,0 +1,84 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\klausuren_Koblitz\ws08_09.asc
+M1 N009 N009 N013 N013 NMOS1
+M2 N010 N009 N014 N014 NMOS2
+R1 N013 N017 8k
+R2 N014 0 4k
+R3 0 N017 0.1
+I1 0 N009 50µ
+I2 0 N017 PULSE(0 100m 0 100m)
+V1 N007 0 10
+R4 N007 N010 1
+Q5 N001 N002 E1 0 NPNx
+R5 E1 N004 1k
+R6 Vin N002 50k
+R7 C2 N006 {R3}
+Q2 C2 0 N004 0 PNPx
+V2 N006 0 -5V
+V3 N001 0 5
+Q3 N015 b1 0 0 NPNx
+I3 0 N015 1m
+R8 N015 b1 10k
+M3 out N021 0 0 NMOS1a
+M4 out out 0 0 NMOS2a
+I4 0 out 100µ
+V5 in 0 10
+C1 out N021 7p
+C2 N021 in 10n
+R9 out N021 10meg
+V7 N023 Q1e_a 0.7
+V8 Q1C_b Q1e_a 0.2
+XU1 Q1C Q1e N022 Q1e crtl_ii F=200
+R10 Q1e_a N027 1k
+V12 Q1C_b 0 5
+R13 Q1e N024 1k
+V15 N026 0 -5 Rser=1
+R14 N026 VC2_a 2k
+V16 Q1C 0 5 Rser=1
+R12 ib 0 50k
+R15 N023 Vin 50k
+V17 Vin 0 1
+XU2 VC2_a N024 N025 N024 crtl_ii F=200
+V13 N028 0 -5
+R16 N028 VC2_b 2k
+V14 0 P001 0.7
+XU3 VC2_b N027 P001 N027 crtl_ii F=100
+D1 ib N022 1N4148
+D2 N025 0 1N4148
+V4 N012 Ve1_c 0.7
+R11 N012 Vin 50k
+V_IC1 Ve1_c 0 4.8
+R17 Ve1_c N018 1k
+V11 N020 0 {-5+0.2}
+R§IC2 N020 N018 2k
+D3 N018 0 1N4148
+V6 N003 Ve2_c 0.7
+R18 N003 Vin 50k
+V_IC2 Ve2_c 0 4.8
+R19 Ve2_c N005 1k
+V9 N008 0 {-5+0.2}
+R§IC1 N008 N005 2k
+V10 N005 0 0.6
+D4 N019 0 1N4148
+I5 N011 N016 1m
+R20 N016 N019 1
+V_IC3 N011 0 4.8
+.model D D
+.lib C:\Program Files (x86)\LTC_orig\LTspiceIV_4.18\lib\cmp\standard.dio
+.model NPN NPN
+.model PNP PNP
+.lib C:\Program Files (x86)\LTC_orig\LTspiceIV_4.18\lib\cmp\standard.bjt
+.model NMOS NMOS
+.model PMOS PMOS
+.lib C:\Program Files (x86)\LTC_orig\LTspiceIV_4.18\lib\cmp\standard.mos
+.model nmos1 nmos(Kp=1.25m VT0=1.5)
+.model nmos2 nmos(Kp=2.5m VT0=1.5)
+.param R3=2k
+;.step param R3 list 2k 1T
+.dc I5 -1m 1m 10u
+.model nmos1a nmos (Kp={2*3m} VT0=1.5)
+.model nmos2a nmos (Kp={2*300u} VT0=1.5)
+.model npnx npn (bf=200 Is={2m/exp(0.7/26m)})
+.model pnpx pnp (bf=200 Is={2m/exp(0.7/26m)})
+.lib EIT_sub\controlled_sources.sub
+.backanno
+.end

@@ -1,0 +1,16 @@
+* Z:\media\storage\CODES_ln\LTSpice_projects\systemeDiff.asc
+C1 0 sys1 10µ
+R1 sys1 N001 100
+R2 N002 sys2 100
+C2 0 sys2 10µ
+V1 N002 0 PULSE(0 1 10m 10n 10n 10m 20m)
+V2 N001 0 PULSE(0 2 10m 10n 10n 10m 20m)
+C3 0 sys3 10µ
+R3 sys3 N003 100
+R4 N004 sys4 100
+C4 0 sys4 10µ
+V3 N004 0 PULSE(0 1 10m 10n 10n 10m 20m)
+V4 N003 0 PULSE(0 2 10m 10n 10n 10m 20m)
+.tran 100m
+.backanno
+.end

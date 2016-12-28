@@ -1,0 +1,8 @@
+* Z:\home\koblitz\Simulationsbeispiele_SS15\Elektronik_lab\dienstag\tiefpass_rc-tran.asc
+C1 b 0 1n
+R1 N001 b 1k
+V1 N001 0 PULSE(0 5 1u 1p 1p 5u 15u) AC 1
+;ac dec 20 10k 10.e+6
+.tran 50u
+.backanno
+.end

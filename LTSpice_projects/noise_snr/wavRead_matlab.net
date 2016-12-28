@@ -1,0 +1,19 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\noise_snr\wavRead_matlab.asc
+V1 sx 0 wavefile=matlabout.wav
+R1 sx sy {200+620}
+C1 sy 0 10n
+;tran {simtim}
+.param MATLAB=1
++ fs = {1/250k}
++ f0 = 1k
++ amp = 0mV
++ N = {1024*8}
++ simtim = 100m ; {N/fs}
+.wave spiceout.wav 16 256k V(sy)
+.options plotwinsize = 0
+.step dec param x 11 10meg 10
+.noise V(sy) V1 oct 100 10 {x}
+.measure ns INTEG V(onoise)
+.measure snr param -20*log10(ns)
+.backanno
+.end

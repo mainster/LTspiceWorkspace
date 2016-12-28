@@ -1,0 +1,26 @@
+* Z:\media\data\CODES\LTSpice_projects\complex_mixer\complex_mixer_new.asc
+A1 N002 0 0 0 0 In Qa 0 MODULATOR space={F0} mark={F1}
+V1 N002 0 PULSE(0 1 0 {tb} 0)
+B1 InDout 0 V=V(InD)*V(LoIn)
+B2 QaDout 0 V={QFAKTOR}*V(QaD)*V(LoQa)
+A2 In 0 N001 0 0 0 InD 0 SAMPLEHOLD
+V2 N001 0 PULSE(0 1 0 1n 1n {1/(2*fa1)} {1/fa1})
+A3 Qa 0 N001 0 0 0 QaD 0 SAMPLEHOLD
+V3 LoIn 0 SINE(0 1 {flo} 0 0 0)
+V4 LoQa 0 SINE(0 1 {flo} 0 0 270)
+B3 RF 0 V=V(InDout)-V(QaDout)
+R1 In Qa 1000meg
+.param fc=37meg
+.param B1=10meg
+.param F0=0
+.param F1=B1
+.param tb = 5u
+.param QFAKTOR = 1
+.tran 0 {tb} 0
+.param fa1=40meg
+.param flo=698Meg
+.options plotwinsize=0
+.OPTIONS numdgt=7
+* .step param QFAKTOR list 0.1 0.3 0.5 1
+.backanno
+.end

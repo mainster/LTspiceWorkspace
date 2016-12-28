@@ -1,0 +1,12 @@
+* Z:\media\data\CODES\LTSpice_projects\LTC6992_PWM_temperature\LTC6992_PWM_temperature.asc
+XU1 N002 0 N004 N005 N001 N003 LTC6992-2
+V1 N002 0 PULSE(0 1 0 5m 5m 1m)
+V2 N001 0 5
+R1 N004 0 316k
+R2 N005 0 18.2k
+R3 N001 N005 97.6k
+R4 N003 0 10k
+.tran 10m
+.lib LTC6992-2.sub
+.backanno
+.end

@@ -1,0 +1,45 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\h_brucke.asc
+M1 N006 N008 0 0 IRFH7936
+M2 N006 N002 N001 N001 IRF7404
+V1 s 0 PULSE(0 {Vh} 0 1n 1n {0.9/(2*f0)} {1/(f0)}) Rser=2
+R1 N001 N002 470
+R2 N008 0 1.5k
+R3 N012 0 4.7k
+R4 0 N012 68k
+Q1 N010 N012 0 0 NPN
+M3 N007 N009 0 0 IRFH7936
+M4 N007 N003 N001 N001 IRF7404
+R5 N001 N003 470
+R7 N013 0 4.7k
+R8 0 N013 68k
+Q2 N011 N013 0 0 NPN
+R10 N007 N006 100
+XU1 N001 vdc_single V=12V
+B1 sd 0 V=delay(V(s),{1/(2*f0)})
+V2 s2 0 PULSE({Vh} 0 0 1n 1n {0.9/(2*f0)} {1/(f0)}) Rser=2
+D2 N009 N005 1N750
+D1 N005 N003 1N750
+D3 N004 N002 1N750
+D4 N008 N004 1N750
+R6 N009 0 1.5k
+R9 sd N005 100
+R11 s N004 100
+C1 N009 0 {cd}
+C3 N001 N003 {cd}
+C4 N001 N002 {cd}
+C5 N008 0 {cd}
+.model D D
+.lib C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\lib\cmp\standard.dio
+.model NPN NPN
+.model PNP PNP
+.lib C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\lib\cmp\standard.bjt
+.model NMOS NMOS
+.model PMOS PMOS
+.lib C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\lib\cmp\standard.mos
+.tran {10/f0}
+.param f0=1k
++ Vh = 12V
++ Cd = 500n
+.lib EIT_sub/vdc_single.sub
+.backanno
+.end

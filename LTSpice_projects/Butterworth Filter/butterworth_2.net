@@ -1,0 +1,20 @@
+* C:\users\mainster\My Documents\CODES_local\LTSpice_projects\Butterworth Filter\butterworth_2.asc
+XU1 N004 f2 VP VM f2 level.1 Avol=1Meg GBW=10Meg Slew=10Meg ilimit=25m rail=0 Vos=0 phimargin=45 en=0 enk=0 in=0 ink=0 Rin=500Meg
+V1 VP 0 10
+V2 in 0 AC 1
+V3 0 VM 10
+R2 N003 in 16k
+R3 N004 N003 16k
+C4 N004 0 2.55n
+C1 f2 N003 5.1n
+XU2 N002 f1 VP VM f1 level.1 Avol=1Meg GBW=10Meg Slew=10Meg ilimit=25m rail=0 Vos=0 phimargin=45 en=0 enk=0 in=0 ink=0 Rin=500Meg
+R1 N001 in 5.6k
+R4 N002 N001 2.7k
+C2 N002 0 10n
+C3 f1 N001 22n
+.step dec param w 10 1000k 100
+.ac list {w/(2*pi)}
+* Laplace=1/(s^2/100000000+s/5000+1)
+.lib UniversalOpamps2.sub
+.backanno
+.end

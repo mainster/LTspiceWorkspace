@@ -1,0 +1,141 @@
+* Flip-Flops and Counters
+*
+.subckt dff_no d clk on o
+a1 d 0 clk 0 0 on o 0 DFLOP TD={td} vhigh={vpwr$_digital} rout={rout}
+.param TD=0 rout=10
+.ends dff_no
+*
+.subckt dff_r d clk on o clr 
+a1 d 0 clk 0 clr on o 0 DFLOP TD={td} vhigh={vpwr$_digital} rout={rout}
+.param TD=0 rout=10
+.ends dff_r
+*
+.subckt dff_s d clk on o  pre
+a1 d 0 clk pre 0 on o 0 DFLOP TD={td} vhigh={vpwr$_digital} rout={rout}
+.param TD=0 rout=10
+.ends dff_s
+* 
+.subckt dff_rs d clk on o clr pre
+a1 d 0 clk pre clr on o 0 DFLOP TD={td} vhigh={vpwr$_digital} rout={rout}
+.param TD=0 rout=10
+.ends dff_rs
+*
+.subckt dff_4_rs d0 d1 d2 d3 clk o0 o1 o2 o3 clr pre
+a0 d0 0 clk pre clr 0 o0 0 DFLOP TD={td} vhigh={vpwr$_digital} rout={rout}
+a1 d1 0 clk pre clr 0 o1 0 DFLOP TD={td} vhigh={vpwr$_digital} rout={rout}
+a2 d2 0 clk pre clr 0 o2 0 DFLOP TD={td} vhigh={vpwr$_digital} rout={rout}
+a3 d3 0 clk pre clr 0 o3 0 DFLOP TD={td} vhigh={vpwr$_digital} rout={rout}
+.param TD=0 rout=10
+.ends dff_4_rs
+*
+.subckt Tff_no d T on o
+aflop S R 0 0 0 on o 0 SRFLOP TD={td} vhigh={vpwr$_digital} rout={rout}
+ainv d 0 0 0 0 N001 0 0 BUF vhigh={vpwr$_digital} 
+andS d T 0 0 0 0 S 0 AND vhigh={vpwr$_digital} 
+andR N001 T 0 0 0 0 R 0 AND vhigh={vpwr$_digital} 
+.param TD=0 rout=10
+.ends tff_no
+*
+.subckt Tff_rs d T on o clr pre
+aflop S R 0 0 0 on o 0 SRFLOP TD={td} vhigh={vpwr$_digital} rout={rout}
+anor d pre 0 0 0 N001 0 0 OR vhigh={vpwr$_digital} 
+andS d T 0 0 0 0 S1 0 AND vhigh={vpwr$_digital} 
+AorS s1 pre 0 0 0 0 S 0 OR vhigh={vpwr$_digital} 
+andR N001 T 0 0 0 0 R1 0 AND vhigh={vpwr$_digital} 
+AorR R1 clr 0 0 0 0 R 0 OR vhigh={vpwr$_digital}  
+.param TD=0 rout=10
+.ends tff_rs
+*
+.subckt Tff_r d T on o clr 
+aflop S R 0 0 0 on o 0 SRFLOP TD={td} vhigh={vpwr$_digital} rout={rout}
+ainv d 0 0 0 0 N001 0 0 BUF vhigh={vpwr$_digital} 
+andS d T 0 0 0 0 S 0 AND vhigh={vpwr$_digital} 
+andR N001 T 0 0 0 0 R1 0 AND vhigh={vpwr$_digital} 
+AorR R1 clr 0 0 0 0 R 0 OR vhigh={vpwr$_digital}  
+.param TD=0 rout=10
+.ends tff_r
+*
+.subckt Tff_s d T on o pre
+aflop S R 0 0 0 on o 0 SRFLOP TD={td} vhigh={vpwr$_digital} rout={rout}
+anor d pre 0 0 0 N001 0 0 OR vhigh={vpwr$_digital} 
+andS d T 0 0 0 0 S1 0 AND vhigh={vpwr$_digital} 
+AorS s1 pre 0 0 0 0 S 0 OR vhigh={vpwr$_digital} 
+andR N001 T 0 0 0 0 R 0 AND vhigh={vpwr$_digital} 
+.param TD=0 rout=10
+.ends Tff_s
+*
+.subckt JKff_rs J K clk on o clr pre
+aflop S R 0 0 0 on o 0 SRFLOP TD={td} vhigh={vpwr$_digital} rout={rout}
+andj J on N001 clk 0 0 S1 0 AND vhigh={vpwr$_digital}
+aors s1 pre 0 0 0 0 S 0 OR vhigh={vpwr$_digital}
+andk K o  N001 clk 0 0 R1 0 AND vhigh={vpwr$_digital}
+aorR R1 clr 0 0 0 0 R 0 OR vhigh={vpwr$_digital}
+ainv clk 0 0 0 0 N001 0 0 BUF TD={TD/4} vhigh={vpwr$_digital}
+.param TD=0 rout=10
+.endsJKff_rs 
+*
+.subckt JKff_r J K clk on o clr
+aflop S R 0 0 0 on o 0 SRFLOP TD={td} vhigh={vpwr$_digital} rout={rout}
+andj J on N001 clk 0 0 S 0 AND vhigh={vpwr$_digital}
+andk K o  N001 clk 0 0 R1 0 AND vhigh={vpwr$_digital}
+aorR R1 clr 0 0 0 0 R 0 OR vhigh={vpwr$_digital}
+ainv clk 0 0 0 0 N001 0 0 BUF TD={TD/4} vhigh={vpwr$_digital}
+.param TD=0 rout=10
+.endsJKff_r 
+*
+.subckt JKff_s J K clk on o pre
+aflop S R 0 0 0 on o 0 SRFLOP TD={td} vhigh={vpwr$_digital} rout={rout}
+andj J on N001 clk 0 0 S1 0 AND vhigh={vpwr$_digital}
+aors s1 pre 0 0 0 0 S 0 OR vhigh={vpwr$_digital}
+andk K o  N001 clk 0 0 R 0 AND vhigh={vpwr$_digital}
+ainv clk 0 0 0 0 N001 0 0 BUF TD={TD/4} vhigh={vpwr$_digital}
+.param TD=0 rout=10
+.endsJKff_s 
+*
+.subckt JKff_no J K clk on o
+aflop S R 0 0 0 on o 0 SRFLOP TD={td} vhigh={vpwr$_digital} rout={rout}
+andj J on N001 clk 0 0 S 0 AND vhigh={vpwr$_digital}
+andk K o  N001 clk 0 0 R 0 AND vhigh={vpwr$_digital}
+ainv clk 0 0 0 0 N001 0 0 BUF TD={TD/4} vhigh={vpwr$_digital}
+.param TD=0 rout=10
+.endsJKff_no 
+*
+.subckt bin_4_u_cnt ce clk clr pre d0 d1 d2 d3 co
+A3 d1 N008 0 0 0 0 N004 0 XOR Vhigh={vpwr$_digital}
+A8 d0 0 0 0 ce 0 N008 0 AND Vhigh={vpwr$_digital}
+A6 d2 N003 0 0 0 0 N006 0 XOR Vhigh={vpwr$_digital}
+A7 0 d1 d0 0 ce 0 N003 0 AND Vhigh={vpwr$_digital}
+A10 N005 d3 0 0 0 0 N007 0 XOR Vhigh={vpwr$_digital}
+A11 0 d1 d0 d2 ce 0 N005 0 AND Vhigh={vpwr$_digital}
+A9 d1 d0 d2 d3 ce 0 co 0 AND Vhigh={vpwr$_digital}
+A12 d0 ce 0 0 0 0 N001 0 XOR Vhigh={vpwr$_digital}
+A1 N001 0 clk pre clr 0 d0 0 DFLOP TD={td} Vhigh={vpwr$_digital} rout={rout}
+A2 N004 0 clk pre clr 0 d1 0 DFLOP TD={td} Vhigh={vpwr$_digital} rout={rout}
+A4 N006 0 clk pre clr 0 d2 0 DFLOP TD={td} Vhigh={vpwr$_digital} rout={rout}
+A5 N007 0 clk pre clr 0 d3 0 DFLOP TD={td} Vhigh={vpwr$_digital} rout={rout}
+.params td=10ns rout=10
+.ends bin_4_u_cnt
+*
+.subckt bin_4_ud_cnt ce clk clr pre d0 d1 d2 d3 co up
+A1 N003 0 clk pre clr 0 d0 0 DFLOP TD={td} Vhigh={vpwr$_digital}
+A2 N006 0 clk pre clr 0 d1 0 DFLOP TD={td} Vhigh={vpwr$_digital}
+A4 N009 0 clk pre clr 0 d2 0 DFLOP TD={td} Vhigh={vpwr$_digital}
+A5 N013 0 clk pre clr 0 d3 0 DFLOP TD={td} Vhigh={vpwr$_digital}
+A3 d1 N002 N004 0 0 0 N006 0 XOR Vhigh={vpwr$_digital}
+A6 d2 N005 N007 0 0 0 N009 0 XOR Vhigh={vpwr$_digital}
+A7 ce d1 d0 up 0 0 N005 0 AND Vhigh={vpwr$_digital}
+A10 N008 d3 N010 0 0 0 N013 0 XOR Vhigh={vpwr$_digital}
+A11 ce d1 d0 d2 up 0 N008 0 AND Vhigh={vpwr$_digital}
+A17 d0 ce 0 0 0 0 N003 0 XOR Vhigh={vpwr$_digital}
+A8 ce d0 up 0 0 0 N002 0 AND Vhigh={vpwr$_digital}
+A9 N001 d0 up 0 0 N004 0 0 OR Vhigh={vpwr$_digital}
+A12 up N001 d0 d1 0 N007 0 0 OR Vhigh={vpwr$_digital}
+A13 up N001 d0 d1 d2 N010 0 0 OR Vhigh={vpwr$_digital}
+A14 ce d1 d0 d2 d3 0 N012 0 AND Vhigh={vpwr$_digital}
+A15 N001 d0 d1 d2 d3 0 N015 0 OR Vhigh={vpwr$_digital}
+A16 up 0 N012 0 0 0 N011 0 AND Vhigh={vpwr$_digital}
+A18 0 up 0 N015 0 N014 0 0 OR Vhigh={vpwr$_digital}
+A19 N011 0 N014 0 0 0 co 0 OR Vhigh={vpwr$_digital}
+A20 ce 0 0 0 0 N001 0 0 BUF Vhigh={vpwr$_digital}
+.params td=10ns rout=10
+.ends bin_4_ud_cnt

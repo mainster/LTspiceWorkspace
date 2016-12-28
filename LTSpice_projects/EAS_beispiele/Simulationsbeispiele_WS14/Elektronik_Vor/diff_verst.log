@@ -1,0 +1,33 @@
+Stray ".ends" card: .ends
+Stray ".ends" card: .ends
+Stray ".ends" card: .ends
+Circuit: * Z:\home\koblitz\Simulationsbeispiele_WS14\Elektronik_Vor\diff_verst.asc
+
+Direct Newton iteration for .op point succeeded.
+.step v1=-5
+.step v1=-4.5
+.step v1=-4
+.step v1=-3.5
+.step v1=-3
+.step v1=-2.5
+.step v1=-2
+.step v1=-1.5
+
+Date: Thu Oct 23 11:15:06 2014
+Total elapsed time: 0.859 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 2091
+traniter = 2082
+tranpoints = 1042
+accept = 1042
+rejected = 0
+matrix size = 20
+fillins = 0
+solver = Normal
+Matrix Compiler1: 1,13 KB object code size  2.4/2.3/[1.4]
+Matrix Compiler2: off  [2.0]/2.3/2.8
+
+

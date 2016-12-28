@@ -1,0 +1,4 @@
+*SRC=ES2G;DI_ES2G;Diodes;Si;  400V  2.00A  25.0ns   Diodes Inc. Fast
+Rectifier
+.MODEL DI_ES2G D  ( IS=3.92n RS=21.0m BV=400 IBV=5.00u
++ CJO=83.5p  M=0.333 N=1.95 TT=36.0n )

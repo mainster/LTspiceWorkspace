@@ -1,0 +1,57 @@
+<HTML>
+  <HEAD>
+    <TITLE>D&auml;mpfungsglied mit Schottky-Diode</TITLE>
+  </HEAD>
+  <BODY BGCOLOR="#F0F0F0">
+    <H1 ALIGN=center><B>D&auml;mpfungsglied mit Schottky-Diode</B></H1>
+    <P>
+      Einfaches D&auml;mpfungsglied mit Schottky-Diode. Mit einer AC-Analyse
+      wird die D&auml;mpfung bei einer Frequenz von 1MHz in Abh&auml;ngigkeit vom
+      Strom der Diode ermittelt. Die D&auml;mpfung wird in der zugeh&ouml;rigen
+      Anzeige in dB dargestellt. Sie betr&auml;gt bei gesperrter Diode 6 dB
+      aufgrund der Spannungsteilung zwischen Rg und RL und nimmt mit
+      zunehmendem Strom auf 40 dB zu.
+    </P>
+    <P>
+      Zur Verdeutlichung werden die Zeitverl&auml;ufe der Ausgangsspannung
+      mit einer TRAN-Analyse ermittelt. Dabei wird ein sinusf&ouml;rmiges
+      Eingangssignal mit einer Amplitude von 0,1V und einer Frequenz
+      von 1MHz verwendet. Da die D&auml;mpfung mindestens 6dB betr&auml;gt, ist
+      die Amplitude des Ausgangssignals mindestens um den Faktor 2
+      kleiner.
+    </P>
+    <P><TABLE BORDER=2 BGCOLOR="#F0F0F0">
+      <TR>
+        <TD><B>Analysen</B></TD>
+        <TD><B>Einstellungen</B></TD>
+        <TD><B>Parameter</B></TD>
+        <TD><B>Ergebnisanzeigen</B></TD>
+      </TR>
+      <TR>
+        <TD>AC</TD>
+        <TD>f = 1e6 ... 1e6</TD>
+        <TD>I1 = 1uA ... 10mA</TD>
+        <TD>Daempfung</TD>
+      </TR>
+      <TR>
+        <TD>TRAN</TD>
+        <TD>t = 0 ... 2us</TD>
+        <TD>I1 = 1uA ... 10mA</TD>
+        <TD>Sinussignal</TD>
+      </TR>
+    </TABLE></P>
+    <P><TABLE BORDER=0 BGCOLOR="#F0F0F0" WIDTH=100%>
+      <TR>
+        <TH WIDTH=20% ALIGN=left>
+          <A HREF="ueber.htm" TARGET="uebersicht"><B>zur&uuml;ck</B></A>
+        </TH>
+        <TH WIDTH=20% ALIGN=left>
+          <A HREF="../ueber.htm" TARGET="uebersicht"><B>&Uuml;bersicht</B></A>
+        </TH>
+        <TH WIDTH=60% ALIGN=left>
+          <A HREF="Daempfungsglied.tse"><B>Simulation starten</B></A>
+        </TH>
+      </TR>
+    </TABLE></P>
+  </BODY>
+</HTML>

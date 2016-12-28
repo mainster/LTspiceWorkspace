@@ -1,0 +1,20 @@
+Circuit: * Z:\home\koblitz\Simulationsbeispiele_WS14\Elektronik_Lab\dienstag\diode_2.asc
+
+
+Date: Tue Oct 14 14:52:03 2014
+Total elapsed time: 0.055 seconds.
+
+tnom = 27
+temp = 105
+method = trap
+totiter = 55
+traniter = 0
+tranpoints = 0
+accept = 0
+rejected = 0
+matrix size = 2
+fillins = 0
+solver = Normal
+Matrix Compiler1: 54 Bytes object code size
+Matrix Compiler2: 116 Bytes object code size
+

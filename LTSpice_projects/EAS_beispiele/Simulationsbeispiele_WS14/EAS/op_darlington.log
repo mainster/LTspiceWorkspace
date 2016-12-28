@@ -1,0 +1,31 @@
+Circuit: * Z:\home\koblitz\Simulationsbeispiele_WS14\EAS\op_darlington.asc
+
+Direct Newton iteration for .op point succeeded.
+.step amp=8
+.step amp=8.25
+.step amp=8.5
+.step amp=8.75
+.step amp=9
+.step amp=9.25
+.step amp=9.5
+.step amp=9.75
+.step amp=10
+
+Date: Mon Oct 27 13:44:25 2014
+Total elapsed time: 3.007 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 3199
+traniter = 3180
+tranpoints = 1351
+accept = 1237
+rejected = 114
+matrix size = 30
+fillins = 22
+solver = Normal
+Matrix Compiler1: 4,08 KB object code size  4.0/3.5/[2.0]
+Matrix Compiler2: off  [2.2]/3.2/8.8
+
+

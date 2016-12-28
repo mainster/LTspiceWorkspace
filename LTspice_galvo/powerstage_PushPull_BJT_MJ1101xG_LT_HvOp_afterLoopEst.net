@@ -1,0 +1,94 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\galvoscanner\powerstage_PushPull_BJT_MJ1101xG_LT_HvOp_afterLoopEst.asc
+Q§T2 Vplus b1 N002 0 2N3019
+Q§T3 Vmin b2 N015 0 2N5401
+R6 N002 N004 {bias}
+R7 N012 N015 {bias*1.5}
+R8 b1 N003 {bias_b}
+R9 N014 b2 {bias_b}
+D2 N003 stim 1N4148
+D3 stim N014 1N4148
+Rload1 N018 shunt 1.5
+V3 Vplus 0 {vsup}
+V4 Vmin 0 {-vsup}
+V5 stim 0 PULSE(0 1 0 10p 10p) AC 1
+R10 b2 N017 1m
+R11 N001 b1 1m
+I2 0 N001 {IK1}
+I3 N017 0 {Ik1}
+Rshunt shunt 0 0.01
+R13 N004 out_A {Rs}
+R14 N012 out_A {Rs}
+R22 out_A N013 22t
+C3 N013 0 1µ
+XU3 stim N007 Vplus Vmin opOut1 LT1797
+R3 N019 N007 1k
+R4 N007 N009 {1k*Kp}
+L2 NC_01 N018 170µ Rpar=1meg Cpar=100p
+I_cmd1 0 I_cmd PULSE({-Ipeak} {Ipeak} 0 20n 20n 1m 2m)
+RI_cmd I_cmd 0 1
+XU5 N011 N005 Vplus Vmin N006 ada4700 ada4700
+R16 N005 I_cmd {Rsu}
+R17 N005 0 {Rsu}
+R18 0 N011 {Rsu}
+R19 N005 N006 {Rsu}
+E1 N019 0 shunt 0 100
+C2 N010 N009 {1/(1k*Ki+1u)}
+Short_I 0 no_I1 short_I 0 SWA
+V1 short_I 0 {10k*Ki+1u}
+C1 0 0 100p
+Short_I1 0 N020 short_I 0 SWA
+R1 Vplus N020 1k
+XU2 0 NC_06 0 2N6287
+XU6 0 NC_07 0 2N6284
+XU7 0 NC_08 0 MJ11016G
+XU8 0 NC_09 0 MJ11015G
+XU1 Vplus N002 N004 MJ11016G
+XU4 Vmin N015 N012 MJ11015G
+E2 pwrStage 0 stim 0 1
+L1 N016 0 1m
+C4 stem 0 10µ
+R2 stem N016 1
+.model D D
+.lib C:\Program Files (x86)\LTC_orig\LTspiceIV_4.18\lib\cmp\standard.dio
+.model NPN NPN
+.model PNP PNP
+.lib C:\Program Files (x86)\LTC_orig\LTspiceIV_4.18\lib\cmp\standard.bjt
+* .dc I_cmd1 -2 2 0.001
+;ac oct 500 1 1000meg
+* bis jetzt 15.09.2014 #1
+.inc /home/mainster/.wine/drive_c/Program Files (x86)/LTC_orig/LTspiceIV_4.18/lib/sub/ADA4700.sub
+.inc /home/mainster/.wine/drive_c/Program Files (x86)/LTC_orig/LTspiceIV_4.18/lib/sub/LM358.sub
+* .model IRFP240 VDMOS(Rg=3 Vto=4 Rd=72m Rs=18m Rb=36m Kp=4.9 Lambda=.03 Cgdmax=1.34n Cgdmin=.1n Cgs=1.25n Cjo=1.25n Is=67p mfg=International_Rectifier Vds=200 Ron=180m Qg=70n)\n.model IRFP250N VDMOS(Rg=1.44 Vto=4.0 Rd=47m Rs=0m Rb=5.6m Kp=13 Cgdmax=3.9n Cgdmin=0.10n Cgs=1.9n Cjo=1.25n Is=5p tt=186n mfg=International_Rectifier Vds=200 Ron=75m Qg=123n)
+; ---------------------
+;   Power amp
+; ---------------------
+.param Ik1 = 3m
+.param bias = 220
+.param bias_b = 390
+.param Rs = 10m
+; ---------------------
+;   SOURCES
+; ---------------------
+.param Vsup = 30V
+.param Ipeak = 10A
+; ---------------------
+;   Compensator
+; ---------------------
+.param Rsu = 1k
+.param Kp = 100
+.param Ki = 15000
+.model swA SW(Ron=.1 Roff=100Meg Vt=0.1 Vh=-.5 )
+* .step param Kp 0.5 15 2
+;ac oct 100 10 10meg
+* laplace=(4.318e15*s+1.88e6*s**2-3.895e15)/(3.208e18*s+1.506e10*s**2+s**3+3.013e19)
+* .ac oct 200 1 1000meg
+* laplace=(5.152e18*s**2-7.712e20*s+5.752e14*s**3+1.933e7*s**4+2.045e19)/(3.486e18*s**2-5.113e20*s+5.214e13*s**3+1.212e7*s**4+s**5+9.891e19)
+.tran 3e-8
+* Gpw.num,
+.lib 2N6284.sub
+.lib 2N6287.sub
+.lib LTC.lib
+.lib MJ11015G.sub
+.lib mj11016g.sub
+.backanno
+.end

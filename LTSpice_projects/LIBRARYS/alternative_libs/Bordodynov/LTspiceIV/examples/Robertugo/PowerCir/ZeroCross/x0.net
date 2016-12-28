@@ -1,0 +1,26 @@
+* Z:\media\bak1\Temp\EleUpdAdd\Lt\LtSpiceIV_Plus_12_2009\examples\Robertugo\PowerCir\ZeroCross\x0.asc
+D1 0 N001 1N4007
+D2 0 N002 1N4007
+D3 N001 N008 1N4007
+D4 N002 N008 1N4007
+XU1 N008 N004 0 T106F1
+D5 N005 N006 1N4007
+D6 N006 N009 1N4007
+XP1 N005 N009 N007 Pot Rt=47k Set=.0
+R2 N007 N004 27k
+C1 N007 0 22µ V=100 Irms=590m Rser=0.1 MTBF=2000 Lser=0 mfg="Nichicon" pn="UPR2A221MRH" type="Al electrolytic" ppPkg=1
+C2 N004 0 1.2µ V=100 Irms=4.58 Rser=0.025 MTBF=0 Lser=0 mfg="KEMET" pn="C2225C105K1RAC" type="X7R" ppPkg=1
+R3 N004 0 1k
+R1 N006 N008 470
+D7 N004 N001 1N4007
+D8 N004 N002 1N4007
+C3 N002 N001 100n
+Vca N001 N003 SINE(0 310 50) Rser=1
+RL N002 N003 220
+.model D D
+.lib Z:\media\windows\Program Files\LTC\LTspiceIV\lib\cmp\standard.dio
+.tran 5
+.lib pote.lib
+.lib teccscr.lib
+.backanno
+.end

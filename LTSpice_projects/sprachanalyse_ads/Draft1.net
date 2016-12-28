@@ -1,0 +1,16 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\sprachanalyse_ads\Draft1.asc
+V1 mic 0 wavefile="z:/home/mainster/CODES_local/CoolEditPro/AUS_frau_Norm.wav" chan=0
+B1 abs_mic 0 V=abs(V(mic))
+R2 0 fil2 {RT}
+C2 fil2 abs_mic {1/(2*pi*RT*fc2)}
+* .options plotwinsize=0
+* wavefile="z:/home/mainster/CODES_local/CoolEditPro/a_wh.wav" chan=0
+.param fc = 1500
+.param fc1 = 50
+.param fc2 = 100
+.param fc3 = 150
+.param RT=100
+.tran .8
+.step param fc2 list 10 200 500 1000
+.backanno
+.end

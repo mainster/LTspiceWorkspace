@@ -1,0 +1,9 @@
+Missing ".ends" statement in file "MDB_sub/HFbjt.sub"
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\praxissem_2014\wanze_107MHz_doppel_capDiod.asc
+
+R9: both pins shorted together -- ignoring.
+WARNING: Less than two connections to node RB.  This node is used by V:U5:1.
+WARNING: Less than two connections to node RE.  This node is used by V:U6:1.
+WARNING: Less than two connections to node N004.  This node is used by V:U7:1.
+Direct Newton iteration for .op point succeeded.
+.step umic=-0.25

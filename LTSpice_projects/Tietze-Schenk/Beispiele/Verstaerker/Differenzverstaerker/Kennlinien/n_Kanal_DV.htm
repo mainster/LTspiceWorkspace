@@ -1,0 +1,51 @@
+<HTML>
+  <HEAD>
+    <TITLE>n_Kanal_Differenzverstaerker.sch</TITLE>
+  </HEAD>
+  <BODY BGCOLOR="#F0F0F0">
+    <H1 ALIGN=center><B>n_Kanal_Differenzverstaerker.sch</B></H1>
+    <P>
+Kennlinien eines Differenzverst&auml;rkers mit n-Kanal-CMOS-Transistoren
+    </P>
+    <P>
+      &Uuml;bertragungskennlinien und Differenzverst&auml;rkung eines n-Kanal-
+      Differenzverst&auml;rkers f&uuml;r verschiedene Gr&ouml;&szlig;en der Mosfets. Die
+      Differenzverst&auml;rkung AD=dUa1/dUD wird mit dV(Ua1) dargestellt.
+    </P>
+    <P>
+      Die Gr&ouml;&szlig;e der Mosfets wird &uuml;ber die Kanalweite W eingestellt.
+      Mit W=40/160/640, L=3 und Kn=30uA/V² erh&auml;lt man f&uuml;r den
+      Steilheitskoeffizienten K=Kn*W/L=0,4/1,6/6,4mA/V² und daraus
+      UDM=1/0,5/0,25V. Mit den gro&szlig;en Mosfets (W=640 -> UDM=0,25V)
+      haben die Kennlinien (betragsm&auml;&szlig;ig) die gr&ouml;&szlig;te Steigung; damit
+      ist auch die Differenzverst&auml;rkung betragsm&auml;&szlig;ig am gr&ouml;&szlig;ten.
+    </P>
+    <P><TABLE BORDER=2 BGCOLOR="#F0F0F0">
+      <TR>
+        <TD><B>Analysen</B></TD>
+        <TD><B>Einstellungen</B></TD>
+        <TD><B>Parameter</B></TD>
+        <TD><B>Ergebnisanzeigen</B></TD>
+      </TR>
+      <TR>
+        <TD>DC</TD>
+        <TD>UD = -1V ... 1V</TD>
+        <TD>W = (40 160 640)</TD>
+        <TD>Kennlinien , Differenzverstaerkung</TD>
+      </TR>
+    </TABLE></P>
+    <P><TABLE BORDER=0 BGCOLOR="#F0F0F0" WIDTH=100%>
+      <TR>
+        <TH WIDTH=20% ALIGN=left>
+          <A HREF="ueber.htm" TARGET="uebersicht"><B>zur&uuml;ck</B></A>
+        </TH>
+        <TH WIDTH=20% ALIGN=left>
+          <A HREF="../../../ueber.htm" TARGET="uebersicht"><B>&Uuml;bersicht</B></A>
+        </TH>
+        <TH WIDTH=60% ALIGN=left>
+          <A HREF="n_Kanal_DV.tse"><B>Simulation starten</B></A>
+        </TH>
+      </TR>
+    </TABLE></P>
+  </BODY>
+</HTML>

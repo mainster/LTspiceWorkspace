@@ -1,0 +1,61 @@
+* C:\users\mainster\My Documents\CODES_local\LTSpice_projects\galvoscanner\LM358_ADC_DAC_levelconv_KOB.asc
+R13 out2 N001 9k
+R12 0 N001 1k
+XU4 in N001 N003 N004 out2 OPA404
+R11 out2 P001 2k
+R14 P002 0 150
+R5 P001 div 2k
+R16 div P002 560
+R7 u1 N005 1m
+XU2 div N005 Vp Vm u1 OPA404
+R3 sum N006 {Ra*2}
+XU3 u5 N006 Vp Vm sum OPA404
+R4 N006 0 {Ra}
+R2 u5 u2 {Ra}
+R1 u5 u1 {Ra}
+R18 N009 u5 {8*Ra}
+R19 u5 0 {8/7*Ra}
+R6 N002 0 100
+D1 0 N002 1N750
+V5 in 0 SINE(0 1 100) AC 1
+V6 u2 0 1.24
+V8 N009 0 {0.26*8}
+V9 Vm 0 -10
+V10 Vp 0 10
+XU1 N003 vdc_single V=15V
+XU5 N004 vdc_single V=-15V
+C1 N007 fil 4.7n
+C2 N008 0 4.7n Rser=10
+R8 N007 N008 1.2k
+R9 sum N007 1.2k
+XU6 N008 fil Vp Vm fil OPA404
+D2 fil +3.3V BAT54
+D3 0 fil BAT54
+V1 +3.3V 0 3.3V
+C3 u5 0 {c3}
+C4 fil +3.3V 7p
+C5 0 fil 7p
+.model D D
+.lib C:\Program Files (x86)\LTC\LTspiceIV\lib\cmp\standard.dio
+* .ac oct 100 10 1meg
+.include /home/mainster/.wine/drive_c/Program Files (x86)/LTC_orig/LTspiceIV_4.18/lib/sub/OPA404.LIB
+.include /home/mainster/.wine/drive_c/Program Files (x86)/LTC_orig/LTspiceIV_4.18/lib/sub/LM358.lib
+* Position Demodulator\n2 deg / V\n \n---> +-10V @ +-20deg
+* xmega128a1 ADC mit Vref=3V
+* 20Vpp --> 3Vpp
+* xmega128a1 DAC \nzur offset feintrimmung
+.param Ra=18k
+.param Rs=1k
+* (u1*R2*R5+u2*R1*R5+u5*R1*R2)*R3/(R4*(R1*R2+R5*(R1+R2))) + (u1*R2*R5+u2*R1*R5+u5*R1*R2)/(R1*R2+R5*(R1+R2))==ua\nua=u1+u2+u5/5
+* R5=R18 || R19
+* .step dec param w 1k 30k 25\n.ac list {w/(2*pi)}
+.tran 20m
+* Butterworth/Sallenkey\nFg=28kHz Unity gain
+* BAT42
+.param c3=1e-15
+;.step param c3 list 1e-15 10n
+.param n=0.1
+;.step param n list 0.1 1
+.lib EIT_sub\vdc_single.sub
+.backanno
+.end

@@ -1,0 +1,3 @@
+*SRC=PR6001;DI_PR6001;Diodes;Si;  50.0V  6.00A  150ns   Diodes Inc. Fast Rectifier 
+.MODEL DI_PR6001 D  ( IS=863n RS=12.6m BV=50.0 IBV=10.0u 
++ CJO=663p  M=0.333 N=1.70 TT=216n )

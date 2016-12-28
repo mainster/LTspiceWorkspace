@@ -1,0 +1,3 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\meas_script_MEASURE_AC_PARAM.mout
+tmp: MAX(mag(V(out)))=(-0.000171449dB,0°) FROM 1 TO 100000
+BW=136.461 FROM 22.7007 TO 159.162

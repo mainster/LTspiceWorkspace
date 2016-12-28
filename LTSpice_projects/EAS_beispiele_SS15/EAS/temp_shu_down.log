@@ -1,0 +1,23 @@
+Stray ".ends" card: .ends
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\EAS_beispiele_SS15\EAS\temp_shu_down.asc
+
+.dc sweep increment has wrong sign -- fixing...
+
+Date: Sat Jul 11 15:17:10 2015
+Total elapsed time: 0.035 seconds.
+
+tnom = 27
+temp = -1
+method = trap
+totiter = 335
+traniter = 0
+tranpoints = 0
+accept = 0
+rejected = 0
+matrix size = 7
+fillins = 0
+solver = Normal
+Matrix Compiler1: 286 bytes object code size  0.5/0.4/[0.3]
+Matrix Compiler2: 535 bytes object code size  0.4/0.4/[0.4]
+
+

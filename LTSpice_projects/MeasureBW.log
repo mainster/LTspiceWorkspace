@@ -1,0 +1,25 @@
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\MeasureBW.asc
+
+Direct Newton iteration for .op point succeeded.
+
+tmp: MAX(mag(v(vout)))=(26.861dB,0°) FROM 1 TO 1e+007
+bw=2.79062e+006 FROM 8.52826 TO 2.79063e+006
+
+
+Date: Sun Dec 07 04:39:52 2014
+Total elapsed time: 0.052 seconds.
+
+tnom = 27
+temp = 27
+method = trap
+totiter = 6
+traniter = 0
+tranpoints = 0
+accept = 0
+rejected = 0
+matrix size = 17
+fillins = 0
+solver = Normal
+Matrix Compiler1:      61 opcodes
+Matrix Compiler2: 1.38 KB object code size
+

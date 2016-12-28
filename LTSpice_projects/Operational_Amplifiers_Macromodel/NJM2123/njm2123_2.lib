@@ -1,0 +1,127 @@
+*$
+* PART NUMBER:NJM2123
+* MANUFACTURER: NEW JAPAN RADIO
+* All Rights Reserved Copyright (c) Bee Technologies Inc. 2007
+.Subckt NJM2123 V+ SW1 IN1A+ IN1A- out1 IN1B- IN1B+ SWC
++ GND SWR IN2B+ IN2B- out2 IN2A- IN2A+ SW2 
+X_U1         IN1A+ IN1A- V+ GND OUTL1 NJM2123_ME
+X_U2         IN1B+ IN1B- V+ GND OUTL2 NJM2123_MER
+X_U3         SW1 VTH COMPL COMP
+X_U4         IN2A+ IN2A- V+ GND OUTR1 NJM2123_ME
+X_U5         IN2B+ IN2B- V+ GND OUTR2 NJM2123_ME
+X_U6         SW2 VTH COMPR COMPR
+.MODEL        _Sl1 VSWITCH Roff=1e6 Ron=1.0 Voff=1.0V Von=0.0V
+.MODEL        _Sl2 VSWITCH Roff=1e6 Ron=1.0 Voff=0.0V Von=1.0V
+.MODEL        _Sr1 VSWITCH Roff=1e6 Ron=1.0 Voff=1.0V Von=0.0V
+.MODEL        _SR2 VSWITCH Roff=1e6 Ron=1.0 Voff=0.0V Von=1.0V
+S_Sl1         OUTL1 VCHL1 N11861 0 _Sl1
+S_Sl2         OUTL2 VCHL2 N11861 0 _Sl2
+S_Sr1         OUTR1 VCHR1 N47738 0 _Sr1
+S_SR2         OUTR2 VCHR2 N47738 0 _SR2
+E_EL         N11861 0 VALUE { If(v(compl)>0,0,1) }
+E_ER         N47738 0 VALUE { If(v(compr)>0,0,1) }
+V_V1         SWC VTH 0Vdc
+I_Ii         V+ VTH DC 100uA
+R_Ri         SWR VTH  25k
+RS_Sl1        N11861 0 1G
+RS_Sl2        N11861 0 1G
+RS_Sr1        N47738 0 1G
+RS_Sr2        N47738 0 1G
+R_R1         VCHL1 0  1.4k  
+R_R2         VCHL2 0  1.4k  
+R_R3         VCHR1 0  1.4k
+R_R4         VCHR2 0  1.4k  
+R_Ro1         OUT1 VCHL1  1u  
+R_Ro2         OUT1 VCHL2  1u  
+R_Ro3         OUT2 VCHR1  1u  
+R_Ro4         OUT2 VCHR2  1u
+.ENDS NJM2123
+.subckt NJM2123_ME 1 2 3 4 5
+  c1   11 12 1.6603E-12
+  c2    6  7 28.000E-12
+  dc    5 53 dy
+  de   54  5 dy
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 285.79E3 -1E3 1E3 290E3 -290E3
+  ga    6  0 11 12 1.7965E-3
+  gcm   0  6 10 99 338.49E-9
+  iee   3 10 dc 93.200E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx1
+  q2   12  1 14 qx2
+  r2    6  9 100.00E3
+  rc1   4 11 589.46
+  rc2   4 12 589.46
+  re1  13 10 33.173
+  re2  14 10 33.173
+  ree  10 99 2.1459E6
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 35.738
+  vb    9  0 dc 0
+  vc    3 53 dc 1.0979
+  ve   54  4 dc 1.0979
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.00E-18)
+.model dy D(Is=800.00E-18 Rs=1m Cjo=10p)
+.model qx1 PNP(Is=800.00E-18 Bf=442.86)
+.model qx2 PNP(Is=827.3675E-18 Bf=505.47)
+.ends NJM2123_ME
+*********************************************************
+
+.SUBCKT COMP 1 2 3
+*	      + - S
+EB1 4 0 VALUE = {limit(V(1,2)*1E5, 2.5,0)}
+RD 4 3 1k
+CD 3 0 100p
+.ENDS COMP
+*********************************************************
+.subckt NJM2123_MER 1 2 3 4 5
+  c1   11 12 1.6603E-12
+  c2    6  7 28.000E-12
+  dc    5 53 dy
+  de   54  5 dy
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 285.79E3 -1E3 1E3 290E3 -290E3
+  ga    6  0 11 12 1.7965E-3
+  gcm   0  6 10 99 338.49E-9
+  iee   3 10 dc 93.200E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx1
+  q2   12  1 14 qx2
+  r2    6  9 100.00E3
+  rc1   4 11 589.46
+  rc2   4 12 589.46
+  re1  13 10 33.173
+  re2  14 10 33.173
+  ree  10 99 2.1459E6
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 35.738
+  vb    9  0 dc 0
+  vc    3 53 dc 1.0979
+  ve   54  4 dc 1.0979
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.00E-18)
+.model dy D(Is=800.00E-18 Rs=1m Cjo=10p)
+.model qx1 PNP(Is=800.00E-18 Bf=442.86)
+.model qx2 PNP(Is=827.3675E-18 Bf=505.47)
+.ends NJM2123_MER
+***************************************************************
+.SUBCKT COMPR 1 2 3
+*	      + - S
+EB1 4 0 VALUE = {limit(V(1,2)*1E5, 2.5,0)}
+RD 4 3 1k
+CD 3 0 100p
+.ENDS COMPR
+***************************************************************

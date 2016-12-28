@@ -1,0 +1,128 @@
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\koblitz_EAS_klausuren\ss12_jfet_in_opamp_nosmallsig.asc
+
+Questionable use of curly braces in "b1 comout 0  v={round(1/{rnd}*v(pothi,potlo))*{rnd}}"
+    Error: undefined symbol in: "round(1/(rnd)*[v](pothi,potlo))*(rnd)"
+Questionable use of curly braces in "b1 comout 0  v={round(1/{rnd}*v(pothi,potlo))*{rnd}}"
+    Error: undefined symbol in: "round(1/(rnd)*[v](pothi,potlo))*(rnd)"
+Questionable use of curly braces in "b1 comout 0  v={round(1/{rnd}*v(pothi,potlo))*{rnd}}"
+    Error: undefined symbol in: "round(1/(rnd)*[v](pothi,potlo))*(rnd)"
+Questionable use of curly braces in "b1 comout 0  v={round(1/{rnd}*v(pothi,potlo))*{rnd}}"
+    Error: undefined symbol in: "round(1/(rnd)*[v](pothi,potlo))*(rnd)"
+Questionable use of curly braces in "b1 comout 0  v={round(1/{rnd}*v(pothi,potlo))*{rnd}}"
+    Error: undefined symbol in: "round(1/(rnd)*[v](pothi,potlo))*(rnd)"
+Questionable use of curly braces in "b1 comout 0  v={round(1/{rnd}*v(pothi,potlo))*{rnd}}"
+    Error: undefined symbol in: "round(1/(rnd)*[v](pothi,potlo))*(rnd)"
+Questionable use of curly braces in "b1 comout 0  v={round(1/{rnd}*v(pothi,potlo))*{rnd}}"
+    Error: undefined symbol in: "round(1/(rnd)*[v](pothi,potlo))*(rnd)"
+Questionable use of curly braces in "b1 comout 0  v={round(1/{rnd}*v(pothi,potlo))*{rnd}}"
+    Error: undefined symbol in: "round(1/(rnd)*[v](pothi,potlo))*(rnd)"
+Questionable use of curly braces in "b1 comout 0  v={round(1/{rnd}*v(pothi,potlo))*{rnd}}"
+    Error: undefined symbol in: "round(1/(rnd)*[v](pothi,potlo))*(rnd)"
+Questionable use of curly braces in "b1 comout 0  v={round(1/{rnd}*v(pothi,potlo))*{rnd}}"
+    Error: undefined symbol in: "round(1/(rnd)*[v](pothi,potlo))*(rnd)"
+Questionable use of curly braces in "b1 comout 0  v={round(1/{rnd}*v(pothi,potlo))*{rnd}}"
+    Error: undefined symbol in: "round(1/(rnd)*[v](pothi,potlo))*(rnd)"
+Questionable use of curly braces in "b1 comout 0  v={round(1/{rnd}*v(pothi,potlo))*{rnd}}"
+    Error: undefined symbol in: "round(1/(rnd)*[v](pothi,potlo))*(rnd)"
+Warning: Multiple definitions of model "sub704" Type: BJT
+Warning: Multiple definitions of model "sub605" Type: BJT
+Warning: Multiple definitions of model "n3306d" Type: Diode
+Warning: Multiple definitions of model "diode1" Type: Diode
+WARNING: Less than two connections to node N022.  This node is used by R4.
+WARNING: Less than two connections to node RND.  This node is used by V:U3:1.
+WARNING: Less than two connections to node RNDU.  This node is used by V:U7:1.
+WARNING: Less than two connections to node N021.  This node is used by B:U5:1.
+WARNING: Less than two connections to node N004.  This node is used by B:U6:1.
+WARNING: Less than two connections to node N005.  This node is used by B:U12:1.
+WARNING: Less than two connections to node N006.  This node is used by B:U13:1.
+WARNING: Less than two connections to node N013.  This node is used by B:U14:1.
+WARNING: Less than two connections to node N002.  This node is used by B:U15:1.
+WARNING: Less than two connections to node N001.  This node is used by B:U16:1.
+WARNING: Less than two connections to node N023.  This node is used by B:U4:1.
+WARNING: Less than two connections to node N012.  This node is used by B:U17:1.
+WARNING: Less than two connections to node N011.  This node is used by B:U18:1.
+WARNING: Less than two connections to node N003.  This node is used by B:U19:1.
+WARNING: Less than two connections to node N019.  This node is used by B:U23:1.
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+Gmin = 1.07374
+Gmin = 0.115292
+Gmin = 0.0123794
+Gmin = 0.00132923
+Gmin = 0.000142725
+Gmin = 1.5325e-005
+Gmin = 1.6455e-006
+Gmin = 1.76685e-007
+Gmin = 1.89714e-008
+Gmin = 2.03704e-009
+Gmin = 2.18725e-010
+Gmin = 2.34854e-011
+Gmin = 2.52173e-012
+Gmin = 2.70769e-013
+Gmin = 0
+Gmin stepping succeeded in finding the operating point.
+
+Ignoring empty pin current: Ix(u5:pothi)
+Ignoring empty pin current: Ix(u5:potlo)
+Ignoring empty pin current: Ix(u6:pothi)
+Ignoring empty pin current: Ix(u6:potlo)
+Ignoring empty pin current: Ix(u12:pothi)
+Ignoring empty pin current: Ix(u12:potlo)
+Ignoring empty pin current: Ix(u13:pothi)
+Ignoring empty pin current: Ix(u13:potlo)
+Ignoring empty pin current: Ix(u14:pothi)
+Ignoring empty pin current: Ix(u14:potlo)
+Ignoring empty pin current: Ix(u15:pothi)
+Ignoring empty pin current: Ix(u15:potlo)
+Ignoring empty pin current: Ix(u16:pothi)
+Ignoring empty pin current: Ix(u16:potlo)
+Ignoring empty pin current: Ix(u17:pothi)
+Ignoring empty pin current: Ix(u17:potlo)
+Ignoring empty pin current: Ix(u18:pothi)
+Ignoring empty pin current: Ix(u18:potlo)
+Ignoring empty pin current: Ix(u19:pothi)
+Ignoring empty pin current: Ix(u19:potlo)
+Ignoring empty pin current: Ix(u23:pothi)
+Ignoring empty pin current: Ix(u23:potlo)
+Ignoring empty pin current: Ix(u5:pothi)
+Ignoring empty pin current: Ix(u5:potlo)
+Ignoring empty pin current: Ix(u6:pothi)
+Ignoring empty pin current: Ix(u6:potlo)
+Ignoring empty pin current: Ix(u12:pothi)
+Ignoring empty pin current: Ix(u12:potlo)
+Ignoring empty pin current: Ix(u13:pothi)
+Ignoring empty pin current: Ix(u13:potlo)
+Ignoring empty pin current: Ix(u14:pothi)
+Ignoring empty pin current: Ix(u14:potlo)
+Ignoring empty pin current: Ix(u15:pothi)
+Ignoring empty pin current: Ix(u15:potlo)
+Ignoring empty pin current: Ix(u16:pothi)
+Ignoring empty pin current: Ix(u16:potlo)
+Ignoring empty pin current: Ix(u17:pothi)
+Ignoring empty pin current: Ix(u17:potlo)
+Ignoring empty pin current: Ix(u18:pothi)
+Ignoring empty pin current: Ix(u18:potlo)
+Ignoring empty pin current: Ix(u19:pothi)
+Ignoring empty pin current: Ix(u19:potlo)
+Ignoring empty pin current: Ix(u23:pothi)
+Ignoring empty pin current: Ix(u23:potlo)
+
+Date: Fri Feb 05 15:30:13 2016
+Total elapsed time: 0.270 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 9341
+traniter = 8820
+tranpoints = 4017
+accept = 2597
+rejected = 1420
+matrix size = 53
+fillins = 34
+solver = Normal
+Matrix Compiler1: 4,07 KB object code size  1.6/1.0/[0.8]
+Matrix Compiler2: off  [1.2]/1.9/2.2
+
+

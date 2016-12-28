@@ -1,0 +1,3 @@
+*SRC=UF3003;DI_UF3003;Diodes;Si;  200V  3.00A  50.0ns   Diodes Inc. Ultra-Fast Rectifier
+.MODEL DI_UF3003 D  ( IS=70.7u RS=43.0u BV=200 IBV=5.00u
++ CJO=139p  M=0.333 N=4.27 TT=72.0n )

@@ -1,0 +1,64 @@
+<HTML>
+  <HEAD>
+    <TITLE>Early-Spannung des Stromquellen-Modells Ireal</TITLE>
+  </HEAD>
+  <BODY BGCOLOR="#F0F0F0">
+    <H1 ALIGN=center><B>Early-Spannung des Stromquellen-Modells Ireal</B></H1>
+    <P>
+Kennlinien des Modells Ireal f&uuml;r verschiedene Early-Spannungen
+    </P>
+    <P>
+      Kennlinien des Modells Ireal (reale Stromquelle) f&uuml;r verschiedene Werte
+      der Early-Spannung UA. Oberhalb der Aussteuerungsgrenze Umin=1V gilt:
+    </P>
+    <P>
+       I = I0*(1+U/UA)
+    </P>
+    <P>
+      Daraus folgt ein Ausgangswiderstand von:
+    </P>
+    <P>
+       ra = 1/(dI/dU) = UA/I0
+    </P>
+    <P>
+      Unterhalb Umin macht sich die Earlyspannung nur wenig bemerkbar. Die Werte
+      f&uuml;r I0, Umin und UA m&uuml;ssen gr&ouml;&szlig;er Null sein.
+    </P>
+    <P>
+      ACHTUNG:
+      Aus dem Aufbau der Stromquelle Ireal mit m&ouml;glichst wenigen Bauteilen
+      ergibt sich der Umstand, da&szlig; die Stromvariablen von Ireal nicht richtig
+      wiedergegeben werden. Deshalb kann man die Kennlinien nicht &uuml;ber die
+      Variable I(Ib1) anzeigen, sondern mu&szlig; den Strom -I(U) der Spannungsquelle
+      U1 verwenden. Auch bei der Arbeitspunktanzeige im Schaltplan wird der
+      Strom durch Ireal f&auml;lschlicherweise zu Null angezeigt.
+    </P>
+    <P><TABLE BORDER=2 BGCOLOR="#F0F0F0">
+      <TR>
+        <TD><B>Analysen</B></TD>
+        <TD><B>Einstellungen</B></TD>
+        <TD><B>Parameter</B></TD>
+        <TD><B>Ergebnisanzeigen</B></TD>
+      </TR>
+      <TR>
+        <TD>DC</TD>
+        <TD>U = -1V ... 5V</TD>
+        <TD>UA = (50V 100V 10kV)</TD>
+        <TD>Kennlinien</TD>
+      </TR>
+    </TABLE></P>
+    <P><TABLE BORDER=0 BGCOLOR="#F0F0F0" WIDTH=100%>
+      <TR>
+        <TH WIDTH=20% ALIGN=left>
+          <A HREF="ueber.htm" TARGET="uebersicht"><B>zur&uuml;ck</B></A>
+        </TH>
+        <TH WIDTH=20% ALIGN=left>
+          <A HREF="../../ueber.htm" TARGET="uebersicht"><B>&Uuml;bersicht</B></A>
+        </TH>
+        <TH WIDTH=60% ALIGN=left>
+          <A HREF="Ireal_UA.tse"><B>Simulation starten</B></A>
+        </TH>
+      </TR>
+    </TABLE></P>
+  </BODY>
+</HTML>

@@ -1,0 +1,32 @@
+* Inverter og Voltage controlled Voltage source
+*
+* 05-02-2015 MDB
+*
+* Ex 1=Vout+ 2=Vout- 3=Vin+ 4=Vin-
+*
+*
+.subckt inv_mdb in  out
+a1 in 0 0 0 0 out 0 0 BUF TD={td} vhigh={vpwr$_digital} rout={rout}
+.param TD=0 rout=10
+.ends inv_mdb
+*
+
+
+
+.subckt inv_mdb_behave IN OUT rout={Rout}
+E1 OUTtmp 0 IN 0 {-1}
+V1 OUTsrc OUTtmp {vpwr$_digital} Rser={rout}
+T1 N001 0 N002 0 Td={Td} Z0=50
+R2 N002 0 50
+G1 0 N001 OUTsrc 0 0.04
+R1 N001 0 50
+G2 0 OUT N002 0 1
+R3 OUT 0 1
+.ends inv_mdb_behave
+
+
+.subckt inv_mdb_nodelay IN OUT rout={Rout}
+E1 OUTtmp 0 IN 0 {-1}
+V1 OUT OUTtmp {vpwr$_digital} Rser={rout}
+.ends inv_mdb_nodelay
+

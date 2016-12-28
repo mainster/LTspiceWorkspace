@@ -1,0 +1,129 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\galvoscanner\aktuell\powerstage_PushPull_FET_lochraster_KOB_BETTER_fresp.asc
+Q§T1 Vplus b1 Gn1 0 FMMT624
+Q§T2 Vmin b2 Gp1 0 FMMT723
+R1 Gn1 Sn1 {bias}
+R2 Sp1 Gp1 {bias}
+R3 b1 d1 {bias_b}
+R4 r4 b2 {bias_b}
+D1 d1 opOut 1N4148
+D2 opOut r4 1N4148
+Rload1 N009 shunt 3.54
+M1 Vplus Gn1 Sn1 Sn1 IRFP240
+M2 Vmin Gp1 Sp1 Sp1 IRFP9240
+L1 out_A N009 170µ
+XU3 N016 Vmin N021 TL431
+R10 Vplus N016 4.7k
+Q1 N014 N016 N021 0 BC547B
+R11 N021 Vmin 315
+V1 Vplus 0 {vsup}
+V2 Vmin 0 {-vsup}
+V3 stim 0 SINE(0 10m 100) AC 1
+R12 b2 N015 1m
+R13 N002 b1 1m
+M3 N011 N012 0 0 IRFP240
+V5 N011 0 10
+V6 N012 0 10
+M4 0 N023 N019 N019 IRFP9240
+V4 N019 0 10
+V7 N023 N019 10
+I1 0 N002 {IK1}
+I2 N015 0 {Ik1}
+R5 shunt 0 0.075
+R6 in stim {srV}
+R8 Sn1 out_A {Rs}
+R9 out_A Sp1 {Rs}
+XU2 0 N005 N003 LM334
+R14 N003 N005 25
+XU4 0 N004 N001 LM334
+R20 N001 N004 166
+R21 N001 N006 {6.8*166}
+Q3 N004 N004 N006 0 BC547B
+R17 N006 0 100
+R16 0 N014 100
+R18 0 N002 100t
+R15 N005 0 100
+V8 Vcs 0 30
+S1 0 NC_01 b1 0 Osw
+R19 shunt in 40k
+XU6 0 0 delay Td=25p
+Rload3 N008 N007 {RL}
+L3 0 N008 {LL}
+C3 cl 0 {CL}
+R22 N007 cl 10
+V9 gnd1 0 1µ
+XU7 0 0 0 MJ11016G
+XU5 0 0 0 MJ11015G
+XU9 NC_02 0 0 0 NC_03 NC_04 NC_05 NC_06 LTC6090
+XU1 0 in opOut opamp_param_3 Vp={0.95*Vsup} Vm={-0.95*Vsup} Ilim=20m FT={FT} SR=10 Vos=0 A0=100k phir=45 en=0 enk=0 in=0 ink=0 Rin=500Meg
+XU8 N022 N018 N020 N025 N017 N024 LTC2050
+XU10 N020 vdc_single V=5V
+XU11 N025 vdc_single V=-5V
+XU12 N024 vdc_single V=5V
+R7 N013 N018 27
+R23 N017 N018 {27*1}
+C1 0 0 {1/(2*pi*40k*Rcp)}
+R24 0 N010 1
+C2 N010 0 {1/(2*pi*60k*1)}
+XU13 N013 0 jumperResistorNC Rin=1t Rout=1t R_open=10t R_closed=1p CLOSED={fb}
+XU14 N013 shunt jumperResistorNO Rin=1t Rout=1t R_open=10t R_closed=1p OPEN={fb}
+XU15 N022 shunt jumperResistorNC Rin=1t Rout=1t R_open=10t R_closed=1p CLOSED={fb}
+XU16 N022 0 jumperResistorNO Rin=1t Rout=1t R_open=10t R_closed=1p OPEN={fb}
+.model D D
+.lib C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\lib\cmp\standard.dio
+.model NPN NPN
+.model PNP PNP
+.lib C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\lib\cmp\standard.bjt
+.model NMOS NMOS
+.model PMOS PMOS
+.lib C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\lib\cmp\standard.mos
+* .step param bias list 200 1k 2.4k
+.model npnx npn (Bf=200 Is={10m/exp(0.7/26m)}
+.model pnpx pnp (Bf=200 Is={10m/exp(0.7/26m)}
+.model Dx D (Is={(20*50u)/exp(0.7/26m)}
+.model Osw SW(Ron=10u Roff=10meg Vt=12 Vh=-.2)
+* .ac oct 100 1k 100meg
+* .step param Ik1 1m 1.05m 5u
+* PULSE(-.5 .5 0 1m 1m 10m 23m)
+* Vp=25 Vm=-25 Ilim=20m
+.param Ik1 = 3m
+;.param bias = 100
+.param bias = 150
+;.param bias_b = 270
+.param bias_b = 250
+.param Rs = 0.015
+.param vsup = 30
+.param poti = 10k
+.param set = 0.5
+.param Rll = 5k
+.param FT = 10meg
+* .temp 27 90
+* .step param Rset 10 30 0.1
+* .step param Rll 10 10k 200
+* .step param FT 10meg 50meg 10meg
+;dc V3 -2 2 0.001
+* .step param set 0.1 1 0.2
+.param LL=2.89m
+.param RL=1.535
+.param CL=470n
+.model D45H11 PNP(IS=7.89979e-11 BF=65.9745 NF=0.851012 VAF=10.7084 IKF=10 Ise=4.79702e-14 Ne=4 BR=1.96197
+.model D45H11npn NPN(IS=7.89979e-11 BF=65.9745 NF=0.851012 VAF=10.7084 IKF=10 Ise=4.79702e-14 Ne=4 BR=1.96197
+.ac oct 100 10 1meg
+* .tran 30m
+* .step param srV list 100 20k
+.param srV=1k
+* .step param Rcp 3k 1k 250
+.param Rcp=10k
+.param fb=0 ;non-inverting if 1
+* .step param fb list 0 1
+.lib delay.sub
+.lib EIT_sub\opamp_parametrierbar.sub
+.lib EIT_sub\vdc_single.sub
+.lib LM334.sub
+.lib LTC.lib
+.lib MDB_sub/jumperRes.sub
+.lib MDB_sub/LTC6090m.sub
+.lib MJ11015G.sub
+.lib mj11016g.sub
+.lib tl431.sub
+.backanno
+.end

@@ -1,0 +1,14 @@
+* Z:\home\koblitz\Simulationsbeispiele_WS14\Elektronik_Lab\dienstag\klirr_1.asc
+V1 sin 0 SINE(0 1 1k)
+R1 sin out 1k
+D1 out 0 D
+D2 P001 out D
+R2 P001 0 10k
+B1 win 0 V=1-cos(2*pi*time/20.5m)
+B2 out2 0 V=v(win)*v(out)
+.model D D
+.lib Z:\home\koblitz\LT-Spice\lib\cmp\standard.dio
+.tran 15m
+.four 1kHz V(out)
+.backanno
+.end

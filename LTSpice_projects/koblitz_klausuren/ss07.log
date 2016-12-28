@@ -1,0 +1,32 @@
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\koblitz_klausuren\ss07.asc
+
+Warning: Multiple definitions of model "bc846b" Type: BJT
+Warning: Multiple definitions of model "bc857a" Type: BJT
+Warning: Multiple definitions of model "bc847b" Type: BJT
+Warning: Multiple definitions of model "bcw68f" Type: BJT
+Warning: Multiple definitions of model "bcw60c" Type: BJT
+Warning: Multiple definitions of model "ztx1048a" Type: BJT
+Warning: Multiple definitions of model "ztx849" Type: BJT
+WARNING: Node E2 is floating.
+
+WARNING: Less than two connections to node N010.  This node is used by R11.
+Direct Newton iteration for .op point succeeded.
+
+Date: Fri Dec 05 19:05:30 2014
+Total elapsed time: 0.161 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 3269
+traniter = 3262
+tranpoints = 1620
+accept = 1503
+rejected = 117
+matrix size = 30
+fillins = 0
+solver = Normal
+Matrix Compiler1: 1.11 KB object code size  0.8/0.5/[0.4]
+Matrix Compiler2: 1.99 KB object code size  0.5/0.7/[0.4]
+
+

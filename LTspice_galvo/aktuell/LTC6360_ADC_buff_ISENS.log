@@ -1,0 +1,71 @@
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\galvoscanner\aktuell\LTC6360_ADC_buff_ISENS.asc
+
+u1:d18: both pins shorted together -- ignoring.
+WARNING: Less than two connections to node V+.  This node is used by V:U4:1.
+WARNING: Less than two connections to node V-.  This node is used by V:U5:1.
+Per .tran options, skipping operating point for transient analysis.
+Ignoring empty pin current: Ix(u7:_u19:shdn)
+Ignoring empty pin current: Ix(u7:_u19:gs1)
+Ignoring empty pin current: Ix(u7:_u19:gs0)
+Ignoring empty pin current: Ix(u7:_u19:vimon)
+Ignoring empty pin current: Ix(u7:_u20:vicm)
+Ignoring empty pin current: Ix(u7:_u20:vcc)
+Ignoring empty pin current: Ix(u7:_u20:vee)
+Ignoring empty pin current: Ix(u7:_u20:gndf)
+Ignoring empty pin current: Ix(u7:_u11:vdd)
+Ignoring empty pin current: Ix(u7:_u11:vss)
+Ignoring empty pin current: Ix(u7:_u18:vdd)
+Ignoring empty pin current: Ix(u7:_u18:vss)
+Ignoring empty pin current: Ix(u7:_u18:vi)
+Ignoring empty pin current: Ix(u7:_u18:vimon)
+Ignoring empty pin current: Ix(u7:_u17:vip)
+Ignoring empty pin current: Ix(u7:_u17:vim)
+Ignoring empty pin current: Ix(u7:_u17:shdn)
+Ignoring empty pin current: Ix(u7:_u17:vcc)
+Ignoring empty pin current: Ix(u7:_u17:vee)
+Ignoring empty pin current: Ix(u7:_u17:gs0)
+Ignoring empty pin current: Ix(u7:_u17:gs1)
+Ignoring empty pin current: Ix(u7:_u16:gs1)
+Ignoring empty pin current: Ix(u7:_u16:gs0)
+Ignoring empty pin current: Ix(u7:_u16:gndf)
+Ignoring empty pin current: Ix(u7:_u15:gs1)
+Ignoring empty pin current: Ix(u7:_u15:gs0)
+Ignoring empty pin current: Ix(u7:_u15:gndf)
+Ignoring empty pin current: Ix(u7:_u3:inp)
+Ignoring empty pin current: Ix(u7:_u3:inn)
+Ignoring empty pin current: Ix(u7:_u21:vicm)
+Ignoring empty pin current: Ix(u7:_u21:vcc)
+Ignoring empty pin current: Ix(u7:_u21:vee)
+Ignoring empty pin current: Ix(u7:_u21:gndf)
+Ignoring empty pin current: Ix(u7:_u14:in+)
+Ignoring empty pin current: Ix(u7:_u14:in-)
+Ignoring empty pin current: Ix(u7:_u14:ref)
+Ignoring empty pin current: Ix(u7:_u14:gs0)
+Ignoring empty pin current: Ix(u7:_u14:gs1)
+Ignoring empty pin current: Ix(u7:_u14:out)
+Ignoring empty pin current: Ix(u7:_u14:vcc)
+Ignoring empty pin current: Ix(u7:_u14:vee)
+Ignoring empty pin current: Ix(u7:_u5:vicm)
+Ignoring empty pin current: Ix(u7:_u5:vcc)
+Ignoring empty pin current: Ix(u7:_u5:vee)
+Ignoring empty pin current: Ix(u7:_u5:gndf)
+
+Date: Thu Feb 26 18:41:59 2015
+Total elapsed time: 0.830 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 13059
+traniter = 13059
+tranpoints = 3623
+accept = 2759
+rejected = 864
+matrix size = 234
+fillins = 72
+solver = Normal
+Thread vector: 107.3/36.6[7] 15.2/6.6[7] 26.2/7.1[7] 1.1/1.8[1]  2592/500
+Matrix Compiler1: 11.3 KB object code size  6.7/3.5/[1.4]
+Matrix Compiler2: 17.9 KB object code size  4.5/4.8/[1.7]
+
+

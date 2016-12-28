@@ -1,0 +1,132 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\praxissem_2014\wanze_107MHz_doppel_capDiod_nach_micronas.asc
+R1 e 0 {Re}
+C1 b e 47p
+C2 e 0 {100p*(1-En)}
+XU1 VCC vdc_single V={Vcc}
+Rbq1 VCC b 3.3k
+L1 noHarmonic P001 {Ls} Rser=1.5
+XU5 Rb vdc_single V={Rb}
+XU6 Re vdc_single V={Re}
+XU7 N003 vdc_single V={Vcc}
+C3 0 noHarmonic 47p
+C4 b P001 1n
+R2 noHarmonic 0 1.1k
+R3 in m1 10k
+R4 Vcc m1 {Rmic}
+R5 m1 0 {Rmic}
+V1 Vmic 0 {Vcc/2+Umic}
+R7 e2 0 500
+R8 N002 N004 1k
+C6 N004 noHarmonicöö 1n
+R9 N004 0 10k
+R10 Vmic N001 {Rs}
+D1 0 in BBY51
+D2 noHarmonic in BBY51
+R19 VCC_D VCC 1
+C10 VCC_D 0 1µ
+XU2 VCC_D b e BFR92A BFR92A
+XU3 N002 N004 e2 BFR92A BFR92A
+R6 VCC N002 50
+C5 0 N002 100n
+C7 N001 m1 100n
+L2 h P002 {Ls} Rser=1.5
+C11 0 h 47p
+C12 b2 P002 1n
+R12 h 0 {1k*1.1k}
+R13 in2 N006 10k
+R14 N006 0 {Rmic}
+R15 N006 0 {Rmic}
+R16 Vmic N005 {Rs}
+D3 0 in2 BBY51
+D4 h in2 BBY51
+C13 N005 N006 100n
+R17 b2 0 3.3k
+C14 b2 0 {47p/2}
+Rpi b2 c2 {rpi}
+C15 c2 0 {47p/2}
+C16 c2 0 {100p*En}
+R20 c2 0 {r0}
+R21 c2 0 {Re}
+B2 0 c2 I=B*I(rpi)
+.model D D
+.lib C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\lib\cmp\standard.dio
+.param Vbe0 = 0.6V
+.param B = 124
+.param A = B/(1+B)
+.param Re = {Ve0*A/Ic0}
+.param Rb = {(Vcc-Vbe0-Ic0/A*Re)/(Ic0/B)}
+* .ic V(b) = 1V
+.model BBY51_nxp D(
++ RS=.4
++ CJO=6.79E-12
++ M=0.65
++ VJ=1.03)
+.tran 0 50u
+.options plotwinsize=0
+.model BBY51 D (
++ Rs= 0.37 
++ Cjo = 7.5p 
++ Vj=0.6 
++ m=0.4)
+* 33p\n47p
+* 990ohm\n1.8k
+* 11.7k\n3.3k
+.param En = 0
+.param f0 = 107.2Meg
+.param Vcc = 3V
+.param Ve0 = 1.5V
+.param Ic0 = 1.2mA
+.param Ls = 80nH
+* ECO / VCO
+.param Rmic = 10k
+.param Rs = 3.3k
+.param Umic = .25V
+* * BFR92A SPICE MODEL\n* PHILIPS SEMICONDUCTORS\n* Date : September 1995\n*\n* PACKAGE : SOT23 DIE MODEL : BFR90A\n* 1: COLLECTOR; 2: BASE; 3: EMITTER;\n.SUBCKT BFR92A 1 2 3\nQ1 6 5 7 7 BFR90A\n* SOT23 parasitic model\n               Lb  4 5 .4n\n               Le  7 8 .83n\n               L1  2 4 .35n\n               L2  1 6 .17n\n               L3  3 8 .35n\n              Ccb  4 6 71f\n              Cbe  4 8 71f\n*\n* PHILIPS SEMICONDUCTORS\n* Filename:   BFR90A.PRM\n*\n.MODEL  BFR90A   NPN(\n+              IS = 4.11877E-016\n+              BF = 1.02639E+002\n+              NF = 9.97275E-001\n+             VAF = 6.26719E+001\n+             IKF = 3.20054E+000\n+             ISE = 4.01062E-015\n+              NE = 1.57708E+000\n+              BR = 1.81086E+001\n+              NR = 9.96202E-001\n+             VAR = 3.36915E+000\n+             IKR = 1.28155E+000\n+             ISC = 2.79905E-016\n+              NC = 1.07543E+000\n+              RB = 1.00000E+001\n+             IRB = 1.00000E-006\n+             RBM = 1.00000E+001\n+              RE = 1.16450E+000\n+              RC = 2.32000E+000\n+              EG = 1.11000E+000\n+             XTI = 3.00000E+000\n+             CJE = 8.90512E-013\n+             VJE = 6.00000E-001\n+             MJE = 2.58570E-001\n+              TF = 1.54973E-011\n+             XTF = 3.91402E+001\n+             VTF = 2.15279E+000\n+             ITF = 2.13776E-001\n+             CJC = 5.46563E-013\n+             VJC = 3.80824E-001\n+             MJC = 2.02935E-001)\n.ENDS\n*
+* .step param Umic list -.25 .25
+* BFR92A SPICE MODEL
+* PHILIPS SEMICONDUCTORS
+* Date : September 1995
+*
+* PACKAGE : SOT23 DIE MODEL : BFR90A
+* 1: COLLECTOR; 2: BASE; 3: EMITTER;
+.SUBCKT BFR92As 1 2 3
+Q1 6 5 7 7 BFR90A
+* SOT23 parasitic model
+               Lb  4 5 .4n
+               Le  7 8 .83n
+               L1  2 4 .35n
+               L2  1 6 .17n
+               L3  3 8 .35n
+              Ccb  4 6 71f
+              Cbe  4 8 71f
+*
+* PHILIPS SEMICONDUCTORS
+* Filename:   BFR90A.PRM
+*
+.MODEL  BFR90A   NPN(
++              IS = 4.11877E-016
++              BF = 1.02639E+002
++              NF = 9.97275E-001
++             VAF = 6.26719E+001
++             IKF = 3.20054E+000
++             ISE = 4.01062E-015
++              NE = 1.57708E+000
++              BR = 1.81086E+001
++              NR = 9.96202E-001
++             VAR = 3.36915E+000
++             IKR = 1.28155E+000
++             ISC = 2.79905E-016
++              NC = 1.07543E+000
++              RB = 1.00000E+001
++             IRB = 1.00000E-006
+.ENDS
+*
+* * BFR92AW SPICE MODEL\n* PHILIPS SEMICONDUCTORS\n* Date : September 1995\n*\n* PACKAGE : SOT323 DIE MODEL : BFR90A\n* 1: COLLECTOR; 2: BASE; 3: EMITTER\n.SUBCKT BFR92AW 1 2 3\nQ1 6 5 7 7 BFR90A\n* SOT323 parasitic model\n               Lb  4 5 .6n \n               Le  7 8 .6n\n               L1  2 4 .34n\n               L2  1 6 .1n\n               L3  3 8 .34n\n              Ccb  4 6 100f\n              Cbe  4 8 2f\n*\n* PHILIPS SEMICONDUCTORS\n* Filename:   BFR90A.PRM \n*\n.MODEL  BFR90A   NPN\n+              IS = 4.11877E-016\n+              BF = 1.02639E+002\n+              NF = 9.97275E-001\n+             VAF = 6.26719E+001\n+             IKF = 3.20054E+000\n+             ISE = 4.01062E-015\n+              NE = 1.57708E+000\n+              BR = 1.81086E+001\n+              NR = 9.96202E-001\n+             VAR = 3.36915E+000\n+             IKR = 1.28155E+000\n+             ISC = 2.79905E-016\n+              NC = 1.07543E+000\n+              RB = 1.00000E+001\n+             IRB = 1.00000E-006\n+             RBM = 1.00000E+001\n+              RE = 1.16450E+000\n+              RC = 2.32000E+000\n+              EG = 1.11000E+000\n+             XTI = 3.00000E+000\n+             CJE = 8.90512E-013\n+             VJE = 6.00000E-001\n+             MJE = 2.58570E-001\n+              TF = 1.54973E-011\n+             XTF = 3.91402E+001\n+             VTF = 2.15279E+000\n+             ITF = 2.13776E-001\n+             CJC = 5.46563E-013\n+             VJC = 3.80824E-001\n+             MJC = 2.02935E-001\n.ENDS
+.param rpi={B*26m/Ic0}
+.param Xca = { 1/(2*pi*f0*(47p/2+100p)) }
+.param r0 = 200k
+* .ic i(L2)=-173u\n.ic V(h)=620m
+.lib EIT_sub\vdc_single.sub
+.lib MDB_sub/HFbjt.sub
+.backanno
+.end

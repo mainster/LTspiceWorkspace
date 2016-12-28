@@ -1,0 +1,48 @@
+*$
+* PART NUMBER:NJM2060
+* MANUFACTURER: NEW JAPAN RADIO
+* All Rights Reserved Copyright (c) Bee Technologies Inc. 2007
+.Subckt NJM2060 OUT1 -IN1 +IN1 V+ +IN2 -IN2 OUT2 OUT3 -IN3 +IN3 V- 
++ +IN4 -IN4 OUT4
+X_U1     +IN1 -IN1 V+ V- OUT1 NJM2060_SUB
+X_U2     +IN2 -IN2 V+ V- OUT2 NJM2060_SUB
+X_U3     +IN3 -IN3 V+ V- OUT3 NJM2060_SUB
+X_U4     +IN4 -IN4 V+ V- OUT4 NJM2060_SUB
+.ends  NJM2060
+.subckt NJM2060_SUB  1 2 3 4 5
+  c1   11 12 8.6603E-12
+  c2    6  7 30.000E-12
+  dc    5 53 dy
+  de   54  5 dy
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 1.9100E6 -1E3 1E3 1E6 -1E6
+  ga    6  0 11 12 2.1781E-3
+  gcm   0  6 10 99 66.404E-9
+  iee   3 10 dc 120.68E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx1
+  q2   12  1 14 qx2
+  r2    6  9 100.00E3
+  rc1   4 11 459.12
+  rc2   4 12 459.12
+  re1  13 10 30.178
+  re2  14 10 30.178
+  ree  10 99 1.6573E6
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 1.2924E3
+  vb    9  0 dc 0
+  vc    3 53 dc 4.3545
+  ve   54  4 dc 4.3555
+  vlim  7  8 dc 0
+  vlp  91  0 dc 200
+  vln   0 92 dc 200
+.model dx D(Is=800.00E-18)
+.model dy D(Is=800.00E-18 Rs=1m Cjo=10p)
+.model qx1 PNP(Is=800.00E-18 Bf=1.4004E3)
+.model qx2 PNP(Is=814.9854E-18 Bf=1.6149E3)
+.ends
+*$

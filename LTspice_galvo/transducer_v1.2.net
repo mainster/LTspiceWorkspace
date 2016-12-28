@@ -1,0 +1,83 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\galvoscanner\transducer_v1.2.asc
+V9 Vm 0 -10
+V10 Vp 0 10
+V1 Yc 0 PULSE({REF/2-YcAmpl} {REF/2+YcAmpl } {0.2/F1} 10n 10n {1/(2*F1)} {1/F1})
+XU1 N003 N001 Vp Vm Ucc OPA404
+R5 Vbias N001 {R1}
+R6 Yc N003 {R3}
+R7 N003 0 {R4}
+R8 N001 Ucc {R2}
+G1 0 N002 Ucc 0 -1
+R11 N002 0 4
+R3 Us TP1 12k
+C1 TP1 0 220n
+R17 TP1 TP2 12k
+C2 TP2 0 220n
+R19 N014 N013 1k
+R20 N016 0 1k
+R21 N015 N016 1k
+R22 N014 Vbias1 1k
+R§Shunt N013 0 0.1
+I1 0 N013 SINE(0 1 1k)
+V4 Vref1 0 2.5V
+V5 Vbias1 0 1.25V
+XU7 N014 N016 Vp Vref1 N015 OPA404
+V2 Vref 0 2.5V
+V6 Vbias 0 1.25V
+R§ADC_DAC Vref 0 100k
+V7 NC_01 0 SINE(0 10 1k 2m)
+XU3 0 N009 Vp Vm Ys OPA404
+R1 Ysbp N009 {22k*B}
+R10 N009 Ys 22k
+R27 Chan_x N012 {22k*20/2.5*fact}
+R28 Vbias N012 22k
+R29 N011 N010 22k
+XU4 N012 N011 Vp Vm N010 OPA404
+XU2 0 N008 Vp Vm N007 OPA404
+R4 Vbias N008 27k
+R9 N008 N007 27k
+R2 N007 N009 22k
+R12 Ys Ys_fb 120
+Q1 NC_02 N006 0 0 BC327-40
+R13 N006 N005 5.6k
+V8 N004 0 PULSE(8 -8 4 10n)
+R14 0 N006 39k
+D1 N005 N004 D
+E1 PoleZero 0 Us 0 laplace=1.435e+05*( 1 )/( (s+9.917e+02)*(s+1.447e+02) )
+E2 NumDen 0 Us 0 laplace=(6.646e48)/(5.264e46*s+4.632e43*s**2+6.646e48)
+E3 Ysbp 0 Us 0 laplace=1.435e+05*( 1 )/( (s+9.917e+02)*(s+1.447e+02) )
+B1 Us 0 V=-V(Ucc)
+.model D D
+.lib C:\Program Files (x86)\LTC\LTspiceIV\lib\cmp\standard.dio
+.model NPN NPN
+.model PNP PNP
+.lib C:\Program Files (x86)\LTC\LTspiceIV\lib\cmp\standard.bjt
+.include /home/mainster/.wine/drive_c/Program Files (x86)/LTC_orig/LTspiceIV_4.18/lib/sub/OPA404.LIB
+.include /home/mainster/.wine/drive_c/Program Files (x86)/LTC_orig/LTspiceIV_4.18/lib/sub/LM358.lib
+.tran {3/F1} 
+* Messwandler v1.2 \n---------------------------------------------------------------\nSTM32 DAC out --> Endstufe Vin_ctrl\nREF2025:\n- mit Vref=2.5V (ref. analogpart STM32)\n- und Vbias=1.25V für differenz- und summierverstärker             \n---------------------------------------------------------------\nENDSTUFE INVERTIERT!!!!
+* ------------------\n STM32f4\n------------------
+* STM32 DAC \nVout_ctrl
+* Endstufe
+.param frect = 25
+;.step param frect list 10 25 50 100 1k
+* INA213B
+* REF20xx
+* REF20xx
+.param R1 = 12k
+.param R2 = 24k
+.param R3 = R1
+.param R4 = R2
+.param REF = 2.5V
+.param B = 1
+.param F1 = 10
+.param YcAmpl = 0.2
+* Pos. Demodulator\n+-10V @ +-20°
+.param fact = 1
+;.step param fact list 0.85 1 1.05
+;ac oct 100 1 1meg
+* {22k*20/2.5}
+* SINE({REF/2 } {REF/2 } {F1} {0.2/F1})
+* Us*
+.backanno
+.end

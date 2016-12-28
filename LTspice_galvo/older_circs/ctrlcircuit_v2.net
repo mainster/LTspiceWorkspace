@@ -1,0 +1,95 @@
+* C:\users\mainster\My Documents\CODES_local\LTSpice_projects\galvoscanner\ctrlcircuit_v2.asc
+V1 V+ 0 15V
+V2 V- 0 -15V
+V3 NC_01 0 100m
+XU1 0 N003 V+ V- Command NJM4580
+R1 Command N003 47k
+R2 N003 N004 47k
+R3 N004 N001 {5k*(1-Size)}
+R4 0 N004 {5k*Size}
+R5 pos_in N001 4.7k
+R6 N003 N011 100k
+R7 N010 N011 {5k*(1-Offset)}
+R8 N011 N015 {5k*Offset}
+C1 0 N011 10n
+C2 N003 Command 1n
+R9 N002 Command 10k
+R10 0 N002 47k
+XU5 N002 N005 V+ V- Error NJM4580
+R11 Error N005 47k
+R12 N005 Position 10k
+XU6 0 N013 V+ V- N012 NJM4580
+R13 N012 N013 47k
+R14 N013 Position 10k
+R15 Error N008 {5k*(1-Gain)}
+R16 N008 0 {5k*Gain}
+R17 N012 N016 {100k*(1-LFdump)}
+R18 N016 0 {100k*LFdump}
+R19 N012 N024 {5k*(1-HFdump)}
+R20 N024 0 {100k*HFdump}
+XU7 N016 N017 V+ V- N017 NJM4580
+XU8 N024 N025 V+ V- N025 NJM4580
+R21 N006 N008 47k
+R22 N018 N017 100k
+R23 N026 N025 100k
+C3 N022 N026 33n
+C4 N014 N018 220n
+XU9 0 N006 V+ V- N007 NJM4580
+XU10 0 N014 V+ V- LFd_out NJM4580
+XU11 0 N022 V+ V- N023 NJM4580
+R24 N023 N022 10k
+R25 LFd_out N014 10k
+R26 N007 N006 75k
+R27 N009 N007 10k
+R28 N009 LFd_out 10k
+R29 HFd_out N009 10k
+C5 HFd_out N023 4.7n
+XU12 0 N009 V+ V- Torque NJM4580
+R30 Torque N009 4.7k
+C6 Torque N009 1n
+R32 + Torque 1k
+R33 N019 + 150R
+R34 feedback - 1k
+R35 N020 out 1
+C8 N019 - 2.2n
+L1 out N021 30µ
+R36 feedback 0 0.1
+Rm1 N021 feedback 4
+XU13 + - VCC VEE out lm675
+C7 N020 0 220n
+C9 out - 100p
+XU14 N027 N029 V+ V- Position NJM4580
+R31 N029 Position 100k
+R37 0 N029 10k
+R38 N027 N028 10k
+R39 N028 N030 330
+R40 feedback N028 330
+C10 N027 0 220p
+C11 N030 0 1n
+C12 N028 0 1n
+R41 N010 0 2.7k
+R42 0 N015 2.7k
+R43 N010 V+ 15k
+R44 N015 V- 15k
+V4 pos_in 0 PWL(0 0 2m 0.1m 2.01m 1 8m 1.001 8.01m -1 12m -1.01 12.01m 0)
+V5 VCC 0 20
+V6 VEE 0 -20
+.include njm4580_2.lib
+.include LM675.sub
+* Position Input\n-2V to +2V
+* [Size]\n5k poti
+* [Offset]\n5k poti
+* [Gain]\n5k poti
+* [LF.Dump]\n100k poti
+* [HF.Dump]\n100k poti
+* Galvo
+* 25mV/deg (opt)
+.param Gain=0.7
+.param HFdump=0.999
+.param LFdump=0.9
+.param Size=0.6
+.param Offset=0.3
+.tran 15m
+.include PT1.sub
+.backanno
+.end

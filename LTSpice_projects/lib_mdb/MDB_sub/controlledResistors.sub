@@ -1,0 +1,16 @@
+* Voltage controlled resistor
+* R=V(ctrl)*scale
+*
+* NOTES:	- 1u expression to avoid divide-by-zero
+* 14-02-2015 MDB
+*
+.subckt vcr 1 2 CTRL 
+R1 1 2 1E15 noiseless
+G1 1 2 Value = {V(1,2)/(V(CTRL)*scale+1u)}
+.ENDS VCR
+
+
+.subckt vcr2 1 2 CTRL 
+R1 1 2 1E15 noiseless
+G1 1 2 Value = {V(1,2)/(V(CTRL)*scale+1u)}
+.ENDS VCR

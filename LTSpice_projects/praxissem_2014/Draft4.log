@@ -1,0 +1,29 @@
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\praxissem_2014\Draft4.asc
+
+WARNING: Less than two connections to node RB.  This node is used by V:U2:1.
+WARNING: Less than two connections to node RE.  This node is used by V:U3:1.
+WARNING: Less than two connections to node RPI.  This node is used by V:U4:1.
+WARNING: Less than two connections to node RLP.  This node is used by V:U5:1.
+WARNING: Less than two connections to node FOSC.  This node is used by V:U7:1.
+WARNING: Less than two connections to node RLS.  This node is used by V:U8:1.
+WARNING: Less than two connections to node STIM.  This node is used by V3.
+Direct Newton iteration for .op point succeeded.
+
+Date: Sun Dec 07 05:10:06 2014
+Total elapsed time: 0.093 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 2094
+traniter = 2082
+tranpoints = 1042
+accept = 1042
+rejected = 0
+matrix size = 31
+fillins = 0
+solver = Normal
+Matrix Compiler1: 890 bytes object code size  0.6/0.4/[0.3]
+Matrix Compiler2: off  [0.4]/0.6/0.5
+
+

@@ -1,0 +1,78 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\diskret_op\diskret_op_minimal.asc
+Q1 Vo- 0 N008 0 PNP1
+Q2 Vo+ in- N009 0 PNP1
+I1 V+ N005 {I0} load
+I2 V+ N006 200u load
+Q3 Vo- N014 N016 0 NPN1
+Q4 Vo+ N014 N017 0 NPN1
+XIdv N012 Vo+ arrow_curr arrow_curr Rsh=1m
+Q5 V+ N010 N015 0 NPN1
+Q6 N006 N015 V- 0 NPN1
+I4 N015 V- 20u load
+Q7 V+ N006 out 0 npn1
+Q8 V- N006 out 0 PNP1
+C1 N006 N010 {Ccomp}
+XU1 V+ vdc_single V={VCC}
+XU2 V- vdc_single V={VEE}
+V1 in+ 0 SINE(0 10m 1k 5m) AC 1
+R1 0 0 100meg
+E1 in- 0 in+ 0 -1
+R5 N005 N009 10u
+R4 N005 N008 10u
+V2 N002 0 {offp}
+V3 offs- 0 {offn}
+R6 offs+ N002 100k
+Q9 V+ Vo- N014 0 NPN1
+R3 N016 V- 1u
+R8 N014 V- 50k
+R7 N017 V- 1u
+XU3 offs- offs+ V- pot R=1k T={roff}
+R2 N013 V- 1k
+R10 V+ Vo+2 {Rc}
+R11 V+ Vo-2 {Rc}
+I5 N004 V- {i02}
+I3 V+ N001 200u load
+Q11 V+ 0 N003 0 CA3096_npn
+Q12 N001 N003 V- 0 CA3096_npn
+I6 N003 V- 20u load
+C2 N001 0 {Ccomp}
+Q10 Vo-2 in+ N004 0 CA3096_npn
+Q13 Vo+2 0 N004 0 CA3096_npn
+I8 V+ N007 {i02}
+Q14 Vo-3 in+ N007 0 PNP1
+Q15 Vo+3 0 N007 0 PNP1
+R9 Vo-3 V- {Rc}
+R12 Vo+3 V- {Rc}
+.model NPN NPN
+.model PNP PNP
+.lib C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\lib\cmp\standard.bjt
+* .model NPN11 npn (IS=4.679E-14 Bf=Bfn)\n.model PNP11 pnp (IS=4.679E-14 Bf={BFp})\n.model NPN11 npn (Is={I0/exp(0.6/26m)} Bf=400)\n.model PNP11 pnp (Is={I0/exp(0.6/26m)} Bf=300)
+.param I0=20u
+.param Ccomp=30p
+.param VCC=10V
+.param VEE=-10V
+.param offp=15m
+.param offn=0
+* .tran 10m
+.dc V1 -150m 150m 1m
+* plot:\n-------\nIx(Idv:out)\n-40u/(4*26m)*V(in+,in-)/(1V/1A)*0.5*(sgn(V(in+,in-)+80m)-sgn(V(in+,in-)-80m))\nd( -40u/(4*26m)*V(in+,in-)/(1V/1A)*0.5*(sgn(V(in+,in-)+80m)-sgn(V(in+,in-)-80m)) )
+.param Bfn=400
+.param Bfp=300
+.param alpha=Bfn/(Bfn+1)
+* .step param ioff -10u 10u 1u
+* .step param roff 0.01 .99 250m
+.param roff = .01
+* .step param R3 list 1k 500 200 100 10 10m
+.param R3=1u
+.MODEL npn1 NPN IS=10.000E-15 BF=466.52 VAF=100 IKF=14.030E-3 ISE=74.093E-15 NE=1.6606 BR=.1001 VAR=100 IKR=10.010E-3 ISC=10.000E-15 NK=.46898 RC=10 CJE=1.2825E-12 MJE=.33333 CJC=786.59E-15 MJC=.33333 TF=490.39E-12 XTF=5.3212 VTF=28.396 ITF=.27408 TR=10.000E-9 Vceo=20 Icrating=0.1A mfg=Fairchild)
+.MODEL pnp1 PNP IS=10.000E-15 BF=94.511 VAF=100 IKF=1.1177E-3 ISE=976.47E-15 NE=1.9980 BR=.1001 VAR=100 IKR=10.010E-3 ISC=10.000E-15 NK=.53243 CJE=1.4535E-12 MJE=.33333 CJC=3.8474E-12 MJC=.33333 TF=24.300E-9 XTF=10.054 VTF=9.7920 ITF=1.2571 TR=10.000E-9 Vceo=20 Icrating=0.1A mfg=Fairchild)
+;.model CA3046 npn ( IS=10.0f XTI=3.0 EG=1.11 VAF=100 VAR=100 BF=145.7 ISE=114.286f NE=1.480 IKF=46.7m XTB=0 BR=0.1 ISC=10.005f NC=2.0 IKR=10m RC=10.0 CJC=991.7f MJC=0.333 VJC=0.75 FC=0.5 CJE=1.02p MJE=0.336 VJE=0.75 TR=10n TF=277.01p ITF=1.75 XTF=309.38 VTF=16.37 PTF=0 RE=0 RB=0 Vceo=20 Icrating=0.1A mfg=Fairchild)
+* .step param Iq 10u 250u 10u
+;.step param i02 5u 50u 5u
+.param I02=20u
+.param Rc=250k
+.lib ..\sym\EXTRA\Misc\pot.lib
+.lib EIT_sub/vdc_single.sub
+.lib MDB_sub/arrow_curr.sub
+.backanno
+.end

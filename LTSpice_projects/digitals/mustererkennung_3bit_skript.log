@@ -1,0 +1,131 @@
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\digitals\mustererkennung_3bit_skript.asc
+
+WARNING: Less than two connections to node NC_01.  This node is used by A:U2:19.
+WARNING: Less than two connections to node NC_02.  This node is used by A:R1:1.
+WARNING: Less than two connections to node NC_03.  This node is used by A:R0:1.
+WARNING: Less than two connections to node NC_04.  This node is used by A:U8:1.
+WARNING: Less than two connections to node STATE.  This node is used by B1.
+WARNING: Less than two connections to node +5V.  This node is used by V:U13:1.
+WARNING: Less than two connections to node NC_05.  This node is used by A:U14:1.
+WARNING: Less than two connections to node NC_06.  This node is used by A:U15:1.
+WARNING: Less than two connections to node NC_07.  This node is used by A:U16:1.
+WARNING: Less than two connections to node NC_08.  This node is used by A:U17:1.
+WARNING: Less than two connections to node NC_09.  This node is used by A:U19:1.
+WARNING: Less than two connections to node NC_10.  This node is used by A:U6:1.
+WARNING: Less than two connections to node Z.  This node is used by A:U6:1.
+WARNING: Less than two connections to node PAR.  This node is used by B2.
+WARNING: Less than two connections to node X1:NC_01.  This node is used by A:X1:U21:19.
+WARNING: Less than two connections to node X1:NC_02.  This node is used by A:X1:U24:19.
+WARNING: Less than two connections to node N020.  This node is used by B:X1:2.
+WARNING: Less than two connections to node X1:NC_03.  This node is used by A:X1:U33:1.
+WARNING: Less than two connections to node X1:NC_04.  This node is used by A:X1:U35:1.
+WARNING: Less than two connections to node X1:NC_05.  This node is used by A:X1:U2:1.
+WARNING: Less than two connections to node X1:NC_09.  This node is used by A:X1:U5:19.
+WARNING: Less than two connections to node X1:X1:NC_01.  This node is used by A:X1:X1:U2:1.
+WARNING: Less than two connections to node X1:X1:NC_02.  This node is used by A:X1:X1:U3:1.
+WARNING: Less than two connections to node X1:X1:NC_03.  This node is used by A:X1:X1:U4:1.
+WARNING: Less than two connections to node X1:X1:NC_04.  This node is used by A:X1:X1:U5:1.
+WARNING: Less than two connections to node X1:X1:NC_05.  This node is used by A:X1:X1:U6:1.
+WARNING: Less than two connections to node X1:X1:NC_06.  This node is used by A:X1:X1:U7:1.
+WARNING: Less than two connections to node X1:N003.  This node is used by V:X1:1.
+Direct Newton iteration for .op point succeeded.
+Ignoring empty pin current: Ix(u2:clk)
+Ignoring empty pin current: Ix(u2:clr)
+Ignoring empty pin current: Ix(u2:pre)
+Ignoring empty pin current: Ix(u6:i3)
+Ignoring empty pin current: Ix(u8:i3)
+Ignoring empty pin current: Ix(u16:i3)
+Ignoring empty pin current: Ix(r1:clk)
+Ignoring empty pin current: Ix(r0:clk)
+Ignoring empty pin current: Ix(inv1:in)
+Ignoring empty pin current: Ix(inv2:in)
+Ignoring empty pin current: Ix(inv3:in)
+Ignoring empty pin current: Ix(inv4:in)
+Ignoring empty pin current: Ix(inv5:in)
+Ignoring empty pin current: Ix(inv6:in)
+Ignoring empty pin current: Ix(inv7:in)
+Ignoring empty pin current: Ix(x1:u21:clk)
+Ignoring empty pin current: Ix(x1:u21:clr)
+Ignoring empty pin current: Ix(x1:u21:pre)
+Ignoring empty pin current: Ix(x1:u24:clk)
+Ignoring empty pin current: Ix(x1:u24:clr)
+Ignoring empty pin current: Ix(x1:u24:pre)
+Ignoring empty pin current: Ix(x1:inv8:in)
+Ignoring empty pin current: Ix(x1:u5:clk)
+Ignoring empty pin current: Ix(x1:u5:clr)
+Ignoring empty pin current: Ix(x1:u5:pre)
+Ignoring empty pin current: Ix(x1:x1:u2:i3)
+Ignoring empty pin current: Ix(x1:x1:u2:i4)
+Ignoring empty pin current: Ix(x1:x1:u3:i3)
+Ignoring empty pin current: Ix(x1:x1:u4:i3)
+Ignoring empty pin current: Ix(x1:x1:u5:i3)
+Ignoring empty pin current: Ix(x1:x1:inv1:in)
+Ignoring empty pin current: Ix(x1:x1:inv2:in)
+Ignoring empty pin current: Ix(x1:x1:inv3:in)
+Ignoring empty pin current: Ix(x1:x1:inv4:in)
+Ignoring empty pin current: Ix(x1:x1:inv5:in)
+Ignoring empty pin current: Ix(x1:x1:u6:i3)
+Ignoring empty pin current: Ix(x1:x1:inv6:in)
+Ignoring empty pin current: Ix(x1:x1:u7:i3)
+Ignoring empty pin current: Ix(x1:x1:u7:i4)
+Ignoring empty pin current: Ix(x1:x1:u7:i5)
+Ignoring empty pin current: Ix(u2:clk)
+Ignoring empty pin current: Ix(u2:clr)
+Ignoring empty pin current: Ix(u2:pre)
+Ignoring empty pin current: Ix(u6:i3)
+Ignoring empty pin current: Ix(u8:i3)
+Ignoring empty pin current: Ix(u16:i3)
+Ignoring empty pin current: Ix(r1:clk)
+Ignoring empty pin current: Ix(r0:clk)
+Ignoring empty pin current: Ix(inv1:in)
+Ignoring empty pin current: Ix(inv2:in)
+Ignoring empty pin current: Ix(inv3:in)
+Ignoring empty pin current: Ix(inv4:in)
+Ignoring empty pin current: Ix(inv5:in)
+Ignoring empty pin current: Ix(inv6:in)
+Ignoring empty pin current: Ix(inv7:in)
+Ignoring empty pin current: Ix(x1:u21:clk)
+Ignoring empty pin current: Ix(x1:u21:clr)
+Ignoring empty pin current: Ix(x1:u21:pre)
+Ignoring empty pin current: Ix(x1:u24:clk)
+Ignoring empty pin current: Ix(x1:u24:clr)
+Ignoring empty pin current: Ix(x1:u24:pre)
+Ignoring empty pin current: Ix(x1:inv8:in)
+Ignoring empty pin current: Ix(x1:u5:clk)
+Ignoring empty pin current: Ix(x1:u5:clr)
+Ignoring empty pin current: Ix(x1:u5:pre)
+Ignoring empty pin current: Ix(x1:x1:u2:i3)
+Ignoring empty pin current: Ix(x1:x1:u2:i4)
+Ignoring empty pin current: Ix(x1:x1:u3:i3)
+Ignoring empty pin current: Ix(x1:x1:u4:i3)
+Ignoring empty pin current: Ix(x1:x1:u5:i3)
+Ignoring empty pin current: Ix(x1:x1:inv1:in)
+Ignoring empty pin current: Ix(x1:x1:inv2:in)
+Ignoring empty pin current: Ix(x1:x1:inv3:in)
+Ignoring empty pin current: Ix(x1:x1:inv4:in)
+Ignoring empty pin current: Ix(x1:x1:inv5:in)
+Ignoring empty pin current: Ix(x1:x1:u6:i3)
+Ignoring empty pin current: Ix(x1:x1:inv6:in)
+Ignoring empty pin current: Ix(x1:x1:u7:i3)
+Ignoring empty pin current: Ix(x1:x1:u7:i4)
+Ignoring empty pin current: Ix(x1:x1:u7:i5)
+
+Date: Mon Feb 09 04:48:13 2015
+Total elapsed time: 12.285 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 92341
+traniter = 92336
+tranpoints = 46154
+accept = 36601
+rejected = 9553
+matrix size = 242
+fillins = 0
+solver = Normal
+Thread vector: 16.2/8.8[6] 3.6/5.2[1] 3.6/5.7[1] 1.4/1.4[1]  2592/500
+Matrix Compiler1:     337 opcodes  2.9/[1.6]/2.1
+Matrix Compiler2: 11.1 KB object code size  2.6/3.4/[1.9]
+
+

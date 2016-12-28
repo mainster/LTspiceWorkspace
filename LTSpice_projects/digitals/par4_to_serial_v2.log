@@ -1,0 +1,118 @@
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\digitals\par4_to_serial_v2.asc
+
+WARNING: Less than two connections to node N011.  This node is used by A:U3:9.
+WARNING: Less than two connections to node NC_01.  This node is used by A:U2:1.
+WARNING: Less than two connections to node NC_02.  This node is used by A:U18:1.
+WARNING: Less than two connections to node NC_03.  This node is used by A:U21:1.
+WARNING: Less than two connections to node NC_04.  This node is used by A:U24:1.
+WARNING: Less than two connections to node NC_05.  This node is used by A:U30:1.
+WARNING: Less than two connections to node NC_06.  This node is used by A:U16:1.
+WARNING: Less than two connections to node NC_07.  This node is used by A:U17:1.
+WARNING: Less than two connections to node NC_08.  This node is used by A:U34:1.
+WARNING: Less than two connections to node NC_09.  This node is used by A:U35:1.
+WARNING: Less than two connections to node NC_10.  This node is used by A:U36:1.
+WARNING: Less than two connections to node NC_11.  This node is used by A:U39:1.
+WARNING: Less than two connections to node NC_12.  This node is used by A:U40:1.
+WARNING: Less than two connections to node NC_13.  This node is used by A:U41:1.
+WARNING: Less than two connections to node NC_14.  This node is used by A:U44:1.
+WARNING: Less than two connections to node NC_15.  This node is used by A:U4:9.
+WARNING: Less than two connections to node NC_16.  This node is used by A:U12:1.
+WARNING: Less than two connections to node NC_17.  This node is used by A:U46:1.
+WARNING: Less than two connections to node N007.  This node is used by A:U9:9.
+WARNING: Less than two connections to node NC_18.  This node is used by A:U48:1.
+WARNING: Less than two connections to node NC_19.  This node is used by A:U50:1.
+WARNING: Less than two connections to node PAR.  This node is used by B1.
+WARNING: Less than two connections to node NC_20.  This node is used by A:U76:1.
+Direct Newton iteration for .op point succeeded.
+Ignoring empty pin current: Ix(u3:clk)
+Ignoring empty pin current: Ix(u3:clr)
+Ignoring empty pin current: Ix(u3:pre)
+Ignoring empty pin current: Ix(u2:clk)
+Ignoring empty pin current: Ix(u2:clr)
+Ignoring empty pin current: Ix(u2:pre)
+Ignoring empty pin current: Ix(u19:in)
+Ignoring empty pin current: Ix(u20:in)
+Ignoring empty pin current: Ix(u22:in)
+Ignoring empty pin current: Ix(u23:in)
+Ignoring empty pin current: Ix(u16:clk)
+Ignoring empty pin current: Ix(u16:clr)
+Ignoring empty pin current: Ix(u16:pre)
+Ignoring empty pin current: Ix(u32:in)
+Ignoring empty pin current: Ix(u33:in)
+Ignoring empty pin current: Ix(u35:clk)
+Ignoring empty pin current: Ix(u35:clr)
+Ignoring empty pin current: Ix(u35:pre)
+Ignoring empty pin current: Ix(u37:in)
+Ignoring empty pin current: Ix(u38:in)
+Ignoring empty pin current: Ix(u40:clk)
+Ignoring empty pin current: Ix(u40:clr)
+Ignoring empty pin current: Ix(u40:pre)
+Ignoring empty pin current: Ix(u42:in)
+Ignoring empty pin current: Ix(u43:in)
+Ignoring empty pin current: Ix(u4:clk)
+Ignoring empty pin current: Ix(u4:clr)
+Ignoring empty pin current: Ix(u4:pre)
+Ignoring empty pin current: Ix(u49:in)
+Ignoring empty pin current: Ix(u10:clk)
+Ignoring empty pin current: Ix(u46:clk)
+Ignoring empty pin current: Ix(u9:clk)
+Ignoring empty pin current: Ix(u9:clr)
+Ignoring empty pin current: Ix(u9:pre)
+Ignoring empty pin current: Ix(u76:clk)
+Ignoring empty pin current: Ix(u77:in)
+Ignoring empty pin current: Ix(u3:clk)
+Ignoring empty pin current: Ix(u3:clr)
+Ignoring empty pin current: Ix(u3:pre)
+Ignoring empty pin current: Ix(u2:clk)
+Ignoring empty pin current: Ix(u2:clr)
+Ignoring empty pin current: Ix(u2:pre)
+Ignoring empty pin current: Ix(u19:in)
+Ignoring empty pin current: Ix(u20:in)
+Ignoring empty pin current: Ix(u22:in)
+Ignoring empty pin current: Ix(u23:in)
+Ignoring empty pin current: Ix(u16:clk)
+Ignoring empty pin current: Ix(u16:clr)
+Ignoring empty pin current: Ix(u16:pre)
+Ignoring empty pin current: Ix(u32:in)
+Ignoring empty pin current: Ix(u33:in)
+Ignoring empty pin current: Ix(u35:clk)
+Ignoring empty pin current: Ix(u35:clr)
+Ignoring empty pin current: Ix(u35:pre)
+Ignoring empty pin current: Ix(u37:in)
+Ignoring empty pin current: Ix(u38:in)
+Ignoring empty pin current: Ix(u40:clk)
+Ignoring empty pin current: Ix(u40:clr)
+Ignoring empty pin current: Ix(u40:pre)
+Ignoring empty pin current: Ix(u42:in)
+Ignoring empty pin current: Ix(u43:in)
+Ignoring empty pin current: Ix(u4:clk)
+Ignoring empty pin current: Ix(u4:clr)
+Ignoring empty pin current: Ix(u4:pre)
+Ignoring empty pin current: Ix(u49:in)
+Ignoring empty pin current: Ix(u10:clk)
+Ignoring empty pin current: Ix(u46:clk)
+Ignoring empty pin current: Ix(u9:clk)
+Ignoring empty pin current: Ix(u9:clr)
+Ignoring empty pin current: Ix(u9:pre)
+Ignoring empty pin current: Ix(u76:clk)
+Ignoring empty pin current: Ix(u77:in)
+
+Date: Mon Feb 09 09:17:21 2015
+Total elapsed time: 16.440 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 211495
+traniter = 211491
+tranpoints = 104928
+accept = 86408
+rejected = 18520
+matrix size = 142
+fillins = 0
+solver = Normal
+Thread vector: 13.2/7.6[5] 3.0/3.0[1] 2.5/2.9[1] 0.5/1.2[1]  2592/500
+Matrix Compiler1: 2.75 KB object code size  2.2/1.4/[0.9]
+Matrix Compiler2: 6.56 KB object code size  2.1/3.1/[0.7]
+
+

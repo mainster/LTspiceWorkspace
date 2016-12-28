@@ -1,0 +1,79 @@
+* C:\users\mainster\My Documents\CODES_local\LTSpice_projects\galvoscanner\PushPull_FET_OP_lochraster.asc
+Q§T1 Vplus b1 Gn1 0 BC547B
+Q§T2 Vmin b2 Gp1 0 BC327-40
+R1 Gn1 Sn1 {bias}
+R2 Sp1 Gp1 {bias}
+R3 b1 d1 1k
+R4 r4 b2 1k
+D1 d1 d2 1N4148
+D2 d2 r4 1N4148
+Rload1 N009 N011 2.2
+M1 Vplus Gn1 Sn1 Sn1 IRFP240
+M2 Vmin Gp1 Sp1 Sp1 IRFP9240
+R7 N011 in 1k
+L1 out_A N009 100p
+XU3 N015 Vmin N017 TL431
+R10 Vplus N015 4.7k
+Q1 N012 N015 N017 0 BC547B
+R11 N017 Vmin 315
+V1 Vplus 0 {vsup}
+V2 Vmin 0 {-vsup}
+V3 N007 0 PULSE(2.8 -2.8 0 5m 5m 0 10m)
+R12 b2 N014 1m
+R13 N004 b1 1m
+XU1 0 in d2 opamp_param_3 Vp={0.95*Vsup} Vm={-0.95*Vsup} Ilim=20m FT=10Meg SR=10 Vos=0 A0=100k phir=45 en=0 enk=0 in=0 ink=0 Rin=500Meg
+M3 N008 N010 0 0 IRFP240
+V5 N008 0 10
+V6 N010 0 10
+M4 0 N016 N013 N013 IRFP9240
+V4 N013 0 10
+V7 N016 N013 10
+I1 0 N004 {IK1}
+I2 N014 0 {Ik1}
+R5 N011 0 0.1
+R6 in N007 10k
+R8 Sn1 out_A {Rs}
+R9 out_A Sp1 {Rs}
+XU2 Vcs N006 N005 LM334
+R14 N005 N006 {Rset}
+XU4 0 N002 N001 LM334
+R20 N001 N002 166
+R21 N001 N003 {6.8*166}
+Q3 N002 N002 N003 0 BC547B
+R17 N003 0 100
+R16 0 N012 100
+R18 0 N004 100t
+R15 N006 0 100
+V8 Vcs 0 30
+S1 0 N004 b1 0 Osw
+.model D D
+.lib Z:\home\mainster\.wine\drive_c\Program Files (x86)\LTC\LTspiceIV\lib\cmp\standard.dio
+.model NPN NPN
+.model PNP PNP
+.lib Z:\home\mainster\.wine\drive_c\Program Files (x86)\LTC\LTspiceIV\lib\cmp\standard.bjt
+.model NMOS NMOS
+.model PMOS PMOS
+.lib Z:\home\mainster\.wine\drive_c\Program Files (x86)\LTC\LTspiceIV\lib\cmp\standard.mos
+* .step param bias list 200 1k 2.4k
+.model npnx npn (Bf=200 Is={10m/exp(0.7/26m)}
+.model pnpx pnp (Bf=200 Is={10m/exp(0.7/26m)}
+.model Dx D (Is={(20*50u)/exp(0.7/26m)}
+.tran 40m
+* .step param Ik1 1m 1.05m 5u
+* PULSE(-.5 .5 0 1m 1m 10m 23m)
+* Vp=25 Vm=-25 Ilim=20m
+.param Ik1=3m
+.param bias=1.5k
+.param Rs=1u
+.param vsup=12
+.param RSet =25
+.param Rll=5k
+* .temp 27 90
+* .step param Rset 10 30 0.1
+* .step param Rll 10 10k 200
+.model Osw SW(Ron=10u Roff=10meg Vt=12 Vh=-.2)
+.lib EIT_sub\opamp_parametrierbar.sub
+.lib LM334.sub
+.lib tl431.sub
+.backanno
+.end

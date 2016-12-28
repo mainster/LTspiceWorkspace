@@ -1,0 +1,18 @@
+*DFLF1800 Spice Model v1.0 Last Revised 03/06/2014  Diodes Inc Fast Recovery Rectifier
+
+.MODEL DI_DFLF1800 D  ( IS=59.0n RS=44.7m BV=800 IBV=10.00u
++ CJO=12.4p  M=0.245 N=2.235 TT=4.32u )
+
+*                (c)  2014 Diodes Incorporated
+*
+*   The copyright in these models  and  the designs embodied belong
+*   to Diodes Incorporated (" Diodes ").  They  are  supplied
+*   free of charge by Diodes for the purpose of research and design
+*   and may be used or copied intact  (including this notice)  for
+*   that purpose only.  All other rights are reserved. The models
+*   are believed accurate but  no condition  or warranty  as to their
+*   merchantability or fitness for purpose is given and no liability
+*   in respect of any use is accepted by Diodes Incorporated, its distributors
+*   or agents.
+*
+*   Diodes Incorporated, 1566 N. Dallas Parkway, Suite 850, Dallas, TX 75248, USA

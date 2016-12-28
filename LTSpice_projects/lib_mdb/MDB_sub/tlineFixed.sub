@@ -1,0 +1,7 @@
+.SUBCKT tlineFix    1 2 3 4
+T1 1 2 3 4 Zo={Z0} Td={Td}
+R1 1 0 1000meg
+R2 2 0 1000meg
+*R3 3 0 1000meg
+*R4 4 0 1000meg
+.ends

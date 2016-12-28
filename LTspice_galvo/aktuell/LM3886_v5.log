@@ -1,0 +1,32 @@
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\galvoscanner\aktuell\LM3886_v5.asc
+
+WARNING: Less than two connections to node MU2.  This node is used by D:U3:7.
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+vernier = 0.5
+vernier = 0.25
+vernier = 0.125
+Gmin = 4.81882
+vernier = 0.0625
+vernier = 0.03125
+vernier = 0.015625
+vernier = 0.0078125
+Gmin = 4.73544
+vernier = 0.00390625
+vernier = 0.00195313
+vernier = 0.000976563
+vernier = 0.000488281
+Gmin = 4.73428
+Gmin = 0
+Gmin stepping failed
+
+Starting source stepping with srcstepmethod=0
+Source Step = 3.0303%
+Source Step = 33.3333%
+Source Step = 63.6364%
+Source Step = 93.9394%
+Source stepping succeeded in finding the operating point.
+
+Heightened Def Con from 0.00450849 ++++++++++++++++++++++++++++++++++++++++++++++++++Fatal Error: Analysis:  Time step too small; time = 0.00450849, timestep = 1.25554e-018: trouble with u1:jx-instance j:u1:2
+

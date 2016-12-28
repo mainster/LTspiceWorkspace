@@ -1,0 +1,71 @@
+*$
+*PART NUMBER: NJM2120
+*MANUFACTURER: NEW JAPAN RADIO
+*OPAMP WITH SWITCH
+*The NJM2120 is a dual operational amplifier of 2-INPUT
+*and 1=OUTPUT with analog switch.This model including analog
+*switch model.
+*All Rights Reserved Copyright (c) Bee Technologies Inc. 2005
+.Subckt NJM2120 SW -IN1 +IN1 V- +IN2 -IN2 OUT V+
+X_U1     +IN1 -IN1 V+1 V- OUT1 NJM2120_S
+X_U2     +IN2 -IN2 V+2 V- OUT2 NJM2120_S
+R_RCC        V+ VCC 1m
+R_RCC2       Vcc 0  100MEG
+R_R38        V+1 0  1MEG  
+S_S6         out2 VCH2 N08350 0 _S6
+RS_S6        N08350 0 1G
+.MODEL       _S6 VSWITCH Roff=1e6 Ron=1.0 Voff=0.0V Von=1.0V
+S_S5         out1 VCH1 N08350 0 _S5
+RS_S5        N08350 0 1G
+.MODEL       _S5 VSWITCH Roff=1e6 Ron=1.0 Voff=1.0V Von=0.0V
+R_R33         0 SW  100MEG    
+R_R39         VCH1 0  1.4k  
+E_E2         N08350 0 VALUE { IF(V(SW)>V(Vcc)-0.7,0,1) }
+R_R40         VCH2 0  1.4k  
+S_S3         V+ V+2 N08350 0 _S3
+RS_S3        N08350 0 1G
+.MODEL       _S3 VSWITCH Roff=100e6 Ron=1.0 Voff=0.0V Von=1.0V
+R_R5         N08350 0  1MEG  
+E_ABM2       OUT 0 VALUE { ( V(vch1)+V(vch2) ) /1.0  }
+S_S4         V+ V+1 N08350 0 _S4
+RS_S4        N08350 0 1G
+.MODEL        _S4 VSWITCH Roff=100e6 Ron=1.0 Voff=1 Von=0
+R_R37         V+2 0  1MEG
+.ends njm2120
+.subckt njm2120_S  1 2 3 4 5
+  c1   11 12 3.6603E-12
+  c2    6  7 30.000E-12
+  dc    5 53 dy
+  de   54  5 dy
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 2.8673E6 -1E3 1E3 2E6 -2E6
+  ga    6  0 11 12 1.3229E-3
+  gcm   0  6 10 99 126.29E-9
+  iee   3 10 dc 66.258E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx1
+  q2   12  1 14 qx2
+  r2    6  9 100.00E3
+  rc1   4 11 791.82
+  rc2   4 12 791.82
+  re1  13 10 8.0258
+  re2  14 10 8.0258
+  ree  10 99 3.0185E6
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 1.8072E3
+  vb    9  0 dc 0
+  vc    3 53 dc 1.7979
+  ve   54  4 dc 1.7979
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.00E-18)
+.model dy D(Is=800.00E-18 Rs=1m Cjo=10p)
+.model qx1 PNP(Is=800.00E-18 Bf=184.36)
+.model qx2 PNP(Is=823.2200E-18 Bf=417.72)
+.ends
+*$

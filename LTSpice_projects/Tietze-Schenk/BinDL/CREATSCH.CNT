@@ -1,0 +1,20 @@
+:Base Creatsch.HLP
+1 Creating and Editing Schematics
+2 Creating and Editing Schematics
+3 Components of a Design=IDH_CONFIGUR_Components_of_a_Design
+3 Working with Items on the Schematic=IDH_CREATING_Working_with_items_on_the_Schematic
+3 Placing and Editing Parts=IDH_CREATING_Placing_and_Editing_Parts
+3 Drawing and Labeling Wires=IDH_CREATING_Drawing_and_Labeling_Wires
+3 Drawing and Labeling Buses=IDH_CREATING_Drawing_and_Labeling_Buses
+3 Using Ports=IDH_CREATING_Using_Global_Ports
+3 Placing Power and Ground Symbols=IDH_CREATING_Placing_Power_and_Ground_Symbols
+3 Creating and Editing Multi-sheet Designs=IDH_CREATING_Creating_and_Editing_Multi_sheet_Designs
+3 Printing Your Design=IDH_CREATING_Printing_Your_Design
+2 Creating and Editing Hierarchical Schematics
+3 About Hierarchal Schematics=IDH_HIERARCH_About_Hierarchal_Schematics
+3 Creating and Editing Hierarchical Blocks=IDH_HIERARCH_Creating_and_Editing_Hierarchical_Blocks
+3 Associating an Existing Schematic=IDH_HIERARCH_Associating_an_Existing_Schematic
+3 Creating and Editing Hierarchical Symbols=IDH_HIERARCH_Creating_and_Editing_Hierarchical_Symbols
+3 Navigating through Hierarchical Designs=IDH_HIERARCH_Navigating_through_Hierarchical_Designs
+3 Passing Information between Levels of Hierarchy=IDH_HIERARCH_Passing_Information_between_Levels_of_Hierarchy
+3 Setting Up Multiple Views for Hierarchical Blocks and Symbols=IDH_HIERARCH_Setting_Up_Multiple_Views

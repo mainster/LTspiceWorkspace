@@ -1,0 +1,48 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\galvoscanner\aktuell\lead_lag_glied.asc
+V3 stimac 0 SINE(20m 1 100 20m) AC 1
+XU7 stimac N002 lead opamp_param_3 Vp=10 Vm=-10 Ilim=20m FT=10Meg SR=10 Vos=0 A0=100k phir=45 en=0 enk=0 in=0 ink=0 Rin=500Meg
+R4 0 N002 1k
+C1 lead N002 {Clead}
+R3 N002 lead {1k*(gain-1)}
+XU3 stimac N004 lag opamp_param_3 Vp=10 Vm=-10 Ilim=20m FT=10Meg SR=10 Vos=0 A0=100k phir=45 en=0 enk=0 in=0 ink=0 Rin=500Meg
+R1 0 N004 1k
+C2 N004 P001 {Clag}
+R2 P001 0 {Rlag}
+R6 N004 lag {1k*(gain-1)}
+XU1 0 N001 lead_inv opamp_param_3 Vp=10 Vm=-10 Ilim=20m FT=10Meg SR=10 Vos=0 A0=100k phir=45 en=0 enk=0 in=0 ink=0 Rin=500Meg
+R5 stimac N001 1k
+C3 lead_inv N001 {Clead}
+R7 N001 lead_inv {1k*(gain-1)}
+XU2 0 N003 lag_inv opamp_param_3 Vp=10 Vm=-10 Ilim=20m FT=10Meg SR=10 Vos=0 A0=100k phir=45 en=0 enk=0 in=0 ink=0 Rin=500Meg
+R8 stimac N003 1k
+C4 N003 P002 {Clag}
+R9 P002 stimac {Rlag}
+R10 N003 lag_inv {1k*(gain-1)}
+.model SWx SW(Ron=1u Roff=100Meg Vt=0 Vh=-.5 )
+.inc ADA4700.sub
+.inc LM358.sub
+;.tran 0 100m 1m
+;.options plotwinsize=0
+;.tran 0 2.8m 1.9m 1e-7
+.ac oct 100 100 1meg
+* .step TEMP list 27 150
+.option noopiter
+.options plotwinsize=0
+;.four 1k 10 I(L1)
+* .step param Kpi list 1 5 10
+* .dc V3 -5 5 .01
+* .op
+* .tran 0 100m 1m\n.options plotwinsize=0
+* .tran 0 50m\n.options plotwinsize=0
+* .step param Lcoil list 1f 170u
+* .step param Cf list 5p 10p 15p 20p
+* .step param Ctp list 1p 100p 200p 470p 1n
+* .step param Cf list 1p 20p 50p 100p
+* .step param gainSum list 1 2 5
+.param Rlag=1k
+.param Clead = {Clag}
+.param gain = 20
+.step param Clag 400p 1n 200p
+.lib EIT_sub\opamp_parametrierbar.sub
+.backanno
+.end

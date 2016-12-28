@@ -1,0 +1,77 @@
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\galvoscanner\aktuell\transducer_v1.3.asc
+
+u5:d18: both pins shorted together -- ignoring.
+Laplace(E3): Window=50.3712ms Nfft=16384
+WARNING: Less than two connections to node CHAN_X.  This node is used by R27.
+WARNING: Less than two connections to node YS_FB.  This node is used by R12.
+WARNING: Less than two connections to node NC_01.  This node is used by Q1.
+WARNING: Less than two connections to node POLEZERO.  This node is used by E1.
+WARNING: Less than two connections to node NUMDEN.  This node is used by E2.
+WARNING: Less than two connections to node N005.  This node is used by B1.
+WARNING: Less than two connections to node N015.  This node is used by R16.
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Increasing initial diagonal Gmin to 100
+Gmin = 100
+vernier = 0.5
+vernier = 0.25
+Gmin = 26.2144
+vernier = 0.125
+vernier = 0.0625
+vernier = 0.03125
+vernier = 0.015625
+Gmin = 24.5764
+vernier = 0.0078125
+vernier = 0.00390625
+vernier = 0.00195313
+Gmin = 24.4806
+vernier = 0.000976563
+vernier = 0.000488281
+Gmin = 0
+Gmin stepping failed
+
+Starting source stepping with srcstepmethod=0
+Source Step = 3.0303%
+Source Step = 33.3333%
+Source Step = 63.6364%
+Source Step = 93.9394%
+Source Step = 100%
+vernier = 0.0625
+Source Step = 99.018%
+Source Step = 99.1364%
+Source Step = 99.2547%
+Source Step = 99.3731%
+Source Step = 99.4915%
+vernier = 0.00585938
+Source Step = 99.6158%
+Source Step = 99.7933%
+Source Step = 99.9709%
+Source Step = 100%
+Source Step = 100%
+Source Step = 100%
+Source stepping succeeded in finding the operating point.
+
+Heightened Def Con from 0.27 ++++++++++++++++++to 0.27
+Heightened Def Con from 0.27 ++++++++++++++to 0.27
+Heightened Def Con from 0.27 ++++++++++++++to 0.27
+Heightened Def Con from 0.27 ++++++++++++++to 0.27
+
+Date: Wed Feb 25 19:38:23 2015
+Total elapsed time: 22.038 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 70182
+traniter = 65528
+tranpoints = 20673
+accept = 17119
+rejected = 3618
+matrix size = 295
+fillins = 634
+solver = Normal
+Thread vector: 99.9/45.8[7] 24.1/27.2[1] 22.8/7.8[7] 2.8/3.0[1]  2592/500
+Matrix Compiler1: 45.8 KB object code size  24.9/10.7/[6.6]
+Matrix Compiler2: 35.3 KB object code size  10.8/11.2/[4.7]
+
+

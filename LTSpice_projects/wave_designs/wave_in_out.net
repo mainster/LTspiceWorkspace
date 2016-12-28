@@ -1,0 +1,20 @@
+* Z:\media\data\CODES\LTSpice_projects\wave_designs\wave_in_out.asc
+XU1 N004 out1 VP VM out1 level.2 Avol=1Meg GBW=10Meg Slew=10Meg ilimit=25m rail=0 Vos=0 phimargin=45 en=0 enk=0 in=0 ink=0 Rin=500Meg
+V1 VP 0 10
+V2 N003 0 wavefile="C:\cleo.wav" chan=0
+V3 0 VM 10
+R2 N001 N003 100k
+R3 N004 N001 100k
+C4 N004 0 5n
+C1 out1 N001 10n
+XU2 out1 N002 VP VM out2 level.2 Avol=1Meg GBW=10Meg Slew=10Meg ilimit=25m rail=0 Vos=0 phimargin=45 en=0 enk=0 in=0 ink=0 Rin=500Meg
+R1 N002 0 1k
+R4 out2 N002 1k
+* .step dec param w 1 10k 50\n.ac list {w/(2*pi)}
+.wave "C:\out1.wav" 16 44100 V(out1)
+.wave "C:\out2.wav" 16 44100 V(out2)
+* wavefile="C:\\cleo.wav" chan=0
+.tran 2
+.lib UniversalOpamps2.sub
+.backanno
+.end

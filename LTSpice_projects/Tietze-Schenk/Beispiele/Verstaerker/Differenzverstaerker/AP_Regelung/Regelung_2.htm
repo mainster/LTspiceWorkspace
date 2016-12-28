@@ -1,0 +1,75 @@
+<HTML>
+  <HEAD>
+    <TITLE>Regelung_2.sch</TITLE>
+  </HEAD>
+  <BODY BGCOLOR="#F0F0F0">
+    <H1 ALIGN=center><B>Regelung_2.sch</B></H1>
+    <P>
+Regelung mit Bezug auf die positive Versorgungsspannung
+    </P>
+    <P>
+      Regelung der Ausgangsspannungen im Arbeitspunkt mit Bezug auf die
+      positive Versorgungsspannung bei einem npn-Differenzverst&auml;rker mit
+      Stromquellen und Kollektorschaltungen am Ausgang. Dabei wird anstelle
+      des p-Kanal-Stromspiegels mit dem Eingangstransistor T12 und den
+      Ausgangstransistoren T3 und T4 die p-Strombank F1 eingesetzt, damit
+      die Anzahl der Transistoren nicht gr&ouml;&szlig;er als 10 wird (Begrenzung der
+      Evaluation-Version).
+    </P>
+    <P>
+      Die Ausgangsspannung im Arbeitspunkt wird mit R2=R3=R eingestellt;
+      theoretisch gilt:
+    </P>
+    <P>
+       UaA = (Ub+)-UEB12*(1+R/(2*R4)) = 5V-0,68V*(1+24/13,6) = 3,1V
+    </P>
+    <P>
+      Die Simulation liefert UaA=3V. Mit dem Widerstand R4 wird der
+      Ruhestrom der Kollektorschaltungen festgelegt:
+    </P>
+    <P>
+       IC5 = IC9 - UBE12/(2*R4) = 100uA (Simulation: 101uA)
+    </P>
+    <P>
+      Simuliert wird die Abh&auml;ngigkeit der Ausgangsspannung von R (Anzeige 1).
+      F&uuml;r R>110kOhm werden die Ausg&auml;nge des Differenzverst&auml;rkers &uuml;bersteuert;
+      dabei geraten T1 und T2 in die S&auml;ttigung und die Differenzverst&auml;rkung
+      geht gegen Null. F&uuml;r R<5kOhm nimmt die Differenzverst&auml;rkung ebenfalls
+      ab, da in diesem Fall die Ausg&auml;nge des Differenzverst&auml;rkers zu stark
+      belastet werden.
+    </P>
+    <P><TABLE BORDER=2 BGCOLOR="#F0F0F0">
+      <TR>
+        <TD><B>Analysen</B></TD>
+        <TD><B>Einstellungen</B></TD>
+        <TD><B>Parameter</B></TD>
+        <TD><B>Ergebnisanzeigen</B></TD>
+      </TR>
+      <TR>
+        <TD>AC</TD>
+        <TD>f = 1kHz ... 1kHz</TD>
+        <TD>R = 2k ... 120k</TD>
+        <TD>Differenzverstaerkung</TD>
+      </TR>
+      <TR>
+        <TD>DC</TD>
+        <TD>-</TD>
+        <TD>R = 2k ... 120k</TD>
+        <TD>Ausgangsspannung</TD>
+      </TR>
+    </TABLE></P>
+    <P><TABLE BORDER=0 BGCOLOR="#F0F0F0" WIDTH=100%>
+      <TR>
+        <TH WIDTH=20% ALIGN=left>
+          <A HREF="ueber.htm" TARGET="uebersicht"><B>zur&uuml;ck</B></A>
+        </TH>
+        <TH WIDTH=20% ALIGN=left>
+          <A HREF="../../../ueber.htm" TARGET="uebersicht"><B>&Uuml;bersicht</B></A>
+        </TH>
+        <TH WIDTH=60% ALIGN=left>
+          <A HREF="Regelung_2.tse"><B>Simulation starten</B></A>
+        </TH>
+      </TR>
+    </TABLE></P>
+  </BODY>
+</HTML>

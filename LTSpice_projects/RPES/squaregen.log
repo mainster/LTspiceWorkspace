@@ -1,0 +1,187 @@
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\RPES\squaregen.asc
+
+WARNING: Less than two connections to node C2_IN_UF.  This node is used by V1.
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+vernier = 0.5
+Gmin = 1.67772
+vernier = 0.25
+vernier = 0.125
+Gmin = 1.20453
+vernier = 0.0625
+vernier = 0.03125
+Gmin = 1.14054
+vernier = 0.0416667
+vernier = 0.0208333
+vernier = 0.0277778
+Gmin = 1.08658
+vernier = 0.0138889
+vernier = 0.0185185
+vernier = 0.00925925
+Gmin = 1.07037
+vernier = 0.0123457
+vernier = 0.00617283
+Gmin = 1.05481
+vernier = 0.00823044
+vernier = 0.00411522
+vernier = 0.00548696
+Gmin = 1.04509
+vernier = 0.00274348
+vernier = 0.00365797
+Gmin = 1.03914
+vernier = 0.0048773
+vernier = 0.00243865
+vernier = 0.00325153
+Gmin = 1.03324
+vernier = 0.00162576
+vernier = 0.00216769
+Gmin = 1.02975
+vernier = 0.00289025
+vernier = 0.00144512
+vernier = 0.00192683
+Gmin = 1.02628
+vernier = 0.000963415
+vernier = 0.00128455
+Gmin = 1.02423
+vernier = 0.00171274
+vernier = 0.000856369
+vernier = 0.00114182
+Gmin = 1.02218
+vernier = 0.00152243
+vernier = 0.000761216
+Gmin = 1.02014
+vernier = 0.00101495
+vernier = 0.000507477
+Gmin = 1.01885
+vernier = 0.000676636
+vernier = 0.000902182
+vernier = 0.000451091
+Gmin = 1.01759
+vernier = 0.000601454
+vernier = 0.000801939
+Gmin = 1.01612
+vernier = 0.000400969
+vernier = 0.000534626
+Gmin = 1.01527
+vernier = 0.000712834
+vernier = 0.000534626
+vernier = 0.000712834
+Gmin = 1.01414
+vernier = 0.000534626
+vernier = 0.000400969
+vernier = 0.000534625
+Gmin = 1.01354
+vernier = 0.000400969
+vernier = 0.000534625
+vernier = 0.000400969
+Gmin = 1.01297
+vernier = 0.000534625
+vernier = 0.000400969
+Gmin = 1.01216
+Gmin = 0
+Gmin stepping failed
+
+Starting source stepping with srcstepmethod=0
+Source Step = 3.0303%
+Source Step = 33.3333%
+Source Step = 63.6364%
+Source Step = 88.6364%
+Source Step = 90.4386%
+Source Step = 90.4682%
+Source Step = 90.4978%
+Source Step = 90.5273%
+Source Step = 90.5569%
+Source Step = 90.5865%
+Source Step = 90.6161%
+Source Step = 90.6457%
+Source Step = 90.6753%
+Source Step = 90.7049%
+Source Step = 90.7345%
+Source Step = 90.7641%
+Source Step = 90.7937%
+Source Step = 90.8233%
+Source Step = 90.8529%
+Source Step = 90.8825%
+Source Step = 90.9121%
+Source Step = 90.9416%
+Source Step = 90.9712%
+Source Step = 91.0008%
+Source Step = 91.0304%
+Source Step = 91.06%
+Source Step = 91.0896%
+Source Step = 91.1192%
+Source Step = 91.1488%
+Source Step = 91.1784%
+Source Step = 91.208%
+Source Step = 91.2376%
+Source Step = 91.2672%
+Source Step = 91.2968%
+Source Step = 91.3263%
+vernier = 0.00146484
+Source Step = 91.3663%
+Source Step = 91.4107%
+Source Step = 91.4551%
+Source Step = 91.4995%
+Source Step = 91.5439%
+vernier = 0.00219727
+Source Step = 91.6016%
+Source Step = 91.6681%
+Source Step = 91.7347%
+Source Step = 91.8013%
+Source Step = 91.8679%
+vernier = 0.0032959
+Source Step = 91.9511%
+Source Step = 92.051%
+Source Step = 92.1509%
+Source Step = 92.2508%
+Source Step = 92.3506%
+vernier = 0.00494385
+Source Step = 92.4705%
+Source Step = 92.6203%
+Source Step = 92.7701%
+Source Step = 92.9199%
+Source Step = 93.0697%
+vernier = 0.00741577
+Source Step = 93.242%
+Source Step = 93.4667%
+Source Step = 93.6915%
+Source Step = 93.9162%
+Source Step = 94.1409%
+vernier = 0.0111237
+Source Step = 94.3881%
+Source Step = 94.7252%
+Source Step = 95.0623%
+Source Step = 95.3993%
+Source Step = 95.7364%
+vernier = 0.0166855
+Source Step = 96.0904%
+Source Step = 96.596%
+Source Step = 97.1016%
+Source Step = 97.6072%
+Source Step = 98.1128%
+Source Step = 98.6185%
+vernier = 0.0250282
+Source Step = 99.3769%
+Source stepping succeeded in finding the operating point.
+
+
+Date: Wed Dec 31 05:52:47 2014
+Total elapsed time: 9.458 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 192472
+traniter = 157260
+tranpoints = 44474
+accept = 31711
+rejected = 12763
+matrix size = 102
+fillins = 116
+solver = Normal
+Thread vector: 16.5/10.6[2] 7.1/4.9[2] 4.2/4.6[1] 0.9/1.9[1]  2592/500
+Matrix Compiler1: 8.98 KB object code size  5.1/2.8/[1.2]
+Matrix Compiler2: 9.71 KB object code size  3.4/3.6/[1.3]
+
+

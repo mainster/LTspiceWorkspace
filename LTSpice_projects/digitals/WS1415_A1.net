@@ -1,0 +1,65 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\digitals\WS1415_A1.asc
+XR1 R1+a clk NC_01 R1a DFF_no TD=10ns
+XU7 B P001 inv_mdb Rout=10 TD=10n
+XU8 R1 P002 inv_mdb Rout=10 TD=10n
+XR0 R0+a clk NC_02 R0a DFF_no TD=10ns
+V1 N001 0 PULSE({VDIG} 0 {DELAY} 10n 10n {1/(2*fclk)} {1/fclk})
+XU11 P003 clk D2 P004 D0 B D2 D3 NC_03 bin_4_u_cnt TD=10ns
+XU12 P003 vdc_single v={vpwr$_digital}
+XU13 clk clk_ probe_dig T=0
+V2 clk 0 PULSE({VDIG} 0 {DELAY} 10n 10n {1/(2*fclk)} {1/fclk})
+XU14 P005 clk P006 P007 clk1k clk2k clk4k clk8k NC_04 bin_4_u_cnt TD=10ns
+XU16 R1 R1_ probe_dig T=5
+XU17 R1+ R1+_ probe_dig T=7
+XU18 R0+ R0+_ probe_dig T=6
+XU19 R0 R0_ probe_dig T=4
+XU20 B B_ probe_dig T=3
+XU21 S S_ probe_dig T=2
+XU22 Z Z_ probe_dig T=1
+XU28 P007 vdc_single
+XU34 0 PL! probe_dig T=9
+XU35 0 CP! probe_dig T=8
+XU36 0 c0! probe_dig T=10
+XU24 P004 vdc_single
+XU23 P006 vdc_single
+XU15 P005 vdc_single
+XU1 S B R0 NC_07 N002 AND_3rin TD=10n Rin=20meg
+XU2 B R0 R1 NC_08 N003 AND_3rin TD=10n Rin=20meg
+XU3 S P001 P002 NC_09 N004 AND_3rin TD=10n Rin=20meg
+XU4 B R0 R1 NC_10 N005 AND_3rin TD=10n Rin=20meg
+XU5 S R0 NC_11 N006 AND_2rin TD=10n Rin=20meg
+XU9 N002 N003 NC_12 R1+ or_2rin TD=10n Rin=20meg
+XU10 N004 N005 N006 NC_13 R0+ or_3rin TD=10n Rin=20meg
+B1 S 0 V=5*buf(delay(V(clk),600u))
+XU6 R1 R1a jumperConfig cl={DFF} R_open=100meg R_close=1u
+XU25 R1+ R1+a jumperConfig cl={DFF} R_open=100meg R_close=1u
+XU26 R0+ R0+a jumperConfig cl={DFF} R_open=100meg R_close=1u
+XU27 R0 R0a jumperConfig cl={DFF} R_open=100meg R_close=1u
+XU29 R1 R1b jumperConfig cl={TFF} R_open=100meg R_close=1u
+XU33 R1+b clk NC_14 R1b TFF_no TD=10ns
+XU37 R0+b clk NC_15 R0b TFF_no TD=10ns
+XU30 R1+ R1+b jumperConfig cl={TFF} R_open=100meg R_close=1u
+XU31 R0+ R0+b jumperConfig cl={TFF} R_open=100meg R_close=1u
+XU32 R0 R0b jumperConfig cl={TFF} R_open=100meg R_close=1u
+XU38 R1a z jumperConfig cl={DFF} R_open=100meg R_close=1u
+XU39 R1b z jumperConfig cl={TFF} R_open=100meg R_close=1u
+.tran {8*1/fclk+DELAY} startup
+.lib cd4000.lib
+.param fclk = 1k
+.param N = 32
+.param NN = 8
+.param DELAY = 0
+.param vpwr$_digital=5V
+.param VDIG = 5V
+.param sel_ff=1
++ DFF = {FF}
++ TFF = {1-FF}
+.step param FF list 0 1
+.lib EIT_sub\FF_and_counters.sub
+.lib EIT_sub\or_and_gates.sub
+.lib EIT_sub\probe_dig.sub
+.lib EIT_sub\vdc_single.sub
+.lib MDB_sub/jumper_setable.sub
+.lib MDB_sub\inverter.sub
+.backanno
+.end

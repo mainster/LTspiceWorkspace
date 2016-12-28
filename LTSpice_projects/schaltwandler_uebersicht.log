@@ -1,0 +1,223 @@
+Questionable use of curly braces in ".meas tran vr_calc param {charge/ca}"
+    Error: undefined symbol in: "[charge]/ca"
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\schaltwandler_uebersicht.asc
+
+WARNING: Less than two connections to node N001.  This node is used by R1.
+WARNING: Less than two connections to node GND2.  This node is used by V:U1:1.
+WARNING: Less than two connections to node P.  This node is used by V:U3:1.
+Direct Newton iteration for .op point succeeded.
+.step p=0.1
+.step p=0.2
+.step p=0.3
+.step p=0.4
+.step p=0.5
+.step p=0.6
+.step p=0.7
+.step p=0.8
+.step p=0.9
+.step p=1
+
+
+Measurement: ilmax
+  step	MAX(i(l1))	FROM	TO
+     1	1.65684	0	0.025
+     2	2.28726	0	0.025
+     3	2.88978	0	0.025
+     4	3.46296	0	0.025
+     5	4.00621	0	0.025
+     6	4.51917	0	0.025
+     7	4.99976	0	0.025
+     8	5.44812	0	0.025
+     9	5.86265	0	0.025
+    10	6.3935	0	0.025
+
+Measurement: ilmin
+  step	MIN(i(l1))	FROM	TO
+     1	0.381333	0	0.025
+     2	1.12682e-011	0	0.025
+     3	-6.45127e-013	0	0.025
+     4	-1.04887e-011	0	0.025
+     5	-2.12127e-011	0	0.025
+     6	-0.0970126	0	0.025
+     7	-0.43029	0	0.025
+     8	-0.847156	0	0.025
+     9	-1.34043	0	0.025
+    10	-2.31921	0	0.025
+
+Measurement: dil
+  step	ilmax-ilmin
+     1	1.27551
+     2	2.28726
+     3	2.88978
+     4	3.46296
+     5	4.00621
+     6	4.61618
+     7	5.43005
+     8	6.29527
+     9	7.20308
+    10	8.71272
+
+Measurement: icmax
+  step	MAX(i(c1))	FROM	TO
+     1	0.656843	0	0.025
+     2	1.28726	0	0.025
+     3	1.88978	0	0.025
+     4	2.46296	0	0.025
+     5	3.00621	0	0.025
+     6	3.51917	0	0.025
+     7	3.99976	0	0.025
+     8	4.44812	0	0.025
+     9	4.86265	0	0.025
+    10	5.3935	0	0.025
+
+Measurement: icmin
+  step	MIN(i(c1))	FROM	TO
+     1	-0.618667	0	0.025
+     2	-1	0	0.025
+     3	-1	0	0.025
+     4	-1	0	0.025
+     5	-1	0	0.025
+     6	-1.09701	0	0.025
+     7	-1.43029	0	0.025
+     8	-1.84716	0	0.025
+     9	-2.34043	0	0.025
+    10	-3.31921	0	0.025
+
+Measurement: t1
+  step	i(c1)=icmax
+     1	6.3e-005
+     2	6.5e-005
+     3	6.7e-005
+     4	6.9e-005
+     5	7.1e-005
+     6	7.3e-005
+     7	7.5e-005
+     8	7.7e-005
+     9	7.9e-005
+    10	7.17456e-005
+
+Measurement: t01
+  step	i(c1)=0
+     1	0.024982
+     2	0.024983
+     3	0.024984
+     4	0.024985
+     5	0.024986
+     6	0.024987
+     7	0.024988
+     8	0.024989
+     9	0.02499
+    10	0.0248175
+
+Measurement: t02
+  step	i(c1)=0
+     1	0.024992
+     2	0.024993
+     3	0.024994
+     4	0.024995
+     5	0.024996
+     6	0.024997
+     7	0.024998
+     8	0.024999
+     9	0.025
+    10	0.0249593
+
+Measurement: dtc1
+  step	t1-t01
+     1	-0.024919
+     2	-0.024918
+     3	-0.024917
+     4	-0.024916
+     5	-0.024915
+     6	-0.024914
+     7	-0.024913
+     8	-0.024912
+     9	-0.024911
+    10	-0.0247458
+
+Measurement: dtc2
+  step	t02-t1
+     1	0.024929
+     2	0.024928
+     3	0.024927
+     4	0.024926
+     5	0.024925
+     6	0.024924
+     7	0.024923
+     8	0.024922
+     9	0.024921
+    10	0.0248875
+
+Measurement: a1
+  step	1/2*dtc1*icmax
+     1	-0.00818394
+     2	-0.0160379
+     3	-0.0235439
+     4	-0.0306835
+     5	-0.0374498
+     6	-0.0438383
+     7	-0.049823
+     8	-0.0554057
+     9	-0.0605667
+    10	-0.0667332
+
+Measurement: a2
+  step	1/2*dtc2*icmax
+     1	0.00818722
+     2	0.0160443
+     3	0.0235533
+     4	0.0306958
+     5	0.0374648
+     6	0.0438559
+     7	0.049843
+     8	0.055428
+     9	0.060591
+    10	0.0671155
+
+Measurement: charge
+  step	a1+a2
+     1	3.2782e-006
+     2	6.4222e-006
+     3	9.43856e-006
+     4	1.23119e-005
+     5	1.50309e-005
+     6	1.75912e-005
+     7	2.00034e-005
+     8	2.22534e-005
+     9	2.43474e-005
+    10	0.000382278
+
+Measurement: vr_calc
+  step	(charge/ca)
+     1	0.16391
+     2	0.32111
+     3	0.471928
+     4	0.615593
+     5	0.751546
+     6	0.87956
+     7	1.00017
+     8	1.11267
+     9	1.21737
+    10	19.1139
+
+Measurement "vr" FAIL'ed
+
+
+Date: Tue Jul 14 01:09:56 2015
+Total elapsed time: 25.517 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 240556
+traniter = 240552
+tranpoints = 70885
+accept = 65764
+rejected = 5121
+matrix size = 10
+fillins = 0
+solver = Normal
+Matrix Compiler1: 220 bytes object code size  0.3/0.3/[0.2]
+Matrix Compiler2: 510 bytes object code size  0.2/0.3/[0.2]
+
+

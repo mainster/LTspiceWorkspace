@@ -1,0 +1,70 @@
+<HTML>
+  <HEAD>
+    <TITLE>Basisschaltung</TITLE>
+  </HEAD>
+  <BODY BGCOLOR="#F0F0F0">
+    <H1 ALIGN=center><B>Basisschaltung</B></H1>
+    <P>
+Kennlinie, Verst&auml;rkung, Frequenzgang und Klirrfaktor einer Basisschaltung
+    </P>
+    <P>
+      Kennlinie, Verst&auml;rkung, Frequenzgang und Sinusaussteuerung einer
+      Basisschaltung.
+    </P>
+    <P>
+      Den Verlauf der Verst&auml;rkung A=dUa/dUe erh&auml;lt man mit dV(Ua). Im
+      Arbeitspunkt Ua=2,5V gilt A=70. Denselben Wert erh&auml;lt man aus
+      dem Betragsfrequenzgang bei niedrigen Frequenzen: 37dB=70.
+      Die Theorie liefert A=76.
+    </P>
+    <P>
+      Aus der Kleinsignalanalyse (AC) erh&auml;lt man neben dem Frequenzgang
+      auch die Eingangsimpedanz: Ze=V(Ue)/IE(T1). Bei niedrigen Frequenzen
+      gilt Ze=re=14Ohm. Die Eingangsimpedanz ist ohmsch-induktiv
+      (Betrag nimmt zu, Phase > 0).
+    </P>
+    <P>
+      Bei der Sinusaussteuerung (TRAN-Analyse) wird eine Amplitude von
+      2mV bei einer Frequenz von 1kHz verwendet; daraus resultiert ein
+      Klirrfaktor von k=1%. Mit RBV=0 liefert die Theorie f&uuml;r k=1% eine
+      zul&auml;ssige Amplitude von 1mV; wegen der linearisierenden Wirkung
+      von RBV ist die zul&auml;ssige Amplitude hier gr&ouml;&szlig;er. Der Klirrfaktor
+      wird in der OUT-Datei abgelegt; Aufruf mit ANALYSIS/EXAMINE OUTPUT.
+    </P>
+    <P><TABLE BORDER=2 BGCOLOR="#F0F0F0">
+      <TR>
+        <TD><B>Analysen</B></TD>
+        <TD><B>Einstellungen</B></TD>
+        <TD><B>Ergebnisanzeigen</B></TD>
+      </TR>
+      <TR>
+        <TD>AC</TD>
+        <TD>f = 1e3 ... 1e9</TD>
+        <TD>Frequenzgang , Eingangsimpedanz</TD>
+      </TR>
+      <TR>
+        <TD>DC</TD>
+        <TD>Ue = -2V ... 0V</TD>
+        <TD>Kennlinie , Verstaerkung</TD>
+      </TR>
+      <TR>
+        <TD>TRAN</TD>
+        <TD>t = 0 ... 5ms</TD>
+        <TD>Sinussignal</TD>
+      </TR>
+    </TABLE></P>
+    <P><TABLE BORDER=0 BGCOLOR="#F0F0F0" WIDTH=100%>
+      <TR>
+        <TH WIDTH=20% ALIGN=left>
+          <A HREF="ueber.htm" TARGET="uebersicht"><B>zur&uuml;ck</B></A>
+        </TH>
+        <TH WIDTH=20% ALIGN=left>
+          <A HREF="../../ueber.htm" TARGET="uebersicht"><B>&Uuml;bersicht</B></A>
+        </TH>
+        <TH WIDTH=60% ALIGN=left>
+          <A HREF="Basisschaltung.tse"><B>Simulation starten</B></A>
+        </TH>
+      </TR>
+    </TABLE></P>
+  </BODY>
+</HTML>

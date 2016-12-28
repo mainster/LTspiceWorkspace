@@ -1,0 +1,21 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\noise_snr\noise_snr.asc
+R2 0 0 1k noiseless
+C1 out 0 1.03e-8
+V1 N002 0 SINE(0 10m 10k) AC 1
+R3 N001 o1 1k
+V2 N001 0 SINE(0 10m 10k)
+R4 o1 o2 1k
+R5 o2 o3 1k
+R6 o3 o4 1k
+R7 N002 out {R}
+* .noise V(out) V1 oct 100 10 1meg
+.step dec param x 11 10meg 10
+.noise V(out) V1 oct 100 10 {x}
+.measure ns INTEG V(onoise)
+.measure snr param -20*log10(ns)
+* .noise V(o4) V2 oct 100 10 1meg
+* .ac oct 100 10 1meg
+.temp = 20
+.param R=777
+.backanno
+.end

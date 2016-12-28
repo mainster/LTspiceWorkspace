@@ -1,0 +1,9 @@
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\schaltregler\buck_converter_discont.asc
+
+Direct Newton iteration for .op point succeeded.
+.step rvia=0
+.step rvia=0.05
+.step rvia=0.1
+.step rvia=0.15
+.step rvia=0.2
+.step rvia=0.25

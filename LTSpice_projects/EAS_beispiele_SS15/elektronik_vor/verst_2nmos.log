@@ -1,0 +1,40 @@
+Circuit: * Z:\home\koblitz\Simulationsbeispiele_SS15\elektronik_vor\verst_2nmos.asc
+
+Warning: Multiple definitions of model "fds6680" Type: Vdmos1
+Direct Newton iteration for .op point succeeded.
+Fourier components of V(d)
+DC component:2.52233
+
+Harmonic	Frequency	 Fourier 	Normalized	 Phase  	Normalized
+ Number 	  [Hz]   	Component	 Component	[degree]	Phase [deg]
+    1   	1.000e+03	1.352e+00	1.000e+00	 -176.65°	    0.00°
+    2   	2.000e+03	7.082e-04	5.239e-04	   97.45°	  274.10°
+    3   	3.000e+03	4.270e-04	3.159e-04	 -166.68°	    9.96°
+    4   	4.000e+03	2.969e-04	2.196e-04	  -76.72°	   99.93°
+    5   	5.000e+03	1.588e-04	1.175e-04	   21.20°	  197.85°
+    6   	6.000e+03	1.039e-04	7.685e-05	  106.91°	  283.55°
+    7   	7.000e+03	5.775e-05	4.272e-05	 -127.54°	   49.11°
+    8   	8.000e+03	4.265e-05	3.155e-05	  -71.24°	  105.41°
+    9   	9.000e+03	2.089e-05	1.545e-05	   83.48°	  260.13°
+Total Harmonic Distortion: 0.066726%
+
+
+
+Date: Mon Jun 22 10:39:26 2015
+Total elapsed time: 0.209 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 2461
+traniter = 2453
+tranpoints = 1080
+accept = 1052
+rejected = 28
+matrix size = 13
+fillins = 0
+solver = Normal
+Matrix Compiler1: 406 Bytes object code size  1.6/1.7/[1.5]
+Matrix Compiler2: off  [1.6]/1.8/2.1
+
+

@@ -1,0 +1,7 @@
+* Z:\media\storage\CODES_ln\LTSpice_projects\DAC_harmonics\DAC_harmonics.asc
+V2 cont 0 SINE(0 1 10)
+.tran 1
+* .option plotwinsize=0\nPWL file=t_sin.csv
+* V=V(cont)+0.1*(white(1e5*time))
+.backanno
+.end

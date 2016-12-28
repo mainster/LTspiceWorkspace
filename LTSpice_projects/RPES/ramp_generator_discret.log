@@ -1,0 +1,30 @@
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\RPES\ramp_generator_discret.asc
+
+WARNING: Node N015 is floating.
+WARNING: Node N013 is floating.
+WARNING: Node N017 is floating.
+
+WARNING: Less than two connections to node N015 of instance C1:  Node and device optimized out.
+WARNING: Less than two connections to node N013 of instance C3:  Node and device optimized out.
+WARNING: Less than two connections to node N017 of instance C4:  Node and device optimized out.
+WARNING: Less than two connections to node N018 of instance R13:  Node and device optimized out.
+Direct Newton iteration for .op point succeeded.
+
+Date: Wed Dec 31 04:47:34 2014
+Total elapsed time: 0.184 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 3968
+traniter = 3932
+tranpoints = 1760
+accept = 1572
+rejected = 188
+matrix size = 64
+fillins = 79
+solver = Normal
+Matrix Compiler1: 7.26 KB object code size  3.4/2.2/[0.9]
+Matrix Compiler2: 6.43 KB object code size  2.2/1.9/[1.1]
+
+

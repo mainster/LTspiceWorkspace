@@ -1,0 +1,8 @@
+Stray ".ends" card: .ends
+Questionable use of curly braces in ".meas tran slew deriv v(1) when v(1)={0.9*vdd}"
+    Error: undefined symbol in: "0.9*[vdd]"
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\galvoscanner\aktuell\endstufe_BJT_MJ1101xG_HvOp_BAUEN_endgueltig_v2_EXTLIB.asc
+
+I2: both pins shorted together -- ignoring.
+I3: both pins shorted together -- ignoring.
+C4: both pins shorted together -- ignoring.

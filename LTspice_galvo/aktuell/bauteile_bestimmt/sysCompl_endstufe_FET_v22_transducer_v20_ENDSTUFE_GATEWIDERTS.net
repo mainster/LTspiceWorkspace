@@ -1,0 +1,145 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\galvoscanner\aktuell\bauteile_bestimmt\sysCompl_endstufe_FET_v22_transducer_v20_ENDSTUFE_GATEWIDERTS.asc
+XU1 +30V vdc_single V=30V
+XU2 -30V vdc_single V=-30V
+XU3 +12V vdc_single V=+12V
+XU4 -12V vdc_single V=-12V
+XU5 -5V vdc_single V=-5V
+XU6 Aref_2 vdc_single V={Vref/2}
+XU7 Aref vdc_single V={Vref}
+XU8 +5V vdc_single V=+5V
+V1 stim 0 SINE(0 2 250 0) AC 1
+R1 N011 shunt 3.54
+L1 N007 N011 {Lc}
+R2 load N014 10
+C1 N014 0 100n
+R3 0 N005 3k3
+R4 0 hv- 5k1
+Q1 +30V N002 N003 0 {NDRV}
+Q2 -30V N019 N015 0 FMMT722
+R5 Sn load .2
+R6 load Sp .2
+Rsh shunt 0 .01
+R8 N018 mon 680
+R9 shunt N018 22
+R10 fmon N017 10
+R11 ym mon 470
+R13 hv- N007 {Rf}
+R14 N002 N004 {Rdi}
+R15 N016 N019 {Rdi}
+I1 N019 -30V {Iq}
+D1 N004 hvy 1N4148
+R16 stim N009 3k3
+R17 N009 N008 3k3
+R18 N005 0 3k3
+XU9 ym N017 +5V -5V fmon +5V LTC2050
+XU10 N021 N018 +5V -5V mon +5V LTC2050
+C4 0 0 {1/(2*pi*470*fg_mon)}
+R19 N021 0 170
+XU11 0 hv- hv+ -30V NC_01 N006 +30V +30V LTC6090
+XU13 N023 vdc_single V=5V
+XU14 N022 vdc_single V=-5V
+R21 N026 N023 1k
+R22 v1v N026 1k
+R23 N025 v1v 1k
+R24 N024 N025 1k
+R25 N022 N024 1k
+R26 N003 Sn {Rbias}
+R27 N015 Sp {Rbias}
+XU32 vKp vdc_single V={Kp}
+C24 hv- P001 {Clag}
+R62 0 P001 120
+M§Q5 +30V Gn Sn Sn IRFP240
+M§Q6 -30V Gp Sp Sp IRFP9240
+C26 N009 P002 {Clead}
+R7 N006 NC_02 22
+R28 N019 -30V 500k
+C15 shunt N020 47n
+R12 N020 N018 10
+C16 N007 hv- 5p
+R48 P002 N008 10m
+XU29 N005 N009 +12V -12V N008 LT1028
+I2 +30V N002 {Iq}
+R20 +30V N002 500k
+XU12 N008 N010 +12V -12V hv+ LT1028
+R49 hv+ N010 {Kp2*4k7}
+R50 N010 0 4k7
+R51 N003 Gn {Rgn}
+R59 N015 Gp {Rgp}
+D2 hvy N016 1N4148
+V5 hvy 0 PULSE(-35 35 0 5u 5u 50u .1m) AC 1
+R60 load 0 5
+.model D D
+.lib C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\lib\cmp\standard.dio
+.model NPN NPN
+.model PNP PNP
+.lib C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\lib\cmp\standard.bjt
+.model NMOS NMOS
+.model PMOS PMOS
+.lib C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\lib\cmp\standard.mos
+;.tran 0 100m 1m
+;.options plotwinsize=0
+;.tran 0 2.8m 1.9m 1e-7
+;.ac oct 100 10 20meg
+* .option noopiter\n.options plotwinsize=0\n.four 1k 10 I(L1)
+* .dc V1 -1.5 1.5 {.2/1k}
+; ---------------------
+;   Power amp
+; ---------------------
+.param Iq = 40m
++ bias_be1 = 100
++ bias_b1 = 270
++ Rgp = 10
++ Rgn = {Rgp}
+ ;+ Lcoil = 170u
+; ---------------------
+;   Compensator
+; ---------------------
+.param Kp = 5
+.param Rf=(kp-1)*5k1
+; ---------------------
+;   SOURCES
+; ---------------------
+.param Vsup = 50V
+;(Aref)
+.param Vref = 2.5V
+* Parameter\nPwr PCB
+* REF2050
+.include LM358.lib
+.include OPA404.LIB
+* Include
+.param fg_mon=250k
+* .tran 10m
+* .net I(R38) V2
+* .option baudrate=10k
+.param Rbias = 100
++ Rdi = 120
+* laplace=(1.19e8*s+9.0*s**2+2.0e13)/(1.1e7*s+9.0*s**2+2.0e12)
+.param Lc=170u
+.param Clag=10n
+.param Clead=1/(2*pi*3k3*1meg)
+* Lag
+* Lead
+* Snubber
+* .step temp list 20 50 80
+* .step param ccc list 10p 100p 470p 1n 5n 10n 25n 47n
+* poti
+* poti
+* LTC1468
+* .step param Clead list 1f 1p 10p 100p
+.param Kp2 = 25
+* Biasing complementary FET output stage\nhttp://www.ti.com/lit/an/snaa045a/snaa045a.pdf\n - ALWAYS use gate resistor\n - Determine gate res values by trail and error:\n - Overdrive output stage by an input squarewave...pdf\n - pole location of low-pass, created by gate resistor gate input capacitance, CISS, \n   is chosen to be the near the same for both the N-channel FET and P-channel FET
+* IRFP9240  P-CHANNEL\n------------------------------\nRds(on):  0.5ohm (max)\n@ Vgs=-10V\nQg:   44nC (max)\nQgs:  7.1nC\nQgd:  27nC\nCiss:  1200pF (typ)
+* IRFP240  N-CHANNEL\n------------------------------\nRds(on): 0.18ohm (max)\n@ Vgs=10V\nQg:   70nC (max)\nQgs:  13nC\nQgd:  39nC\nCiss:  1300pF (typ)
+* .tran 200u
+* .step param Rgp list 5k 50 5 1
+.model 624 ako:FMMT624
+.model 3904 ako:2N3904
+.model 139 ako:BD139
+.step param NDRV list 624 3904 139
+.dc V5 -30 30 .1
+.op
+.lib EIT_sub\vdc_single.sub
+.lib LTC.lib
+.lib LTC5.lib
+.backanno
+.end

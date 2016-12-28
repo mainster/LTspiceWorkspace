@@ -1,0 +1,61 @@
+*$
+*PART NUMBER: NJU7018
+*MANUFACTURER: NEW JAPAN RADIO
+*CMOS OPAMP
+*All Rights Reserved Copyright (c) Bee Technologies Inc. 2006
+.SUBCKT nju7018 OUT1 -IN1 +IN1 VSS +IN2 -IN2 OUT2 VDD
+X_U1 +IN1 -IN1 VDD  VSS OUT1 nju7018_s
+X_U2 +IN2 -IN2 VDD  VSS OUT2 nju7018_s
+.ENDS nju7018
+.SUBCKT nju7018_s   IN+ IN- V+ V- OUT
+m1 3 IN- 6 V- nix l=6u w=25u
+m2 4 7 6 V- nix l=6u w=25u
+m3 8 IN- 5 5 pix l=6u w=23.15u   
+m4 9 7 5 5 pix l=6u w=25u
+eos 7 IN+ poly(1) 25 98 1e-3 0.451   
+iin1 IN+ 98 1.25p
+iin2 IN- 98 1.25p
+ios IN- IN+ 0.5p
+i1 V+ 5 50u
+i2 6 V- 50u
+r1 V+ 3 4.833k
+r2 V+ 4 4.833k
+r3 8 V- 4.833k
+r4 9 V- 4.833k
+d3 5 V+ dx
+d4 V- 6 dx
+eref 98 0 poly(2) V+ 0 V- 0 0 0.75 0.75
+g1 98 21 poly(2) 4 3 9 8 0 145u 145u
+rg 21 98 18.078e6
+cc 21 OUT 20p			
+d1 21 22 dx
+d2 23 21 dx
+v1 V+ 22 1.237
+v2 23 V- 1.237
+ecm 24 98 poly(2) IN+ 98 IN- 98 0 0.5 0.5
+r5 24 25 1e6
+r6 25 98 1.3k              
+c1 24 25 0.75p
+isy V+ V- 450.4u
+gsy V+ V- poly(1) V+ V- -3.334e-4 6.667e-5
+ep V+ 39 poly(1) 98 21 0.8925 1
+en 38 V- poly(1) 21 98 0.8925 1
+m15 OUT 39 V+ V+ pox l=1.5u w=9u     
+m16 OUT 38 V- V- nox l=1.5u w=33u    
+c15 OUT 39 1p			
+c16 OUT 38 1p				
+.model dx d(rs=1 cjo=0.1p)
+.model nix nmos( vto=.75 kp=205.5u rd=1 rs=1
++ rg=1 rb=1 cgso=4e-9 cgdo=4e-9 cgbo=16.667e-9
++ cbs=7e-12 cbd=7e-12)
+.model nox nmos( vto=0.48 kp=195u rd=1.5 rs=1.5
++ rg=1 rb=1 cgso=66.667e-12 cgdo=66.667e-12
++ cgbo=125e-9 cbs=2.34e-13 cbd=2.34e-13)
+.model pix pmos( vto=-0.75 kp=205.5u rd=1 rs=1
++ rg=1 rb=1 cgso=4e-9 cgdo=4e-9 cgbo=16.667e-9
++ cbs=2.34e-13 cbd=2.34e-13)		
+.model pox pmos( vto=-0.75 kp=195u rd=.5 rs=.5
++ rg=1 rb=1 cgso=66.667e-12 cgdo=66.667e-12
++ cgbo=125e-9 cbs=15.38e-11 cbd=15.38e-11)	
+.ends nju7018_s
+*$

@@ -1,0 +1,530 @@
+<HTML>
+  <HEAD>
+    <TITLE>Tietze/Schenk - Bibliothek TS_Analog</TITLE>
+  </HEAD>
+  <BODY BGCOLOR="#FFFFFF">
+  
+  <H1>Bibliothek TS_Analog</H1>
+  <P>
+    <B>Wichtiger Hinweis:</B> Dieses Dokument beschreibt die Parameter der Elemente.
+    Die Parameter setzen sich aus prim&auml;ren Parametern und sekund&auml;ren
+    Parametern zusammen. Die prim&auml;ren Parameter werden im Schaltplan angezeigt
+    und können durch Doppelklick auf den Wert ge&auml;ndert werden. Die sekund&auml;ren
+    Parameter werden &uuml;ber den Men&uuml;punkt <B>Edit/Attributes</B> oder durch einen
+    Doppelklick auf das Schaltsymbol aufgerufen.
+  </P>
+  <TABLE BORDER="1"><A NAME="top"></A>
+    <TR><TH><B>Name</B></TH><TH><B>Beschreibung</B></TH></TR>
+    <TR><TD><A HREF="#gnd"><B>GND</B></A></TD><TD>Masse</TD></TR>
+    <TR><TD><A HREF="#r"><B>R</B></A></TD><TD>Widerstand</TD></TR>
+    <TR><TD><A HREF="#rnl"><B>Ror</B></A></TD><TD>Widerstand ohne Rauschen</TD></TR>
+    <TR><TD><A HREF="#c"><B>C</B></A></TD><TD>Kapazit&auml;t</TD></TR>
+    <TR><TD><A HREF="#l"><B>L</B></A></TD><TD>Induktivit&auml;t</TD></TR>
+    <TR><TD><A HREF="#cacdc"><B>C_ACDC</B></A></TD><TD>DC Block (sehr gro&szlig;e Kapazit&auml;t)</TD></TR>
+    <TR><TD><A HREF="#lacdc"><B>L_ACDC</B></A></TD><TD>DC Feed (sehr gro&szlig;e Induktivit&auml;t)</TD></TR>
+    <TR><TD><A HREF="#rhf"><B>R_HF</B></A></TD><TD>Widerstand (Hochfrequenzmodell)</TD></TR>
+    <TR><TD><A HREF="#chf"><B>C_HF</B></A></TD><TD>Kondensator (Hochfrequenzmodell)</TD></TR>
+    <TR><TD><A HREF="#lhf"><B>L_HF</B></A></TD><TD>Spule (Hochfrequenzmodell)</TD></TR>
+    <TR><TD><A HREF="#e"><B>E</B></A></TD><TD>Spannungsgesteuerte Spannungsquelle</TD></TR>
+    <TR><TD><A HREF="#f"><B>F</B></A></TD><TD>Stromgesteuerte Stromquelle</TD></TR>
+    <TR><TD><A HREF="#g"><B>G</B></A></TD><TD>Spannungsgesteuerte Stromquelle</TD></TR>
+    <TR><TD><A HREF="#h"><B>H</B></A></TD><TD>Stromgesteuerte Spannungsquelle</TD></TR>
+    <TR><TD><A HREF="#k"><B>K</B></A></TD><TD>Kopplung f&uuml;r Induktivit&auml;ten</TD></TR>
+    <TR><TD><A HREF="#tr"><B>Uebertrager</B></A></TD><TD>&Uuml;bertrager</TD></TR>
+    <TR><TD><A HREF="#t"><B>Leitung</B></A></TD><TD>Verlustlose Leitung</TD></TR>
+    <TR><TD><A HREF="#tloss"><B>Leitung-V</B></A></TD><TD>Verlustbehaftete Leitung</TD></TR>
+    <TR><TD><A HREF="#v"><B>U</B></A></TD><TD>Allgemeine Spannungsquelle</TD></TR>
+    <TR><TD><A HREF="#vbias"><B>Ub</B></A></TD><TD>Versorgungsspannung</TD></TR>
+    <TR><TD><A HREF="#vac"><B>U-AC</B></A></TD><TD>Kleinsignalspannungsquelle</TD></TR>
+    <TR><TD><A HREF="#vtriangle"><B>U-Dreieck</B></A></TD><TD>Dreieck-Spannungsquelle</TD></TR>
+    <TR><TD><A HREF="#vpulse"><B>U-Puls</B></A></TD><TD>Puls-Spannungsquelle</TD></TR>
+    <TR><TD><A HREF="#vsquare"><B>U-Rechteck</B></A></TD><TD>Rechteck-Spannungsquelle</TD></TR>
+    <TR><TD><A HREF="#vsine"><B>U-Sinus</B></A></TD><TD>Sinus-Spannungsquelle</TD></TR>
+    <TR><TD><A HREF="#i"><B>I</B></A></TD><TD>Allgemeine Stromquelle</TD></TR>
+    <TR><TD><A HREF="#ibias"><B>Ib</B></A></TD><TD>Konstantstromquelle</TD></TR>
+  </TABLE>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="gnd"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>GND</B></TD><TD>Masse</TD></TR>
+      <TR><TD><IMG SRC="data/analog_gnd.png" ALT="Figure"></TD>
+      <TD>Bezugsknoten f&uuml;r Spannungen. Keine Parameter.</TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="r"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>R</B></TD><TD>Widerstand</TD></TR>
+      <TR><TD><IMG SRC="data/analog_r.png" ALT="Figure"></TD>
+      <TD>
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">VALUE</TD><TD>=</TD><TD>Widerstand in Ohm</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="rnl"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>R_nl</B></TD><TD>Widerstand ohne Rauschen</TD></TR>
+      <TR><TD><IMG SRC="data/analog_ror.png" ALT="Figure"></TD>
+      <TD>
+        Dieser Widerstand erzeugt kein thermisches Rauschen. Er wird verwendet, um Rauschsimulationen <BR>
+        ohne den Einflu&szlig; des thermischen Rauschens bestimmter Widerst&auml;nde durchzuf&uuml;hren.
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">VALUE</TD><TD>=</TD><TD>Widerstand in Ohm</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="c"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>C</B></TD><TD>Kapazit&auml;t</TD></TR>
+      <TR><TD><IMG SRC="data/analog_c.png" ALT="Figure"></TD>
+      <TD>
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">VALUE</TD><TD>=</TD><TD>Kapazit&auml;t in Farad</TD></TR>
+          <TR><TD ALIGN="right">IC</TD><TD>=</TD>
+              <TD>Anfangswert der Spannung in Volt, f&uuml;r Zeitbereichssimulationen</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="l"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>L</B></TD><TD>Induktivit&auml;t</TD></TR>
+      <TR><TD><IMG SRC="data/analog_l.png" ALT="Figure"></TD>
+      <TD>
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">VALUE</TD><TD>=</TD><TD>Induktivit&auml;t in Henry</TD></TR>
+          <TR><TD ALIGN="right">IC</TD><TD>=</TD>
+              <TD>Anfangswert des Stroms in Ampere, f&uuml;r Zeitbereichssimulationen</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="cacdc"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>C_ACDC</B></TD><TD>DC Block (sehr gro&szlig;e Kapazit&auml;t)</TD></TR>
+      <TR><TD><IMG SRC="data/analog_cacdc.png" ALT="Figure"></TD>
+      <TD>
+        Dieses Element erm&ouml;glicht eine nahezu ideale Wechselspannungskopplung. Dazu wird<BR>
+        eine sehr gro&szlig;e Kapazit&auml;t verwendet, deren Wert mit 10<SUP>12</SUP> Farad vorbelegt ist.
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">VALUE</TD><TD>=</TD>
+              <TD>Kapazit&auml;t in Farad, vorbelegt mit 10<SUP>12</SUP> F</TD></TR>
+          <TR><TD ALIGN="right">IC</TD><TD>=</TD>
+              <TD>Anfangswert der Spannung in Volt, f&uuml;r Zeitbereichssimulationen</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="lacdc"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>L_ACDC</B></TD><TD>DC Feed (sehr gro&szlig;e Induktivit&auml;t)</TD></TR>
+      <TR><TD><IMG SRC="data/analog_lacdc.png" ALT="Figure"></TD>
+      <TD>
+        Dieses Element erm&ouml;glicht eine nahezu ideale Gleichspannungszuf&uuml;hrung. Dazu wird<BR>
+        eine sehr gro&szlig;e Induktivit&auml;t verwendet, deren Wert mit 10<SUP>12</SUP> Henry vorbelegt ist.
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">VALUE</TD><TD>=</TD>
+              <TD>Induktivit&auml;t in Henry, vorbelegt mit 10<SUP>12</SUP> H</TD></TR>
+          <TR><TD ALIGN="right">IC</TD><TD>=</TD>
+              <TD>Anfangswert des Stroms in Ampere, f&uuml;r Zeitbereichssimulationen</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="rhf"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>R_HF</B></TD><TD>Widerstand (Hochfrequenzmodell)</TD></TR>
+      <TR><TD><IMG SRC="data/analog_rhf.png" ALT="Figure"></TD>
+      <TD>
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">R</TD><TD>=</TD><TD>Widerstand in Ohm</TD></TR>
+          <TR><TD ALIGN="right">CR</TD><TD>=</TD>
+              <TD>parasit&auml;re Kapazit&auml;t in Farad, vorbelegt mit 0,2 pF</TD></TR>
+          <TR><TD ALIGN="right">LR</TD><TD>=</TD>
+              <TD>parasit&auml;re Induktivit&auml;t in Henry, vorbelegt mit 3 nH</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="chf"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>C_HF</B></TD><TD>Kondensator (Hochfrequenzmodell)</TD></TR>
+      <TR><TD><IMG SRC="data/analog_chf.png" ALT="Figure"></TD>
+      <TD>
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">C</TD><TD>=</TD><TD>Kapazit&auml;t in Farad</TD></TR>
+          <TR><TD ALIGN="right">RC</TD><TD>=</TD>
+              <TD>parasit&auml;rer Widerstand in Ohm, vorbelegt mit 0,2 &Omega;</TD></TR>
+          <TR><TD ALIGN="right">LC</TD><TD>=</TD>
+              <TD>parasit&auml;re Induktivit&auml;t in Henry, vorbelegt mit 3 nH</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="lhf"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>L_HF</B></TD><TD>Spule (Hochfrequenzmodell)</TD></TR>
+      <TR><TD><IMG SRC="data/analog_lhf.png" ALT="Figure"></TD>
+      <TD>
+        Der parasit&auml;re Widerstand wird durch den Skin-Effekt verursacht und durch den relativen<BR>
+        Verlustwiderstandskoeffizientenen <B>KL</B> oder den absoluten Verlustwiderstandskoeffizientenen<BR>
+        <B>KRL</B> beschrieben, siehe Abschnitt 23.1.2 im Buch <B>Halbleiter-Schaltungselektronik</B>.<BR>
+        Es darf nur einer der beiden Koeffizienten angegeben werden. 
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">L</TD><TD>=</TD><TD>Induktivit&auml;t in Henry</TD></TR>
+          <TR><TD ALIGN="right">CL</TD><TD>=</TD>
+              <TD>parasit&auml;re Kapazit&auml;t in Farad, vorbelegt mit 0,2 pF</TD></TR>
+          <TR><TD ALIGN="right">KL</TD><TD>=</TD>
+              <TD>relativer Verlustkoeffizient in Ohm /
+                  (&radic;<SPAN STYLE="text-decoration: overline;">Hz</SPAN> &#8901; Henry),
+                  vorbelegt mit 1200 &Omega; /
+                  (&radic;<SPAN STYLE="text-decoration: overline;">Hz</SPAN> &#8901; H)
+              </TD></TR>
+          <TR><TD ALIGN="right">KRL</TD><TD>=</TD>
+              <TD>absoluter Verlustkoeffizient in Ohm /
+                  (&radic;<SPAN STYLE="text-decoration: overline;">Hz</SPAN> &#8901; Henry)
+              </TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="e"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>E</B></TD><TD>Spannungsgesteuerte Spannungsquelle</TD></TR>
+      <TR><TD><IMG SRC="data/analog_e.png" ALT="Figure"></TD>
+      <TD>
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">A</TD><TD>=</TD><TD>Spannungsverst&auml;rkung</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="f"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>F</B></TD><TD>Stromgesteuerte Stromquelle</TD></TR>
+      <TR><TD><IMG SRC="data/analog_f.png" ALT="Figure"></TD>
+      <TD>
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">K</TD><TD>=</TD><TD>Stromverst&auml;rkung</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="g"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>G</B></TD><TD>Spannungsgesteuerte Stromquelle</TD></TR>
+      <TR><TD><IMG SRC="data/analog_g.png" ALT="Figure"></TD>
+      <TD>
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">S</TD><TD>=</TD><TD>Steilheit (Transkonduktanz) in 1/Ohm</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="h"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>H</B></TD><TD>Stromgesteuerte Spannungsquelle</TD></TR>
+      <TR><TD><IMG SRC="data/analog_h.png" ALT="Figure"></TD>
+      <TD>
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">R</TD><TD>=</TD><TD>&Uuml;bertragungswiderstand (Transimpedanz) in Ohm</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="k"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>K</B></TD><TD>Kopplung f&uuml;r Induktivit&auml;ten</TD></TR>
+      <TR><TD><IMG SRC="data/analog_k.png" ALT="Figure"></TD>
+      <TD>
+        Mit diesem Element k&ouml;nnen bis zu 6 Induktivit&auml;ten mit einem<BR>
+        gemeinsamen Kopplungsfaktor gekoppelt werden.
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">KOPPLUNG</TD><TD>=</TD><TD>Kopplungsfaktor</TD></TR>
+          <TR><TD ALIGN="right">L1 ... L6</TD><TD>=</TD><TD>Bauteilebezeichner der Induktivit&auml;ten</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="tr"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>Uebertrager</B></TD><TD>&Uuml;bertrager</TD></TR>
+      <TR><TD><IMG SRC="data/analog_uebertrager.png" ALT="Figure"></TD>
+      <TD>
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">L1</TD><TD>=</TD>
+              <TD>Induktivit&auml;t der Prim&auml;rwicklung in Henry</TD></TR>
+          <TR><TD ALIGN="right">L2</TD><TD>=</TD>
+              <TD>Induktivit&auml;t der Sekund&auml;rwicklung in Henry</TD></TR>
+          <TR><TD ALIGN="right">KOPPLUNG</TD><TD>=</TD><TD>Kopplungsfaktor</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="t"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>Leitung</B></TD><TD>Verlustlose Leitung</TD></TR>
+      <TR><TD><IMG SRC="data/analog_leitung.png" ALT="Figure"></TD>
+      <TD>
+        Die L&auml;nge der Leitung ist durch die Signallaufzeit implizit gegeben.
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">Z0</TD><TD>=</TD><TD>Wellenwiderstand in Ohm</TD></TR>
+          <TR><TD ALIGN="right">TD</TD><TD>=</TD><TD>Signallaufzeit in Sekunden</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="tloss"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>Leitung-V</B></TD><TD>Verlustbehaftete Leitung</TD></TR>
+      <TR><TD><IMG SRC="data/analog_leitungv.png" ALT="Figure"></TD>
+      <TD>
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">L</TD><TD>=</TD><TD>Induktivit&auml;tsbelag in Henry/Meter</TD></TR>
+          <TR><TD ALIGN="right">C</TD><TD>=</TD><TD>Kapazit&auml;tsbelag in Farad/Meter</TD></TR>
+          <TR><TD ALIGN="right">R</TD><TD>=</TD><TD>Widerstandsbelag in Ohm/Meter</TD></TR>
+          <TR><TD ALIGN="right">G</TD><TD>=</TD><TD>Ableitungsbelag in 1/(Ohm &#8901; Meter)</TD></TR>
+          <TR><TD ALIGN="right">LAENGE</TD><TD>=</TD><TD>L&auml;nge in Meter</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="v"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>U</B></TD><TD>Allgemeine Spannungsquelle</TD></TR>
+      <TR><TD><IMG SRC="data/analog_u.png" ALT="Figure"></TD>
+      <TD>
+        Der Parameter TRAN sollte nur benutzt werden, wenn spezielle Signalformen ben&ouml;tigt werden,<BR>
+        die nicht mit den im folgenden beschriebenen Quellen U-Dreieck, U-Puls, U-Rechteck und<BR>
+        U-Sinus erzeugt werden k&ouml;nnen. N&auml;here Informationen zu diesem Parameter finden Sie im<BR>
+        MicroSim PSpice Reference Handbook.
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">DC</TD><TD>=</TD><TD>Gleichspannung in Volt</TD></TR>
+          <TR><TD ALIGN="right">AC</TD><TD>=</TD><TD>Kleinsignalamplitude in Volt</TD></TR>
+          <TR><TD ALIGN="right">TRAN</TD><TD>=</TD>
+              <TD>Signalform f&uuml;r Transienten-Simulation, siehe MicroSim PSpice Reference Handbook</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="vbias"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>Ub</B></TD><TD>Versorgungsspannung</TD></TR>
+      <TR><TD><IMG SRC="data/analog_ub.png" ALT="Figure"></TD>
+      <TD>
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">DC</TD><TD>=</TD><TD>Gleichspannung in Volt</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="vac"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>U-AC</B></TD><TD>Kleinsignalspannungsquelle</TD></TR>
+      <TR><TD><IMG SRC="data/analog_uac.png" ALT="Figure"></TD>
+      <TD>
+        Die Kleinsignalamplitude ist f&uuml;r normalisierte Simulationen mit 1 Volt vorbelegt.<BR>
+        Da Kleinsignalsimulationen linear sind, kann man im Prinzip jeden beliebigen Wert verwenden,<BR>
+        erh&auml;lt dabei aber nur entsprechend skalierte Ergebnisse. Die Amplitude 1 Volt hat den Vorteil,<BR>
+        dass alle Spannungen den zugeh&ouml;rigen Verst&auml;rkungen entsprechen.
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">AC</TD><TD>=</TD><TD>Kleinsignalamplitude in Volt, vorbelegt mit 1 V</TD></TR>
+          <TR><TD ALIGN="right">DC</TD><TD>=</TD><TD>Gleichspannung in Volt</TD></TR>
+          <TR><TD ALIGN="right">TRAN</TD><TD>=</TD>
+              <TD>Signalform f&uuml;r Transienten-Simulation, siehe MicroSim PSpice Reference Handbook</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="vtriangle"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>U-Dreieck</B></TD><TD>Dreieck-Spannungsquelle</TD></TR>
+      <TR><TD><IMG SRC="data/analog_udreieck.png" ALT="Figure"></TD>
+      <TD>
+        Die Dreieck-Spannung h&auml;ngt nicht vom Parameter DC ab. Die unter DC angegebene<BR>
+        Gleichspannung wird nur bei einer Gleichspannungsanalyse (DC Analyse) verwendet.
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">U1</TD><TD>=</TD><TD>minimale Spannung in Volt</TD></TR>
+          <TR><TD ALIGN="right">V2</TD><TD>=</TD><TD>maximale Spannung in Volt</TD></TR>
+          <TR><TD ALIGN="right">f</TD><TD>=</TD><TD>Frequenz in Hz</TD></TR>
+          <TR><TD ALIGN="right">D</TD><TD>=</TD><TD>Tastverh&auml;ltnis</TD></TR>
+          <TR><TD ALIGN="right">TD</TD><TD>=</TD><TD>Verz&ouml;gerungszeit in Sekunden</TD></TR>
+          <TR><TD ALIGN="right">DC</TD><TD>=</TD><TD>Gleichspannung in Volt</TD></TR>
+          <TR><TD ALIGN="right">AC</TD><TD>=</TD><TD>Kleinsignalamplitude in Volt</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="vpulse"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>U-Puls</B></TD><TD>Puls-Spannungsquelle</TD></TR>
+      <TR><TD><IMG SRC="data/analog_upuls.png" ALT="Figure"></TD>
+      <TD>
+        Die Puls-Spannung h&auml;ngt nicht vom Parameter DC ab. Die unter DC<BR>
+        angegebene Gleichspannung wird nur bei einer Gleichspannungsanalyse<BR>
+        (DC Analyse) verwendet.
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">U1</TD><TD>=</TD><TD>minimale Spannung in Volt</TD></TR>
+          <TR><TD ALIGN="right">U2</TD><TD>=</TD><TD>maximale Spannung in Volt</TD></TR>
+          <TR><TD ALIGN="right">TR</TD><TD>=</TD><TD>Anstiegszeit in Sekunden</TD></TR>
+          <TR><TD ALIGN="right">TF</TD><TD>=</TD><TD>Abfallzeit in Sekunden</TD></TR>
+          <TR><TD ALIGN="right">TPERIODE</TD><TD>=</TD><TD>Periodendauer in Sekunden</TD></TR>
+          <TR><TD ALIGN="right">TPULS</TD><TD>=</TD><TD>Pulsdauer in Sekunden</TD></TR>
+          <TR><TD ALIGN="right">TD</TD><TD>=</TD><TD>Verz&ouml;gerungszeit in Sekunden</TD></TR>
+          <TR><TD ALIGN="right">DC</TD><TD>=</TD><TD>Gleichspannung in Volt</TD></TR>
+          <TR><TD ALIGN="right">AC</TD><TD>=</TD><TD>Kleinsignalamplitude in Volt</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="vsquare"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>U-Rechteck</B></TD><TD>Rechteck-Spannungsquelle</TD></TR>
+      <TR><TD><IMG SRC="data/analog_urechteck.png" ALT="Figure"></TD>
+      <TD>
+        Die Rechteck-Spannung h&auml;ngt nicht vom Parameter DC ab. Die unter DC angegebene<BR>
+        Gleichspannung wird nur bei einer Gleichspannungsanalyse (DC Analyse) verwendet.
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">U1</TD><TD>=</TD><TD>minimale Spannung in Volt</TD></TR>
+          <TR><TD ALIGN="right">U2</TD><TD>=</TD><TD>maximale Spannung in Volt</TD></TR>
+          <TR><TD ALIGN="right">f</TD><TD>=</TD><TD>Frequenz in Hz</TD></TR>
+          <TR><TD ALIGN="right">D</TD><TD>=</TD><TD>Tastverh&auml;ltnis</TD></TR>
+          <TR><TD ALIGN="right">TF</TD><TD>=</TD><TD>Anstiegs-/Abfallzeit in Sekunden</TD></TR>
+          <TR><TD ALIGN="right">TD</TD><TD>=</TD><TD>Verz&ouml;gerungszeit in Sekunden</TD></TR>
+          <TR><TD ALIGN="right">DC</TD><TD>=</TD><TD>Gleichspannung in Volt</TD></TR>
+          <TR><TD ALIGN="right">AC</TD><TD>=</TD><TD>Kleinsignalamplitude in Volt</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="vsine"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>U-Sinus</B></TD><TD>Sinus-Spannungsquelle</TD></TR>
+      <TR><TD><IMG SRC="data/analog_usinus.png" ALT="Figure"></TD>
+      <TD>
+        Die Sinus-Spannung h&auml;ngt nicht vom Parameter DC ab. Die unter DC<BR>
+        angegebene Gleichspannung wird nur bei einer Gleichspannungsanalyse<BR>
+        (DC Analyse) verwendet. Der Gleichanteil der Sinus-Spannung wird<BR>
+        mit dem Parameter OFFSET eingestellt.
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">OFFSET</TD><TD>=</TD><TD>Offset-Spannung (Gleichanteil) in Volt</TD></TR>
+          <TR><TD ALIGN="right">AMPLITUDE</TD><TD>=</TD><TD>Sinus-Amplitude in Volt</TD></TR>
+          <TR><TD ALIGN="right">f</TD><TD>=</TD><TD>Frequenz in Hz</TD></TR>
+          <TR><TD ALIGN="right">PHASE</TD><TD>=</TD><TD>Phase in Grad</TD></TR>
+          <TR><TD ALIGN="right">TD</TD><TD>=</TD><TD>Verz&ouml;gerungszeit in Sekunden</TD></TR>
+          <TR><TD ALIGN="right">DC</TD><TD>=</TD><TD>Gleichspannung in Volt</TD></TR>
+          <TR><TD ALIGN="right">AC</TD><TD>=</TD><TD>Kleinsignalamplitude in Volt</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="i"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>I</B></TD><TD>Allgemeine Stromquelle</TD></TR>
+      <TR><TD><IMG SRC="data/analog_i.png" ALT="Figure"></TD>
+      <TD>
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">DC</TD><TD>=</TD><TD>Gleichstrom in Ampere</TD></TR>
+          <TR><TD ALIGN="right">AC</TD><TD>=</TD><TD>Kleinsignalamplitude in Ampere</TD></TR>
+          <TR><TD ALIGN="right">TRAN</TD><TD>=</TD>
+              <TD>Signalform f&uuml;r Transienten-Simulation, siehe MicroSim PSpice Reference Handbook</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="ibias"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>Ib</B></TD><TD>Konstantstromquelle</TD></TR>
+      <TR><TD><IMG SRC="data/analog_ib.png" ALT="Figure"></TD>
+      <TD>
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">DC</TD><TD>=</TD><TD>Gleichstrom in Ampere</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  </BODY>
+</HTML>

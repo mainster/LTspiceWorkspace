@@ -1,0 +1,44 @@
+*$
+* PART NUMBER:NJM2721
+* MANUFACTURER: NEW JAPAN RADIO
+* All Rights Reserved Copyright (c) Bee Technologies Inc. 2006
+.Subckt NJM2721 OUT IN- IN+ V+ V-
+X_U1     IN+ IN- V+ V- OUT NJM2721_ME
+.ends  NJM2721
+.subckt NJM2721_ME 1 2 3 4 5
+  c1   11 12 10.6603E-12
+  c2    6  7 30.000E-15
+  dc    5 53 dy
+  de   54  5 dy
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 1.7684E3 -1E3 1E3 1E3 -1E3
+  ga    6  0 11 12 22.619E-3
+  gcm   0  6 10 99 2.2619E-6
+  iee   3 10 dc 15.030E-3
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx1
+  q2   12  1 14 qx2
+  r2    6  9 100.00E3
+  rc1   4 11 44.210
+  rc2   4 12 44.210
+  re1  13 10 40.680
+  re2  14 10 40.680
+  ree  10 99 13.307E3
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 38.172
+  vb    9  0 dc 0
+  vc    3 53 dc 1.9479
+  ve   54  4 dc 1.9479
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.00E-18)
+.model dy D(Is=800.00E-18 Rs=1m Cjo=10p)
+.model qx1 PNP(Is=800.00E-18 Bf=497.59)
+.model qx2 PNP(Is=894.9214E-18 Bf=502.43)
+.ends
+*$

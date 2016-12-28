@@ -1,0 +1,87 @@
+(ExpressProject "tpa3106d1_tb"
+  (ProjectVersion "19981106")
+  (ProjectType "Analog or A/D Mixed Mode")
+  (Folder "Design Resources"
+    (Folder "Library"
+      (File ".\tpa3106d1.olb"
+        (Type "Schematic Library")))
+    (NoModify)
+    (File ".\tpa3106d1_tb.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    (PSPICE_Regenerate_Netlist_Flag "FALSE"))
+  (Folder "Outputs"
+    (File ".\tpa3106d1_tb-pspicefiles\sim_efficiency\sim_efficiency.net"
+      (Type "Report")))
+  (Folder "PSpice Resources"
+    (Folder "Simulation Profiles"
+      (ActiveProfile ".\tpa3106d1_tb-pspicefiles\sim_efficiency\tran.sim")
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\tpa3106d1_tb-pspicefiles\sim_efficiency\tran.sim"
+        (DisplayName "sim_efficiency-tran")
+        (Type "PSpice Profile")))
+    (Folder "Model Libraries"
+      (Sort User)
+      (File ".\tpa3106d1.lib"
+        (Type "PSpiceLibrary")
+        (DisplayName ".\tpa3106d1.lib")))
+    (Folder "Stimulus Files"
+      (Sort User))
+    (Folder "Include Files"
+      (Sort User)))
+  (DefaultLibraryBrowseDirectory "library\PSpice")
+  (PartMRUSelector
+    (TPA3106D1
+      (FullPartName "TPA3106D1.Normal")
+      (LibraryName "C:\USERDATA\ELAB\AUDIO\TPA3106D1\PSPICE\TPA3106D1.OLB")
+      (DeviceIndex "0"))
+    (VPULSE
+      (FullPartName "VPULSE.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_16.01\TOOLS\CAPTURE\LIBRARY\PSPICE\SOURCE.OLB")
+      (DeviceIndex "0"))
+    (TitleBlock0
+      (LibraryName "C:\CADENCE\SPB_16.01\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    (0
+      (LibraryName "C:\CADENCE\SPB_16.01\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    (C
+      (FullPartName "C.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_16.01\TOOLS\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
+      (DeviceIndex "0")))
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Design Resources"
+         "C:\ELAB_MODEL_WS\ELAB_MODEL_DS\Part_Numbers\TPA3106D1\Release_TI\PSPICE\TPA3106D1_PSPICE_AIO\tpa3106d1_tb.dsn")
+      (Path "Design Resources"
+         "C:\ELAB_MODEL_WS\ELAB_MODEL_DS\Part_Numbers\TPA3106D1\Release_TI\PSPICE\TPA3106D1_PSPICE_AIO\tpa3106d1_tb.dsn"
+         "sim_efficiency")
+      (Path "Design Resources" "Library")
+      (Path "Outputs")
+      (Path "PSpice Resources")
+      (Path "PSpice Resources" "Model Libraries")
+      (Path "PSpice Resources" "Simulation Profiles")
+      (Select "Outputs"
+         "C:\ELAB_MODEL_WS\ELAB_MODEL_DS\Part_Numbers\TPA3106D1\Release_TI\PSPICE\TPA3106D1_PSPICE_AIO\tpa3106d1_tb-pspicefiles\sim_efficiency\sim_efficiency.net"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -1 -1 0 562 0 642"))
+      (Tab 0))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -1 -1 97 1215 14 818")
+        (Scroll "0 0")
+        (Zoom "100")
+        (Occurrence "/"))
+      (Path
+         "C:\ELAB_MODEL_WS\ELAB_MODEL_DS\PART_NUMBERS\TPA3106D1\RELEASE_TI\PSPICE\TPA3106D1_PSPICE_AIO\TPA3106D1_TB.DSN")
+      (Schematic "sim_efficiency")
+      (Page "PAGE1")))
+  (MPSSessionName "a0214267"))

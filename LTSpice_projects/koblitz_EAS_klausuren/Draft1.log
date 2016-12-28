@@ -1,0 +1,24 @@
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\koblitz_EAS_klausuren\Draft1.asc
+
+Direct Newton iteration for .op point succeeded.
+Ignoring empty pin current: Ix(u1:ctrl)
+Ignoring empty pin current: Ix(u1:ctrl)
+
+Date: Sat Feb 14 12:05:41 2015
+Total elapsed time: 0.579 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 160332
+traniter = 160328
+tranpoints = 78257
+accept = 56259
+rejected = 21998
+matrix size = 3
+fillins = 0
+solver = Normal
+Matrix Compiler1: 50 bytes object code size  0.3/0.3/[0.2]
+Matrix Compiler2: 135 bytes object code size  0.3/0.3/[0.3]
+
+

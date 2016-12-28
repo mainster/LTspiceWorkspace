@@ -1,0 +1,42 @@
+* Z:\media\storage\CODES_ln\LTSpice_projects\koblitz_2012_a\ss2011_klirr.asc
+C1 N002 0 1µ
+C2 N003 0 1µ
+R1 N003 N002 100k
+R2 N004 N003 1meg
+V1 N004 0 4.17
+Q1 N009 N012 0 0 NPNx
+R3 N007 N009 10k
+R4 N009 N012 1.1meg
+V2 N007 0 10
+Q2 c1 c4 0 0 NPNx
+R5 N001 c1 10k
+R6 c3 c1 1meg
+R7 c4 c3 100k
+C3 c3 0 {c3}
+C4 c4 1 1µ
+V3 1 0 SINE(0 {5m*1.41} 100k 0)
+V4 N001 0 10
+Q3 c3bb 0 N011 0 NPNx
+R8 N006 c3bb 20k
+R9 N006 N010 20k
+R10 N011 N010 10k
+Q4 N013 b1 N010 0 PNPx
+V5 N013 0 -8
+V6 b1 0 1
+V7 N006 0 8
+B1 0 N008 I=7.35/20k-V(b1)/20k-1.3/10k-V(b1)/10k
+R11 N008 0 1
+B2 N005 0 V=8+20k*(V(b1)+2*0.65)/10k
+B3 0 N014 I=(8-0.65-V(b1))/20k
+R12 N014 0 1
+.model NPN NPN
+.model PNP PNP
+.lib C:\Program Files (x86)\LTC\LTspiceIV\lib\cmp\standard.bjt
+.dc V6 -8 8 0.01
+.model npnx npn(Bf=200 Is=8.1e-15)
+.model pnpx pnp(Bf=200 Is=8.1e-15)
+* .ic V(c4)=4.1V\n.ic V(c3)=4.1V
+.param c3=1u
+;.step param c3 list 1u 1p
+.backanno
+.end

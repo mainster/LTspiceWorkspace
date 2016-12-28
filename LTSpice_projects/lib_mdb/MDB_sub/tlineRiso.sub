@@ -1,0 +1,10 @@
+
+.SUBCKT tlineRiso in+ in- out+ out-
+
+T1 in+ in- out+ out- Td={Td} Z0={Z0}
+R3 in+ 0 {Riso}
+R4 in- 0 {Riso}
+R1 out+ 0 {Riso}
+R2 out- 0 {Riso}
+
+.ENDS tlineRiso

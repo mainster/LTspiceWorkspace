@@ -1,0 +1,28 @@
+Circuit: * Z:\home\koblitz\Simulationsbeispiele_SS15\ADS\pll_no_lpf.asc
+
+WARNING: Less than two connections to node OMEGAE-NORM.  This node is used by B1.
+WARNING: Less than two connections to node N001.  This node is used by V2.
+Per .tran options, skipping operating point for transient analysis.
+Ignoring empty pin current: Ix(u1:in)
+Ignoring empty pin current: Ix(u2:inp)
+Ignoring empty pin current: Ix(u2:inm)
+Ignoring empty pin current: Ix(u3:in)
+
+Date: Tue May 19 11:22:13 2015
+Total elapsed time: 0.100 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 3751
+traniter = 3751
+tranpoints = 1851
+accept = 1442
+rejected = 409
+matrix size = 18
+fillins = 2
+solver = Normal
+Matrix Compiler1: 512 Bytes object code size  2.2/2.7/[1.8]
+Matrix Compiler2: 954 Bytes object code size  2.1/2.5/[1.9]
+
+

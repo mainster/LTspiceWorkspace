@@ -1,0 +1,32 @@
+* DFLU1400 SPICE model
+*
+* THIS MODEL IS A SPICE SUBCIRCUIT.
+* ANY NETLIST USING IT MUST INCLUDE
+* A STATEMENT WITH THE FOLLOWING SYNTAX
+*
+* X1 DFLU1400 A C
+*
+* SUBCIRCUIT NODE 1 -> ANODE
+* SUBCIRCUIT NODE 2 -> CATHODE
+*
+.SUBCKT DFLU1400 1 2
+D1 1 2 DFLU1400_1
+D2 1 2 DFLU1400_2
+*
+.MODEL DFLU1400_1 D (
++LEVEL    = 1              IS       = 8.97113e-10    RS       = 0.218519       
++N        = 1.00753        BV       = 400            IBV      = 5e-06          
++CJO      = 1.7785e-11     VJ       = 0.468489       MJ       = 0.395956       
++FC       = 0.5            XTI      = 2.98187        EG       = 1.19064        
++TT       = 33e-9          IKF      = 6.06945e-06    TRS1     = -0.00446639    
++TRS2     = 9.32759e-06     )
+*
+.MODEL DFLU1400_2 D (
++LEVEL    = 1              IS       = 1.05089e-12    RS       = 0.146586       
++N        = 1.16507        BV       = 1E5            IBV      = 1e-06 
++CJO      = 1.7785e-11     VJ       = 0.468489       MJ       = 0.395956
++FC       = 0.5            XTI      = 3.14412        EG       = 1.05458
++TRS1     = 0.000149447    TRS2     = 2.90699e-05    IKF      = 9.9308e-06
++TT       = 33e-9 )
+*
+.ENDS DFLU1400

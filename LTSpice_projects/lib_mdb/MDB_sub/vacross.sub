@@ -1,0 +1,5 @@
+.subckt vacross potHi potLo out
+b1 out 0 V={round(1/rnd*V(potHi,potLo))*rnd}
+.param rnd=1m
+.ends
+

@@ -1,0 +1,21 @@
+Questionable use of curly braces in ".meas tran vr_calc param {charge/ca}"
+    Error: undefined symbol in: "[charge]/ca"
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\buckconverter_eas_skript\Buckconverter_eas_skript.asc
+
+WARNING: Node NC_01 is floating.
+WARNING: Node NC_02 is floating.
+
+WARNING: Less than two connections to node N001.  This node is used by V3.
+WARNING: Less than two connections to node VD2_OPEN.  This node is used by B1.
+WARNING: Less than two connections to node VR.  This node is used by B2.
+WARNING: Less than two connections to node P.  This node is used by B3.
+WARNING: Less than two connections to node GND2.  This node is used by V:U1:1.
+WARNING: Less than two connections to node NC_01.  This node is used by I3.
+WARNING: Less than two connections to node NC_02.  This node is used by I3.
+Direct Newton iteration for .op point succeeded.
+Singular matrix:  Check node nc_02
+   Iteration No. 1
+Fatal Error: Singular matrix:  check node nc_02
+   Iteration No. 1
+
+This circuit has floating nodes.

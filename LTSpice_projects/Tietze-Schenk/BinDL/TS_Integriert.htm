@@ -1,0 +1,300 @@
+<HTML>
+  <HEAD>
+    <TITLE>Tietze/Schenk - Bibliothek TS_Integriert</TITLE>
+  </HEAD>
+  <BODY BGCOLOR="#FFFFFF">
+  
+  <H1>Bibliothek TS_Integriert</H1>
+  <P>
+    <B>Wichtiger Hinweis:</B> Dieses Dokument beschreibt die Parameter der Elemente.
+    Die Parameter setzen sich aus prim&auml;ren Parametern und sekund&auml;ren
+    Parametern zusammen. Die prim&auml;ren Parameter werden im Schaltplan angezeigt
+    und können durch Doppelklick auf den Wert ge&auml;ndert werden. Die sekund&auml;ren
+    Parameter werden &uuml;ber den Men&uuml;punkt <B>Edit/Attributes</B> oder durch einen
+    Doppelklick auf das Schaltsymbol aufgerufen.
+  </P>
+  <P>
+    <B>Verwendung der Parameter SUB und BULK:</B> Integrierte Transistoren besitzen einen
+    Substrat-Anschluss, der mit einem geeigneten Knoten der Schaltung verbunden werden muss,
+    damit die Substrat-Dioden sperren. Dieser Anschluss wird bei Bipolartransistoren mit
+    <B>Substrat (S)</B> und bei Feldeffekttransistoren mit <B>Bulk (B)</B> bezeichnet.
+    Die unterschiedliche Bezeichnung liegt darin begr&uuml;ndet, dass die Kurzbezeichnung
+    <B>S</B> bei Feldeffekttransistoren bereits f&uuml;r den Source-Anschluss verwendet
+    wird. Der Substrat-Anschluss eines npn- oder n-Kanal-Transistors wird normalerweise
+    mit dem Knoten mit der negativsten Spannung verbunden, also mit dem:
+    <UL>
+      <LI>Masseknoten GND bei Schaltungen mit positiver unipolarer Spannungsversorgung;</LI>
+      <LI>negativen Versorgungsspannungsknoten bei Schaltungen mit negativer unipolarer Spannungsversorgung;</LI>
+      <LI>negativen Versorgungsspannungsknoten bei Schaltungen mit bipolarer Spannungsversorgung.</LI>
+    </UL>
+    Der Substrat-Anschluss eines pnp- oder p-Kanal-Transistors wird normalerweise
+    mit dem Knoten mit der positivsten Spannung verbunden, also mit dem:
+    <UL>
+      <LI>positiven Versorgungsspannungsknoten bei Schaltungen mit positiver unipolarer Spannungsversorgung;</LI>
+      <LI>Masseknoten GND bei Schaltungen mit negativer unipolarer Spannungsversorgung;</LI>
+      <LI>positiven Versorgungsspannungsknoten bei Schaltungen mit bipolarer Spannungsversorgung.</LI>
+    </UL>
+    Der Masseknoten hat bei PSpice standardm&auml;&szlig;ig die Bezeichnung <B>0</B>, so dass man
+    den Substrat-Anschluss eines Transistors ohne weiteres durch Angabe von <B>SUB=0</B> oder
+    <B>BULK=0</B> mit Masse verbinden kann. Die Knoten f&uuml;r die positive und die negative
+    Versorgungsspannung muss man dagegen mit einem Knotennamen versehen, auf den man sich
+    beziehen kann; dazu muss eine der Verbindungsleitungen, die an der zugeh&ouml;rigen
+    Versorgungsspannungsquelle angeschlossen ist, den vorgesehenen Namen erhalten. Wir
+    empfehlen, den positiven Versorgungsspannungsknoten mit <B>Ub+</B> und den negativen
+    Versorgungsspannungsknoten mit <B>Ub&minus;</B> zu bezeichnen. Die Substrat-Anschl&uuml;sse
+    k&ouml;nnen dann mit <B>SUB=Ub+</B> und <B>SUB=Ub&minus;</B> oder <B>BULK=Ub+</B> und
+    <B>BULK=Ub&minus;</B> mit den Versorgungsspannungsknoten verbunden werden.
+  </P>
+  <TABLE BORDER="1"><A NAME="top"></A>
+    <TR><TH><B>Name</B></TH><TH><B>Beschreibung</B></TH></TR>
+    <TR><TD><A HREF="#n1"><B>N1</B></A></TD><TD>npn-Transistor</TD></TR>
+    <TR><TD><A HREF="#p1"><B>P1</B></A></TD><TD>pnp-Transistor</TD></TR>
+    <TR><TD><A HREF="#nmos"><B>NMOS</B></A></TD><TD>Selbstsperrender n-Kanal-MOSFET (Level 1)</TD></TR>
+    <TR><TD><A HREF="#pmos"><B>PMOS</B></A></TD><TD>Selbstsperrender p-Kanal-MOSFET (Level 1)</TD></TR>
+    <TR><TD><A HREF="#nmosd"><B>NMOSD</B></A></TD><TD>Selbstleitender n-Kanal-MOSFET (Level 1)</TD></TR>
+    <TR><TD><A HREF="#pmosd"><B>PMOSD</B></A></TD><TD>Selbstleitender p-Kanal-MOSFET (Level 1)</TD></TR>
+    <TR><TD><A HREF="#nmos2"><B>NMOS2</B></A></TD><TD>Selbstsperrender n-Kanal-MOSFET (Level 2)</TD></TR>
+    <TR><TD><A HREF="#pmos2"><B>PMOS2</B></A></TD><TD>Selbstsperrender p-Kanal-MOSFET (Level 2)</TD></TR>
+    <TR><TD><A HREF="#schottky"><B>Schottky</B></A></TD><TD>Schottky-Diode</TD></TR>
+    <TR><TD><A HREF="#n1schottky"><B>N1-Schottky</B></A></TD><TD>npn-Transistor mit Schottky-Diode</TD></TR>
+    <TR><TD><A HREF="#uhfpn"><B>UHFPN</B></A></TD><TD>npn-Hochfrequenztransistor</TD></TR>
+    <TR><TD><A HREF="#uhfpp"><B>UHFPP</B></A></TD><TD>pnp-Hochfrequenztransistor</TD></TR>
+  </TABLE>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="n1"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>N1</B></TD><TD>npn-Transistor</TD></TR>
+      <TR><TD><IMG SRC="data/integriert_n1.png" ALT="Figure"></TD>
+      <TD>
+        Typischer integrierter npn-Transistor in der Grundgr&ouml;&szlig;e 1<BR>
+        f&uuml;r einen Arbeitspunktsstrom von etwa 100 &mu;A.
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">A</TD><TD>=</TD><TD>Gr&ouml;&szlig;e in Vielfachen der Grundgr&ouml;&szlig;e</TD></TR>
+          <TR><TD ALIGN="right">SUB</TD><TD>=</TD><TD>Substrat-Anschluss</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="p1"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>P1</B></TD><TD>pnp-Transistor</TD></TR>
+      <TR><TD><IMG SRC="data/integriert_p1.png" ALT="Figure"></TD>
+      <TD>
+        Typischer integrierter pnp-Transistor in der Grundgr&ouml;&szlig;e 1<BR>
+        f&uuml;r einen Arbeitspunktsstrom von etwa &minus;100 &mu;A.
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">A</TD><TD>=</TD><TD>Gr&ouml;&szlig;e in Vielfachen der Grundgr&ouml;&szlig;e</TD></TR>
+          <TR><TD ALIGN="right">SUB</TD><TD>=</TD><TD>Substrat-Anschluss</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="nmos"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>NMOS</B></TD><TD>Selbstsperrender n-Kanal-MOSFET (Level 1)</TD></TR>
+      <TR><TD><IMG SRC="data/integriert_nmos.png" ALT="Figure"></TD>
+      <TD>
+        Typischer integrierter n-Kanal-MOSFET in der Grundgr&ouml;&szlig;e f&uuml;r einen <BR>
+        Arbeitspunktsstrom von etwa 10 &mu;A. Kurz- und Schmalkanaleffekt <BR>
+        werden bei diesem Modell nicht ber&uuml;cksichtigt.
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">W</TD><TD>=</TD>
+              <TD>Kanalweite in Mikrometer, vorbelegt mit der Grundgr&ouml;&szlig;e 3 &mu;m</TD></TR>
+          <TR><TD ALIGN="right">L</TD><TD>=</TD>
+              <TD>Kanall&auml;nge in Mikrometer, vorbelegt mit der Grundgr&ouml;&szlig;e 3 &mu;m</TD></TR>
+          <TR><TD ALIGN="right">BULK</TD><TD>=</TD><TD>Substrat-Anschluss</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="pmos"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>PMOS</B></TD><TD>Selbstsperrender p-Kanal-MOSFET (Level 1)</TD></TR>
+      <TR><TD><IMG SRC="data/integriert_pmos.png" ALT="Figure"></TD>
+      <TD>
+        Typischer integrierter p-Kanal-MOSFET in der Grundgr&ouml;&szlig;e f&uuml;r einen <BR>
+        Arbeitspunktsstrom von etwa &minus;10 &mu;A. Kurz- und Schmalkanaleffekt <BR>
+        werden bei diesem Modell nicht ber&uuml;cksichtigt.
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">W</TD><TD>=</TD>
+              <TD>Kanalweite in Mikrometer, vorbelegt mit der Grundgr&ouml;&szlig;e 7,5 &mu;m</TD></TR>
+          <TR><TD ALIGN="right">L</TD><TD>=</TD>
+              <TD>Kanall&auml;nge in Mikrometer, vorbelegt mit der Grundgr&ouml;&szlig;e 3 &mu;m</TD></TR>
+          <TR><TD ALIGN="right">BULK</TD><TD>=</TD><TD>Substrat-Anschluss</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="nmosd"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>NMOSD</B></TD><TD>Selbstleitender n-Kanal-MOSFET (Level 1)</TD></TR>
+      <TR><TD><IMG SRC="data/integriert_nmosd.png" ALT="Figure"></TD>
+      <TD>
+        Typischer integrierter n-Kanal-MOSFET in der Grundgr&ouml;&szlig;e f&uuml;r einen<BR>
+        Arbeitspunktsstrom von etwa 10 &mu;A. Kurz- und Schmalkanaleffekt <BR>
+        werden bei diesem Modell nicht ber&uuml;cksichtigt.
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">W</TD><TD>=</TD>
+              <TD>Kanalweite in Mikrometer, vorbelegt mit der Grundgr&ouml;&szlig;e 3 &mu;m</TD></TR>
+          <TR><TD ALIGN="right">L</TD><TD>=</TD>
+              <TD>Kanall&auml;nge in Mikrometer, vorbelegt mit der Grundgr&ouml;&szlig;e 3 &mu;m</TD></TR>
+          <TR><TD ALIGN="right">BULK</TD><TD>=</TD><TD>Substrat-Anschluss</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="pmosd"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>PMOSD</B></TD><TD>Selbstleitender p-Kanal-MOSFET (Level 1)</TD></TR>
+      <TR><TD><IMG SRC="data/integriert_pmosd.png" ALT="Figure"></TD>
+      <TD>
+        Typischer integrierter p-Kanal-MOSFET in der Grundgr&ouml;&szlig;e f&uuml;r einen<BR>
+        Arbeitspunktsstrom von etwa &minus;10 &mu;A. Kurz- und Schmalkanaleffekt <BR>
+        werden bei diesem Modell nicht ber&uuml;cksichtigt.
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">W</TD><TD>=</TD>
+              <TD>Kanalweite in Mikrometer, vorbelegt mit der Grundgr&ouml;&szlig;e 7,5 &mu;m</TD></TR>
+          <TR><TD ALIGN="right">L</TD><TD>=</TD>
+              <TD>Kanall&auml;nge in Mikrometer, vorbelegt mit der Grundgr&ouml;&szlig;e 3 &mu;m</TD></TR>
+          <TR><TD ALIGN="right">BULK</TD><TD>=</TD><TD>Substrat-Anschluss</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="nmos2"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>NMOS2</B></TD><TD>Selbstsperrender n-Kanal-MOSFET (Level 2)</TD></TR>
+      <TR><TD><IMG SRC="data/integriert_nmos2.png" ALT="Figure"></TD>
+      <TD>
+        Typischer integrierter n-Kanal-MOSFET in der Grundgr&ouml;&szlig;e f&uuml;r einen <BR>
+        Arbeitspunktsstrom von etwa 10 &mu;A. Kurz- und Schmalkanaleffekt <BR>
+        werden bei diesem Modell ber&uuml;cksichtigt.
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">W</TD><TD>=</TD>
+              <TD>Kanalweite in Mikrometer, vorbelegt mit der Grundgr&ouml;&szlig;e 2 &mu;m</TD></TR>
+          <TR><TD ALIGN="right">L</TD><TD>=</TD>
+              <TD>Kanall&auml;nge in Mikrometer, vorbelegt mit der Grundgr&ouml;&szlig;e 1,2 &mu;m</TD></TR>
+          <TR><TD ALIGN="right">BULK</TD><TD>=</TD><TD>Substrat-Anschluss</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="pmos2"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>PMOS2</B></TD><TD>Selbstsperrender p-Kanal-MOSFET (Level 2)</TD></TR>
+      <TR><TD><IMG SRC="data/integriert_pmos2.png" ALT="Figure"></TD>
+      <TD>
+        Typischer integrierter p-Kanal-MOSFET in der Grundgr&ouml;&szlig;e f&uuml;r einen <BR>
+        Arbeitspunktsstrom von etwa &minus;10 &mu;A. Kurz- und Schmalkanaleffekt <BR>
+        werden bei diesem Modell ber&uuml;cksichtigt.
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">W</TD><TD>=</TD>
+              <TD>Kanalweite in Mikrometer, vorbelegt mit der Grundgr&ouml;&szlig;e 6 &mu;m</TD></TR>
+          <TR><TD ALIGN="right">L</TD><TD>=</TD>
+              <TD>Kanall&auml;nge in Mikrometer, vorbelegt mit der Grundgr&ouml;&szlig;e 1,2 &mu;m</TD></TR>
+          <TR><TD ALIGN="right">BULK</TD><TD>=</TD><TD>Substrat-Anschluss</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="schottky"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>Schottky</B></TD><TD>Schottky-Diode</TD></TR>
+      <TR><TD><IMG SRC="data/integriert_schottky.png" ALT="Figure"></TD>
+      <TD>
+        Typische integrierte Schottky-Diode in der Grundgr&ouml;&szlig;e 1<BR>
+        f&uuml;r einen Strom von etwa 100 &mu;A.
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">A</TD><TD>=</TD>
+              <TD>Gr&ouml;&szlig;e in Vielfachen der Grundgr&ouml;&szlig;e</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="n1schottky"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>N1-Schottky</B></TD><TD>npn-Transistor mit Schottky-Diode</TD></TR>
+      <TR><TD><IMG SRC="data/integriert_n1schottky.png" ALT="Figure"></TD>
+      <TD>
+        Typischer integrierter npn-Schottky-Transistor in der Grundgr&ouml;&szlig;e 1<BR>
+        f&uuml;r einen Arbeitspunktsstrom von etwa 100 &mu;A. Da dieser Transistor<BR>
+        &uuml;berwiegend in digitalen Schaltungen verwendet wird, ist der<BR>
+        Substrat-Anschluss standardm&auml;&szlig;ig mit Masse verbunden.
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">A</TD><TD>=</TD>
+              <TD>Gr&ouml;&szlig;e in Vielfachen der Grundgr&ouml;&szlig;e</TD></TR>
+          <TR><TD ALIGN="right">SUB</TD><TD>=</TD>
+              <TD>Substrat-Anschluss, vorbelegt mit 0 (Masse)</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="uhfpn"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>UHFP-N</B></TD><TD>npn-Hochfrequenztransistor</TD></TR>
+      <TR><TD><IMG SRC="data/integriert_uhfpn.png" ALT="Figure"></TD>
+      <TD>
+        Typischer integrierter npn-Hochfrequenztransistor in der Grundgr&ouml;&szlig;e 1<BR>
+        f&uuml;r einen Arbeitspunktsstrom von etwa 1 mA.
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">A</TD><TD>=</TD>
+              <TD>Gr&ouml;&szlig;e in Vielfachen der Grundgr&ouml;&szlig;e</TD></TR>
+          <TR><TD ALIGN="right">SUB</TD><TD>=</TD><TD>Substrat-Anschluss</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="uhfpp"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>UHFP-P</B></TD><TD>pnp-Hochfrequenztransistor</TD></TR>
+      <TR><TD><IMG SRC="data/integriert_uhfpp.png" ALT="Figure"></TD>
+      <TD>
+        Typischer integrierter pnp-Hochfrequenztransistor in der Grundgr&ouml;&szlig;e 1<BR>
+        f&uuml;r einen Arbeitspunktsstrom von etwa &minus;1 mA.
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">A</TD><TD>=</TD>
+              <TD>Gr&ouml;&szlig;e in Vielfachen der Grundgr&ouml;&szlig;e</TD></TR>
+          <TR><TD ALIGN="right">SUB</TD><TD>=</TD><TD>Substrat-Anschluss</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  </BODY>
+</HTML>

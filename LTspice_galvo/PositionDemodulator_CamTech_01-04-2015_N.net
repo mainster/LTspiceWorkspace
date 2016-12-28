@@ -1,0 +1,75 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\galvoscanner\PositionDemodulator_CamTech_01-04-2015_N.asc
+Ia N003 0 SINE(500u 100u 1.5meg 3u)
+Ib N007 0 SINE(0 250u 1k)
+C1 0 0 470p
+R2 Va N001 16.9k
+R3 N001 Via 453
+R4 Vb N004 16.9k
+R5 N004 Vib 453
+R6 N002 Va 2k
+R7 N005 Vb 2k
+R8 Vpos N002 4.53k
+R9 0 N005 4.53k
+C2 Va N001 330p
+C3 0 0 470p
+C4 N004 Vb 330p
+C5 N002 Vpos 1.2n
+C6 N005 0 1.2n
+C7 bq1 N008 10n
+XU3 0 N001 Vp Vm Va LT1013
+XU1 0 N004 Vp Vm Vb LT1013
+XU2 N005 N002 Vp Vm Vpos LT1013
+XU5 0 N008 Vp Vm bq1 LT1013
+R10 Vp10 N010 {(1-R13set)*R13}
+R11 N010 Vm10 {R13set*R13}
+R12 N008 N010 49.9k
+R13 Va N008 10k
+R14 N009 N008 200k
+R15 Vb N009 {(1-R77set)*R77}
+R16 N009 Va {R77set*R77}
+R17 Vb N008 10k
+R18 N008 Vm10 5.49k
+D1 N008 bq1 1N4148
+Q1 c_q1 bq1 e_q1 0 2N5769
+R19 e_q1 AGC_out 10
+R20 bq1 e_q1 150
+R21 Vp c_q1 10n
+C8 in 0 470p
+R22 outop N006 16.9k
+R23 N006 in 453
+XU4 0 N006 Vp Vm outop LT1013
+C9 outop N006 {cp1}
+V7 in 0 ac 1
+V9 Via_center 0 wavefile="N:/data_notebook/HS_Karlsruhe/xy_galvoscanner/bilder_screenshots_messungen/31-03-2015_tests_posDemod/PCSU_0mA_ch12.wav" chan=0
+V8 Vib_center 0 wavefile="N:/data_notebook/HS_Karlsruhe/xy_galvoscanner/bilder_screenshots_messungen/31-03-2015_tests_posDemod/PCSU_0mA_ch12.wav" chan=1
+R26 N003 0 1meg
+R27 N007 0 1meg
+V10 Via_cw 0 wavefile="N:/data_notebook/HS_Karlsruhe/xy_galvoscanner/bilder_screenshots_messungen/31-03-2015_tests_posDemod/PCSU_100mA_cw_ch12.wav" chan=0
+V11 Vib_cw 0 wavefile="N:/data_notebook/HS_Karlsruhe/xy_galvoscanner/bilder_screenshots_messungen/31-03-2015_tests_posDemod/PCSU_100mA_cw_ch12.wav" chan=1
+V12 Via_ccw 0 wavefile="N:/data_notebook/HS_Karlsruhe/xy_galvoscanner/bilder_screenshots_messungen/31-03-2015_tests_posDemod/PCSU_100mA_ccw_ch12.wav" chan=0
+V13 Vib_ccw 0 wavefile="N:/data_notebook/HS_Karlsruhe/xy_galvoscanner/bilder_screenshots_messungen/31-03-2015_tests_posDemod/PCSU_100mA_ccw_ch12.wav" chan=1
+XU9 Via_center Via jumperResistor Rjump=1u Rin=1t Rout=1t
+XU6 Vib_center Vib jumperResistor Rjump=1u Rin=1t Rout=1t
+XU7 Vp vdc_single V=20V
+XU8 Vm vdc_single V=-20V
+XU10 Vp10 vdc_single V=10V
+XU11 Vm10 vdc_single V=-10V
+.model D D
+.lib C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\lib\cmp\standard.dio
+.model NPN NPN
+.model PNP PNP
+.lib C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\lib\cmp\standard.bjt
+.param R13=20k
+.param R13set=0.5
+.param R77=10k
+.param R77set=0.5
+.tran 0 500u 0
+.param cp1=330p
+;.step param cp1 list 330p 1e-30
+* PosDemod v1.1 measure @ +-19V supply:\nAussteuerung mit ca. +-100mA\n---------------------------------------------\n---  Galvo #0 (sensor rep)\n---------------------------------------------\ncarrier frequency:    1.45MHz\nChannel IA1: DC range  -190 ... -282mV @ Clock wise mirror rotation\n...\n---------------------------------------------\n---  Galvo #1\n---------------------------------------------\ncarrier frequency:    1.52MHz\nChannel IA1: DC range  -180.0 ... -300.9mV @ Clock wise mirror rotation\nChannel IB1: DC range  -169.8 ... -292.3mV @ Clock wise mirror rotation\nMit aktueller trimmerjustierung ergibts sich:\nV_pos range : -11.06V ... 9.51V
+.options  plotwinsize=0
+.lib EIT_sub\vdc_single.sub
+.lib LTC.lib
+.lib MDB_sub/jumperRes.sub
+.backanno
+.end

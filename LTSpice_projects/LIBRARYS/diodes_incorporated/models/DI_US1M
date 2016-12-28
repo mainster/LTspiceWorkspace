@@ -1,0 +1,3 @@
+*SRC=US1M;DI_US1M;Diodes;Si;  1.00kV  1.00A  75.0ns   Diodes Inc. -
+.MODEL DI_US1M D  ( IS=709n RS=82.3m BV=1.00k IBV=5.00u
++ CJO=18.5p  M=0.333 N=3.23 TT=108n )

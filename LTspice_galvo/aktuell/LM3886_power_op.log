@@ -1,0 +1,132 @@
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\galvoscanner\aktuell\LM3886_power_op.asc
+
+WARNING: Less than two connections to node NC_01.  This node is used by R12.
+WARNING: Less than two connections to node NC_02.  This node is used by R5.
+WARNING: Less than two connections to node NC_03.  This node is used by E3.
+WARNING: Less than two connections to node NC_04.  This node is used by R21.
+Early termination of direct N-R iteration.
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+vernier = 0.5
+vernier = 0.25
+vernier = 0.125
+Gmin = 4.81882
+vernier = 0.0625
+vernier = 0.03125
+vernier = 0.015625
+vernier = 0.0078125
+Gmin = 4.73544
+vernier = 0.00390625
+vernier = 0.00195313
+vernier = 0.000976563
+vernier = 0.000488281
+Gmin = 4.73428
+Gmin = 0
+Gmin stepping failed
+
+Starting source stepping with srcstepmethod=0
+Source Step = 3.0303%
+Source Step = 4.7822%
+Source Step = 5.25568%
+Source Step = 5.72917%
+Source Step = 6.20265%
+Source Step = 6.67614%
+vernier = 0.0234375
+Source Step = 7.24432%
+Source Step = 7.95455%
+Source Step = 8.66477%
+Source Step = 9.375%
+Source Step = 10.0852%
+vernier = 0.0351563
+Source Step = 10.902%
+Source Step = 11.9673%
+Source Step = 13.0327%
+Source Step = 14.098%
+Source Step = 15.1634%
+vernier = 0.0527344
+Source Step = 16.3352%
+Source Step = 17.9332%
+Source Step = 19.5313%
+Source Step = 21.1293%
+Source Step = 22.7273%
+vernier = 0.0791016
+Source Step = 24.4052%
+Source Step = 26.8022%
+Source Step = 29.1992%
+Source Step = 31.5962%
+Source Step = 33.9933%
+Source Step = 36.3903%
+vernier = 0.118652
+Source Step = 39.9858%
+Source Step = 43.5813%
+Source Step = 47.1768%
+Source Step = 50.7724%
+Source Step = 54.3679%
+vernier = 0.177979
+Source Step = 59.5814%
+Source Step = 64.9747%
+Source Step = 70.368%
+Source Step = 75.7613%
+Source Step = 81.1546%
+vernier = 0.266968
+Source Step = 88.7052%
+Source Step = 96.7951%
+Source stepping succeeded in finding the operating point.
+
+.step cp=1e-012
+Heightened Def Con from 0.000510354 to 0.000510354
+Heightened Def Con from 0.000510354 to 0.000510354
+Heightened Def Con from 0.000510354 to 0.000510354
+Heightened Def Con from 0.00100848 to 0.00100848
+Heightened Def Con from 0.00100848 to 0.00100848
+Heightened Def Con from 0.00200848 to 0.00200848
+Heightened Def Con from 0.00200848 to 0.00200848
+Heightened Def Con from 0.00200848 to 0.00200848
+Heightened Def Con from 0.00300848 +to 0.00300848
+Heightened Def Con from 0.00300848 to 0.00300848
+Heightened Def Con from 0.00300848 to 0.00300848
+Heightened Def Con from 0.00300848 to 0.00300848
+Heightened Def Con from 0.00300848 +to 0.00300848
+Heightened Def Con from 0.00300848 to 0.00300848
+Heightened Def Con from 0.00300848 to 0.00300848
+Heightened Def Con from 0.00300848 to 0.00300848
+Heightened Def Con from 0.00300848 to 0.00300848
+Heightened Def Con from 0.00300848 to 0.00300848
+Heightened Def Con from 0.00351031 to 0.00351031
+Heightened Def Con from 0.0045104 ++to 0.0045104
+Heightened Def Con from 0.0045104 +to 0.0045104
+Heightened Def Con from 0.0045104 to 0.0045104
+Heightened Def Con from 0.0045104 to 0.0045104
+Heightened Def Con from 0.0045104 to 0.0045104
+Heightened Def Con from 0.0045104 to 0.0045104
+Heightened Def Con from 0.0045104 +to 0.0045104
+Heightened Def Con from 0.0045104 +to 0.0045104
+Heightened Def Con from 0.0045104 +to 0.0045104
+Heightened Def Con from 0.0045104 +to 0.0045104
+Heightened Def Con from 0.0045104 to 0.0045104
+Heightened Def Con from 0.0045104 to 0.0045104
+Heightened Def Con from 0.00551033 +to 0.00551033
+Heightened Def Con from 0.00551033 to 0.00551033
+Heightened Def Con from 0.00551033 to 0.00551033
+Heightened Def Con from 0.00551033 to 0.00551033
+Heightened Def Con from 0.00651039 to 0.00651039
+Heightened Def Con from 0.00651039 ++to 0.00651039
+Heightened Def Con from 0.00651039 ++++++++++++++++++++to 0.00651039
+Heightened Def Con from 0.00651039 ++++++++++++to 0.00651039
+Heightened Def Con from 0.00651039 ++to 0.0065104
+Heightened Def Con from 0.00751036 to 0.00751036
+Heightened Def Con from 0.00751036 to 0.00751036
+Heightened Def Con from 0.0085104 to 0.0085104
+Heightened Def Con from 0.0085104 +to 0.0085104
+Heightened Def Con from 0.0085104 to 0.0085104
+Heightened Def Con from 0.0095104 to 0.0095104
+Heightened Def Con from 0.0095104 +to 0.0095104
+Heightened Def Con from 0.0095104 +to 0.0095104
+Heightened Def Con from 0.0095104 to 0.0095104
+Heightened Def Con from 0.0095104 to 0.0095104
+Heightened Def Con from 0.0095104 to 0.0095104
+.step cp=2.1e-011
+.step cp=4.1e-011
+.step cp=6.1e-011
+.step cp=8.1e-011

@@ -1,0 +1,9 @@
+* PT1.sub
+*
+.subckt PT1 1 2
+G1 0 N001 1 0 {gain}
+G2 0 2 N001 0 1
+C1 N001 0 {T}
+R1 N001 0 1
+R2 2 0 1
+.end PT1

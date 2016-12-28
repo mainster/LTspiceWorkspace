@@ -1,0 +1,504 @@
+*version 8.0 678146710
+@index
+symloc n-Mosfet 0 1320
+symloc p-Mosfet 1320 1323
+symloc BF245B 2643 644
+symloc BSS101 3287 812
+symloc BSS129 4099 713
+symloc BSS92 4812 822
+symloc BSD215 5634 815
+symloc IRF142 6449 815
+symloc IRF9142 7264 831
+symloc n-Mesfet 8095 1016
+*symbol n-Mosfet
+d generischer n-Kanal-Mosfet
+@type p 8.0
+@attributes
+a 0 sp 0:13 0 25 32 hln 100 MODEL=NMOSFET
+a 1 s 9 0 27 11 hln 100 REFDES=T?
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=X^@refdes %d %g %s %b @MODEL params: k=@K ua=@UA uth=@Uth uinv=@Uinv gamma=@gamma rg=@RG cgs=@CGS cgd=@CGD cbd=@CBD cbs=@CBS
+a 0 sp 0:11 0 0 50 hln 100 PART=n-Mosfet
+a 0 u 0:13 0 0 10 hln 100 K=4m
+a 0 u 0:13 0 0 20 hln 100 UA=50V
+a 0 u 0:13 0 0 50 hln 100 Uth=1V
+a 0 u 0:13 0 0 60 hln 100 Uinv=0.6V
+a 0 u 0:13 0 0 70 hln 100 gamma=0.5
+a 0 u 0:13 0 0 80 hln 100 RG=25
+a 0 u 0:13 0 0 90 hln 100 CGS=4.4pF
+a 0 u 0:13 0 0 100 hln 100 CGD=2pF
+a 0 u 0:13 0 0 110 hln 100 CBD=3pF
+a 0 u 0:13 0 0 120 hln 100 CBS=3pF
+@pins
+p 0 5 30 hln 100 g n 0 30 h
+a 0 s 0 0 1 28 hln 100 PIN=g
+a 0 s 0 0 0 10 hln 100 ERC=x
+p 0 15 10 hln 100 d n 20 0 d
+a 0 s 0 0 21 -2 hln 100 PIN=d
+a 0 s 0 0 0 0 hln 100 ERC=x
+p 0 15 38 hln 100 s n 20 40 v
+a 0 s 0 0 21 38 hln 100 PIN=s
+a 0 s 0 0 0 0 hln 100 ERC=x
+p 0 20 15 hln 100 b n 30 20 u
+a 0 s 0 0 32 25 hln 100 PIN=b
+a 0 s 0 0 30 0 hln 100 ERC=x
+@graphics 30 40 0 30 10
+v 0 12 20
+20 20
+;
+v 0 12 30
+20 30
+;
+v 0 14 20
+18 18
+;
+v 0 14 20
+18 22
+;
+v 0 10 10
+10 30
+;
+v 0 12 7 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+12 13
+;
+v 0 12 17 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+12 23
+;
+v 0 12 27 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+12 33
+;
+v 0 12 10
+20 10
+;
+*symbol p-Mosfet
+d generischer p-Kanal-Mosfet
+@type p 8.0
+@attributes
+a 0 sp 0:13 0 25 32 hln 100 MODEL=PMOSFET
+a 1 s 9 0 27 11 hln 100 REFDES=T?
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=X^@refdes %d %g %s %b @MODEL params: k=@K ua=@UA uth=@Uth uinv=@Uinv gamma=@gamma rg=@RG cgs=@CGS cgd=@CGD cbd=@CBD cbs=@CBS
+a 0 sp 0:11 0 0 50 hln 100 PART=p-Mosfet
+a 0 u 0:13 0 0 10 hln 100 K=4m
+a 0 u 0:13 0 0 20 hln 100 UA=50V
+a 0 u 0:13 0 0 50 hln 100 Uth=-1V
+a 0 u 0:13 0 0 60 hln 100 Uinv=0.6V
+a 0 u 0:13 0 0 70 hln 100 gamma=0.5
+a 0 u 0:13 0 0 80 hln 100 RG=25
+a 0 u 0:13 0 0 90 hln 100 CGS=4.4pF
+a 0 u 0:13 0 0 100 hln 100 CGD=2pF
+a 0 u 0:13 0 0 110 hln 100 CBD=3pF
+a 0 u 0:13 0 0 120 hln 100 CBS=3pF
+@pins
+p 0 5 10 hln 100 g n 0 10 h
+a 0 s 0 0 1 8 hln 100 PIN=g
+a 0 s 0 0 0 -10 hln 100 ERC=x
+p 0 25 30 hln 100 d n 20 40 v
+a 0 s 0 0 19 42 vrn 100 PIN=d
+a 0 s 0 0 40 40 hln 100 ERC=x
+p 0 25 2 hln 100 s n 20 0 d
+a 0 s 0 0 19 2 drn 100 PIN=s
+a 0 s 0 0 40 40 hln 100 ERC=x
+p 0 20 15 hln 100 b n 30 20 u
+a 0 s 0 0 32 25 hln 100 PIN=b
+a 0 s 0 0 30 0 hln 100 ERC=x
+@graphics 30 40 0 10 10
+v 0 12 20
+20 20
+;
+v 0 12 30
+20 30
+;
+v 0 14 22
+18 20
+;
+v 0 14 18
+18 20
+;
+v 0 10 10
+10 30
+;
+v 0 12 7 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+12 13
+;
+v 0 12 17 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+12 23
+;
+v 0 12 27 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+12 33
+;
+v 0 12 10
+20 10
+;
+*symbol BF245B
+d n-Kanal-Sperrschichtfet
+@type p 8.0
+@attributes
+a 1 sp 0 0 0 0 hcn 100 TEMPLATE=J^@refdes %d %g %s @MODEL
+a 1 s 9 0 29 18 hcn 100 REFDES=T?
+a 0 sp 0 0 52 28 hcn 100 PART=BF245B
+a 0 sp 13 0 42 30 hcn 100 MODEL=BF245B
+@pins
+p 0 10 30 hcn 100 g n 0 30 h
+a 0 s 0 0 1 28 hln 100 PIN=g
+a 0 s 0 0 0 10 hln 100 ERC=x
+p 0 15 40 hcn 100 s n 20 40 v
+a 0 s 0 0 21 38 hln 100 PIN=s
+a 0 s 0 0 -10 0 hln 100 ERC=x
+p 0 15 10 hcn 100 d n 20 0 d
+a 0 s 0 0 21 -2 hln 100 PIN=d
+a 0 s 0 0 -10 0 hln 100 ERC=x
+@graphics 20 40 0 30 10
+v 0 10 10
+20 10
+;
+v 0 10 30
+20 30
+;
+v 0 10 7 d_info:,,,,4/1/6/6,,,,,,,,,, 
+10 33
+;
+v 0 9 30
+4 27
+;
+v 0 9 30
+4 33
+;
+*symbol BSS101
+d n-Kanal-DMOS-Fet, selbstsperrend
+@type p 8.0
+@attributes
+a 0 sp 0 0 25 28 hln 100 PART=BSS101
+a 0 sp 13 0 25 32 hln 100 MODEL=BSS101
+a 1 s 9 0 25 21 hln 100 REFDES=T?
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=X^@refdes %g %s %d @MODEL
+@pins
+p 0 5 30 hln 100 g n 0 30 h
+a 0 s 0 0 1 28 hln 100 PIN=g
+a 0 s 0 0 0 10 hln 100 ERC=x
+p 0 15 10 hln 100 d n 20 0 d
+a 0 s 0 0 21 -2 hln 100 PIN=d
+a 0 s 0 0 0 0 hln 100 ERC=x
+p 0 15 38 hln 100 s n 20 40 v
+a 0 s 0 0 21 38 hln 100 PIN=s
+a 0 s 0 0 0 0 hln 100 ERC=x
+@graphics 20 40 0 30 10
+v 0 12 14
+20 14
+20 10
+;
+v 0 12 22
+20 22
+;
+v 0 12 30
+20 30
+;
+v 0 14 22
+18 20
+;
+v 0 14 22
+18 24
+;
+v 0 10 14
+10 30
+;
+v 0 12 11 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+12 17
+;
+v 0 12 19 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+12 25
+;
+v 0 12 27 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+12 33
+;
+v 0 20 22
+20 30
+;
+*symbol BSS129
+d n-Kanal-DMOS-Fet, selbstleitend
+@type p 8.0
+@attributes
+a 0 sp 0 0 25 28 hln 100 PART=BSS129
+a 0 sp 13 0 25 32 hln 100 MODEL=BSS129
+a 1 s 9 0 25 21 hln 100 REFDES=T?
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=X^@refdes %g %s %d @MODEL
+@pins
+p 0 5 30 hln 100 g n 0 30 h
+a 0 s 0 0 1 28 hln 100 PIN=g
+a 0 s 0 0 0 10 hln 100 ERC=x
+p 0 15 10 hln 100 d n 20 0 d
+a 0 s 0 0 21 -2 hln 100 PIN=d
+a 0 s 0 0 0 0 hln 100 ERC=x
+p 0 15 38 hln 100 s n 20 40 v
+a 0 s 0 0 21 38 hln 100 PIN=s
+a 0 s 0 0 0 0 hln 100 ERC=x
+@graphics 20 40 0 30 10
+v 0 12 14
+20 14
+20 10
+;
+v 0 12 22
+20 22
+;
+v 0 12 30
+20 30
+;
+v 0 14 22
+18 20
+;
+v 0 14 22
+18 24
+;
+v 0 10 14
+10 30
+;
+v 0 12 12 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+12 32
+;
+v 0 20 30
+20 22
+;
+*symbol BSS92
+d p-Kanal-DMOS-Fet, selbstsperrend
+@type p 8.0
+@attributes
+a 0 sp 0 0 25 28 hln 100 PART=BSS92
+a 0 sp 13 0 25 28 hln 100 MODEL=BSS92
+a 1 s 9 0 25 17 hln 100 REFDES=T?
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=X^@refdes %g %s %d @MODEL
+@pins
+p 0 5 10 hln 100 g n 0 10 h
+a 0 s 0 0 1 8 hln 100 PIN=g
+a 0 s 0 0 0 -10 hln 100 ERC=x
+p 0 25 30 hln 100 d n 20 40 v
+a 0 s 0 0 19 42 vrn 100 PIN=d
+a 0 s 0 0 40 40 hln 100 ERC=x
+p 0 15 8 hln 100 s n 20 0 d
+a 0 s 0 0 19 2 drn 100 PIN=s
+a 0 s 0 0 40 40 hln 100 ERC=x
+@graphics 20 40 0 10 10
+v 0 14 20
+18 18
+;
+v 0 14 16
+18 18
+;
+v 0 12 18
+20 18
+;
+v 0 12 26
+20 26
+;
+v 0 10 10
+10 26
+;
+v 0 12 7 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+12 13
+;
+v 0 12 15 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+12 21
+;
+v 0 12 23 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+12 29
+;
+v 0 20 26
+20 30
+;
+v 0 12 10
+20 10
+;
+v 0 20 10
+20 18
+;
+*symbol BSD215
+d n-Kanal-DMOS-Fet, selbstsperrend
+@type p 8.0
+@attributes
+a 0 sp 0 0 25 28 hln 100 PART=BSD215
+a 0 sp 13 0 25 32 hln 100 MODEL=BSD215
+a 1 s 9 0 25 21 hln 100 REFDES=T?
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=M^@refdes %d %g %s %s @MODEL
+@pins
+p 0 5 30 hln 100 g n 0 30 h
+a 0 s 0 0 1 28 hln 100 PIN=g
+a 0 s 0 0 0 10 hln 100 ERC=x
+p 0 15 10 hln 100 d n 20 0 d
+a 0 s 0 0 21 -2 hln 100 PIN=d
+a 0 s 0 0 0 0 hln 100 ERC=x
+p 0 15 38 hln 100 s n 20 40 v
+a 0 s 0 0 21 38 hln 100 PIN=s
+a 0 s 0 0 0 0 hln 100 ERC=x
+@graphics 20 40 0 30 10
+v 0 12 14
+20 14
+20 10
+;
+v 0 12 22
+20 22
+;
+v 0 12 30
+20 30
+;
+v 0 14 22
+18 20
+;
+v 0 14 22
+18 24
+;
+v 0 10 14
+10 30
+;
+v 0 12 11 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+12 17
+;
+v 0 12 19 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+12 25
+;
+v 0 12 27 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+12 33
+;
+v 0 20 22
+20 30
+;
+*symbol IRF142
+d n-Kanal-DMOS-Fet, selbstsperrend
+@type p 8.0
+@attributes
+a 0 sp 0 0 25 28 hln 100 PART=IRF142
+a 0 sp 13 0 25 32 hln 100 MODEL=IRF142
+a 1 s 9 0 25 21 hln 100 REFDES=T?
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=M^@refdes %d %g %s %s @MODEL
+@pins
+p 0 5 30 hln 100 g n 0 30 h
+a 0 s 0 0 1 28 hln 100 PIN=g
+a 0 s 0 0 0 10 hln 100 ERC=x
+p 0 15 10 hln 100 d n 20 0 d
+a 0 s 0 0 21 -2 hln 100 PIN=d
+a 0 s 0 0 0 0 hln 100 ERC=x
+p 0 15 38 hln 100 s n 20 40 v
+a 0 s 0 0 21 38 hln 100 PIN=s
+a 0 s 0 0 0 0 hln 100 ERC=x
+@graphics 20 40 0 30 10
+v 0 12 14
+20 14
+20 10
+;
+v 0 12 22
+20 22
+;
+v 0 12 30
+20 30
+;
+v 0 14 22
+18 20
+;
+v 0 14 22
+18 24
+;
+v 0 10 14
+10 30
+;
+v 0 12 11 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+12 17
+;
+v 0 12 19 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+12 25
+;
+v 0 12 27 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+12 33
+;
+v 0 20 22
+20 30
+;
+*symbol IRF9142
+d p-Kanal-DMOS-Fet, selbstsperrend
+@type p 8.0
+@attributes
+a 0 sp 0 0 25 28 hln 100 PART=IRF9142
+a 0 sp 13 0 25 28 hln 100 MODEL=IRF9142
+a 1 s 9 0 25 17 hln 100 REFDES=T?
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=M^@refdes %d %g %s %s @MODEL
+@pins
+p 0 5 10 hln 100 g n 0 10 h
+a 0 s 0 0 1 8 hln 100 PIN=g
+a 0 s 0 0 0 -10 hln 100 ERC=x
+p 0 25 30 hln 100 d n 20 40 v
+a 0 s 0 0 19 42 vrn 100 PIN=d
+a 0 s 0 0 40 40 hln 100 ERC=x
+p 0 15 8 hln 100 s n 20 0 d
+a 0 s 0 0 19 2 drn 100 PIN=s
+a 0 s 0 0 40 40 hln 100 ERC=x
+@graphics 20 40 0 10 10
+v 0 14 20
+18 18
+;
+v 0 14 16
+18 18
+;
+v 0 12 18
+20 18
+;
+v 0 12 26
+20 26
+;
+v 0 10 10
+10 26
+;
+v 0 12 7 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+12 13
+;
+v 0 12 15 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+12 21
+;
+v 0 12 23 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+12 29
+;
+v 0 20 26
+20 30
+;
+v 0 12 10
+20 10
+;
+v 0 20 10
+20 18
+;
+*symbol n-Mesfet
+d Skalierbarer n-Kanal-Mesfet (L=0.3um)
+@type p 8.0
+@attributes
+a 1 sp 0 0 0 0 hcn 100 TEMPLATE=X^@refdes %d %g %s @MODEL params: w=@W uth=@Uth kw=@Kw cgw=@CGw rgmin=@RGmin rgw=@RGw rsmin=@RSmin rsw=@RSw
+a 1 s 9 0 29 18 hcn 100 REFDES=T?
+a 0 sp 11 0 42 28 hcn 100 PART=n-Mesfet
+a 0 sp 0:13 0 42 30 hcn 100 MODEL=n-mesfet
+a 0 u 9 9 38 38 hcn 100 W=1m
+a 0 u 0:13 0 0 10 hlb 100 Uth=-2
+a 0 u 0:13 0 0 20 hlb 100 Kw=67
+a 0 u 0:13 0 0 30 hlb 100 CGw=2n
+a 0 u 0:13 0 0 40 hlb 100 RGmin=1
+a 0 u 0:13 0 0 50 hlb 100 RGw=1.5m
+a 0 u 0:13 0 0 10 hlb 100 RSmin=0.2
+a 0 u 0:13 0 0 20 hlb 100 RSw=0.5m
+@pins
+p 0 10 30 hcn 100 g n 0 30 h
+a 0 s 0 0 1 28 hln 100 PIN=g
+a 0 s 0 0 0 10 hln 100 ERC=x
+p 0 15 40 hcn 100 s n 20 40 v
+a 0 s 0 0 21 38 hln 100 PIN=s
+a 0 s 0 0 -10 0 hln 100 ERC=x
+p 0 15 10 hcn 100 d n 20 0 d
+a 0 s 0 0 21 -2 hln 100 PIN=d
+a 0 s 0 0 -10 0 hln 100 ERC=x
+@graphics 20 40 0 30 10
+v 0 10 10
+20 10
+;
+v 0 10 30
+20 30
+;
+v 0 10 7 d_info:,,,,4/1/6/6,,,,,,,,,, 
+10 33
+;
+v 0 9 30
+4 27
+;
+v 0 9 30
+4 33
+;

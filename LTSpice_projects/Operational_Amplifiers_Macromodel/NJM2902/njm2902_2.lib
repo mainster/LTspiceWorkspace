@@ -1,0 +1,49 @@
+*$
+*PART NUMBER: NJM2902
+*MANUFACTURER: NEW JAPAN RADIO
+* All Rights Reserved Copyright (c) Bee Technologies Inc. 2007
+.Subckt NJM2902 OUT1 -IN1 +IN1 V+ +IN2 -IN2 OUT2 OUT3 -IN3 +IN3 V- 
++ +IN4 -IN4 OUT4
+X_U1     +IN1 -IN1 V+ V- OUT1 NJM2902_S
+X_U2     +IN2 -IN2 V+ V- OUT2 NJM2902_S
+X_U3     +IN3 -IN3 V+ V- OUT3 NJM2902_S
+X_U4     +IN4 -IN4 V+ V- OUT4 NJM2902_S
+.ends  NJM2902
+.subckt NJM2902_S  1 2 3 4 5
+  c1   11 12 52.660E-12
+  c2    6  7 29.000E-12
+  dc    5 53 dy
+  de   54  5 dy
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 22.343E6 -1E3 1E3 22E6 -22E6
+  ga    6  0 11 12 188.50E-6
+  gcm   0  6 10 99 10.600E-9
+  iee   3 10 dc 15.040E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx1
+  q2   12  1 14 qx2
+  r2    6  9 100.00E3
+  rc1   4 11 5.3052E3
+  rc2   4 12 5.3052E3
+  re1  13 10 1.8517E3
+  re2  14 10 1.8517E3
+  ree  10 99 13.298E6
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 1023.5
+  vb    9  0 dc 0
+  vc    3 53 dc 2.2879
+  ve   54  4 dc .79791
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.00E-18)
+.model dy D(Is=800.00E-18 Rs=1m Cjo=10p)
+.model qx1 PNP(Is=800.00E-18 Bf=410.65)
+.model qx2 PNP(Is=868.6645E-18 Bf=337.03)
+.ends
+*$
+

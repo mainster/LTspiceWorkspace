@@ -1,0 +1,16 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\visa_commander\freq_response_recorder.asc
+L1 out 0 100µ Rser=5u
+R1 stim out 1k
+C1 out 0 {C1}
+V1 stim 0 AC 1
+XU1 stim 0 V+ V- op LM358/ST
+XU2 V+ vdc_single V={Vsup}
+XU3 V- vdc_single V={-Vsup}
+.ac oct 100 1 10meg
+* .step param c1 1p 75p 5p
+.param Vsup = 10V
++ C1 = 1u
+.lib ..\sym\EXTRA\ExtraComparators\st_models.lib
+.lib EIT_sub/vdc_single.sub
+.backanno
+.end

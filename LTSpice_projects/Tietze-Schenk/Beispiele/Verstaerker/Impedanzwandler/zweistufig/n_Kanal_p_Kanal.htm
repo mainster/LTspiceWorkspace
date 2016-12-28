@@ -1,0 +1,53 @@
+<HTML>
+  <HEAD>
+    <TITLE>Zweistufig_n_Kanal_p_Kanal.sch</TITLE>
+  </HEAD>
+  <BODY BGCOLOR="#F0F0F0">
+    <H1 ALIGN=center><B>Zweistufig_n_Kanal_p_Kanal.sch</B></H1>
+    <P>
+Impedanzwandler mit einer n-Kanal- und einer p-Kanal-Drainschaltung
+    </P>
+    <P>
+      Kennlinie einer zweistufigen n-Kanal-p-Kanal-Drainschaltung mit den
+      Ruhestr&ouml;men ID1=10uA und ID2=1mA.
+    </P>
+    <P>
+      Der Zusammenhang Ue=Ua ist hier im Gegensatz zur zweistufigen npn-
+      pnp-Kollektorschaltung (siehe Zweistufig_npn_pnp.sch) nur f&uuml;r eine
+      Eingangsspannung - hier 3,5V - erf&uuml;llt. Ursache hierf&uuml;r ist der
+      Substrat-Effekt, der eine aussteuerungsabh&auml;ngige &Auml;nderung der
+      Gate-Source-Spannung bei gleichbleibendem Strom zur Folge hat;
+      dadurch wird auch die Verst&auml;rkung reduziert.
+    </P>
+    <P>
+      Der eingangsseitige Aussteuerbereich liegt zwischen 2,8V und 4,4V;
+      in diesem Bereich ist die Verstaerkung naeherungsweise konstant
+      (Anzeige 2).
+    </P>
+    <P><TABLE BORDER=2 BGCOLOR="#F0F0F0">
+      <TR>
+        <TD><B>Analysen</B></TD>
+        <TD><B>Einstellungen</B></TD>
+        <TD><B>Ergebnisanzeigen</B></TD>
+      </TR>
+      <TR>
+        <TD>DC</TD>
+        <TD>Ue = 0V ... 5V</TD>
+        <TD>Kennlinie , Verstaerkung</TD>
+      </TR>
+    </TABLE></P>
+    <P><TABLE BORDER=0 BGCOLOR="#F0F0F0" WIDTH=100%>
+      <TR>
+        <TH WIDTH=20% ALIGN=left>
+          <A HREF="ueber.htm" TARGET="uebersicht"><B>zur&uuml;ck</B></A>
+        </TH>
+        <TH WIDTH=20% ALIGN=left>
+          <A HREF="../../../ueber.htm" TARGET="uebersicht"><B>&Uuml;bersicht</B></A>
+        </TH>
+        <TH WIDTH=60% ALIGN=left>
+          <A HREF="n_Kanal_p_Kanal.tse"><B>Simulation starten</B></A>
+        </TH>
+      </TR>
+    </TABLE></P>
+  </BODY>
+</HTML>

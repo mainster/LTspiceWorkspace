@@ -1,0 +1,7 @@
+* Z:\media\data\CODES\LTSpice_projects\IL300_F-107\Draft1.asc
+C1 N002 0 220n
+R1 N002 N001 2.22meg
+V1 N001 0 PULSE(0 5 0 10p 10p 500m 1)
+.tran 2
+.backanno
+.end

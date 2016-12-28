@@ -1,0 +1,19 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\tor_ctrl.asc
+V1 N002 0 PULSE(0 {Vctrl} {delay} 10n 10n .3m 9.7m)
+XU1 Anwender Anwender Anwender NC_01 DC JKFF_no TD=10ns
+B1 N001 0 V=abs(V(anwender))
+V2 N002 Anwender PULSE(0 {Vctrl} {4*delay} 10n 10n .3m 9.7m)
+XU2 N001 N001 N001 NC_02 UC JKFF_no TD=10ns
+XU3 DC DC! probe_dig T=0
+XU4 UC UC! probe_dig T=1
+.tran 30m
+.param eltako=1
++ delay = 1m
++ Vctrl = 24V
++ vpwr$_digital = 10V
+* Eltako DC
+* Eltako UC
+.lib EIT_sub\FF_and_Counters.sub
+.lib EIT_sub\probe_dig.sub
+.backanno
+.end

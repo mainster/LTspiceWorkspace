@@ -1,0 +1,26 @@
+* C:\users\mainster\My Documents\CODES_local\LTSpice_projects\galvoscanner\position_demo.asc
+XU1 0 N001 out opamp_param_3 Vp=10 Vm=-10 Ilim=20m FT=10Meg SR=10 Vos=0 A0=100k phir=45 en=0 enk=0 in=0 ink=0 Rin=500Meg
+R1 in1 N001 453
+R2 N001 out 16.9k
+C1 N001 out 330p
+C2 in1 0 470p
+XU2 0 N005 out2 opamp_param_3 Vp=10 Vm=-10 Ilim=20m FT=10Meg SR=10 Vos=0 A0=100k phir=45 en=0 enk=0 in=0 ink=0 Rin=500Meg
+R3 in2 N005 453
+R4 N005 out2 16.9k
+C3 N005 out2 330p
+C4 in2 0 470p
+I1 0 N006 SINE(0 100u 10k) AC 1
+R5 N002 out 2k
+R6 N004 out2 2k
+C5 N004 0 1.2n
+R8 N004 0 4.53k
+R9 N003 N002 4.53k
+XU3 N004 N002 N003 opamp_param_3 Vp=10 Vm=-10 Ilim=20m FT=10Meg SR=10 Vos=0 A0=100k phir=45 en=0 enk=0 in=0 ink=0 Rin=500Meg
+C6 N003 N002 1.2n
+XU4 in2 0 in1 N006 crtl_ii F=1
+;ac oct 100 1k 100meg
+.ac oct 100 1k 100meg
+.lib EIT_sub\controlled_sources.sub
+.lib EIT_sub\opamp_parametrierbar.sub
+.backanno
+.end

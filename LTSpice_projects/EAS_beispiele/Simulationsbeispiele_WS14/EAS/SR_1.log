@@ -1,0 +1,7 @@
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\EAS_beispiele\Simulationsbeispiele_WS14\EAS\SR_1.asc
+
+WARNING: Less than two connections to node N001.  This node is used by V2.
+Direct Newton iteration for .op point succeeded.
+.step rl=4
+.step rl=5
+.step rl=6

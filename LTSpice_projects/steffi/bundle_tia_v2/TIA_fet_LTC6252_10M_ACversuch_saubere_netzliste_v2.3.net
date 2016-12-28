@@ -1,0 +1,62 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\steffi\bundle_tia_v2\TIA_fet_LTC6252_10M_ACversuch_saubere_netzliste_v2.3.asc
+V1 +5V 0 5
+C9 Op+5V 0 10nF
+C10 Op+5V 0 1µ
+R12 +5V Op+5V 22
+R13 U_F2 G2 2.2meg
+XU4 U_F2 0 offs in-2 Op+5V Op+5V LTC6252
+R14 offs N003 100k
+R15 N005 U_F2 100k
+C11 offs N005 3.3nF
+C12 N003 out_int2 3.3nF
+R16 out_int2 G2 1meg
+V2 offs 0 3
+Rs2 in-2 0 1k
+C3 U_F2 G2 47p
+R§in2 G2 pin2 1m
+D2 0 pin2 MBRS130L
+I3 pin2 0 SINE(0 10e-9 {fsig}) AC 1
+C13 pin2 0 70f
+I4 0 pin2 PULSE(0 {pin_ext_bias} 10u)
+R5 N004 in-2 33
+C14 U_F2 N004 47p
+C2 Op2+5V 0 10nF
+C4 Op2+5V 0 1µ
+R1 +5V Op2+5V 5
+J1 JFET_VCC2 G2 in-2 BF861A
+XX1 U_F2 U_F2~ U_F2-- NC_01 mixed2ac_dc_small
+I1 pin2 0 400n
+C15 JFET_VCC2 0 10nF
+C18 JFET_VCC2 0 1µ
+R18 +5V JFET_VCC2 5
+XU2 N005 N003 Op2+5V 0 out_int2 AD8656
+V5 N001 0 SINE(0 1 100)
+R24 N001 0 100
+XX4 pin2 U_F4~ U_F4-- NC_02 mixed2ac_dc_small
+
+* block symbol definitions
+.subckt mixed2ac_dc_small sig_in AC DC sig
+E1 sig 0 sig_in 0 1
+R1 AC 0 {1/(2*pi*fc*1m)}
+C1 sig AC 1m
+B1 DC 0 V=V(sig)-V(AC)
+.param fc = 10
+.ends mixed2ac_dc_small
+
+.model D D
+.lib C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\lib\cmp\standard.dio
+.model NJF NJF
+.model PJF PJF
+.lib C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\lib\cmp\standard.jft
+.tran 100m
+* K=Idss/Vp^2\nr0=1/(lambda*Id0)\nId=k*(Ugs-Vp)^2 \n(aktiver bereich, Vgs>0 && Uds>Ugs-Vp)\n \nlabda 37m --> r0 berechnen von jfet \nr0: Last am feedback- knoten\nr0=1/(lambda*Id0)
+.param pin_ext_bias = 300n
+.param Rin=1m
+.param fsig = 10k
+* PIN Dioden- Modell
+* .step param pin_ext_bias list 300n 0
+.param JP = 0
+.lib LTC4.lib
+.lib MDB_sub/AD8656.sub
+.backanno
+.end

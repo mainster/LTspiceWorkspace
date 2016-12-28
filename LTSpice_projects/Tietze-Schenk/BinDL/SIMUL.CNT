@@ -1,0 +1,19 @@
+:Base Simul.HLP
+1 Preparing Your Design for Simulation
+2 Setting Up Analyses=IDH_CIRCUIT_Setting_Up_Analyses_PSpice
+2 Editing Simulation Models from Schematics=IDH_REFERENC_Editing_Simulation_Models_from_Schematics
+2 Creating Symbols for Existing Simulation Models=IDH_REFERENC_Creating_Symbols_for_Existing_Simulation_Models
+2 Simulating your Circuit=IDH_CIRCUIT_Simulating_your_Circuit
+2 Viewing Results=IDH_REFERENC_Viewing_Results
+2 Handling Unmodeled Pins=IDH_REFERENC_Handling
+2 Creating Designs for Simulation and Board Layout=IDH_REFERENC_Creating_Designs_for_Simulation_and_Board_Layout
+1 Viewing Bias Information on Your Schematic
+2 About Viewing Bias Point Voltages and Currents=BiasInfo_About_Viewing_Bias_Point_Voltages_and_Currents
+2 The Bias Information Toolbar Buttons=BiasInfo_The_Bias_Information_Toolbar_Buttons
+2 Showing Voltages=BiasInfo_Showing_Voltages
+2 Showing Currents=BiasInfo_Showing_Currents
+2 Changing Precision=BiasInfo_Changing_Precision
+2 Managing Voltage and Current Labels
+3 Moving Labels=BiasInfo_Moving_Labels
+3 Verifying Label Associations=BiasInfo_Verifying_Label_Associations
+3 Changing Display Colors=BiasInfo_Changing_Display_Colors

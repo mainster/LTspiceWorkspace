@@ -1,0 +1,266 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\galvoscanner\aktuell\bauteile_bestimmt\sysCompl_endstufe_FET_v13_transducer_v13.asc
+R1 N045 shunt 3.5
+L1 Ucoil N045 {Lcoil}
+R2 Ucoil N046 1
+C1 N046 0 100n
+XU1 +12V vdc_single V=+12V
+XU2 -12V vdc_single V=-12V
+R4 pwrCtrlx N028 3k3
+XU3 0 N025 sumB -Vpwr NC_01 opV +Vpwr +Vpwr LTC6090
+R7 0 N025 5k1
+Q§T1 +Vpwr HS b_hi 0 FMMT624
+Q§T2 -Vpwr LS b_lo 0 FMMT723
+R8 b_hi e_hi {bias_be1}
+R9 e_lo b_lo {bias_be1}
+R10 e_hi Ucoil .015
+R11 e_lo Ucoil .015
+C3 b_hi e_hi 10f
+V2 stimOffs stimac PULSE({Vstim_peak} 0 0 100u)
+C4 N025 ucoil 22p
+B1 calcSum 0 V=V(stimoffs)-V(isensa)
+V4 N001 0 SINE(20m 1 100 20m) AC 1
+XU8 N001 stimac jumperResistor Rjump=1u Rin=1t Rout=1t
+Rsh shunt 0 0.015
+XU9 shunt N043 N047 N053 N042 N052 LTC2050
+XU10 N047 vdc_single V=5V
+XU11 N053 vdc_single V=-5V
+R24 N042 N043 {Rmon}
+R25 N043 0 27
+C5 N042 N043 10p
+XU12 N052 vdc_single V=5V
+XU13 N048 N041 N044 N050 Isensa N049 LTC2050
+XU14 N044 vdc_single V=5V
+XU15 N050 vdc_single V=-5V
+R26 Isensa N041 180
+R27 N048 N042 1k
+XU16 N049 vdc_single V=5V
+R28 N041 0 39
+C6 N048 0 {1/(2*pi*1k*100k)}
+R29 N025 ucoil {5k1*Kp}
+XU17 N028 N029 +12V -12V sumB LT1468
+R30 HS bias_hi2 {bias_b1}
+R31 bias_lo1 LS {bias_b1}
+I6 LS -Vpwr {Iq} load
+D11 bias_hi2 opV 1N4148
+D12 opV bias_lo1 1N4148
+V6 N024 0 PULSE(0 1 0 100n 100n 250u 500u) AC 1
+R32 ue1 N007 {R1}
+R33 I_ctrl N013 {R3}
+R34 N013 0 {R4}
+R35 N007 pwrCtrlx {R2}
+R36 ue1 N008 22k
+R37 N008 0 22k
+V7 LTDACa 0 PULSE(0 2 0 10u)
+R41 Aref N005 {R4b}
+R42 LTDAC_off N005 {R9}
+R43 N005 0 {R10}
+XU24 Aref_2 vdc_single V={Aref/2}
+B2 inp_vcalc 0 V=1
+XU25 N039 N038 +5V +5V pump pump +5V N035 0 LTC6360
+C8 0 pump 1µ
+C9 pump 0 .2µ
+R45 N038 posX_ADC 10
+C10 posX_ADC 0 330p
+C11 0 +5V 0.1µ
+C12 0 +5V 10µ
+V8 posDemod 0 SINE(0 1 {fsig}) AC 1
+R46 N011 N012 {R2b}
+R47 N012 N009 {R1b}
+C13 N011 0 {C1b}
+C14 sallen N012 {C2b}
+R48 N014 N015 {R2a}
+R49 N015 posDemod {R1a}
+C15 N014 0 {C1a}
+XU26 N014 N009 +12V -12V N009 LT1124
+R50 N002 0 1k
+R51 N003 0 1k
+R52 Ys2 N003 1k
+R53 N002 0 1k
+C16 N009 N015 {C2a}
+XU28 N011 sallen +12V -12V sallen LT1124
+XU31 cRf vdc_single V={Rf}
+XU32 cRb vdc_single V={Rb}
+XU33 cRg vdc_single V={Rg}
+Rf2 N038 N039 {Rf}
+Rg2 posRaw N039 {Rg}
+Rb2 N030 N035 {Rb}
+XU37 N005 N008 +12V -12V ue1 LT1057
+XU38 N013 N007 +12V -12V pwrCtrlx LT1057
+XU39 N016 N010 +12V -12V N010 LT1057
+C17 N007 pwrCtrlx 1p
+XU40 N031 0 ref_adc N036 LT6650
+R54 ref_adc N036 {(VrefSet/0.4V-1)*20k}
+R55 N036 0 20k
+XU41 Aref_2 N030 jumperResistor Rjump=1u Rin=1t Rout=1t
+R56 N032 N031 1k
+C18 0 N031 1n
+XU42 N032 vdc_single V=5V
+M1 +Vpwr b_hi e_hi e_hi IRFP240
+M2 -Vpwr b_lo e_lo e_lo IRFP9240
+C2 e_lo b_lo 10f
+R12 DACx N017 5k36
+R13 N017 N020 9k09
+C19 N017 DACxf1 1n5
+C20 N020 0 1n
+R14 DACxf1 N018 2k67
+R15 N018 N021 1k33
+C21 N018 DACxf2 6n8
+C22 N021 0 1n
+XU19 DACxf2 I_ctrl jumperResistor Rjump=1u Rin=1t Rout=1t
+XU18 +12V -12V N016 pot R=100k T=.5
+XU20 N020 DACxf1 +12V -12V DACxf1 LT1057
+XU4 N021 DACxf2 +12V -12V DACxf2 LT1057
+R17 LTDACa N004 1k
+C24 N004 0 1n
+XU5 N004 LTDAC_off +12V -12V LTDAC_off LT1057
+XU21 Aref vdc_single V={Aref}
+R136 posX_ADC ADC_quant 100
+C23 ADC_quant 0 1p
+I1 +Vpwr HS {Iq} load
+R3 IsensA N029 3k3
+R5 N029 sumB 3k3
+R6 N028 0 3k3
+C25 0 HS 22p
+C26 0 LS 22p
+V1 N023 N024 PULSE(0 {Aref/2} 0 500u) AC 1
+V3 -Vpwr 0 PULSE(0 {-Vsup} 0 500u)
+V5 +Vpwr 0 PULSE(0 {Vsup} 0 500u)
+C7 N039 N038 {Csar}
+XU6 +5V vdc_single V=+5V
+Q§T3 0 N054 P001 0 FMMT723
+R18 N054 N055 10k
+XU7 N055 vdc_single V=-5V
+R19 0 P001 1k
+D1 0 P002 1N4148
+R16 P002 N054 1k
+R20 0 N051 1
+V9 posRaw 0 SINE(0 25 100)
+S1 N051 pump 0 0 mySW
+R21 DACx N022 1
+XU22 Ys2 N002 jumperResistor Rjump=1u Rin=1t Rout=1t
+V10 N022 0 SINE(1.25 .75 250 1m) AC 1
+.model D D
+.lib C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\lib\cmp\standard.dio
+.model NPN NPN
+.model PNP PNP
+.lib C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\lib\cmp\standard.bjt
+.model NMOS NMOS
+.model PMOS PMOS
+.lib C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\lib\cmp\standard.mos
+* ;.tran 0 100m 1m\n;.options plotwinsize=0\n;.tran 0 2.8m 1.9m 1e-7\n.ac oct 100 10 1meg
+; ---------------------
+;   Power amp
+; ---------------------
+;.param Rset_bias = 100
+.param Iq = 1m
+;.param UV1 = 0.75V
+.param bias_be1 = 150
+;.param bias_b1 = {UV1/Ik3}
+.param bias_b1 = 750
+.param Lcoil = 170u
+; ---------------------
+;   Compensator
+; ---------------------
+.param Rsu = 1k
+.param Kp = 12
+;.param Ki = 15000
+; ---------------------
+;   SOURCES
+; ---------------------
+.param Vsup = 20V
+.param Vstim_peak = 5
+.param Aref = 2.5V  ; Ref2050
+* .option noopiter\n.options plotwinsize=0\n.four 1k 10 I(L1)
+.param Cf = 3p3
+* PULSE({-Vstim_peak} {Vstim_peak} 0 100n 100n 1m 2m)\nPULSE({-Vstim_peak} {Vstim_peak} 0 100m 100n 500u 100m)
+.param Rshm=0.003
+* 150R
+* .dc V3 -5 5 .01
+* Bias_b1 = 750R\nBias_be1 = 15R\n2x2 1N4148 \nI3=1mA \n-------------------------\n55mA Ruhestrom durch Rs
+.tran 20m
+* .tran 0 100m 1m\n.options plotwinsize=0
+* .tran 0 50m\n.options plotwinsize=0
+* .step param I0 list 100u 10n
+* Vu1= -10/3
+* Vu2 = 20
+* gesamt Av=40dB
+* .param TEST=1\n;.step param TEST list 1 0\n;.step param Kpi list 2 5 25
+.param Ctp = 10p
+* STM32f429i
+* STM32 DAC \nVout_ctrl
+* Messwandler v1.6\nSTM32 DAC out --> Endstufe Vin_ctrl\n0 ... 3V                --> -5V ... 5V\n \nENDSTUFE INVERTIERT!!!!\n------------------------------------------------------------------------\nUa=Ue2 * (R1+R2)/R1 * R4/(R3+R4) - Ue1 * R2/R1\nUe1 * R2/R1 @ Ue1=3V  !=  10V  \n -->  R2=10/3*R1\n------------------------------------------------------------------------\nUe2* 13/3 * R4/(R3+R4) @ Ue2=2.5V (ref)  !=  +5V\n --> R4/(R3+R4)  !=  5V * 3/(13 * 2.5V)\n<--> (R3+R4)/R4  !=  13/6\n--> R3=7a   R4=6a     a el. |R\n------------------------------------------------------------------------
+* PULSE(0 3 2m 10n 10n 500u 1m)
+.include LM358.lib
+.include OPA404.LIB
+.param R9 = 27k
+.param R4b = 3910
+.param R10 = 1220
+* ;V(pwrCtrlx):  -2.5V ... 2.5V\n.param R1=60k\n.param R2=120k\n.param R3=60k\n.param R4=120k
+* INA213B
+* ; ti filter bench\n; **********  Antialias posDemod ADC  **********\n; Lowpass, Sallen Key, Gaussian to 6 dB\n; fc = 20kHz   (Cut-off)\n; fs = 100kHz (Stopband)\n; Asb = -45dB (Verstärkung bei fs)\n  \n.param R1a=5.36k  R2a=9.09k  C1a=910p  C2a=1.5n\n.param R1b=2.67k R2b=1.33k  C1b=910p  C2b=6.8n
+; ti filter bench
+; **********  Antialias posDemod ADC  **********
+; Lowpass, Sallen Key, Chebyshev 0.2 dB
+; fc = 10kHz   (Cut-off)
+; fs = 33kHz (Stopband)
+; Asb = -45dB (Verstärkung bei fs)
+ 
+.param R1a=12.7k  R2a=22.1k  C1a=910p  C2a=1.8n
+.param R1b=2.67k R2b=3.32k  C1b=910p  C2b=22n
+.param deltaVpos = 20V
+.param deltaVa = 3V
+.param VaMin = 0V 
+.param gain = deltaVa / deltaVpos
+* Antialias position signal
+* SAR ADC driver\nAngular position
+* ; ti filter bench\n; **********  Antialias posDemod ADC  **********\n; Lowpass, Sallen Key\n; fc = 3kHz   (Cut-off)\n; fs = 10kHz (Stopband)     ; = fs/2 @ Ts=50us\n; Asb = -45dB (Verstärkung bei fs)\n \n.param R1a=5.6k  R2a=6.8k  C1a=10n  C2a=20n\n.param R1b=680 R2b=1k  C1b=10n  C2b=360n
+* Eingangswiderstand muss >15k \nsein (DAC0_SEL == DAC0 STM32)
+.param sim_end = 10m
+.param fsig = 10
+* DAC reconstruction
+* ; ti filter bench\n; ******  Antialias posDemod ADC  ******\n; Lowpass, Sallen Key, Gaussian to 6 dB\n; fc = 20kHz   (Cut-off)\n; fs = 100kHz (Stopband)\n; Asb = -45dB (Verstärkung bei fs)
+* .param R1a=5.36k  R2a=9.09k  C1a=910p  C2a=1.5n\n.param R1b=2.67k R2b=1.33k  C1b=910p  C2b=6.8n
+* Digital offset for DAC bias\nreconstruction filter
+* DAC levelshifter bias circuit
+* REF2050
+* PCB power v1.3
+* Include
+* Parameter
+* Stimulus
+* V=(Aref/R4b+V(DAC_offs)/R9) * 1/(1/R4b+1/R9+1/R10)
+.param vrefset=1.3V
+.param Rg = 5k
+.param Rf = Rg*gain
+.param Rb = {Rf*Rg/(Rf+Rg)}
+.param Vref = 1/2 * deltaVa/(1+Rf/Rg)
+.param k=0.42
+* .ic I(L1)=-1A
+.param f_I_ctrl = 500
+.param Csar = 10p
+.param Ipump = 1m
+.model mysw sw (Ron=1m Roff=1meg Vt=10 Vh=-.05 Ilimit=50m)
+* SINE(0 1 {f_I_ctrl} 1m)
+* "Solving SPICE Convergence Problems"\nhttp://www.intusoft.com/articles/converg.pdf\n  (1)  opamp OPA404 (aus OPA404.lib) entfernt\n  (2)  M1 Power NFET, keyword "off" added\n.... Ok war wieder mal kleinscheiß, YS2 hat gefloated
+* OPA404 -> convergence problems
+* Seit langem schon auftretender DC-op Fehler gelöst (22-08-2015)
+* V_R8=
+* V_R31=
+.param Vsweep=0
+* .step param Vsweep 0 2.5 0.25
+* .step param Kp 10 100 10
+;V(pwrCtrlx):  -1.25V ... 1.25V
+.param R1=60k
+.param R2=60k
+.param R3=60k
+.param R4=60k
+.param Rmon = 270
+* .step param Rmon list 270 100 27
+.lib ..\sym\EXTRA\Misc\pot.lib
+.lib EIT_sub\vdc_single.sub
+.lib LTC.lib
+.lib LTC1.lib
+.lib LTC5.lib
+.lib LTC6360.sub
+.lib MDB_sub/jumperRes.sub
+.backanno
+.end

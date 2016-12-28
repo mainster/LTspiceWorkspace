@@ -1,0 +1,28 @@
+Circuit: * Z:\home\koblitz\Simulationsbeispiele_SS15\ADS\pll_filt3-fsprung-PFD.asc
+
+WARNING: Less than two connections to node NC_01.  This node is used by V2.
+WARNING: Less than two connections to node NC_02.  This node is used by A:U5:1.
+Per .tran options, skipping operating point for transient analysis.
+Ignoring empty pin current: Ix(u3:in)
+Ignoring empty pin current: Ix(u9:inp)
+Ignoring empty pin current: Ix(u9:inm)
+Ignoring empty pin current: Ix(u8:phie)
+
+Date: Tue Jun 23 10:52:29 2015
+Total elapsed time: 31.577 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 687135
+traniter = 687135
+tranpoints = 300806
+accept = 184463
+rejected = 116343
+matrix size = 110
+fillins = 2
+solver = Normal
+Matrix Compiler1: 2,83 KB object code size  4.0/3.3/[1.9]
+Matrix Compiler2: 5,28 KB object code size  3.1/4.1/[2.5]
+
+

@@ -1,0 +1,47 @@
+*$
+* PART NUMBER:NJM074
+* MANUFACTURER: NEW JAPAN RADIO
+* All Rights Reserved Copyright (c) Bee Technologies Inc. 2005
+.Subckt NJM074 OUT1 -IN1 +IN1 V+ +IN2 -IN2 OUT2 OUT3 -IN3 +IN3 V- 
++ +IN4 -IN4 OUT4
+X_U1     +IN1 -IN1 V+ V- OUT1 NJM074_S
+X_U2     +IN2 -IN2 V+ V- OUT2 NJM074_S
+X_U3     +IN3 -IN3 V+ V- OUT3 NJM074_S
+X_U4     +IN4 -IN4 V+ V- OUT4 NJM074_S
+.ends  NJM074
+.subckt NJM074_S  1 2 3 4 5
+  c1   11 12 2.8868E-12
+  c2    6  7 10.000E-12
+  css  10 99 1.0000E-30
+  dc    5 53 dy
+  de   54  5 dy
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 50.810E6 -1E3 1E3 51E6 -51E6
+  ga    6  0 11 12 157.08E-6
+  gcm   0  6 10 99 41.320E-9
+  iss   3 10 dc 130.00E-6
+  hlim 90  0 vlim 1K
+  j1   11  2 10 jx1
+  j2   12  1 10 jx2
+  r2    6  9 100.00E3
+  rd1   4 11 6.3662E3
+  rd2   4 12 6.3662E3
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 1.8000E3
+  rss  10 99 1.5385E6
+  vb    9  0 dc 0
+  vc    3 53 dc 2.2147
+  ve   54  4 dc 2.2147
+  vlim  7  8 dc 0
+  vlp  91  0 dc .8
+  vln   0 92 dc .8
+.model dx D(Is=800.00E-18)
+.model dy D(Is=800.00E-18 Rs=1m Cjo=10p)
+.model jx1 PJF(Is=8.7500E-12 Beta=189.80E-6 Vto=-.9985)
+.model jx2 PJF(Is=6.2500E-12 Beta=189.80E-6 Vto=-1.001500)
+.ends
+*$

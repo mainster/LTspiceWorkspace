@@ -1,0 +1,75 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\oscillators\Pierce-Oszillator.asc
+Q1 N001 B E 0 2N2222
+R1 E 0 2k2
+R2 B 0 33k
+C1 B E 180p
+C2 E 0 120p
+R3 N001 B 100k
+R4 P001 P002 {Rs}
+C3 P002 0 {Cs}
+C4 0 0 {Cp}
+L1 0 P001 {Ls}
+XU1 N001 vdc_single V=10V
+I2 0 XTAL AC 1
+R5 N002 P003 {Rs}
+C5 P003 0 {Cs}
+C6 N003 0 {Cp}
+L2 XTAL N002 {Ls}
+XU5 XTAL N003 jumperConfig cl={x} R_open=100meg R_close=1u
+Cs xc 0 {Cs} Rser=1
+Ls N004 0 {Ls}
+I5 0 xL AC 1
+I3 0 xc AC 1
+R6 xL N004 {Rs}
+E1 L_Zs 0 N005 0 laplace=Rs+s*Ls+1/(s*Cs)
+V1 N005 0 0 AC 1
+E2 L_Xcp 0 N005 0 laplace=1/(s*Cp)
+B1 z 0 V=V(L_Zs)+V(L_Xcp)
+E3 L_Zz 0 N005 0 laplace=( 1/(s*Cp) )*( Rs+s*Ls+1/(s*Cs) )/( 1/(s*Cp) + Rs+s*Ls+1/(s*Cs) )
+I6 0 Zs AC 1
+R7 N008 P004 {Rs}
+C7 P004 0 {Cs}
+C8 N009 0 {Cp}
+L3 Zs N008 {Ls}
+XU6 Zs N009 jumperConfig cl={1-x} R_open=100meg R_close=1u
+XX1 N007 NC_01 NC_02 NC_03 crystal_param_mdb params: Cs = 5p Rs=100
+I1 0 N006 AC 1
+
+* block symbol definitions
+.subckt crystal_param_mdb 1 2 fs Q
+R1 N001 P001 {Rs}
+C1 P001 2 {Cs}
+C2 1 2 {Cp}
+L1 1 N001 {Ls}
+.param Crystal=1
++ Rs = 1
++ Ls = 1u
++ Cp = 2n
++ Cs = 98.9p
++ fs = 16Meg
+.ends crystal_param_mdb
+
+.model NPN NPN
+.model PNP PNP
+.lib C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\lib\cmp\standard.bjt
+* .options plotwinsize=0\n .param PierceOscill=1\n+ C = 40n\n+ L = {1/(4*pi**2*f0**2*C)}\n+ Q = 50000\n+ Rp = {Q/(2*pi*f0*C)}\n+ A = 1.5
+* .tran 0 {2*29k*1/8.842Meg} 0 2e-9
+.ac oct 10000 1e6 100e6
+* .param Crystal=1\n+ Rs = 23\n+ Cs = 27f\n+ Ls = 12mH\n+ Cp = 6p\n+ f0 = 1meg
+* .param SapS49=1\n+ Rs = 1\n+ Cs = 98.9p\n+ Ls = 1u\n+ Cp = 2n\n+ fp = 16Meg\n+ fs = 16meg\n+ f0 = {fs}
+.param x = 1
+;.step param x list 1 0
+.param SapS49=1
++ Rs = 1
++ Cs = 980.9p
++ Ls = 1u
++ Cp = 2n
++ fp = 16Meg
++ fs = 16meg
++ f0 = {fs}
+* .param SapS49=1\n+ Rs = 1\n+ Cs = 98.9p\n+ Ls = 1u\n+ Cp = 2n\n+ fp = 16Meg\n+ fs = 16meg\n+ f0 = {fs}
+.SUBCKT B32K130 1 2 PARAMS: TOL=0
+.lib EIT_sub/vdc_single.sub
+.lib MDB_sub/jumper_setable.sub
+.backanno
+.end

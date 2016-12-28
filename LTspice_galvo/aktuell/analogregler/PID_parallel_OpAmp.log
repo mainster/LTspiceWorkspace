@@ -1,0 +1,42 @@
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\galvoscanner\aktuell\analogregler\PID_parallel_OpAmp.asc
+
+C12: Increased Cpar to 2e-015
+C11: Increased Cpar to 1e-016
+WARNING: Less than two connections to node PL1.  This node is used by L3.
+WARNING: Less than two connections to node PL2.  This node is used by L2.
+WARNING: Less than two connections to node PL2O.  This node is used by L6.
+WARNING: Less than two connections to node PL3O.  This node is used by L7.
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+vernier = 0.5
+vernier = 0.25
+vernier = 0.125
+Gmin = 4.81882
+vernier = 0.0625
+vernier = 0.03125
+vernier = 0.015625
+vernier = 0.0078125
+Gmin = 4.73544
+vernier = 0.00390625
+vernier = 0.00195313
+vernier = 0.000976563
+vernier = 0.000488281
+Gmin = 4.73428
+Gmin = 0
+Gmin stepping failed
+
+Starting source stepping with srcstepmethod=0
+Source Step = 3.0303%
+vernier = 0.25
+Source Step = 0.0177557%
+Starting source stepping with srcstepmethod=1
+Source Step = 3.0303%
+vernier = 0.25
+Source stepping failed
+
+Singular matrix:  Check nodes u10:n026 and -3o
+   Iteration No. 1
+Fatal Error: Singular matrix:  check nodes u10:n026 and -3o
+   Iteration No. 1
+

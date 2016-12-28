@@ -1,0 +1,21 @@
+* Z:\media\data\CODES\LTSpice_projects\bandgap_zelle\diodenzelle.asc
+Qa1 a a 0 0 CA3046
+Qb1 N002 N002 0 0 CA3046
+Ra1 bg a 1k
+Rb1 bg b 10k
+R2 b N002 1k
+XU2 a b N001 opamp_param_3 Vp=10 Vm=-10 Ilim=20m FT=10Meg SR=10 Vos=0 A0=100k phir=45 en=0 enk=0 in=0 ink=0 Rin=500Meg
+R6 N001 N003 3k
+R7 N003 0 1k
+Vbg bg 0 1
+.model NPN NPN
+.model PNP PNP
+.lib C:\Program Files (x86)\LTC\LTspiceIV\lib\cmp\standard.bjt
+;dc vbg 0 1.7 0.01
+.dc Vbg 0 1.7 0.01
+.param Rdc=100meg
+.param Rop=1m
+.param Rs=10k
+.lib EIT_sub\opamp_parametrierbar.sub
+.backanno
+.end

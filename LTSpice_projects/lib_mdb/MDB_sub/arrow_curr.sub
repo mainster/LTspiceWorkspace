@@ -1,0 +1,4 @@
+.SUBCKT arrow_curr 1 2
+Rp2 1 2 {Rsh} noiseless
+.param Rsh=1u
+.ends 

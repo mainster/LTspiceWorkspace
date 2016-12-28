@@ -1,0 +1,65 @@
+Stray ".ends" card: .ends
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\ua741_diskret\ua741_diskret_moreRs_v2.asc
+
+Rl: both pins shorted together -- ignoring.
+WARNING: Less than two connections to node DV.  This node is used by B1.
+WARNING: Less than two connections to node RPR.  This node is used by B2.
+WARNING: Less than two connections to node RPL.  This node is used by B3.
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+Gmin = 1.07374
+Gmin = 0.115292
+Gmin = 0.0123794
+Gmin = 0.00132923
+Gmin = 0.000142725
+Gmin = 1.5325e-005
+Gmin = 1.6455e-006
+Gmin = 1.76685e-007
+Gmin = 1.89714e-008
+Gmin = 2.03704e-009
+vernier = 0.5
+vernier = 0.25
+vernier = 0.333333
+Gmin = 1.54294e-009
+vernier = 0.444444
+Gmin = 6.10593e-010
+vernier = 0.592592
+vernier = 0.790123
+Gmin = 1.39684e-010
+vernier = 1
+Gmin = 1.70576e-011
+Gmin = 1.83154e-012
+Gmin = 1.9666e-013
+Gmin = 0
+Gmin stepping succeeded in finding the operating point.
+
+
+
+Measurement "i0ma" FAIL'ed
+gmdv: alpha*i0m/(2*vt)=0.000304923
+sr: alpha*i0m/ccomp=1.05707e+006
+ft: gmdv/(2*pi*ccomp)=3.23533e+006
+
+Measurement "ft2" FAIL'ed
+
+
+Date: Sat Jun 20 18:11:49 2015
+Total elapsed time: 0.237 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 2991
+traniter = 2088
+tranpoints = 1045
+accept = 1045
+rejected = 0
+matrix size = 43
+fillins = 69
+solver = Normal
+Thread vector: 11.7/7.7[2] 3.8/2.7[2] 4.1/2.9[2] 0.5/1.3[1]  2592/500
+Matrix Compiler1: 6.21 KB object code size  2.8/1.8/[0.7]
+Matrix Compiler2: 5.19 KB object code size  1.1/1.4/[0.8]
+
+

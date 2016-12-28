@@ -1,0 +1,11 @@
+* Z:\home\koblitz\Simulationsbeispiele_SS15\Elektronik_lab\mittwoch\fft-1.asc
+D1 out 0 1N4148
+R1 N001 out 1k
+V1 N001 0 SINE(0 0.5 0.93k)
+V2 N002 0 SINE(0 1 1meg)
+.model D D
+.lib Z:\home\koblitz\LT-Spice\lib\cmp\standard.dio
+.tran 10m
+.four  930 V(out)
+.backanno
+.end

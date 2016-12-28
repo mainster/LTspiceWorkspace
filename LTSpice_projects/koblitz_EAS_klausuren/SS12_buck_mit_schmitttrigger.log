@@ -1,0 +1,26 @@
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\koblitz_EAS_klausuren\SS12_buck_mit_schmitttrigger.asc
+
+WARNING: Less than two connections to node VE.  This node is used by V:U1:1.
+WARNING: Less than two connections to node N001.  This node is used by V4.
+WARNING: Less than two connections to node MEAS1.  This node is used by B2.
+WARNING: Less than two connections to node MEAN.  This node is used by B3.
+Direct Newton iteration for .op point succeeded.
+
+Date: Tue Feb 17 20:05:50 2015
+Total elapsed time: 4.088 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 323874
+traniter = 323871
+tranpoints = 160736
+accept = 96658
+rejected = 64078
+matrix size = 21
+fillins = 1
+solver = Normal
+Matrix Compiler1: 518 bytes object code size  0.3/0.2/[0.2]
+Matrix Compiler2: 1,09 KB object code size  0.3/0.4/[0.2]
+
+

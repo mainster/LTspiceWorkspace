@@ -1,0 +1,57 @@
+<HTML>
+  <HEAD>
+    <TITLE>Kurzkanal-Effekt</TITLE>
+  </HEAD>
+  <BODY BGCOLOR="#F0F0F0">
+    <H1 ALIGN=center><B>Kurzkanal-Effekt</B></H1>
+    <P>
+Einflu&szlig; des Kurzkanal-Effekts auf die effektive Schwellenspannung
+    </P>
+    <P>
+      Kurzkanal-Effekt des Mosfets NMOS2 (Level-2-Modell).
+    </P>
+    <P>
+      Hier mu&szlig; ein Mosfet mit Level-2-Modell verwendet werden, da der
+      Kurzkanal-Effekt im Level-1-Modell nicht enthalten ist. Die Kanall&auml;nge
+      L wird im Bereich 0,5...10 Mikrometer variiert. Die Kanalweite W wird
+      ebenfalls variiert, damit das Verh&auml;ltnis W/L konstant bleibt; dabei mu&szlig;
+      W relativ gro&szlig; gew&auml;hlt werden, damit der Schmalkanal-Effekt vermieden
+      wird. Simuliert wird die Gate-Source-Spannung UGS=-US bei eingepr&auml;gtem
+      Drainstrom ID=Ib. Der Strom ist so klein, da&szlig; die Gate-Source-Spannung
+      praktisch der Schwellenspannung Uth entspricht. Durch den Kurzkanal-
+      Effekt nimmt die Schwellenspannung bei abnehmender Kanall&auml;nge L ab:
+      f&uuml;r L>3um ist Uth mit 750...780mV n&auml;herungsweise konstant, f&uuml;r L->0,5um
+      nimmt Uth auf etwa 520mV ab.
+    </P>
+    <P>
+      Bei dieser Simulation mu&szlig; der Bulk-Anschlu&szlig; des Mosfets mit der Source
+      verbunden werden, damit das Ergebnis nicht durch den Substrat-Effekt
+      verf&auml;lscht wird: BULK=US.
+    </P>
+    <P><TABLE BORDER=2 BGCOLOR="#F0F0F0">
+      <TR>
+        <TD><B>Analysen</B></TD>
+        <TD><B>Einstellungen</B></TD>
+        <TD><B>Ergebnisanzeigen</B></TD>
+      </TR>
+      <TR>
+        <TD>DC</TD>
+        <TD>L = 0.5 ... 10</TD>
+        <TD>Schwellenspannung</TD>
+      </TR>
+    </TABLE></P>
+    <P><TABLE BORDER=0 BGCOLOR="#F0F0F0" WIDTH=100%>
+      <TR>
+        <TH WIDTH=20% ALIGN=left>
+          <A HREF="ueber.htm" TARGET="uebersicht"><B>zur&uuml;ck</B></A>
+        </TH>
+        <TH WIDTH=20% ALIGN=left>
+          <A HREF="../../ueber.htm" TARGET="uebersicht"><B>&Uuml;bersicht</B></A>
+        </TH>
+        <TH WIDTH=60% ALIGN=left>
+          <A HREF="Kurzkanal-Effekt.tse"><B>Simulation starten</B></A>
+        </TH>
+      </TR>
+    </TABLE></P>
+  </BODY>
+</HTML>

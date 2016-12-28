@@ -1,0 +1,71 @@
+Circuit: * C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\examples\Basso\BassoBook20100103\Switch-Mode Power Supplies - Basso- Figure 2-45.asc
+
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Increasing initial diagonal Gmin to 100
+Gmin = 100
+Gmin = 10.7374
+Gmin = 1.15292
+Gmin = 0.123794
+Gmin = 0.0132923
+Gmin = 0.00142725
+vernier = 0.5
+vernier = 0.25
+vernier = 0.125
+vernier = 0.0625
+Gmin = 0.00101493
+vernier = 0.03125
+vernier = 0.015625
+vernier = 0.0078125
+Gmin = 0.000999238
+vernier = 0.00390625
+vernier = 0.00195313
+vernier = 0.000976563
+vernier = 0.000488281
+Gmin = 0.000999969
+Gmin = 0
+Gmin stepping failed
+
+Starting source stepping with srcstepmethod=0
+Source Step = 3.0303%
+Source Step = 33.3333%
+Source Step = 63.6364%
+Source Step = 66.6785%
+Starting source stepping with srcstepmethod=1
+Source Step = 3.0303%
+Source Step = 33.3333%
+Source Step = 63.6364%
+Source stepping failed
+
+Pseudo Transient succeeded in finding the operating point.
+Ignoring empty pin current: Ix(x1:d)
+Ignoring empty pin current: Ix(x2:1)
+Ignoring empty pin current: Ix(x2:2)
+Ignoring empty pin current: Ix(x1:x1:d)
+Ignoring empty pin current: Ix(x1:x2:d2nc)
+Ignoring empty pin current: Ix(x1:x2:d)
+Ignoring empty pin current: Ix(x1:d)
+Ignoring empty pin current: Ix(x2:1)
+Ignoring empty pin current: Ix(x2:2)
+Ignoring empty pin current: Ix(x1:x1:d)
+Ignoring empty pin current: Ix(x1:x2:d2nc)
+Ignoring empty pin current: Ix(x1:x2:d)
+
+Date: Mon Feb 09 12:12:00 2015
+Total elapsed time: 0.586 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 33442
+traniter = 13153
+tranpoints = 6038
+accept = 4087
+rejected = 3579
+matrix size = 25
+fillins = 32
+solver = Normal
+Matrix Compiler1: 2.22 KB object code size  0.8/0.5/[0.3]
+Matrix Compiler2: 2.16 KB object code size  1.2/1.5/[1.0]
+
+

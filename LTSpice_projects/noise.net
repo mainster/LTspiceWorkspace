@@ -1,0 +1,7 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\noise.asc
+R1 N001 out 1k
+R2 out 0 10k
+V1 N001 0 ac 1
+.noise V(out) V1 oct 100 1 1meg
+.backanno
+.end

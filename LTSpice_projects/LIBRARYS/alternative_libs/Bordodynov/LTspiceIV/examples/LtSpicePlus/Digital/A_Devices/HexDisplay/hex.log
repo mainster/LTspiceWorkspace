@@ -1,0 +1,28 @@
+Circuit: * C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\examples\LtSpicePlus\Digital\A_Devices\HexDisplay\hex.asc
+
+WARNING: Less than two connections to node VM.  This node is used by VM.
+WARNING: Less than two connections to node NTC.  This node is used by A71.
+WARNING: Less than two connections to node NMC.  This node is used by A75.
+WARNING: Less than two connections to node NBBC.  This node is used by A77.
+WARNING: Less than two connections to node NTE.  This node is used by A34.
+WARNING: Less than two connections to node NBE.  This node is used by A55.
+Direct Newton iteration for .op point succeeded.
+
+Date: Mon Feb 09 11:31:57 2015
+Total elapsed time: 0.193 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 7320
+traniter = 7313
+tranpoints = 3362
+accept = 2779
+rejected = 583
+matrix size = 62
+fillins = 0
+solver = Normal
+Matrix Compiler1: 948 bytes object code size  0.8/0.6/[0.5]
+Matrix Compiler2: 2.43 KB object code size  1.2/1.5/[0.6]
+
+

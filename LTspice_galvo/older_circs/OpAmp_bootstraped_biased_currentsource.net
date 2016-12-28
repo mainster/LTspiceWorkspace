@@ -1,0 +1,86 @@
+* C:\users\mainster\My Documents\CODES_local\LTSpice_projects\galvoscanner\OpAmp_bootstraped_biased_currentsource.asc
+R1 N006 N012 1k
+Q1 Vp N006 N009 0 BC547B
+M1 Vp N009 N013 N013 IRFP240
+R2 N013 N009 270
+R3 out5 N013 1m
+R4 N023 out5 1m
+M2 Vm N022 N023 N023 IRF9640
+Q2 Vm N026 N022 0 BC327-40
+R5 N022 N023 270
+R6 N021 N026 1k
+D1 outOp N021 1N4148
+D2 N012 outOp 1N4148
+RL1 out5 N019 2
+R§Shunt1 N019 0 0.1
+R7 N002 N001 10k
+XU1 in+ N001 Op+ op- outOp level.2 Avol=1Meg GBW=10Meg Slew=10Meg ilimit=25m rail={rail} Vos=0 phimargin=45 en=0 enk=0 in=0 ink=0 Rin=500Meg
+R8 in+ in 1k
+Q3 Vp N011 Op+ 0 2N2222
+Q4 Vm N024 op- 0 2N2907
+R9 Vp N011 {R2}
+R10 N024 Vm {R2}
+R11 outOp N018 {R1}
+R12 N016 outOp {R1}
+D3 N018 N024 1N4148
+D4 N011 N016 1N4148
+C1 N011 N024 100n
+R13 N001 0 100k
+V1 Vm 0 {-Vsup}
+V2 Vp 0 {Vsup}
+V3 in 0 SINE(0 1 1k) AC 1
+I2 Vp N006 {Ik}
+I3 N026 Vm {Ik}
+R17 N008 N015 1k
+R18 Vp N004 4.8k
+R§Isource1 N015 0 {Rl}
+R19 N010 Vm 1k
+R20 0 N007 4.7k
+R§Isink1 0 N005 {Rl}
+Q7 N005 N007 N010 0 NPN
+Q8 Vp N004 N008 0 NPN
+R14 out2 N003 250k
+XU2 in+2 N003 Op2+ op2- out2 level.2 Avol=1Meg GBW=10Meg Slew=10Meg ilimit=25m rail={rail} Vos=0 phimargin=45 en=0 enk=0 in=0 ink=0 Rin=500Meg
+R15 in+2 in3 100k
+Q5 Vp N014 Op2+ 0 2N2222
+Q6 Vm N025 op2- 0 2N2907
+R16 Vp N014 {R2}
+R21 N025 Vm {R2}
+R22 out2 N020 {R1}
+R23 N017 out2 {R1}
+D5 N020 N025 1N4148
+D6 N014 N017 1N4148
+C2 N014 N025 100n
+R24 N003 0 100k
+B1 in2 0 V=V(sin2)*2*time/tstop
+R25 out2 in+2 110t
+E1 N002 0 N019 0 1
+V4 sin2 0 SINE(0 1 1k)
+V5 in3 0 SINE(0 1 1k)
+.model D D
+.lib C:\Program Files (x86)\LTC_orig\LTspiceIV_4.18\lib\cmp\standard.dio
+.model NPN NPN
+.model PNP PNP
+.lib C:\Program Files (x86)\LTC_orig\LTspiceIV_4.18\lib\cmp\standard.bjt
+.model NMOS NMOS
+.model PMOS PMOS
+.lib C:\Program Files (x86)\LTC_orig\LTspiceIV_4.18\lib\cmp\standard.mos
+.param Vsup=30
+.param Ik=3.9m
+.param R1=10k
+.param R2=20k
+.param rail=0
+.param Rl=200
+.param tstop=5m
+.param vsw=15
+.dc V5 {-vsw} {vsw} 0.01
+* designfeature By Grayson King and Tim Watkins, Analog Devices Inc\n \nBootstrapping your op amp\nyields wide voltage swings
+* abs(V(Op+)-V(op-))
+* .step param R2 40k 10k 5k
+* .step param rail 0 -5 -1
+* .step temp list 27 80
+* As with all op-amp applications, you\nmust ensure that the voltage at the noninverting\ninput always remains within\nthe device’s common-mode input range.\nWhereas this task is trivial in standard\nop-amp circuits with fixed power supplies,\nit requires more insight for bootstrapping\nconfigurations, in which the\nop-amp supply rails change with the output.\nEven as VCO and VEO change, VIN\nmust always remain between them (Figure\n2).You must guarantee this situation\nby design, or a latched condition might\noccur. To ensure that your design meets\ninput common-mode range under all\nconditions, you must address dc conditions,\ntransient conditions, phase reversal,\nand power-up conditions.
+* .step param vsw 1 4 1
+.lib UniversalOpamps2.sub
+.backanno
+.end

@@ -1,0 +1,32 @@
+* C:\users\mainster\My Documents\CODES_local\LTSpice_projects\bandgap_zelle\transistorzelle_mit_startsch_mit_op.asc
+Qa1 a Vref N004 0 CA3046
+Qb1 b Vref N003 0 CA3046
+Ra1 N001 a 1k
+Rb1 N001 b {Rb1}
+R2 N003 N004 1k
+R1 N004 0 {R1}
+Vp1 N001 0 15
+Qb2 b N002 N003 0 CA3046
+Rs N001 N002 10k
+D1 N002 0 1N4148
+XU1 a b RefOut opamp_param_3 Vp=10 Vm=-10 Ilim=20m FT=10Meg SR=10 Vos=0 A0=100k phir=45 en=0 enk=0 in=0 ink=0 Rin=500Meg
+R3 RefOut BG 800
+R4 BG 0 1k
+Rop Vref BG {Rop}
+.model D D
+.lib Z:\home\mainster\.wine\drive_c\Program Files (x86)\LTC\LTspiceIV\lib\cmp\standard.dio
+.model NPN NPN
+.model PNP PNP
+.lib Z:\home\mainster\.wine\drive_c\Program Files (x86)\LTC\LTspiceIV\lib\cmp\standard.bjt
+.dc temp 0 100 2
+.param Rdc=1m
+.param Rop=1u
+.param Rs=10k
+* .step param Rs list 1k 10k 100k
+.param R1=925
+* .step param R1 800 925 35
+.param Rb1=10k
+;.step param Rb1 list  10k 9k 7k
+.lib EIT_sub\opamp_parametrierbar.sub
+.backanno
+.end

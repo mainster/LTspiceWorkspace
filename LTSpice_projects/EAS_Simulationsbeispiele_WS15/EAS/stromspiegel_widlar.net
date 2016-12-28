@@ -1,0 +1,15 @@
+* Z:\home\koblitz\Simulationsbeispiele_WS15\EAS\stromspiegel_widlar.asc
+Q2 N001 N002 N003 0 CA3046
+Q1 N002 N002 0 0 CA3046
+R2 N003 0 {re}
+I1 0 N002 1m
+Vc2 N001 0 1
+.model NPN NPN
+.model PNP PNP
+.lib Z:\home\koblitz\LT-Spice\lib\cmp\standard.bjt
+;op
+.param re=1.56k
+.dc Vc2 0.5 10 0.1
+.step param re list 1.56k 10k
+.backanno
+.end

@@ -1,0 +1,4 @@
+The Packed file contains the big amount of the additional models and their symbol.
+Much examples is kept In folder "example".
+The folder EXTRA modernized. 
+The Files standard.xxx are complemented popular transistor and russian element.

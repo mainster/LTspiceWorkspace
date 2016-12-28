@@ -1,0 +1,56 @@
+* Z:\media\data\CODES\LTSpice_projects\galvoscanner\testScheißIteration.asc
+Q§T1 Vplus N001 Gn1 0 BC547B
+Q§T2 Vmin N007 Gp1 0 BC327-40
+R1 Gn1 Sn1 {Rbias}
+R2 Sp1 Gp1 {Rbias}
+R3 N001 N002 1k
+R4 N005 N007 1k
+D1 N002 N003 1N4148
+D2 N003 N005 1N4148
+Rload1 N006 N008 2
+R5 Sn1 out_A 1µ
+R6 out_A Sp1 1µ
+M1 Vplus Gn1 Sn1 Sn1 IRFP240
+M2 Vmin Gp1 Sp1 Sp1 IRFP9240
+R7 N008 N004 9k
+R8 N004 0 100t
+L1 out_A N006 100µ
+XU1 N010 Vmin N011 TL431
+R9 Vplus N010 4.7k
+Q1 IsinkOP N010 N011 0 BC547B
+R10 N011 Vmin 613
+V1 Vplus 0 {vsup}
+V2 Vmin 0 {-vsup}
+V3 in 0 0
+R11 N007 N009 1m
+XU3 in N004 N003 opamp_param_3 Vp=20 Vm=-20 Ilim=20m FT=10Meg SR=10 Vos=0 A0=100k phir=45 en=0 enk=0 in=0 ink=0 Rin=500Meg
+I1 0 N001 4m
+R12 vplus IsinkOP 300
+I2 N009 0 4m
+R13 N008 0 0.1
+.model D D
+.lib C:\Program Files (x86)\LTC\LTspiceIV\lib\cmp\standard.dio
+.model NPN NPN
+.model PNP PNP
+.lib C:\Program Files (x86)\LTC\LTspiceIV\lib\cmp\standard.bjt
+.model NMOS NMOS
+.model PMOS PMOS
+.lib C:\Program Files (x86)\LTC\LTspiceIV\lib\cmp\standard.mos
+* .temp 27 90
+.model npnx npn (Bf=200 Is={10m/exp(0.7/26m)}
+.model pnpx pnp (Bf=200 Is={10m/exp(0.7/26m)}
+.model Dx D (Is={(20*50u)/exp(0.7/26m)}
+* 4.27m
+.dc V3 -0.1 0.1 0.01
+.param vsup=25
+* .step param vsup  list 25 12
+* PULSE(-.5 .5 0 1m 1m 10m 23m)
+* Vp=25 Vm=-25 Ilim=20m
+.param Rbias = 100
+.step param Rbias 1 10k 1k
+* 310R
+* .step param vsup 25 15 -1
+.lib EIT_sub\opamp_parametrierbar.sub
+.lib tl431.sub
+.backanno
+.end

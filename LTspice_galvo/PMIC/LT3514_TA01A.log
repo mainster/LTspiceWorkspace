@@ -1,0 +1,35 @@
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\galvoscanner\PMIC\LT3514_TA01A.asc
+
+Direct Newton iteration for .op point succeeded.
+Ignoring empty pin current: Ix(u1:1)
+Ignoring empty pin current: Ix(u1:2)
+Ignoring empty pin current: Ix(u1:11)
+Ignoring empty pin current: Ix(u1:14)
+Ignoring empty pin current: Ix(u1:18)
+Ignoring empty pin current: Ix(u1:22)
+Ignoring empty pin current: Ix(u1:1)
+Ignoring empty pin current: Ix(u1:2)
+Ignoring empty pin current: Ix(u1:11)
+Ignoring empty pin current: Ix(u1:14)
+Ignoring empty pin current: Ix(u1:18)
+Ignoring empty pin current: Ix(u1:22)
+
+Date: Tue Jun 02 15:55:52 2015
+Total elapsed time: 47.353 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 1089856
+traniter = 1089841
+tranpoints = 325080
+accept = 237214
+rejected = 87866
+matrix size = 97
+fillins = 0
+solver = Normal
+Thread vector: 43.0/25.6[4] 21.0/14.0[4] 5.6/5.0[2] 0.8/1.4[1]  2592/500
+Matrix Compiler1: 3.65 KB object code size  2.6/1.7/[1.1]
+Matrix Compiler2: 6.20 KB object code size  2.2/2.7/[1.0]
+
+

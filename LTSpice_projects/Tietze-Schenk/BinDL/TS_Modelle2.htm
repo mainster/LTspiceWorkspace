@@ -1,0 +1,407 @@
+<HTML>
+  <HEAD>
+    <TITLE>Tietze/Schenk - Bilbliothek TS_Modelle2</TITLE>
+  </HEAD>
+  <BODY BGCOLOR="#FFFFFF">
+  
+  <H1>Bilbliothek TS_Modelle2</H1>
+  <P>
+    <B>Wichtiger Hinweis:</B> Dieses Dokument beschreibt die Parameter der Elemente.
+    Die Parameter setzen sich aus prim&auml;ren Parametern und sekund&auml;ren
+    Parametern zusammen. Die prim&auml;ren Parameter werden im Schaltplan angezeigt
+    und können durch Doppelklick auf den Wert ge&auml;ndert werden. Die sekund&auml;ren
+    Parameter werden &uuml;ber den Men&uuml;punkt <B>Edit/Attributes</B> oder durch einen
+    Doppelklick auf das Schaltsymbol aufgerufen.
+  </P>
+  <TABLE BORDER="1"><A NAME="top"></A>
+    <TR><TH><B>Name</B></TH><TH><B>Beschreibung</B></TH></TR>
+    <TR><TD><A HREF="#evalue"><B>E-Gleichung</B></A></TD><TD>Spannungsgesteuerte Spannungsquelle (Gleichungsform)</TD></TR>
+    <TR><TD><A HREF="#gvalue"><B>G-Gleichung</B></A></TD><TD>Spannungsgesteuerte Stromquelle (Gleichungsform)</TD></TR>
+    <TR><TD><A HREF="#switch"><B>Schalter</B></A></TD><TD>Ein-/Ausschalter</TD></TR>
+    <TR><TD><A HREF="#amp"><B>Ver</B></A></TD><TD>Verst&auml;rker mit Rauschquellen</TD></TR>
+    <TR><TD><A HREF="#wmeter"><B>Wellen</B></A></TD><TD>Wellen-Messer (vor-/r&uuml;cklaufend)</TD></TR>
+    <TR><TD><A HREF="#sport"><B>S-Port</B></A></TD><TD>Definition des Ports f&uuml;r S-Parameter-Messung</TD></TR>
+    <TR><TD><A HREF="#sport1"><B>Port-1</B></A></TD><TD>Port 1 f&uuml;r S-Parameter-Messung</TD></TR>
+    <TR><TD><A HREF="#sport2"><B>Port-2</B></A></TD><TD>Port 2 f&uuml;r S-Parameter-Messung</TD></TR>
+    <TR><TD><A HREF="#lgmode"><B>LG-Modus</B></A></TD><TD>Definition des Modus f&uuml;r die Loop-Gain-Messung</TD></TR>
+    <TR><TD><A HREF="#lg"><B>LG</B></A></TD><TD>Loop-Gain-Messung</TD></TR>
+    <TR><TD><A HREF="#lgdiff"><B>LGdiff</B></A></TD><TD>Differentielle Loop-Gain-Messung</TD></TR>
+    <TR><TD><A HREF="#hybrid180"><B>Hybrid180</B></A></TD><TD>180 Grad Hybrid</TD></TR>
+    <TR><TD><A HREF="#hybrid90"><B>Hybrid90</B></A></TD><TD>90 Grad Hybrid</TD></TR>
+    <TR><TD><A HREF="#iffilter"><B>ZK-Filter</B></A></TD><TD>Zweikreisiges Bandfilter</TD></TR>
+    <TR><TD><A HREF="#butterworth5"><B>Butterworth5</B></A></TD><TD>Butterworth-Tiefpass 5.Grades</TD></TR>
+    <TR><TD><A HREF="#iqmixer"><B>IQ-Mischer</B></A></TD><TD>I/Q-Mischer mit Lokaloszillatoren</TD></TR>
+    <TR><TD><A HREF="#mixer"><B>Mischer</B></A></TD><TD>Mischer (idealer Multiplizierer)</TD></TR>
+    <TR><TD><A HREF="#delay"><B>Delay</B></A></TD><TD>Verz&ouml;gerungsglied</TD></TR>
+    <TR><TD><A HREF="#trigger"><B>Trigger</B></A></TD><TD>Schmitt-Trigger</TD></TR>
+    <TR><TD><A HREF="#rcosflt"><B>RCosFlt</B></A></TD><TD>Cosinus-Rolloff-Tiefpass</TD></TR>
+  </TABLE>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="evalue"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>E-Gleichung</B></TD><TD>Spannungsgesteuerte Spannungsquelle (Gleichungsform)</TD></TR>
+      <TR><TD><IMG SRC="data/modelle2_egleichung.png" ALT="Figure"></TD>
+      <TD>
+        Die Spannung dieser Quelle wird durch eine Gleichung angegeben; dabei kann man <BR>
+        die Knotenspannungen als Variablen und eine Vielzahl von
+        <A HREF="data/funktionen.pdf">Funktionen</A> verwenden. <BR>
+        Beispiel: Eine Schaltung hat zwei Knoten mit den Spannungen <B>Ux</B> und <B>Uy</B> und wir <BR>
+        wollen die Spannung ( 2 Ux<SUP>2</SUP> - 3
+        &radic;<SPAN STYLE="text-decoration: overline;">Uy</SPAN> ) berechnen. Dazu definieren wir: <BR>
+        <B>U=2*V(Ux)**2-3*sqrt(V(Uy))</B>.
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">U</TD><TD>=</TD><TD>Gleichung f&uuml;r die Ausgangsspannung</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="gvalue"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>G-Gleichung</B></TD><TD>Spannungsgesteuerte Stromquelle (Gleichungsform)</TD></TR>
+      <TR><TD><IMG SRC="data/modelle2_ggleichung.png" ALT="Figure"></TD>
+      <TD>
+        Der Strom dieser Quelle wird durch eine Gleichung angegeben; dabei kann man <BR>
+        die Knotenspannungen als Variablen und eine Vielzahl von
+        <A HREF="data/funktionen.pdf">Funktionen</A> verwenden. <BR>
+        Beispiel: Eine Schaltung hat zwei Knoten mit den Spannungen <B>Ux</B> und <B>Uy</B> und wir <BR>
+        wollen den Strom ( 2 Ux<SUP>2</SUP> - 3
+        &radic;<SPAN STYLE="text-decoration: overline;">Uy</SPAN> ) berechnen. Dazu definieren wir: <BR>
+        <B>I=2*V(Ux)**2-3*sqrt(V(Uy))</B>.
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">I</TD><TD>=</TD><TD>Gleichung f&uuml;r den Ausgangsstrom</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="switch"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>Schalter</B></TD><TD>Ein-/Ausschalter</TD></TR>
+      <TR><TD><IMG SRC="data/modelle2_schalter.png" ALT="Figure"></TD>
+      <TD>
+        Der Schalter wird durch die Spannung am Schalteingang gesteuert. Bei <B>invertiert=0</B> ist <BR>
+        der Schalter geschlossen, wenn die Schaltspannung gr&ouml;&szlig;er als die Schwellenspannung <BR>
+        ist. Bei <B>invertiert=1</B> ist der Schalter geschlossen, wenn die Schaltspannung kleiner als <BR>
+        die Schwellenspannung ist.
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">Ron</TD><TD>=</TD><TD>Einschaltwiderstand in Ohm</TD></TR>
+          <TR><TD ALIGN="right">Roff</TD><TD>=</TD>
+              <TD>Isolationswiderstand in Ohm, vorbelegt mit 10<SUP>12</SUP> &Omega;</TD></TR>
+          <TR><TD ALIGN="right">Schwelle</TD><TD>=</TD><TD>Schwellenspannung in Volt</TD></TR>
+          <TR><TD ALIGN="right">invertiert</TD><TD>=</TD><TD>Polarit&auml;t der Schaltspannung (0 oder 1)</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="amp"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>Ver</B></TD><TD>Verst&auml;rker mit Rauschquellen</TD></TR>
+      <TR><TD><IMG SRC="data/modelle2_ver.png" ALT="Figure"></TD>
+      <TD>
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">Re</TD><TD>=</TD><TD>Eingangswiderstand in Ohm</TD></TR>
+          <TR><TD ALIGN="right">Ro</TD><TD>=</TD><TD>Ausgangswiderstand in Ohm</TD></TR>
+          <TR><TD ALIGN="right">A</TD><TD>=</TD><TD>Verst&auml;rkung</TD></TR>
+          <TR><TD ALIGN="right">Ar</TD><TD>=</TD><TD>R&uuml;ckw&auml;rts-Verst&auml;rkung</TD></TR>
+          <TR><TD ALIGN="right">ur</TD><TD>=</TD>
+              <TD>&Auml;quivalente Rauschspannungsdichte am Eingang in
+                  Volt/&radic;<SPAN STYLE="text-decoration: overline;">Hz</SPAN></TD></TR>
+          <TR><TD ALIGN="right">ir</TD><TD>=</TD>
+              <TD>&Auml;quivalente Rauschstromdichte am Eingang in
+                  Ampere/&radic;<SPAN STYLE="text-decoration: overline;">Hz</SPAN></TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="wmeter"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>Wellen</B></TD><TD>Wellen-Messer (vor-/r&uuml;cklaufend)</TD></TR>
+      <TR><TD><IMG SRC="data/modelle2_wellen.png" ALT="Figure"></TD>
+      <TD>
+        Mit diesem Element wird die vor- und die r&uuml;cklaufende Welle auf einer Leitung <BR>
+        gemessen. Die Wellengr&ouml;&szlig;en <B>a</B> (vorlaufende Welle) und <B>b</B> (r&uuml;cklaufende Wellen) <BR>
+        werden als Knotenspannungen <B>&lt;Name&gt;.forward</B> und <B>&lt;Name&gt;.reverse</B> <BR>
+        bereitgestellt; dabei ist <B>&lt;Name&gt;</B> der Bauteil-Name des Wellenmessers. <BR>
+        Die Wellengr&ouml;&szlig;en werden im Buch <B>Halbleiter-Schaltungstechnik</B> im <BR>
+        Abschnitt 21.3.1 beschrieben. <BR>
+        Beispiel: Die Wellengr&ouml;&szlig;en des hier gezeigten Wellenmessers W1 werden im <BR>
+        Programm <B>MicroSim Probe</B> mit <B>V(W1.forward)</B> and <B>V(W1.reverse)</B> angezeigt.
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">Z0</TD><TD>=</TD><TD>Wellenwiderstand der Leitung in Ohm</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="sport"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>S-Port</B></TD><TD>Definition des Ports f&uuml;r S-Parameter-Messung</TD></TR>
+      <TR><TD><IMG SRC="data/modelle2_sport.png" ALT="Figure"></TD>
+      <TD>
+         Mit diesem Element wird der aktive Port einer S-Parameter-Messung eingestellt. <BR>
+         Die Simulationsbeispiele in der Gruppe <B>Modelle/S-Parameter</B> verdeutlichen <BR>
+         die Anwendung.
+         <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">Port</TD><TD>=</TD>
+              <TD>aktiver Port (1 oder 2)</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="sport1"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>Port-1</B></TD><TD>Port 1 f&uuml;r S-Parameter-Messung</TD></TR>
+      <TR><TD><IMG SRC="data/modelle2_port1.png" ALT="Figure"></TD>
+      <TD>
+        Quelle f&uuml;r den Port 1 einer S-Parameter-Messung. Die Simulationsbeispiele <BR>
+        in der Gruppe <B>Modelle/S-Parameter</B> verdeutlichen die Anwendung.
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">Z0</TD><TD>=</TD><TD>Wellenwiderstand in Ohm</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="sport2"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>Port-2</B></TD><TD>Port 2 f&uuml;r S-Parameter-Messung</TD></TR>
+      <TR><TD><IMG SRC="data/modelle2_port2.png" ALT="Figure"></TD>
+      <TD>
+        Quelle f&uuml;r den Port 2 einer S-Parameter-Messung. Die Simulationsbeispiele <BR>
+        in der Gruppe <B>Modelle/S-Parameter</B> verdeutlichen die Anwendung.
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">Z0</TD><TD>=</TD><TD>Wellenwiderstand in Ohm</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="lgmode"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>LG-Modus</B></TD><TD>Definition des Modus f&uuml;r die Loop-Gain-Messung</TD></TR>
+      <TR><TD><IMG SRC="data/modelle2_lgmodus.png" ALT="Figure"></TD>
+      <TD>
+        Die Messung der Loop-Gain (Schleifenverst&auml;rkung) erfolgt in zwei Betriebsmodi. <BR>
+        Mit der Variable LGM wird der Modus eingestellt. Da f&uuml;r eine Messung beide Modi <BR>
+        simuliert werden m&uuml;ssen, wird die Variable LGM in allen Loop-Gain-Simulationen <BR>
+        als Simulationsparameter mit der Werteliste (1,2) eingesetzt. Das Beispiel in der <BR>
+        Gruppe <B>Modelle/Loop-Gain</B> verdeutlicht die Anwendung.
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">LGM</TD><TD>=</TD>
+              <TD>Modus (1 oder 2)</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="lg"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>LG</B></TD><TD>Loop-Gain-Messung</TD></TR>
+      <TR><TD><IMG SRC="data/modelle2_lg.png" ALT="Figure"></TD>
+      <TD>
+        Keine Parameter.
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="lgdiff"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>LGdiff</B></TD><TD>Differentielle Loop-Gain-Messung</TD></TR>
+      <TR><TD><IMG SRC="data/modelle2_lgdiff.png" ALT="Figure"></TD>
+      <TD>
+        Keine Parameter.
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="hybrid180"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>Hybrid180</B></TD><TD>180 Grad Hybrid</TD></TR>
+      <TR><TD><IMG SRC="data/modelle2_hybrid180.png" ALT="Figure"></TD>
+      <TD>
+        Hybride werden im Buch <B>Halbleiter-Schaltungstechnik</B> im Abschnitt <BR>
+        23.4.2 beschrieben.
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">Z0</TD><TD>=</TD><TD>Wellenwiderstand in Ohm</TD></TR>
+          <TR><TD ALIGN="right">f</TD><TD>=</TD><TD>Mittenfrequenz in Hz</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="hybrid90"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>Hybrid90</B></TD><TD>90 Grad Hybrid</TD></TR>
+      <TR><TD><IMG SRC="data/modelle2_hybrid90.png" ALT="Figure"></TD>
+      <TD>
+        Bei fehlendem Parameter <B>T</B> wird eine Implementierung mit konzentrierten <BR>
+        Induktivit&auml;ten und Kapazit&auml;ten verwendet. Bei Angabe eines beliebigen <BR>
+        Wertes f&uuml;r <B>T</B> wird eine Implementierung mit Leitungen verwendet. <BR>
+        Hybride werden im Buch <B>Halbleiter-Schaltungstechnik</B> im Abschnitt <BR>
+        23.4.2 beschrieben.
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">Z0</TD><TD>=</TD><TD>Wellenwiderstand in Ohm</TD></TR>
+          <TR><TD ALIGN="right">f</TD><TD>=</TD><TD>Mittenfrequenz in Hz</TD></TR>
+          <TR><TD ALIGN="right">T</TD><TD>=</TD><TD>Implementierung</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="iffilter"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>ZK-Filter</B></TD><TD>Zweikreisiges Bandfilter</TD></TR>
+      <TR><TD><IMG SRC="data/modelle2_zkfilter.png" ALT="Figure"></TD>
+      <TD>
+        Diese Modell implementiert das zweikreisige Bandfilter, das im Buch <BR>
+        <B>Halbleiter-Schaltungstechnik</B> im Abschnitt 23.2.1.1 beschrieben wird.
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">Z0</TD><TD>=</TD><TD>Wellenwiderstand in Ohm</TD></TR>
+          <TR><TD ALIGN="right">f</TD><TD>=</TD><TD>Mittenfrequenz in Hz</TD></TR>
+          <TR><TD ALIGN="right">B</TD><TD>=</TD><TD>Bandbreite in Hz</TD></TR>
+          <TR><TD ALIGN="right">k</TD><TD>=</TD><TD>Kopplungsfaktor, vorbelegt mit 1</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="butterworth5"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>Butterworth5</B></TD><TD>Butterworth-Tiefpass 5.Grades</TD></TR>
+      <TR><TD><IMG SRC="data/modelle2_butterworth5.png" ALT="Figure"></TD>
+      <TD>
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">Z0</TD><TD>=</TD><TD>Wellenwiderstand in Ohm</TD></TR>
+          <TR><TD ALIGN="right">fg</TD><TD>=</TD><TD>Grenzfrequenz in Hz</TD></TR>
+          <TR><TD ALIGN="right">D</TD><TD>=</TD><TD>Einf&uuml;gungsd&auml;mpfung in dB</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="iqmixer"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>IQ-Mischer</B></TD><TD>I/Q-Mischer mit Lokaloszillatoren</TD></TR>
+      <TR><TD><IMG SRC="data/modelle2_iqmischer.png" ALT="Figure"></TD>
+      <TD>
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">Z0</TD><TD>=</TD><TD>Wellenwiderstand in Ohm</TD></TR>
+          <TR><TD ALIGN="right">aT</TD><TD>=</TD><TD>Tr&auml;geramplitude in Volt</TD></TR>
+          <TR><TD ALIGN="right">fT</TD><TD>=</TD><TD>Tr&auml;gerfrequenz in Hz</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="mixer"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>Mischer</B></TD><TD>Mischer (idealer Multiplizierer)</TD></TR>
+      <TR><TD><IMG SRC="data/modelle2_mischer.png" ALT="Figure"></TD>
+      <TD>
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">Z0</TD><TD>=</TD><TD>Wellenwiderstand in Ohm</TD></TR>
+          <TR><TD ALIGN="right">G</TD><TD>=</TD><TD>Verst&auml;rkung in dB</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="delay"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>Delay</B></TD><TD>Verz&ouml;gerungsglied</TD></TR>
+      <TR><TD><IMG SRC="data/modelle2_delay.png" ALT="Figure"></TD>
+      <TD>
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameters:</TD></TR>
+          <TR><TD ALIGN="right">Z0</TD><TD>=</TD><TD>Wellenwiderstand in Ohm</TD></TR>
+          <TR><TD ALIGN="right">TD</TD><TD>=</TD><TD>Signalverz&ouml;gerung in Sekunden</TD></TR>
+          <TR><TD ALIGN="right">D</TD><TD>=</TD><TD>Einf&uuml;gungsd&auml;mpfung in dB</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="trigger"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>Trigger</B></TD><TD>Schmitt-Trigger</TD></TR>
+      <TR><TD><IMG SRC="data/modelle2_trigger.png" ALT="Figure"></TD>
+      <TD>
+        Die Einschaltschwelle betr&auml;gt <B>Schwelle + Hysterese / 2</B>, <BR>
+        die Ausschaltschwelle <B>Schwelle &minus; Hysteresis / 2</B>.
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">Z0</TD><TD>=</TD><TD>Wellenwiderstand am Eingang in Ohm</TD></TR>
+          <TR><TD ALIGN="right">Schwelle</TD><TD>=</TD><TD>Schaltschwelle in Volt</TD></TR>
+          <TR><TD ALIGN="right">Hysteresis</TD><TD>=</TD><TD>Hysterese in Volt</TD></TR>
+          <TR><TD ALIGN="right">Uamax</TD><TD>=</TD><TD>Ausgangsspannung im High-Zustand in Volt, vorbelegt mit 5 V</TD></TR>
+          <TR><TD ALIGN="right">Uamin</TD><TD>=</TD><TD>Ausgangsspannung im Low-Zustand in Volt, vorbelegt mit 0 V</TD></TR>
+          <TR><TD ALIGN="right">TD</TD><TD>=</TD><TD>Schaltverz&ouml;gerung in Sekunden, vorbelegt mit 10 ns</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="rcosflt"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>RCosFlt</B></TD><TD>Cosinus-Rolloff-Tiefpass</TD></TR>
+      <TR><TD><IMG SRC="data/modelle2_rcosflt.png" ALT="Figure"></TD>
+      <TD>
+        Das Modell implementiert ein Raised-Cosine-Filter. <BR>
+        Der Rolloff-Faktor wird mit dem Parameter <B>r</B> angegeben. <BR>
+        <B>Hinweis:</B> In der Praxis wird das Rolloff-Filter je zur H&auml;lfte im Sender und <BR>
+        im Empf&auml;nger realisiert, d.h. es werden zwei <B>Root</B>-Raised-Cosine-Filter <BR>
+        verwendet. F&uuml;r unsere Beispiele ist das unerheblich; wir ordnen das Filter <BR>
+        deshalb immer im Sender an.
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">r</TD><TD>=</TD><TD>Rolloff-Faktor (03/05/10 f&uuml;r 0,3/0,5/1,0)</TD></TR>
+          <TR><TD ALIGN="right">Z0</TD><TD>=</TD><TD>Wellenwiderstand in Ohm</TD></TR>
+          <TR><TD ALIGN="right">TS</TD><TD>=</TD><TD>Symboldauer in Sekunden</TD></TR>
+          <TR><TD ALIGN="right">D</TD><TD>=</TD><TD>Einf&uuml;gungsd&auml;mpfung in dB</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  </BODY>
+</HTML>

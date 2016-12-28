@@ -1,0 +1,23 @@
+* Z:\home\koblitz\Simulationsbeispiele_WS15\Elektronik_lab\mittwoch\T1-3.asc
+Q1 c b e 0 BC547B
+RE e 0 {180-var*115.7}
+RB c b 560k
+RC plus c 5.6k
+C1 N001 b 100n
+R1 1 N001 10k
+V1 1 0 AC 1
+RL out 0 {1k+var*9k}
+C2 c out {c2}
+C3 c b 10p
+Vplus plus 0 8.36
+.model NPN NPN
+.model PNP PNP
+.lib Z:\home\koblitz\LT-Spice\lib\cmp\standard.bjt
+;op
+.param var=0 c2=1u
+;dc Vplus 0 15 0.1
+.ac oct 10 1 10meg
+.step param var 0 1 1
+* .step param c2 list 1n 10n 100n 1u 10u 100u 1000u
+.backanno
+.end

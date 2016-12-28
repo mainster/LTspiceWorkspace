@@ -1,0 +1,67 @@
+<HTML>
+  <HEAD>
+    <TITLE>Strom-Spannungs-Wandler</TITLE>
+  </HEAD>
+  <BODY BGCOLOR="#F0F0F0">
+    <H1 ALIGN=center><B>Strom-Spannungs-Wandler</B></H1>
+    <P>
+Betrieb einer Emitterschaltung mit Spannungsgegenkopplung als Strom-Spannungs-Wandler
+    </P>
+    <P>
+      Kennlinie, Transimpedanz, Frequenzgang und Sinusaussteuerung einer
+      Emitterschaltung mit Spannungsgegenkopplung, die als Strom-Spannungs-
+      Wandler betrieben wird.
+    </P>
+    <P>
+      Beim Strom-Spannungs-Wandler tritt die Transimpedanz RT=dUa/dIe an die
+      Stelle der Verst&auml;rkung; im Arbeitspunkt Ua=2V bzw. Ie=-0,65mA gilt
+      RT=-1,95kOhm.
+    </P>
+    <P>
+      Aus der Kleinsignalanalyse (AC) erh&auml;lt man neben dem Frequenzgang
+      auch die Eingangsimpedanz: Ze=V(Ue)/I(Ie). Bei niedrigen Frequenzen
+      gilt Ze=re=34Ohm. Die Eingangsimpedanz ist ohmsch-kapazitiv
+      (Betrag nimmt ab, Phase < 0).
+    </P>
+    <P>
+      Bei der Sinusaussteuerung (TRAN-Analyse) wird eine Strom-Amplitude von
+      0,77mA bei einer Frequenz von 1kHz verwendet; daraus resultiert ein
+      Klirrfaktor von k=1%.
+    </P>
+    <P><TABLE BORDER=2 BGCOLOR="#F0F0F0">
+      <TR>
+        <TD><B>Analysen</B></TD>
+        <TD><B>Einstellungen</B></TD>
+        <TD><B>Ergebnisanzeigen</B></TD>
+      </TR>
+      <TR>
+        <TD>AC</TD>
+        <TD>f = 1e3 ... 1e9</TD>
+        <TD>Frequenzgang , Eingangsimpedanz</TD>
+      </TR>
+      <TR>
+        <TD>DC</TD>
+        <TD>Ie = -2mA ... 2mA</TD>
+        <TD>Kennlinie , Transimpedanz</TD>
+      </TR>
+      <TR>
+        <TD>TRAN</TD>
+        <TD>t = 0 ... 5ms</TD>
+        <TD>Sinussignal</TD>
+      </TR>
+    </TABLE></P>
+    <P><TABLE BORDER=0 BGCOLOR="#F0F0F0" WIDTH=100%>
+      <TR>
+        <TH WIDTH=20% ALIGN=left>
+          <A HREF="ueber.htm" TARGET="uebersicht"><B>zur&uuml;ck</B></A>
+        </TH>
+        <TH WIDTH=20% ALIGN=left>
+          <A HREF="../../../ueber.htm" TARGET="uebersicht"><B>&Uuml;bersicht</B></A>
+        </TH>
+        <TH WIDTH=60% ALIGN=left>
+          <A HREF="St_Sp_Wandler.tse"><B>Simulation starten</B></A>
+        </TH>
+      </TR>
+    </TABLE></P>
+  </BODY>
+</HTML>

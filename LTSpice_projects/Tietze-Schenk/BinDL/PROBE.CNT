@@ -1,0 +1,59 @@
+:Base probe.HLP
+1 About Probe
+2 Introducing Probe=IDH_ABOUT_Introducing_Probe
+2 Starting Probe=IDH_ABOUT_Starting_Probe
+2 Using the Probe Screen=IDH_ABOUT_Using_the_Probe_Screen
+2 Using Files=IDH_ABOUT_Using_Files
+2 Keyboard Shortcuts=IDH_ABOUT_keyboard_shortcuts
+1 Displaying Traces
+2 Adding Traces=IDH_TRACES_Adding_Traces
+2 Deleting Traces=IDH_TRACES_Deleting_Traces
+2 Defining Analog Trace Expressions=IDH_TRACES_Defining_Analog_Trace_Expressions
+2 Defining Digital Trace Expressions=IDH_TRACES_Defining_Digital_Trace_Expressions
+2 Creating and Changing Macros=IDH_REFERENCE_Creating_and_Changing_Macros
+2 Using Cursors=IDH_TRACES_Using_Cursors
+2 Changing Views=IDH_TRACES_viewing_traces
+2 Creating a Fourier Transform=IDH_TRACES_Creating_a_Fourier_Transform
+1 Controlling Plots
+2 Setting the Digital Plot Size=IDH_TRACES_Setting_the_Digital_Plot_Size
+2 Controlling the X-Axis=IDH_TRACES_Controlling_the_X_Axis
+2 Controlling the Y-Axis=IDH_TRACES_Controlling_the_Y_Axis
+2 Using Plot Windows=IDH_TRACES_Using_Plot_Windows
+2 Using Multiple Plots=IDH_TRACES_Using_Multiple_Plots
+2 Using Display Control=IDH_TRACES_Using_Display_Control
+2 Labeling Plots
+3 Labeling Plots=IDH_TRACES_Labeling_Plots
+3 Editing Labels=IDH_TRACES_Editing_Labels
+1 Using Performance Analysis and Goal Functions
+2 Using Performance Analysis=IDH_GOAL_Using_Performance_Analysis
+2 Managing Goal Functions=IDH_GOAL_Managing_Goal_Functions
+2 Creating a New Goal Function=IDH_GOAL_Creating_a_New_Goal_Function
+2 Copying a Goal Function=IDH_GOAL_Copying_a_Goal_Function
+2 Editing a Goal Function=IDH_GOAL_Editing_a_Goal_Function
+2 Limiting a Goal Function to a Specific Range of Data=IDH_GOAL_Limiting_a_Goal_Function_to_a_Specific_Range_of_Data
+2 Search Commands=IDH_GOAL_search_commands
+2 Examples=IDH_GOAL_Goal_Function_Examples
+1 Setting Options
+2 Setting Probe Options=IDH_OPTIONS_Setting_Probe_Options
+2 Changing the Screen Colors=IDH_OPTIONS_Changing_the_Screen_Colors
+2 Setting up the Page=IDH_OPTIONS_Setting_up_the_Page
+2 Selecting a Printer=IDH_OPTIONS_Selecting_a_Printer
+2 Using Print Preview=IDH_OPTIONS_print_preview
+1 Reference Information
+2 Glossary=IDH_GLOSSARY_glossary
+2 Goal Function Syntax=IDH_GOAL_Goal_Function_Syntax
+2 Goal Function Examples=IDH_GOAL_Goal_Function_Examples
+2 Search Command Examples=IDH_GOAL_Search_Command_Examples
+2 Defining Marked Point Expressions=IDH_GOAL_Defining_Marked_Point_Expressions
+2 Macro Syntax and Examples=IDH_REFERENCE_macro_syntax_and_examples
+2 Using Log Commands=IDH_REFERENCE_Using_Log_Commands
+2 Using .PRB Files=IDH_REFERENCE_Using_PRB_Files
+2 Probe Data File Formats=IDH_REFERENCE_Probe_Data_File_Formats
+2 Moving Data to Other Applications=IDH_REFERENCE_Moving_Data_to_Other_Applications
+1 What's New for 8.0
+2 Device Noise Output Variables=IDH_TRACES_Defining_Analog_Trace_Expressions
+2 Print Preview=IDH_OPTIONS_print_preview
+2 New Syntax for Labeling Trace Expressions in the Legend=IDH_TRACES_using_analog_output_variables
+2 New Trace Expression Syntax for Handling Multiple Files=IDH_TRACES_Adding_Traces
+2 New Trace Color Option=IDH_OPTIONS_Setting_Probe_Options
+2 Toolbars on View Menu=IDH_TRACES_viewing_traces

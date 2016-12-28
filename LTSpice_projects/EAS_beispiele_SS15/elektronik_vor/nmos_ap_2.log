@@ -1,0 +1,45 @@
+Circuit: * Z:\home\koblitz\Simulationsbeispiele_SS15\elektronik_vor\nmos_ap_2.asc
+
+Warning: Multiple definitions of model "fds6680" Type: Vdmos1
+Direct Newton iteration for .op point succeeded.
+Semiconductor Device Operating Points:
+                        --- MOSFET Transistors ---
+Name:          m1
+Model:         nx
+Id:          9.00e-03
+Vgs:         5.00e+00
+Vds:         5.00e+00
+Vbs:         0.00e+00
+Vth:         2.00e+00
+Vdsat:       3.00e+00
+Gm:          6.00e-03
+Gds:         0.00e+00
+Gmb:         0.00e+00
+Cbd:         0.00e+00
+Cbs:         0.00e+00
+Cgsov:       0.00e+00
+Cgdov:       0.00e+00
+Cgbov:       0.00e+00
+Cgs:         0.00e+00
+Cgd:         0.00e+00
+Cgb:         0.00e+00
+
+
+
+Date: Mon Jun 08 10:55:43 2015
+Total elapsed time: 21.708 seconds.
+
+tnom = 27
+temp = 27
+method = trap
+totiter = 6
+traniter = 0
+tranpoints = 0
+accept = 0
+rejected = 0
+matrix size = 4
+fillins = 0
+solver = Normal
+Matrix Compiler1: 118 Bytes object code size
+Matrix Compiler2: 282 Bytes object code size
+

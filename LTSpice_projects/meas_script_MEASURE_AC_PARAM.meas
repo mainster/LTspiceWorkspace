@@ -1,0 +1,4 @@
+
+.MEAS AC tmp max mag(V(out))
+.MEAS AC BW trig mag(V(out))=0.99*tmp fall=1
++ targ mag(V(out))=tmp/sqrt(2) fall=1

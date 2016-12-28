@@ -1,0 +1,63 @@
+<HTML>
+  <HEAD>
+    <TITLE>Kollektorschaltung</TITLE>
+  </HEAD>
+  <BODY BGCOLOR="#F0F0F0">
+    <H1 ALIGN=center><B>Kollektorschaltung</B></H1>
+    <P>
+Kennlinie, Verst&auml;rkung, Frequenzgang und Klirrfaktor einer Kollektorschaltung
+    </P>
+    <P>
+      Kennlinie, Verst&auml;rkung, Frequenzgang und Sinusaussteuerung einer
+      Kollektorschaltung.
+    </P>
+    <P>
+      Den Verlauf der Betriebverst&auml;rkung AB=dUa/dUg erh&auml;lt man mit dV(Ua).
+      Im Arbeitspunkt Ua=2V gilt AB=0,98. Denselben Wert erh&auml;lt man aus
+      dem Betragsfrequenzgang bei niedrigen Frequenzen: -0,14dB=0,98.
+    </P>
+    <P>
+      Bei der Sinusaussteuerung (TRAN-Analyse) wird eine Amplitude von
+      2,05V bei einer Frequenz von 1kHz verwendet; daraus resultiert ein
+      Klirrfaktor von etwa 1%. Die nach der Theorie f&uuml;r k=1% zul&auml;ssige
+      Amplitude von 6,3V wird nicht erreicht, weil die Schaltung bereits
+      ab 2,05V &uuml;bersteuert wird. Der Klirrfaktor wird in der OUT-Datei
+      abgelegt; Aufruf mit ANALYSIS/EXAMINE OUTPUT.
+    </P>
+    <P><TABLE BORDER=2 BGCOLOR="#F0F0F0">
+      <TR>
+        <TD><B>Analysen</B></TD>
+        <TD><B>Einstellungen</B></TD>
+        <TD><B>Ergebnisanzeigen</B></TD>
+      </TR>
+      <TR>
+        <TD>AC</TD>
+        <TD>f = 1e3 ... 1e9</TD>
+        <TD>Frequenzgang</TD>
+      </TR>
+      <TR>
+        <TD>DC</TD>
+        <TD>Ug = 0V ... 5V</TD>
+        <TD>Kennlinie , Verstaerkung</TD>
+      </TR>
+      <TR>
+        <TD>TRAN</TD>
+        <TD>t = 0 ... 5ms</TD>
+        <TD>Sinussignal</TD>
+      </TR>
+    </TABLE></P>
+    <P><TABLE BORDER=0 BGCOLOR="#F0F0F0" WIDTH=100%>
+      <TR>
+        <TH WIDTH=20% ALIGN=left>
+          <A HREF="ueber.htm" TARGET="uebersicht"><B>zur&uuml;ck</B></A>
+        </TH>
+        <TH WIDTH=20% ALIGN=left>
+          <A HREF="../../ueber.htm" TARGET="uebersicht"><B>&Uuml;bersicht</B></A>
+        </TH>
+        <TH WIDTH=60% ALIGN=left>
+          <A HREF="Kollektorschaltung.tse"><B>Simulation starten</B></A>
+        </TH>
+      </TR>
+    </TABLE></P>
+  </BODY>
+</HTML>

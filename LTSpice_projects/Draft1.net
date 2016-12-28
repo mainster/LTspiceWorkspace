@@ -1,0 +1,12 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\Draft1.asc
+V1 e 0 PULSE(0 1 0 10p 10p {p*T} {T})
+L1 e a1 100µ
+R1 a1 0 1
+R2 e a2 1000
+C1 a2 0 1µ
+.param Tsim=8m
+.param T = 200000u
+.param p= 0.3
+.tran 0 {Tsim} {Tsim-5*T}
+.backanno
+.end

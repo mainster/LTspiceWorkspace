@@ -1,0 +1,5 @@
+* Z:\media\storage\CODES_ln\LTSpice_projects\DAC_harmonics\Draft5.asc
+V1 dac 0 PWL file=t_sin.csv
+.tran 1
+.backanno
+.end

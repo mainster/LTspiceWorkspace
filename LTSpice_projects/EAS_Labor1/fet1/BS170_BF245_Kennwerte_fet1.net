@@ -1,0 +1,71 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\EAS_Labor1\fet1\BS170_BF245_Kennwerte_fet1.asc
+V1 VCC1 0 10
+V2 Vg 0 2.2
+R2 Vg P001 22k
+J1 VCC1 N002 JFET_D NJFx
+Rs JFET_D 0 {Rs}
+R4 Vg N002 22k
+V3 in_mos 0 SINE(0 {50m*1.41} 5k)
+R6 AP_mos g_mos 47k
+C1 in_mos g_mos 100µ
+V4 AP_mos 0 2.2
+R9 AP_jfet g_jfet 47k
+C3 in_jfet g_jfet 100µ
+C4 N003 d_jfet 100µ
+R10 d_jfet 0 100meg
+V5 in_jfet 0 SINE(0 {50m*1.41} 100)
+V6 AP_jfet 0 4
+J2 VCC1 g_jfet N003 BF245
+C5 N001 d_mos 100µ
+R12 d_mos 0 100meg
+XM3 VCC1 g_mos N001 BS170
+XM1 VCC1 P001 NMOS_D BS170
+R1 N003 0 {Rs}
+R7 N001 0 {Rs}
+R5 NMOS_D 0 {Rs}
+.model NJF NJF
+.model PJF PJF
+.lib C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\lib\cmp\standard.jft
+.dc V4 0 10 0.1
+.model nmosx NMOS(KP=2m VT0=2)
+.model njfx njf(beta=1m VT0=-2 )
+* NMOS:  KP=2*K      VT0=Vp\nPMOS:  KP=2*K      VT0=Vp\nJFET:    BETA=K     VT0=Vp\nPJFET:  BETA=K     VT0= -Vp !!!
+.param Rs = 2.2k
+.SUBCKT BS170 1 2 3
+* 1=drain  2=gate  3=source
+Cgs  2 3 12.3E-12
+Cgd1 2 4 27.4E-12
+Cgd2 1 4 6E-12
+M1 1 2 3 3 MOST1
+M2 4 2 1 3 MOST2
+D1 3 1 Dbody
+.MODEL MOST1 NMOS(Level=3 Kp=20.78u W=9.7m L=2u Rs=20m Vto=2 Rd=1.186)
+.MODEL MOST2 NMOS(VTO=-4.73 Kp=20.78u W=9.7m L=2u Rs=20m)
+.MODEL Dbody D(Is=125f N=1.023 Rs=1.281 Ikf=18.01 Cjo=46.3p M=.3423
++            Vj=.4519 Bv=60 Ibv=10u Tt=161.6n)
+.ENDS
+.model BF245    NJF(
++ Beta=550u 
++ Rs=1 
++ Rd=1 
++ Betatce=-.5 
++ Lambda=10m 
++ Vto=-3.44
++ Vtotc=0 
++ Cgd=5p 
++ M=.3333 
++ Pb=1 
++ Fc=.5 
++ Cgs=5p 
++ Isr=1p 
++ Nr=2 
++ Is=100f
++ N=1 
++ Xti=3 
++ Alpha=10u 
++ Vk=100 
++ Kf=1E-18 
++ Af=1)
+* .dc V4 0 4 0.1
+.backanno
+.end

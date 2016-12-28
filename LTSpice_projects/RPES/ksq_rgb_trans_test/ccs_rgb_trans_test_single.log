@@ -1,0 +1,23 @@
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\RPES\ksq_rgb_trans_test\ccs_rgb_trans_test_single.asc
+
+Direct Newton iteration for .op point succeeded.
+
+Date: Mon Jan 12 13:41:34 2015
+Total elapsed time: 1.437 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 62506
+traniter = 62459
+tranpoints = 24239
+accept = 19465
+rejected = 4774
+matrix size = 92
+fillins = 135
+solver = Normal
+Thread vector: 13.8/9.9[2] 4.7/3.1[2] 2.8/2.3[2] 0.5/1.4[1]  2592/500
+Matrix Compiler1: 11.8 KB object code size  3.4/1.4/[0.9]
+Matrix Compiler2: 9.14 KB object code size  1.2/2.1/[1.2]
+
+

@@ -1,0 +1,26 @@
+Circuit: * Z:\home\koblitz\Simulationsbeispiele_WS14\Elektronik_Vor\spulenersatz.asc
+
+Direct Newton iteration for .op point succeeded.
+Ignoring empty pin current: Ix(u1:inp)
+Ignoring empty pin current: Ix(u1:inm)
+Ignoring empty pin current: Ix(u1:inp)
+Ignoring empty pin current: Ix(u1:inm)
+
+Date: Mon Nov 10 12:44:21 2014
+Total elapsed time: 0.123 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 2370
+traniter = 2366
+tranpoints = 1168
+accept = 1125
+rejected = 43
+matrix size = 14
+fillins = 3
+solver = Normal
+Matrix Compiler1: 532 Bytes object code size  1.8/1.6/[1.5]
+Matrix Compiler2: 984 Bytes object code size  1.6/2.1/[1.7]
+
+

@@ -1,0 +1,19 @@
+* Z:\home\koblitz\Simulationsbeispiele_WS14\Elektronik_Vor\q1e-stufe.asc
+Q1 c b 0 0 mein_q
+XU1 plus vdc_single V=5V
+RC plus c 2k
+I1 plus b 5µ
+v1 1 0 SINE(0 1m 1k) AC 1
+C1 1 b 1µ
+C2 c out 1µ
+RL out 0 10k
+.model NPN NPN
+.model PNP PNP
+.lib Z:\home\koblitz\LT-Spice\lib\cmp\standard.bjt
+.op
+;tran 2m
+.model mein_q npn (BF=200 VAF=50)
+;ac oct 10 1 1meg
+.lib EIT_sub\vdc_single.sub
+.backanno
+.end

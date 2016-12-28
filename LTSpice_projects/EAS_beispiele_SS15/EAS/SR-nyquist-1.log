@@ -1,0 +1,27 @@
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\EAS_beispiele_SS15\EAS\SR-nyquist-1.asc
+
+WARNING: Less than two connections to node N004.  This node is used by H:U1:1.
+Per .tran options, skipping operating point for transient analysis.
+.step kr=0.4
+.step kr=0.5
+.step kr=0.6
+.step kr=0.7
+
+Date: Sat Jul 11 15:17:34 2015
+Total elapsed time: 0.404 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 1888
+traniter = 1888
+tranpoints = 945
+accept = 917
+rejected = 28
+matrix size = 41
+fillins = 10
+solver = Normal
+Matrix Compiler1: 1.69 KB object code size  1.5/1.3/[0.5]
+Matrix Compiler2: 2.55 KB object code size  0.8/1.7/[0.5]
+
+

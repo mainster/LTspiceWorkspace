@@ -1,0 +1,13 @@
+* Z:\media\data\CODES\LTSpice_projects\LockIn_Verstärker\Draft5.asc
+V1 VDD 0 9
+V2 0 VSS 9
+R1 N001 in 5k
+R2 out N001 8k
+R3 N002 0 2.5k
+V3 in P001 0
+V4 P001 0 SINE(0 1 100)
+XU1 N002 N001 VDD VSS out level.2 Avol=1Meg GBW=10Meg Slew=10Meg ilimit=25m rail=0 Vos=0 phimargin=45 en=0 enk=0 in=0 ink=0 Rin=500Meg
+.tran 100m
+.lib UniversalOpamps2.sub
+.backanno
+.end

@@ -1,0 +1,27 @@
+Circuit: * Z:\home\koblitz\Simulationsbeispiele_SS15\Elektronik_lab\dienstag\diff_a3-sat-parpnp.asc
+
+.step vplus=5
+.step vplus=6
+.step vplus=7
+.step vplus=8
+.step vplus=9
+.step vplus=10
+
+Date: Tue Apr 28 14:47:58 2015
+Total elapsed time: 0.302 seconds.
+
+tnom = 27
+temp = 27
+method = trap
+totiter = 416
+traniter = 0
+tranpoints = 0
+accept = 0
+rejected = 0
+matrix size = 15
+fillins = 0
+solver = Normal
+Matrix Compiler1: 952 Bytes object code size  2.3/2.1/[1.6]
+Matrix Compiler2: 1,25 KB object code size  1.9/2.3/[1.8]
+
+

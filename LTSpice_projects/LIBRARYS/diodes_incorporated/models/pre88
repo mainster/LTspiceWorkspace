@@ -1,0 +1,4 @@
+*SRC=RS3MB;DI_RS3MB;Diodes;Si;  1.00kV  3.00A  500ns   Diodes Inc. Fast Rectifier
+.MODEL DI_RS3MB D  ( IS=200n RS=25.4m BV=1.00k IBV=5.00u
++ CJO=92.5p  M=0.333 N=2.23 TT=720n )
+***********************************************************************************************************

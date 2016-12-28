@@ -1,0 +1,52 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\praxissem_woche_2014\wanze_107MHz.asc
+V1 N006 0 {Vv1}
+R1 e 0 {Re}
+C1 b e 68p
+C2 e 0 68p
+C3 N005 in {Cj}
+C4 in 0 {Co}
+XU1 N002 vdc_single V={Vcc}
+R2 VCC b {Rb}
+L1 N005 b {Lo}
+D1 in N005 1N4148
+R4 in 0 100k
+C5 in N006 100n
+XU2 VCC b e bfr92
+V2 N002 NC_01 -.8V
+XU4 N002 VCC jumperResistor Rjump=1u Rin=1t Rout=1t
+XU3 N003 P001 N004 bfr92
+XU5 N001 vdc_single V=20V
+I1 0 P001 0
+R3 N004 0 {Re}
+R5 N001 N003 10
+XU6 Rb vdc_single V={Rb}
+XU7 Re vdc_single V={Re}
+XU8 N007 vdc_single V={Vcc}
+.model D D
+.lib C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\lib\cmp\standard.dio
+.tran 20m
+.param fa = 100Meg
+ 
+.param Vcc = 3V
+.param Ve0 = 1.5V
+.param Ic0 = 5mA
+.param Vbe0 = 0.6V
+.param B = 124
+.param A = B/(1+B)
+.param Re = {Ve0*A/Ic0}
+.param Rb = {(Vcc-Vbe0-Ic0/A*Re)/(Ic0/B)}
+;.param Rb = 10.7k
+;.param Re = 750
+ 
+ 
+.param Lo = 100n
+.param Co = 47n
+.param Cj = 5p
+.param Vv1=0
+* hfe:\n124 @ 5mA
+.ic V(b) = 3.8V
+.lib EIT_sub\vdc_single.sub
+.lib MDB_sub/jumperRes.sub
+.lib Sborka.lib
+.backanno
+.end

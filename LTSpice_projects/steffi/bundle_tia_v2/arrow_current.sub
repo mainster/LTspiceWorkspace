@@ -1,0 +1,3 @@
+.SUBCKT arrow_current 1 2
+r1 1 2 1e-9
+.END arrow_current 1 2

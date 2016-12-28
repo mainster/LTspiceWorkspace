@@ -1,0 +1,11 @@
+* delay.sub
+*
+.subckt delay Sin Sout
+T1 N001 0 N002 0 Td={Td} Z0=50
+R2 N002 0 50
+G1 0 N001 Sin 0 0.04
+R1 N001 0 50
+G2 0 Sout N002 0 1
+R3 Sout 0 1
+.end delay
+

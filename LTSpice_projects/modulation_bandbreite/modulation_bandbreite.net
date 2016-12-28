@@ -1,0 +1,58 @@
+* Z:\media\data\CODES\LTSpice_projects\modulation_bandbreite\modulation_bandbreite.asc
+V2 f2 0 SINE(0 1 40k)
+B2 xm2 0 V=(V(x2)*V(f2))
+V5 x2 0 SINE(0 1 1k)
+V4 w2 0 PWL(0 0 10m 1m 10.01m 1 25m 0.995 25.01m 0 40m 1m 40.01m 1 60m 0.995 60.01m 0 90m 0.01 90.01m 1 110m 0.995 110.01m 0)
+R1 N002 filIn {R1}
+R2 0 N002 {R2}
+R3 N003 out1st {R3}
+C2 N003 N002 {C2}
+C1 N002 out1st {C1}
+V3 N001 0 15V
+V6 Vm 0 -15V
+V7 N006 0 AC 1
+R4 N006 filIn {R_AC}
+R5 xm2 filIn {R_sig}
+XU1 0 N003 out1st opamp_param_3 Vp=10 Vm=-10 Ilim=20m FT=100Meg SR=100meg Vos=0 A0=100k phir=45 en=0 enk=0 in=0 ink=0 Rin=500Meg
+R6 N004 out1st {R1}
+R7 0 N004 {R2}
+R8 N005 out2ns {R3}
+C3 N005 N004 {C2}
+C4 N004 out2ns {C1}
+XU2 0 N005 out2ns opamp_param_3 Vp=10 Vm=-10 Ilim=20m FT=100Meg SR=100meg Vos=0 A0=100k phir=45 en=0 enk=0 in=0 ink=0 Rin=500Meg
+R9 N007 out2ns {R1}
+R10 0 N007 {R2}
+R11 N008 out3rd {R3}
+C5 N008 N007 {C2}
+C6 N007 out3rd {C1}
+XU3 0 N008 out3rd opamp_param_3 Vp=10 Vm=-10 Ilim=20m FT=100Meg SR=100meg Vos=0 A0=100k phir=45 en=0 enk=0 in=0 ink=0 Rin=500Meg
+R13 N010 N009 33k
+L2 N010 0 1m
+C8 N010 0 10n
+C9 an_fil N010 47p
+L3 an_fil 0 1m
+C10 an_fil 0 10n
+R14 an_fil 0 33k
+R15 N012 N011 22k
+R16 notch N012 22k
+C11 N012 N013 1n
+C12 N013 N011 1n
+C13 notch N013 1n
+R17 N013 0 5.6k
+B1 xm2W 0 V=(V(x2)*V(f2))*V(w2)
+R18 N009 filIn 1n
+R19 N011 filIn 1n
+.step dec param f 10 100meg 100
+.ac list {f}
+.param R_AC = 1n
+.param R_SIG = 10000meg
+* .step dec param w 10 100k 50\n.ac list {w/(2*pi)}
+* .tran 120m\n.param R_AC = 10000meg\n.param R_SIG = 1n
+.param R1=4.7k
+.param R2=47
+.param R3=330k
+.param C1=33n
+.param C2=470p
+.lib EIT_sub\opamp_parametrierbar.sub
+.backanno
+.end

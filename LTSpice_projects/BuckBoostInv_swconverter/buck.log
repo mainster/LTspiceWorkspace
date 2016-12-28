@@ -1,0 +1,22 @@
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\BuckBoostInv_swconverter\buck.asc
+
+Direct Newton iteration for .op point succeeded.
+
+Date: Sat Jan 30 12:45:52 2016
+Total elapsed time: 1.342 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 81171
+traniter = 81161
+tranpoints = 29630
+accept = 22095
+rejected = 7535
+matrix size = 6
+fillins = 0
+solver = Normal
+Matrix Compiler1: 182 bytes object code size  0.6/0.6/[0.6]
+Matrix Compiler2: 380 bytes object code size  0.6/0.6/[0.6]
+
+

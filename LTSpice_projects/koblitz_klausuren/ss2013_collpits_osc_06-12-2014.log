@@ -1,0 +1,20 @@
+WARNING: Can't resolve .param av=gm*(1/rd+1/rl+1/rout)**(-1)
+WARNING: Can't resolve .param rd=zl*zc2/(zl+zc2)
+WARNING: Can't resolve .param zc2=1/(w*c2y)
+Questionable use of curly braces in "c7 0 n006 {c2x}"
+    Error: undefined symbol in: "[c2x]"
+Error: too many decimal points in: "f([...)]"
+Questionable use of curly braces in "c8 n007 0 {c2y}"
+    Error: undefined symbol in: "[c2y]"
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\koblitz_klausuren\ss2013_collpits_osc_06-12-2014.asc
+
+Warning: Multiple definitions of model "bc846b" Type: BJT
+Warning: Multiple definitions of model "bc857a" Type: BJT
+Warning: Multiple definitions of model "bc847b" Type: BJT
+Warning: Multiple definitions of model "bcw68f" Type: BJT
+Warning: Multiple definitions of model "bcw60c" Type: BJT
+Warning: Multiple definitions of model "ztx1048a" Type: BJT
+Warning: Multiple definitions of model "ztx849" Type: BJT
+Fatal Error: B1:
+-- Syntax Error --
+f(.«.».)

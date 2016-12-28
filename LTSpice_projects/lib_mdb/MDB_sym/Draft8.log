@@ -1,0 +1,5 @@
+Circuit: * C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\lib\sym\MDB_sym\Draft8.asc
+
+Fatal Error:  Unknown parameter "8"
+ in line:
+"a1 n001 n003 0 0 0 n001 n002 0 ota 2 8 7 1 6 en=0 enk=0 in=0 ink=0"

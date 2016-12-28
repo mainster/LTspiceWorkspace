@@ -1,0 +1,3 @@
+*SRC=PDU340;DI_PDU340;Diodes;Si;  400V  3.00A  50.0ns   Diodes Inc. Ultrafast Rectifier
+.MODEL DI_PDU340 D  ( IS=3.74u RS=25.9m BV=400 IBV=10.0u
++ CJO=86.2p  M=0.333 N=2.58 TT=72.0n )

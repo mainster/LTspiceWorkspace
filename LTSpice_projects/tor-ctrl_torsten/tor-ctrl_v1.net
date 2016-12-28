@@ -1,0 +1,15 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\ltspice_github\tor-ctrl_torsten\tor-ctrl_v1.asc
+V1 N001 0 PULSE({Ue} {-Ue} 0 10n 10n 50m 100m)
+D1 N001 N002 1N4148
+D2 0 N004 1N4148
+R1 N002 N003 10
+R2 N004 N005 10
+R4 N005 N001 {24V/0.1A}
+R3 N003 0 {24V/0.1A}
+.model D D
+.lib C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\lib\cmp\standard.dio
+.tran 300m
+.param tor-ctrl=1
++ Ue=-25V
+.backanno
+.end

@@ -1,0 +1,19 @@
+* einseitige Stromquelle (andere Seite nach Masse)
+*
+.subckt Idc_single 1
+i1 1 0 dc={I} 
+R1 1 0 R={Rpar} 
+.param I=1A 
+.param Rpar={1/Gmin}
+.ends
+
+
+* negative einseitige Stromquelle (andere Seite nach Masse)
+*
+.subckt Idc_single_neg 1
+i1 1 0 dc={I} 
+R1 1 0 R={Rpar} 
+.param I=1A 
+.param Rpar={1/Gmin}
+.ends
+

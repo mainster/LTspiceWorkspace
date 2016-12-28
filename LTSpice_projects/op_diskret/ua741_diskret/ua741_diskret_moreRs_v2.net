@@ -1,0 +1,89 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\ua741_diskret\ua741_diskret_moreRs_v2.asc
+Q1 N010 in+ e1 0 NPN1
+Q8 N005 N003 V+ 0 PNP1
+Q2 N010 in- e2 0 NPN1
+Q4 N024 N020 e2 0 PNP1
+Q3 N023 N020 e1 0 PNP1
+Q5 N029 N032 N036 0 NPN1
+Q6 N032 N036 off+ 0 NPN1
+Q7 Idv N036 off- 0 NPN1
+R1 N036 V- 50k
+XU1 V+ vdc_single V={Vplus}
+XU2 V- vdc_single V={-Vplus}
+Q9 N021 N003 V+ 0 PNP1
+R2 N038 V- 5k
+Q10 N021 N034 N038 0 NPN1
+Q11 N034 N034 V- 0 NPN1
+R3 N004 N034 39k
+Q12 N004 N004 V+ 0 PNP1
+Q13 N012 N004 V+ 0 PNP1
+Q14 N022 N026 N035 0 NPN1
+Q15 N022 N035 N037 0 NPN1
+R4 N035 V- 50k
+Q18 V+ N013 N016 0 NPN1 {m}
+Q19 N013 N016 out 0 NPN1
+R5 N016 out 25
+Q20 V- N022 N031 0 PNP1 {m}
+R6 out N031 50
+C1 N012 N026 {Ccomp}
+XIdv Idv N026 arrow_curr arrow_curr Rsh=1m
+RL 0 0 10k
+XIb34 N020 N021 arrow_curr arrow_curr Rsh=1m
+B1 DV 0 V=V(e1)-V(e2)
+XU5 N012 N013 arrow_curr arrow_curr Rsh=1m
+XU6 N003 N010 arrow_curr arrow_curr Rsh=1m
+XIC3 N023 N032 arrow_curr arrow_curr Rsh=1m
+XIC4 N024 Idv arrow_curr arrow_curr Rsh=1m
+XIC5 V+ N029 arrow_curr arrow_curr Rsh=1m
+V2 N014 0 0 AC 1
+E1 in+ in- N014 0 1
+R7 0 in- 100meg
+XI0 N005 N010 arrow_curr arrow_curr Rsh=1m
+R8 off+ V- 1k
+R9 off- V- 1k
+Q21 N026 N037 V- 0 NPN1
+R10 N037 V- 50
+XU3 off+ off- V- pot R={Ro} T={off}
+Q16 N012 N018 N022 0 NPN1
+R11 N012 N018 4.5k
+R12 N018 N022 7.5k
+B2 Rpr 0 V=Ro*off
+B3 Rpl 0 V=Ro*(1-off)
+.model NPN NPN
+.model PNP PNP
+.lib C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\lib\cmp\standard.bjt
+.param stimp = 400m
+.param Vplus=10V
+.param m=5
+.param Vbe0 = 0.6V
+.param Veb0 = 0.6V
+.param VT=26mV
+.param betaNPN=200
+.param betaPNP=100
+.param alpha=0.991
+.param Ic0=100u
+.param Ccomp=15p
+* .ac oct 100 .1 10meg
+.model NPN1 npn ( Is={Ic0/exp(Vbe0/VT)}  Bf={betaNPN} VA=50V)
+.model PNP1 pnp ( Is={Ic0/exp(Veb0/VT)}  Bf={betaPNP} VA=50V)
+.tran 3m startup
+* .dc V2 {-stimp} {stimp} .1m
+* .dc I1 0 100u 1u
+* .ac oct 100 10 10meg
+* .dc V1 -1m 1m 1u
+.param Ro=100k
+.param off = 0.650514
+* ; Find offset poti setting to compensate Vio\n;------------------------------------------------------------\n.step param off .01 .99 .01\n.meas Roffs_set WHEN V(out)=0 falling=1\n.meas RoffsR param Ro*Roffs_set\n.op
+;.meas I0m FIND Ic(Q8) at=1m
+.param I0m=16u
+.meas I0ma FIND Ic(Q8) at=100
+.meas Gmdv param alpha*I0m/(2*VT) 
+.meas SR param alpha*I0m/Ccomp 
+.meas ft param Gmdv/(2*pi*Ccomp)
+.meas ft2 WHEN mag(V(out))=1
+.op
+.lib ..\sym\EXTRA\Misc\pot.lib
+.lib EIT_sub/vdc_single.sub
+.lib MDB_sub/arrow_curr.sub
+.backanno
+.end

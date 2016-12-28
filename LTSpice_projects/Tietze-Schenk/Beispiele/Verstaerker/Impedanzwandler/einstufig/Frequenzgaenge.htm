@@ -1,0 +1,58 @@
+<HTML>
+  <HEAD>
+    <TITLE>Frequenzgaenge.sch</TITLE>
+  </HEAD>
+  <BODY BGCOLOR="#F0F0F0">
+    <H1 ALIGN=center><B>Frequenzgaenge.sch</B></H1>
+    <P>
+Frequenzg&auml;nge der einstufigen Impedanzwandler
+    </P>
+    <P>
+      Frequenzg&auml;nge einstufiger Impedanzwandler mit IC=ID=100uA.
+    </P>
+    <P>
+      -3dB-Grenzfrequenzen:
+    </P>
+    <P>
+       Rg/kOhm     Kollektorschaltung   Drainschaltung
+           1            229MHz               43MHz
+          10             86MHz               46MHz
+         100             11MHz               35MHz
+    </P>
+    <P>
+      Bei kleinen Innenwiderst&auml;nden Rg ist die ausgangsseitige Zeitkonstante
+      ma&szlig;gebend; die Kollektorschaltung erreicht hier aufgrund der gr&ouml;&szlig;eren
+      Steilheit eine h&ouml;here Grenzfrequenz. Bei gro&szlig;en Innenwiderst&auml;nden ist
+      dagegen die eingangsseitige Zeitkonstante ma&szlig;gebend; in diesem Fall ist
+      die Grenzfrequenz der Drainschaltung aufgrund der geringeren Kapazit&auml;t
+      am Eingang h&ouml;her.
+    </P>
+    <P><TABLE BORDER=2 BGCOLOR="#F0F0F0">
+      <TR>
+        <TD><B>Analysen</B></TD>
+        <TD><B>Einstellungen</B></TD>
+        <TD><B>Parameter</B></TD>
+        <TD><B>Ergebnisanzeigen</B></TD>
+      </TR>
+      <TR>
+        <TD>AC</TD>
+        <TD>f = 1e5 ... 1e9</TD>
+        <TD>Rg = (1k 10k 100k)</TD>
+        <TD>Frequenzgaenge</TD>
+      </TR>
+    </TABLE></P>
+    <P><TABLE BORDER=0 BGCOLOR="#F0F0F0" WIDTH=100%>
+      <TR>
+        <TH WIDTH=20% ALIGN=left>
+          <A HREF="ueber.htm" TARGET="uebersicht"><B>zur&uuml;ck</B></A>
+        </TH>
+        <TH WIDTH=20% ALIGN=left>
+          <A HREF="../../../ueber.htm" TARGET="uebersicht"><B>&Uuml;bersicht</B></A>
+        </TH>
+        <TH WIDTH=60% ALIGN=left>
+          <A HREF="Frequenzgaenge.tse"><B>Simulation starten</B></A>
+        </TH>
+      </TR>
+    </TABLE></P>
+  </BODY>
+</HTML>

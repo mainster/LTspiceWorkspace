@@ -1,0 +1,74 @@
+<HTML>
+  <HEAD>
+    <TITLE>Einstufige_Impedanzwandler.sch</TITLE>
+  </HEAD>
+  <BODY BGCOLOR="#F0F0F0">
+    <H1 ALIGN=center><B>Einstufige_Impedanzwandler.sch</B></H1>
+    <P>
+Einstufige Impedanzwandler mit Bipolartransistoren und MOSFETs
+    </P>
+    <P>
+      Kennlinien, Betriebsverst&auml;rkung und Ausgangswiderstand einstufiger
+      Impedanzwandler mit IC=ID=100uA.
+    </P>
+    <P>
+      Bei der Kollektorschaltung wird der Basisstrom IB des Transistors
+      T1 &uuml;ber eine separate Gleichstromquelle zugef&uuml;hrt; dadurch flie&szlig;t
+      kein Gleichstrom durch den Innenwiderstand Rg1 und man kann Rg1
+      ohne Verschiebung des Arbeitspunkts bis auf 1GOhm erh&ouml;hen.
+    </P>
+    <P>
+      Aus den Kennlinien (Anzeige 1) und der Betriebsverst&auml;rkung
+      (Anzeige 2) folgt, da&szlig; bei der Kollektorschaltung Ug>0,9V und bei
+      der Drainschaltung Ug>2,8V gelten mu&szlig;. Die Kollektorschaltung
+      erreicht eine maximale Verst&auml;rkung von 1; bei der Drainschaltung
+      ist die maximale Verst&auml;rkung aufgrund des Substrat-Effekts auf
+      0,87 beschr&auml;nkt.
+    </P>
+    <P>
+      Ferner werden die Ausgangswiderst&auml;nde bei 1kHz in Abh&auml;ngigkeit
+      vom Innenwiderstand Rg ermittelt. Bei der Drainschaltung h&auml;ngt
+      der Ausgangswiderstand nicht von Rg, sondern nur von der Steilheit
+      S des Mosfets ab: ra=1/S=3,4kOhm. Bei der Kollektorschaltung gilt
+      ra=Rg/beta+1/S; daraus folgt bei kleinen Innenwiderst&auml;nden ra=1/S
+      und bei gro&szlig;en Innenwiderst&auml;nden ra=Rg/beta (Transformationsbereich,
+      30kOhm<Rg<30MOhm). F&uuml;r Rg>30MOhm ist die Kollektorschaltung nicht
+      geeignet. Bei kleinen Innenwiderst&auml;nden ist der Ausgangswiderstand
+      der Kollektorschaltung aufgrund der gr&ouml;&szlig;eren Steilheit der Bipolar-
+      transistoren geringer.
+    </P>
+    <P><TABLE BORDER=2 BGCOLOR="#F0F0F0">
+      <TR>
+        <TD><B>Analysen</B></TD>
+        <TD><B>Einstellungen</B></TD>
+        <TD><B>Parameter</B></TD>
+        <TD><B>Ergebnisanzeigen</B></TD>
+      </TR>
+      <TR>
+        <TD>AC</TD>
+        <TD>f = 1kHz ... 1kHz</TD>
+        <TD>Rg = 100 ... 1e9</TD>
+        <TD>Ausgangswiderstaende</TD>
+      </TR>
+      <TR>
+        <TD>DC</TD>
+        <TD>Ug = 0V ... 5V</TD>
+        <TD>Rg = 100 ... 1e9</TD>
+        <TD>Kennlinien , Verstaerkung</TD>
+      </TR>
+    </TABLE></P>
+    <P><TABLE BORDER=0 BGCOLOR="#F0F0F0" WIDTH=100%>
+      <TR>
+        <TH WIDTH=20% ALIGN=left>
+          <A HREF="ueber.htm" TARGET="uebersicht"><B>zur&uuml;ck</B></A>
+        </TH>
+        <TH WIDTH=20% ALIGN=left>
+          <A HREF="../../../ueber.htm" TARGET="uebersicht"><B>&Uuml;bersicht</B></A>
+        </TH>
+        <TH WIDTH=60% ALIGN=left>
+          <A HREF="Einstufige_Impedanzwandler.tse"><B>Simulation starten</B></A>
+        </TH>
+      </TR>
+    </TABLE></P>
+  </BODY>
+</HTML>

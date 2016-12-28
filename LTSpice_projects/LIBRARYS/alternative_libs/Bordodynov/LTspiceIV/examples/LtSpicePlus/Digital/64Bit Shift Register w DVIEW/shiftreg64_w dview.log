@@ -1,0 +1,35 @@
+Circuit: * C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\examples\LtSpicePlus\Digital\64Bit Shift Register w DVIEW\shiftreg64_w dview.asc
+
+WARNING: Less than two connections to node CLKOUT.  This node is used by E:U1:1.
+WARNING: Less than two connections to node D0.  This node is used by E:U1:2.
+WARNING: Less than two connections to node D1.  This node is used by E:U1:3.
+WARNING: Less than two connections to node D2.  This node is used by E:U1:4.
+WARNING: Less than two connections to node D3.  This node is used by E:U1:5.
+WARNING: Less than two connections to node D31.  This node is used by E:U1:6.
+WARNING: Less than two connections to node D32.  This node is used by E:U1:7.
+WARNING: Less than two connections to node D33.  This node is used by E:U1:8.
+WARNING: Less than two connections to node D61.  This node is used by E:U1:9.
+WARNING: Less than two connections to node D64.  This node is used by E:U1:10.
+WARNING: Less than two connections to node D62.  This node is used by E:U1:11.
+WARNING: Less than two connections to node D63.  This node is used by E:U1:12.
+Direct Newton iteration for .op point succeeded.
+
+Date: Mon Feb 09 11:29:15 2015
+Total elapsed time: 0.896 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 26413
+traniter = 26410
+tranpoints = 13206
+accept = 10503
+rejected = 2703
+matrix size = 116
+fillins = 0
+solver = Normal
+Thread vector: 10.0/4.0[6] 2.5/2.6[1] 1.5/1.9[1] 0.4/1.2[1]  2592/500
+Matrix Compiler1: 2.05 KB object code size  1.4/0.9/[0.5]
+Matrix Compiler2: 5.43 KB object code size  1.1/1.8/[0.6]
+
+

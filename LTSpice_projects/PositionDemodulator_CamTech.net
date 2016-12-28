@@ -1,0 +1,52 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\PositionDemodulator_CamTech.asc
+Ia N002 0 SINE(0 550u 1.5meg)
+Ib N006 0 SINE(0 575u 1.5meg)
+C1 N002 0 470p
+R2 Va N001 16.9k
+R3 N001 N002 453
+R4 Vb N005 16.9k
+R5 N005 N006 453
+R6 N003 Va 2k
+R7 N004 Vb 2k
+R8 Vpos N003 4.53k
+R9 0 N004 4.53k
+C2 Va N001 330p
+C3 0 N006 470p
+C4 N005 Vb 330p
+C5 N003 Vpos 1.2n
+C6 N004 0 1.2n
+C7 N009 N008 10n
+XU3 0 N001 Vp Vm Va LT1013
+V1 Vp 0 15
+V2 Vm 0 -15
+XU1 0 N005 Vp Vm Vb LT1013
+XU2 N004 N003 Vp Vm Vpos LT1013
+XU5 0 N008 Vp Vm N009 LT1013
+R10 Vp10 N011 {(1-R13set)*R13}
+R11 N011 Vm10 {R13set*R13}
+R12 N008 N011 49.9k
+R13 Va N008 10k
+R14 N007 N008 200k
+R15 Vb N007 {(1-R77set)*R77}
+R16 N007 Va {R77set*R77}
+R17 Vb N008 10k
+R18 N008 Vm10 5.49k
+D1 N008 N009 1N4148
+Q1 Vp N009 N010 0 2N5769
+R19 N010 AGC_out 10
+V3 Vp10 0 10
+V4 Vm10 0 -10
+R20 N010 N009 150
+.model D D
+.lib C:\Program Files (x86)\LTC_orig\LTspiceIV_4.18\lib\cmp\standard.dio
+.model NPN NPN
+.model PNP PNP
+.lib C:\Program Files (x86)\LTC_orig\LTspiceIV_4.18\lib\cmp\standard.bjt
+.param R13=20k
+.param R13set=0.9
+.param R77=10k
+.param R77set=0.5
+.tran 1 uic
+.lib LTC.lib
+.backanno
+.end

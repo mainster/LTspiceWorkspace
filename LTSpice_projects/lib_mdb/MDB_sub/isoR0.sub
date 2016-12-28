@@ -1,0 +1,10 @@
+* Single pole isolation resistor model
+* 
+* Could be used to pull/push floating nodes
+* MDB 06-10-2014
+*
+.subckt isoR0 1
+R1 1 0 {Riso}
+.param Riso=100meg
+.ends
+

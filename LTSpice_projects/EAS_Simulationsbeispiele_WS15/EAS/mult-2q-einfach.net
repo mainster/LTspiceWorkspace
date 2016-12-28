@@ -1,0 +1,25 @@
+* Z:\home\koblitz\Simulationsbeispiele_WS15\EAS\mult-2q-einfach.asc
+VA N003 0 0
+V1 N001 0 5
+Q1 c1 b1 e12 0 NPN
+Q2 c2 0 e12 0 NPN
+I1 e12 0 100µ
+Q3 N002 N002 b1 0 NPN
+Q4 N002 N002 0 0 NPN
+RA N003 b1 2k
+I2 0 N002 2m
+I3 b1 0 1m
+RC1 N001 c1 {rc}
+RC2 N001 c2 {rc}
+XU1 c2 c1 out opamp_param_4 Vp=10 Vm=-10 Ilim=20m FT=10Meg SR=10 Vos=2m A0=100k phir=45 en=0 enk=0 in=0 ink=0 Rin=500Meg
+RB1 out c1 {rb}
+RB2 0 c2 {rb}
+.model NPN NPN
+.model PNP PNP
+.lib Z:\home\koblitz\LT-Spice\lib\cmp\standard.bjt
+.dc VA -2.5 2.5 10m
+.step i1 100u 1000u 100u
+.param rc=5k rb=5k
+.lib EIT_sub\opamp_parametrierbar.sub
+.backanno
+.end

@@ -1,0 +1,41 @@
+* C:\users\mainster\My Documents\CODES_local\LTSpice_projects\galvoscanner\sys2order.asc
+V1 N001 0 PULSE(0 1 10m) AC 1
+R1 in N011 12k
+R2 N011 network 12k
+C1 N011 0 220n
+C2 network 0 220n
+E1 lap 0 N001 0 laplace=169*(1/(s+145)-1/(s+992))
+E2 lap2 0 N001 0 laplace=.993/((1e-3*s+1)*(6.9e-3*s+1))
+V2 in 0 PULSE(1 2 0 1u 1u 16m 32m) AC 1
+R4 X N010 12k
+R5 N010 Y 12k
+C3 N010 0 220n
+C4 Y 0 220n
+XU1 0 N005 N006 opamp_param_3 Vp=15 Vm=-15 Ilim=2 FT=10Meg SR=10 Vos=0 A0=100k phir=45 en=0 enk=0 in=0 ink=0 Rin=500Meg
+R7 N005 N004 {Rf/Kp}
+R8 N006 N005 {Rf}
+XU2 N008 N003 N004 opamp_param_3 Vp=10 Vm=-10 Ilim=2 FT=10Meg SR=10 Vos=0 A0=100k phir=45 en=0 enk=0 in=0 ink=0 Rin=500Meg
+R9 in N003 1k
+R10 N007 N008 1k
+R11 N008 0 1k
+R12 N003 N004 1k
+E3 X 0 N009 0 {Aext}
+E4 N007 0 Y 0 1
+D1 N009 N002 D
+D2 0 N009 D
+XU3 N002 vdc_single V=3.3
+R6 N006 N009 100
+.model D D
+.lib C:\Program Files (x86)\LTC\LTspiceIV\lib\cmp\standard.dio
+.ac oct 100 1 1meg
+* laplace=(1.742e42)/(3.046e40*s+5.542e37*s**2+2.091e42)
+* .tran 70m
+.param Rf=100k
+.param Kp=5
+* .step param Kp list 1 2 4 8 200
+.param Aext=10
+;.step param Aext list 1 2 10
+.lib EIT_sub\opamp_parametrierbar.sub
+.lib EIT_sub\vdc_single.sub
+.backanno
+.end

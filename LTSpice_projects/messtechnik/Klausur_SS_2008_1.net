@@ -1,0 +1,18 @@
+* Z:\media\data\CODES\LTSpice_projects\messtechnik\Klausur_SS_2008_1.asc
+L1 N001 A {L0+dL}
+L2 A 0 {L0-dL}
+L0a N001 B {L0}
+L0b B 0 {L0}
+XU1 N002 N004 N003 opamp Aol=100K GBW=10Meg
+R1 N002 B 1k
+R3 N004 A 1k
+R4 0 N004 100k
+R2 N002 N003 100k
+V2 N001 0 SINE(0 10 1k)
+.param L0=1mH
+.param dL=1u
+.param f=1k
+.tran 10m
+.lib opamp.sub
+.backanno
+.end

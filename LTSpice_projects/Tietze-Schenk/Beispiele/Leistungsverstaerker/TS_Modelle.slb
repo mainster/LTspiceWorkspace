@@ -1,0 +1,901 @@
+*version 8.0 2231621195
+@index
+symloc H_s 0 706
+symloc Ireal 706 766
+symloc VVideal 1472 716
+symloc VVint 2188 786
+symloc VVkomp 2974 1297
+symloc VV 4271 968
+symloc VC 5239 1016
+symloc CV 6255 992
+symloc CC 7247 1044
+symloc CC-Transistor 8291 1006
+symloc Puffer 9297 562
+symloc Begrenzer 9859 642
+symloc n-Stromspiegel 10501 1304
+symloc p-Stromspiegel 11805 1340
+symloc n-Strombank 13145 1739
+symloc p-Strombank 14884 1799
+symloc Parameter 16683 539
+symloc Strommesser 17222 498
+symloc Diff-AP 17720 623
+symloc Diff-Quelle 18343 928
+*symbol H_s
+d Uebertragungsfunktion
+@type p 8.0
+@attributes
+a 1 sp 9 0 20 -4 hln 100 REFDES=Hs?
+a 0 sp 0 0 14 48 hln 100 PART=H_s
+a 0 sp 0 0 0 0 hln 100 MODEL=
+a 0 sp 0 0 0 0 hln 100 TEMPLATE=E^@REFDES %OUT 0 LAPLACE {V(%IN)} {(@Z)/(@N)}
+a 0 s 0 0 0 10 hlb 100 SIMULATIONONLY=
+a 0 u 13 13 30 34 hcb 100 Z=1
+a 0 u 13 13 30 46 hcb 100 N=1+s
+@pins
+p 0 12 12 hln 100 IN n 0 10 h
+a 0 s 0 0 1 8 hln 100 PIN=1
+a 0 s 0 0 0 10 hln 100 ERC=x
+p 0 48 6 hln 100 OUT n 60 10 u
+a 0 s 0 0 59 10 hln 100 PIN=2
+a 0 s 0 0 60 8 hln 100 ERC=x
+@graphics 60 20 0 10 10
+r 0 10 0 50 20 d_info:,,1,,,,,,,,,,,, 
+v 0 50 10 d_info:,,,,4/1/6/6,,,,,,,,,, 
+40 0
+;
+v 0 50 10 d_info:,,,,4/1/6/6,,,,,,,,,, 
+40 20
+;
+z 26 20 14 hln 100 4
+H(s)
+*symbol Ireal
+d Reale Stromquelle mit Innenwiderstand und Kapazitaet
+@type s 8.0
+@attributes
+a 1 s 9 0 -2 22 hrn 100 REFDES=Ib?
+a 1 sp 0 0 0 0 hcn 100 TEMPLATE=EX^@REFDES x@REFDES 0 TABLE {V(%e,%a)}=(0,0)(@Umin,1) \nG^@REFDES %e %a VALUE={@I0*(1+V(%e,%a)/@UA)*V(x@REFDES)} ?C|\nC^@REFDES %e %a @C|
+a 0 sp 0:11 0 0 50 hln 100 PART=Ireal
+a 0 u 13 13 22 8 hln 100 I0=1mA
+a 0 u 13 13 22 18 hln 100 Umin=0.2V
+a 0 u 13 13 22 28 hln 100 UA=100V
+a 0 u 13 13 22 38 hln 100 C=
+@pins
+p 0 8 12 dln 100 e n 10 0 d
+a 0 s 0:1 0 12 9 drn 100 PIN=e
+a 0 s 0:13 0 10 0 hln 100 ERC=x
+p 0 12 28 vln 100 a n 10 40 v
+a 0 s 0:1 0 8 31 vrn 100 PIN=a
+a 0 s 0:13 0 10 40 hln 100 ERC=x
+@graphics 20 40 10 0 31
+a 0 1 22 18 25 19 22 
+a 0 19 18 2 15 1 18 
+v 0 10 13
+10 27
+12 22
+;
+v 0 10 27
+8 22
+;
+*symbol VVideal
+d Idealer VV-OP (ohne Frequenzgang)
+@type p 8.0
+@attributes
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=E^@REFDES %Ua 0 VALUE = { @AD*V(%Up,%Un) }
+a 0 sp 11 0 14 34 hln 100 PART=VVideal
+a 1 s 9 0 30 12 hlb 100 REFDES=OP?
+a 0 u 13 13 30 58 hln 100 AD=1e5
+a 0 sp 0 0 0 0 hln 100 MODEL=
+@pins
+p 0 12 12 hln 100 Up n 0 10 h
+a 0 s 0:1 0 9 8 hrn 100 PIN=Up
+a 0 s 0:13 0 0 10 hln 100 ERC=x
+p 0 12 52 hln 100 Un n 0 50 h
+a 0 s 0:1 0 9 48 hrn 100 PIN=Un
+a 0 s 0:13 0 0 50 hln 100 ERC=x
+p 0 58 32 hrn 100 Ua n 70 30 u
+a 0 s 0:1 0 61 36 hln 100 PIN=Ua
+a 0 s 0:13 0 70 30 hln 100 ERC=x
+a 0 s 0:13 0 0 0 hln 100 FLOAT=r
+@graphics 70 60 0 10 10
+v 0 10 0
+10 60
+60 30
+10 0
+;
+v 0 13 50
+19 50
+;
+v 0 13 10
+19 10
+;
+v 0 16 7
+16 13
+;
+*symbol VVint
+d VV-OP mit Frequenzgang
+@type p 8.0
+@attributes
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=X^@REFDES %Up %Un %Ua @MODEL params: ad=@AD ft=@FT ra=@Ra
+a 0 sp 11 0 14 34 hln 100 PART=VVint
+a 1 s 9 0 30 12 hlb 100 REFDES=OP?
+a 0 u 13 13 30 58 hln 100 AD=1e5
+a 0 u 13 13 30 70 hlb 100 FT=1e6
+a 0 u 13 13 30 80 hlb 100 Ra=1k
+a 0 sp 0 0 0 0 hln 100 MODEL=VVint
+@pins
+p 0 12 12 hln 100 Up n 0 10 h
+a 0 s 0:1 0 9 8 hrn 100 PIN=Up
+a 0 s 0:13 0 0 10 hln 100 ERC=x
+p 0 12 52 hln 100 Un n 0 50 h
+a 0 s 0:1 0 9 48 hrn 100 PIN=Un
+a 0 s 0:13 0 0 50 hln 100 ERC=x
+p 0 58 32 hrn 100 Ua n 70 30 u
+a 0 s 0:1 0 61 36 hln 100 PIN=Ua
+a 0 s 0:13 0 70 30 hln 100 ERC=x
+a 0 s 0:13 0 0 0 hln 100 FLOAT=r
+@graphics 70 60 0 10 10
+v 0 10 0
+10 60
+60 30
+10 0
+;
+v 0 13 50
+19 50
+;
+v 0 13 10
+19 10
+;
+v 0 16 7
+16 13
+;
+*symbol VVkomp
+d Kleinsignalmodell fuer VV-OP
+@type p 8.0
+@attributes
+a 1 sp 9 0 40 54 hln 100 REFDES=OP?
+a 0 sp 11 0 12 34 hln 100 PART=VVkomp
+a 0 sp 0 0 0 0 hln 100 MODEL=VVkomp
+a 0 sp 0 0 0 0 hln 100 TEMPLATE=X^@REFDES %Up %Un %Ua %K1 %K2 @MODEL PARAMS: R1=@R1 R2=@R2 Ra=@Ra C1=@C1 C2=@C2 S1=@S1 S2=@S2 F3=@F3
+a 0 u 13 13 10 82 hln 100 R1=1E6
+a 0 u 13 13 62 82 hln 100 R2=100k
+a 0 u 13 13 62 104 hln 100 Ra=1k
+a 0 u 13 13 10 92 hln 100 C1=16p
+a 0 u 13 13 62 92 hln 100 C2=16p
+a 0 u 13 13 10 104 hln 100 F3=1E6
+a 0 u 13 13 10 72 hln 100 S1=0.2m
+a 0 u 13 13 62 72 hln 100 S2=5m
+@pins
+p 0 12 14 hln 100 Up n 0 10 h
+a 0 s 0:1 0 9 8 hrn 100 PIN=Up
+a 0 s 0:13 0 0 10 hln 100 ERC=x
+p 0 14 52 hln 100 Un n 0 50 h
+a 0 s 0:1 0 9 48 hrn 100 PIN=Un
+a 0 s 0:13 0 0 50 hln 100 ERC=x
+p 0 50 34 hrn 100 Ua n 70 30 u
+a 0 s 0:1 0 61 36 hln 100 PIN=Ua
+a 0 s 0:13 0 70 30 hln 100 ERC=x
+a 0 s 0:13 0 -10 0 hln 100 FLOAT=r
+p 2 34 10 hln 100 K1 n 30 0 d
+a 0 s 0:1 0 32 9 drn 100 PIN=4
+a 0 s 0:13 0 30 0 hln 100 ERC=x
+a 0 s 0:13 0 0 0 hln 100 FLOAT=r
+p 2 54 10 hln 100 K2 n 50 0 d
+a 0 s 0:1 0 52 9 drn 100 PIN=5
+a 0 s 0:13 0 50 0 hln 100 ERC=x
+a 0 s 0:13 0 0 0 hln 100 FLOAT=r
+@graphics 70 60 0 10 10
+v 0 10 0
+10 60
+60 30
+10 0
+;
+v 0 13 50
+19 50
+;
+v 0 13 10
+19 10
+;
+v 0 16 7
+16 13
+;
+v 0 30 10
+30 12
+;
+v 0 50 10
+50 24
+;
+*symbol VV
+d VV-Operationsverstaerker
+@type p 8.0
+@attributes
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=X^@REFDES %Up %Un  %Ua @MODEL params: ad=@AD ft=@FT sr=@SR ra=@Ra uamax=@Uamax uamin=@Uamin iamax=@Iamax
+a 0 sp 0:11 0 22 34 hln 100 PART=VV
+a 1 s 9 0 30 12 hlb 100 REFDES=OP?
+a 0 u 13 13 0 70 hln 100 AD=1e5
+a 0 u 13 13 0 82 hlb 100 FT=1e6
+a 0 u 13 13 48 72 hlb 100 SR=1
+a 0 u 13 13 48 82 hlb 100 Ra=1k
+a 0 u 13 13 0 102 hlb 100 Uamin=-4V
+a 0 u 13 13 0 92 hlb 100 Uamax=4V
+a 0 sp 0:13 0 0 10 hlb 100 MODEL=VV
+a 0 u 13 13 0 112 hlb 100 Iamax=10mA
+@pins
+p 0 12 12 hln 100 Up n 0 10 h
+a 0 s 0:1 0 9 8 hrn 100 PIN=Up
+a 0 s 0:13 0 0 10 hln 100 ERC=x
+p 0 12 52 hln 100 Un n 0 50 h
+a 0 s 0:1 0 9 48 hrn 100 PIN=Un
+a 0 s 0:13 0 0 50 hln 100 ERC=x
+p 0 58 32 hrn 100 Ua n 70 30 u
+a 0 s 0:1 0 61 36 hln 100 PIN=Ua
+a 0 s 0:13 0 70 30 hln 100 ERC=x
+a 0 s 0:13 0 0 0 hln 100 FLOAT=r
+@graphics 70 60 0 10 10
+v 0 10 0
+10 60
+60 30
+10 0
+;
+v 0 13 50
+19 50
+;
+v 0 13 10
+19 10
+;
+v 0 16 7
+16 13
+;
+*symbol VC
+d VC-Operationsverstaerker
+@type p 8.0
+@attributes
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=X^@REFDES %Up %Un  %Ua @MODEL params: s1=@S r=@R c=@C uamin=@Uamin uamax=@Uamax
+a 0 sp 0:11 0 92 46 hln 100 PART=VC
+a 1 s 9 0 32 10 hlb 100 REFDES=OP?
+a 0 sp 0:13 0 0 10 hlb 100 MODEL=VC
+a 0 u 13 13 0 72 hlb 100 S=100m
+a 0 u 13 13 0 82 hlb 100 R=10k
+a 0 u 13 13 0 92 hlb 100 C=5pF
+a 0 u 13 13 46 72 hlb 100 Uamin=-4V
+a 0 u 13 13 46 82 hlb 100 Uamax=4V
+@pins
+p 0 12 12 hln 100 Up n 0 10 h
+a 0 s 0:1 0 9 8 hrn 100 PIN=Up
+a 0 s 0:13 0 0 10 hln 100 ERC=x
+p 0 12 52 hln 100 Un n 0 50 h
+a 0 s 0:1 0 9 48 hrn 100 PIN=Un
+a 0 s 0:13 0 0 50 hln 100 ERC=x
+p 0 58 32 hrn 100 Ua n 70 30 u
+a 0 s 0:1 0 61 36 hln 100 PIN=Ua
+a 0 s 0:13 0 70 30 hln 100 ERC=x
+a 0 s 0:13 0 0 0 hln 100 FLOAT=r
+@graphics 70 60 0 10 10
+v 0 10 0
+10 60
+60 30
+10 0
+;
+v 0 13 50
+19 50
+;
+v 0 13 10
+19 10
+;
+v 0 16 7
+16 13
+;
+a 0 36 22 30 30 36 38 
+a 0 40 38 46 30 40 22 
+v 0 32 30
+44 30
+40 32
+;
+v 0 44 30
+40 28
+;
+v 0 60 30
+46 30
+;
+v 0 30 30
+22 30
+;
+v 0 22 26
+22 34
+;
+*symbol CV
+d CV-Operationsverstaerker
+@type p 8.0
+@attributes
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=X^@REFDES %Up %Un  %Ua @MODEL params: rs=@Rs r=@R c=@C ra=@Ra uamin=@Uamin uamax=@Uamax iamax=@Iamax
+a 0 sp 0:11 0 92 46 hln 100 PART=CV
+a 1 s 9 0 32 10 hlb 100 REFDES=OP?
+a 0 sp 0:13 0 0 10 hlb 100 MODEL=CV
+a 0 u 13 13 0 72 hlb 100 Rs=10
+a 0 u 13 13 0 82 hlb 100 R=10k
+a 0 u 13 13 0 92 hlb 100 C=5pF
+a 0 u 13 13 46 72 hlb 100 Ra=100
+a 0 u 13 13 46 82 hlb 100 Uamin=-4V
+a 0 u 13 13 46 92 hlb 100 Uamax=4V
+a 0 u 13 13 0 102 hlb 100 Iamax=10mA
+@pins
+p 0 12 12 hln 100 Up n 0 10 h
+a 0 s 0:1 0 9 8 hrn 100 PIN=Up
+a 0 s 0:13 0 0 10 hln 100 ERC=x
+p 0 12 52 hln 100 Un n 0 50 h
+a 0 s 0:1 0 9 48 hrn 100 PIN=Un
+a 0 s 0:13 0 0 50 hln 100 ERC=x
+p 0 58 32 hrn 100 Ua n 70 30 u
+a 0 s 0:1 0 61 36 hln 100 PIN=Ua
+a 0 s 0:13 0 70 30 hln 100 ERC=x
+a 0 s 0:13 0 0 0 hln 100 FLOAT=r
+@graphics 70 60 0 10 10
+v 0 10 0
+10 60
+60 30
+10 0
+;
+v 0 13 50
+19 50
+;
+v 0 13 10
+19 10
+;
+v 0 16 7
+16 13
+;
+v 0 2 24
+18 24
+10 38
+2 24
+;
+*symbol CC
+d CC-Operationsverstaerker
+@type p 8.0
+@attributes
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=X^@REFDES %Up %Un  %Ua @MODEL params: rs=@Rs r=@R c=@C uamin=@Uamin uamax=@Uamax
+a 0 sp 0:11 0 92 46 hln 100 PART=CC
+a 1 s 9 0 32 10 hlb 100 REFDES=OP?
+a 0 sp 0:13 0 0 10 hlb 100 MODEL=CC
+a 0 u 13 13 0 72 hlb 100 Rs=10
+a 0 u 13 13 0 82 hlb 100 R=10k
+a 0 u 13 13 0 92 hlb 100 C=5pF
+a 0 u 13 13 38 72 hlb 100 Uamin=-4V
+a 0 u 13 13 38 82 hlb 100 Uamax=4V
+@pins
+p 0 12 12 hln 100 Up n 0 10 h
+a 0 s 0:1 0 9 8 hrn 100 PIN=Up
+a 0 s 0:13 0 0 10 hln 100 ERC=x
+p 0 12 52 hln 100 Un n 0 50 h
+a 0 s 0:1 0 9 48 hrn 100 PIN=Un
+a 0 s 0:13 0 0 50 hln 100 ERC=x
+p 0 58 32 hrn 100 Ua n 70 30 u
+a 0 s 0:1 0 61 36 hln 100 PIN=Ua
+a 0 s 0:13 0 70 30 hln 100 ERC=x
+a 0 s 0:13 0 0 0 hln 100 FLOAT=r
+@graphics 70 60 0 10 10
+v 0 10 0
+10 60
+60 30
+10 0
+;
+v 0 13 50
+19 50
+;
+v 0 13 10
+19 10
+;
+v 0 16 7
+16 13
+;
+a 0 36 22 30 30 36 38 
+a 0 40 38 46 30 40 22 
+v 0 32 30
+44 30
+40 32
+;
+v 0 44 30
+40 28
+;
+v 0 60 30
+46 30
+;
+v 0 30 30
+22 30
+;
+v 0 22 26
+22 34
+;
+v 0 2 24
+18 24
+10 38
+2 24
+;
+*symbol CC-Transistor
+d CC-OP mit Transistorsymbol
+@type p 8.0
+@attributes
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=X^@REFDES %B %E  %C @MODEL params: rs=@Rs r=@R c=@C uamin=@Uamin uamax=@Uamax
+a 0 sp 0:11 0 92 46 hln 100 PART=CC-Transistor
+a 1 s 9 0 28 8 hlb 100 REFDES=T?
+a 0 sp 0:13 0 0 10 hlb 100 MODEL=CC
+a 0 u 13 13 28 18 hlb 100 Rs=10
+a 0 u 13 13 28 28 hlb 100 R=10k
+a 0 u 13 13 28 38 hlb 100 C=5pF
+a 0 u 13 13 28 50 hlb 100 Uamin=-4V
+a 0 u 13 13 28 60 hlb 100 Uamax=4V
+@pins
+p 0 12 22 hln 100 B n 0 20 h
+a 0 s 0:1 0 9 18 hrn 100 PIN=B
+a 0 s 0:13 0 0 20 hln 100 ERC=x
+p 0 22 38 vln 100 E n 20 50 v
+a 0 s 0:1 0 18 41 vrn 100 PIN=E
+a 0 s 0:13 0 20 50 hln 100 ERC=x
+p 0 18 12 dln 100 C n 20 0 d
+a 0 s 0:1 0 22 9 drn 100 PIN=C
+a 0 s 0:13 0 20 0 hln 100 ERC=x
+a 0 s 0:13 0 -10 70 hln 100 FLOAT=r
+@graphics 30 50 0 20 10
+v 0 10 10 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+10 36
+;
+v 0 20 10
+10 15
+;
+v 0 10 31
+20 36
+;
+v 0 10 25
+20 30
+;
+v 0 18 29
+15 25
+;
+v 0 18 29
+13 29
+;
+v 0 20 30
+20 40
+;
+v 0 17 32
+12 32
+;
+v 0 15 36
+12 32
+;
+*symbol Puffer
+d Idealer Impedanzwandler
+@type p 8.0
+@attributes
+a 0 sp 0:11 0 10 34 hln 100 PART=Puffer
+a 1 s 9 0 28 4 hcn 100 REFDES=E?
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=E^@REFDES %Ua 0 %Ue 0 1 \nRe^@REFDES %Ue 0 1e12
+a 0 sp 0 0 0 0 hln 100 MODEL=
+@pins
+p 0 13 22 hln 100 Ue n 0 20 h
+a 0 s 0 0 0 10 hln 100 ERC=x
+a 0 s 0 0 5 18 hrn 100 PIN=Ue
+p 0 37 22 hrn 100 Ua n 50 20 u
+a 0 s 0 0 -10 10 hln 100 ERC=x
+a 0 s 0 0 45 18 hln 100 PIN=Ua
+a 0 s 0:13 0 0 0 hln 100 FLOAT=r
+@graphics 50 40 0 20 10
+v 0 15 5
+15 35
+40 20
+15 5
+;
+z 26 20 23 hln 100 1
+1
+v 0 10 20
+15 20
+;
+*symbol Begrenzer
+d Idealisierte Diode als Begrenzer
+@type p 8.0
+@attributes
+a 0 sp 0:11 0 21 23 hln 100 PART=Begrenzer
+a 0 s 9 0 21 24 hln 100 REFDES=DB?
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=G^@refdes %a %k VALUE = { limit(exp(V(%a,%k)/@UT),-1e12,1e12) }
+a 0 u 0:13 0 0 10 hln 100 UT=5m
+@pins
+p 0 10 5 dln 100 a n 10 0 d
+a 0 s 0 0 12 1 drn 100 PIN=a
+a 0 s 0 0 20 0 hln 100 ERC=x
+p 0 14 35 vln 100 k n 10 40 v
+a 0 s 0 0 16 41 vrn 100 PIN=k
+a 0 s 0 0 20 10 hln 100 ERC=x
+@graphics 20 40 10 0 10
+v 0 5 15
+10 25
+;
+v 0 10 25
+15 15
+;
+v 0 15 25 d_info:,,,,4/1/6/6,,,,,,,,,, 
+5 25
+;
+v 0 15 15
+5 15
+;
+v 0 10 15
+10 25
+;
+v 0 10 10
+10 15
+;
+v 0 10 25
+10 30
+;
+*symbol n-Stromspiegel
+d n-Stromspiegel (Bezug auf neg. Spannung)
+@type p 8.0
+@attributes
+a 0 sp 0:11 0 10 34 hln 100 PART=n-Stromspiegel
+a 1 s 9 0 60 2 hcn 100 REFDES=F?
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=GE^@REFDES %e %n  VALUE={STP(V(%e,%n)-@Ue)*(V(%e,%n)-@Ue)} \nEX^@REFDES x@REFDES 0 TABLE {V(%a,%n)}=(0,0),(@Umin,1) \nGA^@REFDES %a %n VALUE={STP(V(%e,%n)-@Ue)*(V(%e,%n)-@Ue)*V(x@REFDES)*@K*(1+V(%a,%n)/@UA)} ?C|\nCA^@REFDES %a %n @C|
+a 0 u 13 13 102 12 hln 100 K=0.98
+a 0 u 13 13 102 22 hln 100 Umin=0.2V
+a 0 u 13 13 102 32 hln 100 UA=100V
+a 0 u 13 0 13 34 hrb 100 Ue=0.7V
+a 0 u 13 13 102 42 hln 100 C=
+@pins
+p 0 28 13 dln 100 e n 30 0 d
+a 0 s 0 0 40 0 hln 100 ERC=x
+a 0 s 0 0 32 5 drn 100 PIN=e
+p 0 88 13 dln 100 a n 90 0 d
+a 0 s 0 0 80 60 hln 100 ERC=x
+a 0 s 0 0 84 5 drn 100 PIN=a
+p 0 62 37 vln 100 n n 60 50 v
+a 0 s 0 0 90 -12 hln 100 ERC=x
+a 0 s 0 0 66 45 vrn 100 PIN=n
+@graphics 140 50 30 0 10
+v 0 30 12 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+27 6
+;
+v 0 30 12 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+33 6
+;
+v 0 30 18
+30 10
+;
+z 26 36 14 hln 100 1
+I
+z 26 68 26 hln 100 2
+KI
+a 0 81 22 98 25 99 22 
+a 0 99 18 82 15 81 18 
+v 0 90 13
+90 27
+92 22
+;
+v 0 90 27
+88 22
+;
+v 0 30 34
+30 40
+90 40
+90 30
+;
+c 0 30 26 8
+v 0 18 18
+18 34
+;
+v 0 18 34
+20 30
+;
+v 0 18 34
+16 30
+;
+c 0 60 40 2 d_info:,,,,,ON,0/128/0,,,,,,,, 
+*symbol p-Stromspiegel
+d p-Stromspiegel (Bezug auf pos. Spannung)
+@type p 8.0
+@attributes
+a 0 sp 0:11 0 10 34 hln 100 PART=p-Stromspiegel
+a 1 s 9 0 60 54 hcn 100 REFDES=F?
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=GE^@REFDES %p %e VALUE={STP(V(%p,%e)-@Ue)*(V(%p,%e)-@Ue)} \nEX^@REFDES x@REFDES 0 TABLE {V(%p,%a)}=(0,0),(@Umin,1) \nGA^@REFDES %p %a VALUE={STP(V(%p,%e)-@Ue)*(V(%p,%e)-@Ue)*V(x@REFDES)*@K*(1+V(%p,%a)/@UA)} ?C|\nCA^@REFDES %p %a @C|
+a 0 u 13 13 102 20 hln 100 K=0.96
+a 0 u 13 13 102 30 hln 100 Umin=0.2V
+a 0 u 13 13 102 40 hln 100 UA=50V
+a 0 u 13 0 13 30 hrb 100 Ue=0.7V
+a 0 u 13 13 102 50 hln 100 C=
+a 0 sp 0 0 0 0 hln 100 MODEL=
+@pins
+p 0 32 37 vln 100 e n 30 50 v
+a 0 s 0 0 20 50 hln 100 ERC=x
+a 0 s 0 0 28 45 vrn 100 PIN=e
+p 0 92 37 vln 100 a n 90 50 v
+a 0 s 0 0 100 -10 hln 100 ERC=x
+a 0 s 0 0 96 45 vrn 100 PIN=a
+p 0 58 13 dln 100 p n 60 0 d
+a 0 s 0 0 30 62 hln 100 ERC=x
+a 0 s 0 0 54 5 drn 100 PIN=p
+@graphics 120 50 30 50 10
+v 0 30 44 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+27 38
+;
+v 0 30 44 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+33 38
+;
+v 0 30 40
+30 32
+;
+z 26 36 44 hln 100 1
+I
+z 26 68 34 hln 100 2
+KI
+a 0 81 32 98 35 99 32 
+a 0 99 28 82 25 81 28 
+v 0 90 23
+90 37
+92 32
+;
+v 0 90 37
+88 32
+;
+c 0 30 24 8
+v 0 18 16
+18 32
+;
+v 0 18 32
+20 28
+;
+v 0 18 32
+16 28
+;
+v 0 30 16
+30 10
+90 10
+90 20
+;
+c 0 60 10 2 d_info:,,,,,ON,0/128/0,,,,,,,, 
+*symbol n-Strombank
+d n-Stromspiegel (Bezug auf neg. Spannung)
+@type p 8.0
+@attributes
+a 0 sp 0:11 0 10 34 hln 100 PART=n-Stromspiegel
+a 1 s 9 0 58 4 hcn 100 REFDES=F?
+a 1 sp 0:13 0 0 0 hln 100 TEMPLATE=GE^@REFDES %e %n  VALUE={STP(V(%e,%n)-@Ue)*(V(%e,%n)-@Ue)} \nEX1^@REFDES x1@REFDES 0 TABLE {V(%a1,%n)}=(0,0),(@Umin,1) \nGA1^@REFDES %a1 %n VALUE={STP(V(%e,%n)-@Ue)*(V(%e,%n)-@Ue)*V(x1@REFDES)*@K*(1+V(%a1,%n)/@UA)} \nEX2^@REFDES x2@REFDES 0 TABLE {V(%a2,%n)}=(0,0),(@Umin,1) \nGA2^@REFDES %a2 %n VALUE={STP(V(%e,%n)-@Ue)*(V(%e,%n)-@Ue)*V(x2@REFDES)*@K*(1+V(%a2,%n)/@UA)} ?C|\nCA1^@REFDES %a1 %n @C \nCA2^@REFDES %a2 %n @C|
+a 0 u 13 13 166 6 hln 100 K=0.97
+a 0 u 13 13 166 16 hln 100 Umin=0.2V
+a 0 u 13 13 166 26 hln 100 UA=100V
+a 0 u 13 0 13 32 hrb 100 Ue=0.7V
+a 0 u 13 13 166 36 hln 100 C=
+@pins
+p 0 28 13 dln 100 e n 30 0 d
+a 0 s 0 0 40 0 hln 100 ERC=x
+a 0 s 0 0 32 5 drn 100 PIN=e
+p 0 88 13 dln 100 a1 n 90 0 d
+a 0 s 0 0 80 60 hln 100 ERC=x
+a 0 s 0 0 84 5 drn 100 PIN=a1
+p 0 92 37 vln 100 n n 90 50 v
+a 0 s 0 0 120 -12 hln 100 ERC=x
+a 0 s 0 0 96 45 vrn 100 PIN=n
+p 0 148 13 dln 100 a2 n 150 0 d
+a 0 s 0 0 140 60 hln 100 ERC=x
+a 0 s 0 0 144 5 drn 100 PIN=a2
+@graphics 180 50 30 0 10
+v 0 30 12 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+27 6
+;
+v 0 30 12 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+33 6
+;
+v 0 30 18
+30 10
+;
+z 26 36 12 hln 100 1
+I
+z 26 68 24 hln 100 2
+KI
+a 0 81 22 98 25 99 22 
+a 0 99 18 82 15 81 18 
+v 0 90 13
+90 27
+92 22
+;
+v 0 90 27
+88 22
+;
+v 0 30 34
+30 40
+90 40
+90 30
+;
+c 0 30 26 8
+v 0 18 18
+18 34
+;
+v 0 18 34
+20 30
+;
+v 0 18 34
+16 30
+;
+c 0 90 40 2 d_info:,,,,,ON,0/128/0,,,,,,,, 
+z 26 128 24 hln 100 2
+KI
+a 0 141 22 158 25 159 22 
+a 0 159 18 142 15 141 18 
+v 0 150 13
+150 27
+152 22
+;
+v 0 150 27
+148 22
+;
+v 0 150 30
+150 40
+90 40
+;
+*symbol p-Strombank
+d p-Stromspiegel (Bezug auf pos. Spannung)
+@type p 8.0
+@attributes
+a 0 sp 0:11 0 10 34 hln 100 PART=p-Stromspiegel
+a 1 s 9 0 60 54 hcn 100 REFDES=F?
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=GE^@REFDES %p %e VALUE={STP(V(%p,%e)-@Ue)*(V(%p,%e)-@Ue)} \nEX1^@REFDES x1@REFDES 0 TABLE {V(%p,%a1)}=(0,0),(@Umin,1) \nGA1^@REFDES %p %a1 VALUE={STP(V(%p,%e)-@Ue)*(V(%p,%e)-@Ue)*V(x1@REFDES)*@K*(1+V(%p,%a1)/@UA)} \nEX2^@REFDES x2@REFDES 0 TABLE {V(%p,%a2)}=(0,0),(@Umin,1) \nGA2^@REFDES %p %a2 VALUE={STP(V(%p,%e)-@Ue)*(V(%p,%e)-@Ue)*V(x2@REFDES)*@K*(1+V(%p,%a2)/@UA)} ?C|\nCA1^@REFDES %p %a1 @C \nCA2^@REFDES %p %a2 @C|
+a 0 u 13 13 164 22 hln 100 K=0.94
+a 0 u 13 13 164 32 hln 100 Umin=0.2V
+a 0 u 13 13 164 42 hln 100 UA=50V
+a 0 u 13 0 13 30 hrb 100 Ue=0.7V
+a 0 u 13 13 164 52 hln 100 C=
+a 0 sp 0 0 0 0 hln 100 MODEL=
+@pins
+p 0 32 37 vln 100 e n 30 50 v
+a 0 s 0 0 20 50 hln 100 ERC=x
+a 0 s 0 0 28 45 vrn 100 PIN=e
+p 0 152 37 vln 100 a2 n 150 50 v
+a 0 s 0 0 160 -10 hln 100 ERC=x
+a 0 s 0 0 156 45 vrn 100 PIN=a2
+p 0 88 13 dln 100 p n 90 0 d
+a 0 s 0 0 60 62 hln 100 ERC=x
+a 0 s 0 0 84 5 drn 100 PIN=p
+p 0 92 37 vln 100 a1 n 90 50 v
+a 0 s 0 0 100 -10 hln 100 ERC=x
+a 0 s 0 0 96 45 vrn 100 PIN=a1
+@graphics 180 50 30 50 10
+v 0 30 44 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+27 38
+;
+v 0 30 44 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+33 38
+;
+v 0 30 40
+30 32
+;
+z 26 36 44 hln 100 1
+I
+z 26 130 36 hln 100 2
+KI
+a 0 141 32 158 35 159 32 
+a 0 159 28 142 25 141 28 
+v 0 150 23
+150 37
+152 32
+;
+v 0 150 37
+148 32
+;
+c 0 30 24 8
+v 0 18 16
+18 32
+;
+v 0 18 32
+20 28
+;
+v 0 18 32
+16 28
+;
+v 0 30 16
+30 10
+90 10
+90 20
+;
+c 0 90 10 2 d_info:,,,,,ON,0/128/0,,,,,,,, 
+z 26 68 36 hln 100 2
+KI
+a 0 81 32 98 35 99 32 
+a 0 99 28 82 25 81 28 
+v 0 90 23
+90 37
+92 32
+;
+v 0 90 37
+88 32
+;
+v 0 90 10
+150 10
+150 20
+;
+z 26 68 36 hln 100 2
+KI
+*symbol Parameter
+d Definition von Parametern
+@type p 8.0
+@attributes
+a 1 s 0 0 10 -2 hcn 100 REFDES=PM?
+a 1 sp 0 0 0 0 hcn 100 TEMPLATE=.PARAM @NAME1=@WERT1 #NAME2/@NAME2=@WERT2/ ?NAME3/@NAME3=@WERT3/
+a 0 u 13 0 0 20 hln 100 NAME1=
+a 0 u 13 0 0 30 hln 100 NAME2=
+a 0 u 13 0 0 40 hln 100 NAME3=
+a 0 u 13 0 78 20 hrn 100 WERT1=
+a 0 u 13 0 78 30 hrn 100 WERT2=
+a 0 u 13 0 78 40 hrn 100 WERT3=
+a 0 sp 0:11 0 0 8 hln 100 PART=Parameter
+a 0 sp 0 0 0 0 hln 100 MODEL=
+@pins
+@graphics 80 10 40 10 10
+v 0 0 10
+80 10
+;
+z 26 0 8 hln 100 9
+Parameter
+*symbol Strommesser
+d Strommesser
+@type s 8.0
+@attributes
+a 1 s 9 0 6 24 hrn 100 REFDES=I?
+a 1 sp 0 0 0 0 hcn 100 TEMPLATE=V^@REFDES %+ %- DC 0
+a 0 sp 0:11 0 0 50 hln 100 PART=Strommesser
+a 0 sp 0:13 0 0 0 hln 100 SIMULATIONONLY=
+@pins
+p 0 18 12 dln 100 + n 20 0 d
+a 0 s 0:1 0 22 9 drn 100 PIN=+
+a 0 s 0:13 0 20 0 hln 100 ERC=x
+p 0 22 28 vln 100 - n 20 40 v
+a 0 s 0:1 0 18 31 vrn 100 PIN=-
+a 0 s 0:13 0 20 40 hln 100 ERC=x
+@graphics 40 40 20 0 31
+c 0 20 20 10
+v 0 8 32
+34 6
+32 14
+;
+v 0 34 6
+26 8
+;
+*symbol Diff-AP
+d Arbeitspunkt-Stabilisator fuer Differenzverstaerker
+@type p 8.0
+@attributes
+a 0 sp 9 0 14 -2 hln 100 REFDES=A?
+a 0 sp 0:11 0 0 30 hln 100 PART=Diff-AP
+a 0 sp 0 0 0 0 hln 100 TEMPLATE=V^@REFDES x@REFDES 0 DC @UaA \nL1^@REFDES %a1 x@REFDES 1e12 \nL2^@REFDES %a2 x@REFDES 1e12
+a 0 u 13 13 4 32 hln 100 UaA=0
+@pins
+p 0 12 12 hln 100 a1 n 0 10 h
+a 0 s 0:1 0 9 8 hrn 100 PIN=a1
+a 0 s 0:13 0 0 10 hln 100 ERC=x
+a 0 s 0:13 0 0 0 hln 100 FLOAT=r
+p 0 28 12 hrn 100 a2 n 40 10 u
+a 0 s 0:1 0 31 16 hln 100 PIN=a2
+a 0 s 0:13 0 40 10 hln 100 ERC=x
+a 0 s 0:13 0 0 0 hln 100 FLOAT=r
+@graphics 40 20 0 0 10
+r 0 10 0 30 20
+*symbol Diff-Quelle
+d Differenzquelle fuer Differenzverstaerker
+@type p 8.0
+@attributes
+a 0 sp 9 0 20 6 hln 100 REFDES=DQ?
+a 0 sp 0:11 0 0 30 hln 100 PART=Diff-Quelle
+a 0 sp 0 0 0 0 hln 100 TEMPLATE=R1^@REFDES %Ue1 x1@REFDES @Rg \nR2^@REFDES %Ue2 x2@REFDES @Rg \nVD1^@REFDES x1@REFDES y@REFDES DC 0 AC {@UD/2} \nVD2^@REFDES y@REFDES x2@REFDES DC 0 AC {@UD/2} \nVGL^@REFDES y@REFDES %Um DC {@UGlA} AC {@UGl}
+a 0 u 13 13 8 36 hlb 100 UGl=0
+a 0 u 13 13 8 46 hlb 100 UGlA=0
+a 0 u 13 13 8 26 hlb 100 UD=0
+a 0 u 13 13 8 56 hlb 100 Rg=1
+@pins
+p 0 8 12 dln 100 Ue1 n 10 0 d
+a 0 s 0:1 0 12 9 drn 100 PIN=Ue1
+a 0 s 0:13 0 10 0 hln 100 ERC=x
+a 0 s 0:13 0 0 0 hln 100 FLOAT=r
+p 0 48 12 dln 100 Ue2 n 50 0 d
+a 0 s 0:1 0 52 9 drn 100 PIN=Ue2
+a 0 s 0:13 0 50 0 hln 100 ERC=x
+a 0 s 0:13 0 0 0 hln 100 FLOAT=r
+p 0 32 58 vln 100 Um n 30 70 v
+a 0 s 0:1 0 28 61 vrn 100 PIN=Um
+a 0 s 0:13 0 30 70 hln 100 ERC=x
+@graphics 60 70 0 0 10
+r 0 0 10 60 60

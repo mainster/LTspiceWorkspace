@@ -1,0 +1,87 @@
+Circuit: * Z:\home\koblitz\Simulationsbeispiele_WS14\EAS\op_inputrange_ideale-iquellen.asc
+
+I1: both pins shorted together -- ignoring.
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+Gmin = 1.07374
+Gmin = 0.115292
+Gmin = 0.0123794
+Gmin = 0.00132923
+Gmin = 0.000142725
+Gmin = 1.5325e-005
+vernier = 0.5
+vernier = 0.25
+Gmin = 4.44827e-006
+vernier = 0.333333
+vernier = 0.166667
+Gmin = 2.5848e-006
+vernier = 0.0833333
+vernier = 0.0416667
+vernier = 0.0208333
+Gmin = 2.56993e-006
+vernier = 0.0277778
+vernier = 0.037037
+Gmin = 2.37617e-006
+vernier = 0.0493827
+vernier = 0.0658435
+Gmin = 2.09757e-006
+vernier = 0.0877914
+Gmin = 1.72497e-006
+vernier = 0.117055
+vernier = 0.156073
+Gmin = 1.24488e-006
+vernier = 0.208098
+vernier = 0.277464
+Gmin = 7.43832e-007
+vernier = 0.369952
+Gmin = 3.34557e-007
+vernier = 0.493269
+vernier = 0.657691
+Gmin = 9.05758e-008
+vernier = 0.876922
+vernier = 1
+Gmin = 1.30154e-008
+Gmin = 1.39751e-009
+Gmin = 1.50057e-010
+Gmin = 1.61122e-011
+Gmin = 1.73004e-012
+Gmin = 1.85761e-013
+Gmin = 0
+Gmin stepping succeeded in finding the operating point.
+
+.step amp=9
+.step amp=9.2
+.step amp=9.4
+.step amp=9.6
+.step amp=9.8
+.step amp=10
+.step amp=10.2
+.step amp=10.4
+.step amp=10.6
+.step amp=10.8
+.step amp=11
+.step amp=11.2
+.step amp=11.4
+.step amp=11.6
+.step amp=11.8
+.step amp=12
+
+Date: Wed Oct 29 11:46:23 2014
+Total elapsed time: 5.967 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 5236
+traniter = 3746
+tranpoints = 1507
+accept = 1357
+rejected = 150
+matrix size = 28
+fillins = 41
+solver = Normal
+Matrix Compiler1: 3,49 KB object code size  6.2/5.2/[2.7]
+Matrix Compiler2: off  [2.3]/3.0/8.3
+
+

@@ -1,0 +1,8 @@
+* Z:\media\data\CODES\LTSpice_projects\Draft4.asc
+L1 N001 0 .8073
+R1 N002 0 200
+C1 N001 N002 10µ
+V1 N001 0 SINE(0 10 60 0 0 90)
+.tran 100m uic
+.backanno
+.end

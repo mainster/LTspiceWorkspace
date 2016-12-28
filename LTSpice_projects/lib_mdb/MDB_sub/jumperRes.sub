@@ -1,0 +1,23 @@
+.SUBCKT jumperResistorNoCfg    1 2 
+R1 1 0 1t
+R2 1 2 1u
+R3 2 0 1t
+.ends
+
+.SUBCKT jumperResistor    1 2 
+R1 1 0 {Rin}
+R2 1 2 {Rj}
+R3 2 0 {Rout}
+.ends
+
+.SUBCKT jumperResistorNC    1 2 
+R1 1 0 {Rin}
+R2 1 2 {(1-CLOSED)*100t+1u}
+R3 2 0 {Rout}
+.ends
+
+.SUBCKT jumperResistorNO    1 2 
+R1 1 0 {Rin}
+R2 1 2 {OPEN*R_OPEN+R_CLOSED}
+R3 2 0 {Rout}
+.ends

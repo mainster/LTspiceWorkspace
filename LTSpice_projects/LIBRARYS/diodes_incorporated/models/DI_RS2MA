@@ -1,0 +1,4 @@
+*SRC=RS2MA;DI_RS2MA;Diodes;Si;  1.00kV  1.50A  500ns   Diodes Inc. Fast Rectifier
+.MODEL DI_RS2MA D  ( IS=169u RS=4.81m BV=1.00k IBV=5.00u
++ CJO=55.5p  M=0.333 N=6.02 TT=720n )
+******************************************************************************************************

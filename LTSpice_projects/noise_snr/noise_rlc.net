@@ -1,0 +1,13 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\noise_snr\noise_rlc.asc
+V1 N001 0 SINE(0 10m 10k) AC 1
+R2 N001 c+ {R}
+C1 c+ c- {C}
+L1 c- 0 {L}
+.noise V(c+,c-) V1 oct 100 10 1meg
+.temp = 20
+.param noise = 1
++ R = 1k
++ L = 100u
++ C = 10n
+.backanno
+.end

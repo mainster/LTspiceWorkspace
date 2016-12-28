@@ -1,0 +1,938 @@
+*version 8.0 2724661971
+@index
+symloc GND 0 213
+symloc R 213 451
+symloc Ror 664 569
+symloc C 1233 666
+symloc L 1899 505
+symloc C_ACDC 2404 756
+symloc L_ACDC 3160 595
+symloc R_HF 3755 593
+symloc C_HF 4348 767
+symloc L_HF 5115 662
+symloc E 5777 1063
+symloc F 6840 1021
+symloc G 7861 969
+symloc H 8830 1115
+symloc K 9945 499
+symloc Uebertrager 10444 983
+symloc Leitung 11427 934
+symloc Leitung-V 12361 1064
+symloc U 13425 676
+symloc Ub 14101 608
+symloc U-AC 14709 811
+symloc U-Dreieck 15520 904
+symloc U-Puls 16424 1008
+symloc U-Rechteck 17432 984
+symloc U-Sinus 18416 953
+symloc I 19369 582
+symloc Ib 19951 520
+*symbol GND
+d Masse
+@type g 8.0
+@attributes
+a 1 s 0:3 0 14 20 hln 100 LABEL=0
+@pins
+p 0 15 7 hln 100 GND n 10 0 d
+a 0 s 0 0 0 -10 hln 100 PIN=1
+a 1 s 0 0 0 0 hln 100 ERC=x
+@graphics 20 10 10 0 12
+v 0 5 10
+15 10
+;
+*symbol R
+d Widerstand
+@type p 8.0
+@attributes
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=R^@REFDES %1 %2 @VALUE
+a 1 s 9 0 17 18 hln 100 REFDES=R?
+a 0 u 13 0 17 29 hln 100 VALUE=1k
+a 0 sp 0 0 0 10 hlb 100 PART=R
+@pins
+p 0 12 27 vln 100 2 n 10 40 v
+a 0 s 0 0 20 0 hln 100 ERC=x
+a 0 s 0 0 16 35 vrn 100 PIN=2
+p 0 8 13 dln 100 1 n 10 0 d
+a 0 s 0 0 20 0 hln 100 ERC=x
+a 0 s 0 0 12 5 drn 100 PIN=1
+@graphics 20 40 10 0 10
+r 0 6 10 14 30 d_info:,0/0/255,,,,,,,,,,,,, 
+*symbol Ror
+d Widerstand ohne thermisches Rauschen
+@type p 8.0
+@attributes
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=X^@REFDES %1 %2 @MODEL PARAMS: R=@VALUE
+a 1 s 9 0 25 18 hln 100 REFDES=R?
+a 0 u 13 0 25 29 hln 100 VALUE=1k
+a 0 sp 0 0 0 10 hlb 100 PART=Ror
+a 0 sp 0 0 0 0 hln 100 MODEL=ROR
+@pins
+p 0 12 27 vln 100 2 n 10 40 v
+a 0 s 0 0 20 0 hln 100 ERC=x
+a 0 s 0 0 16 35 vrn 100 PIN=2
+p 0 8 13 dln 100 1 n 10 0 d
+a 0 s 0 0 20 0 hln 100 ERC=x
+a 0 s 0 0 12 5 drn 100 PIN=1
+@graphics 20 40 10 0 10
+r 0 6 10 14 30 d_info:,0/0/255,,,,,,,,,,,,, 
+r 0 0 4 20 36 d_info:,,1,,,,,,,,,,,, 
+*symbol C
+d Kapazitaet
+@type p 8.0
+@attributes
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=C^@REFDES %1 %2 @VALUE ?IC|IC=@IC|
+a 1 s 9 0 17 18 hln 100 REFDES=C?
+a 0 u 13 0 17 29 hln 100 VALUE=1p
+a 0 sp 0 0 0 10 hlb 100 PART=C
+a 0 u 0:13 0 0 10 hlb 100 IC=
+@pins
+p 0 12 27 vln 100 2 n 10 40 v
+a 0 s 0 0 20 0 hln 100 ERC=x
+a 0 s 0 0 16 35 vrn 100 PIN=2
+p 0 8 13 dln 100 1 n 10 0 d
+a 0 s 0 0 20 0 hln 100 ERC=x
+a 0 s 0 0 12 5 drn 100 PIN=1
+@graphics 20 40 10 0 10
+v 0 6 18 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+14 18
+;
+v 0 6 22 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+14 22
+;
+v 0 10 22 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+10 30
+;
+v 0 10 18 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+10 10
+;
+*symbol L
+d Induktivitaet
+@type p 8.0
+@attributes
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=L^@REFDES %1 %2 @VALUE ?IC|IC=@IC|
+a 1 s 9 0 17 18 hln 100 REFDES=L?
+a 0 u 13 0 17 29 hln 100 VALUE=1u
+a 0 sp 0 0 0 10 hlb 100 PART=L
+a 0 u 0:13 0 0 10 hlb 100 IC=
+@pins
+p 0 12 27 vln 100 2 n 10 40 v
+a 0 s 0 0 20 0 hln 100 ERC=x
+a 0 s 0 0 16 35 vrn 100 PIN=2
+p 0 8 13 dln 100 1 n 10 0 d
+a 0 s 0 0 20 0 hln 100 ERC=x
+a 0 s 0 0 12 5 drn 100 PIN=1
+@graphics 20 40 10 0 10
+r 0 6 10 14 30 d_info:,0/0/255,,,,ON,0/0/255,,,,,,,, 
+*symbol C_ACDC
+d Ideale Koppelkapazitaet
+@type p 8.0
+@attributes
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=C^@REFDES %1 %2 @VALUE ?IC|IC=@IC|
+a 1 s 9 0 23 24 hln 100 REFDES=C?
+a 0 u 0:13 0 17 29 hln 100 VALUE=1e12
+a 0 sp 0 0 0 10 hlb 100 PART=C
+a 0 u 0:13 0 0 10 hlb 100 IC=
+a 0 sp 0 0 0 0 hln 100 MODEL=
+@pins
+p 0 12 27 vln 100 2 n 10 40 v
+a 0 s 0 0 20 0 hln 100 ERC=x
+a 0 s 0 0 16 35 vrn 100 PIN=2
+p 0 8 13 dln 100 1 n 10 0 d
+a 0 s 0 0 20 0 hln 100 ERC=x
+a 0 s 0 0 12 5 drn 100 PIN=1
+@graphics 20 40 10 0 10
+v 0 6 18 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+14 18
+;
+v 0 6 22 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+14 22
+;
+v 0 10 22 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+10 30
+;
+v 0 10 18 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+10 10
+;
+r 0 0 4 20 36 d_info:,,1,,,,,,,,,,,, 
+*symbol L_ACDC
+d Ideale Koppelinduktivitaet
+@type p 8.0
+@attributes
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=L^@REFDES %1 %2 @VALUE ?IC|IC=@IC|
+a 1 s 9 0 23 24 hln 100 REFDES=L?
+a 0 u 0:13 0 17 29 hln 100 VALUE=1e12
+a 0 sp 0 0 0 10 hlb 100 PART=L
+a 0 u 0:13 0 0 10 hlb 100 IC=
+a 0 sp 0 0 0 0 hln 100 MODEL=
+@pins
+p 0 12 27 vln 100 2 n 10 40 v
+a 0 s 0 0 20 0 hln 100 ERC=x
+a 0 s 0 0 16 35 vrn 100 PIN=2
+p 0 8 13 dln 100 1 n 10 0 d
+a 0 s 0 0 20 0 hln 100 ERC=x
+a 0 s 0 0 12 5 drn 100 PIN=1
+@graphics 20 40 10 0 10
+r 0 6 10 14 30 d_info:,0/0/255,,,,ON,0/0/255,,,,,,,, 
+r 0 0 4 20 36 d_info:,,1,,,,,,,,,,,, 
+*symbol R_HF
+d Widerstand (HF-Modell)
+@type p 8.0
+@attributes
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=X^@REFDES %1 %2  @MODEL params: r=@R lr=@LR cr=@CR
+a 1 s 9 0 17 18 hln 100 REFDES=RHF?
+a 0 sp 0 0 0 10 hlb 100 PART=RHF
+a 0 sp 0 0 0 0 hln 100 MODEL=RHF
+a 0 u 13 0 18 30 hln 100 R=50
+a 0 u 0:13 0 0 10 hln 100 LR=3n
+a 0 u 0:13 0 0 20 hln 100 CR=0.2p
+@pins
+p 0 12 27 vln 100 2 n 10 40 v
+a 0 s 0 0 20 0 hln 100 ERC=x
+a 0 s 0 0 16 35 vrn 100 PIN=2
+p 0 8 13 dln 100 1 n 10 0 d
+a 0 s 0 0 20 0 hln 100 ERC=x
+a 0 s 0 0 12 5 drn 100 PIN=1
+@graphics 20 40 10 0 10
+r 0 6 10 14 30 d_info:,0/0/255,,,,,,,,,,,,, 
+*symbol C_HF
+d Kapazitaet (HF-Modell)
+@type p 8.0
+@attributes
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=X^@REFDES %1 %2 @MODEL params: c=@C lc=@LC rc=@RC
+a 1 s 9 0 17 18 hln 100 REFDES=CHF?
+a 0 sp 0 0 0 10 hlb 100 PART=C_HF
+a 0 sp 0 0 0 0 hln 100 MODEL=CHF
+a 0 u 13 0 18 32 hlb 100 C=100p
+a 0 u 0:13 0 0 10 hlb 100 LC=3n
+a 0 u 0:13 0 0 10 hlb 100 RC=0.2
+@pins
+p 0 12 27 vln 100 2 n 10 40 v
+a 0 s 0 0 20 0 hln 100 ERC=x
+a 0 s 0 0 16 35 vrn 100 PIN=2
+p 0 8 13 dln 100 1 n 10 0 d
+a 0 s 0 0 20 0 hln 100 ERC=x
+a 0 s 0 0 12 5 drn 100 PIN=1
+@graphics 20 40 10 0 10
+v 0 6 18 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+14 18
+;
+v 0 6 22 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+14 22
+;
+v 0 10 22 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+10 30
+;
+v 0 10 18 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+10 10
+;
+*symbol L_HF
+d Induktivitaet (HF-Modell)
+@type p 8.0
+@attributes
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=X^@REFDES %1 %2 @MODEL params: l=@L cl=@CL ?KRL#krl=@KRL##krl={@KL*@L}#
+a 1 s 9 0 17 18 hln 100 REFDES=LHF?
+a 0 sp 0 0 0 10 hlb 100 PART=L_HF
+a 0 sp 0 0 0 0 hln 100 MODEL=LHF
+a 0 u 13 0 18 30 hln 100 L=100n
+a 0 u 0:13 0 0 10 hln 100 CL=0.2p
+a 0 u 0:13 0 0 20 hln 100 KRL=
+a 0 u 0:13 0 0 10 hln 100 KL=1200
+@pins
+p 0 12 27 vln 100 2 n 10 40 v
+a 0 s 0 0 20 0 hln 100 ERC=x
+a 0 s 0 0 16 35 vrn 100 PIN=2
+p 0 8 13 dln 100 1 n 10 0 d
+a 0 s 0 0 20 0 hln 100 ERC=x
+a 0 s 0 0 12 5 drn 100 PIN=1
+@graphics 20 40 10 0 10
+r 0 6 10 14 30 d_info:,0/0/255,,,,ON,0/0/255,,,,,,,, 
+*symbol E
+d Spannungsgesteuerte Spannungsquelle
+@type p 8.0
+@attributes
+a 0 sp 0:11 0 10 34 hln 100 PART=E
+a 1 s 9 0 34 10 hcn 100 REFDES=E?
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=E^@REFDES %a+ %a- %e+ %e- @A
+a 0 u 13 13 36 56 hcn 100 A=1
+@pins
+p 0 13 12 hln 100 e+ n 0 10 h
+a 0 s 0 0 0 0 hln 100 ERC=x
+a 0 s 0 0 5 8 hrn 100 PIN=e+
+p 0 13 52 hln 100 e- n 0 50 h
+a 0 s 0 0 2 20 hln 100 ERC=x
+a 0 s 0 0 5 48 hrn 100 PIN=e-
+p 0 67 12 hrn 100 a+ n 80 10 u
+a 0 s 0 0 20 0 hln 100 ERC=x
+a 0 s 0 0 75 8 hln 100 PIN=a+
+p 0 67 52 hrn 100 a- n 80 50 u
+a 0 s 0 0 18 20 hln 100 ERC=x
+a 0 s 0 0 75 48 hln 100 PIN=a-
+@graphics 80 60 0 10 10
+c 0 60 30 10
+v 0 44 20 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+44 40
+;
+v 0 44 40 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+41 34
+;
+v 0 44 40 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+47 34
+;
+v 0 10 47 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+7 41
+;
+v 0 10 47 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+13 41
+;
+v 0 10 46
+10 13
+;
+z 26 12 32 hln 100 1
+U
+z 26 28 32 hln 100 2
+AU
+v 0 70 10
+60 10
+60 20
+;
+v 0 60 40
+60 50
+70 50
+;
+r 0 0 0 80 60 d_info:,0/0/0,0,,,,,,,,,,,, 
+*symbol F
+d Stromgesteuerte Stromquelle
+@type p 8.0
+@attributes
+a 0 sp 0:11 0 10 34 hln 100 PART=F
+a 1 s 9 0 34 10 hcn 100 REFDES=F?
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=F^@REFDES %a+ %a- VF^@REFDES @K\nVF^@REFDES %e+ %e- 0V
+a 0 u 13 13 36 58 hcn 100 K=1
+a 0 sp 0 0 0 0 hln 100 MODEL=
+@pins
+p 0 13 12 hln 100 e+ n 0 10 h
+a 0 s 0 0 0 0 hln 100 ERC=x
+a 0 s 0 0 5 8 hrn 100 PIN=e+
+p 0 13 52 hln 100 e- n 0 50 h
+a 0 s 0 0 2 20 hln 100 ERC=x
+a 0 s 0 0 5 48 hrn 100 PIN=e-
+p 0 67 12 hrn 100 a+ n 80 10 u
+a 0 s 0 0 20 0 hln 100 ERC=x
+a 0 s 0 0 75 8 hln 100 PIN=a+
+p 0 67 52 hrn 100 a- n 80 50 u
+a 0 s 0 0 18 20 hln 100 ERC=x
+a 0 s 0 0 75 48 hln 100 PIN=a-
+@graphics 80 60 0 10 10
+v 0 10 32 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+7 26
+;
+v 0 10 32 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+13 26
+;
+v 0 10 50
+10 10
+;
+z 26 16 32 hln 100 1
+I
+z 26 38 32 hln 100 2
+KI
+a 0 51 32 68 35 69 32 
+a 0 69 28 52 25 51 28 
+v 0 60 23
+60 37
+62 32
+;
+v 0 60 37
+58 32
+;
+v 0 70 10
+60 10
+60 20
+;
+v 0 70 50
+60 50
+60 40
+;
+r 0 0 0 80 60 d_info:,0/0/0,0,,,,,,,,,,,, 
+*symbol G
+d Spannungsgesteuerte Stromquelle
+@type p 8.0
+@attributes
+a 0 sp 0:11 0 10 34 hln 100 PART=G
+a 1 s 9 0 34 10 hcn 100 REFDES=G?
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=G^@REFDES %a+ %a- %e+ %e- @S
+a 0 u 13 13 36 58 hcn 100 S=1
+@pins
+p 0 13 12 hln 100 e+ n 0 10 h
+a 0 s 0 0 0 0 hln 100 ERC=x
+a 0 s 0 0 5 8 hrn 100 PIN=e+
+p 0 13 52 hln 100 e- n 0 50 h
+a 0 s 0 0 2 20 hln 100 ERC=x
+a 0 s 0 0 5 48 hrn 100 PIN=e-
+p 0 67 12 hrn 100 a+ n 80 10 u
+a 0 s 0 0 20 0 hln 100 ERC=x
+a 0 s 0 0 75 8 hln 100 PIN=a+
+p 0 67 52 hrn 100 a- n 80 50 u
+a 0 s 0 0 18 20 hln 100 ERC=x
+a 0 s 0 0 75 48 hln 100 PIN=a-
+@graphics 80 60 0 10 10
+v 0 10 47 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+7 41
+;
+v 0 10 47 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+13 41
+;
+v 0 10 46
+10 13
+;
+z 26 12 34 hln 100 1
+U
+z 26 34 34 hln 100 2
+SU
+a 0 51 32 68 35 69 32 
+a 0 69 28 52 25 51 28 
+v 0 60 23
+60 37
+62 32
+;
+v 0 60 37
+58 32
+;
+v 0 70 10
+60 10
+60 20
+;
+v 0 60 40
+60 50
+70 50
+;
+r 0 0 0 80 60 d_info:,0/0/0,0,,,,,,,,,,,, 
+*symbol H
+d Stromgesteuerte Spannungsquelle
+@type p 8.0
+@attributes
+a 0 sp 0:11 0 10 34 hln 100 PART=H
+a 1 s 9 0 34 10 hcn 100 REFDES=H?
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=H^@REFDES %a+ %a- VH^@REFDES @R\nVH^@REFDES %e+ %e- 0V
+a 0 u 13 13 36 58 hcn 100 R=1
+a 0 sp 0 0 0 0 hln 100 MODEL=
+@pins
+p 0 13 12 hln 100 e+ n 0 10 h
+a 0 s 0 0 0 0 hln 100 ERC=x
+a 0 s 0 0 5 8 hrn 100 PIN=e+
+p 0 13 52 hln 100 e- n 0 50 h
+a 0 s 0 0 2 20 hln 100 ERC=x
+a 0 s 0 0 5 48 hrn 100 PIN=e-
+p 0 67 12 hrn 100 a+ n 80 10 u
+a 0 s 0 0 20 0 hln 100 ERC=x
+a 0 s 0 0 75 8 hln 100 PIN=a+
+p 0 67 52 hrn 100 a- n 80 50 u
+a 0 s 0 0 18 20 hln 100 ERC=x
+a 0 s 0 0 75 48 hln 100 PIN=a-
+@graphics 80 60 0 10 10
+v 0 10 32 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+7 26
+;
+v 0 10 32 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+13 26
+;
+v 0 10 50
+10 10
+;
+z 26 16 32 hln 100 1
+I
+c 0 60 30 10
+v 0 44 20 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+44 40
+;
+v 0 44 40 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+41 34
+;
+v 0 44 40 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+47 34
+;
+z 26 30 32 hln 100 2
+RI
+v 0 70 10
+60 10
+60 20
+;
+v 0 60 40
+60 50
+70 50
+;
+r 0 0 0 80 60 d_info:,0/0/0,0,,,,,,,,,,,, 
+*symbol K
+d Induktive Kopplung
+@type p 8.0
+@attributes
+a 1 s 9 0 0 8 hln 100 REFDES=K?
+a 1 sp 0 0 0 0 hcn 100 TEMPLATE=K^@REFDES L^@L1 ?L2|L^@L2| ?L3|\n+ L^@L3| ?L4|L^@L4| ?L5|\n+ L^@L5| ?L6|L^@L6| @KOPPLUNG
+a 0 u 13 0 0 30 hln 100 L1=L?
+a 0 u 13 0 0 39 hln 100 L2=L?
+a 0 u 13 0 0 47 hln 100 L3=
+a 0 u 13 0 0 57 hln 100 L4=
+a 0 u 13 0 0 68 hln 100 L5=
+a 0 u 13 0 0 77 hln 100 L6=
+a 0 sp 0:11 0 1 20 hln 100 PART=K
+a 0 u 13 13 0 20 hln 100 KOPPLUNG=0.98
+@pins
+@graphics 80 40 0 0 10
+v 0 0 10
+80 10
+;
+*symbol Uebertrager
+d Verlustloser Uebertrager
+@type p 8.0
+@attributes
+a 1 s 9 0 20 -11 hcn 100 REFDES=UE?
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=K^@REFDES L1^@REFDES L2^@REFDES @KOPPLUNG\nL1^@REFDES %p+ %p- @L1\nL2^@REFDES %s+ %s- @L2
+a 0 sp 0 0 0 10 hlb 100 PART=Uebertrager
+a 0 u 13 0 2 24 hrn 100 L1=1m
+a 0 u 13 0 38 24 hln 100 L2=1m
+a 0 u 13 0 20 -2 hcn 100 KOPPLUNG=0.98
+@pins
+p 0 13 2 hln 100 p+ n 0 0 h
+a 0 s 0 0 0 0 hln 100 ERC=x
+a 0 s 0 0 5 -2 hrn 100 PIN=p+
+p 0 13 42 hln 100 p- n 0 40 h
+a 0 s 0 0 0 -20 hln 100 ERC=x
+a 0 s 0 0 5 38 hrn 100 PIN=p-
+p 0 27 2 hrn 100 s+ n 40 0 u
+a 0 s 0 0 0 0 hln 100 ERC=x
+a 0 s 0 0 35 -2 hln 100 PIN=s+
+p 0 27 42 hrn 100 s- n 40 40 u
+a 0 s 0 0 0 -20 hln 100 ERC=x
+a 0 s 0 0 35 38 hln 100 PIN=s-
+@graphics 40 40 0 0 10
+r 0 6 10 14 30 d_info:,0/0/255,,,,ON,0/0/255,,,,,,,, 
+v 0 10 0
+10 10
+;
+v 0 10 30
+10 40
+;
+r 0 26 10 34 30 d_info:,0/0/255,,,,ON,0/0/255,,,,,,,, 
+v 0 30 0
+30 10
+;
+v 0 30 30
+30 40
+;
+v 0 20 10 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+20 30
+;
+*symbol Leitung
+d Ideale Leitung
+@type p 8.0
+@attributes
+a 0 s 9 0 20 8 hln 100 REFDES=T?
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=T^@REFDES %a+ %a- %b+ %b- Z0=@Z0 TD=@TD
+a 0 u 13 13 16 50 hln 100 Z0=50
+a 0 u 13 13 56 50 hln 100 TD=5n
+a 0 sp 0 0 0 10 hlb 100 PART=T
+@pins
+p 0 13 22 hln 100 a+ n 0 20 h
+a 0 s 0 0 0 0 hln 100 ERC=x
+a 0 s 0 0 5 18 hrn 100 PIN=a+
+p 0 13 42 hln 100 a- n 0 40 h
+a 0 s 0 0 0 0 hln 100 ERC=x
+a 0 s 0 0 5 38 hrn 100 PIN=a-
+p 0 87 22 hrn 100 b+ n 100 20 u
+a 0 s 0 0 0 0 hln 100 ERC=x
+a 0 s 0 0 95 18 hln 100 PIN=b+
+p 0 87 42 hrn 100 b- n 100 40 u
+a 0 s 0 0 0 0 hln 100 ERC=x
+a 0 s 0 0 95 38 hln 100 PIN=b-
+@graphics 100 40 0 20 10
+a 0 63 5 59 12 60 20 
+a 0 53 5 49 12 50 20 
+a 0 47 34 50 30 50 20 
+a 0 57 34 60 30 60 20 
+a 0 80 30 90 20 80 10 
+c 0 20 20 10
+v 0 80 30
+80 40
+;
+v 0 20 30
+50 30
+;
+v 0 60 10
+80 10
+;
+v 0 60 30
+80 30
+;
+v 0 20 40
+10 40
+;
+v 0 20 30
+20 40
+;
+v 0 20 20
+10 20
+;
+v 0 80 40
+90 40
+;
+v 0 20 10
+50 10
+;
+*symbol Leitung-V
+d Verlustbehaftete Leitung
+@type p 8.0
+@attributes
+a 0 s 9 0 20 8 hln 100 REFDES=T?
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=T^@REFDES %a+ %a- %b+ %b- LEN=@LAENGE R=@R L=@L G=@G C=@C
+a 0 u 13 13 60 50 hln 100 R=1
+a 0 u 13 13 14 50 hln 100 L=250n
+a 0 u 13 13 60 60 hln 100 G=10u
+a 0 u 13 13 14 60 hln 100 C=100p
+a 0 sp 0 0 0 10 hlb 100 PART=TV
+a 0 u 13 13 14 70 hln 100 LAENGE=1
+@pins
+p 0 13 22 hln 100 a+ n 0 20 h
+a 0 s 0 0 0 0 hln 100 ERC=x
+a 0 s 0 0 5 18 hrn 100 PIN=a+
+p 0 13 42 hln 100 a- n 0 40 h
+a 0 s 0 0 0 0 hln 100 ERC=x
+a 0 s 0 0 5 38 hrn 100 PIN=a-
+p 0 87 22 hrn 100 b+ n 100 20 u
+a 0 s 0 0 0 0 hln 100 ERC=x
+a 0 s 0 0 95 18 hln 100 PIN=b+
+p 0 87 42 hrn 100 b- n 100 40 u
+a 0 s 0 0 0 0 hln 100 ERC=x
+a 0 s 0 0 95 38 hln 100 PIN=b-
+@graphics 100 40 0 20 10
+a 0 63 5 59 12 60 20 
+a 0 53 5 49 12 50 20 
+a 0 47 34 50 30 50 20 
+a 0 57 34 60 30 60 20 
+c 0 20 20 10
+a 0 80 30 90 20 80 10 
+v 0 20 30
+20 40
+;
+v 0 20 20
+10 20
+;
+v 0 60 10
+80 10
+;
+v 0 60 30
+80 30
+;
+v 0 80 30
+80 40
+;
+v 0 20 40
+10 40
+;
+v 0 80 40
+90 40
+;
+v 0 20 10
+50 10
+;
+v 0 20 30
+50 30
+;
+*symbol U
+d Spannungsquelle
+@type s 8.0
+@attributes
+a 1 s 9 0 -2 22 hrn 100 REFDES=U?
+a 1 sp 0 0 0 0 hcn 100 TEMPLATE=V^@REFDES %+ %- ?DC|DC @DC| ?AC|AC @AC| ?TRAN|@TRAN|
+a 1 u 0 0 0 0 hcn 100 DC=0V
+a 1 u 0 0 0 0 hcn 100 AC=
+a 1 u 0 0 0 0 hcn 100 TRAN=
+a 0 sp 0:11 0 0 50 hln 100 PART=U
+@pins
+p 0 18 12 dln 100 + n 20 0 d
+a 0 s 0:1 0 22 9 drn 100 PIN=+
+a 0 s 0:13 0 20 0 hln 100 ERC=x
+p 0 22 28 vln 100 - n 20 40 v
+a 0 s 0:1 0 18 31 vrn 100 PIN=-
+a 0 s 0:13 0 20 40 hln 100 ERC=x
+@graphics 40 40 20 0 31
+c 0 20 20 10
+v 0 4 10 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+4 30
+;
+v 0 4 30 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+1 24
+;
+v 0 4 30 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+7 24
+;
+*symbol Ub
+d Versorgungsspannungsquelle
+@type s 8.0
+@attributes
+a 1 s 9 0 0 18 hrn 100 REFDES=Ub?
+a 1 sp 0 0 0 0 hcn 100 TEMPLATE=V^@REFDES %+ %- DC @DC
+a 1 u 13 0 -2 28 hrn 100 DC=5V
+a 0 sp 0:11 0 0 50 hln 100 PART=Ub
+@pins
+p 0 18 12 dln 100 + n 20 0 d
+a 0 s 0:1 0 22 9 drn 100 PIN=+
+a 0 s 0:13 0 20 0 hln 100 ERC=x
+p 0 22 28 vln 100 - n 20 40 v
+a 0 s 0:1 0 18 31 vrn 100 PIN=-
+a 0 s 0:13 0 20 40 hln 100 ERC=x
+@graphics 40 40 20 0 31
+c 0 20 20 10
+v 0 4 10 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+4 30
+;
+v 0 4 30 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+1 24
+;
+v 0 4 30 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+7 24
+;
+*symbol U-AC
+d Kleinsignal-Spannungsquelle
+@type s 8.0
+@attributes
+a 1 s 9 0 -2 22 hrn 100 REFDES=U?
+a 1 sp 0 0 0 0 hcn 100 TEMPLATE=V^@REFDES %+ %- ?DC|DC @DC| ?AC|AC @AC| ?TRAN|@TRAN|
+a 1 u 0 0 0 0 hcn 100 DC=0V
+a 1 u 0 0 0 0 hcn 100 AC=1V
+a 1 u 0 0 0 0 hcn 100 TRAN=
+a 0 sp 0:11 0 0 50 hln 100 PART=U
+a 0 sp 0:13 0 0 0 hln 100 SIMULATIONONLY=
+a 0 sp 0 0 0 0 hln 100 MODEL=
+@pins
+p 0 18 12 dln 100 + n 20 0 d
+a 0 s 0:1 0 22 9 drn 100 PIN=+
+a 0 s 0:13 0 20 0 hln 100 ERC=x
+p 0 22 28 vln 100 - n 20 40 v
+a 0 s 0:1 0 18 31 vrn 100 PIN=-
+a 0 s 0:13 0 20 40 hln 100 ERC=x
+@graphics 40 40 20 0 31
+c 0 20 20 10
+v 0 4 10 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+4 30
+;
+v 0 4 30 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+1 24
+;
+v 0 4 30 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+7 24
+;
+a 0 20 20 23 23 26 20 
+a 0 20 20 17 17 14 20 
+*symbol U-Dreieck
+d Dreieck-Spannungsquelle
+@type s 8.0
+@attributes
+a 1 s 9 0 0 22 hrn 100 REFDES=U?
+a 1 sp 0 0 0 0 hcn 100 TEMPLATE=V^@REFDES %+ %- ?DC|DC @DC| ?AC|AC @AC|\n+ PULSE @U1 @U2 @TD {@D/@f} {(1-@D)/@f-1p} 1p {1/@f}
+a 0 sp 0:11 0 0 10 hlb 100 PART=U-Dreieck
+a 0 u 13 13 36 16 hlb 100 U1=0V
+a 0 u 13 13 36 26 hlb 100 U2=5V
+a 0 u 13 13 36 36 hlb 100 f=1kHz
+a 0 u 0:13 0 34 42 hlb 100 D=0.5
+a 0 u 0:13 0 34 46 hlb 100 TD=0
+a 0 u 0:13 0 0 10 hlb 100 DC=0
+a 0 u 0:13 0 0 20 hlb 100 AC=
+@pins
+p 0 20 14 hcn 75 + n 20 0 d
+a 0 s 0 0 10 0 hln 100 ERC=x
+a 0 s 0 0 15 -5 hln 100 PIN=+
+p 0 20 30 hcn 75 - n 20 40 v
+a 0 s 0 0 10 0 hln 100 ERC=x
+a 0 s 0 0 15 5 hln 100 PIN=-
+@graphics 30 40 20 0 31
+c 0 20 20 10
+v 0 4 10 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+4 30
+;
+v 0 4 30 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+1 24
+;
+v 0 4 30 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+7 24
+;
+v 0 14 24
+17 15
+20 24
+23 15
+26 24
+;
+*symbol U-Puls
+d Puls-Spannungsquelle
+@type s 8.0
+@attributes
+a 1 s 9 0 0 22 hrn 100 REFDES=U?
+a 1 sp 0 0 0 0 hcn 100 TEMPLATE=V^@REFDES %+ %- ?DC|DC @DC| ?AC|AC @AC|\n+ PULSE @U1 @U2 ?TD/@TD/~TD/0/ #TR/@TR/ #TF/@TF/ #TPULS/@TPULS/ #TPERIODE/@TPERIODE/
+a 0 sp 0:11 0 0 10 hlb 100 PART=U-PULSE
+a 0 u 13 13 36 10 hlb 100 U1=0V
+a 0 u 13 13 36 20 hlb 100 U2=5V
+a 0 u 0:13 0 36 50 hlb 100 TD=0
+a 0 u 13 13 78 10 hlb 100 TR=10n
+a 0 u 13 13 78 20 hlb 100 TF=10n
+a 0 u 13 13 36 40 hlb 100 TPULS=1u
+a 0 u 13 13 36 30 hlb 100 TPERIODE=2u
+a 0 u 0:13 0 0 30 hlb 100 DC=0V
+a 0 u 0:13 0 0 40 hlb 100 AC=
+@pins
+p 0 20 14 hcn 75 + n 20 0 d
+a 0 s 0 0 10 0 hln 100 ERC=x
+a 0 s 0 0 15 -5 hln 100 PIN=+
+p 0 20 30 hcn 75 - n 20 40 v
+a 0 s 0 0 10 0 hln 100 ERC=x
+a 0 s 0 0 15 5 hln 100 PIN=-
+@graphics 30 40 20 0 31
+c 0 20 20 10
+v 0 4 10 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+4 30
+;
+v 0 4 30 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+1 24
+;
+v 0 4 30 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+7 24
+;
+v 0 14 24
+18 24
+18 16
+22 16
+22 24
+26 24
+;
+*symbol U-Rechteck
+d Rechteck-Spannungsquelle
+@type s 8.0
+@attributes
+a 1 s 9 0 0 22 hrn 100 REFDES=U?
+a 1 sp 0 0 0 0 hcn 100 TEMPLATE=V^@REFDES %+ %- ?DC|DC @DC| ?AC|AC @AC|\n+ PULSE @U1 @U2 @TD @TF @TF {@D/@f-@TF} {1/@f}
+a 0 sp 0:11 0 0 10 hlb 100 PART=U-Rechteck
+a 0 u 13 13 36 16 hlb 100 U1=0V
+a 0 u 13 13 36 26 hlb 100 U2=5V
+a 0 u 13 13 36 36 hlb 100 f=1kHz
+a 0 u 0:13 0 36 36 hlb 100 D=0.5
+a 0 u 0:13 0 36 50 hlb 100 TD=0
+a 0 u 0:13 0 36 46 hlb 100 TF=10ns
+a 0 u 0:13 0 0 10 hlb 100 DC=0
+a 0 u 0:13 0 0 20 hlb 100 AC=
+@pins
+p 0 20 14 hcn 75 + n 20 0 d
+a 0 s 0 0 10 0 hln 100 ERC=x
+a 0 s 0 0 15 -5 hln 100 PIN=+
+p 0 20 30 hcn 75 - n 20 40 v
+a 0 s 0 0 10 0 hln 100 ERC=x
+a 0 s 0 0 15 5 hln 100 PIN=-
+@graphics 30 40 20 0 31
+c 0 20 20 10
+v 0 4 10 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+4 30
+;
+v 0 4 30 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+1 24
+;
+v 0 4 30 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+7 24
+;
+v 0 15 24
+15 24
+15 15
+18 15
+18 24
+21 24
+21 15
+24 15
+24 24
+26 24
+;
+v 0 15 24
+14 24
+;
+*symbol U-Sinus
+d Sinus-Spannungsquelle
+@type s 8.0
+@attributes
+a 1 s 9 0 0 22 hrn 100 REFDES=U?
+a 1 sp 0 0 0 0 hcn 100 TEMPLATE=V^@REFDES %+ %- ?DC|DC @DC| ?AC|AC @AC|\n+ SIN @OFFSET @AMPLITUDE @f @TD @DAEMPFUNG @PHASE
+a 0 sp 0:11 0 0 10 hlb 100 PART=U-SIN
+a 0 u 0:13 0 0 50 hln 100 PHASE=0
+a 0 u 0:13 0 0 60 hcn 100 DC=0
+a 0 u 0:13 0 0 70 hcn 100 AC=
+a 0 u 13 13 34 14 hln 100 OFFSET=0V
+a 0 u 13 13 34 24 hln 100 AMPLITUDE=1V
+a 0 u 13 13 34 34 hln 100 f=1kHz
+a 0 u 0:13 0 34 38 hln 100 TD=0
+a 0 u 0:13 0 0 10 hcn 100 DAEMPFUNG=0
+@pins
+p 0 20 14 hcn 75 + n 20 0 d
+a 0 s 0 0 10 0 hln 100 ERC=x
+a 0 s 0 0 15 -5 hln 100 PIN=+
+p 0 20 30 hcn 75 - n 20 40 v
+a 0 s 0 0 10 0 hln 100 ERC=x
+a 0 s 0 0 15 5 hln 100 PIN=-
+@graphics 30 40 20 0 31
+a 0 20 20 23 23 26 20 
+a 0 20 20 17 17 14 20 
+c 0 20 20 10
+v 0 4 10 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+4 30
+;
+v 0 4 30 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+1 24
+;
+v 0 4 30 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+7 24
+;
+*symbol I
+d Stromquelle
+@type s 8.0
+@attributes
+a 1 s 9 0 -2 22 hrn 100 REFDES=I?
+a 1 sp 0 0 0 0 hcn 100 TEMPLATE=I^@REFDES %e %a ?DC|DC @DC| ?AC|AC @AC| ?TRAN|@TRAN|
+a 1 u 0 0 0 0 hcn 100 DC=0A
+a 1 u 0 0 0 0 hcn 100 AC=
+a 1 u 0 0 0 0 hcn 100 TRAN=
+a 0 sp 0:11 0 0 50 hln 100 PART=I
+@pins
+p 0 8 12 dln 100 e n 10 0 d
+a 0 s 0:1 0 12 9 drn 100 PIN=e
+a 0 s 0:13 0 10 0 hln 100 ERC=x
+p 0 12 28 vln 100 a n 10 40 v
+a 0 s 0:1 0 8 31 vrn 100 PIN=a
+a 0 s 0:13 0 10 40 hln 100 ERC=x
+@graphics 20 40 10 0 31
+a 0 1 22 18 25 19 22 
+a 0 19 18 2 15 1 18 
+v 0 10 13
+10 27
+12 22
+;
+v 0 10 27
+8 22
+;
+*symbol Ib
+d Versorgungsstromquelle
+@type s 8.0
+@attributes
+a 1 s 9 0 8 18 hrn 100 REFDES=Ib?
+a 1 sp 0 0 0 0 hcn 100 TEMPLATE=I^@REFDES %e %a DC @DC
+a 1 u 13 0 6 28 hrn 100 DC=1mA
+a 0 sp 0:11 0 0 50 hln 100 PART=Ib
+@pins
+p 0 18 12 dln 100 e n 20 0 d
+a 0 s 0:1 0 22 9 drn 100 PIN=e
+a 0 s 0:13 0 20 0 hln 100 ERC=x
+p 0 22 28 vln 100 a n 20 40 v
+a 0 s 0:1 0 18 31 vrn 100 PIN=a
+a 0 s 0:13 0 20 40 hln 100 ERC=x
+@graphics 30 40 20 0 31
+a 0 11 22 28 25 29 22 
+a 0 29 18 12 15 11 18 
+v 0 20 13
+20 27
+22 22
+;
+v 0 20 27
+18 22
+;

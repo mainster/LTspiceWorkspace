@@ -1,0 +1,21 @@
+*   ZETEX   FZT857   Spice model   Last revision 16/1/97
+*
+.MODEL FZT857 NPN IS=2E-12 NF=1.006 BF=226 IKF=1 VAF=595 ISE=3.6114E-13 
++                 NE=1.4088 NR=1.01 BR=40 IKR=94m VAR=33.5 ISC=1.502E-12
++                 NC=1.067 RB=.0353 RE=.055 RC=.03 CJC=63E-12 MJC=.505
++                 VJC=.491 CJE=1.1E-9 TF=.61E-9 TR=1.75E-6 
+*
+*
+*                          (C)  1997 ZETEX PLC
+*
+*   The copyright in this model  and  the design embodied belong to
+*   Zetex PLC ("Zetex"). It is supplied free of charge by Zetex for
+*   the purpose  of research  and design  and may be used or copied
+*   intact (including this notice) for that purpose only. All other
+*   rights  are  reserved.  The model  is believed  accurate but no
+*   condition or warranty as to its  merchantability or fitness for
+*   purpose  is  given  and  no liability  in respect of any use is
+*   accepted by Zetex PLC, its distributors or agent.
+*
+*
+*   Zetex PLC, Fields New Road, Chadderton, Oldham  OL9 8NP

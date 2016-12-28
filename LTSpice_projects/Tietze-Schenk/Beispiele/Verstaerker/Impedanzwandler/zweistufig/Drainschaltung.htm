@@ -1,0 +1,51 @@
+<HTML>
+  <HEAD>
+    <TITLE>Zweistufige_Drainschaltung.sch</TITLE>
+  </HEAD>
+  <BODY BGCOLOR="#F0F0F0">
+    <H1 ALIGN=center><B>Zweistufige_Drainschaltung.sch</B></H1>
+    <P>
+Zweistufiger Impedanzwandler mit MOSFETs in Drainschaltung
+    </P>
+    <P>
+      Frequenzgang einer zweistufigen Drainschaltung im Vergleich zu
+      einer einstufigen Drainschaltung mit gleichem Ausgangswiderstand
+      (ra=100Ohm).
+    </P>
+    <P>
+      Die einstufige Drainschaltung erreicht aufgrund der sehr gro&szlig;en
+      Eingangskapazit&auml;t des Mosfets T3 nur eine -3dB-Grenzfrequenz von
+      70kHz (Theorie: 88kHz). Bei der zweistufigen Drainschaltung gibt
+      es eine optimale Gr&ouml;&szlig;e G1 f&uuml;r den Mosfet T1; die Theorie liefert
+      G1=3, was durch die Simulation best&auml;tigt wird. Bei optimaler
+      Gr&ouml;&szlig;e G1 nimmt die Grenzfrequenz auf 3MHz (Theorie: 2,5MHz) zu.
+    </P>
+    <P><TABLE BORDER=2 BGCOLOR="#F0F0F0">
+      <TR>
+        <TD><B>Analysen</B></TD>
+        <TD><B>Einstellungen</B></TD>
+        <TD><B>Parameter</B></TD>
+        <TD><B>Ergebnisanzeigen</B></TD>
+      </TR>
+      <TR>
+        <TD>AC</TD>
+        <TD>f = 1e3 ... 1e8</TD>
+        <TD>G1 = (1 3 10)</TD>
+        <TD>Frequenzgaenge</TD>
+      </TR>
+    </TABLE></P>
+    <P><TABLE BORDER=0 BGCOLOR="#F0F0F0" WIDTH=100%>
+      <TR>
+        <TH WIDTH=20% ALIGN=left>
+          <A HREF="ueber.htm" TARGET="uebersicht"><B>zur&uuml;ck</B></A>
+        </TH>
+        <TH WIDTH=20% ALIGN=left>
+          <A HREF="../../../ueber.htm" TARGET="uebersicht"><B>&Uuml;bersicht</B></A>
+        </TH>
+        <TH WIDTH=60% ALIGN=left>
+          <A HREF="Drainschaltung.tse"><B>Simulation starten</B></A>
+        </TH>
+      </TR>
+    </TABLE></P>
+  </BODY>
+</HTML>

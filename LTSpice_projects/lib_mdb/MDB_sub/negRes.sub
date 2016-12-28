@@ -1,0 +1,11 @@
+**********************************************
+* Negative resistance 
+* I/V plot of resistor: 1st + 3rd quadrant
+* I/V plot of neg. R: 2st + 4rd quadrant
+* 14-12-2012 MDB
+**********************************************
+.subckt negRes 1 2
+E1 N1 2 1 N1 {R/Rs-1}
+R1 1 N1 {Rs}
+.ends
+

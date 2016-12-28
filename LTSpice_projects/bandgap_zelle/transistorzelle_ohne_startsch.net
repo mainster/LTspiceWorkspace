@@ -1,0 +1,36 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\bandgap_zelle\transistorzelle_ohne_startsch.asc
+Qa a ref N004 0 CA3046
+Qb b ref N005 0 CA3046 5
+Ra Vcc a 1k
+Rb Vcc b 10k
+R2 N005 N004 1k
+R1 N004 0 925
+R5 op N003 {Rf}
+R6 N003 0 1k
+XU2 b a op opamp_param_3 Vp={Vcc} Vm={-Vcc} Ilim=20m FT=10Meg SR=10 Vos=0 A0=100k phir=45 en=0 enk=0 in=0 ink=0 Rin=500Meg
+Qs b N002 N005 0 CA3046
+Rs Vcc N001 10k
+Ds N002 0 D
+XU1 Vcc vdc_single V={Vcc}
+XU3 b a ba arrActive
+XU5 N001 N002 jumperConfig close={starthelp} R_open=100meg R_close=1u
+V1 ref 0 1.25
+.model D D
+.lib C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\lib\cmp\standard.dio
+.model NPN NPN
+.model PNP PNP
+.lib C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\lib\cmp\standard.bjt
+* .tran 30m startup
+.param BG=1
++ Vcc = 10V
++ Rf = 3k
++ starthelp = 1
+.dc V1 0.2 1.6 5m
+;.step param ref 0.2 1.6 10m
+.step param starthelp list 1 0
+.lib EIT_sub/vdc_single.sub
+.lib EIT_sub\opamp_parametrierbar.sub
+.lib MDB_sub/arroActive.sub
+.lib MDB_sub/jumper_setable.sub
+.backanno
+.end

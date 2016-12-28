@@ -1,0 +1,40 @@
+Circuit: * Z:\home\koblitz\Simulationsbeispiele_WS14\Elektronik_Lab\dienstag\klirr_1.asc
+
+WARNING: Less than two connections to node OUT2.  This node is used by B2.
+.OP point found by inspection.
+Fourier components of V(out)
+DC component:-0.0652659
+
+Harmonic	Frequency	 Fourier 	Normalized	 Phase  	Normalized
+ Number 	  [Hz]   	Component	 Component	[degree]	Phase [deg]
+    1   	1.000e+03	8.486e-01	1.000e+00	    0.00°	    0.00°
+    2   	2.000e+03	8.843e-02	1.042e-01	   90.00°	   90.00°
+    3   	3.000e+03	6.143e-02	7.238e-02	   -0.01°	   -0.01°
+    4   	4.000e+03	1.813e-02	2.136e-02	  -90.01°	  -90.01°
+    5   	5.000e+03	3.022e-03	3.561e-03	    0.03°	    0.03°
+    6   	6.000e+03	7.854e-03	9.255e-03	  -90.00°	  -90.00°
+    7   	7.000e+03	6.188e-03	7.292e-03	  179.99°	  179.99°
+    8   	8.000e+03	7.455e-04	8.785e-04	   89.73°	   89.73°
+    9   	9.000e+03	2.699e-03	3.181e-03	 -179.91°	 -179.91°
+Total Harmonic Distortion: 12.929061%
+
+
+
+Date: Tue Dec 16 16:47:36 2014
+Total elapsed time: 0.149 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 2717
+traniter = 2717
+tranpoints = 1042
+accept = 1042
+rejected = 0
+matrix size = 8
+fillins = 0
+solver = Normal
+Matrix Compiler1:      12 opcodes  2.1/[1.7]/1.8
+Matrix Compiler2: 432 Bytes object code size  1.9/1.9/[1.8]
+
+

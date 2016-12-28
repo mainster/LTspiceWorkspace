@@ -1,0 +1,11 @@
+* Z:\media\data\CODES\LTSpice_projects\KTY19_tempSensor_ksq\KTY19_tempSensor_ksq.asc
+R1 N002 N003 {RT}
+R2 N003 0 3k
+V1 N002 0 4.096
+R3 N001 0 {RT}
+I1 0 N001 100µ
+.param RT 2000
+.step param RT LIST 2000 2418.21 2884.85 3399.91 3963.4
+.tran 1m
+.backanno
+.end

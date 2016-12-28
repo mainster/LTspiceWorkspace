@@ -1,0 +1,23 @@
+Circuit: * C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\examples\LTspiceWorldTour2009\Analis&Aids\TraceCharact\Qgate.asc
+
+Warning: Multiple definitions of model "si4410dy" Type: Vdmos1
+Direct Newton iteration for .op point succeeded.
+
+Date: Mon Feb 09 11:52:51 2015
+Total elapsed time: 0.133 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 13542
+traniter = 13536
+tranpoints = 6018
+accept = 6018
+rejected = 0
+matrix size = 7
+fillins = 1
+solver = Normal
+Matrix Compiler1: 384 bytes object code size  0.3/0.2/[0.2]
+Matrix Compiler2: 509 bytes object code size  0.2/0.2/[0.2]
+
+

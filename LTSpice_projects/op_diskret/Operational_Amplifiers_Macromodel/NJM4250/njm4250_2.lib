@@ -1,0 +1,105 @@
+*$
+* PART NUMBER: NJM4250
+* MANUFACTURER: NEW JAPAN RADIO
+* All Rights Reserved Copyright (c) Bee Technologies Inc. 2006
+.SUBCKT NJM4250 IN- IN+ V- OUT V+ SET
+X_U1         IN1+ IN1- V1+ V1- OUT1 NJM4250_1u
+X_U2         IN1+ IN1- V1+ V1- OUT2 NJM4250_10u
+.MODEL        _S1 VSWITCH Roff=1e6 Ron=1.0 Voff=1.0V Von=0.0V
+.MODEL        _S2 VSWITCH Roff=1e6 Ron=1.0 Voff=0.0V Von=1.0V
+.MODEL        _S3 VSWITCH Roff=100e6 Ron=1.0 Voff=0 Von=1
+.MODEL        _S4 VSWITCH Roff=100e6 Ron=1.0 Voff=1 Von=0
+S_S1         OUT1 VCH1 N08350 0 _S1
+S_S2         OUT2 VCH2 N08350 0 _S2
+S_S3         VSET V+2 N08350 0 _S3
+S_S4         VSET V+1 N08350 0 _S4
+E_E1         N08350 0 VALUE { If(V(Vset)>1,1,0) }
+E_ABM2       OUT 0 VALUE { ( V(vch1)+V(vch2) ) /1.0   }
+V_VS         VSET SET 15Vdc
+RS_S1        N08350 0 1G
+RS_S2        N08350 0 1G
+RS_S3        N08350 0 1G
+RS_S4        N08350 0 1G
+R_R1         V+ V1+  1u  
+R_R2         V- V1-  1u
+R_R3         IN+ IN1+  1u  
+R_R4         IN- IN1-  1u  
+R_R5         VCH1 0  1.4k  
+R_R6         VCH2 0  1.4k
+R_R7         N08350 0  1MEG  
+R_R8         V+2 0  1MEG
+R_R9         V+1 0  1MEG
+.ENDS NJM4250  
+.SUBCKT NJM4250_1u 1 2 3 4 5
+  c1   11 12 17.2169E-12
+  c2    6  7 27.500E-12
+  dc    5 53 dy
+  de   54  5 dy
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 191.28E6 -1E3 1E3 190E6 -190E6
+  ga    6  0 11 12 19.195E-6
+  gcm   0  6 10 99 4.1725E-9
+  iee  10  4 dc 770.00E-9
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx1
+  q2   12  1 14 qx2
+  r2    6  9 100.00E3
+  rc1   3 11 75.788E3
+  rc2   3 12 75.788E3
+  re1  13 10 6.6554E3
+  re2  14 10 6.6554E3
+  ree  10 99 259.74E6
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 1.8001E3
+  vb    9  0 dc 0
+  vc    3 53 dc 3.6979
+  ve   54  4 dc 3.6979
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.00E-18)
+.model dy D(Is=800.00E-18 Rs=1m Cjo=10p)
+.model qx1 NPN(Is=800.00E-18 Bf=28.846)
+.model qx2 NPN(Is=965.1400E-18 Bf=53.571)
+.ends
+.SUBCKT NJM4250_10u 1 2 3 4 5
+  c1   11 12 8.6603E-12
+  c2    6  7 30.000E-12
+  dc    5 53 dy
+  de   54  5 dy
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 58.215E6 -1E3 1E3 58E6 -58E6
+  ga    6  0 11 12 50.354E-6
+  gcm   0  6 10 99 13.710E-9
+  iee  10  4 dc 6.0031E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx1
+  q2   12  1 14 qx2
+  r2    6  9 100.00E3
+  rc1   3 11 21.866E3
+  rc2   3 12 21.866E3
+  re1  13 10 14.444E3
+  re2  14 10 14.444E3
+  ree  10 99 33.316E6
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 1.8006E3
+  vb    9  0 dc 0
+  vc    3 53 dc 3.6979
+  ve   54  4 dc 3.6979
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.00E-18)
+.model dy D(Is=800.00E-18 Rs=1m Cjo=10p)
+.model qx1 NPN(Is=800.00E-18 Bf=983.61)
+.model qx2 NPN(Is=1000.4124E-18 Bf=60.000E3)
+.ends
+*$

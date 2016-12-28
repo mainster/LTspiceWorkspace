@@ -1,0 +1,23 @@
+* Z:\media\data\CODES\LTSpice_projects\koblitz\Klausur_7.1.asc
+Q1 C1 B1 0 0 myNPN
+R4 E2 C1 1.5k
+R2 B1 E2 33k
+R3 N003 B1 100k
+Q2 0 C1 E2 0 myPNP
+R1 B1 N002 3.3k
+C1 N002 V1 10µ
+V1 N001 0 10
+V2 V1 0 ac
+Vmin N003 0 -10V
+R5 N001 E2 1.5k
+C2 out E2 10µ
+R6 out 0 1k
+.model NPN NPN
+.model PNP PNP
+.lib C:\Program Files (x86)\LTC\LTspiceIV\lib\cmp\standard.bjt
+.model myNPN NPN(Bf=200 VA=80)
+.model myPNP PNP(Bf=200 VA=80)
+.ac oct 100 1 100k
+* .ic V(out)=0
+.backanno
+.end

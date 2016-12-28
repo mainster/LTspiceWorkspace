@@ -1,0 +1,76 @@
+* Z:\media\data\CODES\LTSpice_projects\modulation_bandbreite\modulation_bandbreite_laplace.asc
+V4 f2 0 SINE(0 1 100k)
+V6 X2 0 PULSE(-1 1 10m 30m 10m 1m 0 10)
+V7 f1 0 SINE(0 1 40k)
+V8 X1 0 PWL file=Z:\media\data\CODES\LTSpice_projects\pwl_file1.txt
+B8 xm2 0 V=V(X2)*V(f2)
+B9 xm1 0 V=V(X1)*V(f1)
+B10 sum 0 V=V(xm1)+V(xm2)
+B11 prod 0 V=V(xm1)*V(xm2)
+B12 y2p 0 V=V(prod)/(V(xm1))
+B13 y1p 0 V=V(prod)/(V(xm2))
+R1 N003 N002 5.1k
+R2 0 N003 3.3k
+R3 N004 out1st 7.5k
+C1 out1st N003 680p
+C2 N004 N003 1.5n
+V10 V+ 0 20
+V11 0 V- 20
+XU2 0 N004 V+ V- out1st level.2 Avol=10Meg GBW=100Meg Slew=10Meg ilimit=25m rail=0 Vos=0 phimargin=45 en=0 enk=0 in=0 ink=0 Rin=500Meg
+R7 N010 N002 4.3k
+R8 0 N010 3k
+R9 N011 out2 6.2k
+C3 out2 N010 330p
+C4 N011 N010 680p
+XU3 0 N011 V+ V- out2 level.2 Avol=10Meg GBW=100Meg Slew=10Meg ilimit=25m rail=0 Vos=0 phimargin=45 en=0 enk=0 in=0 ink=0 Rin=500Meg
+XU4 0 N009 V+ V- out2inv level.2 Avol=10Meg GBW=100Meg Slew=10Meg ilimit=25m rail=0 Vos=0 phimargin=45 en=0 enk=0 in=0 ink=0 Rin=500Meg
+R6 N009 out2 10k
+R10 out2inv N009 10k
+V9 0 N001 AC 1
+R11 N002 N001 10000meg
+R12 N013 prod 5.1k
+R13 0 N013 3.3k
+R14 N014 out1p 7.5k
+C5 out1p N013 680p
+C6 N014 N013 1.5n
+XU5 0 N014 V+ V- out1p level.2 Avol=10Meg GBW=100Meg Slew=10Meg ilimit=25m rail=0 Vos=0 phimargin=45 en=0 enk=0 in=0 ink=0 Rin=500Meg
+R15 N016 prod 4.3k
+R16 0 N016 3k
+R17 N017 out2p 6.2k
+C7 out2p N016 330p
+C8 N017 N016 680p
+XU6 0 N017 V+ V- out2p level.2 Avol=10Meg GBW=100Meg Slew=10Meg ilimit=25m rail=0 Vos=0 phimargin=45 en=0 enk=0 in=0 ink=0 Rin=500Meg
+XU7 0 N012 V+ V- out1invp level.2 Avol=10Meg GBW=100Meg Slew=10Meg ilimit=25m rail=0 Vos=0 phimargin=45 en=0 enk=0 in=0 ink=0 Rin=500Meg
+R18 N012 out1p 10k
+R19 out1invp N012 10k
+XU8 0 N015 V+ V- out2invp level.2 Avol=10Meg GBW=100Meg Slew=10Meg ilimit=25m rail=0 Vos=0 phimargin=45 en=0 enk=0 in=0 ink=0 Rin=500Meg
+R20 N015 out2p 10k
+R21 out2invp N015 10k
+R22 N002 prod 1n
+R4 N005 out1st 5.1k
+R5 0 N005 3.3k
+R23 N006 out2nd 7.5k
+C9 out2nd N005 680p
+C10 N006 N005 1.5n
+XU1 0 N006 V+ V- out2nd level.2 Avol=10Meg GBW=100Meg Slew=10Meg ilimit=25m rail=0 Vos=0 phimargin=45 en=0 enk=0 in=0 ink=0 Rin=500Meg
+R24 N007 out2nd 5.1k
+R25 0 N007 3.3k
+R26 N008 out3d 7.5k
+C11 out3d N007 680p
+C12 N008 N007 1.5n
+XU9 0 N008 V+ V- out3d level.2 Avol=10Meg GBW=100Meg Slew=10Meg ilimit=25m rail=0 Vos=0 phimargin=45 en=0 enk=0 in=0 ink=0 Rin=500Meg
+* signale modulieren
+* modulierte hüllkurven \naddieren, mischen
+* xm1 ergibt sich wieder indem man\ndas gemischte Signal durch xm1 dividiert\n \nda aber xm1 unbekannt ist, muss man anders an \ndie information kommen..... Evtl. die Spektren der\nbeiden signale durch zwei unterschidliche \nBandpässe  trenne. Bei dem so gewonnenem \nSpektrum handelt es sich im Idealfall um das\nmodulierte Nutzsignal
+* .step dec param w 10 100k 50\n.ac list {w/(2*pi)}
+.tran 100m
+* .step dec param f 10 10meg 100\n.ac list {f}
+* mittenfrequenz = 100k
+* mittenfrequenz = 100k
+* mittenfrequenz = 100k
+* mittenfrequenz = 100k
+* PULSE(-1 1 10m 30m 10m 1m 0 10)
+* PWL file=Z:\\media\\data\\CODES\\LTSpice_projects\\pwl_file1.txt
+.lib UniversalOpamps2.sub
+.backanno
+.end

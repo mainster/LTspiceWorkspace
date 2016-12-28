@@ -1,0 +1,23 @@
+Circuit: * C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\examples\LTspiceWorldTour2009\Rect\1078_FullWave_AbsoluteValor\1078.asc
+
+Direct Newton iteration for .op point succeeded.
+
+Date: Mon Feb 09 11:58:31 2015
+Total elapsed time: 0.159 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 3100
+traniter = 3075
+tranpoints = 1376
+accept = 1268
+rejected = 108
+matrix size = 21
+fillins = 22
+solver = Normal
+Thread vector: 17.0/12.6[2] 5.0/4.5[2] 2.0/2.3[1] 0.4/2.4[1]  2592/500
+Matrix Compiler1: 1.56 KB object code size  0.6/0.4/[0.3]
+Matrix Compiler2: 1.96 KB object code size  0.6/0.6/[0.5]
+
+

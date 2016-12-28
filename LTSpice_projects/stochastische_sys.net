@@ -1,0 +1,20 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\stochastische_sys.asc
+R1 N001 a {R1}
+R2 a 0 {R2}
+C1 a 0 {C}
+XU1 N001 vdc_single V={U0}
+C2 b 0 {C}
+R3 N002 b {R1*R2/(R1+R2)}
+XU2 N002 vdc_single V={U0*R2/(R1+R2)}
+.param initial=1
++ R1 = 1k
++ R2 = {R1}
++ C = 1u
++ u0 = 5V
++ uc0 = -2V
+.tran 5m
+.ic V(a)={uc0}
+.ic V(b)={uc0}
+.lib EIT_sub/vdc_single.sub
+.backanno
+.end

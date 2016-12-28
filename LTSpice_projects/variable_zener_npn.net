@@ -1,0 +1,41 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\variable_zener_npn.asc
+R1 N001 N004 {Rc}
+R2 N004 N005 {R1}
+R3 N005 0 {R2}
+Q1 N004 N005 0 0 NPNx
+XU1 N001 vdc_single V={Ve}
+B§Ic1 N002 0 I={Ic1}
+R4 0 N002 1
+B1 Vz 0 V={VzaS}
+B§Ic1B N003 0 I={Ic1B}
+R5 0 N003 1
+B2 Vzb 0 V={Vzbe}
+.model NPN NPN
+.model PNP PNP
+.lib C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\lib\cmp\standard.bjt
+* .tran 1
+.model npnx npn (Is={Ic0/exp(Vbe0/26m)} Bf={beta})
+.param MATLAB_PARAM=1
++ Ve = 5V
++ Rc = 1k
++ R1 = 3513
++ R2 = 4.7k
++ Vbe0 = .65V
++ Ic0 = 3.88mA
++ beta = 200
++ alpha ={ beta/(beta + 1) }
++ Vzbe = { Ve*(1-1/(1+alpha*R1/Rc*(1/alpha-1))) - Vbe0*( Rc/R2- ( (Rc+R1)/R2+1 ) / ( 1+alpha*R1/Rc*(1/alpha-1)) ) }
+.param Ic1 =   ( Ve-Vbe0/R2*(Rc+R1+R2) ) / (Rc-R2/beta+1/beta*(Rc+R1+R2) )
+.param Ic1B = ( Ve-Vbe0*( Rc/R2+R1/R2+1 ) ) / (Rc/alpha+R1*(1/alpha-1))
+.param Vza  = Ve-( Rc/R2*Vbe0+ (1+1/beta)*Rc *Ic1 )
+.param VzaS = (R1*R2*Ve + R2*Rc*Vbe0 + R1*Rc*Vbe0*beta + R2*Rc*Vbe0*beta)/(R2*(R1 + Rc + Rc*beta))
+ 
+.param Vzb= Ve*(1-1/(1+alpha*R1/Rc*(1/alpha-1))) - Vbe0*( Rc/R2- ( (Rc+R1)/R2+1 ) / ( 1+alpha*R1/Rc*(1/alpha-1)) )
+.param VzbS= (Vbe0*(R2 + R1*alpha))/R2 + (R1*(alpha - 1)*(R2*Vbe0 - R2*Ve + R1*Vbe0*alpha))/(R2*(R1 + Rc - R1*alpha))
+* .param MATLAB_PARAM=0\n+ Ve = 5V\n+ Rc = 1k\n+ R1 = 2u\n+ R2 = 2m\n+ R3 = 2k\n+ R4 = 4.7meg\n+ failalNull = {betaFAULTnull/(beta + 1)}\n+ Vbe0 = 0.65V\n+ Vbe02 = .65V\n+ Vbe03 = 650mV\n+ Vbe04 = 650.mV\n+ Ic0 = 3.88mA\n+ Ic0test = 3.88m\n+ beta = 200\n+ alpha = {beta/(beta + 1)}\n+ alpha2 = {beta/(beta + 1)}\n+ failal = {betaFAULT/(beta + 1)}
+* *********************************************************************************\nhttp://www.raffia.ch/?opv_und_transistor\n**********************************************************************************\n(B) Spannungsgegenkopplung mit R1 und R2\nDer T. stellt UCE so ein, dass der Spannungsabfall an R2 ? 0,7 V wird.\n UCE ? 0,7 * [(R1 / R2) + 1] falls R2 << re
+.step param R2 100 10k 500
+.op
+.lib EIT_sub/vdc_single.sub
+.backanno
+.end

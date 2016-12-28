@@ -1,0 +1,4 @@
+Circuit: * C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\examples\Robertugo\Challenge\Hcu04VcoOsc.asc
+
+Fatal Error: Port(pin) count mismatch between the definition of subcircuit "74hcu04" and instance: "xu1"
+The instance has more connection terminals than the definition.

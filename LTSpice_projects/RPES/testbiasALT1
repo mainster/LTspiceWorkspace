@@ -1,0 +1,21 @@
+* .SAVEBIAS from circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\RPES\ramp_generator_discret_v2.asc
+* temp=300.15
+
+* time=0.0250007
+.nodeset V(v+)=10 V(n004)=6.795177232 V(n003)=9.425157352 V(n002)=9.59056359 V(mir)=6.795176378
++ V(n010)=6.795176378 V(dmir_pro_ms)=5.694290184 V(dmir_pro_5ms)=28.47145092 V(n012)=0.4487632256
++ V(src_off)=10.00002517 V(c1)=0.6831820794 V(sink_off)=0.07687079737 V(n008)=0.6831398022
++ V(c2)=-3.983727804 V(n007)=-3.983727501 V(c1_in_nf)=6.557704731 V(n005)=9.590563351
++ V(p001)=1.299936447e-006 V(src_off2)=0 V(sink_off2)=8.5 V(n011)=0.7021178154 V(n009)=-0.0007242677856
++ V(int_i_src)=1.063454156e-005 V(int_i_sink)=1.062315051e-005 V(mircalc)=0.02071099958
++ V(n006)=0.1045817812 V(n001)=9.425108145 V(q8#collector)=10.00002516 V(q8#base)=-3.983727331
++ V(q8#emitter)=-1.455973454e-007 V(q2#collector)=-0.0007242661602 V(q2#base)=-0.0007243821632
++ V(q2#emitter)=1.186465994e-007 V(q1#collector)=6.795176382 V(q1#base)=-0.0007243892645
++ V(q1#emitter)=1.214176451e-007 V(q3#collector)=-0.0009325125401 V(q3#base)=0.7017539143
++ V(q3#emitter)=0.00088968152 V(q9#collector)=9.590563351 V(q9#base)=1.29999711e-006
++ V(q9#emitter)=3.454019085e-013 V(q7#collector)=0.07572720264 V(q7#base)=0.683116127
++ V(q7#emitter)=0.002769993639 V(q11#collector)=9.425358061 V(q11#base)=9.425176989
++ V(q11#emitter)=9.999890351 V(q10#collector)=0.1049164429 V(q10#base)=9.425176909
++ V(q10#emitter)=9.999853275 V(q6#collector)=9.425157797 V(q6#base)=9.590563628 V(q6#emitter)=9.999999805
++ V(q5#collector)=9.4254068 V(q5#base)=9.425226091 V(q5#emitter)=9.999890556 V(q4#collector)=6.795450535
++ V(q4#base)=9.425227211 V(q4#emitter)=9.999880108

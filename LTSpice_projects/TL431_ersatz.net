@@ -1,0 +1,17 @@
+* C:\users\mainster\My Documents\CODES_local\LTSpice_projects\TL431_ersatz.asc
+V1 Vm 0 -10
+V2 Vp 0 10
+XU2 Cat N002 0 Cat N001 level.2 Avol=1Meg GBW=10Meg Slew=10Meg ilimit=25m rail=0 Vos=0 phimargin=45 en=0 enk=0 in=0 ink=0 Rin=500Meg
+V3 N002 0 2.24
+Q1 Cat N001 0 0 NPN
+D1 0 Cat D
+R1 Vp Cat 4.7k
+.model D D
+.lib C:\Program Files (x86)\LTC_orig\LTspiceIV_4.18\lib\cmp\standard.dio
+.model NPN NPN
+.model PNP PNP
+.lib C:\Program Files (x86)\LTC_orig\LTspiceIV_4.18\lib\cmp\standard.bjt
+.tran 10m
+.lib UniversalOpamps2.sub
+.backanno
+.end

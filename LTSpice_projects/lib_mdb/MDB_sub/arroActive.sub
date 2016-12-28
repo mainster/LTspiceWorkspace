@@ -1,0 +1,9 @@
+* Differential moltage marker
+*
+* 10-12-2015 MDB
+*
+*******************************************************************************
+.subckt arrActive + - o 
+E1 o 0 + - gain=1
+R1 o 0 100meg
+.ENDS

@@ -1,0 +1,24 @@
+Questionable use of curly braces in ".model dx d {ron=1mroff=1tvfwd=0.4}"
+    Error: undefined symbol in: "[ron]=1mroff=1tvfwd=0.4"
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\BuckBoostInv_swconverter\buck_labor.asc
+
+Direct Newton iteration for .op point succeeded.
+
+Date: Sat Jan 30 12:46:43 2016
+Total elapsed time: 1.615 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 396446
+traniter = 396443
+tranpoints = 174088
+accept = 133821
+rejected = 40267
+matrix size = 6
+fillins = 0
+solver = Normal
+Matrix Compiler1: 182 bytes object code size  0.6/0.6/[0.5]
+Matrix Compiler2: 380 bytes object code size  0.6/0.6/[0.6]
+
+

@@ -1,0 +1,53 @@
+* Z:\media\storage\CODES_ln\LTSpice_projects\galvoscanner\OpAmpLT1028_bootstraped_biased_currentsource.asc
+R1 N012 in 1k
+V1 Vm 0 {-Vsup}
+V2 Vp 0 {Vsup}
+XU2 N012 N010 Vp Vm N010 LT1028
+XU1 in+2 N001 Vp Vm outOp2 level.2 Avol=1Meg GBW=50Meg Slew=11Meg ilimit=25m rail={rail} Vos=0 phimargin=45 en=0 enk=0 in=0 ink=0 Rin=500Meg
+R4 in+2 in 1k
+R5 outOp2 N001 19k
+R6 N001 0 1k
+R2 N003 N005 1k
+Q3 Vp N003 N004 0 BC547B
+M3 Vp N004 N006 N006 IRFP240
+R3 N006 N004 270
+R13 out5 N006 1m
+R14 N009 out5 1m
+M4 Vm N008 N009 N009 IRF9640
+Q4 Vm N011 N008 0 BC327-40
+R15 N008 N009 270
+R16 N007 N011 1k
+D3 outOp N007 1N4148
+D4 N005 outOp 1N4148
+RL2 out5 N002 2
+R§Shunt2 N002 0 0.1
+R17 N002 in- 9k
+R18 in- in 10k
+R23 in- 0 1k
+V4 in 0 SINE(0 1 10k) AC 1
+I3 Vp N003 {Ik}
+I4 N011 Vm {Ik}
+XU3 0 in- Vp Vm outOp LT1028
+.model D D
+.lib Z:\home\mainster\.wine\drive_c\Program Files (x86)\LTC_orig\LTspiceIV_4.18\lib\cmp\standard.dio
+.model NPN NPN
+.model PNP PNP
+.lib Z:\home\mainster\.wine\drive_c\Program Files (x86)\LTC_orig\LTspiceIV_4.18\lib\cmp\standard.bjt
+.model NMOS NMOS
+.model PMOS PMOS
+.lib Z:\home\mainster\.wine\drive_c\Program Files (x86)\LTC_orig\LTspiceIV_4.18\lib\cmp\standard.mos
+.param Vsup=20
+.param Ik=3.9m
+.param R1=10k
+.param R2=20k
+.param rail=0
+.param Rl=200
+.param tstop=5m
+.param vsw=2
+* abs(V(Op+)-V(op-))
+.dc V4 {-vsw} {vsw} 0.01
+* .ac oct 100 1k 100meg
+.lib LTC.lib
+.lib UniversalOpamps2.sub
+.backanno
+.end

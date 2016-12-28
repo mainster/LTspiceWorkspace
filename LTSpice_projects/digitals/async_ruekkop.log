@@ -1,0 +1,51 @@
+Error: too many decimal points in: "6*inv(time+.5-{limdel})+(1-inv(time+.5-{limdel}))*v([...x]...)"
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\digitals\async_ruekkop.asc
+
+WARNING: Less than two connections to node NC_01.  This node is used by A:U1:1.
+WARNING: Less than two connections to node NC_02.  This node is used by A:U3:1.
+WARNING: Less than two connections to node NC_03.  This node is used by A:U4:1.
+WARNING: Less than two connections to node NC_04.  This node is used by A:U2:1.
+WARNING: Less than two connections to node T1_NS.  This node is used by V2.
+WARNING: Less than two connections to node T0_NS.  This node is used by V3.
+WARNING: Less than two connections to node ...X.....  This node is used by B2.
+Direct Newton iteration for .op point succeeded.
+Ignoring empty pin current: Ix(u3:i3)
+Ignoring empty pin current: Ix(u4:i2)
+Ignoring empty pin current: Ix(u4:i3)
+Ignoring empty pin current: Ix(u5:in)
+Ignoring empty pin current: Ix(u6:in)
+Ignoring empty pin current: Ix(u7:in)
+Ignoring empty pin current: Ix(u3:i3)
+Ignoring empty pin current: Ix(u4:i2)
+Ignoring empty pin current: Ix(u4:i3)
+Ignoring empty pin current: Ix(u5:in)
+Ignoring empty pin current: Ix(u6:in)
+Ignoring empty pin current: Ix(u7:in)
+.step sel=1
+.step sel=2
+.step sel=3
+
+
+Measurement "t1_ns" FAIL'ed
+
+Measurement "t0_ns" FAIL'ed
+
+
+Date: Wed Feb 11 11:57:46 2015
+Total elapsed time: 2.336 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 32372
+traniter = 32367
+tranpoints = 16175
+accept = 9746
+rejected = 6429
+matrix size = 37
+fillins = 0
+solver = Normal
+Matrix Compiler1: 796 bytes object code size  0.5/0.3/[0.3]
+Matrix Compiler2: 1.80 KB object code size  0.5/0.6/[0.3]
+
+

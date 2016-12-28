@@ -1,0 +1,32 @@
+Questionable use of curly braces in ".model sw vswitch {roff=1tron=1mvon=0.7voff=0.3vh=-0.5}"
+    Error: undefined symbol in: "[roff]=1tron=1mvon=0.7voff=0.3vh=-0.5"
+Questionable use of curly braces in ".model dx d {ron=1mroff=1tvfwd=0.4}"
+    Error: undefined symbol in: "[ron]=1mroff=1tvfwd=0.4"
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\BuckBoostInv_swconverter\buck_labor_ft2.asc
+
+Laplace(E2): Window=24.0509ms Nfft=4096
+WARNING: Less than two connections to node AS.  This node is used by E2.
+Direct Newton iteration for .op point succeeded.
+.step rl=1e+012
+.step rl=10
+.step rl=5
+.step rl=2
+
+Date: Sat Jan 30 12:48:52 2016
+Total elapsed time: 13.351 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 126167
+traniter = 126164
+tranpoints = 50861
+accept = 37498
+rejected = 13363
+matrix size = 19
+fillins = 0
+solver = Normal
+Matrix Compiler1: 580 bytes object code size  1.9/1.5/[1.4]
+Matrix Compiler2: 1,12 KB object code size  1.5/1.7/[1.5]
+
+

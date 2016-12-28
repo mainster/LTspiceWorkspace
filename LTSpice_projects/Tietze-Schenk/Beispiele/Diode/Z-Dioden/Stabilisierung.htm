@@ -1,0 +1,54 @@
+<HTML>
+  <HEAD>
+    <TITLE>Spannungsstabilisierung mit Z-Diode</TITLE>
+  </HEAD>
+  <BODY BGCOLOR="#F0F0F0">
+    <H1 ALIGN=center><B>Spannungsstabilisierung mit Z-Diode</B></H1>
+    <P>
+      Spannungsstabilisierung mit Z-Diode. Die Spannung an der Last RL
+      wird mit der Z-Diode ZD4,7 auf 4,7V stabilisiert. Die Kennlinie
+      (Anzeige 1) zeigt, dass die Stabilisierung f&uuml;r Ue > 7V arbeitet.
+      Mit zunehmender Eingangsspannung Ue nimmt der Querstrom durch die
+      Z-Diode zu (Anzeige 2). Anzeige 3 zeigt den Gl&auml;ttungsfaktor
+      G=dUe/dUa=1/(dUa/dUe).
+    </P>
+    <P>
+      F&uuml;r Ue=10V betr&auml;gt der Gl&auml;ttungsfaktor etwa 80, d.h. die Amplitude
+      einer sinusf&ouml;rmigen St&ouml;rung nimmt etwa um den Faktor 80 ab. In der
+      TRAN-Analyse wird ein Eingangssignal mit einem Gleichanteil von 10V
+      und einem bei t=1ms einsetzenden Wechselspannungsanteil mit einer
+      Amplitude von 1V und einer Frequenz von 1kHz verwendet. Am Ausgang
+      betr&auml;gt die Amplitude nur noch 1V/80=12,5mV (Anzeige 4). 
+    </P>
+    <P><TABLE BORDER=2 BGCOLOR="#F0F0F0">
+      <TR>
+        <TD><B>Analysen</B></TD>
+        <TD><B>Einstellungen</B></TD>
+        <TD><B>Ergebnisanzeigen</B></TD>
+      </TR>
+      <TR>
+        <TD>DC</TD>
+        <TD>Ue = 0 ... 15</TD>
+        <TD>Kennlinie , Stroeme , Glaettungsfaktor</TD>
+      </TR>
+      <TR>
+        <TD>TRAN</TD>
+        <TD>t = 0ms ... 5ms</TD>
+        <TD>Sinus-Stoerung</TD>
+      </TR>
+    </TABLE></P>
+    <P><TABLE BORDER=0 BGCOLOR="#F0F0F0" WIDTH=100%>
+      <TR>
+        <TH WIDTH=20% ALIGN=left>
+          <A HREF="ueber.htm" TARGET="uebersicht"><B>zur&uuml;ck</B></A>
+        </TH>
+        <TH WIDTH=20% ALIGN=left>
+          <A HREF="../../ueber.htm" TARGET="uebersicht"><B>&Uuml;bersicht</B></A>
+        </TH>
+        <TH WIDTH=60% ALIGN=left>
+          <A HREF="Stabilisierung.tse"><B>Simulation starten</B></A>
+        </TH>
+      </TR>
+    </TABLE></P>
+  </BODY>
+</HTML>

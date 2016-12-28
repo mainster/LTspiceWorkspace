@@ -1,0 +1,74 @@
+<HTML>
+  <HEAD>
+    <TITLE>Frequenzgaenge.sch</TITLE>
+  </HEAD>
+  <BODY BGCOLOR="#F0F0F0">
+    <H1 ALIGN=center><B>Frequenzgaenge.sch</B></H1>
+    <P>
+Frequenzg&auml;nge von Kaskodeschaltungen mit Stromquellen
+    </P>
+    <P>
+      Vergleich der Frequenzg&auml;nge einer Emitterschaltung (1), einer
+      npn-Kaskodeschaltung mit einfachem Stromspiegel (2) und einer
+      npn-Kaskodeschaltung mit Kaskode-Stromspiegel (3).
+    </P>
+    <P>
+      Die Ausgangsspannungen im Arbeitspunkt betragen UaA=2,5V. Da
+      die Ausgangsspannungen bei Schaltungen mit Stromquellen ohne
+      Beschaltung undefiniert sind, werden Arbeitspunktstabilisatoren
+      (A1,A2) eingesetzt, die die Ausgangs-Gleichspannungen auf 2,5V
+      halten. Die Arbeitspunktstabilisatoren bestehen jeweils aus
+      einer Gleichspannungsquelle mit 2,5V und zwei sehr gro&szlig;en
+      Induktivit&auml;ten (L=1e12H), die mit den Ausg&auml;ngen verbunden sind. 
+    </P>
+    <P>
+      Betriebsverst&auml;rkungen (Simulation/Theorie):
+       (1) 822=58,3dB / 900=59,1dB
+       (2) 1174=61,4dB / 1400=62,9dB
+       (3) 41210=92,3dB / 56000=95dB
+    </P>
+    <P>
+      Grenzfrequenzen (Simulation):
+       (1) 78kHz
+       (2) 119kHz
+       (3) 4,4kHz
+    </P>
+    <P>
+      Verst&auml;rkungs-Bandbreite-Produkt GBW (Simulation/Theorie):
+       (1) 64MHz / 48MHz
+       (2) 140MHz / 122MHz
+       (3) 181MHz / 122MHz
+    </P>
+    <P>
+      Bei der Berechnung der theoretischen Werte wurde die
+      Spannungsabh&auml;ngigkeit der Sperrschichtkapazit&auml;ten CC (CBC)
+      und CS (CBS) vernachl&auml;ssigt; dadurch erh&auml;lt man zu kleine
+      Werte f&uuml;r das GBW.
+    </P>
+    <P><TABLE BORDER=2 BGCOLOR="#F0F0F0">
+      <TR>
+        <TD><B>Analysen</B></TD>
+        <TD><B>Einstellungen</B></TD>
+        <TD><B>Ergebnisanzeigen</B></TD>
+      </TR>
+      <TR>
+        <TD>AC</TD>
+        <TD>f = 1e2 ... 1e8</TD>
+        <TD>Frequenzgaenge</TD>
+      </TR>
+    </TABLE></P>
+    <P><TABLE BORDER=0 BGCOLOR="#F0F0F0" WIDTH=100%>
+      <TR>
+        <TH WIDTH=20% ALIGN=left>
+          <A HREF="ueber.htm" TARGET="uebersicht"><B>zur&uuml;ck</B></A>
+        </TH>
+        <TH WIDTH=20% ALIGN=left>
+          <A HREF="../../ueber.htm" TARGET="uebersicht"><B>&Uuml;bersicht</B></A>
+        </TH>
+        <TH WIDTH=60% ALIGN=left>
+          <A HREF="Frequenzgaenge.tse"><B>Simulation starten</B></A>
+        </TH>
+      </TR>
+    </TABLE></P>
+  </BODY>
+</HTML>

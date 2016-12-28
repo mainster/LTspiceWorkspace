@@ -1,0 +1,154 @@
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\steffi\bundle_tia_v2\TIA_fet_LTC6252_10M_ACversuch_saubere_netzliste_v2.asc
+
+WARNING: Less than two connections to node OFFS_IDE.  This node is used by V3.
+WARNING: Less than two connections to node U_F2--.  This node is used by B:X1:1.
+Instance "m:u2:6": Length shorter than recommended for a level 2 MOSFET.
+Instance "m:u2:5": Length shorter than recommended for a level 2 MOSFET.
+Instance "m:u2:4": Length shorter than recommended for a level 2 MOSFET.
+Instance "m:u2:3": Length shorter than recommended for a level 2 MOSFET.
+Instance "m:u2:2": Length shorter than recommended for a level 2 MOSFET.
+Instance "m:u2:1": Length shorter than recommended for a level 2 MOSFET.
+Instance "m:u3:6": Length shorter than recommended for a level 2 MOSFET.
+Instance "m:u3:5": Length shorter than recommended for a level 2 MOSFET.
+Instance "m:u3:4": Length shorter than recommended for a level 2 MOSFET.
+Instance "m:u3:3": Length shorter than recommended for a level 2 MOSFET.
+Instance "m:u3:2": Length shorter than recommended for a level 2 MOSFET.
+Instance "m:u3:1": Length shorter than recommended for a level 2 MOSFET.
+Direct Newton iteration for .op point skipped.
+Starting Gmin stepping
+Gmin = 10
+Gmin = 1.07374
+Gmin = 0.115292
+Gmin = 0.0123794
+Gmin = 0.00132923
+vernier = 0.5
+vernier = 0.25
+vernier = 0.125
+vernier = 0.0625
+Gmin = 0.00100083
+vernier = 0.03125
+vernier = 0.015625
+vernier = 0.0078125
+vernier = 0.00390625
+vernier = 0.00195313
+Gmin = 0.00100083
+vernier = 0.000976563
+vernier = 0.000488281
+Gmin = 0
+Gmin stepping failed
+
+Starting source stepping with srcstepmethod=0
+Source Step = 3.0303%
+Source Step = 21.2595%
+vernier = 0.00390625
+Source Step = 21.2388%
+Source Step = 21.2683%
+Source Step = 21.2979%
+Source Step = 21.3275%
+Source Step = 21.3571%
+vernier = 0.00146484
+Source Step = 21.3941%
+Source Step = 21.4385%
+Source Step = 21.4829%
+Source Step = 21.5273%
+Source Step = 21.5717%
+vernier = 0.00219727
+Source Step = 21.6249%
+Source Step = 21.6915%
+Source Step = 21.7581%
+Source Step = 21.8247%
+Source Step = 21.8913%
+vernier = 0.0032959
+Source Step = 21.9678%
+Source Step = 22.0677%
+Source Step = 22.1676%
+Source Step = 22.2675%
+Source Step = 22.3674%
+vernier = 0.00494385
+Source Step = 22.4772%
+Source Step = 22.627%
+Source Step = 22.7768%
+Source Step = 22.9267%
+Source Step = 23.0765%
+vernier = 0.00741577
+Source Step = 23.2338%
+Source Step = 23.4585%
+Source Step = 23.6832%
+Source Step = 23.9079%
+Source Step = 24.1327%
+Source Step = 24.3574%
+vernier = 0.0111237
+Source Step = 24.6945%
+Source Step = 25.0315%
+Source Step = 25.3686%
+Source Step = 25.7057%
+Source Step = 26.0428%
+vernier = 0.0166855
+Source Step = 26.5315%
+Source Step = 27.0372%
+Source Step = 27.5428%
+Source Step = 28.0484%
+Source Step = 28.554%
+vernier = 0.0250282
+Source Step = 29.2619%
+Source Step = 30.0203%
+Source Step = 30.7788%
+Source Step = 31.5372%
+Source Step = 32.2956%
+vernier = 0.0375423
+Source Step = 33.3195%
+Source Step = 34.4571%
+Source Step = 35.5948%
+Source Step = 36.7324%
+Source Step = 37.8701%
+vernier = 0.0563135
+Source Step = 39.349%
+Source Step = 41.0555%
+Source Step = 42.762%
+Source Step = 44.4684%
+Source Step = 46.1749%
+vernier = 0.0844703
+Source Step = 48.308%
+Source Step = 50.8677%
+Source Step = 53.4274%
+Source Step = 55.9871%
+Source Step = 58.5468%
+vernier = 0.126705
+Source Step = 61.6185%
+Source Step = 65.458%
+Source Step = 69.2976%
+Source Step = 73.1371%
+Source Step = 76.9767%
+vernier = 0.190058
+Source Step = 81.3922%
+Source Step = 87.1515%
+Source Step = 90.6161%
+Source Step = 90.7061%
+Source Step = 90.7961%
+Source Step = 90.8861%
+Source Step = 90.9761%
+Source Step = 91.0661%
+Source Step = 91.1561%
+Source Step = 91.2461%
+Source Step = 91.336%
+Source Step = 91.426%
+Source Step = 91.516%
+Source Step = 91.606%
+Source Step = 91.696%
+Source Step = 91.786%
+Source Step = 91.876%
+Source Step = 91.966%
+Source Step = 92.056%
+Source Step = 92.1459%
+Source Step = 92.2359%
+Source Step = 92.3259%
+Source Step = 92.4159%
+Source Step = 92.5059%
+Source Step = 92.5959%
+Source Step = 92.6859%
+Source Step = 92.7759%
+Source Step = 92.8659%
+Source Step = 92.9559%
+Source Step = 93.0458%
+Source Step = 93.1358%
+Fatal Error: Failed to find DC finding operating point for AC analysis.

@@ -1,0 +1,191 @@
+*PLL-Bibliothek
+*
+.subckt proportional  in out
+E1 out 0 in 0 {KR}
+.param KR=1 
+.ends proportional
+*
+.subckt phase_2_frequency  phi frequ
+c1 phi N002 {1u}
+r1 n001 n002 1m
+V1 N001 0 DC=0
+H1 frequ 0 V1 {1MEG*K}
+Rd frequ 0 1G
+.param K=1
+.ends phase_2_frequency
+*
+.subckt vco_real  in sin cos
+vamp amp 0 dc={amp} 
+A1 in amp 0 0 0 cos sin 0 MODULATOR space={f0-Kf*V0} mark={(1-V0)*Kf+f0}
+.param KF=1k f0=10k V0=0V amp=1V
+.ends vco_real
+*
+.subckt mult 1 2 out
+B1 out 0 V=v(1,0)*v(2,0)*gain
+.param gain=1
+.ends mult
+*
+.subckt integrator in out
+g1 0 N001 in 0 1m
+C1 n001 0 {1m/KI} IC= {IC}
+Rd n001 0 1T
+e1 out 0 n001 0 1
+.param KI=1
+.ends integrator 
+*
+.subckt substraction inp inm out
+Esub out 0 inp inm 1
+.ends integrator 
+*
+* kennlinien Phasenkomparatoren
+*
+* Kennlinie = RS-Flip-Flop
+.subckt RS_laplace in out  
+*PARAMS: pi=3.14159265 vplus=10 Vminus=0
+B1 out 0 V= B + (A-B)*(0.5+atan (tan(0.5*(v(in,0)+PI)) )/PI)
+Rdummy (in,0) {1/GMIN}
+.param A=1 B=-1
+.ends RS_laplace
+
+* Kennlinie = EXOR-Gatter
+.subckt EXOR_Laplace in out  
+*PARAMS: pi=3.14159265 vplus=10 Vminus=0
+B1  out 0  V=B + (A-B)*(0.5+asin (sin(v(in,0)) )/PI)
+Rdummy (in,0) {1/GMIN}
+.ends EXOR_Laplace
+*
+* Kennlinie = Multiplizierer
+.subckt Mult_Laplace in out  
+B1 out 0  V=A*sin(v(in,0))
+.param A=0.5
+.ends Mult_Laplace
+*
+*  real EXOR
+.subckt pd_exor in1 in2 out
+A1 in1 in2 0 0 0 0 out 0 XOR Vhigh={High} Vlow={Low} Ref={Ref}
+.param Low=0 High=5 Ref=2.5
+.ends pd_exor
+*
+* Real pd_RS_Flipflop 
+.subckt pd_rs_flipflop in1 in2 out
+ARS  n001 n002 0 0 0 0 out  0 SRFLOP Vhigh={High} Vlow={Low}
+And1 in1_i n004 0 0 0 0 n001 0 AND  Vhigh={High} Vlow={Low}
+Adel1 in1_i 0 0 0 0 n004 0 0 BUF TD=1n Vhigh={High} Vlow={Low}
+And2 in2_i n005 0 0 0 0 n002 0 AND  Vhigh={High} Vlow={Low}
+Adel2 in2_i 0 0 0 0 n005 0 0 BUF TD=1n Vhigh={High} Vlow={Low}
+Abuf1 in1 0 0 0 0 0 in1_i 0 BUF REF={Ref} Vhigh={High} Vlow={Low}
+Abuf2 in2 0 0 0 0 0 in2_i 0 BUF REF={Ref} Vhigh={High} Vlow={Low}
+.param Low=0 High=5 Ref=2.5
+.ends pd_RS_Flipflop
+
+* Frequency-Phase-Step (real)
+.subckt frequency_phase_step out
+v1 n001 0 pulse 0 1 {t1}
+va n002 0 DC={amp}
+A1 n001 n002 0 0 0 cos sin 0 MODULATOR space={f0} mark={f1}
+vss ss 0 pulse {cos(phi0*pi/180)} {cos(phi1*pi/180)} {t1}
+vcc cc 0 pulse {sin(phi0*pi/180)} {sin(phi1*pi/180)} {t1}
+B1 out 0 v=v(sin)*v(ss) + v(cos)*v(cc) 
+.param amp=1 f0=1k f1=2k phi0=0 phi1=0 t1=1m
+.ends frequency_phase_step
+*
+* PFD-Detektor real 
+.subckt pd_pfd_real in1 in2 up down
+Abuf1 in1 0 0 0 0 0 n001 0 BUF Ref={Ref} Vhigh={High} Vlow={Low}
+Abuf2 in2 0 0 0 0 0 n002 0 BUF Ref={Ref} Vhigh={High} Vlow={Low}
+vhigh n00D 0 DC={High}
+ADFF1 n00D 0 n001 0 n005 0 up   0 DFLOP Vhigh={High} Vlow={Low}
+ADFF2 n00D 0 n002 0 n005 0 down 0 DFLOP Vhigh={High} Vlow={Low}
+And1 up down 0 0 0 0 n005 0 AND TD={TD} Vhigh={High} Vlow={Low}
+.param Low=0 High=5 Ref=2.5 TD=5n
+.ends pd_pfd_real
+*
+* Kennlinie = PFD-Detector
+* C:\Programme\LTspiceIV\examples\koblitz_examples\pfd_laplace.asc
+.subckt pfd_laplace phie out
+A1 N003 0 N009 0 0 N003 N006 0 DFLOP TD=1n
+A2 N015 0 N009 0 0 0 N016 0 DFLOP TD=1n
+A3 N005 N014 0 0 N016 0 N015 0 XOR
+A4 up_down 0 N006 0 0 0 N005 0 AND
+A5 up_down N006 0 0 0 N014 0 0 OR
+A6 N017 N018 0 0 N020 0 N019 0 XOR
+A7 up_down N016 N006 0 0 0 N017 0 AND
+A8 up_down N006 N016 0 0 N018 0 0 OR
+A9 N019 0 N009 0 0 0 N020 0 DFLOP TD=1n
+A10 N021 N022 0 0 N024 0 N023 0 XOR
+A11 up_down N016 N006 N020 0 0 N021 0 AND
+A12 up_down N006 N016 N020 0 N022 0 0 OR
+A13 N023 0 N009 0 0 0 N024 0 DFLOP TD=1n
+A14 N025 N027 0 0 N029 0 N028 0 XOR
+A15 up_down N016 N006 N020 N024 0 N025 0 AND
+A16 up_down N006 N016 N020 N024 N027 N026 0 OR
+A17 N028 0 N009 0 0 0 N029 0 DFLOP TD=1n
+G1 0 out_int N006 0 1m
+R1 out_int 0 1k
+G2 0 out_int N016 0 2m
+G3 0 out_int N020 0 4m
+G4 0 out_int N024 0 8m
+G5 0 out_int N029 0 16m
+A18 N030 N031 0 0 N033 0 N032 0 XOR
+A19 N026 N029 0 0 0 N031 0 0 OR
+A29 N025 N029 0 0 0 0 N030 0 AND
+A20 N032 0 N009 0 0 0 N033 0 DFLOP TD=1n
+G6 0 out_int N033 0 32m
+A21 N034 N035 0 0 N037 0 N036 0 XOR
+A22 N026 N029 N033 0 0 N035 0 0 OR
+A23 N025 N029 N033 0 0 0 N034 0 AND
+A24 N036 0 N009 0 0 0 N037 0 DFLOP TD=1n
+G7 0 out_int N037 0 64m
+A25 N045 0 N009 0 0 N047 N046 0 DFLOP TD=1n
+A26 N038 N039 0 0 N041 0 N040 0 XOR
+A27 N026 N029 N033 N037 0 N039 0 0 OR
+A28 N025 N029 N033 N037 0 0 N038 0 AND
+A30 N040 0 N009 0 0 0 N041 0 DFLOP TD=1n
+G8 0 out_int N041 0 128m
+A31 N042 N044 0 0 N046 0 N045 0 XOR
+A32 N026 N029 N033 N037 N041 N044 N043 0 OR
+A33 N025 N029 N033 N037 N041 0 N042 0 AND
+G9 0 out_int N047 0 256m
+I1 out_int 0 256m
+A34 0 N008 N010 N012 0 0 N009 0 AND
+A35 N042 N047 0 0 0 N012 0 0 AND
+A36 N043 N047 0 0 0 0 N010 0 OR
+A37 out_int 0 0 0 0 up_down 0 0 SCHMITT VT=0 VH=0.1
+A38 out_int 0 0 0 0 0 N007 0 SCHMITT VT=0.6 VH=0.4
+A39 out_int 0 0 0 0 N013 0 0 SCHMITT VT=-0.6 VH=0.4
+G10 0 out_int phie 0 {0.5m/pi}
+A42 N007 0 N013 0 0 N001 N011 0 OR
+A43 0 N004 0 N011 0 N004 N008 0 AND TD=1n
+A40 out_int 0 0 N001 0 0 N002 0 SAMPLEHOLD
+E1 out 0 N002 0 {A}
+.param A=5
+.ends PFD_Laplace
+*
+*
+* Sample+Hold-Doppelweg
+.subckt pd_sh_2_real in1 in2 aus
+S1 in_i smp N001 0 sw_xx
+S2 in_n smp N002 0 sw_xx
+A3 0 N004 0 N005 0 0 N002 0 AND
+A4 in2 0 0 0 0 0 N004 0 BUF REF={Ref}
+A5 0 N004 N005 0 0 N001 0 0 OR
+A7 N004 0 0 0 0 N005 0 0 BUF TD={Ts}
+A8 0 N002 0 N001 0 0 sh 0 OR 
+G1 0 in_i 0 in1 1m
+R1 in_i 0 1k
+R2 in_n 0 1k
+G2 0 in_n in1 0 1m
+E1 aus 0 N003 0 1
+A1 smp 0 0 sh 0 0 N003 0 SAMPLEHOLD
+.model sw_xx sw Ron=1 ROFF=1G VT=0.5 VH=-0.1
+.param Ref=0 Ts=10n
+.ends pd_sh_2_real 
+*
+* Sample+Hold-Einweg
+.subckt pd_sh_1_real in1 in2 aus
+A4 in2 0 0 0 0 0 N004 0 BUF REF={Ref}
+E1 aus 0 N003 0 1
+A1 in1 0 N004 0 0 0 N003 0 SAMPLEHOLD
+.model sw_xx sw Ron=1 ROFF=1G VT=0.5 VH=-0.1
+.param Ref=0
+.ends pd_sh_1_real 

@@ -1,0 +1,261 @@
+<HTML>
+  <HEAD>
+    <TITLE>Tietze/Schenk - Bibliothek TS_Bipolar</TITLE>
+  </HEAD>
+  <BODY BGCOLOR="#FFFFFF">
+  
+  <H1>Bibliothek TS_Bipolar</H1>
+  <P>
+    <B>Wichtiger Hinweis:</B> Dieses Dokument beschreibt die Parameter der Elemente.
+    Die Parameter setzen sich aus prim&auml;ren Parametern und sekund&auml;ren
+    Parametern zusammen. Die prim&auml;ren Parameter werden im Schaltplan angezeigt
+    und können durch Doppelklick auf den Wert ge&auml;ndert werden. Die sekund&auml;ren
+    Parameter werden &uuml;ber den Men&uuml;punkt <B>Edit/Attributes</B> oder durch einen
+    Doppelklick auf das Schaltsymbol aufgerufen.
+  </P>
+  <TABLE BORDER="1"><A NAME="top"></A>
+    <TR><TH><B>Name</B></TH><TH><B>Beschreibung</B></TH></TR>
+    <TR><TD><A HREF="#diode"><B>Diode</B></A></TD><TD>Allgemeines Modell f&uuml;r eine Diode</TD></TR>
+    <TR><TD><A HREF="#d1n4148"><B>1N4148</B></A></TD><TD>Kleinsignaldiode</TD></TR>
+    <TR><TD><A HREF="#d1n4001"><B>1N4001</B></A></TD><TD>Gleichrichterdiode</TD></TR>
+    <TR><TD><A HREF="#bas40"><B>BAS40</B></A></TD><TD>Schottky-Diode</TD></TR>
+    <TR><TD><A HREF="#zd47"><B>ZD47</B></A></TD><TD>Zener-Diode 4,7V</TD></TR>
+    <TR><TD><A HREF="#zd69"><B>ZD69</B></A></TD><TD>Zener-Diode 6,9V</TD></TR>
+    <TR><TD><A HREF="#transistor"><B>Transistor</B></A></TD><TD>Allgemeines Modell f&uuml;r einen Transistor</TD></TR>
+    <TR><TD><A HREF="#bc547b"><B>BC547B</B></A></TD><TD>npn-Kleinsignaltransistor</TD></TR>
+    <TR><TD><A HREF="#bc557b"><B>BC557B</B></A></TD><TD>pnp-Kleinsignaltransistor</TD></TR>
+    <TR><TD><A HREF="#t2n2222"><B>2N2222</B></A></TD><TD>npn-Kleinsignaltransistor</TD></TR>
+    <TR><TD><A HREF="#t2n2907"><B>2N2907</B></A></TD><TD>pnp-Kleinsignaltransistor</TD></TR>
+    <TR><TD><A HREF="#bd239"><B>BD239</B></A></TD><TD>npn-Leistungstransistor</TD></TR>
+    <TR><TD><A HREF="#bd240"><B>BD240</B></A></TD><TD>npn-Leistungstransistor</TD></TR>
+    <TR><TD><A HREF="#darnn"><B>Dar_nn</B></A></TD><TD>npn-Darlington-Transistor</TD></TR>
+    <TR><TD><A HREF="#darpp"><B>Dar_pp</B></A></TD><TD>pnp-Darlington-Transistor (pnp-pnp)</TD></TR>
+    <TR><TD><A HREF="#darpn"><B>Dar_pn</B></A></TD><TD>pnp-Darlington-Transistor (pnp-npn)</TD></TR>
+    <TR><TD><A HREF="#bfp405"><B>BFP405</B></A></TD><TD>npn-Hochfrequenztransistor</TD></TR>
+    <TR><TD><A HREF="#bfr93"><B>BFR93</B></A></TD><TD>npn-Hochfrequenztransistor</TD></TR>
+    <TR><TD><A HREF="#bft93"><B>BFT93</B></A></TD><TD>pnp-Hochfrequenztransistor</TD></TR>
+  </TABLE>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="diode"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>Diode</B></TD><TD>Allgemeines Modell f&uuml;r eine Diode</TD></TR>
+      <TR><TD><IMG SRC="data/bipolar_diode.png" ALT="Figure"></TD>
+      <TD>
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">IS</TD><TD>=</TD><TD>S&auml;ttigungssperrstrom in Ampere</TD></TR>
+          <TR><TD ALIGN="right">N</TD><TD>=</TD><TD>Emissionskoeffizient</TD></TR>
+          <TR><TD ALIGN="right">CS0</TD><TD>=</TD><TD>Sperrschichtkapazit&auml;t bei U=0 in Farad</TD></TR>
+          <TR><TD ALIGN="right">Udiff</TD><TD>=</TD><TD>Diffusionsspannung in Volt</TD></TR>
+          <TR><TD ALIGN="right">M</TD><TD>=</TD><TD>Kapazit&auml;tskoeffizient</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="d1n4148"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>1N4148</B></TD><TD>Kleinsignaldiode</TD></TR>
+      <TR><TD><IMG SRC="data/bipolar_1n4148.png" ALT="Figure"></TD>
+      <TD>Keine Parameter. <BR> <A HREF="data/1N4148.pdf">Datenblatt</A></TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="d1n4001"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>1N4001</B></TD><TD>Gleichrichterdiode</TD></TR>
+      <TR><TD><IMG SRC="data/bipolar_1n4001.png" ALT="Figure"></TD>
+      <TD>Keine Parameter. <BR> <A HREF="data/1N4001.pdf">Datenblatt</A></TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="bas40"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>BAS40</B></TD><TD>Schottky-Diode</TD></TR>
+      <TR><TD><IMG SRC="data/bipolar_bas40.png" ALT="Figure"></TD>
+      <TD>Keine Parameter. <BR> <A HREF="data/BAS40.pdf">Datenblatt</A></TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="zd47"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>ZD47</B></TD><TD>Zener-Diode 4,7V</TD></TR>
+      <TR><TD><IMG SRC="data/bipolar_zd47.png" ALT="Figure"></TD>
+      <TD>Keine Parameter.</TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="zd69"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>ZD69</B></TD><TD>Zener-Diode 6,9V</TD></TR>
+      <TR><TD><IMG SRC="data/bipolar_zd69.png" ALT="Figure"></TD>
+      <TD>Keine Parameter.</TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="transistor"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>Transistor</B></TD><TD>Allgemeines Modell f&uuml;r einen Transistor</TD></TR>
+      <TR><TD><IMG SRC="data/bipolar_transistor.png" ALT="Figure"></TD>
+      <TD>
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">IS</TD><TD>=</TD><TD>S&auml;ttigungssperrstrom in Ampere</TD></TR>
+          <TR><TD ALIGN="right">BN</TD><TD>=</TD><TD>Stromverst&auml;rkung bei Normalbetrieb</TD></TR>
+          <TR><TD ALIGN="right">BN</TD><TD>=</TD><TD>Stromverst&auml;rkung bei Inversbetrieb</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="bc547b"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>BC547B</B></TD><TD>npn-Kleinsignaltransistor</TD></TR>
+      <TR><TD><IMG SRC="data/bipolar_bc547b.png" ALT="Figure"></TD>
+      <TD>Keine Parameter. <BR> <A HREF="data/BC547.pdf">Datenblatt</A></TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="bc557b"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>BC557B</B></TD><TD>pnp-Kleinsignaltransistor</TD></TR>
+      <TR><TD><IMG SRC="data/bipolar_bc557b.png" ALT="Figure"></TD>
+      <TD>Keine Parameter. <BR> <A HREF="data/BC557.pdf">Datenblatt</A></TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="t2n2222"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>2N2222</B></TD><TD>npn-Kleinsignaltransistor</TD></TR>
+      <TR><TD><IMG SRC="data/bipolar_2n2222.png" ALT="Figure"></TD>
+      <TD>Keine Parameter. <BR> <A HREF="data/2N2222.pdf">Datenblatt</A></TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="t2n2907"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>2N2907</B></TD><TD>pnp-Kleinsignaltransistor</TD></TR>
+      <TR><TD><IMG SRC="data/bipolar_2n2907.png" ALT="Figure"></TD>
+      <TD>Keine Parameter. <BR> <A HREF="data/2N2907.pdf">Datenblatt</A></TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="bd239"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>BD239</B></TD><TD>npn-Leistungstransistor</TD></TR>
+      <TR><TD><IMG SRC="data/bipolar_bd239.png" ALT="Figure"></TD>
+      <TD>Keine Parameter. <BR> <A HREF="data/BD239.pdf">Datenblatt</A></TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="bd240"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>BD240</B></TD><TD>pnp-Leistungstransistor</TD></TR>
+      <TR><TD><IMG SRC="data/bipolar_bd240.png" ALT="Figure"></TD>
+      <TD>Keine Parameter. <BR> <A HREF="data/BD240.pdf">Datenblatt</A></TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="darnn"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>D-NN</B></TD><TD>npn-Darlington-Transistor</TD></TR>
+      <TR><TD><IMG SRC="data/bipolar_dnn.png" ALT="Figure"></TD>
+      <TD>
+        Beispiel f&uuml;r einen typischen npn-Darlington-Transistor.
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">M1</TD><TD>=</TD>
+              <TD>relative Gr&ouml;&szlig;e des npn-Treibertransistors, vorbelegt mit 1</TD></TR>
+          <TR><TD ALIGN="right">M2</TD><TD>=</TD>
+              <TD>relative Gr&ouml;&szlig;e des npn-Ausgangstransistors, vorbelegt mit 2</TD></TR>
+          <TR><TD ALIGN="right">R</TD><TD>=</TD>
+              <TD>Vorspannungswiderstand in Ohm, vorbelegt mit 500 &Omega;</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="darpp"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>D-PP</B></TD><TD>pnp-Darlington-Transistor (pnp-pnp)</TD></TR>
+      <TR><TD><IMG SRC="data/bipolar_dpp.png" ALT="Figure"></TD>
+      <TD>
+        Beispiel f&uuml;r einen typischen pnp-pnp-Darlington-Transistor.
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">M1</TD><TD>=</TD>
+              <TD>relative Gr&ouml;&szlig;e des pnp-Treibertransistors, vorbelegt mit 1</TD></TR>
+          <TR><TD ALIGN="right">M2</TD><TD>=</TD>
+              <TD>relative Gr&ouml;&szlig;e des pnp-Ausgangstransistors, vorbelegt mit 2</TD></TR>
+          <TR><TD ALIGN="right">R</TD><TD>=</TD>
+              <TD>Vorspannungswiderstand in Ohm, vorbelegt mit 500 &Omega;</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="darpn"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>D-PN</B></TD><TD>pnp-Darlington-Transistor (pnp-npn)</TD></TR>
+      <TR><TD><IMG SRC="data/bipolar_dpn.png" ALT="Figure"></TD>
+      <TD>
+        Beispiel f&uuml;r einen typischen pnp-npn-Darlington-Transistor.
+        <TABLE>
+          <TR><TD COLSPAN="3">Parameter:</TD></TR>
+          <TR><TD ALIGN="right">M1</TD><TD>=</TD>
+              <TD>relative Gr&ouml;&szlig;e des pnp-Treibertransistors, vorbelegt mit 1</TD></TR>
+          <TR><TD ALIGN="right">M2</TD><TD>=</TD>
+              <TD>relative Gr&ouml;&szlig;e des npn-Ausgangstransistors, vorbelegt mit 2</TD></TR>
+          <TR><TD ALIGN="right">R</TD><TD>=</TD>
+              <TD>Vorspannungswiderstand in Ohm, vorbelegt mit 500 &Omega;</TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="bfp405"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>BFP405</B></TD><TD>npn-Hochfrequenztransistor</TD></TR>
+      <TR><TD><IMG SRC="data/bipolar_bfp405.png" ALT="Figure"></TD>
+      <TD>Keine Parameter. <BR> <A HREF="data/BFP405.pdf">Datenblatt</A></TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="bfr93"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>BFR93</B></TD><TD>npn-Hochfrequenztransistor</TD></TR>
+      <TR><TD><IMG SRC="data/bipolar_bfr93.png" ALT="Figure"></TD>
+      <TD>Keine Parameter. <BR> <A HREF="data/BFR93.pdf">Datenblatt</A></TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  <P><A NAME="bft93"></A>
+    <TABLE BORDER="1">
+      <TR><TD><B>BFT93</B></TD><TD>pnp-Hochfrequenztransistor</TD></TR>
+      <TR><TD><IMG SRC="data/bipolar_bft93.png" ALT="Figure"></TD>
+      <TD>Keine Parameter. <BR> <A HREF="data/BFT93.pdf">Datenblatt</A></TD></TR>
+    </TABLE>
+  </P>
+  <P><A HREF="#top"><B>Zum Seitenanfang</B></A></P>
+  
+  </BODY>
+</HTML>

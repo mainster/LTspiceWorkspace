@@ -1,0 +1,59 @@
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\decoder_3-to-8\decoder_3-to-8.asc
+
+WARNING: Node E2 is floating.
+WARNING: Node _E1 is floating.
+WARNING: Node _LE is floating.
+
+WARNING: Less than two connections to node NC_01.  This node is used by A:U1:FLOP.
+WARNING: Less than two connections to node Q.  This node is used by A:U1:FLOP.
+WARNING: Less than two connections to node NC_02.  This node is used by A:U5:1.
+WARNING: Less than two connections to node NC_03.  This node is used by A:U6:1.
+WARNING: Less than two connections to node NC_04.  This node is used by A:U7:1.
+WARNING: Less than two connections to node NC_05.  This node is used by A:U8:1.
+WARNING: Less than two connections to node NC_06.  This node is used by A:U9:1.
+WARNING: Less than two connections to node NC_07.  This node is used by A:U10:1.
+WARNING: Less than two connections to node NC_08.  This node is used by A:U11:1.
+WARNING: Less than two connections to node NC_09.  This node is used by A:U12:1.
+WARNING: Less than two connections to node Y0.  This node is used by A:U19:1.
+WARNING: Less than two connections to node NC_10.  This node is used by A:U19:1.
+WARNING: Less than two connections to node Y1.  This node is used by A:U20:1.
+WARNING: Less than two connections to node NC_11.  This node is used by A:U20:1.
+WARNING: Less than two connections to node Y2.  This node is used by A:U21:1.
+WARNING: Less than two connections to node NC_12.  This node is used by A:U21:1.
+WARNING: Less than two connections to node Y3.  This node is used by A:U22:1.
+WARNING: Less than two connections to node NC_13.  This node is used by A:U22:1.
+WARNING: Less than two connections to node Y4.  This node is used by A:U23:1.
+WARNING: Less than two connections to node NC_14.  This node is used by A:U23:1.
+WARNING: Less than two connections to node Y5.  This node is used by A:U24:1.
+WARNING: Less than two connections to node NC_15.  This node is used by A:U24:1.
+WARNING: Less than two connections to node Y6.  This node is used by A:U25:1.
+WARNING: Less than two connections to node NC_16.  This node is used by A:U25:1.
+WARNING: Less than two connections to node Y7.  This node is used by A:U26:1.
+WARNING: Less than two connections to node NC_17.  This node is used by A:U26:1.
+WARNING: Less than two connections to node NC_18.  This node is used by A:U28:1.
+WARNING: Less than two connections to node E2.  This node is used by A:U29:1.
+WARNING: Less than two connections to node _E1.  This node is used by A:U31:1.
+WARNING: Less than two connections to node _LE.  This node is used by A:U36:1.
+Direct Newton iteration for .op point succeeded.
+Ignoring empty pin current: Ix(u5:i3)
+Ignoring empty pin current: Ix(u6:i3)
+Ignoring empty pin current: Ix(u7:i3)
+Ignoring empty pin current: Ix(u8:i3)
+Ignoring empty pin current: Ix(u9:i3)
+Ignoring empty pin current: Ix(u10:i3)
+Ignoring empty pin current: Ix(u11:i3)
+Ignoring empty pin current: Ix(u12:i3)
+Ignoring empty pin current: Ix(u5:i3)
+Ignoring empty pin current: Ix(u6:i3)
+Ignoring empty pin current: Ix(u7:i3)
+Ignoring empty pin current: Ix(u8:i3)
+Ignoring empty pin current: Ix(u9:i3)
+Ignoring empty pin current: Ix(u10:i3)
+Ignoring empty pin current: Ix(u11:i3)
+Ignoring empty pin current: Ix(u12:i3)
+Singular matrix:  Check node e2
+   Iteration No. 1
+Fatal Error: Singular matrix:  check node e2
+   Iteration No. 1
+
+This circuit has floating nodes.

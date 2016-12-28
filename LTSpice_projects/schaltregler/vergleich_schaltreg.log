@@ -1,0 +1,43 @@
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\schaltregler\vergleich_schaltreg.asc
+
+WARNING: Less than two connections to node LOAD.  This node is used by V1.
+Direct Newton iteration for .op point succeeded.
+
+t0: time*1e6=1.42356 at 1.42356e-006
+t1: time*1e6=9.03273 at 9.03273e-006
+t2: time*1e6=11.0263 at 1.10263e-005
+trise: time=1.42356e-006 at 1.42356e-006
+tfall: time=9.03273e-006 at 9.03273e-006
+t: round(t2-t0)=10
+ton: round(t1-t0)=8
+area_ica: INTEG(i(ca))=3.82141e-006 FROM 1.42356e-006 TO 9.03273e-006
+vrip: area_ica/ca=0.0813066
+
+Measurement "vpp" FAIL'ed
+ilmax: MAX(i(l1))=3.13765 FROM 0 TO 4e-005
+ilmin: MIN(i(l1))=1.6316 FROM 0 TO 4e-005
+p1: v(a,ca)=-4.76837e-007 at 6e-008
+p2: v(a,ca)=1.43051e-006 at 2.5135e-005
+dva: abs(p2-p1)=1.90735e-006
+dil: abs(ilmax-ilmin)=1.50605
+rser: dva/dil=1.26646e-006
+
+
+Date: Wed Jul 29 01:53:26 2015
+Total elapsed time: 0.648 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 515872
+traniter = 515868
+tranpoints = 173791
+accept = 134063
+rejected = 39728
+matrix size = 9
+fillins = 0
+solver = Normal
+Matrix Compiler1: 224 bytes object code size  0.3/0.2/[0.2]
+Matrix Compiler2: 511 bytes object code size  0.2/0.3/[0.2]
+
+

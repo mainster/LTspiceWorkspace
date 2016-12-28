@@ -1,0 +1,5 @@
+Stray ".ends" card: .ends
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\galvoscanner\PositionDemodulator_CamTech_01-04-2015.asc
+
+Fatal Error: V13: Could not open wavefile: m:/data_notebook/hs_karlsruhe/xy_galvoscanner/bilder_screenshots_messungen/31-03-2015_tests_posdemod/pcsu_100ma_ccw_ch12.wav
+

@@ -1,0 +1,40 @@
+Circuit: * C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\examples\Educational\PAsystem\HandsFreePreamp.asc
+
+Direct Newton iteration for .op point succeeded.
+N-Period=1
+Fourier components of V(out)
+DC component:-0.000718342
+
+Harmonic	Frequency	 Fourier 	Normalized	 Phase  	Normalized
+ Number 	  [Hz]   	Component	 Component	[degree]	Phase [deg]
+    1   	1.000e+03	2.017e-01	1.000e+00	   -1.94°	    0.00°
+    2   	2.000e+03	9.592e-05	4.755e-04	 -118.44°	 -116.51°
+    3   	3.000e+03	2.369e-05	1.174e-04	 -179.12°	 -177.18°
+    4   	4.000e+03	1.868e-05	9.260e-05	 -179.17°	 -177.23°
+    5   	5.000e+03	1.495e-05	7.409e-05	 -179.16°	 -177.22°
+    6   	6.000e+03	1.245e-05	6.172e-05	 -179.16°	 -177.22°
+    7   	7.000e+03	1.067e-05	5.287e-05	 -179.12°	 -177.18°
+    8   	8.000e+03	9.324e-06	4.622e-05	 -179.08°	 -177.15°
+    9   	9.000e+03	8.284e-06	4.107e-05	 -179.05°	 -177.12°
+Total Harmonic Distortion: 0.051420%(0.054645%)
+
+
+
+Date: Mon Feb 09 11:26:05 2015
+Total elapsed time: 0.128 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 2094
+traniter = 2082
+tranpoints = 1042
+accept = 1042
+rejected = 0
+matrix size = 14
+fillins = 6
+solver = Normal
+Matrix Compiler1: 1.16 KB object code size  0.5/0.3/[0.3]
+Matrix Compiler2: 1.25 KB object code size  0.4/0.3/[0.3]
+
+

@@ -1,0 +1,43 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\galvoscanner\aktuell\bauteile_bestimmt\opamp_openloop_test.asc
+R2 stim N001 3k3
+R3 N001 N002 3k3
+C1 P001 P002 {Clead}
+R5 P002 N002 10m
+XU2 +30V vdc_single V=30V
+XU3 -30V vdc_single V=-30V
+XU4 +12V vdc_single V=+12V
+XU5 -12V vdc_single V=-12V
+XU6 -5V vdc_single V=-5V
+XU7 +5V vdc_single V=+5V
+V1 stim 0 0 AC 1
+XU9 jLead vdc_single V={jLead}
+XU10 jCloop vdc_single V={jLoop}
+XU8 N001 P001 jLead jumpernew status=1
+XU11 out N002 jCloop jumpernew status=1
+XU12 0 N003 out2 opamp_param_3 Vp=12 Vm=-12 Ilim=20m FT=10Meg SR=10 Vos=0 A0=100k phir=45 en=0 enk=0 in=0 ink=0 Rin=500Meg
+R1 stim N003 3k3
+R4 N003 N004 3k3
+C2 P003 P004 {Clead}
+R6 P004 N004 10m
+XU14 N003 P003 jLead jumpernew status=1
+XU15 out2 N004 jCloop jumpernew status=1
+XU1 0 N001 +12V -12V out LT1028
+.ac oct 100 1 50meg
+.param TRY=1
++ jLead = {OFF}
++ jLoop = {OFF}
++ ON = 1
++ OFF = 0
++ Clead = 1p
+* .step param jLead list 0 1
+* .step param jLoop list 0 1
+.op
+* .model 1014 ako:LT1014\n.model 1028 ako:LT1028
+* .step param LTx list 1001 1014 1028
+.lib EIT_sub/vdc_single.sub
+.lib EIT_sub\opamp_parametrierbar.sub
+.lib EIT_sub\vdc_single.sub
+.lib jumpernew.sub
+.lib LTC.lib
+.backanno
+.end

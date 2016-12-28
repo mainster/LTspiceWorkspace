@@ -1,0 +1,22 @@
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\LTC2050_lowside_currentmeas.asc
+
+Direct Newton iteration for .op point succeeded.
+
+Date: Wed Feb 25 04:28:27 2015
+Total elapsed time: 0.144 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 2456
+traniter = 2430
+tranpoints = 1180
+accept = 1134
+rejected = 46
+matrix size = 14
+fillins = 9
+solver = Normal
+Matrix Compiler1: 896 bytes object code size  0.6/0.4/[0.3]
+Matrix Compiler2: 1.22 KB object code size  0.5/0.6/[0.5]
+
+

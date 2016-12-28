@@ -1,0 +1,56 @@
+<HTML>
+  <HEAD>
+    <TITLE>Schaltverhalten von pn- und Schottky-Dioden</TITLE>
+  </HEAD>
+  <BODY BGCOLOR="#F0F0F0">
+    <H1 ALIGN=center><B>Schaltverhalten von pn- und Schottky-Dioden</B></H1>
+    <P>
+Vergleich des Schaltverhaltens verschiedener Dioden
+    </P>
+    <P>
+      Vergleich des Schaltverhaltens der Kleinsignaldiode 1N4148 und der
+      Schottky-Diode BAS40 bei ohmscher und ohmsch-induktiver Last. Die
+      Ansteuerung erfolgt mit einer Spannungsquelle U1, deren Spannung
+      im Zeitintervall 0...2ns linear von -10V auf 10V ansteigt und im
+      Zeitintervall 50...52ns von 10V auf -10V abnimmt (Anstiegs- bzw.
+      Abfallrate: 10kV/us). Die Induktivit&auml;ten L1 und L2 werden &uuml;ber den
+      Parameter L auf 0H (ohmsche Last) und 5uH (ohmsch-induktive Last)
+      gesetzt.
+    </P>
+    <P>
+      Bei ohmscher Last sperrt die Schottky-Diode ohne Verz&ouml;gerung; bei
+      der pn-Diode 1N4148 tritt aufgrund der Diffusionsladung eine Sperr-
+      Verz&ouml;gerung von etwa 15ns auf. Bei ohmsch-induktiver Last tritt
+      beim Abschalten eine Schwingung mit Sperrspannungs&uuml;berh&ouml;hung auf.
+      In diesem Fall bildet die ohmsch-induktive Last mit der Kapazit&auml;t
+      der Diode einen Reihenschwingkreis.
+    </P>
+    <P><TABLE BORDER=2 BGCOLOR="#F0F0F0">
+      <TR>
+        <TD><B>Analysen</B></TD>
+        <TD><B>Einstellungen</B></TD>
+        <TD><B>Parameter</B></TD>
+        <TD><B>Ergebnisanzeigen</B></TD>
+      </TR>
+      <TR>
+        <TD>TRAN</TD>
+        <TD>t = 0ns ... 100ns</TD>
+        <TD>L = (0 5uH)</TD>
+        <TD>Stroeme , Spannungen</TD>
+      </TR>
+    </TABLE></P>
+    <P><TABLE BORDER=0 BGCOLOR="#F0F0F0" WIDTH=100%>
+      <TR>
+        <TH WIDTH=20% ALIGN=left>
+          <A HREF="ueber.htm" TARGET="uebersicht"><B>zur&uuml;ck</B></A>
+        </TH>
+        <TH WIDTH=20% ALIGN=left>
+          <A HREF="../ueber.htm" TARGET="uebersicht"><B>&Uuml;bersicht</B></A>
+        </TH>
+        <TH WIDTH=60% ALIGN=left>
+          <A HREF="Schaltverhalten.tse"><B>Simulation starten</B></A>
+        </TH>
+      </TR>
+    </TABLE></P>
+  </BODY>
+</HTML>

@@ -1,0 +1,9 @@
+.SUBCKT TB-5050      	1 2 3 4 5 6
+D1 1 2 LEDr
+D2 3 4 LEDg
+D3 5 6 LEDb
+
+.model LEDr D(Is={40m/exp(2.12/(2.6*26m))} Rs=.85 N=2.6 Cjo=1.18n Xti=200)
+.model LEDg D(Is={40m/exp(3.1/(2.6*26m))} Rs=.85 N=2.6 Cjo=1.18n Xti=200)
+.model LEDb D(Is={40m/exp(3.3/(2.6*26m))} Rs=.85 N=2.6 Cjo=1.18n Xti=200)
+.ends

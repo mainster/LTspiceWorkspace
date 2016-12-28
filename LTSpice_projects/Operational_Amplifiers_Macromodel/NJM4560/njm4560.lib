@@ -1,0 +1,45 @@
+*$
+* PART NUMBER: NJM4560D
+* MANUFACTURER: NEW JAPAN RADIO
+* All Rights Reserved Copyright (C) Bee Technologies Inc. 2006
+.Subckt NJM4560 OUT1 -IN1 +IN1 VEE +IN2 -IN2 OUT2 VCC
+X_U1     +IN1 -IN1 VCC VEE OUT1 NJM4560_MODEL
+X_U2     +IN2 -IN2 VCC VEE OUT2 NJM4560_MODEL
+.ends  NJM4560
+.subckt NJM4560_MODEL  1 2 3 4 5
+  c1   11 12 7.1447E-12
+  c2    6  7 24.750E-12
+  dc    5 53 dy
+  de   54  5 dy
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 286.77E3 -1E3 1E3 290E3 -290E3
+  ga    6  0 11 12 1.8284E-3
+  gcm   0  6 10 99 57.819E-9
+  iee   3 10 dc 120.08E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx1
+  q2   12  1 14 qx2
+  r2    6  9 100.00E3
+  rc1   4 11 546.92
+  rc2   4 12 546.92
+  re1  13 10 115.78
+  re2  14 10 115.78
+  ree  10 99 1.6656E6
+  ro1   8  5 375
+  ro2   7 99 185
+  rp    3  4 1.8131E3
+  vb    9  0 dc 0
+  vc    3 53 dc 1.8037
+  ve   54  4 dc 1.8037
+  vlim  7  8 dc 0
+  vlp  91  0 dc 25
+  vln   0 92 dc 25
+.model dx D(Is=800.00E-18)
+.model dy D(Is=800.00E-18 Rs=1m Cjo=10p)
+.model qx1 PNP(Is=800.00E-18 Bf=1.4118E3)
+.model qx2 PNP(Is=1.008877E-15 Bf=1.6000E3)
+.ends
+*$

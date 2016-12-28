@@ -1,0 +1,3 @@
+*SRC=UF3004;DI_UF3004;Diodes;Si;  400V  3.00A  50.0ns   Diodes Inc. Ultra-Fast Rectifier
+.MODEL DI_UF3004 D  ( IS=9.58u RS=15.4m BV=400 IBV=5.00u
++ CJO=139p  M=0.333 N=3.45 TT=72.0n )

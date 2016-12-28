@@ -1,0 +1,853 @@
+*version 8.0 702778022
+@index
+symloc E-Gleichung 0 745
+symloc G-Gleichung 745 651
+symloc Schalter 1396 928
+symloc Ver 2324 709
+symloc Wellen 3033 589
+symloc S-Port 3622 353
+symloc Port-1 3975 524
+symloc Port-2 4499 523
+symloc LG-Modus 5022 374
+symloc LG 5396 609
+symloc LGdiff 6005 830
+symloc Hybrid180 6835 963
+symloc Hybrid90 7798 1016
+symloc ZK-Filter 8814 2211
+symloc Butterworth5 11025 949
+symloc IQ-Mischer 11974 1648
+symloc Mischer 13622 1075
+symloc Delay 14697 753
+symloc Trigger 15450 954
+symloc RCosFlt 16404 900
+*symbol E-Gleichung
+d Spannungsgesteuerte Spannungsquelle
+@type p 8.0
+@attributes
+a 0 sp 0:11 0 10 34 hln 100 PART=E
+a 1 s 9 0 10 12 hcn 100 REFDES=E?
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=E^@REFDES %a+ %a- value={@U}
+a 0 u 13 13 0 70 hln 100 U=1
+@pins
+p 0 47 12 hrn 100 a+ n 60 10 u
+a 0 s 0 0 0 0 hln 100 ERC=x
+a 0 s 0 0 55 8 hln 100 PIN=a+
+p 0 47 52 hrn 100 a- n 60 50 u
+a 0 s 0 0 -2 20 hln 100 ERC=x
+a 0 s 0 0 55 48 hln 100 PIN=a-
+@graphics 60 60 60 10 10
+c 0 40 30 10
+v 0 24 20 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+24 40
+;
+v 0 24 40 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+21 34
+;
+v 0 24 40 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+27 34
+;
+z 26 10 32 hln 100 1
+U
+v 0 50 10
+40 10
+40 20
+;
+v 0 40 40
+40 50
+50 50
+;
+r 0 0 0 60 60 d_info:,0/0/0,0,,,,,,,,,,,, 
+*symbol G-Gleichung
+d Spannungsgesteuerte Stromquelle
+@type p 8.0
+@attributes
+a 0 sp 0:11 0 10 34 hln 100 PART=G
+a 1 s 9 0 12 12 hcn 100 REFDES=G?
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=G^@REFDES %a+ %a- value={@I}
+a 0 u 13 13 0 70 hln 100 I=1
+@pins
+p 0 47 12 hrn 100 a+ n 60 10 u
+a 0 s 0 0 0 0 hln 100 ERC=x
+a 0 s 0 0 55 8 hln 100 PIN=a+
+p 0 47 52 hrn 100 a- n 60 50 u
+a 0 s 0 0 -2 20 hln 100 ERC=x
+a 0 s 0 0 55 48 hln 100 PIN=a-
+@graphics 60 60 60 10 10
+z 26 20 34 hln 100 1
+I
+a 0 31 32 48 35 49 32 
+a 0 49 28 32 25 31 28 
+v 0 40 23
+40 37
+42 32
+;
+v 0 40 37
+38 32
+;
+v 0 50 10
+40 10
+40 20
+;
+v 0 40 40
+40 50
+50 50
+;
+r 0 0 0 60 60 d_info:,0/0/0,0,,,,,,,,,,,, 
+*symbol Schalter
+d Ein-/Ausschalter
+@type p 8.0
+@attributes
+a 0 sp 9 0 24 12 hln 100 REFDES=S?
+a 0 sp 0:11 0 2 74 hln 100 PART=Schalter
+a 0 sp 0 0 0 0 hln 100 MODEL=Schalter
+a 0 sp 0 0 0 0 hln 100 TEMPLATE=X^@PART@REFDES %1 %2 %3 @MODEL params: ron=@Ron roff=@Roff schwelle=@Schwelle inv=@invertiert
+a 0 u 13 13 40 56 hln 100 Ron=1
+a 0 u 0:13 0 32 62 hlb 100 Roff=1e12
+a 0 u 13 13 40 70 hlb 100 Schwelle=0.5V
+a 0 u 13 13 40 82 hlb 100 invertiert=0
+@pins
+p 0 12 32 hln 100 1 n 0 30 h
+a 0 s 0:1 0 9 28 hrn 100 PIN=1
+a 0 s 0:13 0 0 30 hln 100 ERC=x
+p 0 48 32 hrn 100 2 n 60 30 u
+a 0 s 0:1 0 51 36 hln 100 PIN=2
+a 0 s 0:13 0 60 30 hln 100 ERC=x
+p 0 32 48 vln 100 3 n 30 60 v
+a 0 s 0:1 0 28 51 vrn 100 PIN=3
+a 0 s 0:13 0 30 60 hln 100 ERC=x
+@graphics 60 60 0 30 10
+r 0 10 16 50 44 d_info:,,0,,,,,,,,,,,, 
+v 0 10 30
+20 30
+;
+c 0 20 30 2 d_info:,,,,,ON,0/128/0,,,,,,,, 
+c 0 40 30 2
+v 0 42 30
+50 30
+;
+v 0 20 30
+40 22
+;
+v 0 30 50
+30 26
+;
+*symbol Ver
+d Verstaerker mit Rauschquellen
+@type p 8.0
+@attributes
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=X^@REFDES %e %a @MODEL params: re=@Re ra=@Ra a=@A ar=@Ar ur=@ur ir=@ir
+a 0 sp 0:11 0 14 34 hln 100 PART=Ver
+a 1 s 9 0 22 36 hlb 100 REFDES=V?
+a 0 sp 0 0 0 0 hln 100 MODEL=ver
+a 0 u 13 13 -2 72 hln 100 Re=50
+a 0 u 13 13 -2 84 hln 100 Ra=50
+a 0 u 13 13 44 72 hln 100 A=10
+a 0 u 13 13 44 84 hln 100 Ar=0
+a 0 u 13 13 12 96 hln 100 ur=0
+a 0 u 13 13 12 108 hln 100 ir=0
+@pins
+p 0 12 32 hln 100 e n 0 30 h
+a 0 s 0:1 0 9 28 hrn 100 PIN=e
+a 0 s 0:13 0 0 30 hln 100 ERC=x
+p 0 58 32 hrn 100 a n 70 30 u
+a 0 s 0:1 0 61 36 hln 100 PIN=a
+a 0 s 0:13 0 70 30 hln 100 ERC=x
+@graphics 70 60 0 30 10
+v 0 10 0
+10 60
+60 30
+10 0
+;
+*symbol Wellen
+d Wellen-Messer
+@type p 8.0
+@attributes
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=X^@REFDES %e %a [@REFDES.forward] [@REFDES.reverse] @MODEL params: z0=@Z0
+a 0 sp 0:11 0 14 34 hln 100 PART=Wellen
+a 1 s 9 0 28 14 hlb 100 REFDES=W?
+a 0 sp 0 0 0 0 hln 100 MODEL=Wellen
+a 0 u 13 13 20 36 hln 100 Z0=50
+@pins
+p 0 12 22 hln 100 e n 0 20 h
+a 0 s 0:1 0 9 18 hrn 100 PIN=e
+a 0 s 0:13 0 0 20 hln 100 ERC=x
+p 0 58 22 hrn 100 a n 70 20 u
+a 0 s 0:1 0 61 26 hln 100 PIN=a
+a 0 s 0:13 0 70 20 hln 100 ERC=x
+@graphics 70 40 0 20 10
+r 0 10 0 60 40
+v 0 20 20
+50 20
+;
+v 0 50 20
+40 15
+;
+v 0 40 25
+50 20
+;
+*symbol S-Port
+d Definition des Ports fuer S-Parameter-Messung
+@type p 8.0
+@attributes
+a 1 sp 0 0 10 -2 hcn 100 REFDES=SPORT1
+a 1 sp 0 0 0 0 hcn 100 TEMPLATE=.PARAM PORT=@PORT
+a 0 sp 0:11 0 0 20 hln 100 PART=S-Port
+a 0 u 13 0 58 20 hrn 100 Port=1
+@pins
+@graphics 60 20 30 10 10
+z 26 0 8 hln 100 12
+S-Parameter:
+v 0 0 10
+60 10
+;
+z 26 0 20 hln 100 4
+Port
+*symbol Port-1
+d Port 1 fuer S-Parameter-Messung
+@type s 8.0
+@attributes
+a 1 sp 0 0 0 0 hcn 100 TEMPLATE=X^@REFDES %g  P1_f P1_r @MODEL params: z0=@Z0 actport=1 port={port}
+a 0 sp 0:11 0 0 50 hln 100 PART=Port-1
+a 0 sp 0:13 0 0 0 hln 100 SIMULATIONONLY=
+a 0 sp 0 0 0 0 hln 100 MODEL=sport
+a 0 sp 0:9 0 26 -2 hln 100 REFDES=P1
+a 0 u 13 13 6 34 hln 100 Z0=50
+@pins
+p 0 38 22 hrn 100 g n 50 20 u
+a 0 s 0:1 0 41 26 hln 100 PIN=g
+a 0 s 0:13 0 50 20 hln 100 ERC=x
+@graphics 50 40 50 20 31
+r 0 0 0 40 40
+z 26 6 16 hln 100 6
+Port 1
+*symbol Port-2
+d Port 2 fuer S-Parameter-Messung
+@type s 8.0
+@attributes
+a 1 sp 0 0 0 0 hcn 100 TEMPLATE=X^@REFDES %g  P2_f P2_r @MODEL params: z0=@Z0 actport=2 port={port}
+a 0 sp 0:11 0 0 50 hln 100 PART=Port-2
+a 0 sp 0:13 0 0 0 hln 100 SIMULATIONONLY=
+a 0 sp 0 0 0 0 hln 100 MODEL=sport
+a 0 sp 0:9 0 26 -2 hln 100 REFDES=P2
+a 0 u 13 13 16 34 hln 100 Z0=50
+@pins
+p 0 12 22 hln 100 g n 0 20 h
+a 0 s 0:1 0 9 18 hrn 100 PIN=g
+a 0 s 0:13 0 0 20 hln 100 ERC=x
+@graphics 50 40 0 20 31
+r 0 10 0 50 40
+z 26 16 16 hln 100 6
+Port 2
+*symbol LG-Modus
+d Definition des Modus fuer die Loop-Gain-Messung
+@type p 8.0
+@attributes
+a 1 sp 0 0 10 -2 hcn 100 REFDES=LGM1
+a 1 sp 0 0 0 0 hcn 100 TEMPLATE=.PARAM LGM=@LGM
+a 0 sp 0:11 0 0 20 hln 100 PART=LGM
+a 0 u 13 0 48 20 hrn 100 LGM=1
+a 0 sp 0 0 0 0 hln 100 MODEL=
+@pins
+@graphics 50 20 20 10 10
+z 26 0 8 hln 100 9
+Loop-Gain
+v 0 0 10
+50 10
+;
+z 26 0 20 hln 100 3
+LGM
+*symbol LG
+d Loop-Gain-Messung
+@type s 8.0
+@attributes
+a 1 sp 0 0 0 0 hcn 100 TEMPLATE=X^@REFDES %U1 %U2 LG_I1 LG_I2 @MODEL params: lgm={LGM}
+a 0 sp 0:11 0 0 50 hln 100 PART=LG
+a 0 sp 0:13 0 0 0 hln 100 SIMULATIONONLY=
+a 0 sp 0 0 0 0 hln 100 MODEL=LG
+a 0 sp 0:9 0 26 -2 hln 100 REFDES=LG
+@pins
+p 0 58 22 hrn 100 U2 n 70 20 u
+a 0 s 0:1 0 61 26 hln 100 PIN=U2
+a 0 s 0:13 0 70 20 hln 100 ERC=x
+p 0 12 22 hln 100 U1 n 0 20 h
+a 0 s 0:1 0 9 18 hrn 100 PIN=U1
+a 0 s 0:13 0 0 20 hln 100 ERC=x
+@graphics 70 40 0 20 31
+r 0 10 0 60 40
+v 0 20 20
+50 20
+;
+v 0 50 20
+40 15
+;
+v 0 40 25
+50 20
+;
+z 26 12 -4 hln 100 9
+Loop-Gain
+*symbol LGdiff
+d Differentielle Loop-Gain-Messung
+@type s 8.0
+@attributes
+a 1 sp 0 0 0 0 hcn 100 TEMPLATE=X^@REFDES %U1 %U2 %U3 %U4 LG_I1 LG_I2 @MODEL params: lgm={LGM}
+a 0 sp 0:11 0 0 50 hln 100 PART=LG
+a 0 sp 0:13 0 0 0 hln 100 SIMULATIONONLY=
+a 0 sp 0 0 0 0 hln 100 MODEL=LGdiff
+a 0 sp 0:9 0 26 -2 hln 100 REFDES=LG
+@pins
+p 0 58 12 hrn 100 U2 n 70 10 u
+a 0 s 0:1 0 61 16 hln 100 PIN=U2
+a 0 s 0:13 0 70 10 hln 100 ERC=x
+p 0 12 12 hln 100 U1 n 0 10 h
+a 0 s 0:1 0 9 8 hrn 100 PIN=U1
+a 0 s 0:13 0 0 10 hln 100 ERC=x
+p 0 12 32 hln 100 U3 n 0 30 h
+a 0 s 0:1 0 9 28 hrn 100 PIN=U3
+a 0 s 0:13 0 0 30 hln 100 ERC=x
+p 0 58 32 hrn 100 U4 n 70 30 u
+a 0 s 0:1 0 61 36 hln 100 PIN=U4
+a 0 s 0:13 0 70 30 hln 100 ERC=x
+@graphics 70 40 0 20 31
+r 0 10 0 60 40
+v 0 20 20
+50 20
+;
+v 0 50 20
+40 15
+;
+v 0 40 25
+50 20
+;
+z 26 12 -4 hln 100 9
+Loop-Gain
+*symbol Hybrid180
+d 180 Grad Hybrid
+@type p 8.0
+@attributes
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=X^@REFDES %1 %2 %3 %4 @MODEL params: z0=@Z0 f=@f
+a 0 sp 0:11 0 14 34 hln 100 PART=Hybrid180
+a 1 s 9 0 40 -2 hlb 100 REFDES=HB?
+a 0 sp 0 0 0 0 hln 100 MODEL=hybrid180
+a 0 u 13 13 12 70 hln 100 Z0=50
+a 0 u 13 13 50 70 hln 100 f=
+@pins
+p 0 12 12 hln 100 1 n 0 10 h
+a 0 s 0:1 0 9 8 hrn 100 PIN=1
+a 0 s 0:13 0 0 10 hln 100 ERC=x
+p 0 88 12 hrn 100 3 n 100 10 u
+a 0 s 0:1 0 91 16 hln 100 PIN=3
+a 0 s 0:13 0 100 10 hln 100 ERC=x
+p 0 12 52 hln 100 2 n 0 50 h
+a 0 s 0:1 0 9 48 hrn 100 PIN=2
+a 0 s 0:13 0 0 50 hln 100 ERC=x
+p 0 88 52 hrn 100 4 n 100 50 u
+a 0 s 0:1 0 91 56 hln 100 PIN=4
+a 0 s 0:13 0 100 50 hln 100 ERC=x
+@graphics 100 60 0 10 10
+r 0 10 0 90 60
+v 0 20 10 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+80 10
+;
+v 0 20 50 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+80 50
+;
+v 0 20 15 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+80 45
+;
+v 0 80 15 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+20 45
+;
+z 26 42 48 hln 100 3
+180
+*symbol Hybrid90
+d 90 Grad Hybrid
+@type p 8.0
+@attributes
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=X^@REFDES %1 %2 %3 %4 @MODEL?T|@T| params: z0=@Z0 f=@f
+a 0 sp 0:11 0 14 34 hln 100 PART=Hybrid90
+a 1 s 9 0 40 -2 hlb 100 REFDES=HB?
+a 0 sp 0 0 0 0 hln 100 MODEL=hybrid90
+a 0 u 13 13 12 70 hln 100 Z0=50
+a 0 u 13 13 50 70 hln 100 f=
+a 0 u 13 0 20 34 hln 100 T=
+@pins
+p 0 12 12 hln 100 1 n 0 10 h
+a 0 s 0:1 0 9 8 hrn 100 PIN=1
+a 0 s 0:13 0 0 10 hln 100 ERC=x
+p 0 88 12 hrn 100 3 n 100 10 u
+a 0 s 0:1 0 91 16 hln 100 PIN=3
+a 0 s 0:13 0 100 10 hln 100 ERC=x
+p 0 12 52 hln 100 2 n 0 50 h
+a 0 s 0:1 0 9 48 hrn 100 PIN=2
+a 0 s 0:13 0 0 50 hln 100 ERC=x
+p 0 88 52 hrn 100 4 n 100 50 u
+a 0 s 0:1 0 91 56 hln 100 PIN=4
+a 0 s 0:13 0 100 50 hln 100 ERC=x
+@graphics 100 60 0 10 10
+r 0 10 0 90 60
+v 0 20 10 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+80 10
+;
+v 0 20 50 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+80 50
+;
+v 0 20 15 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+80 45
+;
+v 0 80 15 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+20 45
+;
+z 26 50 44 hln 100 2
+90
+z 26 50 24 hln 100 2
+90
+*symbol ZK-Filter
+d Zweikreisiges Filter
+@type p 8.0
+@attributes
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=X^@REFDES %1 %2 ?n#@MODEL-n##@MODEL# params: z0=@Z0 f=@f b=@B k=@k ?n#n=@n#
+a 0 sp 0:11 0 14 34 hln 100 PART=ZK-Filter
+a 1 s 9 0 50 -2 hlb 100 REFDES=F?
+a 0 sp 0 0 0 0 hln 100 MODEL=ZK-Filter
+a 0 u 13 13 22 70 hln 100 Z0=50
+a 0 u 13 13 60 70 hln 100 f=1e6
+a 0 u 13 13 40 82 hln 100 B=1e5
+a 0 u 0:13 0 0 10 hln 100 k=1
+a 0 u 0:13 0 0 20 hln 100 n=
+@pins
+p 0 12 12 hln 100 1 n 0 10 h
+a 0 s 0:1 0 9 8 hrn 100 PIN=1
+a 0 s 0:13 0 0 10 hln 100 ERC=x
+a 0 s 0:13 0 0 0 hln 100 FLOAT=e
+p 0 108 12 hrn 100 2 n 120 10 u
+a 0 s 0:1 0 111 16 hln 100 PIN=2
+a 0 s 0:13 0 120 10 hln 100 ERC=x
+a 0 s 0:13 0 0 0 hln 100 FLOAT=e
+@graphics 120 90 0 10 10
+r 0 20 0 100 60 d_info:,,1,,,,,,,,,,,, 
+r 0 26 20 34 40 d_info:,0/0/255,,,,ON,0/0/255,,,,,,,, 
+r 0 86 20 94 40 d_info:,0/0/255,,,,ON,0/0/255,,,,,,,, 
+v 0 41 28 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+49 28
+;
+v 0 41 32 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+49 32
+;
+v 0 45 32 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+45 40
+;
+v 0 45 28 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+45 20
+;
+v 0 71 28 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+79 28
+;
+v 0 71 32 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+79 32
+;
+v 0 75 32 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+75 40
+;
+v 0 75 28 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+75 20
+;
+v 0 58 14 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+58 6
+;
+v 0 62 14 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+62 6
+;
+v 0 62 10 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+70 10
+;
+v 0 58 10 d_info:,0/0/255,,,4/1/6/6,,,,,,,,,, 
+50 10
+;
+v 0 30 10
+30 20
+;
+v 0 30 40
+30 50
+;
+v 0 45 10
+45 20
+;
+v 0 45 40
+45 50
+;
+v 0 75 40
+75 50
+;
+v 0 90 40
+90 50
+;
+v 0 75 10 d_info:,,,,4/1/6/6,,0/128/0,,,,,,,, 
+75 20
+;
+v 0 90 10
+90 20
+;
+v 0 10 10
+50 10
+;
+v 0 70 10
+110 10
+;
+v 0 10 50
+110 50
+;
+v 0 110 50
+110 70
+;
+v 0 105 70
+115 70
+;
+v 0 10 50
+10 70
+;
+v 0 5 70
+15 70
+;
+c 0 30 10 1 d_info:,,1,,,ON,0/128/0,,,,,,,, 
+c 0 45 10 1 d_info:,,1,,,ON,0/128/0,,,,,,,, 
+c 0 75 10 1 d_info:,,1,,,ON,0/128/0,,,,,,,, 
+c 0 90 10 1 d_info:,,1,,,ON,0/128/0,,,,,,,, 
+c 0 30 50 1 d_info:,,1,,,ON,0/128/0,,,,,,,, 
+c 0 45 50 1 d_info:,,1,,,ON,0/128/0,,,,,,,, 
+c 0 75 50 1 d_info:,,1,,,ON,0/128/0,,,,,,,, 
+c 0 90 50 1 d_info:,,1,,,ON,0/128/0,,,,,,,, 
+*symbol Butterworth5
+d Butterworth-Tiefpass 5.Grades
+@type p 8.0
+@attributes
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=X^@REFDES %1 %2 @MODEL params: z0=@Z0 fg=@fg d=@D
+a 0 sp 0:11 0 14 34 hln 100 PART=Butterworth5
+a 1 s 9 0 50 -2 hlb 100 REFDES=F?
+a 0 sp 0 0 0 0 hln 100 MODEL=butterworth5
+a 0 u 13 13 22 70 hln 100 Z0=50
+a 0 u 13 13 60 70 hln 100 fg=1e6
+a 0 u 13 13 46 82 hln 100 D=0
+@pins
+p 0 12 12 hln 100 1 n 0 10 h
+a 0 s 0:1 0 9 8 hrn 100 PIN=1
+a 0 s 0:13 0 0 10 hln 100 ERC=x
+a 0 s 0:13 0 0 0 hln 100 FLOAT=r
+p 0 108 12 hrn 100 2 n 120 10 u
+a 0 s 0:1 0 111 16 hln 100 PIN=2
+a 0 s 0:13 0 120 10 hln 100 ERC=x
+a 0 s 0:13 0 0 0 hln 100 FLOAT=r
+@graphics 120 90 0 10 10
+r 0 20 0 100 60 d_info:,,1,,,,,,,,,,,, 
+v 0 10 10
+20 10
+;
+v 0 100 10
+110 10
+;
+v 0 10 50
+20 50
+;
+v 0 110 50
+110 70
+;
+v 0 105 70
+115 70
+;
+v 0 10 50
+10 70
+;
+v 0 5 70
+15 70
+;
+v 0 100 50
+110 50
+;
+z 26 32 18 hln 100 12
+Butterworth-
+z 26 40 50 hln 100 8
+5.Grades
+z 26 40 34 hln 100 8
+Tiefpass
+*symbol IQ-Mischer
+d I/Q-Mischer mit Lokaloszillatoren
+@type p 8.0
+@attributes
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=X^@REFDES %1 %2 %3 @MODEL params: z0=@Z0 ft=@fT at=@aT g=@G phi=@phi
+a 0 sp 0:11 0 14 34 hln 100 PART=I/Q-Mischer
+a 1 s 9 0 32 10 hlb 100 REFDES=MI?
+a 0 sp 0 0 0 0 hln 100 MODEL=iqmischer
+a 0 u 13 13 10 140 hln 100 Z0=50
+a 0 u 13 13 10 152 hln 100 fT=10e6
+a 0 u 0:13 0 50 140 hln 100 G=0
+a 0 u 0:13 0 44 150 hln 100 phi=0
+a 0 u 13 13 46 140 hln 100 aT=1
+@pins
+p 0 12 52 hln 100 1 n 0 50 h
+a 0 s 0:1 0 9 48 hrn 100 PIN=1
+a 0 s 0:13 0 0 50 hln 100 ERC=x
+a 0 s 0:13 0 0 0 hln 100 FLOAT=r
+p 0 68 72 hrn 100 3 n 80 70 u
+a 0 s 0:1 0 71 76 hln 100 PIN=3
+a 0 s 0:13 0 80 70 hln 100 ERC=x
+a 0 s 0:13 0 0 0 hln 100 FLOAT=r
+p 0 12 92 hln 100 2 n 0 90 h
+a 0 s 0:1 0 9 88 hrn 100 PIN=2
+a 0 s 0:13 0 0 90 hln 100 ERC=x
+a 0 s 0:13 0 0 0 hln 100 FLOAT=r
+@graphics 80 140 0 50 10
+r 0 10 10 70 130 d_info:,,1,,,,,,,,,,,, 
+v 0 10 50
+20 50
+;
+v 0 40 50
+50 50
+;
+v 0 50 50
+50 66
+;
+v 0 54 70
+70 70
+;
+c 0 30 50 10 d_info:,,1,,,,,,,,,,,, 
+v 0 23 43 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+37 57
+;
+v 0 37 43 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+23 57
+;
+z 26 22 20 hln 100 3
+cos
+v 0 30 24
+30 40
+;
+c 0 30 90 10 d_info:,,1,,,,,,,,,,,, 
+v 0 23 83 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+37 97
+;
+v 0 37 83 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+23 97
+;
+v 0 10 90
+20 90
+;
+v 0 40 90
+50 90
+;
+v 0 30 100
+30 116
+;
+v 0 14 46
+20 50
+14 54
+;
+v 0 26 34
+30 40
+34 34
+;
+v 0 14 86
+20 90
+14 94
+;
+z 26 20 126 hln 100 4
+-sin
+r 0 46 66 54 74 d_info:,,1,,,,,,,,,,,, 
+v 0 48 70
+52 70
+;
+v 0 50 68
+50 72
+;
+v 0 50 74
+50 90
+;
+v 0 46 60
+50 66
+54 60
+;
+v 0 46 80
+50 74
+54 80
+;
+v 0 60 66
+66 70
+60 74
+;
+v 0 26 106
+30 100
+34 106
+;
+*symbol Mischer
+d Mischer (idealer Multiplizierer)
+@type p 8.0
+@attributes
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=X^@REFDES %1 %2 %3 @MODEL params: z0=@Z0 g=@G
+a 0 sp 0:11 0 14 34 hln 100 PART=Mischer
+a 1 s 9 0 28 10 hlb 100 REFDES=MI?
+a 0 sp 0 0 0 0 hln 100 MODEL=mischer
+a 0 u 13 13 8 102 hln 100 Z0=50
+a 0 u 13 13 44 102 hln 100 G=0
+@pins
+p 0 12 22 hln 100 1 n 0 20 h
+a 0 s 0:1 0 9 18 hrn 100 PIN=1
+a 0 s 0:13 0 0 20 hln 100 ERC=x
+a 0 s 0:13 0 0 0 hln 100 FLOAT=r
+p 0 58 52 hrn 100 3 n 70 50 u
+a 0 s 0:1 0 61 56 hln 100 PIN=3
+a 0 s 0:13 0 70 50 hln 100 ERC=x
+a 0 s 0:13 0 0 0 hln 100 FLOAT=r
+p 0 12 82 hln 100 2 n 0 80 h
+a 0 s 0:1 0 9 78 hrn 100 PIN=2
+a 0 s 0:13 0 0 80 hln 100 ERC=x
+a 0 s 0:13 0 0 0 hln 100 FLOAT=r
+@graphics 70 110 0 20 10
+r 0 10 10 60 90 d_info:,,1,,,,,,,,,,,, 
+v 0 10 20
+30 20
+;
+v 0 40 50
+60 50
+;
+c 0 30 50 10 d_info:,,1,,,,,,,,,,,, 
+v 0 23 43 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+37 57
+;
+v 0 37 43 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+23 57
+;
+v 0 30 20
+30 40
+;
+v 0 10 80
+30 80
+;
+v 0 26 34
+30 40
+34 34
+;
+v 0 50 46
+56 50
+50 54
+;
+v 0 30 80
+30 60
+;
+v 0 34 66
+30 60
+26 66
+;
+*symbol Delay
+d Verzoegerungsglied
+@type p 8.0
+@attributes
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=X^@REFDES %1 %2 @MODEL params: z0=@Z0 td=@TD d=@D
+a 0 sp 0:11 0 14 34 hln 100 PART=Delay
+a 1 s 9 0 26 10 hlb 100 REFDES=DL?
+a 0 sp 0 0 0 0 hln 100 MODEL=delay
+a 0 u 13 13 22 62 hln 100 Z0=50
+a 0 u 13 13 18 74 hln 100 TD=1us
+a 0 u 13 13 24 86 hln 100 D=0
+@pins
+p 0 12 32 hln 100 1 n 0 30 h
+a 0 s 0:1 0 9 28 hrn 100 PIN=1
+a 0 s 0:13 0 0 30 hln 100 ERC=x
+a 0 s 0:13 0 0 0 hln 100 FLOAT=r
+p 0 58 32 hrn 100 2 n 70 30 u
+a 0 s 0:1 0 61 36 hln 100 PIN=2
+a 0 s 0:13 0 70 30 hln 100 ERC=x
+a 0 s 0:13 0 0 0 hln 100 FLOAT=r
+@graphics 70 90 0 30 10
+r 0 10 10 60 50 d_info:,,1,,,,,,,,,,,, 
+v 0 20 20
+20 40
+50 40
+;
+v 0 20 40 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+40 40
+40 20
+50 20
+;
+*symbol Trigger
+d Schmitt-Trigger
+@type p 8.0
+@attributes
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=X^@REFDES %1 %2 @MODEL params: z0=@Z0 trg=@Schwelle hyst=@Hysterese uamax=@Uamax uamin=@Uamin td=@TD
+a 0 sp 0:11 0 14 34 hln 100 PART=Trigger
+a 1 s 9 0 22 10 hlb 100 REFDES=TRG?
+a 0 sp 0 0 0 0 hln 100 MODEL=trigger
+a 0 u 13 13 22 62 hln 100 Z0=50
+a 0 u 13 13 8 74 hln 100 Schwelle=0
+a 0 u 13 13 6 86 hln 100 Hysterese=1
+a 0 u 0:13 0 14 100 hln 100 Uamax=5
+a 0 u 0:13 0 16 112 hln 100 Uamin=0
+a 0 u 0:13 0 0 50 hln 100 TD=10n
+@pins
+p 0 12 32 hln 100 1 n 0 30 h
+a 0 s 0:1 0 9 28 hrn 100 PIN=1
+a 0 s 0:13 0 0 30 hln 100 ERC=x
+a 0 s 0:13 0 0 0 hln 100 FLOAT=r
+p 0 58 32 hrn 100 2 n 70 30 u
+a 0 s 0:1 0 61 36 hln 100 PIN=2
+a 0 s 0:13 0 70 30 hln 100 ERC=x
+a 0 s 0:13 0 0 0 hln 100 FLOAT=r
+@graphics 70 90 0 30 10
+r 0 10 10 60 50 d_info:,,1,,,,,,,,,,,, 
+v 0 20 40 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+40 40
+40 20
+50 20
+;
+v 0 30 40 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+30 20
+40 20
+;
+*symbol RCosFlt
+d Cosinus-Rolloff-Tiefpass
+@type p 8.0
+@attributes
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=X^@REFDES %1 %2 @MODEL@r params: z0=@Z0 ts=@TS d=@D
+a 0 sp 0:11 0 14 34 hln 100 PART=RCosFlt
+a 1 s 9 0 52 -2 hlb 100 REFDES=F?
+a 0 sp 0 0 0 0 hln 100 MODEL=rcosflt
+a 0 u 13 13 22 70 hln 100 Z0=50
+a 0 u 13 13 60 70 hln 100 TS=1u
+a 0 u 13 13 50 54 hln 100 r=05
+a 0 u 13 13 26 80 hln 100 D=0
+@pins
+p 0 12 12 hln 100 1 n 0 10 h
+a 0 s 0:1 0 9 8 hrn 100 PIN=1
+a 0 s 0:13 0 0 10 hln 100 ERC=x
+p 0 108 12 hrn 100 2 n 120 10 u
+a 0 s 0:1 0 111 16 hln 100 PIN=2
+a 0 s 0:13 0 120 10 hln 100 ERC=x
+@graphics 120 90 0 10 10
+r 0 20 0 100 60 d_info:,,1,,,,,,,,,,,, 
+v 0 10 10
+20 10
+;
+v 0 100 10
+110 10
+;
+v 0 10 50
+20 50
+;
+v 0 110 50
+110 70
+;
+v 0 105 70
+115 70
+;
+v 0 10 50
+10 70
+;
+v 0 5 70
+15 70
+;
+v 0 100 50
+110 50
+;
+z 26 26 14 hln 100 14
+Raised-Cosine-
+z 26 48 26 hln 100 6
+Filter
+z 26 32 40 hln 100 12
+(r=03/05/10)

@@ -1,0 +1,3 @@
+*SRC=PDU540;DI_PDU540;Diodes;Si;  400V  5.00A  35.0ns   Diodes Inc. Ultrafast Rectifier
+.MODEL DI_PDU540 D  ( IS=2.68u RS=8.33m BV=400 IBV=10.0u
++ CJO=196p  M=0.333 N=2.27 TT=50.4n )

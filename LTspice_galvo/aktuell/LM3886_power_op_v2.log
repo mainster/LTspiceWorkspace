@@ -1,0 +1,28 @@
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\galvoscanner\aktuell\LM3886_power_op_v2.asc
+
+WARNING: Less than two connections to node NC_01.  This node is used by R2.
+Early termination of direct N-R iteration.
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+vernier = 0.5
+vernier = 0.25
+vernier = 0.125
+Gmin = 4.81882
+vernier = 0.0625
+vernier = 0.03125
+vernier = 0.015625
+vernier = 0.0078125
+Gmin = 4.73544
+vernier = 0.00390625
+vernier = 0.00195313
+vernier = 0.000976563
+vernier = 0.000488281
+Gmin = 4.73428
+Gmin = 0
+Gmin stepping succeeded in finding the operating point.
+
+Changing Tseed to 5.85938e-010
+Changing Tseed to 5.85938e-012
+Changing Tseed to 5.85938e-009
+Heightened Def Con from 9.30906e-008 +++++++++++++++++++++++++++++++++++++++++++++++

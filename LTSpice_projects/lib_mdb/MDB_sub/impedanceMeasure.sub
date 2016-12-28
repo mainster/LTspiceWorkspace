@@ -1,0 +1,8 @@
+
+.SUBCKT impedanceMeasure in out zm
+
+B1 zm 0 V=V(out)/I(R1) 
+R1 in out 1µ 
+R3 out 0 100t
+
+.ENDS impedanceMeasure

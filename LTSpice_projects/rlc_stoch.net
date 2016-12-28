@@ -1,0 +1,12 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\rlc_stoch.asc
+R1 N001 c+ {R}
+L1 c- 0 {L}
+C1 c+ c- {C}
+V1 N001 0 0 AC 1
+.param bandp=1
++ R=1k
++ L=100u
++ C=10n
+.ac oct 200 1k 100meg
+.backanno
+.end

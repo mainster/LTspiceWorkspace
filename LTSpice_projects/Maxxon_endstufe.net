@@ -1,0 +1,33 @@
+* C:\users\mainster\My Documents\CODES_local\LTSpice_projects\Maxxon_endstufe.asc
+M1 out G12 0 0 NMOSx
+M2 out G12 N001 N001 PMOS
+R1 N001 G12 6.8kR
+R2 G12 N003 100
+Q1 N003 N007 0 0 NPN
+R3 N007 N006 4.7k
+R4 0 N007 68k
+V1 N001 0 14
+V2 N005 0 1
+R5 N002 out 5
+L1 out2 N002 10m
+M3 out2 G34 0 0 NMOSx
+M4 out2 G34 N001 N001 PMOS
+R6 N001 G34 6.8kR
+R7 G34 N004 100
+Q2 N004 N008 0 0 NPN
+R8 N008 N009 4.7k
+R9 0 N008 68k
+V3 N009 N010 0
+V4 N006 0 PULSE(0 5 0 10u 10u 1m 2m)
+E1 N010 0 N011 0 1
+V5 N011 0 PULSE(5 0 200u 10u 10u {2m-0.8m} 2m)
+.model NPN NPN
+.model PNP PNP
+.lib Z:\home\mainster\.wine\drive_c\Program Files (x86)\LTC\LTspiceIV\lib\cmp\standard.bjt
+.model NMOS NMOS
+.model PMOS PMOS
+.lib Z:\home\mainster\.wine\drive_c\Program Files (x86)\LTC\LTspiceIV\lib\cmp\standard.mos
+.tran 0 4m 0 250n
+.model nmosx NMOS(Kp=13.8 VT0=1)
+.backanno
+.end

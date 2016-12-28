@@ -1,0 +1,5 @@
+Stray ".ends" card: .ends
+Circuit: * C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\examples\Robertugo\Audio\PasaBajos.asc
+
+Fatal Error: Unknown subcircuit called in:
+   xu1d 0 n006 v+ v- n008 level3a

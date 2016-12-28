@@ -1,0 +1,153 @@
+********************************************************************
+********************************************************************
+* "Modeling and Simulation of Power PiN Diodes within SPICE"
+********************************************************************
+********************************************************************
+
+
+********************************************************************
+* spice subcircuit listing - feedback scheme
+* Anode-->100
+* Cathode-->40
+
+.SUBCKT PinFb 100 30
+*PiN DIODE model through Finite Diﬀerences, using the feedback scheme
+.PARAM Da= { 2*Dn*Dp/(Dn+Dp) } , Dn=34.84, Dp=12.82, W=50e-4, Nd=2e14
++    thl=200n, n=10, hp=1e-15, hn=1e-15, A=0.04, q=1.6e-19
++    un= { Dn/25.9m } , up= { Dp/25.9m } , ni=1.45e10
+.PARAM VT=25.9m, po=7.4e16, uo= { un+up } , K=1e2, kn=1e16
++    eps=8.854e-14, epssi=11.7, vs=1e7
+.FUNC pos(x) { limit(x,0,1e3) }
+GRS1   1   2   VALUE= { (V(1)-V(2))*Da/(((W-V(50))/n)**2) }
+GRS2   2   3   VALUE= { (V(2)-V(3))*Da/(((W-V(50))/n)**2) }
+GRS3   3   4   VALUE= { (V(3)-V(4))*Da/(((W-V(50))/n)**2) }
+GRS4   4   5   VALUE= { (V(4)-V(5))*Da/(((W-V(50))/n)**2) }
+GRS5   5   6   VALUE= { (V(5)-V(6))*Da/(((W-V(50))/n)**2) }
+GRS6   6   7   VALUE= { (V(6)-V(7))*Da/(((W-V(50))/n)**2) }
+GRS7   7   8   VALUE= { (V(7)-V(8))*Da/(((W-V(50))/n)**2) }
+GRS8   8   9   VALUE= { (V(8)-V(9))*Da/(((W-V(50))/n)**2) }
+GRS9   9   10   VALUE= { (V(9)-V(10))*Da/(((W-V(50))/n)**2) }
+RP1   1   0 { 2*thl }
+RP2   2   0 { thl }
+RP3   3   0 { thl }
+RP4   4   0 { thl }
+RP5   5   0 { thl }
+RP6   6   0 { thl }
+RP7   7   0 { thl }
+RP8   8   0 { thl }
+RP9   9   0 { thl }
+RP10   10   0 { thl }
+RP11   11   0 { 2*thl }
+CP1   1   0   0.5
+CP2   2   0   1
+CP3   3   0   1
+CP4   4   0   1
+CP5   5   0   1
+CP6   6   0   1
+CP7   7   0   1
+CP8   8   0   1
+CP9   9   0   1
+CP10   10   0   1
+CP11   11   0   0.5
+Vdiode    100    20    DC    0
+Ediode  20  30 VALUE= { -q/(2*eps*epssi)*(Nd+abs(I(Vdiode))/(q*A*vs))*(V(50))**2+
++ VT*pos(log((V(1)*kn*Nd)/(ni**2)))+I(Vdiode)*((W-V(50))/n)/(q*A)*(1/((pos(V(1))+
++ pos(V(2)))*kn*(po*uo/((pos(V(1))+
++ pos(V(2)))*kn+2*po))+Nd*un)+1/((pos(V(2))+pos(V(3)))*kn*(po*uo/((pos(V(2))+
++ pos(V(3)))*kn+2*po))+Nd*un)+1/((pos(V(3))+pos(V(4)))*kn*(po*uo/((pos(V(3))+
++ pos(V(4)))*kn+2*po))+Nd*un)+1/((pos(V(4))+pos(V(5)))*kn*(po*uo/((pos(V(4))+
++ pos(V(5)))*kn+2*po))+Nd*un)+1/((pos(V(5))+pos(V(6)))*kn*(po*uo/((pos(V(5))+
++ pos(V(6)))*kn+2*po))+Nd*un)+1/((pos(V(6))+pos(V(7)))*kn*(po*uo/((pos(V(6))+
++ pos(V(7)))*kn+2*po))+Nd*un)+1/((pos(V(7))+pos(V(8)))*kn*(po*uo/((pos(V(7))+
++ pos(V(8)))*kn+2*po))+Nd*un)+1/((pos(V(8))+pos(V(9)))*kn*(po*uo/((pos(V(8))+
++ pos(V(9)))*kn+2*po))+Nd*un)+1/((pos(V(9))+pos(V(10)))*kn*(po*uo/((pos(V(9))+
++ pos(V(10)))*kn+2*po))+Nd*un)+1/((pos(V(10))+pos(V(11)))*kn*(po*uo/((pos
++ (V(10))+pos(V(11222)))*kn+2*po))+Nd*un))+VT*pos(log((V(11)*kn)/(Nd))) }
+GL  0  1 VALUE= { Da/(2*q*A*kn*(W-V(50))/n)*(I(Vdiode)+q*Nd*A*DDT(V(50))-
++(q*(kn**2)*A*hp*((pos(V(1)))**2)))/Dp }
+GLrec    1 0 VALUE= { Da/(2*q*A*kn*(W-V(50))/n)*(q*(kn**2)*A*hp*
++((pos(V(1)))**2))/Dn }
+GR  0   11  VALUE= { Da/(2*q*A*kn*(W-V(50))/n)*(I(Vdiode)+q*Nd*A*DDT(V(50))-
++(q*(kn**2)*A*hn*((pos(V(11)))**2)))/Dn }
+GRrec   11    0    VALUE= { Da/(2*q*A*kn*(W-V(50))/n)*(q*(kn**2)*A*hn*
++((pos(V(11)))**2))/Dp }
+EXL   50   0   VALUE= { limit(-K*V(1),0,1e2) }
+RXL   50   0   1
+.ENDS PinFb
+
+
+
+***********************************************
+* Pspice subcircuit listing - standard diode
+***********************************************
+.SUBCKT PinStd 100 40
+*PiN DIODE model through Finite Di®erences, using the standard diode
+.PARAM Da=f2*Dn*Dp/(Dn+Dp)g, Dn=34.84, Dp=12.82, W=50e-4,
++ Nd=2e14, thl=200n, n=10, hp=1e-15, hn=1e-15, A=0.04,
++q=1.6e-19, un=Dn/25.9m, up=Dp/25.9m, ni=1.45e10
+.PARAM po=7.4e16, uo=un+up, h=W/n;
+.PARAM b=fDn/Dpg, kn=1e16, kpoisson=f1/(7.66e-8*Nd)g, kidiode=fb/((1+b)*q*A)g
+.FUNC pos(x) flimit(x,0,1e3)g
+Ej 50 0 VALUE=fV(20,40)g
+vs1 50 60 DC 0
+D1 60 0 Djunction
+.MODEL Djunction D(IS=1.35e-8, N=1.45, IKF=0.32)
+Eres 100 20 VALUE=fI(Vdiode)*(W-sqrt(pos(-V(20,40))*kpoisson))/n/(q*A)*
++ (1/((pos(V(1))+pos(V(2)))*kn*(po*uo/((pos(V(1))+
++ pos(V(2)))*kn+2*po))+Nd*un)+1/((pos(V(2))+pos(V(3)))*kn*(po*uo/((pos(V(2))+
++ pos(V(3)))*kn+2*po))+Nd*un)+1/((pos(V(3))+pos(V(4)))*kn*(po*uo/((pos(V(3))+
++ pos(V(4)))*kn+2*po))+Nd*un)+1/((pos(V(4))+pos(V(5)))*kn*(po*uo/((pos(V(4))+
++ pos(V(5)))*kn+2*po))+Nd*un)+1/((pos(V(5))+pos(V(6)))*kn*(po*uo/((pos(V(5))+
++ pos(V(6)))*kn+2*po))+Nd*un)+1/((pos(V(6))+pos(V(7)))*kn*(po*uo/((pos(V(6))+
++ pos(V(7)))*kn+2*po))+Nd*un)+1/((pos(V(7))+pos(V(8)))*kn*(po*uo/((pos(V(7))+
++ pos(V(8)))*kn+2*po))+Nd*un)+1/((pos(V(8))+pos(V(9)))*kn*(po*uo/((pos(V(8))+
++ pos(V(9)))*kn+2*po))+Nd*un)+1/((pos(V(9))+pos(V(10)))*kn*(po*uo/((pos(V(9))+
++ pos(V(10)))*kn+2*po))+Nd*un)+1/((pos(V(10))+pos(V(11)))*kn*(po*uo/((pos
++ (V(10))+pos(V(11222)))*kn+2*po))+Nd*un))}
+Gpin 20 30 VALUE=fI(VS2)*(W-sqrt(pos(-V(20,40))*kpoisson))/ng
+Vdiode 30 40 DC 0
+E0 70 0 VALUE=fI(VS1)g VS2 70 1 DC 0
+GLrec 1 0 VALUE=f(kn^2)*hp*((pos(I(VS1)))^2)/(h*kidiodo)g
+GRS1 1 2 VALUE=f(V(1)-V(2))*Da*kn/kidiode/
++((W-sqrt(pos(-V(20,40))*kpoisson))/n)^2)g
+GRS2 2 3 VALUE=f(V(2)-V(3))*Da*kn/kidiode/
++((W-sqrt(pos(-V(20,40))*kpoisson))/n)^2)g
+GRS3 3 4 VALUE=f(V(3)-V(4))*Da*kn/kidiode/
++((W-sqrt(pos(-V(20,40))*kpoisson))/n)^2)g
+GRS4 4 5 VALUE=f(V(4)-V(5))*Da*kn/kidiode/
++((W-sqrt(pos(-V(20,40))*kpoisson))/n)^2)g
+GRS5 5 6 VALUE=f(V(5)-V(6))*Da*kn/kidiode/
++((W-sqrt(pos(-V(20,40))*kpoisson))/n)^2)g
+GRS6 6 7 VALUE=f(V(6)-V(7))*Da*kn/kidiode/
++((W-sqrt(pos(-V(20,40))*kpoisson))/n)^2)g
+GRS7 7 8 VALUE=f(V(7)-V(8))*Da*kn/kidiode/
++((W-sqrt(pos(-V(20,40))*kpoisson))/n)^2)g
+GRS8 8 9 VALUE=f(V(8)-V(9))*Da*kn/kidiode/
++((W-sqrt(pos(-V(20,40))*kpoisson))/n)^2)g
+GRS9 9 10 VALUE=f(V(9)-V(10))*Da*kn/kidiode/
++((W-sqrt(pos(-V(20,40))*kpoisson))/n)^2)g
+RP1 1 0 f2*thl*kidiode/kng
+RP2 2 0 fthl*kidiode/kng
+RP3 3 0 fthl*kidiode/kng
+RP4 4 0 fthl*kidiode/kng
+RP5 5 0 fthl*kidiode/kng
+RP6 6 0 fthl*kidiode/kng
+RP7 7 0 fthl*kidiode/kng
+RP8 8 0 fthl*kidiode/kng
+RP9 9 0 fthl*kidiode/kng
+RP10 10 0 fthl*kidiode/kng
+RP11 11 0 f2*thl*kidiode/kng
+CP1 1 0 f.5*kn/kidiodeg
+CP2 2 0 f1*kn/kidiodeg
+CP3 3 0 f1*kn/kidiodeg
+CP4 4 0 f1*kn/kidiodeg
+CP5 5 0 f1*kn/kidiodeg
+CP6 6 0 f1*kn/kidiodeg
+CP7 7 0 f1*kn/kidiodeg
+CP8 8 0 f1*kn/kidiodeg
+CP9 9 0 f1*kn/kidiodeg
+CP10 10 0 f1*kn/kidiodeg
+CP11 11 0 f.5*kn/kidiodeg
+GRrec 11 0 VALUE=f(kn^2)*hn*((pos(V(11)))^2)/(w*kidiode)g
+GR 0 11 VALUE=fI(VS2)/bg
+.ENDS PinStd

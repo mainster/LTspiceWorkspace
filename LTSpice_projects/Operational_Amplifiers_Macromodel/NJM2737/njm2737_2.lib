@@ -1,0 +1,46 @@
+*$
+* PART NUMBER: NJM2737
+* MANUFACTURER: NEW JAPAN RADIO
+* All Rights Reserved Copyright (c) Bee Technologies Inc. 2007
+.Subckt NJM2737 OUT1 -IN1 +IN1 V- +IN2 -IN2 OUT2 V+
+X_U1     +IN1 -IN1 V+ V- OUT1 NJM2737_ME
+X_U2     +IN2 -IN2 V+ V- OUT2 NJM2737_ME
+.ends  NJM2737
+.subckt NJM2737_ME 1 2 3 4 5
+  c1   11 12 100.00E-15
+  c2    6  7 21.1E-12
+  cee  10 99 3.600E-9
+  dc    5 53 dy
+  de   54  5 dy
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 1.7153E6 -1E3 1E3 1E6 -1E6
+  ga    6  0 11 12 414.69E-6
+  gcm   0  6 10 99 131.14E-9
+  iee   3 10 dc 22.298E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx1
+  q2   12  1 14 qx2
+  r2    6  9 100.00E3
+  rc1   4 11 2.4114E3
+  rc2   4 12 2.4114E3
+  re1  13 10 48.532
+  re2  14 10 48.532
+  ree  10 99 8.9694E6
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 50.011
+  vb    9  0 dc 0
+  vc    3 53 dc .945
+  ve   54  4 dc .948
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.00E-18)
+.model dy D(Is=800.00E-18 Rs=1m Cjo=10p)
+.model qx1 PNP(Is=800.00E-18 Bf=53.087)
+.model qx2 PNP(Is=851.0500E-18 Bf=57.850)
+.ends
+*$

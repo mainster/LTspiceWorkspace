@@ -1,0 +1,27 @@
+* Z:\media\data\CODES\LTSpice_projects\HV_prog_AS5045\hv_prog_zener.asc
+D1 0 N003 BZX84C8V2L
+D2 N005 N003 1N750
+R1 N001 N003 470R
+Q1 N002 N003 N004 0 BC817-40
+R2 N001 N002 10
+R3 N004 0 6.8k
+V1 N001 0 14.7V
+Q2 N005 N007 0 0 BC817-40
+R4 N007 N001 6.8k
+V2 N011 0 PULSE(0 5 0 10n 10n 100u 400u)
+V3 N006 0 PULSE(0 5 2m 10n 10n 10m)
+Q4 N009 N008 N004 0 BC807-25
+R6 N009 0 50
+R5 N008 N004 10k
+R7 N008 P001 1k
+Q3 P001 N010 0 0 BC817-40
+R8 N011 N010 1k
+R9 N006 N007 1k
+.model D D
+.lib C:\Program Files (x86)\LTC_orig\LTspiceIV_4.18\lib\cmp\standard.dio
+.model NPN NPN
+.model PNP PNP
+.lib C:\Program Files (x86)\LTC_orig\LTspiceIV_4.18\lib\cmp\standard.bjt
+.tran 5m
+.backanno
+.end

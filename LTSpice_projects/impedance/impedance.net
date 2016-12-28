@@ -1,0 +1,26 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\impedance\impedance.asc
+R1 uc in 1k
+V1 in 0 SINE(0 7.9 8k 0 0 0) AC 7.9
+C1 uc out 18n
+L1 out 0 20m
+R2 out 0 2k
+.tran 5m
+.MEAS TRAN Vout_rms RMS V(out)*sqrt(2) 
++ TRIG V(in) VAL=1 TD=1u Fall 10
++ TARG V(in) VAL=1 TD=1u Fall 30
+.MEAS TRAN Vuc_rms RMS V(uc) 
++ TRIG V(in) VAL=1 TD=1u Fall 10
++ TARG V(in) VAL=1 TD=1u Fall 30
+.MEAS TRAN diff_rms PARAM Vuc_rms-Vout_rms
+* .MEAS TRAN t2 V(Out_Osc) WHEN V(Out_Osc) = {Vdd*3/5} rise=10\n.MEAS TRAN t1 V(Out_Osc) WHEN V(Out_Osc) = {Vdd*3/5} rise=9\n.MEAS TRAN freq1 PARAM 1/(t2-t1)
+* .MEAS TRAN res7 AVG V(out) \n+ TRIG V(in) VAL=1.5 TD=1.1u FALL=1 \n+ TARG V(in) VAL=1.5 TD=1.1u FALL=10
+.MEAS TRAN Vout_avg ACG V(out) 
++ TRIG V(in) VAL=1 TD=1u Fall 10
++ TARG V(in) VAL=1 TD=1u Fall 30
+.MEAS TRAN Vuc_avg AVG V(uc) 
++ TRIG V(in) VAL=1 TD=1u Fall 10
++ TARG V(in) VAL=1 TD=1u Fall 30
+.MEAS TRAN diff_avg PARAM Vuc_avg-Vout_avg
+.SPICE Error Log Command
+.backanno
+.end

@@ -1,0 +1,205 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\galvoscanner\aktuell\bauteile_bestimmt\sysCompl_endstufe_FET_v13_transducer_v13a_NoPwr.asc
+XU1 +12V vdc_single V=+12V
+XU2 -12V vdc_single V=-12V
+R32 ue1 N007 {R1}
+R33 I_ctrl N016 {R3}
+R34 N016 0 {R4}
+R35 N007 pwrCtrlx {R2}
+R36 ue1 N011 22k
+R37 N011 0 22k
+V7 LTDACa 0 {dig_offs}
+R41 Aref N010 {R4b}
+R42 LTDAC_off N010 {R9}
+R43 N010 0 {R10}
+XU3 Aref_2 vdc_single V={Aref/2}
+XU4 N033 N032 +5V +5V pump pump +5V N028 0 LTC6360
+C8 0 pump 1µ
+C9 pump 0 .2µ
+R45 N032 posX_ADC 10
+C10 posX_ADC 0 330p
+C11 0 +5V 0.1µ
+C12 0 +5V 10µ
+XU5 cRf vdc_single V={Rf}
+XU6 cRb vdc_single V={Rb}
+XU7 cRg vdc_single V={Rg}
+Rf2 N032 N033 {Rf}
+Rg2 N034 N033 {Rg}
+Rb2 N025 N028 {Rb}
+XU8 N010 N011 +12V -12V ue1 LT1057
+XU9 N016 N007 +12V -12V pwrCtrlx LT1057
+XU10 N017 N012 +12V -12V N012 LT1057
+C17 N007 pwrCtrlx 1p
+XU11 N026 0 ref_adc N029 LT6650
+R54 ref_adc N029 6k
+R55 N029 0 20k
+R56 N027 N026 1k
+C18 0 N026 1n
+XU12 N027 vdc_single V=5V
+R12 DACx N018 5k36
+R13 N018 N020 9k09
+C19 N018 DACxf1 1n5
+C20 N020 0 1n
+R14 DACxf1 N019 2k67
+R15 N019 N021 1k33
+C21 N019 DACxf2 6n8
+C22 N021 0 1n
+XU13 N013 0 N017 pot R=100k T=.5
+XU14 N020 DACxf1 +12V -12V DACxf1 LT1057
+XU15 N021 DACxf2 +12V -12V DACxf2 LT1057
+R17 LTDACa N005 1k
+C24 N005 0 1n
+XU16 N005 N006 +12V -12V N006 LT1057
+XU17 Aref vdc_single V={Aref}
+R136 posX_ADC 0 100k
+C23 posX_ADC 0 1p
+V3 -Vpwr 0 PULSE(0 {-Vsup} 0 500u)
+V5 +Vpwr 0 PULSE(0 {Vsup} 0 500u)
+C7 N033 N032 {Clead}
+XU18 +5V vdc_single V=+5V
+R21 stim_DAC DACx 1
+V10 N022 0 SINE(1.25 1.25 100) AC 1
+XU19 N004 N003 +5V +5V pump pump +5V N001 0 LTC6360
+C30 0 pump 1µ
+C32 pump 0 .2µ
+R50 N003 posX_ADCf 10
+Rf1 N003 N004 750
+Rg1 stim_DAC N004 5k
+C34 N004 N003 {Clead}
+Rf3 N001 N002 625
+E2 g1 0 stim_DAC 0 laplace=(1944.0*s-2.761e9)/(2.972e5*s+s**2+1.289e10)
+XU20 N014 N009 N008 opamp_param_3 Vp=10 Vm=-10 Ilim=20m FT=10Meg SR=10 Vos=0 A0=100k phir=45 en=0 enk=0 in=0 ink=0 Rin=500Meg
+Rf4 N014 N015 625
+R51 N008 posX_ADCf3 10
+Rf5 N008 N009 750
+Rg3 stim_DAC N009 5k
+C33 N009 N008 {Clead}
+V14 N015 0 {ADCm}
+V11 N002 0 {ADCm}
+R16 pwrCtrlx N024 {Rpt1}
+R18 N024 posRaw {Rpt1}
+C29 N024 0 {Cpt1}
+C35 posRaw 0 {Cpt1}
+R2 DACx I_ctrl R=1u
+R3 N006 LTDAC_off R=1u
+R4 N025 Aref_2 R=1u
+B1 pos_k-n 0 V=int( (nDigsPerV+.1)*V(X))*1/nDigsPerV
+R6 pos_k-n 0 1k
+E1 X 0 posX_ADC 0 1
+R5 ADC_quant pos_k-n R=1u
+E3 N031 0 N030 0 1
+R7 pwrCtrlx N030 {Rpt1}
+R8 N031 posRawBuff {Rpt1}
+C1 N030 0 {Cpt1}
+C2 posRawBuff 0 {Cpt1}
+R9 posRawBuff 0 100k
+R19 cRg 0 100meg
+R10 cRb 0 100meg
+R11 cRf 0 100meg
+XU21 N013 vdc_single V={REFA}
+XU22 posRaw N034 arrow_curr arrow_curr Rsh=1m
+V1 N023 0 PULSE(0 2.5 1m 100n 100n 5m 10m) AC 1
+R20 N023 stim_DAC R=1u
+;.tran 0 100m 1m
+;.options plotwinsize=0
+;.tran 0 2.8m 1.9m 1e-7
+.ac oct 100 100 5meg
+; ---------------------
+;   Power amp
+; ---------------------
+;.param Rset_bias = 100
+.param Iq = 1m
+;.param UV1 = 0.75V
+;.param bias_be1 = 150
+.param bias_be1 = 100
+;.param bias_b1 = {UV1/Ik3}
+;.param bias_b1 = 750
+.param bias_b1 = 270
+.param Lcoil = 170u
+; ---------------------
+;   Compensator
+; ---------------------
+.param Rsu = 1k
+.param Kp = 15
+;.param Ki = 15000
+; ---------------------
+;   SOURCES
+; ---------------------
+.param Vsup = 20V
+.param Vstim_peak = 5
+.param Aref = 2.5V  ; Ref2050
+* .option noopiter\n.options plotwinsize=0\n.four 1k 10 I(L1)
+* .dc V10 0 2.5 0.05
+* ;.tran 0 30m 0 2u\n.tran 0 30m \n.options plotwinsize=0
+* .tran 0 100m 1m\n.options plotwinsize=0
+* .tran 0 50m\n.options plotwinsize=0
+* .step param I0 list 100u 10n
+* STM32f429i
+* STM32 DAC \nVout_ctrl
+* Messwandler v1.6\nSTM32 DAC out --> Endstufe Vin_ctrl\n0 ... 3V                --> -5V ... 5V\n \nENDSTUFE INVERTIERT!!!!\n------------------------------------------------------------------------\nUa=Ue2 * (R1+R2)/R1 * R4/(R3+R4) - Ue1 * R2/R1\nUe1 * R2/R1 @ Ue1=3V  !=  10V  \n -->  R2=10/3*R1\n------------------------------------------------------------------------\nUe2* 13/3 * R4/(R3+R4) @ Ue2=2.5V (ref)  !=  +5V\n --> R4/(R3+R4)  !=  5V * 3/(13 * 2.5V)\n<--> (R3+R4)/R4  !=  13/6\n--> R3=7a   R4=6a     a el. |R\n------------------------------------------------------------------------
+* PULSE(0 3 2m 10n 10n 500u 1m)
+.include LM358.lib
+.include OPA404.LIB
+.param R9 = 27k
+.param R4b = 3910
+.param R10 = 1220
+;V(pwrCtrlx):  -2.5V ... 2.5V
+.param R1=60k
+.param R2=120k
+.param R3=60k
+.param R4=120k
+.param deltaVpos = 20V
+.param deltaVa = 3V
+.param VaMin = 0V 
+.param gain = deltaVa / deltaVpos
+* SAR ADC driver\nAngular position
+* Eingangswiderstand muss >15k \nsein (DAC0_SEL == DAC0 STM32)
+* DAC reconstruction
+* ; ti filter bench\n; ******  Antialias posDemod ADC  ******\n; Lowpass, Sallen Key, Gaussian to 6 dB\n; fc = 20kHz   (Cut-off)\n; fs = 100kHz (Stopband)\n; Asb = -45dB (Verstärkung bei fs)
+* .param R1a=5.36k  R2a=9.09k  C1a=910p  C2a=1.5n\n.param R1b=2.67k R2b=1.33k  C1b=910p  C2b=6.8n
+* Digital offset for DAC bias\nreconstruction filter
+* DAC levelshifter bias circuit
+* REF2050
+* Include
+* Parameter
+* V=(Aref/R4b+V(DAC_offs)/R9) * 1/(1/R4b+1/R9+1/R10)
+.param vrefset=1.3V
+.param Rg = 5k
+.param Rf = Rg*gain
+.param Rb = {Rf*Rg/(Rf+Rg)}
+.param Vref = 1/2 * deltaVa/(1+Rf/Rg)
+.param k=0.42
+.param f_I_ctrl = 500
+* "Solving SPICE Convergence Problems"\nhttp://www.intusoft.com/articles/converg.pdf\n  (1)  opamp OPA404 (aus OPA404.lib) entfernt\n  (2)  M1 Power NFET, keyword "off" added\n.... Ok war wieder mal kleinscheiß, YS2 hat gefloated
+* Ohne Endstufe, signal PCB als symmetrisches \nStellglied für PT2 Strecke RC-RC einsetzen
+.param Vsweep=0
+* .step param Vsweep 0 2.5 0.25
+* ;V(pwrCtrlx):  -1.25V ... 1.25V\n.param R1=60k\n.param R2=60k\n.param R3=60k\n.param R4=60k
+* {(VrefSet/0.4V-1)*20k}
+* .step param dig_offs 0 2.5 .25
+.param dig_offs = 1.5V
+.param ADCm = 1.25
+.param Clead = 1n
+* 2nd order plant
+.param Rpt1 = 1k
+.param Cpt1 = 10n
+; 1.25V | 2.048V | 2.5V | 3.0V | 3.3V
+.param REFA = 2.5
+* .param nDigsPerV= 8
+* Quantizer
+* laplace=-750/5e3*1/(s*750*Clead+1)
+* 2nd order plant, buffered
+* laplace=1/(s*Rpt1*Cpt1+1)
+;op
+.param RESOLUTION = 8
+.param nDigsPerV=2**(RESOLUTION) / AREF
+* .op
+.ic V(posRaw) = -1.44
+.lib ..\sym\EXTRA\Misc\pot.lib
+.lib EIT_sub\opamp_parametrierbar.sub
+.lib EIT_sub\vdc_single.sub
+.lib LTC.lib
+.lib LTC1.lib
+.lib LTC6360.sub
+.lib MDB_sub/arrow_curr.sub
+.backanno
+.end

@@ -1,0 +1,11 @@
+* Z:\home\koblitz\Simulationsbeispiele_SS15\Elektronik_lab\mittwoch\poti_belastet.asc
+R1 N001 mid {(1-x)*Rp+eps}
+R2 mid 0 {x*RP+eps}
+V1 N001 0 1
+RL mid 0 {rlast}
+.param x=0.5 Rp=1k eps=1m rlast=300
+;op
+.dc param x 0 1 10m
+.step param rlast list 100 200 300 500 1k 1T
+.backanno
+.end

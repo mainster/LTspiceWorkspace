@@ -1,0 +1,71 @@
+* Z:\media\data\CODES\LTSpice_projects\BuckBoostInv_swconverter\buck_labor_ft_geregelt.asc
+L1 sw_buck out_buck {L1}
+D1 0 sw_buck Dx
+CA1 ca 0 {CA}
+Rs1 out_buck ca {Rs}
+Rpar1 sw_buck 0 20k
+Cpar1 sw_buck 0 400p
+RL1 out_buck 0 {RL}
+V1 E 0 20 Rser=1m
+I1 out_buck 0 {IL}
+S2 0 0 sw_load 0 sw
+V3 sw_load 0 PULSE(0 1 3m {trf} {trf} 3m)
+E1 N001 0 out_buck 0 1
+R1 out_buck_fil N001 330
+C1 out_buck_fil 0 100n
+E2 As 0 sw_load 0 Laplace=(1+s*Rs*CA)/(1+s*(Rs*Ca+L1/RL)+s**2*L1*CA*(1+Rs/RL))
+R2 N009 N010 100k
+R3 N010 Pout 10k
+XU1 N010 saw N009 0 comp_oc Iout=15m Cfilt=1p
+R4 N003 N009 9.5k
+R5 N009 0 2.5k
+V5 N003 0 12
+XU2 soll N006 Pout opamp_param_3 Vp=10 Vm=-5 Ilim=20m FT=10Meg SR=10 Vos=0 A0=100k phir=45 en=0 enk=0 in=0 ink=0 Rin=500Meg
+R6 N008 N007 1µ
+Rstell N007 N006 {Kr*2.2k}
+R7 N006 out_buck 2.2k
+V6 soll 0 {Vref}
+C2 N008 Pout 47n
+R8 N008 Pout 1µ
+Q1 E N002 N005 0 BC547C
+Q2 0 N002 N005 0 BC556B
+RGate G N005 20
+R9 E N002 5.6k
+D2 N002 E BZX84C15L
+Q3 N002 Kompout N011 0 BC547B
+R10 N011 0 470
+R11 0 saw 1k
+V2 saw 0 PULSE(4 8 0 30u 3.3u 1p 33.3u)
+R12 Kompout N009 1m
+R13 E N004 1µ
+M1 sw_buck G N004 N004 BSS84
+.model D D
+.lib C:\Program Files (x86)\LTC\LTspiceIV\lib\cmp\standard.dio
+.model NPN NPN
+.model PNP PNP
+.lib C:\Program Files (x86)\LTC\LTspiceIV\lib\cmp\standard.bjt
+.model NMOS NMOS
+.model PMOS PMOS
+.lib C:\Program Files (x86)\LTC\LTspiceIV\lib\cmp\standard.mos
+.model sw  vswitch {Roff=1T Ron=1m Von=0.7 Voff=0.3 vh=-0.5}
+.param fsw={1/33.3u}
+.param RL=10
+.param trf=100n
+.param Rs=200m
+.param L1=100u
+.param CA=100u
+.param p=0.25
+.param IL=1.7
+.param N=4
+;.tran 0 20m {20m-N*33.3u}
+.tran 0 10m 0 
+;ac oct 100 1 1meg
+* .step param Rs list 100m 1m 500u
+.model Dx D {Ron=1m Roff=1T Vfwd=0.4}
+* .step param Rs list 1p 200m
+* .step param RL list 1T 10
+.param Vref=6
+.param Kr=0.25
+.lib EIT_sub\opamp_parametrierbar.sub
+.backanno
+.end

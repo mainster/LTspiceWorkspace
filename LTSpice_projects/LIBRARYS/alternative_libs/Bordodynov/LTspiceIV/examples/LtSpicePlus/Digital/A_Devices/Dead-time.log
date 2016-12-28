@@ -1,0 +1,24 @@
+Circuit: * C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\examples\LtSpicePlus\Digital\A_Devices\Dead-time.asc
+
+WARNING: Less than two connections to node A.  This node is used by A2.
+WARNING: Less than two connections to node B.  This node is used by A3.
+Direct Newton iteration for .op point succeeded.
+
+Date: Mon Feb 09 11:34:56 2015
+Total elapsed time: 0.017 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 2958
+traniter = 2954
+tranpoints = 1440
+accept = 1326
+rejected = 114
+matrix size = 7
+fillins = 0
+solver = Normal
+Matrix Compiler1: 106 bytes object code size  0.2/0.1/[0.1]
+Matrix Compiler2: 291 bytes object code size  0.2/0.2/[0.1]
+
+

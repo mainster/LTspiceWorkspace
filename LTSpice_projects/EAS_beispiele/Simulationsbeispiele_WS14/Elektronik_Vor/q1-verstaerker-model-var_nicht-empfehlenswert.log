@@ -1,0 +1,43 @@
+Circuit: * Z:\home\koblitz\Simulationsbeispiele_WS14\Elektronik_Vor\q1-verstaerker-model-var_nicht-empfehlenswert.asc
+
+Direct Newton iteration for .op point succeeded.
+Semiconductor Device Operating Points:
+                        --- Bipolar Transistors ---
+Name:       q1
+Model:    mein_q
+Ib:       1.00e-05
+Ic:       5.00e-04
+Vbe:      7.56e-01
+Vbc:     -3.24e+00
+Vce:      4.00e+00
+BetaDC:   5.00e+01
+Gm:       1.93e-02
+Rpi:      2.59e+03
+Rx:       0.00e+00
+Ro:       7.54e+68
+Cbe:      0.00e+00
+Cbc:      0.00e+00
+Cjs:      0.00e+00
+BetaAC:   5.00e+01
+Cbx:      0.00e+00
+Ft:       0.00e+00
+
+
+
+Date: Wed Nov 05 09:32:14 2014
+Total elapsed time: 0.190 seconds.
+
+tnom = 27
+temp = 27
+method = trap
+totiter = 10
+traniter = 0
+tranpoints = 0
+accept = 0
+rejected = 0
+matrix size = 7
+fillins = 0
+solver = Normal
+Matrix Compiler1: 196 Bytes object code size
+Matrix Compiler2: 453 Bytes object code size
+

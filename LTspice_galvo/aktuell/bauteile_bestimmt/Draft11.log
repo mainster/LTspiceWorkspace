@@ -1,0 +1,22 @@
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\galvoscanner\aktuell\bauteile_bestimmt\Draft11.asc
+
+Direct Newton iteration for .op point succeeded.
+
+Date: Sat Aug 08 06:26:18 2015
+Total elapsed time: 0.040 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 2092
+traniter = 2088
+tranpoints = 1045
+accept = 1045
+rejected = 0
+matrix size = 10
+fillins = 0
+solver = Normal
+Matrix Compiler1: 238 bytes object code size  0.3/0.2/[0.2]
+Matrix Compiler2: 558 bytes object code size  0.2/0.2/[0.2]
+
+

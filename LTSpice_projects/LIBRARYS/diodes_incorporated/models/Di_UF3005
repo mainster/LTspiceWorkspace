@@ -1,0 +1,3 @@
+*SRC=UF3005;DI_UF3005;Diodes;Si;  600V  3.00A  75.0ns   Diodes Inc. Ultra-Fast Rectifier
+.MODEL Di_UF3005 D  ( IS=4.50u RS=14.1m BV=600 IBV=10.0u
++ CJO=92.5p  M=0.333 N=4.29 TT=108n )

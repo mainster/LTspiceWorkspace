@@ -1,0 +1,42 @@
+Stray ".ends" card: .ends
+Stray ".ends" card: .ends
+Stray ".ends" card: .ends
+Circuit: * Z:\home\koblitz\Simulationsbeispiele_SS15\elektronik_vor\q1-kse-1.asc
+
+Direct Newton iteration for .op point succeeded.
+Fourier components of V(out)
+DC component:0.000688532
+
+Harmonic	Frequency	 Fourier 	Normalized	 Phase  	Normalized
+ Number 	  [Hz]   	Component	 Component	[degree]	Phase [deg]
+    1   	1.000e+04	2.520e-01	1.000e+00	 -179.31°	    0.00°
+    2   	2.000e+04	9.396e-04	3.728e-03	   90.22°	  269.52°
+    3   	3.000e+04	6.237e-06	2.475e-05	 -175.51°	    3.80°
+    4   	4.000e+04	2.171e-06	8.615e-06	   13.15°	  192.46°
+    5   	5.000e+04	4.014e-06	1.593e-05	  140.95°	  320.25°
+    6   	6.000e+04	3.471e-06	1.377e-05	    8.33°	  187.64°
+    7   	7.000e+04	6.953e-06	2.759e-05	  -12.53°	  166.77°
+    8   	8.000e+04	1.302e-06	5.166e-06	   89.07°	  268.38°
+    9   	9.000e+04	4.296e-06	1.704e-05	  130.39°	  309.69°
+Total Harmonic Distortion: 0.372839%
+
+
+
+Date: Wed May 20 09:58:56 2015
+Total elapsed time: 0.126 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 2168
+traniter = 2161
+tranpoints = 1080
+accept = 1052
+rejected = 28
+matrix size = 9
+fillins = 0
+solver = Normal
+Matrix Compiler1: 394 Bytes object code size  2.2/2.2/[1.7]
+Matrix Compiler2: off  [2.0]/2.3/2.6
+
+

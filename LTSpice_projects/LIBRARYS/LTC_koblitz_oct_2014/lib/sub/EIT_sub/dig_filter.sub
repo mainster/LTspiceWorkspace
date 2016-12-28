@@ -1,0 +1,24 @@
+*Digital Filter elemente
+*
+.subckt delay in out
+B1 out 0 V=delay(v(in),td)
+.ends delay
+*
+.subckt add_2 in1 in2 out
+r1 out 0 1k
+G1 0 out in1 0  1m
+G2 0 out in2 0  1m
+.ends add_2
+*
+.subckt add_3 in1 in2 in3 out
+r1 out 0 1k
+G1 0 out in1 0  1m
+G2 0 out in2 0  1m
+G3 0 out in3 0  1m
+.ends add_2
+*
+.subckt factor in1 out
+r1 out 0 {1k*A}
+G1 0 out in1 0  1m
+.param A=1 
+.ends factor

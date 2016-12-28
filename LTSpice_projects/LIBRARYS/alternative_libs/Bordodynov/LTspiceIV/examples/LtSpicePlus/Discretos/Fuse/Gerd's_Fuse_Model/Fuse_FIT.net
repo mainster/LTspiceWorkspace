@@ -1,0 +1,117 @@
+* D:\_VAIO_LTSPICE\0\4 Gerds fuse\Fuse_Fit_littelfuse\Fuse_FIT.asc
+D2 1 N001 Dcl
+V1 N001 0 10
+XX7 1 0 fuse_model_nn
+XX8 2 0 fuse_model_nn
+XX9 3 0 fuse_model_nn
+XX10 4 0 fuse_model_nn
+XX11 5 0 fuse_model_nn
+XX12 6 0 fuse_model_nn
+D1 2 N001 Dcl
+D3 3 N001 Dcl
+D4 4 N001 Dcl
+D5 5 N001 Dcl
+D6 6 N001 Dcl
+Vtreference Tw 0 PWL(0 {vtw0} {t1w-t1w*wf} {vtw0} {t1w} {vtw} {t1w+t1w*wf} {vtw0} {t2w-t2w*wf} {vtw0} {t2w} {vtw} {t2w+t2w*wf} {vtw0} {t3w-t3w*wf} {vtw0} {t3w} {vtw} {t3w+t3w*wf} {vtw0} {t4w-t4w*wf} {vtw0} {t4w} {vtw} {t4w+t4w*wf} {vtw0} {t5w-t5w*wf} {vtw0} {t5w} {vtw} {t5w+t5w*wf} {vtw0} {t6w-t6w*wf} {vtw0} {t6w} {vtw} {t6w+t6w*wf} {vtw0})
+I2 0 2 {I2}
+I3 0 3 {I3}
+I4 0 4 {I4}
+I5 0 5 {I5}
+I6 0 6 PULSE(0 {I6} 0 1n 1n 1E6)
+I1 0 1 {I1}
+
+* block symbol definitions
+.subckt fuse_model_nn A B
+V2 N004 N005 0
+BdTemp 0 dTemp I=I(V2)*I(V2)*R0*(1+ALPHA*ABS(V(dTemp)))
+R_th1 dTemp N001 {R_TH1}
+C_th1 dTemp 0 {C_TH1}
+S1 N005 B Qneg 0 SW1
+R_th2 N001 N002 {R_TH2}
+C_th2 N001 0 {C_TH2}
+A1 set_break 0 0 0 0 Qneg 0 0 SRFLOP
+C_th3 N002 0 {C_TH3}
+Bbreak 0 set_break I=1m
+R3 set_break 0 1k
+R_th3 N002 N003 {R_TH3}
+B1 A N004 V=I(V2)*{R0}*(1+{ALPHA}*V(dTemp))
+V1 N003 0 {T_AMB}
+S2 set_break 0 dTemp 0 SW2
+V3 cl1 0 PULSE(0 {dT_MAX+2} 10n 10n 10n 1E5)
+D1 dTemp cl1 Dcl1
+.MODEL SW1 SW(Ron=1u Roff=1G Vt=0.5 Vh=-0.4)
+.param dT_MAX=1000        ; Melting temperature
+.param T_AMB=0                ; Ambient temperature
+.param P_BREAK=R_BREAK*I_BREAK*I_BREAK
+.param R_TH=(dT_MAX/P_BREAK)
+.param ALPHA=(R_BREAK-R0)/R0/dT_MAX
+.param R_TH1=R_TH*gth1
+.param R_TH2=R_TH*gth2
+.param R_TH3=R_TH*(1-gth1-gth2)
+.param C_TH1=TAU1/R_TH1
+.param C_TH2=TAU2/R_TH2
+.param C_TH3=TAU3/R_TH3
+.MODEL SW2 SW(Ron=1G Roff=1m Vt={dT_MAX} Vh=1m)
+.model Dcl1 D(Vfwd=0 Ron=1u Roff=1G)
+.ends fuse_model_nn
+
+.model D D
+.lib C:\PROGRA~1\LTC\LTSPIC~1\lib\cmp\standard.dio
+.tran {tstop}
+.options plotwinsize=0
+.param gth1=0.02 gth2=0.725 ;rel.weight of therm.time-constants
+.param R0=0.153    ;R_fuse at no current
+.param R_BREAK=0.153 ;R_fuse before breaking (not known)
+.param I2t=0.459  ; A**2 *t
+*
+;--- currents and specified opening times:
+.params I1 = 23.5  t1w=1m
+;   .params I1 = 30  t1w=I2t/30/30
+;  .params I2= 12.5 t2w=3m
+.params I2= 15.6 t2w=2m
+.params I3=6.9 t3w=10m
+.params I4=2.37 t4w=100m
+.params I5=1.52 t5w=1
+.params I6=1.405 t6w=10
+ *
+*--- fuse model time constants and breaking_current(t->inf)
+;.params TAU1opt=4.7m TAU2opt=4.1m TAU3opt=0.8 IBopt=1.404
+.params TAU1opt=1.5m TAU2opt=3m TAU3opt=0.2 IBopt=1.405
+*-- model parameters to be replaced by the optimizer:
+.params TAU1={TAU1opt}  ;range usec
+.params TAU2={TAU2opt}  ;range msec
+.params TAU3={TAU3opt}  ;range seconds
+.params I_BREAK={IBopt}  ;set optimizer limits < +/-5%, iterate init-values!
+*--- measuring opening times ( like this because a result is needed
+*   also when fuse fails to open! )
+.meas tran v1max max V(1) targ time val=tstop*0.95
+.meas tran t1 find time when V(1)=v1max rise=1
+.meas tran v2max max V(2) targ time val=tstop*0.95
+.meas tran t2 find time when V(2)=v2max rise=1
+.meas tran v3max max V(3) targ time val=tstop*0.95
+.meas tran t3 find time when V(3)=v3max
+.meas tran v4max max V(4) targ time val=tstop*0.95
+.meas tran t4 find time when V(4)=v4max
+.meas tran v5max max V(5) targ time val=tstop*0.95
+.meas tran t5 find time when V(5)=v5max
+.meas tran v6max max V(6) targ time val=tstop*0.95
+.meas tran t6 find time when V(6)=v6max
+*---relative deviations of measured opening times
+.meas tran d1 param (t1-t1w)/t1w
+.meas tran d2 param (t2-t2w)/t2w
+.meas tran d3 param (t3-t3w)/t3w
+.meas tran d4 param (t4-t4w)/t4w
+.meas tran d5 param (t5-t5w)/t5w
+.meas tran d6 param (t6-t6w)/t6w
+*--deviations for long  opening times are weighted less
+.meas cost param d1**2+d2**2+d3**2
++ +0.4*d4**2 +0.2*d5**2 +0.05*d6**2
+.model Dcl D(Vfwd=0)
+;set tstop >=2 * max_opening_time considered
+.param tstop=30
+* Fuse data:\nLittelfuse R451/0453, Inom=1A\nData from t(I)-graph:\n1ms 23.5A\n2ms 15.6A\n3ms 12.5A\n5ms 9A\n10ms 6.9A\n100ms 2.37A\n200ms 1.9A\n1s 1.52A\n3s 1.42A\n10s 1.405A\n1E4s 1.405A
+* Optimizing a Fuse based on the Model by Helmut Sennewald, june-05\nUsing Friedrich Schmitt's PERL optimizer. G.Mi/June-05
+;parameters for reference scale
+.params vtw=6 vtw0=3 wf=0.15 ;+/-rel. width 15%
+.backanno
+.end

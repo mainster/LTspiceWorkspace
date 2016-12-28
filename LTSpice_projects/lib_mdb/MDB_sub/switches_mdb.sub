@@ -1,0 +1,39 @@
+* Switches including model
+*
+* 14-02-2015 MDB
+*
+*******************************************************************************
+* Doble control voltage connection - switch including sw model 
+*******************************************************************************
+* Ron=1m  Roff=100meg  Vt=.5  Vh=-.25  Lser=10n  Vser=.0
+*******************************************************************************
+.subckt sw1_mdb con1 con2 ctrlp ctrlm 
+S1 con1 con2 ctrlp ctrlm SWx1
+R11 ctrlp ctrlm 1e9
+.model SWx1 SW(Ron={Ron} Roff={Roff} Vt={Vt} Vh={Vh} Lser={Lser} Vser={Vser}) 
+.ENDS
+
+*******************************************************************************
+* Single control voltage connection
+*******************************************************************************
+* Ron=1m  Roff=100meg  Vt=.5  Vh=-.25  Lser=10n  Vser=.0
+*******************************************************************************
+.subckt sw3_mdb_sing con1 con2 ctrlp 
+S1 con1 con2 ctrlp 0 SWx3
+R11 ctrlp 0 1e9
+.model SWx3 SW(Ron={Ron} Roff={Roff} Vt={Vt} Vh={Vh} Lser={Lser} Vser={Vser}) 
+.ENDS
+
+*******************************************************************************
+* Doble control voltage connection - AC coupled switch
+*******************************************************************************
+* Ron=1m  Roff=100meg  Vt=.5  Vh=-.25  Lser=10n  Vser=.0
+* Cser=10u 
+*******************************************************************************
+.subckt sw_ac_mdb con1 con2 ctrlp ctrlm 
+S1 con1 n001 ctrlp ctrlm SWx4
+C1 n001 con2 {Cser}
+R11 ctrlp ctrlm 1e9
+.model SWx4 SW(Ron={Ron} Roff={Roff} Vt={Vt} Vh={Vh} Lser={Lser} Vser={Vser}) 
+.param Cser=10u
+.ENDS

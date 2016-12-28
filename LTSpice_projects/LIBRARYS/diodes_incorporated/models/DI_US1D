@@ -1,0 +1,3 @@
+*SRC=US1D;DI_US1D;Diodes;Si;  200V  1.00A  50.0ns   Diodes Inc. -
+.MODEL DI_US1D D  ( IS=667n RS=72.0m BV=200 IBV=5.00u
++ CJO=37.0p  M=0.333 N=2.41 TT=72.0n )

@@ -1,0 +1,78 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\koblitz_EAS_klausuren\ss12_jfet_in_opamp_nosmallsig.asc
+Q3 N018 N018 Vmin 0 Nx
+R§I1 N015 N018 100e-6
+R§I2 N014 N016 100e-6
+R§I1_ N016 N020 100e-6
+R§Idv B6 N016 100e-6
+C1 B8 B6 15.4p Rser=1
+Q8 Vmin B8 out 0 P12
+J1 N015 in- cs pj_
+J2 N014 in+ cs pj_
+Q4 N020 N018 Vmin 0 Nx
+Q6 B8 B6 Vmin 0 Nx
+Q9 N007 bb e9 0 P9
+Q10 N008 bb e10 0 P10
+R6 e10 e9 596
+Q11 N009 bb e10 0 P11
+Q12 N010 bb Vplus 0 P12
+R10 Vplus e10 25.6
+R2 N017 Vmin {R2}
+XU1 Vplus vdc_single V={Vplus}
+XU2 Vmin vdc_single V={Vmin}
+R§IR2 bb N017 100e-6
+V1 in+ 0 SINE(0 1 {f0})
+R4 N022 0 1
+XU3 rnd vdc_single V={1/rnd}
+R5 out in- 1k
+R§Ic10 N008 bb 100e-6
+XU7 rndu vdc_single V={1/rndu}
+XU5 N017 Vmin N021 diff2comm rnd=1m
+XU6 e10 bb N004 diff2comm rnd=1m
+XU12 e10 bb N005 diff2comm rnd=1m
+XU13 Vplus bb N006 diff2comm rnd=1m
+XU14 out B8 N013 diff2comm rnd=1m
+XU15 Vplus e10 N002 diff2comm rnd=1m
+XU16 e10 e9 N001 diff2comm rnd=1m
+R§Ic12 N010 out 100e-6
+R§Ic11 N009 B8 100e-6
+XU4 N018 Vmin N023 diff2commDC rnd=1m
+XU17 in+ cs N012 diff2comm rnd=10m
+XU18 in- cs N011 diff2comm rnd=10m
+XU19 e9 bb N003 diff2comm rnd=1m
+XU22 in- isoR0 Riso=100meg
+XU20 in+ isoR0 Riso=100meg
+XU23 B6 Vmin N019 diff2comm rnd=1m
+R§I0 N007 cs 100e-6
+.model NPN NPN
+.model PNP PNP
+.lib C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\lib\cmp\standard.bjt
+.model NJF NJF
+.model PJF PJF
+.lib C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\lib\cmp\standard.jft
+.param jfetin=1
++ Vplus = 5V
++ Vmin = -5V
++ f0 = 1k
++ Veb0 = .6V
++ R2 = 8.95k
+.tran 0 {100/f0} {97/f0}
+.model pj_ PJF (beta=.333m VT0=-2V lambda = .015)
+.model P9 PNP (Is={Ic09/exp(Veb0/26m)} BF=200); VA=80V)
+.model P10 PNP (Is={Ic010/exp(Veb0/26m)} BF=200 )
+.model P11 PNP (Is={Ic011/exp(Veb0/26m)} BF=200 )
+.model P12 PNP (Is={Ic012/exp(Veb0/26m)} BF=200 )
+.model Nx NPN (Is={Ic03/exp(Veb0/26m)} BF=200 VA=80V Cjc=1p)
+.param rnd=10u
+.param rndu=.1u
+.param IcAp=1
++ Ic09 = 100uA
++ Ic010 = 1mA
++ Ic011 = 1mA
++ Ic012 = {8mA/1}
++ Ic03 = {Ic09/2}
+.op
+.lib EIT_sub/vdc_single.sub
+.lib MDB_sub/diff2comm.sub
+.lib MDB_sub/isoR0.sub
+.backanno
+.end

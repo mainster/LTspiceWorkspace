@@ -1,0 +1,104 @@
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\galvoscanner\aktuell\LM675_power_op_v2.asc
+
+WARNING: Less than two connections to node NC_01.  This node is used by E3.
+WARNING: Less than two connections to node MUTE2.  This node is used by D:U2:7.
+Early termination of direct N-R iteration.
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Increasing initial diagonal Gmin to 100
+Gmin = 100
+vernier = 0.5
+vernier = 0.25
+vernier = 0.125
+vernier = 0.0625
+Gmin = 71.1111
+vernier = 0.03125
+vernier = 0.015625
+vernier = 0.0078125
+vernier = 0.00390625
+Gmin = 69.9488
+vernier = 0.00195313
+vernier = 0.000976563
+vernier = 0.000488281
+Gmin = 0
+Gmin = 0
+Gmin stepping failed
+
+Starting source stepping with srcstepmethod=0
+Source Step = 3.0303%
+Source Step = 8.35701%
+Source Step = 8.47538%
+Source Step = 8.59375%
+Source Step = 8.71212%
+Source Step = 8.83049%
+vernier = 0.00585938
+Source Step = 8.95478%
+Source Step = 9.13234%
+Source Step = 9.3099%
+Source Step = 9.48745%
+Source Step = 9.66501%
+Source Step = 9.84257%
+vernier = 0.00878906
+Source Step = 10.1089%
+Source Step = 10.3752%
+Source Step = 10.6416%
+Source Step = 10.9079%
+Source Step = 11.1742%
+vernier = 0.0131836
+Source Step = 11.5604%
+Source Step = 11.9599%
+Source Step = 12.3594%
+Source Step = 12.7589%
+Source Step = 13.1584%
+vernier = 0.0197754
+Source Step = 13.7177%
+Source Step = 14.317%
+Source Step = 14.9163%
+Source Step = 15.5155%
+Source Step = 16.1148%
+vernier = 0.0296631
+Source Step = 16.9238%
+Source Step = 17.8226%
+Source Step = 18.7215%
+Source Step = 19.6204%
+Source Step = 20.5193%
+vernier = 0.0444946
+Source Step = 21.6878%
+Source Step = 23.0361%
+Source Step = 24.3845%
+Source Step = 25.7328%
+Source Step = 27.0811%
+vernier = 0.0667419
+Source Step = 28.7665%
+Source Step = 30.789%
+Source Step = 32.8115%
+Source Step = 34.834%
+Source Step = 36.8564%
+vernier = 0.100113
+Source Step = 39.2834%
+Source Step = 42.3172%
+Source Step = 45.3509%
+Source Step = 48.3846%
+Source Step = 51.4183%
+vernier = 0.150169
+Source Step = 54.9071%
+Source Step = 59.4577%
+Source Step = 64.0083%
+Source Step = 68.5589%
+Source Step = 73.1095%
+vernier = 0.225254
+Source Step = 78.1151%
+Source Step = 84.941%
+Source Step = 91.7669%
+Source Step = 98.5927%
+Source stepping succeeded in finding the operating point.
+
+Changing Tseed to 5.85938e-010
+Changing Tseed to 5.85938e-012
+Changing Tseed to 5.85938e-009
+Changing Tseed to 5.85938e-013
+Changing Tseed to 5.85938e-008
+Changing Tseed to 5.85938e-014
+Changing Tseed to 5.85938e-007
+Heightened Def Con from 6.17545e-007 ++++++++++++++++++++++++++++++++++++++++++++++++++Fatal Error: Analysis:  Time step too small; time = 6.17545e-007, timestep = 1.25e-019: trouble with u2:pnp-instance q:u2:17
+

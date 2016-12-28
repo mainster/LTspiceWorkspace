@@ -1,0 +1,39 @@
+Stray ".ends" card: .ends
+Circuit: * C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\examples\Robertugo\OpAmp\Triang2Opamp.asc
+
+Direct Newton iteration for .op point succeeded.
+Heightened Def Con from 0.0027592 to 0.00275921
+Heightened Def Con from 0.00869377 to 0.00869377
+Heightened Def Con from 0.0134095 to 0.0134095
+Heightened Def Con from 0.0193581 to 0.0193581
+Heightened Def Con from 0.0347062 to 0.0347062
+Heightened Def Con from 0.0378298 to 0.0378298
+Heightened Def Con from 0.0378614 to 0.0378614
+Heightened Def Con from 0.0453578 to 0.0453578
+Heightened Def Con from 0.056008 to 0.056008
+Heightened Def Con from 0.0590807 to 0.0590807
+Heightened Def Con from 0.0619409 to 0.0619409
+Heightened Def Con from 0.0619491 to 0.0619491
+Heightened Def Con from 0.0619555 to 0.0619555
+Heightened Def Con from 0.0773072 to 0.0773072
+Heightened Def Con from 0.0938973 to 0.0938973
+Heightened Def Con from 0.09861 to 0.09861
+
+Date: Mon Feb 09 12:09:48 2015
+Total elapsed time: 0.233 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 21757
+traniter = 21754
+tranpoints = 5642
+accept = 4283
+rejected = 1375
+matrix size = 14
+fillins = 4
+solver = Normal
+Matrix Compiler1: 1.02 KB object code size  0.7/0.4/[0.2]
+Matrix Compiler2: 1.52 KB object code size  0.4/0.4/[0.3]
+
+

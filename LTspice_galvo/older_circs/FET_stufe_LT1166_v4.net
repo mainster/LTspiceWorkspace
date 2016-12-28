@@ -1,0 +1,69 @@
+* C:\users\mainster\My Documents\CODES_local\LTSpice_projects\galvoscanner\FET_stufe_LT1166_v4.asc
+XU1 N001 Vin Vout+ N009 N007 N006 N004 N003 LT1166
+V1 Vplus 0 {Vsup}
+V2 Vmin 0 {-Vsup}
+C1 N001 0 300p
+R3 N002 N001 1
+M1 Vplus N002 N003 N003 IRFP240
+C2 N004 Vout+ 1µ
+C3 Vout+ N006 1µ
+C4 N009 0 300p
+R4 N010 N009 100
+M2 Vmin N010 N007 N007 IRFP9240
+R7 N003 Vout+ 0.2
+R8 Vout+ N007 0.2
+R9 N008 N011 2
+R11 Vin opOut 1k
+R12 N003 N004 1k
+R13 N006 N007 1k
+V3 Vir 0 PULSE(0 1 0 5m 5m 0 30m)
+XU3 0 N005 Vopp Vopm opOut level.2 Avol=1Meg GBW=10Meg Slew=10Meg ilimit=25m rail=0 Vos=0 phimargin=45 en=0 enk=0 in=0 ink=0 Rin=500Meg
+R14 N005 N011 5k
+R15 N011 0 0.1
+R16 N005 gen 10k
+V4 Vopp 0 {Vop}
+V5 Vopm 0 {-Vop}
+I1 Vplus N001 {Is}
+I2 N009 Vmin {Is}
+V6 Vif 0 PULSE(0 -1 15m 5m 5m 0 30m)
+B1 NC_01 0 V=V(Vir)+V(Vif)
+L1 Vout+ N008 180µ
+V7 gen 0 PULSE(-1 1 0 10u 10u 10m 20m)
+XU2 N013 N014 Vopp Vopm outOp2 level.2 Avol=1Meg GBW=10Meg Slew=10Meg ilimit=25m rail=0 Vos=0 phimargin=45 en=0 enk=0 in=0 ink=0 Rin=500Meg
+V8 N013 0 PULSE(-1 1 0 10m 10m 0 20m)
+Q1 Vplus NC_02 N012 0 NPN
+Q2 Vmin NC_03 N016 0 PNP
+R1 N015 N016 10
+R6 N012 N015 10
+G1 0 out2 outOp2 0 100µ
+R10 out2 0 300k
+R5 out2 N017 50k
+R18 N017 0 1k
+G2 0 N014 N017 0 0.75
+R2 N014 0 1
+E1 N019 0 N018 0 Laplace=(BEM*(CR*KTR+(CR*FR+KTR*TE)*s+(CR*TM+TE*CR)*s**2+TM*TE*CR*s**3)+TRC)/((CR*KTR+(CR*FR+KTR*TE)*s+(CR*TM+TE*CR)*s**2+TM*TE*CR*s**3))
+V9 N018 0 PULSE(-1 1 0 10m 10m 0 20m)
+.model NPN NPN
+.model PNP PNP
+.lib C:\Program Files (x86)\LTC_orig\LTspiceIV_4.18\lib\cmp\standard.bjt
+.model NMOS NMOS
+.model PMOS PMOS
+.lib C:\Program Files (x86)\LTC_orig\LTspiceIV_4.18\lib\cmp\standard.mos
+.param VSUP=25
+.param Vop=15
+.param Is=10m
+.tran 100m startup
+* .step param Is 10m 30m 5m
+.param KTR=47m
+.param TRC=15m
+.param BEM=7m
+.param FR=4u
+.param RIN=1.25e-8
+.param CR=1.8
+.param CL=180u
+.param TE=0.00001
+.param TM=0.00001
+.lib LTC.lib
+.lib UniversalOpamps2.sub
+.backanno
+.end

@@ -1,0 +1,109 @@
+* Z:\media\storage\CODES_ln\LTSpice_projects\galvoscanner\ampl_vergl_mos_endstufe.asc
+R1 N013 in 50
+Q1 N002 N006 N008 0 BC547B
+R2 N008 Isink1 22.1
+R3 N009 Isink1 22.1
+R4 LM334 N018 22.1
+R5 LM334 N019 22.1
+Q2 N021 N006 N018 0 BC560C
+Q3 N023 N007 N019 0 BC560C
+R8 Vplus N002 2k
+R9 Vplus N005 2k
+R10 N021 Vmin 2k
+R11 N023 Vmin 2k
+V1 in 0 SINE(0 1 {fsin} {1/(10*fsin)}) AC 1
+V2 Vplus 0 {vsup}
+V3 Vmin 0 {-vsup+1}
+Q6 N005 N007 N009 0 BC547B
+M1 out_B Gn Vmin Vmin IRFP240
+M2 out_B Gp Vplus Vplus IRFP9240
+I5 0 Gnref 10m
+R18 Gn N021 10
+R19 Gp N002 10
+Rload N015 N011 2
+R20 N011 N007 1k
+M4 Gnref Gnref 0 0 IRFP240
+M5 Gpref Gpref 0 0 IRFP9240
+I7 Gpref 0 10m
+Q§T1 Vplus N004 Gn1 0 npnx
+Q§T2 Vmin N020 Gp1 0 pnpx
+R12 Gn1 Sn1 100
+R13 Sp1 Gp1 100
+R14 N004 N010 1k
+R15 N017 N020 1k
+D1 N010 N012 Dx
+D2 N012 N017 Dx
+Rload1 N016 0 2
+R16 Sn1 out_A 1µ
+R17 out_A Sp1 1µ
+I3 N020 Vmin 4.25m
+I4 Vplus N004 4.27m
+M3 Vplus Gn1 Sn1 Sn1 IRFP240
+M6 Vmin Gp1 Sp1 Sp1 IRFP9240
+XU1 N022 Vmin N024 TL431
+R26 Vplus N022 4.7k
+Q9 Isink1 N022 N024 0 BC550C
+R28 N024 Vmin 613
+XU2 Vplus N003 N001 LM334
+R31 N001 N003 45.3
+D3 N003 LM334 1N914
+R32 N001 LM334 284
+R22 N006 N013 50
+C1 N011 N007 100p
+R6 N013 0 10T
+XU3 in N014 N012 opamp_param_3 Vp=25 Vm=-25 Ilim=20m FT=10Meg SR=10 Vos=0 A0=100k phir=45 en=0 enk=0 in=0 ink=0 Rin=500Meg
+R7 N016 N014 6k
+R23 N014 0 2k
+C2 N016 N014 220p
+L1 out_B N015 100µ
+XU4 N028 N029 outLM opamp_param_3 Vp=25 Vm=-25 Ilim=3 FT=5.5Meg SR=8 Vos=0 A0=100k phir=45 en=0 enk=0 in=0 ink=0 Rin=500Meg
+R24 outLM N033 1
+R25 N034 N036 2
+L2 outLM N034 100µ
+R27 N036 0 0.1
+R29 N028 in 1k
+R30 N032 N028 150
+R33 N036 N029 1k
+C3 N029 N032 2.2n
+C4 outLM N029 100p
+C5 0 N033 220n
+L3 out_A N016 100µ
+Rload2 N011 0 0.1
+XU5 Vplus N035 N030 LM334
+R21 N030 N035 17.2
+R34 N035 0 2k
+XU6 N026 Vmin N027 TL431
+R35 Vplus N026 4.7k
+Q4 N025 N026 N031 0 BC550C
+R36 N031 Vmin 300
+R37 0 N025 2k
+V4 N027 N031 1.25
+.model D D
+.lib Z:\home\mainster\.wine\drive_c\Program Files (x86)\LTC\LTspiceIV\lib\cmp\standard.dio
+.model NPN NPN
+.model PNP PNP
+.lib Z:\home\mainster\.wine\drive_c\Program Files (x86)\LTC\LTspiceIV\lib\cmp\standard.bjt
+.model NMOS NMOS
+.model PMOS PMOS
+.lib Z:\home\mainster\.wine\drive_c\Program Files (x86)\LTC\LTspiceIV\lib\cmp\standard.mos
+.param ksq=4.1m
+* .temp 27 77
+.model npnx npn (Bf=200 Is={10m/exp(0.7/26m)}
+.model pnpx pnp (Bf=200 Is={10m/exp(0.7/26m)}
+.model Dx D (Is={(20*50u)/exp(0.7/26m)}
+.param fsin=50k
+;tran  {4/fsin}
+* tempco of 1N914 measured:\n-1.66702mV/K
+* Feedback
+* A0=1+R20/R21
+.param R23=2k
+.param R21=100
+.dc v1 -1 1 0.01
+* I_out=(V_R/R_set)*(n/(n-1))\nR_set=(n*V_R)/(I_out*(n-1)\nV_R=214uV/K*300k
+.param vsup=25
+.step param vsup  list 25 12
+.lib EIT_sub\opamp_parametrierbar.sub
+.lib LM334.sub
+.lib tl431.sub
+.backanno
+.end

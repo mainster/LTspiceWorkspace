@@ -1,0 +1,21 @@
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\oscillators\Draft1.asc
+
+WARNING: Node XC is floating.
+
+WARNING: Less than two connections to node RP.  This node is used by V:U1:1.
+
+Date: Mon Apr 25 19:40:45 2016
+Total elapsed time: 0.055 seconds.
+
+tnom = 27
+temp = 27
+method = trap
+totiter = 0
+traniter = 0
+tranpoints = 0
+accept = 0
+rejected = 0
+matrix size = 13
+fillins = 1
+solver = Normal
+

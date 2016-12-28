@@ -1,0 +1,25 @@
+* E:\data_raid_back\mainster\DATAPOOL\TRANSFER\CODES\LTSpice_projects\Push_pull_convetrer.asc
+V1 N006 0 12V Rser=10m
+V2 N002 0 PULSE(0 12 0 50n 50n 1u 10u)
+V3 N008 0 PULSE(0 12 1.05u 50n 50n 1u 10u)
+L1 N001 N006 70µ Rser=1m
+L2 0 N004 1m Rser=1m
+L3 N006 N007 70µ Rser=1m
+M1 N007 N009 0 0 IRFH6200
+M2 N001 N003 0 0 IRFH6200
+R1 N003 N002 2
+R2 N009 N008 2
+D1 N004 N005 MURS320
+C1 N005 0 100µ
+L4 0 N010 1m Rser=10000k
+D2 N010 N005 MURS320
+R3 N005 0 1
+.model D D
+.lib C:\Programme\LTC\LTspiceIV\lib\cmp\standard.dio
+.model NMOS NMOS
+.model PMOS PMOS
+.lib C:\Programme\LTC\LTspiceIV\lib\cmp\standard.mos
+K L1 L2 L3 L4 .995
+.tran 5m
+.backanno
+.end

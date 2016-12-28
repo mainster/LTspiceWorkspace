@@ -1,0 +1,37 @@
+Circuit: * C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\examples\LTspiceWorldTour2011\PulseSkip.asc
+
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Increasing initial diagonal Gmin to 100
+Increasing initial diagonal Gmin to 1000
+Increasing initial diagonal Gmin to 10000
+Increasing initial diagonal Gmin to 100000
+Increasing initial diagonal Gmin to 1e+006
+Initial Gmin=1e+006 failed
+Gmin stepping failed
+
+Starting source stepping with srcstepmethod=0
+Could not converge to DC with sources off!
+Starting source stepping with srcstepmethod=1
+Could not converge to DC with sources off!
+Pseudo Transient failed in finding the operating point.
+Trouble finding operating point....skipping operating point for Transient analysis.
+
+Date: Mon Feb 09 12:04:46 2015
+Total elapsed time: 17.319 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 1770331
+traniter = 0
+tranpoints = 1
+accept = 1
+rejected = 289820
+matrix size = 29
+fillins = 0
+solver = Normal
+Matrix Compiler1: 1.30 KB object code size  0.6/0.4/[0.3]
+Matrix Compiler2: 1.85 KB object code size  0.6/0.8/[0.4]
+
+

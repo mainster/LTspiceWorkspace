@@ -1,0 +1,13 @@
+* Z:\media\data\CODES\LTSpice_projects\messtechnik\Draft8.asc
+R1 N001 A 100
+Rpt A 0 {100*(1+4m*Tm)}
+R3 N001 B 100
+R4 B 0 100
+I1 0 N001 10m
+V1 Tm 0 PWL(0 0 10u 10 20u 10 20.001u 0 30u -10 40u -10 40.001u 0)
+R2 Tm 0 1k
+.param Tm=25
+.tran 40u
+* .step param Tm list 1n 1 10 100
+.backanno
+.end

@@ -1,0 +1,312 @@
+Stray ".ends" card: .ends
+
+   --- Expanded Deck Component Count ---
+A's 3
+B's 2
+C's 19
+D's 18
+G's 3
+I's 7
+L's 1
+M's 2
+Q's 19
+R's 30
+V's 6
+tot: 110
+
+
+    --- Expanded Netlist ---
+* Z:\home\mainster\CODES_local\LTSpice_projects\LIBRARYS\alternative_libs\Bordodynov\LTspiceIV\lib\sym\EXTRA\AudioOpamp\NS\LM3886_MV2LT1363TRANSasc.asc
+q1 v+ n018 n029 0 2n3904
+q2 v+ n003 n006 0 npn
+q3 n010 0 n009 0 2n3904
+q4 v+ n006 n013 0 npn
+q5 n025 n039 n041 0 npn
+q6 n034 n038 n040 0 npn
+q7 n025 n036 n039 0 npn
+q9 n032 n037 n042 0 bf720
+q10 n033 n037 n043 0 bf720
+q11 v+ n032 n037 0 bf720
+q12 v+ n033 n038 0 npn
+q13 n015 n010 n007 0 2n3906
+q14 n017 n011 n007 0 2n3906
+q15 n032 n029 n027 0 qbf723
+q16 n032 n024 n022 0 2n3906
+q18 n033 n023 n021 0 2n3906
+r1 n015 n027 1k1
+d1 n004 n010 d
+d2 n001 n004 d
+r2 v+ n001 1k
+r3 n009 n008 1k
+d3 n008 p001 d
+d4 p001 mute d
+r4 n017 n021 4k7
+r5 n017 n022 4k7
+r6 n023 0 10k
+d5 n005 n011 d
+d6 n002 n005 d
+r7 v+ n002 1k
+q19 n033 n031 n030 0 qbf723
+r8 n015 n030 1k1
+r9 n042 v- 2k2
+r10 n043 v- 2k2
+r11 n040 v- 800
+d7 n036 n040 d
+r12 n041 v- 0.45
+r13 n039 v- 150
+r14 n006 n025 150
+r15 n013 n025 0.45
+d8 n003 n012 d
+d9 n012 n014 d
+d10 n014 n034 d
+q20 n036 n034 n025 0 pnp
+r16 n025 n024 10k
+c1 n025 n033 10pf
+d11 n024 0 d
+d12 0 n024 d
+i1 n029 v- 0.5ma
+i2 n031 v- 0.5ma
+i3 n037 v- 10ma
+i4 n038 v- 5ma
+i5 n011 v- 1ma
+q17 v+ in+ n031 0 2n3904
+r17 n020 0 4
+r18 mute v- 10k
+c2 mute 0 10µf
+v1 n035 0 sine(6.727mv 1 20khz) ac 1
+v2 v+ 0 35
+v3 0 v- 35
+i6 v+ n003 10ma
+i7 v+ n007 1ma
+r21 in+ 0 100
+r22 in+ n019 3k3
+v4 +12v 0 12
+v5 0 -12v 12
+c13 n016 n019 820pf
+r23 n018 in 2k
+c7 n018 0 68pf
+r24 n018 out 41k
+c3 n018 out 12pf
+a:u1:1 n018 0 0 0 0 0 0 0 ota g=0 in=1p ink=200
+c:u1:2 n018 0 .1p rpar=5meg noiseless
+b:u1:1 0 u1:n004 i=10u*dnlim(uplim(v(0),v(+12v)-1.4,.1), v(-12v)+1.6, .1)+1n*v(0)
+b:u1:2 u1:n004 0 i=10u*dnlim(uplim(v(n018),v(+12v)-1.39,.1), v(-12v)+1.59, .1)+1n*v(n018)
+c:u1:9 +12v n018 1.5p rpar=100meg noiseless
+c:u1:10 u1:n004 0 6f rpar=100k noiseless
+m:u1:1 +12v u1:n005 n019 n019 u1:n temp=27
+m:u1:2 -12v u1:n005 n019 n019 u1:p temp=27
+c:u1:3 +12v n019 1p 
+d:u1:5 u1:n005 n019 u1:yu 
+d:u1:6 n019 u1:n005 u1:yd 
+r:u1:2 +12v u1:n006 80meg noiseless 
+r:u1:3 u1:n006 -12v 80meg noiseless 
+c:u1:13 u1:n006 n019 20p rser=200k noiseless
+c:u1:4 n019 -12v 1p 
+c:u1:1 n018 -12v 1.5p rpar=100meg noiseless
+c:u1:6 +12v 0 1.5p rpar=100meg noiseless
+c:u1:7 0 -12v 1.5p rpar=100meg noiseless
+a:u1:6 0 u1:n004 0 0 0 0 u1:n007 0 ota g=1u linear cout=1.5f en=9n enk=250 vhigh=1e308 vlow=-1e308
+d:u1:2 n018 -12v u1:dbias 
+d:u1:4 0 -12v u1:dbias 
+a:u1:3 0 u1:n007 0 0 0 0 u1:n006 0 ota g=225u iout=5m cout=512f vlow=-1e308 vhigh=1e308
+d:u1:1 u1:n007 0 u1:dslewlim 
+g:u1:1 0 u1:n005 u1:n006 0 1µ
+c:u1:8 0 u1:n005 .6f rpar=1meg noiseless
+d:u1:3 +12v -12v u1:dc 
+c:u1:11 u1:n006 n019 800f rser=4k noiseless
+g:u1:2 u1:n006 0 u1:n006 +12v 100m dir=1 vto=-.811
+g:u1:3 0 u1:n006 -12v u1:n006 100m dir=1 vto=-.635
+r25 in+ n016 1k6
+c4 n020 n028 1µf
+r19 out n025 0.0001
+c5 in 0 100
+r20 in 0 1meg
+r26 n028 0 0.1
+l1 n020 out 2µh
+r27 n020 out 22
+c6 in+ n026 33pf
+r28 n019 n026 25
+v6 in 0 pwl(0 0 10us 0 10.1us 1 20us 1 20.1us -1 30us -1 30.1us 1)
+.model 2n3906 pnp(is=1e-14 vaf=100 bf=200 ikf=0.4 xtb=1.5 br=4 cjc=4.5e-12 cje=10e-12 rb=20 rc=0.1 re=0.1 tr=250e-9 tf=350e-12 itf=1 vtf=2 xtf=3 vceo=40 icrating=200m mfg=philips)
+.model 2n3904 npn(is=1e-14 vaf=100 bf=300 ikf=0.4 xtb=1.5 br=4 cjc=4e-12 cje=8e-12 rb=20 rc=0.1 re=0.1 tr=250e-9 tf=350e-12 itf=1 vtf=2 xtf=3 vceo=40 icrating=200m mfg=philips)
+.model bf720 npn is=1.285e-014 nf=0.9841 ise=1.56e-014 ne=1.387 bf=159.3 ikf=0.01406 vaf=19.72 nr=0.9898 isc=5.445e-016 nc=1.224 br=7.551 ikr=0.4786 var=54.95 rb=1.5 irb=7e-005 rbm=460 re=0.003999 rc=0.3995 xtb=0 eg=1.11 xti=3 cje=3.899e-011 vje=0.6544 mje=0.3086 tf=2e-009 xtf=30 vtf=1.652 itf=0.05943 ptf=0 cjc=5.94e-012 vjc=0.3006 mjc=0.3099 xcjc=1 tr=1e-008 cjs=0 vjs=0.75 mjs=0.333 fc=0.8177
+.model qbf723 pnp is=1.737e-14 nf=0.9934 ise=8.208e-15 ne=1.559 bf=141.4 ikf=0.8 vaf=350 nr=0.9755 isc=2.097e-10 nc=1.65 br=2.5 ikr=0.06 var=17 rb=70 irb=5e-05 rbm=0.3 re=0.418 rc=2.5 xtb=0 eg=1.11 xti=3 cje=3.916e-11 vje=0.7361 mje=0.3612 tf=1.356e-09 xtf=19 vtf=9 itf=0.2 ptf=0 cjc=1.071e-11 vjc=0.726 mjc=0.5717 xcjc=0.413 tr=3.3e-07 cjs=0 vjs=0.75 mjs=0.333 fc=0.999
+.model pnp pnp
+.model npn npn
+.model d d
+.model u1:dc d(ron=2k roff=1g vfwd=1 epsilon=.1 ilimit=4.103m noiseless)
+.model u1:dslewlim d(ron=410k roff=1meg vfwd=1 vrev=1 epsilon=.2 revepsilon=.2 noiseless)
+.model u1:dbias d(ron=100k roff=1g vfwd=.6 ilimit=.6u noiseless)
+.model u1:p vdmos(vto=150m kp=120m pchan)
+.model u1:n vdmos(vto=-180m kp=230m)
+.model u1:yd d(ron=100 roff=1t vfwd=1.2 epsilon=.1 noiseless)
+.model u1:yu d(ron=100 roff=1t vfwd=.755 epsilon=.1 noiseless)
+.tran 0 .1ms 0 10ns
+.end
+
+WARNING: Less than two connections to node N035.  This node is used by V1.
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+Gmin = 1.07374
+vernier = 0.5
+vernier = 0.25
+vernier = 0.125
+vernier = 0.0625
+Gmin = 1.08884
+vernier = 0.03125
+vernier = 0.015625
+Gmin = 1.03122
+vernier = 0.0078125
+vernier = 0.0104167
+vernier = 0.00520833
+Gmin = 1.01988
+vernier = 0.00260417
+vernier = 0.00347222
+Gmin = 1.01305
+vernier = 0.00173611
+vernier = 0.00231481
+vernier = 0.00115741
+Gmin = 1.01085
+vernier = 0.00154321
+vernier = 0.000771604
+Gmin = 1.00871
+vernier = 0.00102881
+vernier = 0.000514403
+Gmin = 1.00715
+vernier = 0.00068587
+vernier = 0.000514403
+Gmin = 1.0059
+vernier = 0.00068587
+vernier = 0.000514402
+Gmin = 0
+Gmin stepping failed
+
+Starting source stepping with srcstepmethod=0
+Source Step = 3.0303%
+Source Step = 3.6044%
+Source Step = 3.634%
+Source Step = 3.66359%
+Source Step = 3.69318%
+Source Step = 3.72277%
+vernier = 0.00146484
+Source Step = 3.75385%
+Source Step = 3.79824%
+Source Step = 3.84263%
+Source Step = 3.88701%
+Source Step = 3.9314%
+Source Step = 3.97579%
+vernier = 0.00219727
+Source Step = 4.04238%
+Source Step = 4.10896%
+Source Step = 4.17554%
+Source Step = 4.24213%
+Source Step = 4.30871%
+vernier = 0.0032959
+Source Step = 4.40526%
+Source Step = 4.50513%
+Source Step = 4.60501%
+Source Step = 4.70489%
+Source Step = 4.80476%
+vernier = 0.00494385
+Source Step = 4.94459%
+Source Step = 5.0944%
+Source Step = 5.24421%
+Source Step = 5.39403%
+Source Step = 5.54384%
+vernier = 0.00741577
+Source Step = 5.74609%
+Source Step = 5.97081%
+Source Step = 6.19553%
+Source Step = 6.42025%
+Source Step = 6.64497%
+vernier = 0.0111237
+Source Step = 6.93711%
+Source Step = 7.27419%
+Source Step = 7.61127%
+Source Step = 7.94835%
+Source Step = 8.28543%
+vernier = 0.0166855
+Source Step = 8.70678%
+Source Step = 9.2124%
+Source Step = 9.71802%
+Source Step = 10.2236%
+Source Step = 10.7293%
+vernier = 0.0250282
+Source Step = 11.336%
+Source Step = 12.0944%
+Source Step = 12.8529%
+Source Step = 13.6113%
+Source Step = 14.3697%
+vernier = 0.0375423
+Source Step = 15.2419%
+Source Step = 16.3796%
+Source Step = 17.5172%
+Source Step = 18.6549%
+Source Step = 19.7925%
+vernier = 0.0563135
+Source Step = 21.0439%
+Source Step = 22.7504%
+Source Step = 24.4569%
+Source Step = 26.1633%
+Source Step = 27.8698%
+vernier = 0.0844703
+Source Step = 29.6616%
+Source Step = 32.2213%
+Source Step = 34.781%
+Source Step = 37.3407%
+Source Step = 39.9004%
+Source Step = 42.4601%
+vernier = 0.126705
+Source Step = 46.2997%
+Source Step = 50.1392%
+Source Step = 53.9788%
+Source Step = 57.8184%
+Source Step = 61.6579%
+vernier = 0.190058
+Source Step = 67.2253%
+Source Step = 72.9846%
+Source Step = 78.7439%
+Source Step = 84.5033%
+Source Step = 90.2626%
+vernier = 0.285087
+Source Step = 98.3257%
+Source stepping succeeded in finding the operating point.
+
+N-Period=1
+Fourier components of V(out)
+DC component:-20.4216
+
+Harmonic	Frequency	 Fourier 	Normalized	 Phase  	Normalized
+ Number 	  [Hz]   	Component	 Component	[degree]	Phase [deg]
+    1   	2.000e+04	4.557e-05	1.000e+00	 -117.45°	    0.00°
+    2   	4.000e+04	3.561e-05	7.815e-01	 -135.54°	  -18.09°
+    3   	6.000e+04	2.810e-05	6.167e-01	 -146.94°	  -29.50°
+    4   	8.000e+04	2.272e-05	4.987e-01	 -153.81°	  -36.37°
+    5   	1.000e+05	1.919e-05	4.210e-01	 -159.98°	  -42.53°
+    6   	1.200e+05	1.593e-05	3.495e-01	 -164.40°	  -46.96°
+    7   	1.400e+05	1.361e-05	2.988e-01	 -167.04°	  -49.60°
+    8   	1.600e+05	1.182e-05	2.594e-01	 -168.02°	  -50.58°
+    9   	1.800e+05	1.062e-05	2.330e-01	 -169.81°	  -52.36°
+Total Harmonic Distortion: 132.287496%(149.017775%)
+
+
+
+Date: Thu Apr 23 12:27:40 2015
+Total elapsed time: 3.543 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 30712
+traniter = 20894
+tranpoints = 10189
+accept = 10130
+rejected = 59
+matrix size = 98
+fillins = 132
+solver = Normal
+Matrix Compiler1: 12.9 KB object code size  5.3/3.0/[1.4]
+Matrix Compiler2: 11.0 KB object code size  3.2/3.9/[1.5]
+
+

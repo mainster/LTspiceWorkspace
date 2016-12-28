@@ -1,0 +1,45 @@
+Questionable use of curly braces in "b2 0 il  i={v(ve)/{l1}*{p}*{t}}"
+    Error: undefined symbol in: "[v](ve)/(l1)*(p)*(t)"
+Questionable use of curly braces in ".meas tran vr_calc param {charge/ca}"
+    Error: undefined symbol in: "[charge]/ca"
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\Boostconverter_WS14-15.asc
+
+WARNING: Less than two connections to node VAPAR.  This node is used by V:U1:1.
+WARNING: Less than two connections to node T1.  This node is used by V:U2:1.
+WARNING: Less than two connections to node T.  This node is used by V:U3:1.
+WARNING: Less than two connections to node N004.  This node is used by B1.
+Direct Newton iteration for .op point succeeded.
+
+ilmax: MAX(i(l1))=2.00179 FROM 0 TO 4.8e-005
+ilmin: MIN(i(l1))=1.41264e-005 FROM 0 TO 4.8e-005
+dil: ilmax-ilmin=2.00177
+icmax: MAX(i(c1))=1.66895 FROM 0 TO 4.8e-005
+icmin: MIN(i(c1))=-0.333344 FROM 0 TO 4.8e-005
+t1: i(c1)=icmax AT 4e-006
+t01: i(c1)=0 AT 4e-005
+t02: i(c1)=0 AT 4.33243e-005
+dtc2: t02-t01=3.32429e-006
+a2: 1/2*dtc2*icmax=2.77403e-006
+charge: 0+a2=2.77403e-006
+vr_calc: (charge/ca)=0.00277403
+vr: PP(v(va))=0.00276218 FROM 3.5e-005 TO 4.5e-005
+
+
+Date: Sat Jul 11 15:00:03 2015
+Total elapsed time: 1.898 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 804852
+traniter = 804848
+tranpoints = 256444
+accept = 242699
+rejected = 13745
+matrix size = 20
+fillins = 0
+solver = Normal
+Matrix Compiler1: 378 bytes object code size  0.4/0.3/[0.3]
+Matrix Compiler2: 914 bytes object code size  0.4/0.5/[0.3]
+
+

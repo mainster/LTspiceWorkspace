@@ -1,0 +1,3 @@
+*SRC=PDU620;DI_PDU620;Diodes;Si;  200V  6.00A  25.0ns   Diodes Inc. Ultrafast Rectifier
+.MODEL DI_PDU620 D  ( IS=190n RS=9.91m BV=200 IBV=5.00u
++ CJO=402p  M=0.333 N=1.69 TT=36.0n )

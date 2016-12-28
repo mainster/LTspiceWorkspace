@@ -1,0 +1,209 @@
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\galvoscanner\aktuell\bauteile_bestimmt\endstufe_BJT_EMIT_MJ1101xG_ltc6090_ada4700_compare_nur_ein_hv_FERTIG_hoch2_maerz2015.asc
+
+WARNING: Specified period is not longer than the sum of Trise, Tfall, and Ton for v3.  Increasing period to 0.0110001
+WARNING: Less than two connections to node N031.  This node is used by R11.
+WARNING: Less than two connections to node CALCSUM.  This node is used by B2.
+WARNING: Less than two connections to node STIMPWL.  This node is used by V2.
+Direct Newton iteration for .op point skipped.
+Starting Gmin stepping
+Gmin = 10
+Gmin = 1.07374
+Gmin = 0.115292
+Gmin = 0.0123794
+Gmin = 0.00132923
+Gmin = 0.000142725
+vernier = 0.5
+vernier = 0.25
+vernier = 0.125
+vernier = 0.0625
+Gmin = 4.67681e-005
+vernier = 0.03125
+vernier = 0.0416667
+Gmin = 4.31567e-005
+vernier = 0.0555555
+vernier = 0.074074
+Gmin = 3.75118e-005
+vernier = 0.0987653
+vernier = 0.0493827
+Gmin = 3.20025e-005
+vernier = 0.0246913
+vernier = 0.0123457
+vernier = 0.00617283
+vernier = 0.00308642
+Gmin = 3.17572e-005
+vernier = 0.00154321
+vernier = 0.000771604
+vernier = 0.000578703
+Gmin = 3.17174e-005
+vernier = 0.000434027
+Gmin = 0
+Gmin stepping failed
+
+Starting source stepping with srcstepmethod=0
+Source Step = 3.0303%
+Source Step = 18.9867%
+vernier = 0.00390625
+Source Step = 18.966%
+Source Step = 18.9956%
+Source Step = 19.0252%
+Source Step = 19.0548%
+Source Step = 19.0844%
+vernier = 0.00146484
+Source Step = 19.1229%
+Source Step = 19.1673%
+Source Step = 19.2116%
+Source Step = 19.256%
+Source Step = 19.3004%
+vernier = 0.00219727
+Source Step = 19.3559%
+Source Step = 19.4225%
+Source Step = 19.4891%
+Source Step = 19.5557%
+Source Step = 19.6222%
+vernier = 0.0032959
+Source Step = 19.7021%
+Source Step = 19.802%
+Source Step = 19.9019%
+Source Step = 20.0018%
+Source Step = 20.1017%
+vernier = 0.00494385
+Source Step = 20.2165%
+Source Step = 20.3663%
+Source Step = 20.5161%
+Source Step = 20.6659%
+Source Step = 20.8158%
+vernier = 0.00741577
+Source Step = 20.9806%
+Source Step = 21.2053%
+Source Step = 21.43%
+Source Step = 21.6547%
+Source Step = 21.8794%
+vernier = 0.0111237
+Source Step = 22.1154%
+Source Step = 22.4525%
+Source Step = 22.7896%
+Source Step = 23.1266%
+Source Step = 23.4637%
+Source Step = 23.8008%
+vernier = 0.0166855
+Source Step = 24.3064%
+Source Step = 24.812%
+Source Step = 25.3177%
+Source Step = 25.8233%
+Source Step = 26.3289%
+vernier = 0.0250282
+Source Step = 27.0621%
+Source Step = 27.8205%
+Source Step = 28.5789%
+Source Step = 29.3373%
+Source Step = 30.0958%
+vernier = 0.0375423
+Source Step = 31.1576%
+Source Step = 32.2952%
+Source Step = 33.4329%
+Source Step = 34.5705%
+Source Step = 35.7082%
+vernier = 0.0563135
+Source Step = 37.244%
+Source Step = 38.9505%
+Source Step = 40.6569%
+Source Step = 42.3634%
+Source Step = 44.0699%
+vernier = 0.0844703
+Source Step = 46.2883%
+Source Step = 48.848%
+Source Step = 51.4077%
+Source Step = 53.9674%
+Source Step = 56.5271%
+vernier = 0.126705
+Source Step = 59.7267%
+Source Step = 63.5663%
+Source Step = 67.4059%
+Source Step = 71.2454%
+Source Step = 75.085%
+vernier = 0.190058
+Source Step = 79.6924%
+Source Step = 85.4518%
+Source Step = 91.2111%
+Source Step = 96.9704%
+Source Step = 100%
+Source stepping succeeded in finding the operating point.
+
+.step i0=0.0001
+Heightened Def Con from 1.13541e-009 to 3.13541e-009
+Heightened Def Con from 0.00200001 to 0.00200001
+Heightened Def Con from 0.00200002 to 0.00200002
+Heightened Def Con from 0.00200002 to 0.00200002
+Heightened Def Con from 0.00200002 to 0.00200002
+Heightened Def Con from 0.00200002 to 0.00200002
+Heightened Def Con from 0.00200002 to 0.00200003
+Heightened Def Con from 0.00200008 to 0.00200008
+Heightened Def Con from 0.00200008 to 0.00200009
+N-Period=1
+Fourier components of I(l1)
+DC component:-4.27311
+
+Harmonic	Frequency	 Fourier 	Normalized	 Phase  	Normalized
+ Number 	  [Hz]   	Component	 Component	[degree]	Phase [deg]
+    1   	1.000e+03	3.026e-01	1.000e+00	    0.00°	    0.00°
+    2   	2.000e+03	1.513e-01	5.000e-01	    0.00°	    0.00°
+    3   	3.000e+03	1.009e-01	3.333e-01	   -0.00°	   -0.00°
+    4   	4.000e+03	7.565e-02	2.500e-01	   -0.00°	   -0.00°
+    5   	5.000e+03	6.052e-02	2.000e-01	   -0.00°	   -0.00°
+    6   	6.000e+03	5.043e-02	1.667e-01	   -0.00°	   -0.00°
+    7   	7.000e+03	4.323e-02	1.429e-01	   -0.00°	   -0.00°
+    8   	8.000e+03	3.783e-02	1.250e-01	   -0.00°	   -0.00°
+    9   	9.000e+03	3.362e-02	1.111e-01	   -0.00°	   -0.00°
+   10   	1.000e+04	3.026e-02	1.000e-01	   -0.00°	   -0.00°
+Total Harmonic Distortion: 74.147233%(80.307573%)
+
+
+.step i0=1e-008
+N-Period=1
+Fourier components of I(l1)
+DC component:7.95478e-005
+
+Harmonic	Frequency	 Fourier 	Normalized	 Phase  	Normalized
+ Number 	  [Hz]   	Component	 Component	[degree]	Phase [deg]
+    1   	1.000e+03	1.284e-06	1.000e+00	 -176.35°	    0.00°
+    2   	2.000e+03	6.470e-07	5.038e-01	 -178.11°	   -1.76°
+    3   	3.000e+03	4.320e-07	3.364e-01	 -178.73°	   -2.38°
+    4   	4.000e+03	3.242e-07	2.524e-01	 -179.04°	   -2.69°
+    5   	5.000e+03	2.594e-07	2.020e-01	 -179.23°	   -2.88°
+    6   	6.000e+03	2.162e-07	1.684e-01	 -179.36°	   -3.01°
+    7   	7.000e+03	1.854e-07	1.443e-01	 -179.45°	   -3.10°
+    8   	8.000e+03	1.622e-07	1.263e-01	 -179.52°	   -3.17°
+    9   	9.000e+03	1.442e-07	1.123e-01	 -179.57°	   -3.22°
+   10   	1.000e+04	1.298e-07	1.010e-01	 -179.62°	   -3.26°
+Total Harmonic Distortion: 74.789723%(81.023715%)
+
+
+
+Measurement "slewhi" FAIL'ed
+
+Measurement "slewlo" FAIL'ed
+
+Measurement "trise" FAIL'ed
+
+Measurement "tfall" FAIL'ed
+
+
+Date: Sat Mar 14 01:33:12 2015
+Total elapsed time: 11.334 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 23123
+traniter = 6114
+tranpoints = 1874
+accept = 1590
+rejected = 293
+matrix size = 211
+fillins = 512
+solver = Normal
+Thread vector: 77.8/43.5[4] 15.0/9.5[4] 9.3/5.7[4] 1.4/45.2[1]  2592/500
+Matrix Compiler1: 41.5 KB object code size  14.9/5.5/[4.5]
+Matrix Compiler2: 26.9 KB object code size  6.3/7.8/[3.1]
+
+

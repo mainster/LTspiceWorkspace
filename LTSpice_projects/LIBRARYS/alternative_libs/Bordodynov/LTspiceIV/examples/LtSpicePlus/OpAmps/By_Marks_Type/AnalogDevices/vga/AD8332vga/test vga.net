@@ -1,0 +1,13 @@
+* C:\Documents and Settings\hendrik\My Documents\LTprojects\AD8332vga\test vga.asc
+XU1 vip vin 0 gain ref rclmp 0 vcc voh vol N001 en VGA
+V1 vcc 0 5
+R1 rclmp 0 2k7
+V2 en 0 PWL(0 0 100u 5)
+V3 gain 0 PWL(0 0 200u 0 1m 1)
+V4 vip vin SINE(0 10m 100k)
+R2 N001 0 1
+C1 N001 0 1n
+.tran 1m
+.lib AD8332vga.cir
+.backanno
+.end

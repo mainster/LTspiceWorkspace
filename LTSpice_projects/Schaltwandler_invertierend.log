@@ -1,0 +1,50 @@
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\Schaltwandler_invertierend.asc
+
+WARNING: Less than two connections to node RIPPLEOFFSET.  This node is used by B1.
+WARNING: Less than two connections to node P.  This node is used by V:U1:1.
+WARNING: Less than two connections to node GND2.  This node is used by V:U3:1.
+WARNING: Less than two connections to node L1C.  This node is used by V:U4:1.
+Direct Newton iteration for .op point succeeded.
+
+ilmax: MAX(i(l1))=1.80041 FROM 0 TO 2e-005
+ilmin: MIN(i(l1))=0.00313254 FROM 0 TO 2e-005
+dil: ilmax-ilmin=1.79728
+icmax: MAX(i(ca))=0.63 FROM 0 TO 2e-005
+icmin: MIN(i(ca))=-1.1677 FROM 0 TO 2e-005
+t1: i(ca)=icmax AT 1e-005
+t01: i(ca)=0 AT 1.75504e-005
+t02: i(ca)=0 AT 1.30014e-005
+dtc2: t02-t01=-4.54901e-006
+a2: 1/2*dtc2*icmax=-1.43294e-006
+charge: 0+a2=-1.43294e-006
+vr_calc: charge/ 0.00047=-0.0030488
+
+Measurement "vr" FAIL'ed
+
+Measurement "tcont" FAIL'ed
+ilon: AVG(i(l1))=0.902294 FROM 0 TO 3e-006
+iloff: AVG(i(l1))=0.900406 FROM 3e-006 TO 1e-005
+ia: AVG(i(i_load))=-0.63 FROM 0 TO 1e-005
+pe: ilon*v(e)=10.8275
+pd: iloff*vd0=0.450203
+pa: ia*v(a)=2.90249
+
+
+Date: Tue Jul 14 00:33:11 2015
+Total elapsed time: 2.634 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 800760
+traniter = 800757
+tranpoints = 325991
+accept = 275596
+rejected = 50395
+matrix size = 23
+fillins = 1
+solver = Normal
+Matrix Compiler1: 582 bytes object code size  0.4/0.3/[0.3]
+Matrix Compiler2: 1.15 KB object code size  0.4/0.5/[0.3]
+
+

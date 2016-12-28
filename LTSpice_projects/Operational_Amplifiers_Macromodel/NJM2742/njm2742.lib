@@ -1,0 +1,45 @@
+*$
+* PART NUMBER:NJM2742
+* MANUFACTURER: NEW JAPAN RADIO
+* All Rights Reserved Copyright (C) Bee Technologies Inc. 2004
+.Subckt NJM2742 OUT1 -IN1 +IN1 V- +IN2 -IN2 OUT2 V+
+X_U1     +IN1 -IN1 V+ V- OUT1 NJM2742_ME
+X_U2     +IN2 -IN2 V+ V- OUT2 NJM2742_ME
+.ends  NJM2742
+.subckt NJM2742_ME  1 2 3 4 5
+  c1   11 12 8.6603E-12
+  c2    6  7 30.000E-12
+  dc    5 53 dy
+  de   54  5 dy
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 33.553E6 -1E3 1E3 34E6 -34E6
+  ga    6  0 11 12 414.69E-6
+  gcm   0  6 10 99 73.744E-9
+  iee   3 10 dc 300.16E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx1
+  q2   12  1 14 qx2
+  r2    6  9 100.00E3
+  rc1   4 11 2.4114E3
+  rc2   4 12 2.4114E3
+  re1  13 10 2.2378E3
+  re2  14 10 2.2378E3
+  ree  10 99 666.31E3
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 1.8330E3
+  vb    9  0 dc 0
+  vc    3 53 dc 1.7979
+  ve   54  4 dc .99791
+  vlim  7  8 dc 0
+  vlp  91  0 dc 39.500
+  vln   0 92 dc 39.500
+.model dx D(Is=800.00E-18)
+.model dy D(Is=800.00E-18 Rs=1m Cjo=10p)
+.model qx1 PNP(Is=800.00E-18 Bf=1.8094E3)
+.model qx2 PNP(Is=1.272290E-15 Bf=1.9255E3)
+.ends 
+*$

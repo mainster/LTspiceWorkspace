@@ -1,0 +1,60 @@
+***********************************************
+* Differential-to-common-gnd conversion node
+***********************************************
+* Use in conjunction with .op dc voltage label.
+*
+* Parameter "rnd=" could be used to configure 
+* the precision of output node voltage.
+*
+* M.DelBasso 14-12-2014
+*
+*
+*
+***********************************************
+***********************************************
+**** Abweichende Rundungsergebnisse  **********
+***********************************************
+**** Dieser subckt erzeugt mit einer bv Quelle
+**** eine gerundete Spannung an einem Ausgangs-
+**** Netz so dass man in der LTSpice netzliste
+**** bequem ein dc-label setzen kann ohne jedes
+**** mal separat runden zu müssen.
+**** round(1/rnd ... )*rnd
+***********************************************
+**** Funktioniert problemlos in Version:  
+**** LTSpice v4.21t Sep 19 201
+***********************************************
+**** In Version   
+**** LTSpice v4.22r 
+**** liegt die gerundete Spannung plötzlich 
+**** ein paar nano-Volt über der "runden" 
+**** Spannung.... 
+**** Evtl. mal die Tol's vergleichen, bis dato
+**** wird aber die v4.21t eingesetzt
+****
+**** 06-02-2016 MDB        
+***********************************************
+
+.subckt diff2comm potHi potLo comOut
+b1 comOut 0 V=round(1/rnd*V(potHi,potLo))*rnd
+* only to avoid "Ignoring empty pin current..." in spice error log
+R1 potHi 0 {1/Gmin}
+R2 potLo 0 {1/Gmin}
+* only to avoid "WARNING: Less than two connections to node ..." when 
+* no dc label is connected to comOut
+R3 comOut 0 {1/Gmin}
+.param rnd=1m
+.ends
+
+
+.subckt diff2commNoRnd potHi potLo comOut
+b1 comOut 0 V=V(potHi,potLo)
+* only to avoid "Ignoring empty pin current..." in spice error log
+R1 potHi 0 {1/Gmin}
+R2 potLo 0 {1/Gmin}
+* only to avoid "WARNING: Less than two connections to node ..." when 
+* no dc label is connected to comOut
+R3 comOut 0 {1/Gmin}
+.ends
+
+

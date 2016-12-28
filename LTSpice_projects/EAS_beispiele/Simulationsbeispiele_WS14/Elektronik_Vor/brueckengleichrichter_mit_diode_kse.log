@@ -1,0 +1,22 @@
+Circuit: * Z:\home\koblitz\Simulationsbeispiele_WS14\Elektronik_Vor\brueckengleichrichter_mit_diode_kse.asc
+
+.OP point found by inspection.
+
+Date: Wed Oct 29 10:35:31 2014
+Total elapsed time: 0.122 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 2799
+traniter = 2799
+tranpoints = 1282
+accept = 1206
+rejected = 76
+matrix size = 9
+fillins = 5
+solver = Normal
+Matrix Compiler1: 622 Bytes object code size  2.3/2.1/[1.8]
+Matrix Compiler2: 729 Bytes object code size  2.1/2.2/[1.9]
+
+

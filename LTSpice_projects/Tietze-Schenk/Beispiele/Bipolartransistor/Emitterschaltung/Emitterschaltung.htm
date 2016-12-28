@@ -1,0 +1,70 @@
+<HTML>
+  <HEAD>
+    <TITLE>Emitterschaltung</TITLE>
+  </HEAD>
+  <BODY BGCOLOR="#F0F0F0">
+    <H1 ALIGN=center><B>Emitterschaltung</B></H1>
+    <P>
+Kennlinie, Verst&auml;rkung, Frequenzgang und Klirrfaktor einer Emitterschaltung
+    </P>
+    <P>
+      Kennlinie, Betriebsverst&auml;rkung, Frequenzgang, Eingangsimpedanz und
+      Sinusaussteuerung einer Emitterschaltung.
+    </P>
+    <P>
+      Den Verlauf der Betriebverst&auml;rkung AB=dUa/dUg erh&auml;lt man mit dV(Ua).
+      Im Arbeitspunkt Ua=3V gilt AB=-60. Denselben Wert erh&auml;lt man aus dem
+      Betragsfrequenzgang bei niedrigen Frequenzen: 35,5dB=60. Die Theorie
+      liefert AB=-63 (Rg=1kOhm,ohne Lastwiderstand).
+    </P>
+    <P>
+      Aus der Kleinsignalanalyse (AC) erh&auml;lt man neben dem Frequenzgang
+      auch die Eingangsimpedanz: Ze=V(Ue)/IB(T1). Bei niedrigen Frequenzen
+      gilt Ze=re=4,3kOhm. Die Eingangsimpedanz ist ohmsch-kapazitiv
+      (Betrag nimmt ab, Phase < 0).
+    </P>
+    <P>
+      Bei der Sinusaussteuerung (TRAN-Analyse) wird eine Amplitude von
+      1,8mV bei einer Frequenz von 1kHz verwendet; daraus resultiert ein
+      Klirrfaktor von k=1%. Mit Rg=0 liefert die Theorie f&uuml;r k=1% eine
+      zul&auml;ssige Amplitude von 1mV; wegen der linearisierenden Wirkung
+      von Rg ist die zul&auml;ssige Amplitude hier gr&ouml;&szlig;er. Der Klirrfaktor
+      wird in der OUT-Datei abgelegt; Aufruf mit ANALYSIS/EXAMINE OUTPUT.
+    </P>
+    <P><TABLE BORDER=2 BGCOLOR="#F0F0F0">
+      <TR>
+        <TD><B>Analysen</B></TD>
+        <TD><B>Einstellungen</B></TD>
+        <TD><B>Ergebnisanzeigen</B></TD>
+      </TR>
+      <TR>
+        <TD>AC</TD>
+        <TD>f = 1e3 ... 1e9</TD>
+        <TD>Frequenzgang , Eingangsimpedanz</TD>
+      </TR>
+      <TR>
+        <TD>DC</TD>
+        <TD>Ug = 0V ... 2V</TD>
+        <TD>Verstaerkung , Kennlinie</TD>
+      </TR>
+      <TR>
+        <TD>TRAN</TD>
+        <TD>t = 0 ... 5ms</TD>
+        <TD>Sinussignal</TD>
+      </TR>
+    </TABLE></P>
+    <P><TABLE BORDER=0 BGCOLOR="#F0F0F0" WIDTH=100%>
+      <TR>
+        <TH WIDTH=20% ALIGN=left>
+          <A HREF="ueber.htm" TARGET="uebersicht"><B>zur&uuml;ck</B></A>
+        </TH>
+        <TH WIDTH=20% ALIGN=left>
+          <A HREF="../../ueber.htm" TARGET="uebersicht"><B>&Uuml;bersicht</B></A>
+        </TH>
+        <TH WIDTH=60% ALIGN=left>
+          <A HREF="Emitterschaltung.tse"><B>Simulation starten</B></A>
+        </TH>
+      </TR>
+    </TABLE></P>
+  </BODY>
+</HTML>

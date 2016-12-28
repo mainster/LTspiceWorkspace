@@ -1,0 +1,17 @@
+* Z:\media\storage\CODES_ln\LTSpice_projects\klausuren_Koblitz\WS13_14_direkt_danach.asc
+V1 N006 0 -20
+V2 N005 0 6
+V3 N002 0 0
+Q1 N004 0 N003 0 PNP
+R1 N004 N006 10k
+R3 N003 N005 9k
+D1 N003 N002 D
+.model D D
+.lib C:\Program Files (x86)\LTC\LTspiceIV\lib\cmp\standard.dio
+.model NPN NPN
+.model PNP PNP
+.lib C:\Program Files (x86)\LTC\LTspiceIV\lib\cmp\standard.bjt
+.dc V3 -10 10 .01
+.temp 27 100
+.backanno
+.end

@@ -1,0 +1,49 @@
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\schaltregler\buck_converter_cont.asc
+
+Direct Newton iteration for .op point succeeded.
+
+
+Measurement "t0" FAIL'ed
+
+Measurement "t1" FAIL'ed
+
+Measurement "t2" FAIL'ed
+
+Measurement "trise" FAIL'ed
+
+Measurement "tfall" FAIL'ed
+
+Measurement "t" FAIL'ed
+
+Measurement "ton" FAIL'ed
+area_ica: INTEG(i(ca))=7.98153e-007 FROM 4.59612e-006 TO 1.45945e-005
+vrip: area_ica/ca=0.00399076
+
+Measurement "vpp" FAIL'ed
+ilmax: MAX(i(l1))=1.31974 FROM 0 TO 0.0001
+ilmin: MIN(i(l1))=0.681732 FROM 0 TO 0.0001
+p1: v(a,ca)=-0.0588794 at 5.86954e-008
+p2: v(a,ca)=0.0591516 at 8.91903e-005
+dva: abs(p2-p1)=0.118031
+dil: abs(ilmax-ilmin)=0.638005
+rser: dva/dil=0.185
+
+
+Date: Sat Jan 30 12:45:01 2016
+Total elapsed time: 13.871 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 5079605
+traniter = 5079596
+tranpoints = 2328394
+accept = 1649503
+rejected = 678891
+matrix size = 14
+fillins = 0
+solver = Normal
+Matrix Compiler1: 420 bytes object code size  1.8/1.4/[1.4]
+Matrix Compiler2: 888 bytes object code size  1.4/1.5/[1.5]
+
+

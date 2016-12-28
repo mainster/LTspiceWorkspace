@@ -1,0 +1,28 @@
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\galvoscanner\aktuell\analogregler\PT1_PT2_b.asc
+
+Laplace(E1): Window=24.1765ms Nfft=2048
+WARNING: Node N008 is floating.
+
+WARNING: Less than two connections to node N013.  This node is used by E1.
+.OP point found by inspection.
+Ignoring empty pin current: Ix(u1:1)
+Ignoring empty pin current: Ix(u1:1)
+
+Date: Mon Mar 23 20:11:02 2015
+Total elapsed time: 0.150 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 9566
+traniter = 9566
+tranpoints = 4784
+accept = 4684
+rejected = 100
+matrix size = 21
+fillins = 0
+solver = Normal
+Matrix Compiler1: 662 bytes object code size  0.4/0.3/[0.3]
+Matrix Compiler2: 1.27 KB object code size  0.2/0.4/[0.2]
+
+

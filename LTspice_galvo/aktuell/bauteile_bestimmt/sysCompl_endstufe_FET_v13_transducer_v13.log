@@ -1,0 +1,59 @@
+Stray ".ends" card: .ends
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\galvoscanner\aktuell\bauteile_bestimmt\sysCompl_endstufe_FET_v13_transducer_v13.asc
+
+u25:d18: both pins shorted together -- ignoring.
+WARNING: Less than two connections to node CALCSUM.  This node is used by B1.
+WARNING: Less than two connections to node INP_VCALC.  This node is used by B2.
+WARNING: Less than two connections to node CRF.  This node is used by V:U31:1.
+WARNING: Less than two connections to node CRB.  This node is used by V:U32:1.
+WARNING: Less than two connections to node CRG.  This node is used by V:U33:1.
+WARNING: Less than two connections to node N023.  This node is used by V1.
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+Gmin = 1.07374
+Gmin = 0.115292
+Gmin = 0.0123794
+Gmin = 0.00132923
+Gmin = 0.000142725
+Gmin = 1.5325e-005
+Gmin = 1.6455e-006
+Gmin = 1.76685e-007
+vernier = 0.5
+vernier = 0.25
+Gmin = 7.09828e-008
+vernier = 0.333333
+vernier = 0.444444
+Gmin = 3.01286e-008
+vernier = 0.592592
+vernier = 0.790123
+Gmin = 8.00632e-009
+vernier = 1
+Gmin = 1.06525e-009
+Gmin = 1.1438e-010
+Gmin = 1.22814e-011
+Gmin = 1.31871e-012
+Gmin = 1.41595e-013
+Gmin = 0
+Gmin stepping succeeded in finding the operating point.
+
+
+Date: Fri May 01 02:36:41 2015
+Total elapsed time: 4.296 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 24305
+traniter = 23477
+tranpoints = 7968
+accept = 6203
+rejected = 1765
+matrix size = 221
+fillins = 260
+solver = Normal
+Thread vector: 125.9/64.3[7] 47.3/20.7[7] 20.8/9.6[7] 1.9/2.4[1]  2592/500
+Matrix Compiler1: 23.2 KB object code size  15.8/8.7/[3.7]
+Matrix Compiler2: 24.7 KB object code size  8.1/9.5/[3.3]
+
+

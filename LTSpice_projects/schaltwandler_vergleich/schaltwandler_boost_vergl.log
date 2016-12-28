@@ -1,0 +1,34 @@
+Questionable use of curly braces in "b1 0 p002  i={{ve}/{l1}*time}"
+    Error: undefined symbol in: "(ve)/(l1)*[time]"
+Questionable use of curly braces in "b2 0 p001  i={-({va}+{vd0})/{l1}*({t2}-time)}"
+    Error: undefined symbol in: "-((va)+(vd0))/(l1)*((t2)-[time])"
+Questionable use of curly braces in "b3 n002 0  i={{is}*(1+v(da)/({n}*{vt}))}"
+    Error: undefined symbol in: "(is)*(1+[v](da)/((n)*(vt)))"
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\schaltwandler_vergleich\schaltwandler_boost_vergl.asc
+
+Questionable use of curly braces in ".model swx3 sw(ron={ron} roff={roff} vt={vt} vh={vh} lser={lser} vser={vser})"
+    Error: undefined symbol in: "[lser]"
+Questionable use of curly braces in ".model swx3 sw(ron={ron} roff={roff} vt={vt} vh={vh} lser=(lser) vser={vser})"
+    Error: undefined symbol in: "[vser]"
+WARNING: Less than two connections to node U2:CTRLM.  This node is used by R:U2:11.
+
+
+
+Date: Thu Jul 30 03:57:35 2015
+Total elapsed time: 0.028 seconds.
+
+tnom = 27
+temp = 27
+method = trap
+totiter = 100
+traniter = 0
+tranpoints = 0
+accept = 0
+rejected = 0
+matrix size = 19
+fillins = 0
+solver = Normal
+Matrix Compiler1: 472 bytes object code size  0.6/0.4/[0.3]
+Matrix Compiler2: 1.00 KB object code size  0.4/0.6/[0.3]
+
+

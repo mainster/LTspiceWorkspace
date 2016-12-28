@@ -1,0 +1,38 @@
+.subckt LTC2050HV_MDB 1 2 3 4 5 6
+B1 0 N004 I=10u*dnlim(uplim(V(1),V(3)-.9,.1), V(4)-.4, .1)+1n*V(1)
+B2 N004 0 I=10u*dnlim(uplim(V(2),V(3)-.89,.1), V(4)-.41, .1)+1n*V(2)
+C9 3 2 .85p Rpar=1T noiseless
+C10 N004 0 1f Rpar=100K noiseless
+M1 3 N006 5 5 N temp=27
+M2 4 N010 5 5 P temp=27
+D5 N006 5 Y
+D6 5 N010 Y
+R2 3 N008 2G noiseless
+R3 N008 4 2G noiseless
+A3 6 3 0 0 0 0 N005 0 SCHMITT Vt=-1.5 Vh=100m tau=50u
+A4 N005 0 N008 N008 N008 N008 N006 N008 SCHMITT Vt=.5 Vh=10m Vhigh=0 Vlow=-15 Rout=1k Cout=.1p
+A5 N005 0 N008 N008 N008 N010 N008 N008 SCHMITT Vt=.5 Vh=10m Vhigh=15 Vlow=0 Rout=1k Cout=.1p
+C14 0 N007 15p Rpar=6k noiseless
+A7 N007 0 N005 0 0 0 N008 0 OTA g=3.2m iout=1m Vlow=-1e308 Vhigh=1e308
+G1 N008 0 N008 3 500m dir=1 vto=.3
+G2 0 N008 4 N008 500m dir=1 vto=.45
+G3 0 N007 0 N009 167µ
+D1 3 6 DSIN
+C2 3 5 1p Rpar=1G noiseless
+C15 5 4 1p Rpar=1G noiseless
+A2 0 N004 0 0 0 0 N009 0 OTA g=3.2m linear en=79n Rout=1k Cout=40p Vlow=-1e308 Vhigh=1e308
+S2 3 4 N005 0 SPOW
+C3 N008 0 500p Rser=100 noiseless
+C1 2 4 .85p Rpar=1T noiseless
+C4 3 1 .85p Rpar=1T noiseless
+C6 1 4 .85p Rpar=1T noiseless
+R4 3 4 3.3Meg noiseless
+.model Y D(Ron=100 Roff=1T Vfwd=.6 epsilon=.1 noiseless)
+.model N VDMOS(Vto=-100m Kp=90m)
+.model P VDMOS(Vto=100m Kp=70m pchan)
+.model DSIN D(Ron=100k Roff=100Meg Vfwd=.1 epsilon=100m ilimit=.5u noiseless)
+.model shutD   SW(Ron=1T  Roff=10k vt=.5 vh=-.1)
+.model DS D(Ron=100 Roff=1G Vfwd=.2 Vrev=.2 epsilon=0.1 revepsilon=0.1 noiseless)
+.model SPOW SW(level=2 Ron=500 Roff=1G vt=.5 vh=-.1 ilimit=.5m noiseless)
+.ends LTC2050HV_MDB
+*

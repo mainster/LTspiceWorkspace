@@ -1,0 +1,73 @@
+* Z:\media\data\CODES\LTSpice_projects\diskret_op_eas_labor\ausgangsbegr.asc
+Q9 c0 N004 N001 0 CA3096_pnp
+Q10 out N004 N002 0 CA3096_pnp
+Q11 N004 N004 N003 0 CA3096_pnp
+RE11 V+ N003 1.2k
+RE10 V+ N002 1.2k
+Re9a V+ N001 33k
+Re9b P001 N001 10k
+Rref N004 V- 39k
+Q2 C4 IN+ N008 0 CA3096_pnp
+Q1 C3 IN- N007 0 CA3096_pnp
+RE1 c0 N007 1.8k
+RE2 c0 N008 1.8k
+R克D1 c0 N007 {JD1}
+R克D2 c0 N008 {JD2}
+Q3 C3 N011 N013 0 CA3046
+Q4 C4 N011 N015 0 CA3046
+Rpos1 N014 N013 {(1-off)*Ros}
+R克2 N013 V- {J2}
+R克3 N015 V- {J3}
+RE3 N013 V- 1k
+RE4 N015 V- 1k
+R克1 N011 C3 {J1}
+Rpos2 N015 N014 {off*Ros}
+R克4 N014 V- {J4}
+V1 N005 0 5
+V2 N006 0 -5
+V4 N009 0 SINE(0 {amp} {fin})
+R克10 V+ P001 {J10}
+R克5 C4 N010 {J5}
+Ccomp1 out P002 33p
+Q5 out N012 V- 0 CA3046
+Q6 out C4 N012 0 CA3046
+RE5 N012 V- 22k
+Rs1 P002 N010 1n
+V3 fin 0 SINE(0 {10/5.6} {-fin})
+V5 fin_105 0 SINE(0 1 {fin*1.05})
+V6 fin_115 0 SINE(0 1 {fin*1.15})
+R1 N009 IN+ 1
+R2 IN- out 1
+R4 V+ N005 1m
+R5 V- N006 1m
+.model NPN NPN
+.model PNP PNP
+.lib C:\Program Files (x86)\LTC\LTspiceIV\lib\cmp\standard.bjt
+* Stromquellen-\nBank
+* PNP-\nDiff. stufe
+* Stromspiegel
+* X *
+.param J10 = OPEN
+.param JD1 = CLOSE
+.param JD2 = CLOSE
+.param J1 = CLOSE
+.param J2 = OPEN
+.param J3 = OPEN
+.param J4 = OPEN
+.param J5 = CLOSE
+.param J7 = CLOSE
+.tran 0 {2/fin} 0
+* .step param off 0.7 0.999 0.1
+* Darlington- Stufe
+.param open = 100meg
+.param close = 1u
+.param Ros = 1k
+.param off = 0.5
+* * Y *\n.param J10 = CLOSE\n.param JD1 = OPEN\n.param JD2 = OPEN\n.param J1 = CLOSE\n.param J2 = OPEN\n.param J3 = OPEN\n.param J4 = OPEN\n.param J5 = CLOSE\n.param J7 = CLOSE
+.param fin = 100
+.param amp = 2.25
+*.step param fin list 45k 50k 53k 70k
+.step param amp 3 5 0.5
+* .step param J10 list 1m 100meg
+.backanno
+.end

@@ -1,0 +1,15 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\galvoscanner\aktuell\LTC6090_freq_resp.asc
+V1 -V 0 -70
+XU1 0 N002 0 -V NC_01 OUT +V NC_02 LTC6090
+V2 +V 0 70
+R1 OUT N002 {1k*Kp}
+C1 OUT NC_03 1p
+V3 N001 0 2.5
+R3 N002 IN 1k
+V4 IN 0 SINE(0 .1 1k) AC 1
+.ac oct 100 1 1meg
+* .step param Kp 1 500 25
+.param Kp=100
+.lib LTC5.lib
+.backanno
+.end

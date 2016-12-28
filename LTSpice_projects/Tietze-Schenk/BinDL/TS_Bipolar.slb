@@ -1,0 +1,739 @@
+*version 8.0 615691415
+@index
+symloc Diode 0 795
+symloc 1N4148 795 582
+symloc 1N4001 1377 589
+symloc BAS40 1966 577
+symloc ZD47 2543 631
+symloc ZD69 3174 631
+symloc Transistor 3805 779
+symloc BC547B 4584 646
+symloc BC557B 5230 644
+symloc 2N2222 5874 650
+symloc 2N2907 6524 648
+symloc BD239 7172 641
+symloc BD240 7813 639
+symloc D-NN 8452 776
+symloc D-PP 9228 776
+symloc D-PN 10004 978
+symloc BFP405 10982 647
+symloc BFR93 11629 644
+symloc BFT93 12273 642
+*symbol Diode
+d Parametrierbare Diode
+@type p 8.0
+@attributes
+a 0 sp 0 0 15 25 hln 100 PART=Diode
+a 0 s 9 0 21 8 hln 100 REFDES=D?
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=X^@refdes %a %k @MODEL params: is=@IS n=@N cjo=@CS0 vj=@Udiff m=@M
+a 0 u 13 13 22 18 hln 100 IS=1e-12
+a 0 u 13 13 22 28 hln 100 N=1
+a 0 sp 0:13 0 0 10 hlb 100 MODEL=Diode
+a 0 u 13 13 22 38 hln 100 CS0=1p
+a 0 u 13 13 22 48 hln 100 Udiff=0.6V
+a 0 u 13 13 22 58 hln 100 M=0.5
+@pins
+p 0 10 5 dln 100 a n 10 0 d
+a 0 s 0 0 12 1 drn 100 PIN=a
+a 0 s 0 0 20 0 hln 100 ERC=x
+p 0 14 35 vln 100 k n 10 40 v
+a 0 s 0 0 16 41 vrn 100 PIN=k
+a 0 s 0 0 20 10 hln 100 ERC=x
+@graphics 20 40 10 0 10
+v 0 5 15
+10 25
+;
+v 0 10 25
+15 15
+;
+v 0 15 25 d_info:,,,,4/1/6/6,,,,,,,,,, 
+5 25
+;
+v 0 15 15
+5 15
+;
+v 0 10 15
+10 25
+;
+v 0 10 10
+10 15
+;
+v 0 10 25
+10 30
+;
+*symbol 1N4148
+d Kleinsignaldiode
+@type p 8.0
+@attributes
+a 0 sp 0 0 15 25 hln 100 PART=1N4148
+a 0 sp 13 0 21 29 hln 100 MODEL=1N4148
+a 0 s 9 0 21 18 hln 100 REFDES=D?
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=D^@refdes %a %k @MODEL
+@pins
+p 0 10 5 dln 100 a n 10 0 d
+a 0 s 0 0 12 1 drn 100 PIN=a
+a 0 s 0 0 20 0 hln 100 ERC=x
+p 0 14 35 vln 100 k n 10 40 v
+a 0 s 0 0 16 41 vrn 100 PIN=k
+a 0 s 0 0 20 10 hln 100 ERC=x
+@graphics 20 40 10 0 10
+v 0 5 15
+10 25
+;
+v 0 10 25
+15 15
+;
+v 0 15 25 d_info:,,,,4/1/6/6,,,,,,,,,, 
+5 25
+;
+v 0 15 15
+5 15
+;
+v 0 10 15
+10 25
+;
+v 0 10 10
+10 15
+;
+v 0 10 25
+10 30
+;
+*symbol 1N4001
+d Gleichrichterdiode (1A)
+@type p 8.0
+@attributes
+a 0 sp 0 0 15 25 hln 100 PART=1N4001
+a 0 sp 13 0 21 29 hln 100 MODEL=1N4001
+a 0 s 9 0 21 18 hln 100 REFDES=D?
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=D^@refdes %a %k @MODEL
+@pins
+p 0 10 5 dln 100 a n 10 0 d
+a 0 s 0 0 12 1 drn 100 PIN=a
+a 0 s 0 0 20 0 hln 100 ERC=x
+p 0 14 35 vln 100 k n 10 40 v
+a 0 s 0 0 16 41 vrn 100 PIN=k
+a 0 s 0 0 20 10 hln 100 ERC=x
+@graphics 20 40 10 0 10
+v 0 5 15
+10 25
+;
+v 0 10 25
+15 15
+;
+v 0 15 25 d_info:,,,,4/1/6/6,,,,,,,,,, 
+5 25
+;
+v 0 15 15
+5 15
+;
+v 0 10 15
+10 25
+;
+v 0 10 10
+10 15
+;
+v 0 10 25
+10 30
+;
+*symbol BAS40
+d Schottky-Diode
+@type p 8.0
+@attributes
+a 0 sp 0 0 15 25 hln 100 PART=BAS40
+a 0 sp 13 0 21 29 hln 100 MODEL=BAS40
+a 0 s 9 0 21 18 hln 100 REFDES=D?
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=D^@refdes %a %k @MODEL
+@pins
+p 0 10 5 dln 100 a n 10 0 d
+a 0 s 0 0 12 1 drn 100 PIN=a
+a 0 s 0 0 20 0 hln 100 ERC=x
+p 0 14 35 vln 100 k n 10 40 v
+a 0 s 0 0 16 41 vrn 100 PIN=k
+a 0 s 0 0 20 10 hln 100 ERC=x
+@graphics 20 40 10 0 10
+v 0 5 15
+10 25
+;
+v 0 10 25
+15 15
+;
+v 0 15 25 d_info:,,,,4/1/6/6,,,,,,,,,, 
+5 25
+;
+v 0 15 15
+5 15
+;
+v 0 10 15
+10 25
+;
+v 0 10 10
+10 15
+;
+v 0 10 25
+10 30
+;
+*symbol ZD47
+d Zenerdiode 4,7V
+@type p 8.0
+@attributes
+a 0 sp 0 0 15 25 hln 100 PART=ZD47
+a 0 sp 0:13 0 21 29 hln 100 MODEL=ZD47
+a 1 s 9 0 21 18 hln 100 REFDES=D?
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=D^@refdes %a %k @MODEL
+a 0 up 13 0 22 30 hln 100 BEZ=ZD4,7
+@pins
+p 0 10 5 dln 100 k n 10 0 d
+a 0 s 0 0 12 1 drn 100 PIN=k
+a 0 s 0 0 20 0 hln 100 ERC=x
+p 0 14 35 vln 100 a n 10 40 v
+a 0 s 0 0 16 41 vrn 100 PIN=a
+a 0 s 0 0 20 10 hln 100 ERC=x
+@graphics 20 40 10 0 10
+v 0 10 15
+15 25
+;
+v 0 5 25
+10 15
+;
+v 0 15 25 d_info:,,,,4/1/6/6,,,,,,,,,, 
+5 25
+;
+v 0 15 15
+5 15
+;
+v 0 10 15
+10 25
+;
+v 0 10 10
+10 15
+;
+v 0 10 25
+10 30
+;
+v 0 15 15
+15 20
+;
+*symbol ZD69
+d Zenerdiode 6,9V
+@type p 8.0
+@attributes
+a 0 sp 0 0 15 25 hln 100 PART=ZD69
+a 0 sp 0:13 0 21 29 hln 100 MODEL=ZD69
+a 1 s 9 0 21 18 hln 100 REFDES=D?
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=D^@refdes %a %k @MODEL
+a 0 up 13 0 22 30 hln 100 BEZ=ZD6,9
+@pins
+p 0 10 5 dln 100 k n 10 0 d
+a 0 s 0 0 12 1 drn 100 PIN=k
+a 0 s 0 0 20 0 hln 100 ERC=x
+p 0 14 35 vln 100 a n 10 40 v
+a 0 s 0 0 16 41 vrn 100 PIN=a
+a 0 s 0 0 20 10 hln 100 ERC=x
+@graphics 20 40 10 0 10
+v 0 10 15
+15 25
+;
+v 0 5 25
+10 15
+;
+v 0 15 25 d_info:,,,,4/1/6/6,,,,,,,,,, 
+5 25
+;
+v 0 15 15
+5 15
+;
+v 0 10 15
+10 25
+;
+v 0 10 10
+10 15
+;
+v 0 10 25
+10 30
+;
+v 0 15 15
+15 20
+;
+*symbol Transistor
+d Generischer Transistor
+@type p 8.0
+@attributes
+a 0 sp 0 0 25 28 hln 100 PART=Transistor
+a 0 sp 13 0 27 16 hln 100 MODEL=Transistor
+a 1 s 9 0 27 5 hln 100 REFDES=T?
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=X^@refdes %c %b %e @MODEL params: is=@IS bn=@BN bi=@BI
+a 0 u 13 13 28 30 hlb 100 IS=1f
+a 0 u 13 13 28 40 hlb 100 BN=100
+a 0 u 13 13 28 50 hlb 100 BI=1
+@pins
+p 0 5 20 hln 100 b n 0 20 h
+a 0 s 0 0 1 18 hln 100 PIN=b
+a 0 s 0 0 0 0 hln 100 ERC=x
+p 0 15 10 hln 100 c n 20 0 d
+a 0 s 0 0 21 -2 hln 100 PIN=c
+a 0 s 0 0 0 0 hln 100 ERC=x
+p 0 15 40 hln 100 e n 20 40 v
+a 0 s 0 0 21 38 hln 100 PIN=e
+a 0 s 0 0 0 0 hln 100 ERC=x
+@graphics 20 40 0 20 10
+v 0 10 10 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+10 30
+;
+v 0 20 10
+10 15
+;
+v 0 10 25
+20 30
+;
+v 0 18 29
+15 25
+;
+v 0 18 29
+13 29
+;
+*symbol BC547B
+d npn-Kleinsignaltransistor
+@type p 8.0
+@attributes
+a 0 sp 0 0 25 28 hln 100 PART=BC547B
+a 0 sp 13 0 25 30 hln 100 MODEL=BC547B
+a 1 s 9 0 25 19 hln 100 REFDES=T?
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=Q^@refdes %c %b %e @MODEL
+@pins
+p 0 5 20 hln 100 b n 0 20 h
+a 0 s 0 0 1 18 hln 100 PIN=b
+a 0 s 0 0 0 0 hln 100 ERC=x
+p 0 15 10 hln 100 c n 20 0 d
+a 0 s 0 0 21 -2 hln 100 PIN=c
+a 0 s 0 0 0 0 hln 100 ERC=x
+p 0 15 40 hln 100 e n 20 40 v
+a 0 s 0 0 21 38 hln 100 PIN=e
+a 0 s 0 0 0 0 hln 100 ERC=x
+@graphics 20 40 0 20 10
+v 0 10 10 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+10 30
+;
+v 0 20 10
+10 15
+;
+v 0 10 25
+20 30
+;
+v 0 18 29
+15 25
+;
+v 0 18 29
+13 29
+;
+*symbol BC557B
+d pnp-Kleinsignaltransistor
+@type p 8.0
+@attributes
+a 0 sp 0 0 25 30 hln 100 PART=BC557B
+a 0 sp 13 0 25 30 hln 100 MODEL=BC557B
+a 1 s 9 0 25 19 hln 100 REFDES=T?
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=Q^@refdes %c %b %e @MODEL
+@pins
+p 0 5 20 hln 100 b n 0 20 h
+a 0 s 0 0 1 18 hln 100 PIN=b
+a 0 s 0 0 0 0 hln 100 ERC=x
+p 0 25 30 hln 100 c n 20 40 v
+a 0 s 0 0 21 38 hln 100 PIN=c
+a 0 s 0 0 0 0 hln 100 ERC=x
+p 0 25 0 hln 100 e n 20 0 d
+a 0 s 0 0 21 -2 hln 100 PIN=e
+a 0 s 0 0 0 0 hln 100 ERC=x
+@graphics 20 40 0 20 10
+v 0 10 10 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+10 30
+;
+v 0 10 15
+20 10
+;
+v 0 10 25
+20 30
+;
+v 0 14 13
+17 9
+;
+v 0 14 13
+19 13
+;
+*symbol 2N2222
+d npn-Kleinsignaltransistor
+@type p 8.0
+@attributes
+a 0 sp 11 0 25 30 hln 100 PART=2N2222
+a 0 sp 0:13 0 25 30 hln 100 MODEL=Q2N2222
+a 1 s 9 0 25 19 hln 100 REFDES=T?
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=Q^@refdes %c %b %e @MODEL
+@pins
+p 0 5 20 hln 100 b n 0 20 h
+a 0 s 0 0 1 18 hln 100 PIN=b
+a 0 s 0 0 0 0 hln 100 ERC=x
+p 0 15 10 hln 100 c n 20 0 d
+a 0 s 0 0 21 -2 hln 100 PIN=c
+a 0 s 0 0 0 0 hln 100 ERC=x
+p 0 15 40 hln 100 e n 20 40 v
+a 0 s 0 0 21 38 hln 100 PIN=e
+a 0 s 0 0 0 0 hln 100 ERC=x
+@graphics 20 40 0 20 10
+v 0 10 10 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+10 30
+;
+v 0 20 10
+10 15
+;
+v 0 10 25
+20 30
+;
+v 0 18 29
+15 25
+;
+v 0 18 29
+13 29
+;
+*symbol 2N2907
+d pnp-Kleinsignaltransistor
+@type p 8.0
+@attributes
+a 0 sp 11 0 25 30 hln 100 PART=2N2907
+a 0 sp 0:13 0 25 30 hln 100 MODEL=Q2N2907
+a 1 s 9 0 25 19 hln 100 REFDES=T?
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=Q^@refdes %c %b %e @MODEL
+@pins
+p 0 5 20 hln 100 b n 0 20 h
+a 0 s 0 0 1 18 hln 100 PIN=b
+a 0 s 0 0 0 0 hln 100 ERC=x
+p 0 25 30 hln 100 c n 20 40 v
+a 0 s 0 0 21 38 hln 100 PIN=c
+a 0 s 0 0 0 0 hln 100 ERC=x
+p 0 25 0 hln 100 e n 20 0 d
+a 0 s 0 0 21 -2 hln 100 PIN=e
+a 0 s 0 0 0 0 hln 100 ERC=x
+@graphics 20 40 0 20 10
+v 0 10 10 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+10 30
+;
+v 0 10 15
+20 10
+;
+v 0 10 25
+20 30
+;
+v 0 14 13
+17 9
+;
+v 0 14 13
+19 13
+;
+*symbol BD239
+d npn-Leistungstransistor
+@type p 8.0
+@attributes
+a 0 sp 0 0 25 28 hln 100 PART=BD239
+a 0 sp 13 0 25 30 hln 100 MODEL=BD239
+a 1 s 9 0 25 19 hln 100 REFDES=T?
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=Q^@refdes %c %b %e @MODEL
+@pins
+p 0 5 20 hln 100 b n 0 20 h
+a 0 s 0 0 1 18 hln 100 PIN=b
+a 0 s 0 0 0 0 hln 100 ERC=x
+p 0 15 10 hln 100 c n 20 0 d
+a 0 s 0 0 21 -2 hln 100 PIN=c
+a 0 s 0 0 0 0 hln 100 ERC=x
+p 0 15 40 hln 100 e n 20 40 v
+a 0 s 0 0 21 38 hln 100 PIN=e
+a 0 s 0 0 0 0 hln 100 ERC=x
+@graphics 20 40 0 20 10
+v 0 10 10 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+10 30
+;
+v 0 20 10
+10 15
+;
+v 0 10 25
+20 30
+;
+v 0 18 29
+15 25
+;
+v 0 18 29
+13 29
+;
+*symbol BD240
+d pnp-Leistungstransistor
+@type p 8.0
+@attributes
+a 0 sp 0 0 25 30 hln 100 PART=BD240
+a 0 sp 13 0 25 30 hln 100 MODEL=BD240
+a 1 s 9 0 25 19 hln 100 REFDES=T?
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=Q^@refdes %c %b %e @MODEL
+@pins
+p 0 5 20 hln 100 b n 0 20 h
+a 0 s 0 0 1 18 hln 100 PIN=b
+a 0 s 0 0 0 0 hln 100 ERC=x
+p 0 25 30 hln 100 c n 20 40 v
+a 0 s 0 0 21 38 hln 100 PIN=c
+a 0 s 0 0 0 0 hln 100 ERC=x
+p 0 25 0 hln 100 e n 20 0 d
+a 0 s 0 0 21 -2 hln 100 PIN=e
+a 0 s 0 0 0 0 hln 100 ERC=x
+@graphics 20 40 0 20 10
+v 0 10 10 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+10 30
+;
+v 0 10 15
+20 10
+;
+v 0 10 25
+20 30
+;
+v 0 14 13
+17 9
+;
+v 0 14 13
+19 13
+;
+*symbol D-NN
+d npn-Darlingtontransistor
+@type p 8.0
+@attributes
+a 0 sp 0 0 25 28 hln 100 PART=D-NN
+a 0 sp 13 0 25 30 hln 100 MODEL=D-NN
+a 1 s 9 0 25 19 hln 100 REFDES=T?
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=X^@refdes %c %b %e @MODEL PARAMS: M1=@M1 M2=@M2 R=@R
+a 0 u 0:13 0 0 10 hln 100 M1=1
+a 0 u 0:13 0 0 20 hln 100 M2=2
+a 0 u 0:13 0 0 30 hln 100 R=500
+@pins
+p 0 5 20 hln 100 b n 0 20 h
+a 0 s 0 0 1 18 hln 100 PIN=b
+a 0 s 0 0 0 0 hln 100 ERC=x
+p 0 15 10 hln 100 c n 20 0 d
+a 0 s 0 0 21 -2 hln 100 PIN=c
+a 0 s 0 0 0 0 hln 100 ERC=x
+p 0 15 40 hln 100 e n 20 40 v
+a 0 s 0 0 21 38 hln 100 PIN=e
+a 0 s 0 0 0 0 hln 100 ERC=x
+@graphics 20 40 0 20 10
+v 0 10 8 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+10 30
+;
+v 0 20 10
+10 15
+;
+v 0 10 25
+20 30
+;
+v 0 18 29
+15 25
+;
+v 0 18 29
+13 29
+;
+v 0 20 8
+10 13
+;
+*symbol D-PP
+d pnp-Darlingtontransistor
+@type p 8.0
+@attributes
+a 0 sp 0 0 25 30 hln 100 PART=D-PP
+a 0 sp 13 0 25 30 hln 100 MODEL=D-PP
+a 1 s 9 0 25 19 hln 100 REFDES=T?
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=X^@refdes %c %b %e @MODEL PARAMS: M1=@M1 M2=@M2 R=@R
+a 0 u 0:13 0 0 10 hln 100 M1=1
+a 0 u 0:13 0 0 20 hln 100 M2=2
+a 0 u 0:13 0 0 30 hln 100 R=500
+@pins
+p 0 5 20 hln 100 b n 0 20 h
+a 0 s 0 0 1 18 hln 100 PIN=b
+a 0 s 0 0 0 0 hln 100 ERC=x
+p 0 25 30 hln 100 c n 20 40 v
+a 0 s 0 0 21 38 hln 100 PIN=c
+a 0 s 0 0 0 0 hln 100 ERC=x
+p 0 25 0 hln 100 e n 20 0 d
+a 0 s 0 0 21 -2 hln 100 PIN=e
+a 0 s 0 0 0 0 hln 100 ERC=x
+@graphics 20 40 0 20 10
+v 0 10 10 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+10 32
+;
+v 0 10 15
+20 10
+;
+v 0 10 25
+20 30
+;
+v 0 14 13
+17 9
+;
+v 0 14 13
+19 13
+;
+v 0 10 27
+20 32
+;
+*symbol D-PN
+d pnp-Darlingtontransistor (pnp-npn)
+@type p 8.0
+@attributes
+a 0 sp 0 0 25 30 hln 100 PART=D-PN
+a 0 sp 13 0 47 36 hln 100 MODEL=D-PN
+a 1 s 9 0 47 25 hln 100 REFDES=T?
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=X^@refdes %c %b %e @MODEL PARAMS: M1=@M1 M2=@M2 R=@R
+a 0 u 0:13 0 0 10 hln 100 M1=1
+a 0 u 0:13 0 0 20 hln 100 M2=2
+a 0 u 0:13 0 0 30 hln 100 R=500
+@pins
+p 0 5 20 hln 100 b n 0 20 h
+a 0 s 0 0 1 18 hln 100 PIN=b
+a 0 s 0 0 0 0 hln 100 ERC=x
+p 0 45 40 hln 100 c n 40 50 v
+a 0 s 0 0 41 48 hln 100 PIN=c
+a 0 s 0 0 20 10 hln 100 ERC=x
+p 0 45 0 hln 100 e n 40 0 d
+a 0 s 0 0 41 -2 hln 100 PIN=e
+a 0 s 0 0 20 0 hln 100 ERC=x
+@graphics 50 50 0 20 10
+v 0 10 10 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+10 30
+;
+v 0 10 15
+20 10
+;
+v 0 10 25
+20 30
+;
+v 0 14 13
+17 9
+;
+v 0 14 13
+19 13
+;
+v 0 30 20 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+30 40
+;
+v 0 40 20
+30 25
+;
+v 0 30 35
+40 40
+;
+v 0 38 39
+35 35
+;
+v 0 38 39
+33 39
+;
+v 0 20 10
+40 10
+40 20
+;
+v 0 20 30
+30 30
+;
+c 0 40 10 2 d_info:,,,,,ON,0/128/0,,,,,,,, 
+*symbol BFP405
+d npn-Hochfrequenztransistor
+@type p 8.0
+@attributes
+a 0 sp 0 0 25 28 hln 100 PART=BFP405
+a 0 sp 13 0 25 30 hln 100 MODEL=BFP405
+a 1 s 9 0 25 19 hln 100 REFDES=T?
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=X^@refdes %c %b %e @MODEL
+@pins
+p 0 5 20 hln 100 b n 0 20 h
+a 0 s 0 0 1 18 hln 100 PIN=b
+a 0 s 0 0 0 0 hln 100 ERC=x
+p 0 15 10 hln 100 c n 20 0 d
+a 0 s 0 0 21 -2 hln 100 PIN=c
+a 0 s 0 0 0 0 hln 100 ERC=x
+p 0 15 40 hln 100 e n 20 40 v
+a 0 s 0 0 21 38 hln 100 PIN=e
+a 0 s 0 0 0 0 hln 100 ERC=x
+@graphics 20 40 0 20 10
+v 0 10 10 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+10 30
+;
+v 0 20 10
+10 15
+;
+v 0 10 25
+20 30
+;
+v 0 18 29
+15 25
+;
+v 0 18 29
+13 29
+;
+*symbol BFR93
+d npn-Hochfrequenztransistor
+@type p 8.0
+@attributes
+a 0 sp 0 0 25 28 hln 100 PART=BFR93
+a 0 sp 13 0 25 30 hln 100 MODEL=BFR93
+a 1 s 9 0 25 19 hln 100 REFDES=T?
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=X^@refdes %c %b %e @MODEL
+@pins
+p 0 5 20 hln 100 b n 0 20 h
+a 0 s 0 0 1 18 hln 100 PIN=b
+a 0 s 0 0 0 0 hln 100 ERC=x
+p 0 15 10 hln 100 c n 20 0 d
+a 0 s 0 0 21 -2 hln 100 PIN=c
+a 0 s 0 0 0 0 hln 100 ERC=x
+p 0 15 40 hln 100 e n 20 40 v
+a 0 s 0 0 21 38 hln 100 PIN=e
+a 0 s 0 0 0 0 hln 100 ERC=x
+@graphics 20 40 0 20 10
+v 0 10 10 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+10 30
+;
+v 0 20 10
+10 15
+;
+v 0 10 25
+20 30
+;
+v 0 18 29
+15 25
+;
+v 0 18 29
+13 29
+;
+*symbol BFT93
+d pnp-Hochfrequenztransistor
+@type p 8.0
+@attributes
+a 0 sp 0 0 25 30 hln 100 PART=BFT93
+a 0 sp 13 0 25 30 hln 100 MODEL=BFT93
+a 1 s 9 0 25 19 hln 100 REFDES=T?
+a 1 sp 0 0 0 0 hln 100 TEMPLATE=X^@refdes %c %b %e @MODEL
+@pins
+p 0 5 20 hln 100 b n 0 20 h
+a 0 s 0 0 1 18 hln 100 PIN=b
+a 0 s 0 0 0 0 hln 100 ERC=x
+p 0 25 30 hln 100 c n 20 40 v
+a 0 s 0 0 21 38 hln 100 PIN=c
+a 0 s 0 0 0 0 hln 100 ERC=x
+p 0 25 0 hln 100 e n 20 0 d
+a 0 s 0 0 21 -2 hln 100 PIN=e
+a 0 s 0 0 0 0 hln 100 ERC=x
+@graphics 20 40 0 20 10
+v 0 10 10 d_info:,,1,,4/1/6/6,,,,,,,,,, 
+10 30
+;
+v 0 10 15
+20 10
+;
+v 0 10 25
+20 30
+;
+v 0 14 13
+17 9
+;
+v 0 14 13
+19 13
+;

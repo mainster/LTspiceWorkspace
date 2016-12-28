@@ -1,0 +1,24 @@
+Circuit: * C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\examples\LtSpicePlus\Digital\A_Devices\LatchTst\Latch_test.asc
+
+WARNING: Less than two connections to node _A0L.  This node is used by A1.
+WARNING: Less than two connections to node A0L.  This node is used by A1.
+Direct Newton iteration for .op point succeeded.
+
+Date: Mon Feb 09 11:33:15 2015
+Total elapsed time: 0.037 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 2970
+traniter = 2965
+tranpoints = 1447
+accept = 1356
+rejected = 91
+matrix size = 11
+fillins = 0
+solver = Normal
+Matrix Compiler1: 180 bytes object code size  0.2/0.2/[0.1]
+Matrix Compiler2: 461 bytes object code size  0.2/0.2/[0.2]
+
+
