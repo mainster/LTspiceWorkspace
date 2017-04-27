@@ -1,9 +1,0 @@
-*Digital Display Probe
-*
-.subckt probe_dig 1 2 
-Rout 2 0 {670/vpwr$_digital}
-g1 0 2 1 0 1m
-i1 0 2 {(T+0.05)*vpwr$_digital*1.492537m}  
-.param T=0
-.ends
-*

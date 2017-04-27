@@ -1,8 +1,0 @@
-*Potentiometer 
-*
-.subckt poti  1 2 m 
-R2 2 m {(set+0.0001)*R}
-R1 1 m {(1.0001-set)*R}
-.param R=1k set=0.5
-.ends
-*

@@ -1,8 +1,0 @@
-* integrator.sub
-*
-.subckt integrator 1 Iout
-G1 0 N001 1 0 1
-G2 0 Iout N001 0 1 
-R1 Iout 0 1
-C1 N001 0 {T}
-.end integrator
