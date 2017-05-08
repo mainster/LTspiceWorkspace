@@ -1,0 +1,57 @@
+Circuit: * Z:\media\data\CODES\LTspiceWorkspace\LTspice_projects\Draft7.asc
+
+D1: both pins shorted together -- ignoring.
+WARNING: Less than two connections to node N008.  This node is used by V:U1:1.
+WARNING: Less than two connections to node N003.  This node is used by V:U5:1.
+Direct Newton iteration for .op point succeeded.
+.step p=0
+.step p=0.001
+.step p=0.002
+.step p=0.003
+.step p=0.004
+.step p=0.005
+.step p=0.006
+.step p=0.007
+.step p=0.008
+.step p=0.009
+.step p=0.01
+.step p=0.011
+.step p=0.012
+.step p=0.013
+.step p=0.014
+.step p=0.015
+.step p=0.016
+.step p=0.017
+.step p=0.018
+.step p=0.019
+.step p=0.02
+.step p=0.021
+.step p=0.022
+.step p=0.023
+.step p=0.024
+.step p=0.025
+.step p=0.026
+.step p=0.027
+.step p=0.028
+.step p=0.029
+.step p=0.03
+.step p=0.031
+.step p=0.032
+.step p=0.033
+.step p=0.034
+.step p=0.035
+.step p=0.036
+.step p=0.037
+.step p=0.038
+.step p=0.039
+.step p=0.04
+.step p=0.041
+.step p=0.042
+.step p=0.043
+.step p=0.044
+.step p=0.045
+.step p=0.046
+.step p=0.047
+.step p=0.048
+.step p=0.049
+.step p=0.05
