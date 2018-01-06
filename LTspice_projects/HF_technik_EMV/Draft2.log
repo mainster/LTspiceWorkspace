@@ -1,0 +1,21 @@
+Circuit: * Z:\media\data\CODES\LTspiceWorkspace\LTspice_projects\HF_technik_EMV\Draft2.asc
+
+Direct Newton iteration for .op point succeeded.
+
+Date: Sun Jul 09 16:52:16 2017
+Total elapsed time: 0.037 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 2085
+traniter = 2082
+tranpoints = 1042
+accept = 1042
+rejected = 0
+matrix size = 2
+fillins = 0
+solver = Alternate
+Matrix Compiler1: 70 bytes object code size  0.1/0.1/[0.1]
+Matrix Compiler2: 130 bytes object code size  0.1/0.1/[0.1]
+

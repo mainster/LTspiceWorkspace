@@ -1,0 +1,96 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\HF_technik\KEMO_MIC_UKW_sender.asc
+Q1 C1 B1 0 0 BC817-25
+C1 stim in {C1}
+R1 C1 B1 {R1}
+R2 N001 C1 {R2}
+C2 P001 B2 {C2}
+C3 N001 B2 {C3}
+C4 B2 0 {C4}
+R3 N001 B2 {R3}
+R4 B2 0 {R4}
+R5 E2 0 {R5}
+Q2 C2 P002 E2 0 BC337-40
+L1 N001 C2 {L1} Rser=.1
+C5 C2 E2 {C5}
+C6 N001 C2 {C6}
+C7 C2 outac {C7}
+R6 outac 0 {RL}
+XU2 N001 vdc_single V={Vpl}
+R7 B1 0 {Rpu}
+V3 stim 0 0 AC 1
+R8 in B1 {Rpo}
+XU3 N005 Idc_single I={Icx} Rpar=1e6
+R9 N005 0 1m
+XU4 N006 Idc_single I={IcxB} Rpar=1e6
+R10 N006 0 1m
+XU1 C1 P001 N002 jumpernew status=1
+XU5 0 0 0 jumpernewInvCtrl status=1
+XU6 B2 P002 N003 jumpernew status=1
+XU7 N002 vdc_single V={jLoad1}
+XU8 N003 vdc_single V={jLoad2}
+.model NPN NPN
+.model PNP PNP
+.lib C:\Program Files (x86)\LTC_ALL\LTspiceIV_4.18_multiLibs\lib\cmp\standard.bjt
+* _------------------------------------------------------------------------------------\nBausatz pollin          --           UKW-Sensder\nhttp://www.pollin.de/shop/downloads/D810111B.PDF\nV+ = 9...26V\n_------------------------------------------------------------------------------------\n \nQ1: "cxo C39" equivalent NTE108\nQ2: "SF 127D 9002" HT-Transistor, laut tabelle \nErsatztyp: BC141 ersatzersatz BC337\nSelber:  BDX77
+.step param x 0.1 .95 .2
+.ac oct 100 10 1000meg
+* .tran 0 {Tsim} {Tsim/2}
+;_------------------------------------------------------------------------------------
+.model npnx2 npn (Is={Ic0s/exp(Vbe0/26m)} Bf={beta})
+.model npnx npn (IS=9.198E-14 NE=1.65 BF=338.8 )
+;_------------------------------------------------------------------------------------
+.param MATLAB_PARAM=1
++ VT = 26m
++ Vpl = 15V
++ x=.1
++ fres=1.07meg
++ fmic = 5k
++ fsw =1k
++ Rp = 10k
++ Tsim = 500m
++ Ic0s = 2mA
++ Vbe0 = .6V
++ beta = 339
++ f0 = 5k
++ C1=4.7u
++ C2=4.7u
++ C3=10p
++ C4=10p
++ C5=47p
++ C6=22p 
++ C7=87p
++ R1=120k
++ R2=4k7
++ R3=3.79k
++ R4=4k7
++ R5=1k
++ RL=10meg
++ L1v={ 1/(4*pi**2*fres**2*C6)}
++ alpha={beta/(1+beta)}
++ Ic0c ={ (Vpl-Vbe0*(1+(R1+R2)/( Rp*(1-x) ))) / 
+   + (alpha*R2 + R1/beta)  }
++ L1={L1v}
++ Rpu={Rp*(1-x)}
++ Rpo={Rp*x}
+.options plotwinsize=0
+.model npnx2 npn (Is={Ic0s/exp(Vbe0/26m)} Bf={beta})
+.model npnx npn (IS=9.198E-14 NE=1.65 BF=338.8 )
+.op
+.ic V(C2)=5V
+.ic I(L1) = {10V/.1}
+* .tran 0 10m
+.param Icx = 
+ + (Vpl - Vbe0/Rpu * (R1+R2+Rpu)) /
+ + (R1-Rpu/beta+1/beta * (R1+R2+Rpu))
+ 
+.param IcxB = 
+ + (Vpl-Vbe0*( R1/Rpu+R2/Rpu+1 )) / 
+ + (R1/alpha+R2*(1/alpha-1))
+.param JUMPER=1
++ jLoad1 = 1
++ jLoad2 = 0
+.lib EIT_sub/vdc_single.sub
+.lib jumpernew.sub
+.lib MDB_sub/Idc_single.sub
+.backanno
+.end

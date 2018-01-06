@@ -1,0 +1,101 @@
+Circuit: * Z:\home\mainster\CODES_local\LTSpice_projects\HF_technik\hf_kl_2011_A1.asc
+
+L1: both pins shorted together -- ignoring.
+C1: both pins shorted together -- ignoring.
+R2: both pins shorted together -- ignoring.
+R3: both pins shorted together -- ignoring.
+WARNING: Less than two connections to node RPC.  This node is used by V:U1:1.
+WARNING: Less than two connections to node RPL.  This node is used by V:U2:1.
+WARNING: Less than two connections to node W0.  This node is used by V:U3:1.
+WARNING: Less than two connections to node N001.  This node is used by V1.
+Direct Newton iteration for .op point succeeded.
+.step fstim=3.8e+007
+.step fstim=3.82e+007
+.step fstim=3.84e+007
+.step fstim=3.86e+007
+.step fstim=3.88e+007
+.step fstim=3.9e+007
+.step fstim=3.92e+007
+.step fstim=3.94e+007
+.step fstim=3.96e+007
+.step fstim=3.98e+007
+.step fstim=4e+007
+.step fstim=4.02e+007
+.step fstim=4.04e+007
+.step fstim=4.06e+007
+.step fstim=4.08e+007
+.step fstim=4.1e+007
+.step fstim=4.12e+007
+.step fstim=4.14e+007
+.step fstim=4.16e+007
+.step fstim=4.18e+007
+.step fstim=4.2e+007
+
+
+Measurement: vl_eff
+  step	RMS(v(out))	FROM	TO
+     1	0.360368	0	6.25e-007
+     2	0.398245	0	6.25e-007
+     3	0.440286	0	6.25e-007
+     4	0.492104	0	6.25e-007
+     5	0.552221	0	6.25e-007
+     6	0.629664	0	6.25e-007
+     7	0.716265	0	6.25e-007
+     8	0.815751	0	6.25e-007
+     9	0.907249	0	6.25e-007
+    10	0.975999	0	6.25e-007
+    11	0.988907	0	6.25e-007
+    12	0.940406	0	6.25e-007
+    13	0.855944	0	6.25e-007
+    14	0.75593	0	6.25e-007
+    15	0.667654	0	6.25e-007
+    16	0.589184	0	6.25e-007
+    17	0.527017	0	6.25e-007
+    18	0.471511	0	6.25e-007
+    19	0.426827	0	6.25e-007
+    20	0.3883	0	6.25e-007
+    21	0.357953	0	6.25e-007
+
+Measurement: i0_eff
+  step	RMS(i(i1))	FROM	TO
+     1	0.000997797	0	6.25e-007
+     2	0.000996136	0	6.25e-007
+     3	0.000997797	0	6.25e-007
+     4	0.000999445	0	6.25e-007
+     5	0.000997797	0	6.25e-007
+     6	0.00099617	0	6.25e-007
+     7	0.000997797	0	6.25e-007
+     8	0.000999412	0	6.25e-007
+     9	0.000997797	0	6.25e-007
+    10	0.000996203	0	6.25e-007
+    11	0.000997797	0	6.25e-007
+    12	0.00099938	0	6.25e-007
+    13	0.000997797	0	6.25e-007
+    14	0.000996234	0	6.25e-007
+    15	0.000997797	0	6.25e-007
+    16	0.000999349	0	6.25e-007
+    17	0.000997797	0	6.25e-007
+    18	0.000996264	0	6.25e-007
+    19	0.000997797	0	6.25e-007
+    20	0.000999319	0	6.25e-007
+    21	0.000997797	0	6.25e-007
+
+
+Date: Fri Nov 13 19:45:04 2015
+Total elapsed time: 4.582 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 63031
+traniter = 63028
+tranpoints = 31515
+accept = 18922
+rejected = 12593
+matrix size = 10
+fillins = 0
+solver = Normal
+Matrix Compiler1: 130 bytes object code size  0.2/0.2/[0.2]
+Matrix Compiler2: 394 bytes object code size  0.2/0.2/[0.2]
+
+

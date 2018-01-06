@@ -1,0 +1,22 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\HF_technik\fehlanpassung_gustrau_S107.asc
+V1 N001 0 PULSE(0 1 1n 10p 10p 50n 100n)
+T1 in+ 0 out+ out- Td={Td1} Z0=50
+RG in+ N001 150
+R1 0 in+ 10t
+R2 0 out+ 10t
+R3 out- 0 10t
+RL out+ out- 200
+V2 delay 0 {Td1}
+R4 in+ 0 10t
+.param len1 = 0.2
+.param f = 500Meg
+; Phasengeschw.(Ausbreitungsgeschw.) in Leitung [m/s]
+; c = sqrt(epsilon_r)/c0 ~ 2e8
+.param c0 = 3e8  ; Lichtgeschw. [m/s]
+.param eps_r = 2.225  ; Dielektr. Zahl des Füllmat.
+.param c = {c0 / sqrt(eps_r)}
+.param lambda = {c / f}  ; Wellenlänge in [m]
+.param Td1 = {len1/c}  ; = {sqrt(eps_r)*len1/c0}  propagation delay
+.tran 0 400n 200n .1n
+.backanno
+.end

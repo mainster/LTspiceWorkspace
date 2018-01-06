@@ -1,0 +1,54 @@
+* Z:\home\mainster\CODES_local\LTSpice_projects\HF_technik\hf_kl_2011_A1.asc
+L1 0 0 154n
+C1 0 0 103p
+I1 0 out SINE(0 {sqrt(2)*1m} {fstim}) AC 1m
+R2 0 0 1meg
+R3 0 0 1meg
+L2 out 0 {L}
+C2 out 0 {C}
+R1 out 0 {Rpl}
+R4 out 0 {Rpc}
+R5 out 0 {Rg}
+XU1 Rpc vdc_single V={Rpc}
+XU2 Rpl vdc_single V={Rpl}
+XU3 w0 vdc_single V={w0}
+I2 0 out2 SINE(0 {sqrt(2)*1m} {fstim}) AC 1m
+L3 out2 0 154n
+R7 out2 0 2k
+C3 out2 0 103p
+R6 out2 0 2k
+V1 N001 0 SINE(0 1 {5*fstim})
+* .ac oct 1000 30meg 60meg
+.tran 0 {150/f0} {125/f0}
+* Model of an\ninductor with\nq-factor of \nQL=70
+* Model of a\nCapacitor with\nq-factor of \nQC=200
+* QL=w0*L/Rs=Rp/(w0*L)
+* QC=Rp*w0*C=1/(Rs*w0*C)
+* ??
+* ??
+* ??
+* ??
+* HF SS2011 A1\nGegeben ist eine Stromquelle mit einem Effektivwert des Kurzschlussstroms von I=1mA und mit einem \n\nInnenwiderstand RG=2kO . Die Quelle gibt ein sinusförmiges Signal auf einer Frequenz von f0=40MHz ab. \nAn die Stromquelle wird ein Parallelschwingkreis angeschlossen.  \n\n1.1 Dimensionieren Sie den Wert von Spule und Kondensator im Parallelschwingkreis unter folgenden \n\nBedingungen: Güte der Spule QL=70, Güte des Kondensators QC=200, Resonanzfrequenz f0=40MHz
+.param Gegeben = 1
++ QC = 200
++ QL = 70
++ f0 = 40Meg
++ fstim = 38Meg
++ Rg = 2k
++ Z_res = 2k
++ w0 = {2*pi*f0}
+.param GesSelf = 1
++ Rpl = QL*w0*L
++ Rpc = QC/(w0*C)
+.param calc = 1
++ C = 103pF
++ L = 154nH
+.MEAS AC tmp max mag(V(out))             ; find the peak response and call it "tmp" 
+.MEAS AC BW trig mag(V(out))=tmp/sqrt(2) rise=1
++ targ mag(V(out))=tmp/sqrt(2) fall=last
+.MEAS TRAN VL_eff rms(V(out)) Td={150/f0}
+.MEAS TRAN I0_eff rms(I(I1))
+.step param fstim 38meg 42meg 200k
+.lib EIT_sub/vdc_single.sub
+.backanno
+.end

@@ -1,0 +1,8 @@
+* Z:\media\data\CODES\LTspiceWorkspace\LTspice_projects\HF_technik_EMV\Draft2.asc
+L1 a N001 300m
+R1 N001 0 200
+R2 a 0 40k
+.ic V(a)=12V
+.tran .1m
+.backanno
+.end

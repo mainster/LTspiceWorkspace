@@ -1,0 +1,15 @@
+* Z:\media\data\CODES\LTspiceWorkspace\LTspice_projects\op_diskret\Draft1.asc
+R1 a 0 {RL}
+C1 e 0 {C6}
+L1 e a {L2}
+V1 N001 0 0 AC 1
+R2 N001 e .10
+E1 al 0 e 0 laplace=(RL+s*L2)/(1+s**2*L2*C6+s*RL*C6)
+.param filt=1
++ RL = 13k
++ L2 = 47u
++ C6 = 470p
+.ac dec 100 1meg 1e9
+.step param C6 list 470p 1e-20
+.backanno
+.end

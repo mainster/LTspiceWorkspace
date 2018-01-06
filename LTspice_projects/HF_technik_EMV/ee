@@ -1,0 +1,9 @@
+TEXT 1360 664 Left 2 !.ac LIN 801 200Meg 300Meg
+TEXT 432 552 Left 2 !.net I(Rout) V4  ; Rin & Rout determined from V4 and Rout
+TEXT 392 48 Left 2 !.net V(out3) V2 Rout=50 ; Rin determined by V2's Rser
+TEXT 384 -200 Left 2 !.net V(out2) V1 Rout=50 Rin=50 ; Rin and Rout specified on the .net statement
+TEXT 376 -456 Left 2 !.net V(out1) I1 Rout=50 Rin=50 ; Rin and Rout specified on the .net statement
+TEXT 408 296 Left 2 !.net I(Rx) V3  Rout=50 ; Rin determined from V3 but Rout specified on the .net statement
+TEXT 328 584 Left 2 ;This is the preferred LTspice syntax because it allows you to plot the node voltages\nand currents with the same termination as used by the .net statement computation.
+TEXT 832 -664 Bottom 2 ;Five different ways of specifying source and termination impedances for S-parameter computation.
+TEXT 792 656 Top 1 ;This example schematic is supplied for informational/educational purposes only.

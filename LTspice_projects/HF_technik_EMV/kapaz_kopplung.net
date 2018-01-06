@@ -1,0 +1,19 @@
+* Z:\media\data\CODES\LTspiceWorkspace\LTspice_projects\EMV\kapaz_kopplung.asc
+Ck U1 U2 {Ck}
+C2 U1 0 {C10}
+C3 U2 0 {C20}
+Ri N001 U1 {Ri}
+Ra U2 0 {Ra}
+V§Uq N001 0 0 AC 1
+Ca U2 0 {Ca}
+.param koppelz=1
++ Ri = 50
++ C10 = 1e-9
++ C20 = 1e-9
++ Ck = 1e-9
++ Ra = 50
++ Ca = 1e-9
+* Capacitive coupling - Single conductor
+.ac lin 100 1k 1meg
+.backanno
+.end

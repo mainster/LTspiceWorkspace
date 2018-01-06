@@ -12,14 +12,14 @@ LINE Normal -9 -36 -9 36
 LINE Normal 0 -36 -9 -36
 LINE Normal -32 0 -20 0
 CIRCLE Normal -6 32 1 25
-WINDOW 0 16 -32 Left 0
-WINDOW 3 17 -1 Left 0
-WINDOW 123 16 26 Left 0
+WINDOW 0 16 -32 Left 2
+WINDOW 3 17 -1 Left 2
+WINDOW 123 16 26 Left 2
 SYMATTR Value R=10k
 SYMATTR Value2 T=.5
 SYMATTR Prefix X
 SYMATTR SpiceModel pot
-SYMATTR ModelFile ..\sym\EXTRA\Misc\pot.lib
+SYMATTR ModelFile sym\EXTRA\Misc\pot.lib
 SYMATTR Description Potentiometer
 PIN 0 -48 NONE 0
 PINATTR PinName A

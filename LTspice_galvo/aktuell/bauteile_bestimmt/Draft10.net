@@ -1,0 +1,11 @@
+* Z:\media\data\CODES\LTspiceWorkspace\LTspice_galvo\aktuell\bauteile_bestimmt\Draft10.asc
+R1 N001 Vd {Rpot}
+D1 Vd 0 1N4148
+V1 N001 0 5
+.model D D
+.lib C:\users\mainster\My Documents\LTspiceXVII\lib\cmp\standard.dio
+* .step param Rpot list 1k 10k
+.param Rpot=1k
+.dc V1 0.1 1 50m
+.backanno
+.end
