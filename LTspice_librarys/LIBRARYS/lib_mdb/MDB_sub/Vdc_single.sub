@@ -1,0 +1,6 @@
+* einseitige Spannungsquelle (andere Seite nach Masse)
+*
+.subckt vdc_single 1
+v1 1 0 dc={v} 
+.param v=0
+.ends
