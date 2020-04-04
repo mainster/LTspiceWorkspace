@@ -1,7 +1,7 @@
 [Recent File List]
-file0=
-file1=
-file2=
+file0=F:\CODES\LTspiceWorkspace\LTspice_projects\power_path_controller\chan-3_power_path_controller_LTC4417.asc
+file1=F:\mnt\wsopt\CODES\LTspiceWorkspace\LTspice_projects\power_path_controller\chan-3_power_path_controller_LTC4417.asc
+file2=F:\CODES\LTspiceWorkspace\LTspice_librarys\LIBRARYS\LTC_koblitz_oct_2014\examples\EIT_examples\ideale_diode.asc
 file3=
 file4=
 file5=
@@ -18,14 +18,14 @@ file15=
 [Options]
 Solver=0
 ShowCheckSum=false
-WorkingDirectory=C:\users\mainster\My Documents\LTspiceXVII
+WorkingDirectory=F:\CODES\LTspiceWorkspace\LTspice_projects\power_path_controller
 SymbolSearchPath=
 LibrarySearchPath=
 SymbolSearchPathDisabled=false
 LibrarySearchPathDisabled=false
 SpicePriority=1
 PlotPriority=1
-LastFileTypeOpened=-1
+LastFileTypeOpened=0
 Tabstopwidth=4
 grid=off
 GenerateExpandedListing=false
@@ -55,7 +55,7 @@ SchematicFont=3
 PenWidth=1
 DataPenWidth=1
 CursorThickness=1
-WindowSize=480 1440 270 810
+WindowSize=0 -1 0 -1
 ToolBarIconSize=1
 AutoSaveOnSim=0
 MDIbackgroundImage=1
